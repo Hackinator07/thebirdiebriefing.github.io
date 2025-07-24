@@ -4,7 +4,7 @@ Your premier source for LPGA women's golf news, tournament coverage, and exclusi
 
 ## 🚀 Live Site
 
-Visit the live site: [https://yourusername.github.io/golfgirlgazette](https://yourusername.github.io/golfgirlgazette)
+Visit the live site: [https://hackinator07.github.io/golfgirlgazette](https://hackinator07.github.io/golfgirlgazette)
 
 ## 🛠️ Tech Stack
 
