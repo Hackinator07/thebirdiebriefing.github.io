@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "url": "https://www.instagram.com/p/DMYqmU9PjQ-/",
+      "title": "LPGA Tour Highlights",
+      "description": "Amazing shots from this week's tournament",
+      "category": "tournament",
+      "featured": true
+    },
+    {
+      "id": "2",
+      "url": "https://www.instagram.com/p/DMVkPTQsNcq//",
+      "title": "Golf Course Review",
+      "description": "Beautiful course in the mountains",
+      "category": "course-review",
+      "featured": false
+    },
+    {
+      "id": "3",
+      "url": "https://www.instagram.com/p/DMVkPTQsNcq/",
+      "title": "Pro Tips",
+      "description": "Improve your putting with these tips",
+      "category": "tips",
+      "featured": true
+    },
+    {
+      "id": "4",
+      "url": "https://www.instagram.com/p/C8U2P4FgL6M/",
+      "title": "Equipment Review",
+      "description": "Latest driver technology review",
+      "category": "equipment",
+      "featured": false
+    },
+    {
+      "id": "5",
+      "url": "https://www.instagram.com/p/DMFcI1iovHp/?img_index=1/",
+      "title": "Tournament Coverage",
+      "description": "Behind the scenes at the major championship",
+      "category": "tournament",
+      "featured": true
+    }
+  ]
+}

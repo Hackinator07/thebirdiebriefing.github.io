@@ -1,0 +1,454 @@
+{
+  "rolexWorldRanking": [
+    {
+      "id": "1",
+      "name": "Nelly Korda",
+      "country": "USA",
+      "points": "12.45",
+      "events": "15"
+    },
+    {
+      "id": "2",
+      "name": "Lilia Vu",
+      "country": "USA",
+      "points": "8.92",
+      "events": "18"
+    },
+    {
+      "id": "3",
+      "name": "Celine Boutier",
+      "country": "France",
+      "points": "7.34",
+      "events": "20"
+    },
+    {
+      "id": "4",
+      "name": "Jin Young Ko",
+      "country": "South Korea",
+      "points": "6.87",
+      "events": "16"
+    },
+    {
+      "id": "5",
+      "name": "Atthaya Thitikul",
+      "country": "Thailand",
+      "points": "6.45",
+      "events": "19"
+    },
+    {
+      "id": "6",
+      "name": "Ruoning Yin",
+      "country": "China",
+      "points": "5.92",
+      "events": "17"
+    },
+    {
+      "id": "7",
+      "name": "Hyo Joo Kim",
+      "country": "South Korea",
+      "points": "5.67",
+      "events": "18"
+    },
+    {
+      "id": "8",
+      "name": "Minjee Lee",
+      "country": "Australia",
+      "points": "5.34",
+      "events": "16"
+    },
+    {
+      "id": "9",
+      "name": "Charley Hull",
+      "country": "England",
+      "points": "5.12",
+      "events": "19"
+    },
+    {
+      "id": "10",
+      "name": "Alison Lee",
+      "country": "USA",
+      "points": "4.89",
+      "events": "20"
+    }
+  ],
+  "raceToCmeGlobe": [
+    {
+      "id": "1",
+      "name": "Nelly Korda",
+      "country": "USA",
+      "points": "2,847",
+      "events": "15"
+    },
+    {
+      "id": "2",
+      "name": "Lilia Vu",
+      "country": "USA",
+      "points": "2,156",
+      "events": "18"
+    },
+    {
+      "id": "3",
+      "name": "Celine Boutier",
+      "country": "France",
+      "points": "1,892",
+      "events": "20"
+    },
+    {
+      "id": "4",
+      "name": "Jin Young Ko",
+      "country": "South Korea",
+      "points": "1,745",
+      "events": "16"
+    },
+    {
+      "id": "5",
+      "name": "Atthaya Thitikul",
+      "country": "Thailand",
+      "points": "1,634",
+      "events": "19"
+    },
+    {
+      "id": "6",
+      "name": "Ruoning Yin",
+      "country": "China",
+      "points": "1,523",
+      "events": "17"
+    },
+    {
+      "id": "7",
+      "name": "Hyo Joo Kim",
+      "country": "South Korea",
+      "points": "1,456",
+      "events": "18"
+    },
+    {
+      "id": "8",
+      "name": "Minjee Lee",
+      "country": "Australia",
+      "points": "1,389",
+      "events": "16"
+    },
+    {
+      "id": "9",
+      "name": "Charley Hull",
+      "country": "England",
+      "points": "1,312",
+      "events": "19"
+    },
+    {
+      "id": "10",
+      "name": "Alison Lee",
+      "country": "USA",
+      "points": "1,245",
+      "events": "20"
+    }
+  ],
+  "lpgaMoneyList": [
+    {
+      "id": "1",
+      "name": "Nelly Korda",
+      "country": "USA",
+      "earnings": "2,456,789",
+      "events": "15"
+    },
+    {
+      "id": "2",
+      "name": "Lilia Vu",
+      "country": "USA",
+      "earnings": "1,892,456",
+      "events": "18"
+    },
+    {
+      "id": "3",
+      "name": "Celine Boutier",
+      "country": "France",
+      "earnings": "1,634,789",
+      "events": "20"
+    },
+    {
+      "id": "4",
+      "name": "Jin Young Ko",
+      "country": "South Korea",
+      "earnings": "1,523,456",
+      "events": "16"
+    },
+    {
+      "id": "5",
+      "name": "Atthaya Thitikul",
+      "country": "Thailand",
+      "earnings": "1,456,789",
+      "events": "19"
+    },
+    {
+      "id": "6",
+      "name": "Ruoning Yin",
+      "country": "China",
+      "earnings": "1,389,123",
+      "events": "17"
+    },
+    {
+      "id": "7",
+      "name": "Hyo Joo Kim",
+      "country": "South Korea",
+      "earnings": "1,312,456",
+      "events": "18"
+    },
+    {
+      "id": "8",
+      "name": "Minjee Lee",
+      "country": "Australia",
+      "earnings": "1,245,789",
+      "events": "16"
+    },
+    {
+      "id": "9",
+      "name": "Charley Hull",
+      "country": "England",
+      "earnings": "1,178,912",
+      "events": "19"
+    },
+    {
+      "id": "10",
+      "name": "Alison Lee",
+      "country": "USA",
+      "earnings": "1,112,345",
+      "events": "20"
+    }
+  ],
+  "raceForTheCard": [
+    {
+      "id": "1",
+      "name": "Gabriela Ruffels",
+      "country": "Australia",
+      "points": "1,245",
+      "events": "12"
+    },
+    {
+      "id": "2",
+      "name": "Jenny Shin",
+      "country": "South Korea",
+      "points": "1,156",
+      "events": "14"
+    },
+    {
+      "id": "3",
+      "name": "Dottie Ardina",
+      "country": "Philippines",
+      "points": "1,089",
+      "events": "13"
+    },
+    {
+      "id": "4",
+      "name": "Samantha Wagner",
+      "country": "USA",
+      "points": "1,023",
+      "events": "15"
+    },
+    {
+      "id": "5",
+      "name": "Karis Davidson",
+      "country": "Australia",
+      "points": "956",
+      "events": "12"
+    },
+    {
+      "id": "6",
+      "name": "Jiwon Jeon",
+      "country": "South Korea",
+      "points": "889",
+      "events": "14"
+    },
+    {
+      "id": "7",
+      "name": "Kendall Dye",
+      "country": "USA",
+      "points": "823",
+      "events": "13"
+    },
+    {
+      "id": "8",
+      "name": "Sierra Brooks",
+      "country": "USA",
+      "points": "756",
+      "events": "15"
+    },
+    {
+      "id": "9",
+      "name": "Katelyn Dambaugh",
+      "country": "USA",
+      "points": "689",
+      "events": "12"
+    },
+    {
+      "id": "10",
+      "name": "Robyn Choi",
+      "country": "Australia",
+      "points": "623",
+      "events": "14"
+    }
+  ],
+  "epsonMoneyList": [
+    {
+      "id": "1",
+      "name": "Gabriela Ruffels",
+      "country": "Australia",
+      "earnings": "156,789",
+      "events": "12"
+    },
+    {
+      "id": "2",
+      "name": "Jenny Shin",
+      "country": "South Korea",
+      "earnings": "145,678",
+      "events": "14"
+    },
+    {
+      "id": "3",
+      "name": "Dottie Ardina",
+      "country": "Philippines",
+      "earnings": "134,567",
+      "events": "13"
+    },
+    {
+      "id": "4",
+      "name": "Samantha Wagner",
+      "country": "USA",
+      "earnings": "123,456",
+      "events": "15"
+    },
+    {
+      "id": "5",
+      "name": "Karis Davidson",
+      "country": "Australia",
+      "earnings": "112,345",
+      "events": "12"
+    },
+    {
+      "id": "6",
+      "name": "Jiwon Jeon",
+      "country": "South Korea",
+      "earnings": "101,234",
+      "events": "14"
+    },
+    {
+      "id": "7",
+      "name": "Kendall Dye",
+      "country": "USA",
+      "earnings": "90,123",
+      "events": "13"
+    },
+    {
+      "id": "8",
+      "name": "Sierra Brooks",
+      "country": "USA",
+      "earnings": "78,912",
+      "events": "15"
+    },
+    {
+      "id": "9",
+      "name": "Katelyn Dambaugh",
+      "country": "USA",
+      "earnings": "67,801",
+      "events": "12"
+    },
+    {
+      "id": "10",
+      "name": "Robyn Choi",
+      "country": "Australia",
+      "earnings": "56,690",
+      "events": "14"
+    },
+    {
+      "id": "11",
+      "name": "Lauren Kim",
+      "country": "USA",
+      "earnings": "45,579",
+      "events": "13"
+    },
+    {
+      "id": "12",
+      "name": "Maddie Szeryk",
+      "country": "Canada",
+      "earnings": "34,468",
+      "events": "15"
+    },
+    {
+      "id": "13",
+      "name": "Katie Yoo",
+      "country": "USA",
+      "earnings": "23,357",
+      "events": "12"
+    },
+    {
+      "id": "14",
+      "name": "Amanda Doherty",
+      "country": "USA",
+      "earnings": "12,246",
+      "events": "14"
+    },
+    {
+      "id": "15",
+      "name": "Kaleigh Telfer",
+      "country": "South Africa",
+      "earnings": "11,135",
+      "events": "13"
+    },
+    {
+      "id": "16",
+      "name": "Maddi Caldwell-Ryan",
+      "country": "Australia",
+      "earnings": "10,024",
+      "events": "15"
+    },
+    {
+      "id": "17",
+      "name": "Kiira Riihijarvi",
+      "country": "Finland",
+      "earnings": "8,913",
+      "events": "12"
+    },
+    {
+      "id": "18",
+      "name": "Sofia Garcia",
+      "country": "Paraguay",
+      "earnings": "7,802",
+      "events": "14"
+    },
+    {
+      "id": "19",
+      "name": "Karis Davidson",
+      "country": "Australia",
+      "earnings": "6,691",
+      "events": "13"
+    },
+    {
+      "id": "20",
+      "name": "Kendall Dye",
+      "country": "USA",
+      "earnings": "5,580",
+      "events": "15"
+    }
+  ],
+  "information": {
+    "rolexWorldRanking": {
+      "title": "Rolex World Ranking",
+      "description": "The Rolex Women's World Golf Rankings is the official world ranking system for women's professional golf. It provides a comprehensive ranking of the world's best female golfers based on their performance in eligible tournaments over a rolling two-year period.",
+      "details": "Points are awarded based on tournament strength and player finish, with major championships carrying the highest point values."
+    },
+    "raceToCmeGlobe": {
+      "title": "Race to CME Globe",
+      "description": "The Race to CME Globe is the LPGA Tour's season-long competition that awards points based on tournament finishes throughout the year. The top 60 players qualify for the season-ending CME Group Tour Championship.",
+      "details": "The winner of the Race to CME Globe receives a $1 million bonus, making it one of the most lucrative prizes in women's golf."
+    },
+    "lpgaMoneyList": {
+      "title": "LPGA Money List",
+      "description": "The LPGA Money List tracks official earnings for all LPGA Tour events throughout the season. It's a traditional measure of success in professional golf and often correlates with tournament victories and consistent high finishes.",
+      "details": "The money list is updated after each tournament and serves as a key metric for player performance and sponsorship opportunities."
+    },
+    "epsonTourRankings": {
+      "title": "Epson Tour Rankings",
+      "description": "The Epson Tour serves as the official qualifying tour for the LPGA Tour. The Race for the Card and Epson Money List determine which players earn LPGA Tour membership for the following season.",
+      "details": "The top 10 players on the Epson Tour money list at season's end earn LPGA Tour cards, providing a clear pathway to the highest level of women's professional golf."
+    }
+  }
+}

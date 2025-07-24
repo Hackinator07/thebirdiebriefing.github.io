@@ -1,0 +1,43 @@
+{
+  "episodes": [
+    {
+      "id": "1",
+      "title": "Episode 1: The Future of Women's Golf",
+      "description": "In our debut episode, we discuss the exciting developments in women's professional golf and what the future holds for the LPGA Tour.",
+      "duration": "45:30",
+      "date": "2024-04-01",
+      "platforms": {
+        "spotify": "https://open.spotify.com/episode/123",
+        "apple": "https://podcasts.apple.com/podcast/123",
+        "google": "https://podcasts.google.com/feed/123",
+        "amazon": "https://music.amazon.com/podcasts/123"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Episode 2: Major Championship Preview",
+      "description": "A comprehensive preview of the upcoming major championships and predictions for the season's biggest events.",
+      "duration": "52:15",
+      "date": "2024-04-08",
+      "platforms": {
+        "spotify": "https://open.spotify.com/episode/124",
+        "apple": "https://podcasts.apple.com/podcast/124",
+        "google": "https://podcasts.google.com/feed/124",
+        "amazon": "https://music.amazon.com/podcasts/124"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Episode 3: Rising Stars Spotlight",
+      "description": "We shine the spotlight on the next generation of LPGA stars and discuss their impact on the future of women's golf.",
+      "duration": "48:20",
+      "date": "2024-04-15",
+      "platforms": {
+        "spotify": "https://open.spotify.com/episode/125",
+        "apple": "https://podcasts.apple.com/podcast/125",
+        "google": "https://podcasts.google.com/feed/125",
+        "amazon": "https://music.amazon.com/podcasts/125"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Golf Girl Gazette Spring Classic",
+      "description": "Join us for an exclusive golf experience at the prestigious Pine Valley Golf Club. This event includes a full day of golf, networking, and exclusive access to LPGA professionals.",
+      "date": "2024-05-15",
+      "location": "Pine Valley Golf Club, New Jersey",
+      "price": "$500"
+    },
+    {
+      "id": "2",
+      "title": "Women's Golf Clinic with LPGA Pros",
+      "description": "Learn from the best! This intensive clinic features instruction from current LPGA Tour professionals, covering all aspects of the game from driving to putting.",
+      "date": "2024-06-20",
+      "location": "Augusta National Golf Club, Georgia",
+      "price": "$300"
+    },
+    {
+      "id": "3",
+      "title": "Golf Girl Gazette Championship Weekend",
+      "description": "A weekend-long celebration of women's golf featuring tournament play, workshops, and exclusive networking opportunities with industry leaders.",
+      "date": "2024-07-10",
+      "location": "Pebble Beach Golf Links, California",
+      "price": "$800"
+    }
+  ]
+}

@@ -1,0 +1,1527 @@
+{
+  "states": [
+    {
+      "name": "Minnesota",
+      "abbreviation": "MN",
+      "courses": [
+        {
+          "id": "1",
+          "name": "Hazeltine National Golf Club",
+          "location": "Chaska, MN",
+          "description": "Home to major championships including the 2016 Ryder Cup and 2019 KPMG Women's PGA Championship.",
+          "image": "/images/courses/hazeltine.jpg",
+          "slug": "hazeltine-national-golf-club",
+          "website": "https://www.hazeltinenational.com",
+          "phone": "(952) 556-5400",
+          "address": "1900 Hazeltine Blvd, Chaska, MN 55318",
+          "content": {
+            "overview": "Hazeltine National Golf Club is one of the most prestigious golf courses in the United States, having hosted multiple major championships including the 2016 Ryder Cup and 2019 KPMG Women's PGA Championship. The course is known for its challenging layout, pristine conditions, and championship pedigree.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Hazeltine National provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Hazeltine National Golf Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. Weekday mornings typically offer the most peaceful rounds.",
+            "nearbyAttractions": [
+              "Minneapolis/St. Paul metro area",
+              "Mall of America",
+              "Minnesota Valley National Wildlife Refuge",
+              "Local restaurants and shopping"
+            ]
+          }
+        },
+        {
+          "id": "2",
+          "name": "Interlachen Country Club",
+          "location": "Edina, MN",
+          "description": "Historic course that has hosted multiple US Women's Open Championships and other major events.",
+          "image": "/images/courses/interlachen.jpg",
+          "slug": "interlachen-country-club",
+          "website": "https://www.interlachencc.com",
+          "phone": "(952) 926-4444",
+          "address": "6200 Interlachen Blvd, Edina, MN 55436",
+          "content": {
+            "overview": "Interlachen Country Club is a historic golf course that has hosted multiple US Women's Open Championships and other major events. The course is known for its classic design, challenging layout, and rich golfing heritage.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Interlachen Country Club provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Interlachen Country Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. Weekday mornings typically offer the most peaceful rounds.",
+            "nearbyAttractions": [
+              "Edina area attractions",
+              "Minneapolis/St. Paul metro area",
+              "Local restaurants and shopping",
+              "Galleria shopping center"
+            ]
+          }
+        },
+        {
+          "id": "3",
+          "name": "Minneapolis Golf Club",
+          "location": "St. Louis Park, MN",
+          "description": "Classic Donald Ross design with challenging greens and strategic bunkering.",
+          "image": "/images/courses/minneapolis-golf-club.jpg",
+          "slug": "minneapolis-golf-club",
+          "website": "https://www.minneapolisgolfclub.com",
+          "phone": "(952) 929-2121",
+          "address": "2001 Flag Ave S, St Louis Park, MN 55426",
+          "content": {
+            "overview": "Minneapolis Golf Club features a classic Donald Ross design with challenging greens and strategic bunkering. The course is known for its traditional layout and excellent playing conditions.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Minneapolis Golf Club provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Minneapolis Golf Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. Weekday mornings typically offer the most peaceful rounds.",
+            "nearbyAttractions": [
+              "St. Louis Park area attractions",
+              "Minneapolis/St. Paul metro area",
+              "Local restaurants and shopping",
+              "West End shopping district"
+            ]
+          }
+        },
+        {
+          "id": "20",
+          "name": "Cedar Valley",
+          "location": "Eagan, MN",
+          "description": "Beautiful course in the southern Twin Cities metro featuring rolling hills and mature trees.",
+          "image": "/images/courses/cedar-valley.jpg",
+          "slug": "cedar-valley",
+          "website": "https://www.cedarvalleygolf.com",
+          "phone": "(651) 454-1234",
+          "address": "123 Cedar Valley Dr, Eagan, MN 55123",
+          "content": {
+            "overview": "Cedar Valley is a beautiful course in the southern Twin Cities metro featuring rolling hills and mature trees. The course offers a peaceful golfing experience with excellent conditions.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Cedar Valley provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Cedar Valley is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful fall colors.",
+            "nearbyAttractions": [
+              "Eagan area attractions",
+              "Twin Cities metro amenities",
+              "Local restaurants and shopping",
+              "Scenic Minnesota countryside"
+            ]
+          }
+        },
+        {
+          "id": "21",
+          "name": "The Bridges",
+          "location": "Winona, MN",
+          "description": "Scenic course along the Mississippi River with dramatic elevation changes and stunning river views.",
+          "image": "/images/courses/the-bridges.jpg",
+          "slug": "the-bridges",
+          "website": "https://www.thebridgesgolf.com",
+          "phone": "(507) 454-1234",
+          "address": "456 Bridge Rd, Winona, MN 55987",
+          "content": {
+            "overview": "The Bridges is a scenic course along the Mississippi River with dramatic elevation changes and stunning river views. The course offers a unique golfing experience in southeastern Minnesota.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, The Bridges provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "The Bridges is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers spectacular Mississippi River views year-round.",
+            "nearbyAttractions": [
+              "Winona area attractions",
+              "Mississippi River views",
+              "Local restaurants and shopping",
+              "Southeastern Minnesota scenic drives"
+            ]
+          }
+        },
+        {
+          "id": "22",
+          "name": "The Wilderness",
+          "location": "Brainerd, MN",
+          "description": "Championship course in the Brainerd Lakes area featuring pristine conditions and challenging layout.",
+          "image": "/images/courses/the-wilderness.jpg",
+          "slug": "the-wilderness",
+          "website": "https://www.thewildernessgolf.com",
+          "phone": "(218) 454-1234",
+          "address": "789 Wilderness Dr, Brainerd, MN 56401",
+          "content": {
+            "overview": "The Wilderness is a championship course in the Brainerd Lakes area featuring pristine conditions and challenging layout. The course is known for its excellent design and well-maintained grounds.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, The Wilderness provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "The Wilderness is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful northern Minnesota scenery.",
+            "nearbyAttractions": [
+              "Brainerd Lakes area",
+              "Northern Minnesota forests",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "23",
+          "name": "The Quarry",
+          "location": "Biwalabik, MN",
+          "description": "Unique course built in a former iron ore quarry featuring dramatic rock formations and challenging holes.",
+          "image": "/images/courses/the-quarry.jpg",
+          "slug": "the-quarry",
+          "website": "https://www.thequarrygolf.com",
+          "phone": "(218) 865-1234",
+          "address": "321 Quarry Rd, Biwalabik, MN 55708",
+          "content": {
+            "overview": "The Quarry is a unique course built in a former iron ore quarry featuring dramatic rock formations and challenging holes. The course offers a one-of-a-kind golfing experience in Minnesota's Iron Range.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, The Quarry provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "The Quarry is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers unique quarry views year-round.",
+            "nearbyAttractions": [
+              "Iron Range attractions",
+              "Northern Minnesota forests",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "24",
+          "name": "Superior National",
+          "location": "Lutsen, MN",
+          "description": "Spectacular course along the North Shore of Lake Superior with breathtaking views and challenging terrain.",
+          "image": "/images/courses/superior-national.jpg",
+          "slug": "superior-national",
+          "website": "https://www.superiornationalgolf.com",
+          "phone": "(218) 663-1234",
+          "address": "456 Superior Dr, Lutsen, MN 55612",
+          "content": {
+            "overview": "Superior National is a spectacular course along the North Shore of Lake Superior with breathtaking views and challenging terrain. The course offers a world-class golfing experience in Minnesota's most scenic region.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Superior National provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Superior National is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers spectacular Lake Superior views year-round.",
+            "nearbyAttractions": [
+              "North Shore attractions",
+              "Lake Superior views",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "25",
+          "name": "Territory",
+          "location": "St. Cloud, MN",
+          "description": "Modern course in central Minnesota featuring innovative design and excellent playing conditions.",
+          "image": "/images/courses/territory.jpg",
+          "slug": "territory",
+          "website": "https://www.territorygolf.com",
+          "phone": "(320) 454-1234",
+          "address": "789 Territory Dr, St. Cloud, MN 56301",
+          "content": {
+            "overview": "Territory is a modern course in central Minnesota featuring innovative design and excellent playing conditions. The course offers a contemporary golfing experience with traditional values.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Territory provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Territory is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful central Minnesota scenery.",
+            "nearbyAttractions": [
+              "St. Cloud area attractions",
+              "Central Minnesota amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "26",
+          "name": "Gunflint Hills",
+          "location": "Grand Marais, MN",
+          "description": "Scenic course in the Boundary Waters area offering pristine conditions and stunning wilderness views.",
+          "image": "/images/courses/gunflint-hills.jpg",
+          "slug": "gunflint-hills",
+          "website": "https://www.gunflinthillsgolf.com",
+          "phone": "(218) 387-1234",
+          "address": "123 Gunflint Dr, Grand Marais, MN 55604",
+          "content": {
+            "overview": "Gunflint Hills is a scenic course in the Boundary Waters area offering pristine conditions and stunning wilderness views. The course provides a peaceful golfing experience in Minnesota's most remote region.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Gunflint Hills provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Gunflint Hills is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers spectacular wilderness views year-round.",
+            "nearbyAttractions": [
+              "Boundary Waters area",
+              "Grand Marais attractions",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "27",
+          "name": "Victory Links",
+          "location": "Blaine, MN",
+          "location": "Blaine, MN",
+          "description": "Championship course in the northern Twin Cities metro featuring excellent conditions and challenging layout.",
+          "image": "/images/courses/victory-links.jpg",
+          "slug": "victory-links",
+          "website": "https://www.victorylinksgolf.com",
+          "phone": "(763) 454-1234",
+          "address": "456 Victory Dr, Blaine, MN 55434",
+          "content": {
+            "overview": "Victory Links is a championship course in the northern Twin Cities metro featuring excellent conditions and challenging layout. The course offers a premier golfing experience with modern amenities.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Victory Links provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Victory Links is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful northern metro scenery.",
+            "nearbyAttractions": [
+              "Blaine area attractions",
+              "Twin Cities metro amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wisconsin",
+      "abbreviation": "WI",
+      "courses": [
+        {
+          "id": "4",
+          "name": "Lodi Golf Club",
+          "location": "Lodi, WI",
+          "description": "A hidden gem in the Wisconsin countryside featuring rolling terrain and pristine conditions.",
+          "image": "/images/courses/lodi-golf-club.jpg",
+          "slug": "lodi-golf-club",
+          "website": "http://www.lodigolf.com",
+          "phone": "(608) 592-3000",
+          "address": "1000 Golf Course Rd, Lodi, WI 53555",
+          "content": {
+            "overview": "Lodi Golf Club offers a pure golf experience in the heart of Wisconsin's beautiful countryside. This classic course features rolling terrain, pristine conditions, and a welcoming atmosphere that makes it a favorite among local golfers and visitors alike.",
+            "details": "The course layout takes full advantage of the natural landscape, with elevation changes that provide both challenge and visual interest. Mature trees line many fairways, creating strategic decisions for players of all skill levels. The greens are known for their true roll and subtle contours that reward good putting.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Lodi Golf Club provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Lodi Golf Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. Weekday mornings typically offer the most peaceful rounds.",
+            "nearbyAttractions": [
+              "Wisconsin Dells",
+              "Lake Wisconsin",
+              "Local wineries and breweries",
+              "Madison area attractions"
+            ]
+          }
+        },
+        {
+          "id": "5",
+          "name": "Whistling Straits",
+          "location": "Kohler, WI",
+          "description": "Pete Dye masterpiece that has hosted multiple PGA Championships and the 2021 Ryder Cup.",
+          "image": "/images/courses/whistling-straits.jpg",
+          "slug": "whistling-straits",
+          "website": "https://www.americanclubresort.com/golf/whistling-straits",
+          "phone": "(920) 565-5651",
+          "address": "8502 State Hwy 67, Kohler, WI 53044",
+          "content": {
+            "overview": "Whistling Straits is a Pete Dye masterpiece that has hosted multiple PGA Championships and the 2021 Ryder Cup. The course is known for its dramatic links-style layout and challenging conditions.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Whistling Straits provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Whistling Straits is part of the American Club Resort and offers comprehensive amenities for visitors. The course is easily accessible with dedicated parking and shuttle services.",
+            "amenities": [
+              "Resort parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining",
+              "Resort accommodations",
+              "Spa and wellness facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. Advance reservations are recommended for this championship course.",
+            "nearbyAttractions": [
+              "American Club Resort",
+              "Kohler Design Center",
+              "Sheboygan area attractions",
+              "Lake Michigan beaches"
+            ]
+          }
+        },
+        {
+          "id": "6",
+          "name": "Blackwolf Run",
+          "location": "Kohler, WI",
+          "description": "Another Pete Dye gem that has hosted LPGA major championships and offers two distinct courses.",
+          "image": "/images/courses/blackwolf-run.jpg",
+          "slug": "blackwolf-run",
+          "website": "https://www.americanclubresort.com/golf/blackwolf-run",
+          "phone": "(920) 565-5651",
+          "address": "1111 W Riverside Dr, Kohler, WI 53044",
+          "content": {
+            "overview": "Blackwolf Run is another Pete Dye gem that has hosted LPGA major championships and offers two distinct courses. The course is known for its strategic design and championship pedigree.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Blackwolf Run provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Blackwolf Run is part of the American Club Resort and offers comprehensive amenities for visitors. The course is easily accessible with dedicated parking and shuttle services.",
+            "amenities": [
+              "Resort parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining",
+              "Resort accommodations",
+              "Spa and wellness facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. Advance reservations are recommended for this championship course.",
+            "nearbyAttractions": [
+              "American Club Resort",
+              "Kohler Design Center",
+              "Sheboygan area attractions",
+              "Lake Michigan beaches"
+            ]
+          }
+        },
+        {
+          "id": "28",
+          "name": "Lawsonia",
+          "location": "Green Lake, WI",
+          "description": "Historic course featuring classic design and pristine conditions in the heart of Wisconsin.",
+          "image": "/images/courses/lawsonia.jpg",
+          "slug": "lawsonia",
+          "website": "https://www.lawsonia.com",
+          "phone": "(920) 294-3320",
+          "address": "W2615 S Valley View Dr, Green Lake, WI 54941",
+          "content": {
+            "overview": "Lawsonia is a historic course featuring classic design and pristine conditions in the heart of Wisconsin. The course offers a traditional golfing experience with modern conveniences.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Lawsonia provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Lawsonia is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful Wisconsin countryside views.",
+            "nearbyAttractions": [
+              "Green Lake area attractions",
+              "Central Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "29",
+          "name": "Sand Valley",
+          "location": "Nekoosa, WI",
+          "description": "World-class golf destination featuring multiple championship courses in the heart of Wisconsin.",
+          "image": "/images/courses/sand-valley.jpg",
+          "slug": "sand-valley",
+          "website": "https://www.sandvalley.com",
+          "phone": "(715) 325-9000",
+          "address": "1697 Leopold Way, Nekoosa, WI 54457",
+          "content": {
+            "overview": "Sand Valley is a world-class golf destination featuring multiple championship courses in the heart of Wisconsin. The resort offers premier golfing experiences with stunning natural scenery.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Sand Valley provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Sand Valley is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Resort parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining",
+              "Resort accommodations"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The resort offers year-round activities.",
+            "nearbyAttractions": [
+              "Central Wisconsin attractions",
+              "Sand Valley Resort amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "30",
+          "name": "House on the Rock",
+          "location": "Spring Green, WI",
+          "description": "Unique course near the famous House on the Rock attraction featuring scenic Wisconsin countryside.",
+          "image": "/images/courses/house-on-the-rock.jpg",
+          "slug": "house-on-the-rock",
+          "website": "https://www.houseontherockgolf.com",
+          "phone": "(608) 935-1234",
+          "address": "123 Golf Course Dr, Spring Green, WI 53588",
+          "content": {
+            "overview": "House on the Rock is a unique course near the famous House on the Rock attraction featuring scenic Wisconsin countryside. The course offers a distinctive golfing experience with local character.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, House on the Rock provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "House on the Rock is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful Wisconsin countryside views.",
+            "nearbyAttractions": [
+              "House on the Rock attraction",
+              "Spring Green area amenities",
+              "Local restaurants and shopping",
+              "Scenic Wisconsin drives"
+            ]
+          }
+        },
+        {
+          "id": "31",
+          "name": "Blackwolf Run",
+          "location": "Kohler, WI",
+          "description": "Championship course designed by Pete Dye featuring dramatic elevation changes and stunning scenery.",
+          "image": "/images/courses/blackwolf-run.jpg",
+          "slug": "blackwolf-run",
+          "website": "https://www.americanclubresort.com/golf/blackwolf-run",
+          "phone": "(920) 457-4444",
+          "address": "1111 W Riverside Dr, Kohler, WI 53044",
+          "content": {
+            "overview": "Blackwolf Run is a championship course designed by Pete Dye featuring dramatic elevation changes and stunning scenery. The course is known for its challenging layout and beautiful design.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Blackwolf Run provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Blackwolf Run is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Resort parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining",
+              "Resort accommodations"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers spectacular Wisconsin scenery year-round.",
+            "nearbyAttractions": [
+              "Kohler area attractions",
+              "American Club Resort",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "32",
+          "name": "Edelweiss Chalet",
+          "location": "New Glarus, WI",
+          "description": "Scenic course in the Swiss-themed town of New Glarus featuring rolling hills and beautiful views.",
+          "image": "/images/courses/edelweiss-chalet.jpg",
+          "slug": "edelweiss-chalet",
+          "website": "https://www.edelweisschaletgolf.com",
+          "phone": "(608) 527-1234",
+          "address": "456 Edelweiss Dr, New Glarus, WI 53574",
+          "content": {
+            "overview": "Edelweiss Chalet is a scenic course in the Swiss-themed town of New Glarus featuring rolling hills and beautiful views. The course offers a unique golfing experience with European charm.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Edelweiss Chalet provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Edelweiss Chalet is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful Wisconsin countryside views.",
+            "nearbyAttractions": [
+              "New Glarus Swiss village",
+              "Southern Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "33",
+          "name": "Koshkonong Mounds",
+          "location": "Fort Atkinson, WI",
+          "description": "Historic course featuring ancient Native American mounds and challenging terrain.",
+          "image": "/images/courses/koshkonong-mounds.jpg",
+          "slug": "koshkonong-mounds",
+          "website": "https://www.koshkonongmoundsgolf.com",
+          "phone": "(920) 563-1234",
+          "address": "789 Mounds Dr, Fort Atkinson, WI 53538",
+          "content": {
+            "overview": "Koshkonong Mounds is a historic course featuring ancient Native American mounds and challenging terrain. The course offers a unique golfing experience with cultural significance.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Koshkonong Mounds provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Koshkonong Mounds is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful Wisconsin countryside views.",
+            "nearbyAttractions": [
+              "Fort Atkinson area attractions",
+              "Southern Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "34",
+          "name": "Lac La Belle",
+          "location": "Oconomowoc, WI",
+          "description": "Classic course featuring pristine conditions and beautiful lake views in southeastern Wisconsin.",
+          "image": "/images/courses/lac-la-belle.jpg",
+          "slug": "lac-la-belle",
+          "website": "https://www.laclabellegolf.com",
+          "phone": "(262) 567-1234",
+          "address": "123 Lac La Belle Dr, Oconomowoc, WI 53066",
+          "content": {
+            "overview": "Lac La Belle is a classic course featuring pristine conditions and beautiful lake views in southeastern Wisconsin. The course offers a traditional golfing experience with modern amenities.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Lac La Belle provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Lac La Belle is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful lake views year-round.",
+            "nearbyAttractions": [
+              "Oconomowoc area attractions",
+              "Southeastern Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "35",
+          "name": "Erin Hills",
+          "location": "Erin, WI",
+          "description": "Championship course that hosted the 2017 U.S. Open featuring dramatic elevation changes and stunning scenery.",
+          "image": "/images/courses/erin-hills.jpg",
+          "slug": "erin-hills",
+          "website": "https://www.erinhills.com",
+          "phone": "(866) 772-4769",
+          "address": "7169 County Rd O, Erin, WI 53027",
+          "content": {
+            "overview": "Erin Hills is a championship course that hosted the 2017 U.S. Open featuring dramatic elevation changes and stunning scenery. The course offers a world-class golfing experience with major championship pedigree.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Erin Hills provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Erin Hills is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers spectacular Wisconsin countryside views year-round.",
+            "nearbyAttractions": [
+              "Erin area attractions",
+              "Southeastern Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "36",
+          "name": "Apostle Highlands",
+          "location": "Bayfield, WI",
+          "description": "Scenic course in the Apostle Islands area featuring stunning Lake Superior views and challenging terrain.",
+          "image": "/images/courses/apostle-highlands.jpg",
+          "slug": "apostle-highlands",
+          "website": "https://www.apostlehighlandsgolf.com",
+          "phone": "(715) 779-1234",
+          "address": "456 Apostle Dr, Bayfield, WI 54814",
+          "content": {
+            "overview": "Apostle Highlands is a scenic course in the Apostle Islands area featuring stunning Lake Superior views and challenging terrain. The course offers a unique golfing experience in Wisconsin's most scenic region.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Apostle Highlands provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Apostle Highlands is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers spectacular Lake Superior views year-round.",
+            "nearbyAttractions": [
+              "Apostle Islands area",
+              "Bayfield attractions",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "37",
+          "name": "Eagle Springs",
+          "location": "Eagle, WI",
+          "description": "Classic course featuring rolling hills and mature trees in southeastern Wisconsin.",
+          "image": "/images/courses/eagle-springs.jpg",
+          "slug": "eagle-springs",
+          "website": "https://www.eaglespringsgolf.com",
+          "phone": "(262) 594-1234",
+          "address": "789 Eagle Springs Dr, Eagle, WI 53119",
+          "content": {
+            "overview": "Eagle Springs is a classic course featuring rolling hills and mature trees in southeastern Wisconsin. The course offers a traditional golfing experience with modern conveniences.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Eagle Springs provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Eagle Springs is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful Wisconsin countryside views.",
+            "nearbyAttractions": [
+              "Eagle area attractions",
+              "Southeastern Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "38",
+          "name": "Reedsburg Country Club",
+          "location": "Reedsburg, WI",
+          "description": "Historic course featuring classic design and excellent playing conditions in central Wisconsin.",
+          "image": "/images/courses/reedsburg-country-club.jpg",
+          "slug": "reedsburg-country-club",
+          "website": "https://www.reedsburgcountryclub.com",
+          "phone": "(608) 524-1234",
+          "address": "123 Country Club Dr, Reedsburg, WI 53959",
+          "content": {
+            "overview": "Reedsburg Country Club is a historic course featuring classic design and excellent playing conditions in central Wisconsin. The course offers a traditional golfing experience with modern amenities.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Reedsburg Country Club provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Reedsburg Country Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful central Wisconsin scenery.",
+            "nearbyAttractions": [
+              "Reedsburg area attractions",
+              "Central Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "39",
+          "name": "Quit Qui Oc",
+          "location": "Elkhart Lake, WI",
+          "description": "Scenic course featuring rolling hills and beautiful views in eastern Wisconsin.",
+          "image": "/images/courses/quit-qui-oc.jpg",
+          "slug": "quit-qui-oc",
+          "website": "https://www.quitquioctgolf.com",
+          "phone": "(920) 876-1234",
+          "address": "456 Quit Qui Oc Dr, Elkhart Lake, WI 53020",
+          "content": {
+            "overview": "Quit Qui Oc is a scenic course featuring rolling hills and beautiful views in eastern Wisconsin. The course offers a peaceful golfing experience with excellent conditions.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Quit Qui Oc provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Quit Qui Oc is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful Wisconsin countryside views.",
+            "nearbyAttractions": [
+              "Elkhart Lake area attractions",
+              "Eastern Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "40",
+          "name": "Northen Bay",
+          "location": "Northen Bay, WI",
+          "description": "Classic course featuring pristine conditions and beautiful lake views in northern Wisconsin.",
+          "image": "/images/courses/northen-bay.jpg",
+          "slug": "northen-bay",
+          "website": "https://www.northenbaygolf.com",
+          "phone": "(715) 479-1234",
+          "address": "789 Northen Bay Dr, Northen Bay, WI 54868",
+          "content": {
+            "overview": "Northen Bay is a classic course featuring pristine conditions and beautiful lake views in northern Wisconsin. The course offers a traditional golfing experience with modern conveniences.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Northen Bay provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Northen Bay is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful northern Wisconsin scenery.",
+            "nearbyAttractions": [
+              "Northen Bay area attractions",
+              "Northern Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "41",
+          "name": "Whispering Springs",
+          "location": "Fond du Lac, WI",
+          "description": "Scenic course featuring rolling hills and beautiful views in eastern Wisconsin.",
+          "image": "/images/courses/whispering-springs.jpg",
+          "slug": "whispering-springs",
+          "website": "https://www.whisperingspringsgolf.com",
+          "phone": "(920) 922-1234",
+          "address": "123 Whispering Springs Dr, Fond du Lac, WI 54935",
+          "content": {
+            "overview": "Whispering Springs is a scenic course featuring rolling hills and beautiful views in eastern Wisconsin. The course offers a peaceful golfing experience with excellent conditions.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Whispering Springs provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Whispering Springs is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful Wisconsin countryside views.",
+            "nearbyAttractions": [
+              "Fond du Lac area attractions",
+              "Eastern Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "42",
+          "name": "Hansen Park",
+          "location": "Green Bay, WI",
+          "description": "Classic course featuring pristine conditions and beautiful views in northeastern Wisconsin.",
+          "image": "/images/courses/hansen-park.jpg",
+          "slug": "hansen-park",
+          "website": "https://www.hansenparkgolf.com",
+          "phone": "(920) 448-1234",
+          "address": "456 Hansen Park Dr, Green Bay, WI 54301",
+          "content": {
+            "overview": "Hansen Park is a classic course featuring pristine conditions and beautiful views in northeastern Wisconsin. The course offers a traditional golfing experience with modern conveniences.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Hansen Park provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Hansen Park is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful northeastern Wisconsin scenery.",
+            "nearbyAttractions": [
+              "Green Bay area attractions",
+              "Northeastern Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "43",
+          "name": "Sioux Creek",
+          "location": "Rice Lake, WI",
+          "description": "Scenic course featuring rolling hills and beautiful views in northwestern Wisconsin.",
+          "image": "/images/courses/sioux-creek.jpg",
+          "slug": "sioux-creek",
+          "website": "https://www.siouxcreekgolf.com",
+          "phone": "(715) 234-1234",
+          "address": "789 Sioux Creek Dr, Rice Lake, WI 54868",
+          "content": {
+            "overview": "Sioux Creek is a scenic course featuring rolling hills and beautiful views in northwestern Wisconsin. The course offers a peaceful golfing experience with excellent conditions.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Sioux Creek provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Sioux Creek is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful northwestern Wisconsin scenery.",
+            "nearbyAttractions": [
+              "Rice Lake area attractions",
+              "Northwestern Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "44",
+          "name": "Glen Erin",
+          "location": "Janesville, WI",
+          "description": "Classic course featuring pristine conditions and beautiful views in southern Wisconsin.",
+          "image": "/images/courses/glen-erin.jpg",
+          "slug": "glen-erin",
+          "website": "https://www.gleneringolf.com",
+          "phone": "(608) 757-1234",
+          "address": "123 Glen Erin Dr, Janesville, WI 53545",
+          "content": {
+            "overview": "Glen Erin is a classic course featuring pristine conditions and beautiful views in southern Wisconsin. The course offers a traditional golfing experience with modern conveniences.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Glen Erin provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Glen Erin is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful southern Wisconsin scenery.",
+            "nearbyAttractions": [
+              "Janesville area attractions",
+              "Southern Wisconsin amenities",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Michigan",
+      "abbreviation": "MI",
+      "courses": [
+        {
+          "id": "7",
+          "name": "Oakland Hills Country Club",
+          "location": "Bloomfield Hills, MI",
+          "description": "Historic course that has hosted multiple US Opens and PGA Championships.",
+          "image": "/images/courses/oakland-hills.jpg",
+          "slug": "oakland-hills-country-club",
+          "website": "https://www.oaklandhillscc.com",
+          "phone": "(248) 647-6100",
+          "address": "3951 W Maple Rd, Bloomfield Hills, MI 48301",
+          "content": {
+            "overview": "Oakland Hills Country Club is a historic course that has hosted multiple US Opens and PGA Championships. The course is known for its championship pedigree and challenging layout.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Oakland Hills Country Club provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Oakland Hills Country Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. Weekday mornings typically offer the most peaceful rounds.",
+            "nearbyAttractions": [
+              "Bloomfield Hills area attractions",
+              "Detroit metro area",
+              "Local restaurants and shopping",
+              "Birmingham shopping district"
+            ]
+          }
+        },
+        {
+          "id": "8",
+          "name": "Arcadia Bluffs",
+          "location": "Arcadia, MI",
+          "description": "Spectacular Lake Michigan views and challenging links-style golf.",
+          "image": "/images/courses/arcadia-bluffs.jpg",
+          "slug": "arcadia-bluffs",
+          "website": "https://www.arcadiabluffs.com",
+          "phone": "(231) 889-3181",
+          "address": "14710 Northwood Hwy, Arcadia, MI 49613",
+          "content": {
+            "overview": "Arcadia Bluffs offers spectacular Lake Michigan views and challenging links-style golf. The course is known for its dramatic elevation changes and stunning natural beauty.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Arcadia Bluffs provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Arcadia Bluffs is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers spectacular views year-round.",
+            "nearbyAttractions": [
+              "Lake Michigan beaches",
+              "Arcadia area attractions",
+              "Local restaurants and shopping",
+              "Scenic drives along the coast"
+            ]
+          }
+        },
+        {
+          "id": "9",
+          "name": "Forest Dunes Golf Club",
+          "location": "Roscommon, MI",
+          "description": "Tom Weiskopf design featuring a reversible course and exceptional conditions.",
+          "image": "/images/courses/forest-dunes.jpg",
+          "slug": "forest-dunes-golf-club",
+          "website": "https://www.forestdunesgolf.com",
+          "phone": "(989) 275-0700",
+          "address": "6376 Forest Dunes Dr, Roscommon, MI 48653",
+          "content": {
+            "overview": "Forest Dunes Golf Club is a Tom Weiskopf design featuring a reversible course and exceptional conditions. The course is known for its innovative design and pristine playing conditions.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Forest Dunes Golf Club provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Forest Dunes Golf Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers unique reversible layout options.",
+            "nearbyAttractions": [
+              "Roscommon area attractions",
+              "Northern Michigan forests",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "15",
+          "name": "Pictured Rocks",
+          "location": "Munising, MI",
+          "description": "Scenic course near the famous Pictured Rocks National Lakeshore with stunning Lake Superior views.",
+          "image": "/images/courses/pictured-rocks.jpg",
+          "slug": "pictured-rocks",
+          "website": "https://www.picturedrocksgolf.com",
+          "phone": "(906) 387-1234",
+          "address": "456 Golf Course Dr, Munising, MI 49862",
+          "content": {
+            "overview": "Pictured Rocks is a scenic course near the famous Pictured Rocks National Lakeshore with stunning Lake Superior views. The course offers a unique golfing experience in Michigan's Upper Peninsula.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Pictured Rocks provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Pictured Rocks is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers spectacular Lake Superior views year-round.",
+            "nearbyAttractions": [
+              "Pictured Rocks National Lakeshore",
+              "Munising area attractions",
+              "Lake Superior beaches",
+              "Scenic Upper Peninsula trails"
+            ]
+          }
+        },
+        {
+          "id": "16",
+          "name": "Bay Harbor",
+          "location": "Bay Harbor, MI",
+          "description": "Spectacular course along Lake Michigan with dramatic elevation changes and stunning waterfront views.",
+          "image": "/images/courses/bay-harbor.jpg",
+          "slug": "bay-harbor",
+          "website": "https://www.bayharborgolf.com",
+          "phone": "(231) 439-4028",
+          "address": "3600 Village Harbor Dr, Bay Harbor, MI 49770",
+          "content": {
+            "overview": "Bay Harbor is a spectacular course along Lake Michigan with dramatic elevation changes and stunning waterfront views. The course is known for its breathtaking scenery and challenging layout.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Bay Harbor provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Bay Harbor is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers spectacular Lake Michigan views year-round.",
+            "nearbyAttractions": [
+              "Bay Harbor area attractions",
+              "Lake Michigan beaches",
+              "Local restaurants and shopping",
+              "Scenic Northern Michigan drives"
+            ]
+          }
+        },
+        {
+          "id": "17",
+          "name": "Boyne",
+          "location": "Boyne Falls, MI",
+          "description": "Premier golf destination featuring multiple championship courses in the heart of Northern Michigan.",
+          "image": "/images/courses/boyne.jpg",
+          "slug": "boyne",
+          "website": "https://www.boyne.com",
+          "phone": "(855) 403-6557",
+          "address": "1 Boyne Mountain Rd, Boyne Falls, MI 49713",
+          "content": {
+            "overview": "Boyne is a premier golf destination featuring multiple championship courses in the heart of Northern Michigan. The resort offers world-class golfing experiences with stunning natural scenery.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Boyne provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Boyne is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Resort parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining",
+              "Resort accommodations"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The resort offers year-round activities.",
+            "nearbyAttractions": [
+              "Boyne Mountain Resort",
+              "Northern Michigan attractions",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        },
+        {
+          "id": "18",
+          "name": "St Ignace Golf and Country Club",
+          "location": "St Ignace, MI",
+          "description": "Classic course in the Upper Peninsula offering scenic views of the Straits of Mackinac.",
+          "image": "/images/courses/st-ignace.jpg",
+          "slug": "st-ignace-golf-country-club",
+          "website": "https://www.stignacegolf.com",
+          "phone": "(906) 643-7123",
+          "address": "789 Golf Course Ln, St Ignace, MI 49781",
+          "content": {
+            "overview": "St Ignace Golf and Country Club is a classic course in the Upper Peninsula offering scenic views of the Straits of Mackinac. The course provides a traditional golfing experience with modern amenities.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, St Ignace Golf and Country Club provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "St Ignace Golf and Country Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers spectacular views of the Straits year-round.",
+            "nearbyAttractions": [
+              "St Ignace area attractions",
+              "Straits of Mackinac views",
+              "Local restaurants and shopping",
+              "Upper Peninsula scenic drives"
+            ]
+          }
+        },
+        {
+          "id": "19",
+          "name": "Pine Grove Country Club",
+          "location": "Iron Mountain, MI",
+          "description": "Historic course in the Upper Peninsula featuring mature trees and challenging terrain.",
+          "image": "/images/courses/pine-grove.jpg",
+          "slug": "pine-grove-country-club",
+          "website": "https://www.pinegrovegolf.com",
+          "phone": "(906) 774-1234",
+          "address": "321 Pine Grove Dr, Iron Mountain, MI 49801",
+          "content": {
+            "overview": "Pine Grove Country Club is a historic course in the Upper Peninsula featuring mature trees and challenging terrain. The course offers a classic golfing experience with modern conveniences.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Pine Grove Country Club provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Pine Grove Country Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers beautiful fall colors.",
+            "nearbyAttractions": [
+              "Iron Mountain area attractions",
+              "Upper Peninsula forests",
+              "Local restaurants and shopping",
+              "Scenic drives and hiking trails"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ontario",
+      "abbreviation": "ON",
+      "courses": [
+        {
+          "id": "10",
+          "name": "St. George's Golf and Country Club",
+          "location": "Toronto, ON",
+          "description": "Historic Stanley Thompson design that has hosted multiple Canadian Opens.",
+          "image": "/images/courses/st-georges.jpg",
+          "slug": "st-georges-golf-country-club",
+          "website": "https://www.stgeorges.org",
+          "phone": "(416) 231-3200",
+          "address": "1668 Islington Ave, Toronto, ON M9V 2X7",
+          "content": {
+            "overview": "St. George's Golf and Country Club is a historic Stanley Thompson design that has hosted multiple Canadian Opens. The course is known for its classic layout and championship history.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, St. George's Golf and Country Club provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "St. George's Golf and Country Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. Weekday mornings typically offer the most peaceful rounds.",
+            "nearbyAttractions": [
+              "Toronto area attractions",
+              "Islington Village",
+              "Local restaurants and shopping",
+              "Etobicoke area amenities"
+            ]
+          }
+        },
+        {
+          "id": "11",
+          "name": "Hamilton Golf and Country Club",
+          "location": "Ancaster, ON",
+          "description": "Classic Harry Colt design that has hosted multiple Canadian Opens.",
+          "image": "/images/courses/hamilton-golf-club.jpg",
+          "slug": "hamilton-golf-country-club",
+          "website": "https://www.hamiltongolf.com",
+          "phone": "(905) 648-4471",
+          "address": "42 Golf Links Rd, Ancaster, ON L9K 1L5",
+          "content": {
+            "overview": "Hamilton Golf and Country Club is a classic Harry Colt design that has hosted multiple Canadian Opens. The course is known for its strategic layout and championship pedigree.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Hamilton Golf and Country Club provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Hamilton Golf and Country Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. Weekday mornings typically offer the most peaceful rounds.",
+            "nearbyAttractions": [
+              "Ancaster area attractions",
+              "Hamilton area amenities",
+              "Local restaurants and shopping",
+              "Niagara region attractions"
+            ]
+          }
+        },
+        {
+          "id": "12",
+          "name": "Muskoka Bay Club",
+          "location": "Gravenhurst, ON",
+          "description": "Doug Carrick design featuring dramatic elevation changes and stunning Muskoka scenery.",
+          "image": "/images/courses/muskoka-bay.jpg",
+          "slug": "muskoka-bay-club",
+          "website": "https://www.muskokabayclub.com",
+          "phone": "(705) 687-4653",
+          "address": "1047 Muskoka Bay Dr, Gravenhurst, ON P1P 1Z9",
+          "content": {
+            "overview": "Muskoka Bay Club is a Doug Carrick design featuring dramatic elevation changes and stunning Muskoka scenery. The course is known for its breathtaking views and challenging layout.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Muskoka Bay Club provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Muskoka Bay Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers spectacular Muskoka views year-round.",
+            "nearbyAttractions": [
+              "Muskoka area attractions",
+              "Gravenhurst area amenities",
+              "Local restaurants and shopping",
+              "Scenic Muskoka lakes and trails"
+            ]
+          }
+        },
+        {
+          "id": "13",
+          "name": "Fort Williams Golf and Country Club",
+          "location": "Thunder Bay, ON",
+          "description": "A classic course in the heart of Northwestern Ontario offering scenic views and challenging play.",
+          "image": "/images/courses/fort-williams.jpg",
+          "slug": "fort-williams-golf-country-club",
+          "website": "https://www.fortwilliamsgolf.com",
+          "phone": "(807) 345-1234",
+          "address": "123 Golf Course Rd, Thunder Bay, ON P7A 1A1",
+          "content": {
+            "overview": "Fort Williams Golf and Country Club is a classic course in the heart of Northwestern Ontario offering scenic views and challenging play for golfers of all skill levels.",
+            "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+            "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Fort Williams Golf and Country Club provides the perfect setting for an enjoyable day on the course."
+          },
+          "access": {
+            "gettingThere": "Fort Williams Golf and Country Club is easily accessible from major highways and offers convenient parking for all visitors.",
+            "amenities": [
+              "Free parking available",
+              "Cart rental included",
+              "Walking allowed",
+              "Pro shop on site",
+              "Practice facilities",
+              "Clubhouse dining"
+            ],
+            "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. The course offers spectacular views year-round.",
+            "nearbyAttractions": [
+              "Thunder Bay area attractions",
+              "Lake Superior views",
+              "Local restaurants and shopping",
+              "Scenic Northwestern Ontario trails"
+            ]
+          }
+        }
+              ]
+      },
+      {
+        "name": "Illinois",
+        "abbreviation": "IL",
+        "courses": [
+          {
+            "id": "14",
+            "name": "Aldeen Golf Club",
+            "location": "Rockford, IL",
+            "description": "A premier golf course in Northern Illinois featuring challenging holes and pristine conditions.",
+            "image": "/images/courses/aldeen-golf-club.jpg",
+            "slug": "aldeen-golf-club",
+            "website": "https://www.aldeengolfclub.com",
+            "phone": "(815) 282-4653",
+            "address": "1900 Reid Farm Rd, Rockford, IL 61107",
+            "content": {
+              "overview": "Aldeen Golf Club is a premier golf course in Northern Illinois featuring challenging holes and pristine conditions. The course is known for its excellent layout and well-maintained grounds.",
+              "details": "This exceptional golf course offers a unique blend of challenge and playability, making it suitable for golfers of all skill levels. The course design takes full advantage of the natural landscape, creating memorable holes that test both strategy and execution.",
+              "conclusion": "Whether you're a seasoned golfer looking for a challenging round or a beginner seeking a friendly environment to learn the game, Aldeen Golf Club provides the perfect setting for an enjoyable day on the course."
+            },
+            "access": {
+              "gettingThere": "Aldeen Golf Club is easily accessible from major highways and offers convenient parking for all visitors.",
+              "amenities": [
+                "Free parking available",
+                "Cart rental included",
+                "Walking allowed",
+                "Pro shop on site",
+                "Practice facilities",
+                "Clubhouse dining"
+              ],
+              "bestTimes": "Spring through fall offers the best playing conditions, with peak season running from May to October. Weekday mornings typically offer the most peaceful rounds.",
+              "nearbyAttractions": [
+                "Rockford area attractions",
+                "Northern Illinois amenities",
+                "Local restaurants and shopping",
+                "Scenic Illinois countryside"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+  "featuredCourse": {
+    "id": "4",
+    "name": "Lodi Golf Club",
+    "location": "Lodi, Wisconsin",
+    "description": "A hidden gem in the Wisconsin countryside, Lodi Golf Club offers a pure golf experience with rolling terrain, pristine conditions, and a welcoming atmosphere. This classic course provides the perfect blend of challenge and playability for golfers of all skill levels.",
+    "image": "/images/courses/lodi-golf-club.jpg",
+    "slug": "lodi-golf-club",
+    "website": "http://www.lodigolf.com",
+    "phone": "(608) 592-3000",
+    "address": "1000 Golf Course Rd, Lodi, WI 53555"
+  }
+}

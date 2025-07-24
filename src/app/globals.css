@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for Golf Girl Gazette */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Smooth transitions for interactive elements */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Custom color palette */
+:root {
+  --primary-500: #645963;
+  --primary-600: #5a4f5a;
+  --secondary-500: #67405C;
+  --secondary-600: #5d3952;
+  --accent-500: #596460;
+  --accent-600: #4f5a56;
+}
