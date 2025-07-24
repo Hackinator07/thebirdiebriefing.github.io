@@ -49,7 +49,7 @@ export default function ContactUsPage() {
         message: '',
         inquiryType: ''
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
