@@ -2,14 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles for Golf Girl Gazette */
+/* Custom styles for The Birdie Briefing */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
   }
 }
 
@@ -23,14 +28,30 @@
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
+
+  /* Font utilities */
+  .font-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+  }
+
+  .font-body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Enhanced letter overlapping for page titles */
+  .title-overlap {
+    letter-spacing: -0.02em;
+  }
 }
 
 /* Custom color palette */
 :root {
-  --primary-500: #645963;
-  --primary-600: #5a4f5a;
-  --secondary-500: #67405C;
-  --secondary-600: #5d3952;
-  --accent-500: #596460;
-  --accent-600: #4f5a56;
+  --primary-500: #8B5A8C;
+  --primary-600: #7a4f7b;
+  --secondary-500: #5F6242;
+  --secondary-600: #5a5b3d;
+  --golden-500: #D1A137;
+  --orange-500: #DD5726;
+  --cream-500: #FFFBEC;
 }

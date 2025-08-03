@@ -1,8 +1,8 @@
 import { getPodcastEpisodes, formatDate } from '@/lib/data';
 
 export const metadata = {
-  title: 'Podcasts - Golf Girl Gazette',
-  description: 'Listen to the latest episodes of Golf Girl Gazette podcast featuring LPGA news, player interviews, and golf insights.',
+  title: 'Podcasts - The Birdie Briefing',
+  description: 'Listen to the latest episodes of The Birdie Briefing podcast featuring LPGA news, player interviews, and golf insights.',
 };
 
 export default function PodcastsPage() {
@@ -11,11 +11,11 @@ export default function PodcastsPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 text-white py-16 lg:py-24">
+      <section className="bg-primary-500 text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
-              Golf Girl Gazette Podcast
+            <h1 className="text-4xl lg:text-6xl font-bold title-overlap mb-6">
+              The Birdie Briefing Podcast
             </h1>
             <p className="text-xl lg:text-2xl leading-relaxed text-gray-100">
               Your premier source for LPGA insights, player interviews, and golf analysis

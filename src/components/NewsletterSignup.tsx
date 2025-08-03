@@ -27,7 +27,7 @@ export default function NewsletterSignup() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-green-800 mb-2">Welcome to Golf Girl Gazette!</h3>
+        <h3 className="text-xl font-bold text-green-800 mb-2">Welcome to The Birdie Briefing!</h3>
         <p className="text-green-700 leading-relaxed">
           You&apos;ve been successfully subscribed to our newsletter. Check your email for confirmation.
         </p>
@@ -36,7 +36,7 @@ export default function NewsletterSignup() {
   }
 
   return (
-    <div className="bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl p-8 text-white shadow-xl">
+            <div className="bg-secondary-500 rounded-2xl p-8 text-white shadow-xl">
       <div className="max-w-md mx-auto text-center">
         <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
           <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

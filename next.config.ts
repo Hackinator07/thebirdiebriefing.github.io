@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/golfgirlgazette.github.io' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/thebirdiebriefing.github.io' : '',
 };
 
 export default nextConfig;

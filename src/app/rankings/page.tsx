@@ -1,7 +1,7 @@
 import { getRankings } from '@/lib/data';
 
 export const metadata = {
-  title: 'LPGA Rankings - Golf Girl Gazette',
+  title: 'LPGA Rankings - The Birdie Briefing',
   description: 'Stay updated with the latest LPGA rankings including Rolex World Ranking, Race to CME Globe, LPGA Money List, Race for the Card, and Epson Money List.',
 };
 
@@ -11,10 +11,10 @@ export default function RankingsPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 text-white py-16 lg:py-24">
+      <section className="bg-primary-500 text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold title-overlap mb-6">
               LPGA Rankings
             </h1>
             <p className="text-xl lg:text-2xl leading-relaxed text-gray-100">

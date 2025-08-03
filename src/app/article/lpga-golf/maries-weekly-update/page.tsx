@@ -1,7 +1,7 @@
 import { getLatestWeeklyUpdate, formatDate } from '@/lib/data';
 
 export const metadata = {
-  title: "Marie's Weekly Update - Golf Girl Gazette",
+  title: "Marie's Weekly Update - The Birdie Briefing",
   description: "Marie Johnson's weekly insights and analysis on the latest developments in women's professional golf.",
 };
 
@@ -22,9 +22,9 @@ export default function MariesWeeklyUpdatePage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 text-white py-16 lg:py-24">
+      <section className="bg-primary-500 text-white py-16 lg:py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+          <h1 className="text-4xl lg:text-6xl font-bold title-overlap mb-6">
             Marie's Weekly Update
           </h1>
           <p className="text-xl lg:text-2xl leading-relaxed text-gray-100">
@@ -73,7 +73,7 @@ export default function MariesWeeklyUpdatePage() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">{update.author}</p>
-                    <p className="text-sm text-gray-600">Golf Girl Gazette Contributor</p>
+                    <p className="text-sm text-gray-600">The Birdie Briefing Contributor</p>
                   </div>
                 </div>
                 <div className="text-sm text-gray-500">

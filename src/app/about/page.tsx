@@ -2,19 +2,19 @@ import Link from 'next/link';
 import SpotifyEmbed from '@/components/SpotifyEmbed';
 
 export const metadata = {
-  title: 'About Us - Golf Girl Gazette',
-  description: 'Learn about Golf Girl Gazette, founded in 2025 to amplify the stories, achievements, and voices of women in golf.',
+  title: 'About Us - The Birdie Briefing',
+  description: 'Learn about The Birdie Briefing, founded in 2025 to amplify the stories, achievements, and voices of women in golf.',
 };
 
 export default function About() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 text-white">
+      <section className="bg-primary-500 text-white">
         <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-8">
-              About Golf Girl Gazette
+            <h1 className="text-5xl lg:text-7xl font-bold title-overlap mb-8">
+              About The Birdie Briefing
             </h1>
             <p className="text-xl lg:text-2xl leading-relaxed text-gray-100 mb-12 max-w-3xl mx-auto">
               Your premier source for LPGA women&apos;s golf news, tournament coverage, and exclusive content.
@@ -25,7 +25,7 @@ export default function About() {
       </section>
 
       {/* Mission Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-16 lg:py-24">
+      <section className="bg-cream-50 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8 text-center">
@@ -33,7 +33,7 @@ export default function About() {
             </h2>
             <div className="prose prose-lg mx-auto text-gray-600">
               <p className="text-xl leading-relaxed mb-6">
-                Golf Girl Gazette is dedicated to amplifying the voices and stories of women in golf.
+                The Birdie Briefing is dedicated to amplifying the voices and stories of women in golf.
                 We believe that women&apos;s golf deserves the same level of coverage, respect, and
                 celebration as men&apos;s golf.
               </p>
@@ -45,14 +45,14 @@ export default function About() {
               </p>
               <p className="text-xl leading-relaxed">
                 Whether you&apos;re a seasoned golfer, a casual fan, or just discovering the
-                sport, Golf Girl Gazette is your gateway to the vibrant world of women&apos;s golf.
+                sport, The Birdie Briefing is your gateway to the vibrant world of women&apos;s golf.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-    
+
 
       {/* Spotify Podcast Section */}
       <section className="py-16 lg:py-24">
@@ -71,9 +71,9 @@ export default function About() {
         </div>
       </section>
 
-      
+
       {/* Contact Section */}
-      <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-16 lg:py-24">
+      <section className="bg-cream-50 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">

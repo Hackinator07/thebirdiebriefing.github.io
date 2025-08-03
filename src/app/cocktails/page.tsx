@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Cocktails - Golf Girl Gazette',
-  description: 'Discover delicious cocktails perfect for the golf course or home entertaining from Golf Girl Gazette.',
+  title: 'Cocktails - The Birdie Briefing',
+  description: 'Discover delicious cocktails perfect for the golf course or home entertaining from The Birdie Briefing.',
 };
 
 export default function CocktailsPage() {
@@ -33,10 +33,10 @@ export default function CocktailsPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 text-white py-16 lg:py-24">
+      <section className="bg-primary-500 text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold title-overlap mb-6">
               Golf Course Cocktails
             </h1>
             <p className="text-xl lg:text-2xl leading-relaxed text-gray-100">
@@ -53,7 +53,7 @@ export default function CocktailsPage() {
             {categories.map((category) => (
               <div key={category.slug} className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 {/* Category Image */}
-                <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200">
+                <div className="aspect-[4/3] bg-gray-200">
                   <div className="w-full h-full flex items-center justify-center">
                     <span className="text-gray-400 text-sm">Category Image</span>
                   </div>
@@ -116,7 +116,7 @@ export default function CocktailsPage() {
 
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200">
+              <div className="aspect-[4/3] bg-gray-200">
                 <div className="w-full h-full flex items-center justify-center">
                   <span className="text-gray-400 text-sm">Featured Drink Image</span>
                 </div>

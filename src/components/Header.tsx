@@ -33,7 +33,8 @@ export default function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-primary-500">Golf Girl Gazette</span>
+              <span className="text-xl font-bold text-primary-500 font-heading">The Birdie</span>
+              <span className="text-xl font-bold text-secondary-500 font-heading ml-1">Briefing</span>
             </Link>
           </div>
 
@@ -184,8 +185,9 @@ export default function Header() {
 
               {/* Footer */}
               <div className="p-6 border-t border-gray-200">
-                <p className="text-sm text-gray-500 text-center">
-                  Golf Girl Gazette
+                <p className="text-sm text-center font-heading">
+                  <span className="text-primary-500">The Birdie</span>
+                  <span className="text-secondary-500 ml-1">Briefing</span>
                 </p>
               </div>
             </div>

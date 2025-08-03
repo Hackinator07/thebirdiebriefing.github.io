@@ -1,7 +1,7 @@
 import { getEvents, formatDate } from '@/lib/data';
 
 export const metadata = {
-  title: 'Events - Golf Girl Gazette',
+  title: 'Events - The Birdie Briefing',
   description: 'Join us for exclusive golf events, clinics, and tournaments featuring LPGA professionals.',
 };
 
@@ -11,10 +11,10 @@ export default function EventsPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 text-white py-16 lg:py-24">
+      <section className="bg-primary-500 text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold title-overlap mb-6">
               Golf Events
             </h1>
             <p className="text-xl lg:text-2xl leading-relaxed text-gray-100">
@@ -31,7 +31,7 @@ export default function EventsPage() {
             {events.map((event) => (
               <div key={event.id} className="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 {/* Event Image */}
-                <div className="aspect-[16/9] bg-gradient-to-br from-gray-100 to-gray-200">
+                <div className="aspect-[16/9] bg-gray-200">
                   <div className="w-full h-full flex items-center justify-center">
                     <span className="text-gray-400 text-sm">Event Image</span>
                   </div>

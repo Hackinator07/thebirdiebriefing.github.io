@@ -59,14 +59,14 @@ export default function ContactUsPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 text-white py-16 lg:py-24">
+      <section className="bg-primary-500 text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold title-overlap mb-6">
               Contact Us
             </h1>
             <p className="text-xl lg:text-2xl leading-relaxed text-gray-100">
-              Get in touch with the Golf Girl Gazette team
+              Get in touch with The Birdie Briefing team
             </p>
           </div>
         </div>

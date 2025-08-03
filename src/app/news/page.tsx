@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getNewsArticles, formatDate } from '@/lib/data';
 
 export const metadata = {
-  title: 'Latest News - Golf Girl Gazette',
-  description: 'Stay updated with the latest LPGA news, tournament coverage, and exclusive content from Golf Girl Gazette.',
+  title: 'Latest News - The Birdie Briefing',
+  description: 'Stay updated with the latest LPGA news, tournament coverage, and exclusive content from The Birdie Briefing.',
 };
 
 export default function NewsPage() {
@@ -12,10 +12,10 @@ export default function NewsPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 text-white py-16 lg:py-24">
+      <section className="bg-primary-500 text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold title-overlap mb-6">
               Latest News
             </h1>
             <p className="text-xl lg:text-2xl leading-relaxed text-gray-100">
@@ -32,7 +32,7 @@ export default function NewsPage() {
             {articles.map((article) => (
               <article key={article.id} className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
                 {/* Article Image */}
-                <div className="aspect-[16/10] bg-gradient-to-br from-gray-100 to-gray-200 mb-6">
+                <div className="aspect-[16/10] bg-gray-200 mb-6">
                   <div className="w-full h-full flex items-center justify-center">
                     <span className="text-gray-400 text-sm">Image Placeholder</span>
                   </div>

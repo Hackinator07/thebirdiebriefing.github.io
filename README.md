@@ -1,6 +1,6 @@
-# Golf Girl Gazette
+# The Birdie Briefing
 
-A modern, responsive website for Golf Girl Gazette - your premier source for LPGA women's golf news, tournament coverage, and exclusive content.
+A modern, responsive website for The Birdie Briefing - your premier source for LPGA women's golf news, tournament coverage, and exclusive content.
 
 ## Features
 
@@ -28,7 +28,7 @@ A modern, responsive website for Golf Girl Gazette - your premier source for LPG
 
 ## Live Site
 
-Visit the live site: [https://hackinator07.github.io/golfgirlgazette.github.io/](https://hackinator07.github.io/golfgirlgazette.github.io/)
+Visit the live site: [https://hackinator07.github.io/thebirdiebriefing.github.io/](https://hackinator07.github.io/thebirdiebriefing.github.io/)
 
 ## Pages
 

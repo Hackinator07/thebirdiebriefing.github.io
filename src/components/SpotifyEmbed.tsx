@@ -8,7 +8,7 @@ export default function SpotifyEmbed() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Golf Girl Gazette Playlist
+            The Birdie Briefing Playlist
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Tune in to our curated playlist featuring the best golf vibes,

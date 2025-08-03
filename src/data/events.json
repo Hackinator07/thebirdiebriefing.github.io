@@ -2,7 +2,7 @@
   "events": [
     {
       "id": "1",
-      "title": "Golf Girl Gazette Spring Classic",
+      "title": "The Birdie Briefing Spring Classic",
       "description": "Join us for an exclusive golf experience at the prestigious Pine Valley Golf Club. This event includes a full day of golf, networking, and exclusive access to LPGA professionals.",
       "date": "2024-05-15",
       "location": "Pine Valley Golf Club, New Jersey",
@@ -18,7 +18,7 @@
     },
     {
       "id": "3",
-      "title": "Golf Girl Gazette Championship Weekend",
+      "title": "The Birdie Briefing Championship Weekend",
       "description": "A weekend-long celebration of women's golf featuring tournament play, workshops, and exclusive networking opportunities with industry leaders.",
       "date": "2024-07-10",
       "location": "Pebble Beach Golf Links, California",
