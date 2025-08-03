@@ -2,6 +2,7 @@ import Link from 'next/link';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import SpotifyEmbed from '@/components/SpotifyEmbed';
 import InstagramFeed from '@/components/InstagramFeed';
+import VideoBackground from '@/components/VideoBackground';
 import { getNewsArticles, getLatestWeeklyUpdate, getFeaturedInstagramPosts, formatDate } from '@/lib/data';
 
 export default function Home() {
@@ -12,52 +13,59 @@ export default function Home() {
   return (
     <div className="bg-white">
       {/* Masthead Section */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-24 lg:py-32">
+      <section className="relative overflow-hidden">
+        {/* Video Background */}
+        <VideoBackground />
+
+        {/* Content Overlay */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 lg:py-16">
           <div className="max-w-6xl mx-auto">
-            {/* Main Headlines */}
-            <div className="text-center mb-16">
-              <h1 className="text-6xl lg:text-8xl xl:text-9xl font-heading text-primary-500 leading-none mb-4">
-                The Birdie
-              </h1>
-              <h2 className="text-6xl lg:text-8xl xl:text-9xl font-heading text-secondary-500 leading-none mb-12">
-                Briefing
-              </h2>
-            </div>
-
-            {/* Introduction */}
-            <div className="max-w-4xl mx-auto text-center">
-              <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
-                I'm here to amplify the stories, achievements, and voices of women in golf.
-                A premier publication dedicated to LPGA coverage, tournament insights, and
-                exclusive content that celebrates the vibrant world of women's professional golf.
-              </p>
-
-              {/* Author Attribution */}
-              <div className="flex items-center justify-center space-x-4 mb-12">
-                <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-lg font-heading">M</span>
-                </div>
-                <div className="text-left">
-                  <p className="font-medium text-gray-900">Marie Thompson</p>
-                  <p className="text-sm text-gray-600">Editor & Founder</p>
-                </div>
+            {/* Text Content with White Background */}
+            <div className="bg-white rounded-lg p-8 lg:p-12">
+              {/* Main Headlines */}
+              <div className="text-center mb-16">
+                <h1 className="text-6xl lg:text-8xl xl:text-9xl font-heading text-primary-500 leading-none mb-4">
+                  The Birdie
+                </h1>
+                <h2 className="text-6xl lg:text-8xl xl:text-9xl font-heading text-secondary-500 leading-none mb-12">
+                  Briefing
+                </h2>
               </div>
 
-              {/* Call to Actions */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Link
-                  href="/news"
-                  className="bg-primary-500 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1 shadow-lg"
-                >
-                  Latest Coverage
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-lg font-medium text-primary-500 hover:text-primary-600 transition-colors"
-                >
-                  Learn More →
-                </Link>
+              {/* Introduction */}
+              <div className="max-w-4xl mx-auto text-center">
+                <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
+                  I'm here to amplify the stories, achievements, and voices of women in golf.
+                  A premier publication dedicated to LPGA coverage, tournament insights, and
+                  exclusive content that celebrates the vibrant world of women's professional golf.
+                </p>
+
+                {/* Author Attribution */}
+                <div className="flex items-center justify-center space-x-4 mb-12">
+                  <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-lg font-heading">M</span>
+                  </div>
+                  <div className="text-left">
+                    <p className="font-medium text-gray-900">Marie Thompson</p>
+                    <p className="text-sm text-gray-600">Editor & Founder</p>
+                  </div>
+                </div>
+
+                {/* Call to Actions */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                  <Link
+                    href="/news"
+                    className="bg-primary-500 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1 shadow-lg"
+                  >
+                    Latest Coverage
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="text-lg font-medium text-primary-500 hover:text-primary-600 transition-colors"
+                  >
+                    Learn More →
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

@@ -10,6 +10,11 @@ A modern, responsive website for The Birdie Briefing - your premier source for L
 - **Translation Widget**: Multi-language support
 - **Instagram Integration**: Social media feed
 - **Spotify Embed**: Podcast and music integration
+- **Video Background**: Dynamic homepage with golf video from Pexels
+
+## Media Credits
+
+- **Video Background**: Sourced from [Pexels](https://www.pexels.com/search/videos/open%20source%20golf/) - Open source golf videos available for commercial use
 
 ## Tech Stack
 
