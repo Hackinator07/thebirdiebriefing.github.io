@@ -22,7 +22,7 @@ export default function VideoBackground() {
           playsInline
           className="background-video absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/golf-background.mp4" type="video/mp4" />
+          <source src="https://hackinator07.github.io/thebirdiebriefing.github.io/videos/golf-background.mp4" type="video/mp4" />
           {/* Fallback background if video doesn't load */}
           <div className="w-full h-full bg-gradient-to-br from-primary-500 to-secondary-500"></div>
         </video>
