@@ -13,8 +13,8 @@ export default function Footer() {
     social: [
       {
         name: 'Facebook',
-        href: '#',
-        icon: (props: any) => (
+        href: 'https://www.facebook.com/birdiebriefing',
+        icon: (props: React.SVGProps<SVGSVGElement>) => (
           <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
             <path
               fillRule="evenodd"
@@ -26,8 +26,8 @@ export default function Footer() {
       },
       {
         name: 'Instagram',
-        href: '#',
-        icon: (props: any) => (
+        href: 'https://www.instagram.com/birdiebriefing/',
+        icon: (props: React.SVGProps<SVGSVGElement>) => (
           <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
             <path
               fillRule="evenodd"
@@ -38,18 +38,18 @@ export default function Footer() {
         ),
       },
       {
-        name: 'Twitter',
-        href: '#',
-        icon: (props: any) => (
+        name: 'Bluesky',
+        href: 'https://bsky.app/profile/birdiebriefing.bsky.social',
+        icon: (props: React.SVGProps<SVGSVGElement>) => (
           <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+            <path d="M6.335 5.144c-1.654-1.199-4.335-2.127-4.335.826c0 .59.35 4.953.556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045.665-4.889 3.208-2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134-2.769 3.5-3.5c.333-.667.5-1.167.5-1.5c0 .333.167.833.5 1.5c.366.731 1.5 3.5 3.5 3.5c.754 0 1.637-.571 2.667-1.59c2.222-2.203 1.378-4.746-2.667-5.41c2.314.38 4.73.094 5.444-2.369c.206-.708.556-5.072.556-5.661c0-2.953-2.68-2.025-4.335-.826c-2.293 1.662-4.76 5.048-5.665 6.856c-.905-1.808-3.372-5.194-5.665-6.856z" />
           </svg>
         ),
       },
       {
         name: 'YouTube',
         href: '#',
-        icon: (props: any) => (
+        icon: (props: React.SVGProps<SVGSVGElement>) => (
           <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
             <path
               fillRule="evenodd"

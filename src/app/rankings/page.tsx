@@ -1,258 +1,213 @@
+'use client';
+
+import { useState } from 'react';
 import { getRankings } from '@/lib/data';
 
-export const metadata = {
-  title: 'LPGA Rankings - The Birdie Briefing',
-  description: 'Stay updated with the latest LPGA rankings including Rolex World Ranking, Race to CME Globe, LPGA Money List, Race for the Card, and Epson Money List.',
-};
+type SortField = 'rank' | 'fullName' | 'countryCode' | 'pointsAverage' | 'pointsTotal' | 'tournamentCount' | 'rankDelta';
+type SortDirection = 'asc' | 'desc';
 
 export default function RankingsPage() {
   const rankings = getRankings();
+  const [sortField, setSortField] = useState<SortField>('rank');
+  const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+
+  // Sort players based on current sort field and direction
+  const sortedPlayers = [...rankings.players].sort((a, b) => {
+    let aValue: string | number = a[sortField];
+    let bValue: string | number = b[sortField];
+
+    // Handle string values
+    if (typeof aValue === 'string' && typeof bValue === 'string') {
+      aValue = aValue.toLowerCase();
+      bValue = bValue.toLowerCase();
+    }
+
+    if (aValue < bValue) {
+      return sortDirection === 'asc' ? -1 : 1;
+    }
+    if (aValue > bValue) {
+      return sortDirection === 'asc' ? 1 : -1;
+    }
+    return 0;
+  });
+
+  const topPlayers = sortedPlayers.slice(0, 50); // Show top 50
+
+  const handleSort = (field: SortField) => {
+    if (sortField === field) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortField(field);
+      setSortDirection('asc');
+    }
+  };
+
+  const SortIcon = ({ field }: { field: SortField }) => {
+    if (sortField !== field) {
+      return (
+        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+        </svg>
+      );
+    }
+
+    return sortDirection === 'asc' ? (
+      <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+      </svg>
+    ) : (
+      <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+      </svg>
+    );
+  };
 
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <section className="bg-primary-500 text-white py-16 lg:py-24">
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <section className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            LPGA Rolex World Rankings
+          </h1>
+          <p className="text-lg text-gray-600">
+            Updated {new Date(rankings.lastUpdated).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit'
+            })}
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            Week of {rankings.week.start_date} to {rankings.week.end_date}
+          </p>
+        </div>
+      </section>
+
+      {/* Rankings Table */}
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold title-overlap mb-6">
-              LPGA Rankings
-            </h1>
-            <p className="text-xl lg:text-2xl leading-relaxed text-gray-100">
-              Stay updated with the latest rankings across all major LPGA competitions
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('rank')}
+                    >
+                      <div className="flex items-center space-x-1">
+                        <span>Rank</span>
+                        <SortIcon field="rank" />
+                      </div>
+                    </th>
+                    <th
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('fullName')}
+                    >
+                      <div className="flex items-center space-x-1">
+                        <span>Player</span>
+                        <SortIcon field="fullName" />
+                      </div>
+                    </th>
+                    <th
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('countryCode')}
+                    >
+                      <div className="flex items-center space-x-1">
+                        <span>Country</span>
+                        <SortIcon field="countryCode" />
+                      </div>
+                    </th>
+                    <th
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('pointsAverage')}
+                    >
+                      <div className="flex items-center space-x-1">
+                        <span>Avg Points</span>
+                        <SortIcon field="pointsAverage" />
+                      </div>
+                    </th>
+                    <th
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('pointsTotal')}
+                    >
+                      <div className="flex items-center space-x-1">
+                        <span>Total Points</span>
+                        <SortIcon field="pointsTotal" />
+                      </div>
+                    </th>
+                    <th
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('tournamentCount')}
+                    >
+                      <div className="flex items-center space-x-1">
+                        <span>Events</span>
+                        <SortIcon field="tournamentCount" />
+                      </div>
+                    </th>
+                    <th
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('rankDelta')}
+                    >
+                      <div className="flex items-center space-x-1">
+                        <span>Change</span>
+                        <SortIcon field="rankDelta" />
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {topPlayers.map((player) => (
+                    <tr key={player.id} className="hover:bg-gray-50">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        {player.rank}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {player.fullName}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {player.countryCode}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {player.pointsAverage.toFixed(2)}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {player.pointsTotal.toFixed(2)}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {player.tournamentCount}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm">
+                        {player.rankDelta > 0 ? (
+                          <span className="text-green-600">+{player.rankDelta}</span>
+                        ) : player.rankDelta < 0 ? (
+                          <span className="text-red-600">{player.rankDelta}</span>
+                        ) : (
+                          <span className="text-gray-500">-</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div className="mt-8 text-center text-sm text-gray-500">
+            <p>
+              Data provided by the{' '}
+              <a
+                href="https://www.rolexrankings.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-500 hover:text-primary-600"
+              >
+                Rolex Women's World Golf Rankings
+              </a>
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Rankings Grid */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Rolex World Ranking */}
-            <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
-              <div className="p-6 border-b border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Rolex World Ranking</h2>
-                <p className="text-gray-600">Official world rankings for women's professional golf</p>
-              </div>
-              <div className="p-6">
-                <div className="space-y-4">
-                  {rankings.rolexWorldRanking.slice(0, 10).map((player, index) => (
-                    <div key={player.id} className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <span className="text-lg font-bold text-gray-900 w-8">{index + 1}</span>
-                        <div>
-                          <p className="font-semibold text-gray-900">{player.name}</p>
-                          <p className="text-sm text-gray-600">{player.country}</p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <p className="font-semibold text-gray-900">{player.points}</p>
-                        <p className="text-sm text-gray-600">{player.events} events</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6 pt-4 border-t border-gray-200">
-                  <a href="#" className="text-primary-500 hover:text-primary-600 font-medium">
-                    View Full Rankings →
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Race to CME Globe */}
-            <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
-              <div className="p-6 border-b border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Race to CME Globe</h2>
-                <p className="text-gray-600">Season-long points race for the CME Group Tour Championship</p>
-              </div>
-              <div className="p-6">
-                <div className="space-y-4">
-                  {rankings.raceToCmeGlobe.slice(0, 10).map((player, index) => (
-                    <div key={player.id} className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <span className="text-lg font-bold text-gray-900 w-8">{index + 1}</span>
-                        <div>
-                          <p className="font-semibold text-gray-900">{player.name}</p>
-                          <p className="text-sm text-gray-600">{player.country}</p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <p className="font-semibold text-gray-900">{player.points}</p>
-                        <p className="text-sm text-gray-600">{player.events} events</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6 pt-4 border-t border-gray-200">
-                  <a href="#" className="text-primary-500 hover:text-primary-600 font-medium">
-                    View Full Rankings →
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* LPGA Money List */}
-            <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
-              <div className="p-6 border-b border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">LPGA Money List</h2>
-                <p className="text-gray-600">Official money list for the LPGA Tour season</p>
-              </div>
-              <div className="p-6">
-                <div className="space-y-4">
-                  {rankings.lpgaMoneyList.slice(0, 10).map((player, index) => (
-                    <div key={player.id} className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <span className="text-lg font-bold text-gray-900 w-8">{index + 1}</span>
-                        <div>
-                          <p className="font-semibold text-gray-900">{player.name}</p>
-                          <p className="text-sm text-gray-600">{player.country}</p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <p className="font-semibold text-gray-900">${player.earnings}</p>
-                        <p className="text-sm text-gray-600">{player.events} events</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6 pt-4 border-t border-gray-200">
-                  <a href="#" className="text-primary-500 hover:text-primary-600 font-medium">
-                    View Full Rankings →
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Race for the Card */}
-            <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
-              <div className="p-6 border-b border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Race for the Card</h2>
-                <p className="text-gray-600">Epson Tour players competing for LPGA Tour cards</p>
-              </div>
-              <div className="p-6">
-                <div className="space-y-4">
-                  {rankings.raceForTheCard.slice(0, 10).map((player, index) => (
-                    <div key={player.id} className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <span className="text-lg font-bold text-gray-900 w-8">{index + 1}</span>
-                        <div>
-                          <p className="font-semibold text-gray-900">{player.name}</p>
-                          <p className="text-sm text-gray-600">{player.country}</p>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <p className="font-semibold text-gray-900">{player.points}</p>
-                        <p className="text-sm text-gray-600">{player.events} events</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6 pt-4 border-t border-gray-200">
-                  <a href="#" className="text-primary-500 hover:text-primary-600 font-medium">
-                    View Full Rankings →
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Epson Money List */}
-            <div className="bg-white rounded-lg border border-gray-200 shadow-sm lg:col-span-2">
-              <div className="p-6 border-b border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Epson Money List</h2>
-                <p className="text-gray-600">Official money list for the Epson Tour season</p>
-              </div>
-              <div className="p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    {rankings.epsonMoneyList.slice(0, 10).map((player, index) => (
-                      <div key={player.id} className="flex items-center justify-between">
-                        <div className="flex items-center space-x-4">
-                          <span className="text-lg font-bold text-gray-900 w-8">{index + 1}</span>
-                          <div>
-                            <p className="font-semibold text-gray-900">{player.name}</p>
-                            <p className="text-sm text-gray-600">{player.country}</p>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <p className="font-semibold text-gray-900">${player.earnings}</p>
-                          <p className="text-sm text-gray-600">{player.events} events</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="space-y-4">
-                    {rankings.epsonMoneyList.slice(10, 20).map((player, index) => (
-                      <div key={player.id} className="flex items-center justify-between">
-                        <div className="flex items-center space-x-4">
-                          <span className="text-lg font-bold text-gray-900 w-8">{index + 11}</span>
-                          <div>
-                            <p className="font-semibold text-gray-900">{player.name}</p>
-                            <p className="text-sm text-gray-600">{player.country}</p>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <p className="font-semibold text-gray-900">${player.earnings}</p>
-                          <p className="text-sm text-gray-600">{player.events} events</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="mt-6 pt-4 border-t border-gray-200">
-                  <a href="#" className="text-primary-500 hover:text-primary-600 font-medium">
-                    View Full Rankings →
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Information Section */}
-      <section className="bg-gray-50 py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">About LPGA Rankings</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{rankings.information.rolexWorldRanking.title}</h3>
-                <p className="text-gray-600 mb-4">
-                  {rankings.information.rolexWorldRanking.description}
-                </p>
-                <p className="text-gray-600">
-                  {rankings.information.rolexWorldRanking.details}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{rankings.information.raceToCmeGlobe.title}</h3>
-                <p className="text-gray-600 mb-4">
-                  {rankings.information.raceToCmeGlobe.description}
-                </p>
-                <p className="text-gray-600">
-                  {rankings.information.raceToCmeGlobe.details}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{rankings.information.lpgaMoneyList.title}</h3>
-                <p className="text-gray-600 mb-4">
-                  {rankings.information.lpgaMoneyList.description}
-                </p>
-                <p className="text-gray-600">
-                  {rankings.information.lpgaMoneyList.details}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{rankings.information.epsonTourRankings.title}</h3>
-                <p className="text-gray-600 mb-4">
-                  {rankings.information.epsonTourRankings.description}
-                </p>
-                <p className="text-gray-600">
-                  {rankings.information.epsonTourRankings.details}
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

@@ -57,3 +57,279 @@
   --orange-500: #DD5726;
   --cream-500: #FFFBEC;
 }
+
+
+
+/* MoCo Show inspired article styles */
+.leading-1\.2 {
+  line-height: 1.2;
+}
+
+.leading-21 {
+  line-height: 21px;
+}
+
+.leading-18 {
+  line-height: 18px;
+}
+
+.tracking-theme-tight {
+  letter-spacing: -0.02em;
+}
+
+.proportional-nums {
+  font-variant-numeric: proportional-nums;
+}
+
+.hover\:drop-shadow-icon:hover {
+  filter: drop-shadow(0 5px 3px rgba(76, 87, 96, 0.3));
+}
+
+.border-light-gray {
+  border-color: #e5e7eb;
+}
+
+.text-sans {
+  font-family: 'Poppins', sans-serif;
+}
+
+.text-md {
+  font-size: 1.125rem;
+}
+
+/* Print styles for articles */
+@media print {
+  /* Hide non-essential elements */
+  body > header,
+  body > footer,
+  aside,
+  .social-sharing,
+  .newsletter-signup,
+  .related-articles,
+  .advertisement,
+  .navigation,
+  .mobile-menu,
+  .backdrop,
+  .print-button {
+    display: none !important;
+  }
+
+  /* Logo and branding */
+  .print-logo {
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 1.5em !important;
+    padding-bottom: 1em !important;
+    border-bottom: 2pt solid #333 !important;
+    page-break-after: avoid !important;
+  }
+
+  .print-logo .logo-text {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 24pt !important;
+    font-weight: bold !important;
+    color: #333 !important;
+    margin: 0 !important;
+  }
+
+  .print-logo .logo-subtitle {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12pt !important;
+    color: #666 !important;
+    margin-top: 0.25em !important;
+  }
+
+  /* Reset page margins and background */
+  @page {
+    margin: 1in;
+    size: A4;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Article container */
+  .article-container {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Article header */
+  .article-header {
+    margin-bottom: 2em !important;
+    page-break-after: avoid !important;
+  }
+
+  /* Article title */
+  .article-title {
+    font-size: 20pt !important;
+    font-weight: bold !important;
+    color: black !important;
+    margin-bottom: 0.5em !important;
+    page-break-after: avoid !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+  }
+
+  /* Article metadata */
+  .article-meta {
+    font-size: 11pt !important;
+    color: #666 !important;
+    margin-bottom: 2em !important;
+    border-bottom: 1pt solid #ccc !important;
+    padding-bottom: 1em !important;
+    text-align: left !important;
+  }
+
+  .article-author {
+    font-weight: bold !important;
+    color: #333 !important;
+  }
+
+  .article-author a {
+    color: #333 !important;
+    text-decoration: none !important;
+  }
+
+  .article-date {
+    color: #666 !important;
+    font-style: italic !important;
+  }
+
+  /* Article content */
+  .article-content {
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+    color: black !important;
+  }
+
+  .article-content p {
+    margin-bottom: 1em !important;
+    text-align: justify !important;
+  }
+
+  /* Images */
+  .article-image {
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 2em 0 3em 0 !important;
+    page-break-inside: avoid !important;
+    text-align: center !important;
+  }
+
+  .article-image img {
+    max-width: 100% !important;
+    height: auto !important;
+    border: 1pt solid #ccc !important;
+  }
+
+  .article-image-caption {
+    font-size: 9pt !important;
+    color: #666 !important;
+    margin-top: 0.5em !important;
+    font-style: italic !important;
+    text-align: center !important;
+  }
+
+  /* Links */
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+    page-break-after: avoid !important;
+    margin-top: 1.5em !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  h1 { font-size: 16pt !important; }
+  h2 { font-size: 14pt !important; }
+  h3 { font-size: 12pt !important; }
+
+  /* Lists */
+  ul, ol {
+    margin-left: 1.5em !important;
+    margin-bottom: 1em !important;
+  }
+
+  li {
+    margin-bottom: 0.25em !important;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    margin: 1em 0 !important;
+    padding-left: 1em !important;
+    border-left: 3pt solid #ccc !important;
+    font-style: italic !important;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 1em 0 !important;
+  }
+
+  th, td {
+    border: 1pt solid #ccc !important;
+    padding: 0.5em !important;
+    text-align: left !important;
+  }
+
+  /* Page breaks */
+  .page-break-before {
+    page-break-before: always !important;
+  }
+
+  .page-break-after {
+    page-break-after: always !important;
+  }
+
+  .page-break-inside-avoid {
+    page-break-inside: avoid !important;
+  }
+
+  /* Footer for printed pages */
+  .print-footer {
+    position: fixed !important;
+    bottom: 0.5in !important;
+    left: 1in !important;
+    right: 1in !important;
+    font-size: 8pt !important;
+    color: #666 !important;
+    text-align: center !important;
+    border-top: 1pt solid #ccc !important;
+    padding-top: 0.5em !important;
+  }
+
+  /* URL display for links */
+  a[href]:after {
+    content: " (" attr(href) ")" !important;
+    font-size: 8pt !important;
+    color: #666 !important;
+  }
+
+  /* Hide URLs for author links */
+  a.article-author[href]:after {
+    content: "" !important;
+  }
+
+  /* Hide decorative elements */
+  .decoration,
+  .shadow,
+  .hover-effect {
+    box-shadow: none !important;
+    background: none !important;
+  }
+}

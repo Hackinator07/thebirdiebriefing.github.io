@@ -2,28 +2,20 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCoursesDropdownOpen, setIsCoursesDropdownOpen] = useState(false);
+  const pathname = usePathname();
 
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'News', href: '/news' },
     { name: 'Podcasts', href: '/podcasts' },
-    { name: 'Events', href: '/events' },
     { name: 'Rankings', href: '/rankings' },
     { name: 'Cocktails', href: '/cocktails' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact-us' },
-  ];
-
-  const states = [
-    { name: 'Minnesota', href: '/courses-all#minnesota' },
-    { name: 'Wisconsin', href: '/courses-all#wisconsin' },
-    { name: 'Michigan', href: '/courses-all#michigan' },
-    { name: 'Ontario', href: '/courses-all#ontario' },
-    { name: 'Illinois', href: '/courses-all#illinois' },
   ];
 
   return (
@@ -40,55 +32,23 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200"
-              >
-                {item.name}
-              </Link>
-            ))}
-
-            {/* Courses Dropdown */}
-            <div className="relative">
-              <button
-                className="text-gray-700 hover:text-primary-500 font-medium transition-colors duration-200 flex items-center"
-                onMouseEnter={() => setIsCoursesDropdownOpen(true)}
-                onMouseLeave={() => setIsCoursesDropdownOpen(false)}
-              >
-                Courses
-                <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {/* Dropdown Menu */}
-              <div
-                className={`absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-2 transition-all duration-200 ${
-                  isCoursesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
-                }`}
-                onMouseEnter={() => setIsCoursesDropdownOpen(true)}
-                onMouseLeave={() => setIsCoursesDropdownOpen(false)}
-              >
+            {navigation.map((item) => {
+              const isActive = pathname === item.href;
+              return (
                 <Link
-                  href="/courses-all"
-                  className="block px-4 py-2 text-gray-700 hover:text-primary-500 hover:bg-gray-50 font-medium"
+                  key={item.name}
+                  href={item.href}
+                  className={`font-medium transition-colors duration-200 ${
+                    isActive
+                      ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
+                      : 'text-gray-700 hover:text-primary-500'
+                  }`}
+
                 >
-                  All Courses
+                  {item.name}
                 </Link>
-                <div className="border-t border-gray-200 my-1"></div>
-                {states.map((state) => (
-                  <Link
-                    key={state.name}
-                    href={state.href}
-                    className="block px-4 py-2 text-gray-700 hover:text-primary-500 hover:bg-gray-50 text-sm"
-                  >
-                    {state.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+              );
+            })}
           </nav>
 
           {/* Mobile menu button */}
@@ -146,40 +106,23 @@ export default function Header() {
               {/* Navigation Links */}
               <nav className="flex-1 px-6 py-4">
                 <div className="space-y-2">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="block px-4 py-3 text-gray-700 hover:text-primary-500 hover:bg-gray-50 font-medium transition-colors duration-200 rounded-lg"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-
-                  {/* Mobile Courses Section */}
-                  <div className="px-4 py-3">
-                    <div className="text-gray-700 font-medium mb-2">Courses</div>
-                    <div className="space-y-1">
+                  {navigation.map((item) => {
+                    const isActive = pathname === item.href;
+                    return (
                       <Link
-                        href="/courses-all"
-                        className="block px-4 py-2 text-gray-600 hover:text-primary-500 hover:bg-gray-50 text-sm rounded-lg"
+                        key={item.name}
+                        href={item.href}
+                        className={`block px-4 py-3 font-medium transition-colors duration-200 rounded-lg ${
+                          isActive
+                            ? 'text-primary-500 bg-primary-50 border-l-4 border-primary-500'
+                            : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                        }`}
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        All Courses
+                        {item.name}
                       </Link>
-                      {states.map((state) => (
-                        <Link
-                          key={state.name}
-                          href={state.href}
-                          className="block px-4 py-2 text-gray-600 hover:text-primary-500 hover:bg-gray-50 text-sm rounded-lg"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {state.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
+                    );
+                  })}
                 </div>
               </nav>
 

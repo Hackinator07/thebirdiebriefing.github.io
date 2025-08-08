@@ -1,0 +1,36 @@
+name: Update LPGA Rankings
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'  # Run at 4 AM UTC every Monday
+  workflow_dispatch:  # Allow manual trigger
+  push:
+    paths:
+      - 'scripts/fetch-rankings.js'
+
+jobs:
+  update-rankings:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install axios
+
+      - name: Fetch latest rankings
+        run: node scripts/fetch-rankings.js
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src/data/rankings.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update LPGA rankings [skip ci]" && git push)
