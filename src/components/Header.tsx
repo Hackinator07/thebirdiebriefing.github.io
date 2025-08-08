@@ -11,7 +11,7 @@ export default function Header() {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'News', href: '/news' },
-    { name: 'Podcasts', href: '/podcasts' },
+          { name: 'Podcast', href: '/podcast' },
     { name: 'Rankings', href: '/rankings' },
     { name: 'Cocktails', href: '/cocktails' },
     { name: 'About', href: '/about' },

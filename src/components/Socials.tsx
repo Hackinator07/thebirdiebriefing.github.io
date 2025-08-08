@@ -17,7 +17,6 @@ const BlueskyIcon = ({ size = 32 }: { size?: number }) => (
 
 const SOCIALS = [
 	{ href: 'https://www.instagram.com/birdiebriefing/', label: 'Instagram', icon: <FaInstagram size={32} /> },
-	{ href: 'https://www.tiktok.com/@birdiebriefing', label: 'TikTok', icon: <FaTiktok size={32} /> },
 	{ href: 'https://bsky.app/profile/birdiebriefing.bsky.social', label: 'Bluesky', icon: <BlueskyIcon size={32} /> },
 	{ href: 'https://www.facebook.com/birdiebriefing', label: 'Facebook', icon: <FaFacebook size={32} /> },
 ];

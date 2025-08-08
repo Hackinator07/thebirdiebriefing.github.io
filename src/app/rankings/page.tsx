@@ -67,10 +67,16 @@ export default function RankingsPage() {
       {/* Header */}
       <section className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-6 py-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            LPGA Rolex World Rankings
-          </h1>
-          <p className="text-lg text-gray-600">
+          <div className="text-center mb-4">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
+              <h1 className="text-4xl font-bold text-gray-900 leading-tight tracking-tight title-overlap">
+                LPGA Rolex World Rankings
+              </h1>
+              <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
+            </div>
+          </div>
+          <p className="text-lg text-gray-600 text-center">
             Updated {new Date(rankings.lastUpdated).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
@@ -79,7 +85,7 @@ export default function RankingsPage() {
               minute: '2-digit'
             })}
           </p>
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-sm text-gray-500 mt-2 text-center">
             Week of {rankings.week.start_date} to {rankings.week.end_date}
           </p>
         </div>
