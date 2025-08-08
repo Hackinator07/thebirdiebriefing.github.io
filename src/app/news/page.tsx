@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { getArticles, formatDate, calculateReadTime } from '@/lib/data';
-import LinkifyText from '@/app/article/[slug]/LinkifyText';
+import LinkifyText from '@/app/news/[slug]/LinkifyText';
 
 export default function NewsPage() {
   const [articles] = useState(getArticles());
@@ -72,7 +72,7 @@ export default function NewsPage() {
                     {/* Article Title */}
                     <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                       <Link
-                        href={`/article/${article.slug}`}
+                        href={`/news/${article.slug}`}
                         className="hover:text-primary-500 transition-colors"
                       >
                         {article.title}
@@ -134,7 +134,7 @@ export default function NewsPage() {
                     {/* Read Full Article Link */}
                     <div className="text-left">
                       <Link
-                        href={`/article/${article.slug}`}
+                        href={`/news/${article.slug}`}
                         className="inline-flex items-center bg-primary-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1"
                       >
                         Read Full Article

@@ -111,7 +111,7 @@ export default function Home() {
                     {/* Title */}
                     <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
                       <Link
-                        href={`/article/${latestNewsArticle.slug}`}
+                        href={`/news/${latestNewsArticle.slug}`}
                         className="hover:text-primary-500 transition-colors"
                       >
                         {latestNewsArticle.title}
@@ -133,7 +133,7 @@ export default function Home() {
                         </time>
                       </div>
                       <Link
-                        href={`/article/${latestNewsArticle.slug}`}
+                        href={`/news/${latestNewsArticle.slug}`}
                         className="text-primary-500 hover:text-primary-600 font-medium text-sm inline-flex items-center"
                       >
                         Read article →

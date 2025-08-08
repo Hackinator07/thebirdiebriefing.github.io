@@ -1,4 +1,4 @@
-import LinkifyText from '@/app/article/[slug]/LinkifyText';
+import LinkifyText from '@/app/news/[slug]/LinkifyText';
 import { FaGolfBall } from 'react-icons/fa';
 import { getAuthorCallout } from '@/lib/data';
 
