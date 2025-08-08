@@ -1,12 +1,30 @@
 import LinkifyText from '@/app/article/[slug]/LinkifyText';
 import { FaGolfBall } from 'react-icons/fa';
+import { getAuthorCallout } from '@/lib/data';
 
 interface AuthorCalloutProps {
-  message: string;
+  message?: string;
+  calloutType?: string;
+  authorId?: string;
   className?: string;
 }
 
-export default function AuthorCallout({ message, className = '' }: AuthorCalloutProps) {
+export default function AuthorCallout({
+  message,
+  calloutType = 'author',
+  authorId,
+  className = ''
+}: AuthorCalloutProps) {
+  // Use provided message, or get author-specific callout, or fall back to default
+  let calloutMessage = message;
+
+  if (!calloutMessage && authorId) {
+    calloutMessage = getAuthorCallout(authorId, calloutType);
+  } else if (!calloutMessage) {
+    // Fallback to default author if no authorId provided
+    calloutMessage = getAuthorCallout('george-hack', calloutType);
+  }
+
   return (
     <div className={`my-8 ${className}`}>
       {/* Using same styling as latest news cards */}
@@ -24,7 +42,7 @@ export default function AuthorCallout({ message, className = '' }: AuthorCallout
             {/* Message content with editorial styling */}
             <div className="flex-1">
               <div className="text-gray-700 font-medium italic leading-relaxed text-lg">
-                <LinkifyText text={message} />
+                <LinkifyText text={calloutMessage} />
               </div>
             </div>
           </div>

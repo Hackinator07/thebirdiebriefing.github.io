@@ -123,9 +123,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               </div>
 
               {/* Author Callout */}
-              {article.callout && (
-                <AuthorCallout message={article.callout} />
-              )}
+              <AuthorCallout
+                message={article.callout}
+                calloutType={article.calloutType}
+                authorId={article.authorId}
+              />
 
               {/* Tags */}
               <div className="mt-8 pt-6 border-t border-gray-200">

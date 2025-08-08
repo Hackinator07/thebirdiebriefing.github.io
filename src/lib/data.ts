@@ -3,6 +3,7 @@ import podcastsData from '@/data/podcasts.json';
 import cocktailsData from '@/data/cocktails.json';
 import rankingsData from '@/data/rankings.json';
 import articlesData from '@/data/articles.json';
+import configData from '@/data/config.json';
 
 export interface NewsArticle {
   id: string;
@@ -49,6 +50,7 @@ export interface Article {
   slug: string;
   title: string;
   author: string;
+  authorId?: string;
   date: string;
   category: string;
   excerpt: string;
@@ -60,6 +62,7 @@ export interface Article {
     courtesy: string;
   };
   callout?: string;
+  calloutType?: string;
   tags: string[];
 }
 
@@ -134,6 +137,45 @@ export function getRankings(): Rankings {
   return rankingsData;
 }
 
+export function getConfig() {
+  return configData;
+}
+
+export function getAuthor(authorId: string) {
+  const authors = configData.authors as Record<string, any>;
+  return authors[authorId] || null;
+}
+
+export function getAuthorCallout(authorId: string, calloutType: string = 'author'): string {
+  const author = getAuthor(authorId);
+  if (!author) {
+    // Fallback to default author if author not found
+    const defaultAuthor = getAuthor('george-hack');
+    return defaultAuthor?.callouts[calloutType] || 'Contact us for more information.';
+  }
+  return author.callouts[calloutType] || author.callouts.author || 'Contact us for more information.';
+}
+
+export function getCallout(type: string = 'author'): string {
+  // Legacy function - now uses default author
+  return getAuthorCallout('george-hack', type);
+}
+
+export function getAllAuthors(): Record<string, any> {
+  return configData.authors as Record<string, any>;
+}
+
+export function getAllCallouts(): Record<string, string> {
+  // Legacy function - returns default author's callouts
+  const defaultAuthor = getAuthor('george-hack');
+  return defaultAuthor?.callouts || {};
+}
+
+export function updateCallout(authorId: string, type: string, newMessage: string): void {
+  // This function can be used to update callout messages
+  // In a real application, you might want to persist this to a database
+  console.log(`Callout "${type}" for author "${authorId}" updated to: ${newMessage}`);
+}
 
 
 export function formatDate(dateString: string): string {
