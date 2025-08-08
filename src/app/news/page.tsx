@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { getArticles, formatDate } from '@/lib/data';
+import { getArticles, formatDate, calculateReadTime } from '@/lib/data';
 import LinkifyText from '@/app/article/[slug]/LinkifyText';
 
 export default function NewsPage() {
@@ -38,13 +38,19 @@ export default function NewsPage() {
       {/* Main Content Container */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Main Articles Content */}
-          <main className="flex-1 max-w-4xl">
-            {/* Hidden page title for accessibility */}
-            <h1 className="sr-only">News</h1>
+                      {/* Main Articles Content */}
+            <main className="flex-1 max-w-4xl">
+              <div className="mb-6">
+                <div className="flex items-center gap-4">
+                  <h1 className="text-2xl font-bold text-gray-900 leading-tight tracking-tight title-overlap">
+                    News
+                  </h1>
+                  <div className="flex-1 h-px bg-gray-300"></div>
+                </div>
+              </div>
 
             {/* Articles Feed */}
-            <section className="pt-8 pb-16">
+            <section className="pb-16">
               <div className="space-y-16">
                 {articles.slice(0, visibleArticles).map((article, index) => (
                   <article key={article.id} className="bg-white">
@@ -73,7 +79,7 @@ export default function NewsPage() {
                       </Link>
                     </h1>
 
-                    {/* Author and Date */}
+                    {/* Author, Date, and Read Time */}
                     <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
                       <div className="flex items-center gap-2">
                         <span className="text-gray-600">By</span>
@@ -84,9 +90,17 @@ export default function NewsPage() {
                           {article.author}
                         </Link>
                       </div>
-                      <time className="text-sm text-gray-500" dateTime={article.date}>
-                        Published {formatDate(article.date)}
-                      </time>
+                      <div className="flex items-center gap-4 text-sm text-gray-500">
+                        <time dateTime={article.date}>
+                          Published {formatDate(article.date)}
+                        </time>
+                        <span className="flex items-center gap-1">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {calculateReadTime(article.content)} min read
+                        </span>
+                      </div>
                     </div>
 
                     {/* Featured Image */}

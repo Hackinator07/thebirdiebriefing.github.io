@@ -1,4 +1,4 @@
-import { getArticleBySlug, getArticles, formatDate } from '@/lib/data';
+import { getArticleBySlug, getArticles, formatDate, calculateReadTime } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import PrintButton from './PrintButton';
@@ -79,7 +79,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   {article.title}
                 </h1>
 
-                {/* Author and Date */}
+                {/* Author, Date, and Read Time */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8 article-meta">
                   <div className="flex items-center gap-2">
                     <span className="text-gray-600">By</span>
@@ -87,9 +87,17 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                       {article.author}
                     </a>
                   </div>
-                  <time className="text-sm text-gray-500 article-date" dateTime={article.date}>
-                    Published {formatDate(article.date)}
-                  </time>
+                  <div className="flex items-center gap-4 text-sm text-gray-500">
+                    <time className="article-date" dateTime={article.date}>
+                      Published {formatDate(article.date)}
+                    </time>
+                    <span className="flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      {calculateReadTime(article.content)} min read
+                    </span>
+                  </div>
                 </div>
 
                 {/* Featured Image */}

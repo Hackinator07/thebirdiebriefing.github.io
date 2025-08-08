@@ -186,3 +186,19 @@ export function formatDate(dateString: string): string {
     day: 'numeric'
   });
 }
+
+export function calculateReadTime(content: string[]): number {
+  // Average reading speed is 200-250 words per minute
+  // We'll use 225 words per minute as a reasonable average
+  const wordsPerMinute = 225;
+
+  // Count total words across all content paragraphs
+  const totalWords = content.reduce((count, paragraph) => {
+    return count + paragraph.split(' ').length;
+  }, 0);
+
+  // Calculate reading time in minutes
+  const readTimeMinutes = Math.ceil(totalWords / wordsPerMinute);
+
+  return readTimeMinutes;
+}
