@@ -97,6 +97,12 @@ export interface Rankings {
   players: RankingPlayer[];
 }
 
+interface Author {
+  name: string;
+  email: string;
+  callouts: Record<string, string>;
+}
+
 
 
 export function getNewsArticles(): NewsArticle[] {
@@ -141,8 +147,8 @@ export function getConfig() {
   return configData;
 }
 
-export function getAuthor(authorId: string) {
-  const authors = configData.authors as Record<string, any>;
+export function getAuthor(authorId: string): Author | null {
+  const authors = configData.authors as Record<string, Author>;
   return authors[authorId] || null;
 }
 
@@ -161,8 +167,8 @@ export function getCallout(type: string = 'author'): string {
   return getAuthorCallout('george-hack', type);
 }
 
-export function getAllAuthors(): Record<string, any> {
-  return configData.authors as Record<string, any>;
+export function getAllAuthors(): Record<string, Author> {
+  return configData.authors as Record<string, Author>;
 }
 
 export function getAllCallouts(): Record<string, string> {

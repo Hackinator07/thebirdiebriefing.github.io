@@ -17,7 +17,7 @@ export default function LinkifyText({ text, className }: LinkifyTextProps) {
     let parts = text.split(urlPattern);
 
     // Process each part for emails
-    parts = parts.flatMap((part, index) => {
+    parts = parts.flatMap((part) => {
       // If this part is a URL (matches the pattern), don't process it for emails
       if (urlPattern.test(part)) {
         return part;

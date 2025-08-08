@@ -1,6 +1,7 @@
 import { getArticleBySlug, getArticles, formatDate, calculateReadTime } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 import PrintButton from './PrintButton';
 import EmailShareButton from './EmailShareButton';
 import FacebookShareButton from './FacebookShareButton';
@@ -69,9 +70,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <header className="mb-8 article-header">
                 {/* Category Tag - Hidden in print */}
                 <div className="mb-6 print:hidden">
-                  <a href="/news" className="inline-block text-primary-500 font-semibold text-lg border-b-2 border-primary-500 pb-1">
+                  <Link href="/news" className="inline-block text-primary-500 font-semibold text-lg border-b-2 border-primary-500 pb-1">
                     {article.category}
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Article Title */}
@@ -83,9 +84,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8 article-meta">
                   <div className="flex items-center gap-2">
                     <span className="text-gray-600">By</span>
-                    <a href="/about" className="text-primary-500 hover:text-primary-600 font-medium article-author">
+                    <Link href="/about" className="text-primary-500 hover:text-primary-600 font-medium article-author">
                       {article.author}
-                    </a>
+                    </Link>
                   </div>
                   <div className="flex items-center gap-4 text-sm text-gray-500">
                     <time className="article-date" dateTime={article.date}>
@@ -182,12 +183,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                     <p className="text-sm text-gray-600 mb-3">
                       Get the latest updates, tournament results, and player insights delivered to your inbox.
                     </p>
-                    <a href="/news" className="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium text-sm">
+                    <Link href="/news" className="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium text-sm">
                       Read More
                       <svg className="ml-1 w-4 h-4" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.45262 0.738643L9.75592 5.92386C10.0814 6.24205 10.0814 6.75794 9.75592 7.07614L4.45262 12.2614C4.12718 12.5795 3.59955 12.5795 3.27411 12.2614C2.94867 11.9432 2.94867 11.4273 3.27411 11.1091L7.15482 7.31478H0V5.68522H7.15482L3.27411 1.89091C2.94867 1.57272 2.94867 1.05683 3.27411 0.738643C3.59955 0.420452 4.12718 0.420452 4.45262 0.738643Z" fill="currentColor"></path>
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </section>
