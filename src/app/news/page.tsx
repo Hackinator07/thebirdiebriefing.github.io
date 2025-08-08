@@ -135,12 +135,9 @@ export default function NewsPage() {
                     <div className="text-left">
                       <Link
                         href={`/news/${article.slug}`}
-                        className="inline-flex items-center bg-primary-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1"
+                        className="text-primary-500 hover:text-primary-600 font-medium text-base inline-flex items-center"
                       >
-                        Read Full Article
-                        <svg className="ml-2 w-4 h-4" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M4.45262 0.738643L9.75592 5.92386C10.0814 6.24205 10.0814 6.75794 9.75592 7.07614L4.45262 12.2614C4.12718 12.5795 3.59955 12.5795 3.27411 12.2614C2.94867 11.9432 2.94867 11.4273 3.27411 11.1091L7.15482 7.31478H0V5.68522H7.15482L3.27411 1.89091C2.94867 1.57272 2.94867 1.05683 3.27411 0.738643C3.59955 0.420452 4.12718 0.420452 4.45262 0.738643Z" fill="currentColor"></path>
-                        </svg>
+                        Read article →
                       </Link>
                     </div>
                   </article>
