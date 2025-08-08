@@ -34,124 +34,135 @@ export default function NewsPage() {
   }, [loading, visibleArticles, articles.length]);
 
   return (
-    <div className="bg-white">
-      {/* Hidden page title for accessibility */}
-      <h1 className="sr-only">News</h1>
+    <div className="bg-white min-h-screen">
+      {/* Main Content Container */}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Main Articles Content */}
+          <main className="flex-1 max-w-4xl">
+            {/* Hidden page title for accessibility */}
+            <h1 className="sr-only">News</h1>
 
-      {/* Articles Feed */}
-      <section className="pt-8 pb-16">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="space-y-16">
-            {articles.slice(0, visibleArticles).map((article, index) => (
-              <article key={article.id} className="bg-white">
-                {/* Separator line for articles after the first */}
-                {index > 0 && (
-                  <div className="border-t border-gray-200 mb-16"></div>
-                )}
+            {/* Articles Feed */}
+            <section className="pt-8 pb-16">
+              <div className="space-y-16">
+                {articles.slice(0, visibleArticles).map((article, index) => (
+                  <article key={article.id} className="bg-white">
+                    {/* Separator line for articles after the first */}
+                    {index > 0 && (
+                      <div className="border-t border-gray-200 mb-16"></div>
+                    )}
 
-                {/* Category Tag */}
-                <div className="mb-6">
-                  <Link
-                    href="/news"
-                    className="inline-block text-primary-500 font-semibold text-lg border-b-2 border-primary-500 pb-1"
-                  >
-                    {article.category}
-                  </Link>
-                </div>
-
-                {/* Article Title */}
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                  <Link
-                    href={`/article/${article.slug}`}
-                    className="hover:text-primary-500 transition-colors"
-                  >
-                    {article.title}
-                  </Link>
-                </h1>
-
-                {/* Author and Date */}
-                <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
-                  <div className="flex items-center gap-2">
-                    <span className="text-gray-600">By</span>
-                    <Link
-                      href="/about"
-                      className="text-primary-500 hover:text-primary-600 font-medium"
-                    >
-                      {article.author}
-                    </Link>
-                  </div>
-                  <time className="text-sm text-gray-500" dateTime={article.date}>
-                    Published {formatDate(article.date)}
-                  </time>
-                </div>
-
-                {/* Featured Image */}
-                <div className="mb-8">
-                  <figure>
-                    <div className="aspect-[16/10] bg-gray-200 rounded-lg mb-4 overflow-hidden">
-                      <Image
-                        src={article.image.src}
-                        alt={article.image.alt}
-                        width={800}
-                        height={500}
-                        className="w-full h-full object-cover"
-                        loading={index === 0 ? "eager" : "lazy"}
-                      />
+                    {/* Category Tag */}
+                    <div className="mb-6">
+                      <Link
+                        href="/news"
+                        className="inline-block text-primary-500 font-semibold text-lg border-b-2 border-primary-500 pb-1"
+                      >
+                        {article.category}
+                      </Link>
                     </div>
-                    <figcaption className="text-sm text-gray-600 border-b border-gray-200 pb-4">
-                      <div>{article.image.caption}</div>
-                      <div className="text-xs text-gray-500 mt-1 italic">Photo courtesy: {article.image.courtesy}</div>
-                    </figcaption>
-                  </figure>
-                </div>
 
-                {/* Article Content Summary */}
-                <div className="prose prose-lg max-w-none mb-8">
-                  {/* Show first paragraph as featured text */}
-                  <p className="mb-6 text-lg text-gray-800 leading-relaxed">
-                    <LinkifyText text={article.content[0]} />
-                  </p>
-                </div>
+                    {/* Article Title */}
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                      <Link
+                        href={`/article/${article.slug}`}
+                        className="hover:text-primary-500 transition-colors"
+                      >
+                        {article.title}
+                      </Link>
+                    </h1>
 
+                    {/* Author and Date */}
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
+                      <div className="flex items-center gap-2">
+                        <span className="text-gray-600">By</span>
+                        <Link
+                          href="/about"
+                          className="text-primary-500 hover:text-primary-600 font-medium"
+                        >
+                          {article.author}
+                        </Link>
+                      </div>
+                      <time className="text-sm text-gray-500" dateTime={article.date}>
+                        Published {formatDate(article.date)}
+                      </time>
+                    </div>
 
+                    {/* Featured Image */}
+                    <div className="mb-8">
+                      <figure>
+                        <div className="aspect-[16/10] bg-gray-200 rounded-lg mb-4 overflow-hidden">
+                          <Image
+                            src={article.image.src}
+                            alt={article.image.alt}
+                            width={800}
+                            height={500}
+                            className="w-full h-full object-cover"
+                            loading={index === 0 ? "eager" : "lazy"}
+                          />
+                        </div>
+                        <figcaption className="text-sm text-gray-600 border-b border-gray-200 pb-4">
+                          <div>{article.image.caption}</div>
+                          <div className="text-xs text-gray-500 mt-1 italic">Photo courtesy: {article.image.courtesy}</div>
+                        </figcaption>
+                      </figure>
+                    </div>
 
-                {/* Read Full Article Link */}
-                <div className="text-left">
-                  <Link
-                    href={`/article/${article.slug}`}
-                    className="inline-flex items-center bg-primary-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1"
-                  >
-                    Read Full Article
-                    <svg className="ml-2 w-4 h-4" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4.45262 0.738643L9.75592 5.92386C10.0814 6.24205 10.0814 6.75794 9.75592 7.07614L4.45262 12.2614C4.12718 12.5795 3.59955 12.5795 3.27411 12.2614C2.94867 11.9432 2.94867 11.4273 3.27411 11.1091L7.15482 7.31478H0V5.68522H7.15482L3.27411 1.89091C2.94867 1.57272 2.94867 1.05683 3.27411 0.738643C3.59955 0.420452 4.12718 0.420452 4.45262 0.738643Z" fill="currentColor"></path>
-                    </svg>
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+                    {/* Article Content Summary */}
+                    <div className="prose prose-lg max-w-none mb-8">
+                      {/* Show first paragraph as featured text */}
+                      <p className="mb-6 text-lg text-gray-800 leading-relaxed">
+                        <LinkifyText text={article.content[0]} />
+                      </p>
+                    </div>
 
-          {/* Loading indicator */}
-          {loading && (
-            <div className="text-center py-8">
-              <div className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-primary-500 bg-white border border-primary-200">
-                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                Loading more articles...
+                    {/* Read Full Article Link */}
+                    <div className="text-left">
+                      <Link
+                        href={`/article/${article.slug}`}
+                        className="inline-flex items-center bg-primary-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1"
+                      >
+                        Read Full Article
+                        <svg className="ml-2 w-4 h-4" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4.45262 0.738643L9.75592 5.92386C10.0814 6.24205 10.0814 6.75794 9.75592 7.07614L4.45262 12.2614C4.12718 12.5795 3.59955 12.5795 3.27411 12.2614C2.94867 11.9432 2.94867 11.4273 3.27411 11.1091L7.15482 7.31478H0V5.68522H7.15482L3.27411 1.89091C2.94867 1.57272 2.94867 1.05683 3.27411 0.738643C3.59955 0.420452 4.12718 0.420452 4.45262 0.738643Z" fill="currentColor"></path>
+                        </svg>
+                      </Link>
+                    </div>
+                  </article>
+                ))}
               </div>
-            </div>
-          )}
 
-          {/* End of articles message */}
-          {!loading && visibleArticles >= articles.length && articles.length > 1 && (
-            <div className="text-center py-8">
-              <p className="text-gray-500">You've reached the end of our latest articles.</p>
+              {/* Loading indicator */}
+              {loading && (
+                <div className="text-center py-8">
+                  <div className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-primary-500 bg-white border border-primary-200">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-primary-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Loading more articles...
+                  </div>
+                </div>
+              )}
+
+              {/* End of articles message */}
+              {!loading && visibleArticles >= articles.length && articles.length > 1 && (
+                <div className="text-center py-8">
+                  <p className="text-gray-500">You've reached the end of our latest articles.</p>
+                </div>
+              )}
+            </section>
+          </main>
+
+          {/* Sidebar - Empty for now but maintains layout consistency */}
+          <aside className="w-full lg:w-80 flex-shrink-0">
+            <div className="lg:sticky lg:top-24">
+              {/* Sidebar content can be added here in the future */}
             </div>
-          )}
+          </aside>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
