@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { performSpamCheck, createHoneypotConfig } from '@/lib/spamProtection';
+import { performSpamCheck } from '@/lib/spamProtection';
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState('');
@@ -10,9 +10,6 @@ export default function NewsletterSignup() {
   const [error, setError] = useState('');
   const [lastSubmission, setLastSubmission] = useState(0);
 
-  // Honeypot field (hidden from users, bots might fill it)
-  const [honeypot, setHoneypot] = useState('');
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
@@ -20,7 +17,6 @@ export default function NewsletterSignup() {
     // Perform comprehensive spam check
     const spamCheck = performSpamCheck({
       email,
-      honeypot,
       lastSubmission,
       cooldownMs: 5000
     });
@@ -69,22 +65,8 @@ export default function NewsletterSignup() {
     );
   }
 
-  const honeypotConfig = createHoneypotConfig();
-
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      {/* Honeypot field - hidden from users */}
-      <div className={honeypotConfig.className}>
-        <input
-          type={honeypotConfig.type}
-          name={honeypotConfig.name}
-          value={honeypot}
-          onChange={(e) => setHoneypot(e.target.value)}
-          tabIndex={honeypotConfig.tabIndex}
-          autoComplete={honeypotConfig.autoComplete}
-        />
-      </div>
-
       <div>
         <label htmlFor="email" className="sr-only">
           Email address

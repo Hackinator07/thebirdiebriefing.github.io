@@ -119,19 +119,6 @@ export function validateMessage(message: string, minLength = 10, maxLength = 200
 }
 
 /**
- * Check if honeypot field is filled (indicates bot)
- */
-export function validateHoneypot(honeypot: string): SpamCheckResult {
-  if (honeypot) {
-    return {
-      isValid: false,
-      error: 'Bot detected.'
-    };
-  }
-  return { isValid: true };
-}
-
-/**
  * Check rate limiting
  */
 export function validateRateLimit(lastSubmission: number, cooldownMs = 5000): SpamCheckResult {
@@ -155,14 +142,6 @@ export function performSpamCheck(data: {
   lastSubmission: number;
   cooldownMs?: number;
 }): SpamCheckResult {
-  // Check honeypot if provided
-  if (data.honeypot !== undefined) {
-    const honeypotCheck = validateHoneypot(data.honeypot);
-    if (!honeypotCheck.isValid) {
-      return honeypotCheck;
-    }
-  }
-
   // Check rate limiting
   const rateLimitCheck = validateRateLimit(data.lastSubmission, data.cooldownMs);
   if (!rateLimitCheck.isValid) {
@@ -186,17 +165,4 @@ export function performSpamCheck(data: {
   }
 
   return { isValid: true };
-}
-
-/**
- * Generate a honeypot field configuration
- */
-export function createHoneypotConfig() {
-  return {
-    name: 'website',
-    type: 'text' as const,
-    tabIndex: -1,
-    autoComplete: 'off' as const,
-    className: 'absolute left-[-9999px]'
-  };
 }
