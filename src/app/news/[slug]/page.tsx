@@ -7,6 +7,7 @@ import EmailShareButton from './EmailShareButton';
 import FacebookShareButton from './FacebookShareButton';
 import BlueskyShareButton from './BlueskyShareButton';
 import RedditShareButton from './RedditShareButton';
+import CopyUrlButton from './CopyUrlButton';
 import LinkifyText from './LinkifyText';
 import TagList from '@/components/TagList';
 import AuthorCallout from '@/components/AuthorCallout';
@@ -147,7 +148,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               {/* Social Sharing */}
               <div className="mt-12 pt-8 border-t border-gray-200 social-sharing">
                 <div className="flex items-center justify-between">
-                                                      <div className="flex gap-4">
+                  <div className="flex gap-4">
                     <FacebookShareButton
                       title={article.title}
                       excerpt={article.excerpt}
@@ -163,6 +164,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                       title={article.title}
                       excerpt={article.excerpt}
                     />
+                    <CopyUrlButton />
                     <PrintButton className="print-button" />
                   </div>
                 </div>

@@ -182,27 +182,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter Signup Section */}
-      {/* <section className="bg-cream-50 py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-2xl mx-auto text-center mb-12">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight tracking-tight title-overlap">
-                Stay Connected
-              </h2>
-              <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
-            </div>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Get the latest LPGA news, tournament updates, and exclusive content delivered to your inbox.
-            </p>
-          </div>
-          <div className="max-w-md mx-auto">
-            <NewsletterSignup />
-          </div>
-        </div>
-      </section> */}
-
       {/* Follow Along Section */}
       <section className="bg-primary-500 text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">

@@ -1,81 +1,121 @@
 'use client';
 
 import { useState } from 'react';
+import { performSpamCheck, createHoneypotConfig } from '@/lib/spamProtection';
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [lastSubmission, setLastSubmission] = useState(0);
+
+  // Honeypot field (hidden from users, bots might fill it)
+  const [honeypot, setHoneypot] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
+    setError('');
 
-    // Simulate API call
-    setTimeout(() => {
+    // Perform comprehensive spam check
+    const spamCheck = performSpamCheck({
+      email,
+      honeypot,
+      lastSubmission,
+      cooldownMs: 5000
+    });
+
+    if (!spamCheck.isValid) {
+      setError(spamCheck.error || 'Invalid submission.');
+      return;
+    }
+
+    setIsLoading(true);
+    setLastSubmission(Date.now());
+
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Here you would typically send to your backend API
+      // const response = await fetch('/api/newsletter', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ email })
+      // });
+
       setIsSubscribed(true);
-      setIsLoading(false);
       setEmail('');
-    }, 1000);
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubscribed) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="bg-green-900/20 border border-green-700/50 rounded-lg p-4 text-center">
+        <div className="w-12 h-12 bg-green-800/30 rounded-full flex items-center justify-center mx-auto mb-3">
+          <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-green-800 mb-2">Welcome to The Birdie Briefing!</h3>
-        <p className="text-green-700 leading-relaxed">
-          You&apos;ve been successfully subscribed to our newsletter. Check your email for confirmation.
+        <h3 className="text-lg font-bold text-green-400 mb-1">Welcome to The Birdie Briefing!</h3>
+        <p className="text-green-300 text-sm">
+          You&apos;ve been successfully subscribed to our newsletter.
         </p>
       </div>
     );
   }
 
+  const honeypotConfig = createHoneypotConfig();
+
   return (
-            <div className="bg-secondary-500 rounded-2xl p-8 text-white shadow-xl">
-      <div className="max-w-md mx-auto text-center">
-        <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-        </div>
-        <h3 className="text-2xl font-bold mb-4">Let's Connect!</h3>
-        <p className="text-gray-200 leading-relaxed mb-8">
-          Get the latest LPGA news, tournament updates, and exclusive content delivered to your inbox.
-        </p>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="email" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-6 py-4 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-primary-500 text-lg"
-              placeholder="Enter your email address"
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full bg-white text-primary-500 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
-          >
-            {isLoading ? 'Subscribing...' : 'Subscribe Now'}
-          </button>
-        </form>
-        <p className="text-xs text-gray-300 mt-6 leading-relaxed">
-          We respect your privacy. Unsubscribe at any time.
-        </p>
+    <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Honeypot field - hidden from users */}
+      <div className={honeypotConfig.className}>
+        <input
+          type={honeypotConfig.type}
+          name={honeypotConfig.name}
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={honeypotConfig.tabIndex}
+          autoComplete={honeypotConfig.autoComplete}
+        />
       </div>
-    </div>
+
+      <div>
+        <label htmlFor="email" className="sr-only">
+          Email address
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 text-sm"
+          placeholder="Enter your email address"
+        />
+      </div>
+
+      {error && (
+        <p className="text-red-400 text-xs text-center">{error}</p>
+      )}
+
+      <button
+        type="submit"
+        disabled={isLoading}
+        className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {isLoading ? 'Subscribing...' : 'Subscribe Now'}
+      </button>
+      <p className="text-xs text-gray-400 text-center">
+        We respect your privacy. Unsubscribe at any time.
+      </p>
+    </form>
   );
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NewsletterSignup from './NewsletterSignup';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
 
 export default function Footer() {
@@ -38,9 +39,10 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto py-12 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Brand Section */}
+          <div className="lg:col-span-4">
             <h3 className="text-2xl font-bold text-white mb-4 font-heading">The Birdie Briefing</h3>
             <p className="text-gray-300 mb-6 max-w-md">
               Your premier source for LPGA women's golf news, tournament coverage, and exclusive content.
@@ -61,7 +63,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {navigation.main.map((item) => (
@@ -77,16 +79,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <div className="space-y-3 text-gray-300">
-              <a
-                href="mailto:info@birdiebriefing.com?subject=The%20Birdie%20Briefing%20Inquiry"
-                className="hover:text-white transition-colors duration-200"
-              >
-                info@birdiebriefing.com
-              </a>
+          {/* Newsletter Signup Section - Spans 6 columns */}
+          <div className="lg:col-span-6">
+            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-white mb-2">Stay Connected</h3>
+                <p className="text-gray-300 text-sm">
+                  Get the latest LPGA news, tournament updates, and exclusive content delivered to your inbox.
+                </p>
+              </div>
+              <NewsletterSignup />
             </div>
           </div>
         </div>
@@ -98,7 +100,9 @@ export default function Footer() {
               <p className="text-gray-400 text-sm">
                 © {new Date().getFullYear()} The Birdie Briefing. All rights reserved.
               </p>
-              <p className="text-gray-500 text-xs mt-1">
+            </div>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+            <p className="text-gray-500 text-xs mt-1">
                 Website developed by{' '}
                 <a
                   href="https://foxsideweb.com/"
@@ -109,14 +113,6 @@ export default function Footer() {
                   Foxside Web Development
                 </a>
               </p>
-            </div>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
-                Terms of Service
-              </Link>
             </div>
           </div>
         </div>

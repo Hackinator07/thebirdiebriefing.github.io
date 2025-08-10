@@ -38,7 +38,7 @@ export default function NewsPage() {
       {/* Main Content Container */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
-                      {/* Main Articles Content */}
+            {/* Main Articles Content */}
             <main className="flex-1 max-w-4xl">
               <div className="mb-6">
                 <div className="flex items-center gap-4">
