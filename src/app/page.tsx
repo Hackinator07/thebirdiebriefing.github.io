@@ -19,30 +19,30 @@ export default function Home() {
         <VideoBackground />
 
         {/* Content Overlay */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 lg:py-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-8 lg:py-12">
           <div className="max-w-6xl mx-auto">
             {/* Text Content with White Background */}
-            <div className="bg-white rounded-lg p-8 lg:p-12">
+            <div className="bg-white rounded-lg p-6 lg:p-8">
               {/* Main Headlines */}
-              <div className="text-center mb-16">
-                <h1 className="text-6xl lg:text-8xl xl:text-9xl font-heading text-primary-500 leading-none mb-4">
+              <div className="text-center mb-8">
+                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-heading text-primary-500 leading-none mb-2">
                   The Birdie
                 </h1>
-                <h2 className="text-6xl lg:text-8xl xl:text-9xl font-heading text-secondary-500 leading-none mb-12">
+                <h2 className="text-5xl lg:text-7xl xl:text-8xl font-heading text-secondary-500 leading-none mb-8">
                   Briefing
                 </h2>
               </div>
 
               {/* Introduction */}
               <div className="max-w-4xl mx-auto text-center">
-                <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
+                <p className="text-lg lg:text-xl text-gray-700 leading-relaxed mb-6">
                   The Birdie Briefing is your go-to source for celebrating women in golf. We amplify the stories, achievements, and voices of women on and off the course. Dive into LPGA coverage, tournament insights, and exclusive content that brings the vibrant world of women's professional golf to life.
                 </p>
 
                 {/* Author Attribution */}
-                <div className="flex items-center justify-center space-x-4 mb-12">
-                  <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-lg font-heading">M</span>
+                <div className="flex items-center justify-center space-x-4 mb-8">
+                  <div className="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-base font-heading">M</span>
                   </div>
                   <div className="text-left">
                     <p className="font-medium text-gray-900">Marie Hack</p>
@@ -128,17 +128,17 @@ export default function Home() {
                     </p>
 
                     {/* Meta */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm text-gray-500">
                         <span>By {latestNewsArticle.author}</span>
-                        <span>•</span>
+                        <span className="hidden sm:inline">•</span>
                         <time dateTime={latestNewsArticle.date}>
                           {formatDate(latestNewsArticle.date)}
                         </time>
                       </div>
                       <Link
                         href={`/news/${latestNewsArticle.slug}`}
-                        className="text-primary-500 hover:text-primary-600 font-medium text-sm inline-flex items-center"
+                        className="text-primary-500 hover:text-primary-600 font-medium text-sm inline-flex items-center self-start sm:self-auto"
                       >
                         Read article →
                       </Link>
@@ -162,7 +162,7 @@ export default function Home() {
       )}
 
       {/* Spotify Embed Section */}
-      <section className="py-16 lg:py-24">
+      <section className="pt-8 pb-16 lg:pt-12 lg:pb-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-4">
@@ -183,7 +183,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Signup Section */}
-      <section className="bg-cream-50 py-16 lg:py-24">
+      {/* <section className="bg-cream-50 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <div className="flex items-center justify-center gap-4 mb-6">
@@ -201,7 +201,7 @@ export default function Home() {
             <NewsletterSignup />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Follow Along Section */}
       <section className="bg-primary-500 text-white py-16 lg:py-24">
