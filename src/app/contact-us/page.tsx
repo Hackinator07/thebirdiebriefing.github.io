@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { performSpamCheck, createHoneypotConfig } from "@/lib/spamProtection";
+import { performSpamCheck } from "@/lib/spamProtection";
 import VideoBackground from "@/components/VideoBackground";
 
 export default function ContactUsPage() {
@@ -19,9 +19,6 @@ export default function ContactUsPage() {
   >("idle");
   const [error, setError] = useState("");
   const [lastSubmission, setLastSubmission] = useState(0);
-
-  // Honeypot field (hidden from users, bots might fill it)
-  const [honeypot, setHoneypot] = useState("");
 
   const inquiryTypes = [
     { value: "", label: "Select an inquiry type" },
@@ -80,7 +77,6 @@ export default function ContactUsPage() {
     const spamCheck = performSpamCheck({
       email: formData.email,
       message: formData.message,
-      honeypot,
       lastSubmission,
       cooldownMs: 10000,
     });
@@ -133,8 +129,6 @@ export default function ContactUsPage() {
     }
   };
 
-  const honeypotConfig = createHoneypotConfig();
-
   return (
     <div className='bg-white'>
       {/* Masthead Section - Matching Homepage and Podcast */}
@@ -158,27 +152,15 @@ export default function ContactUsPage() {
               {/* Introduction */}
               <div className='max-w-3xl mx-auto text-center mb-8'>
                 <p className='text-base lg:text-lg text-gray-700 leading-relaxed mb-6'>
-                  Whether you’re a fan, media partner, equipment maker, or
+                  Whether you're a fan, media partner, equipment maker, or
                   interested in partnering to reach our passionate audience,
-                  we’d love to hear from you!{" "}
+                  we'd love to hear from you!{" "}
                 </p>
               </div>
 
               {/* Contact Form */}
               <div className='max-w-2xl mx-auto'>
                 <form onSubmit={handleSubmit} className='space-y-5'>
-                  {/* Honeypot field - hidden from users */}
-                  <div className={honeypotConfig.className}>
-                    <input
-                      type={honeypotConfig.type}
-                      name={honeypotConfig.name}
-                      value={honeypot}
-                      onChange={(e) => setHoneypot(e.target.value)}
-                      tabIndex={honeypotConfig.tabIndex}
-                      autoComplete={honeypotConfig.autoComplete}
-                    />
-                  </div>
-
                   {/* Name Fields */}
                   <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                     <div>

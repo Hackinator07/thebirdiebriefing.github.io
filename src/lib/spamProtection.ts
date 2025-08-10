@@ -151,14 +151,16 @@ export function validateRateLimit(lastSubmission: number, cooldownMs = 5000): Sp
 export function performSpamCheck(data: {
   email?: string;
   message?: string;
-  honeypot: string;
+  honeypot?: string;
   lastSubmission: number;
   cooldownMs?: number;
 }): SpamCheckResult {
-  // Check honeypot
-  const honeypotCheck = validateHoneypot(data.honeypot);
-  if (!honeypotCheck.isValid) {
-    return honeypotCheck;
+  // Check honeypot if provided
+  if (data.honeypot !== undefined) {
+    const honeypotCheck = validateHoneypot(data.honeypot);
+    if (!honeypotCheck.isValid) {
+      return honeypotCheck;
+    }
   }
 
   // Check rate limiting
