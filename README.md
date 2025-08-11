@@ -228,6 +228,11 @@ The site automatically deploys to GitHub Pages when changes are pushed to the `m
 4. Deploys to GitHub Pages
 5. Available at www.birdiebriefing.com
 
+**⚠️ Note**: Brief 404 errors (1-5 minutes) are normal during deployment due to:
+- DNS propagation delays
+- GitHub Pages cache invalidation
+- Build process timing
+
 ### Custom Domain
 - **Domain**: www.birdiebriefing.com
 - **CNAME file**: Automatically copied during build
@@ -255,7 +260,7 @@ npm run export           # Build and export static files
 ## 📁 Project Structure
 
 ```
-thebirdiebriefing/
+thebirdiebriefing.github.io/
 ├── src/
 │   ├── app/                 # Next.js App Router pages
 │   │   ├── about/           # About page
