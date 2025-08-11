@@ -1,15 +1,20 @@
 {
-  "timestamp": "2025-08-11T01:00:48.614Z",
-  "processed": 1,
-  "skipped": 3,
-  "totalOriginalSize": "0.41",
-  "totalOptimizedSize": "0.03",
-  "savings": "92.7",
+  "timestamp": "2025-08-11T17:59:00.730Z",
+  "processed": 2,
+  "skipped": 4,
+  "totalOriginalSize": "0.38",
+  "totalOptimizedSize": "0.16",
+  "savings": "57.9",
   "images": [
     {
-      "original": "images/articles/hull.png",
-      "optimized": "optimized/hull.webp",
-      "savings": 92.7
+      "original": "images/bios/george.jpg",
+      "optimized": "optimized/george.webp",
+      "savings": 57.9
+    },
+    {
+      "original": "images/bios/marie.jpg",
+      "optimized": "optimized/marie.webp",
+      "savings": 57.9
     }
   ]
 }
