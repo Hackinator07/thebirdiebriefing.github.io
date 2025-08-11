@@ -126,9 +126,7 @@ export default function NewsPage() {
                     {/* Article Content Summary */}
                     <div className="prose prose-lg max-w-none mb-8">
                       {/* Show first paragraph as featured text */}
-                      <p className="mb-6 text-lg text-gray-800 leading-relaxed">
-                        <MarkdownContent content={article.content[0]} />
-                      </p>
+                      <MarkdownContent content={article.content[0]} />
                     </div>
 
                     {/* Read Full Article Link */}
