@@ -71,13 +71,14 @@ export default function About() {
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg mx-auto text-gray-600">
               <p className="text-lg leading-relaxed mb-6">
-                Marie Hack is the visionary founder and charismatic host behind The Birdie Briefing. With a passion for storytelling and a deep appreciation for the game of golf, Marie has created a platform that celebrates the incredible women who make the LPGA Tour one of the most exciting and competitive sports leagues in the world.
+                As the daughter of a Navy doctor, I grew up all over the country, finding something to love about every place I called home. By the end of my 20s, I had collected three degrees, lived in five states, and decided it was time to trade constant moves for deeper roots. A (metaphorical) dart thrown at the map landed me in Wisconsin - my mother&apos;s home state - where I&apos;ve happily settled in. I live with my husband George, our middle-school aged son, and our menagerie of pets. 
               </p>
               <p className="text-lg leading-relaxed mb-6">
-                As the host of The Birdie Briefing podcast, Marie brings her unique perspective and engaging personality to every episode, diving deep into the stories that matter most to women&apos;s golf fans. Her interviews with players, coaches, and industry professionals provide listeners with unprecedented access to the personalities and insights that shape the sport.
-              </p>
+                My experience with golf as a young adult was minimal - half-hearted attempts to learn it because “that&apos;s what lawyers do” never quite stuck. Neither did the happy hours disguised as golf outings at Topgolf during my years in D.C. It wasn&apos;t until my friend introduced me to the LPGA that I fell in love with the game. I signed up for lessons, started following tournaments, and never looked back.
               <p className="text-lg leading-relaxed">
-                Marie&apos;s commitment to elevating women&apos;s golf goes beyond the microphone. She believes that every swing, every putt, and every victory deserves to be celebrated with the same enthusiasm and respect as any other professional sport. Through The Birdie Briefing, she&apos;s building a community of fans who share her passion for the game and its remarkable athletes.
+                What I love most about women&apos;s golf is its diversity - not just in the players&apos; global backgrounds, but in the way each brings her own style, strategy, and personality to the course. The tour is full of athletes whose openness and authenticity give the game a uniquely warm and quietly cool vibe. I&apos;d love to see the LPGA lean into that - spotlighting players&apos; personalities and bringing a fresher, more inclusive energy that makes it clear this isn&apos;t our father&apos;s golf tour. 
+              <p className="text-lg leading-relaxed mb-6">
+                For me, women&apos;s golf is the nervous-system-regulating sport of my dreams - the perfect backdrop to life, always there when I want to tune in and cheer for a cast of funny, grounded, and genuinely good-hearted women. My hope is that The Birdie Briefing shows you exactly why - and maybe even makes you fall for women&apos;s golf, too. 
               </p>
             </div>
           </div>
@@ -122,7 +123,7 @@ export default function About() {
                 After graduate school, I moved to Seoul, South Korea, where screen golf was everywhere. Golf was more than a game there. Golf was a social fabric, a way to connect with friends and total strangers alike. The passion and joy I found in those indoor rounds, combined with watching Korean professional golfers revived my love for the sport.
               </p>
               <p className="text-lg leading-relaxed">
-                LPGA players are the world&apos;s finest golfers. Athletes whose skill, resilience, and creativity command recognition across sport. Supporting women&apos;s golf to me means more than celebrating victories; it&apos;s about highlighting their stories, elevating their achievements, and confronting the persistent inequalities in golf culture. These remarkable individuals bring diversity and strength to the game, and I&apos;m honored to bring that passion to The Birdie Briefing as I help share their voices.
+                As I see it, LPGA players are the world&apos;s finest golfers. Athletes whose skill, resilience, and creativity command recognition across sport. Supporting women&apos;s golf to me means more than celebrating victories; it&apos;s about highlighting their stories, elevating their achievements, and confronting the persistent inequalities in golf culture. These remarkable individuals bring diversity and strength to the game, and I&apos;m honored to bring that passion to The Birdie Briefing as I help share their voices.
               </p>
             </div>
           </div>
