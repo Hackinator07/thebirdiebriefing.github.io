@@ -8,7 +8,7 @@ import MarkdownContent from '@/components/MarkdownContent';
 
 export default function NewsPage() {
   const [articles] = useState(getArticles());
-  const [visibleArticles, setVisibleArticles] = useState(1);
+  const [visibleArticles, setVisibleArticles] = useState(5); // Start with 5 articles
   const [loading, setLoading] = useState(false);
 
   // Simulate infinite scroll
@@ -23,7 +23,7 @@ export default function NewsPage() {
         setLoading(true);
         // Simulate loading delay
         setTimeout(() => {
-          setVisibleArticles(prev => Math.min(prev + 1, articles.length));
+          setVisibleArticles(prev => Math.min(prev + 5, articles.length)); // Load 5 more articles
           setLoading(false);
         }, 500);
       }
