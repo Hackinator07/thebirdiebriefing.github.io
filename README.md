@@ -36,7 +36,7 @@ A modern, responsive website for The Birdie Briefing - your premier source for L
 1. Clone the repository
    ```bash
    git clone git@github.com:Hackinator07/thebirdiebriefing.github.io.git
-   cd golfgirlgazette
+   cd thebirdiebriefing.github.io
    ```
 
 2. Install dependencies
@@ -255,7 +255,7 @@ npm run export           # Build and export static files
 ## 📁 Project Structure
 
 ```
-golfgirlgazette/
+thebirdiebriefing/
 ├── src/
 │   ├── app/                 # Next.js App Router pages
 │   │   ├── about/           # About page
