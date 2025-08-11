@@ -8,7 +8,7 @@ async function fetchRankings() {
 
     const response = await axios.get('https://www.rolexrankings.com/core/rankings/list', {
       headers: {
-        'User-Agent': 'GolfGirlGazette/1.0 (https://golfgirlgazette.com)',
+        'User-Agent': 'BirdieBriefing/1.0 (https://birdiebriefing.com)',
         'Accept': 'application/json'
       }
     });

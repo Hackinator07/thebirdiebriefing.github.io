@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { getArticles, formatDate, calculateReadTime } from '@/lib/data';
 import MarkdownContent from '@/components/MarkdownContent';
+import NewsListJsonLd from '@/components/NewsListJsonLd';
 
 export default function NewsPage() {
   const [articles] = useState(getArticles());
@@ -33,10 +34,14 @@ export default function NewsPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [loading, visibleArticles, articles.length]);
 
+  const newsUrl = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/news`;
+
   return (
-    <div className="bg-white min-h-screen">
-      {/* Main Content Container */}
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8">
+    <>
+      <NewsListJsonLd articles={articles} url={newsUrl} />
+      <div className="bg-white min-h-screen">
+        {/* Main Content Container */}
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
             {/* Main Articles Content */}
             <main className="flex-1 max-w-4xl">
@@ -173,5 +178,6 @@ export default function NewsPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

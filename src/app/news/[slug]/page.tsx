@@ -12,6 +12,7 @@ import MarkdownContent from '@/components/MarkdownContent';
 import TagList from '@/components/TagList';
 import AuthorCallout from '@/components/AuthorCallout';
 import ArticleSections from '@/components/ArticleSections';
+import ArticleJsonLd from '@/components/ArticleJsonLd';
 
 interface ArticlePageProps {
   params: Promise<{
@@ -55,10 +56,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     notFound();
   }
 
+  const articleUrl = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/news/${article.slug}`;
+
   return (
-    <div className="bg-white min-h-screen">
-      {/* Main Content Container */}
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 article-container">
+    <>
+      <ArticleJsonLd article={article} url={articleUrl} />
+      <div className="bg-white min-h-screen">
+        {/* Main Content Container */}
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 article-container">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Main Article Content */}
           <main className="flex-1 max-w-4xl">
@@ -204,5 +209,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         </div>
       </div>
     </div>
+    </>
   );
 }
