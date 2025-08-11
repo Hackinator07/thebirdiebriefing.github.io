@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/birdiebriefing.com' : '',
   turbopack: {
     rules: {
       '*.json': {
