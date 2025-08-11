@@ -5,7 +5,7 @@ import VideoBackground from "@/components/VideoBackground";
 export const metadata = {
   title: "Podcast - The Birdie Briefing",
   description:
-    "Listen to the latest episodes of The Birdie Briefing podcast featuring LPGA news, player interviews, and golf insights.",
+    "Listen to the latest episodes of The Birdie Briefing podcast featuring LPGA news, upcoming tournaments, and golf insights.",
 };
 
 export default function PodcastPage() {
@@ -46,14 +46,10 @@ export default function PodcastPage() {
 
                   <div className='mb-8 text-lg leading-relaxed text-gray-700'>
                     <p className='mb-4'>
-                      Dive deep into the world of women's golf with our in-depth
-                      podcast episodes featuring player interviews, tournament
-                      analysis, and behind-the-scenes insights.
-                    </p>
-                    <p className='mb-4'>
-                      Join us every week as we explore the latest LPGA news,
-                      share exclusive player stories, and provide expert
-                      analysis of the world's most exciting golf tournaments.
+                      Stay up to date on all things women’s golf with quick, digestible episodes
+                      covering the latest LPGA tournaments, standout moments, and must-know news. 
+                      Each week, The Birdie Briefing brings you fast, fresh updates 
+                      so you can follow the game you love - no endless chatter, just the highlights that matter.
                     </p>
                   </div>
 
