@@ -3,6 +3,7 @@ import podcastsData from '@/data/podcasts.json';
 import rankingsData from '@/data/rankings.json';
 import articlesData from '@/data/articles.json';
 import configData from '@/data/config.json';
+import biosData from '@/data/bios.json';
 
 export interface NewsArticle {
   id: string;
@@ -103,6 +104,36 @@ interface Author {
   name: string;
   email: string;
   callouts: Record<string, string>;
+}
+
+interface TeamMember {
+  name: string;
+  title: string;
+  image: string;
+  imageAlt: string;
+  bio: string[];
+}
+
+interface Mission {
+  title: string;
+  description: string;
+  content: string[];
+}
+
+interface Contact {
+  title: string;
+  subtitle: string;
+  buttonText: string;
+  buttonLink: string;
+}
+
+interface Bios {
+  team: {
+    marie: TeamMember;
+    george: TeamMember;
+  };
+  mission: Mission;
+  contact: Contact;
 }
 
 export function getNewsArticles(): NewsArticle[] {
@@ -208,4 +239,23 @@ export function calculateReadTime(content: string[]): number {
   const readTimeMinutes = Math.ceil(totalWords / wordsPerMinute);
 
   return readTimeMinutes;
+}
+
+export function getBios(): Bios {
+  return biosData as Bios;
+}
+
+export function getTeamMember(memberId: 'marie' | 'george'): TeamMember | null {
+  const bios = biosData as Bios;
+  return bios.team[memberId] || null;
+}
+
+export function getMission(): Mission {
+  const bios = biosData as Bios;
+  return bios.mission;
+}
+
+export function getContact(): Contact {
+  const bios = biosData as Bios;
+  return bios.contact;
 }
