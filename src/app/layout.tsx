@@ -4,7 +4,6 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Analytics from '@/components/Analytics';
-import GoogleAnalytics from '@/components/GoogleAnalytics';
 // import TranslationWidget from '@/components/TranslationWidget';
 
 const playfairDisplay = Playfair_Display({
@@ -42,7 +41,6 @@ export default function RootLayout({
     <html lang="en" className={`${playfairDisplay.variable} ${poppins.variable}`}>
 
       <body className="min-h-screen bg-white">
-        <GoogleAnalytics />
         <Header />
         <main>{children}</main>
         <Footer />
