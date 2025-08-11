@@ -75,12 +75,6 @@ export default function NotFound() {
                       Podcast
                     </Link>
                     <Link
-                      href="/cocktails"
-                      className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
-                    >
-                      Cocktails
-                    </Link>
-                    <Link
                       href="/rankings"
                       className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
                     >

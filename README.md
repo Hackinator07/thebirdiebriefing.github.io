@@ -39,7 +39,6 @@ Visit the live site: [https://hackinator07.github.io/thebirdiebriefing.github.io
 - **Events**: Golf events and tournaments
 - **Courses**: Golf course reviews and information
 - **Rankings**: LPGA player rankings
-- **Cocktails**: Golf-themed drink recipes
 - **About**: Team information and mission
 - **Contact**: Get in touch with us
 

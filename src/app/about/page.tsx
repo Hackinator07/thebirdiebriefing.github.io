@@ -26,15 +26,9 @@ export default function About() {
                   <span className="text-secondary-500">Us</span>
                 </h1>
                 <div className="text-lg leading-relaxed text-gray-700 max-w-4xl mx-auto">
-                  <p className="mb-4">
-                    The Birdie Briefing is dedicated to amplifying the voices and stories of women in golf. We believe that women's golf deserves the same level of coverage, respect, and celebration as men's golf.
-                  </p>
-                  <p className="mb-4">
-                    Our platform provides comprehensive coverage of LPGA tournaments, player spotlights, course reviews, and industry insights. We go beyond the scores to share the human stories behind the game - the challenges, triumphs, and personal journeys of the incredible women who make golf what it is today.
-                  </p>
-                  <p>
-                    Whether you're a seasoned golfer, a casual fan, or just discovering the sport, The Birdie Briefing is your gateway to the vibrant world of women's golf.
-                  </p>
+                <p className="mb-4">At The Birdie Briefing, we amplify the stories, achievements, and voices of women in golf—because the game deserves more than a side note. We believe women’s golf should be covered, respected, and celebrated with the same depth and passion as the men’s game, and we’re here to make that happen.</p>
+                <p className="mb-4">Our coverage spans LPGA tournaments, player profiles, course reviews, and industry insights, always going beyond the scorecard to spotlight the challenges, triumphs, and personal journeys that define the sport.</p>
+                <p>Whether you’re a seasoned golfer, a casual fan, or brand new to the game, The Birdie Briefing is your gateway to a version of golf that’s vibrant, inclusive, and told through a lens that’s truly our own.</p>
                 </div>
               </div>
             </div>
@@ -43,7 +37,9 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section id="george-hack" className="py-16 lg:py-24">
+
+      {/* Marie Hack Section */}
+      <section id="marie-hack" className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           {/* Hero Section with Full-Width Image */}
           <div className="relative mb-16">
@@ -51,7 +47,52 @@ export default function About() {
             <div className="w-full mb-8">
               <div className="w-full h-96 bg-gradient-to-b from-gray-100 to-gray-200 rounded-lg overflow-hidden">
                 <Image
-                  src="/images/articles/hull.png"
+                  src="/optimized/hull.webp"
+                  alt="Marie Hack"
+                  width={1200}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headlines */}
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
+                <h2 className="text-5xl font-bold text-gray-900 leading-tight">Marie Hack</h2>
+                <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
+              </div>
+              <p className="text-2xl text-gray-600">Founder & Host</p>
+            </div>
+          </div>
+
+          {/* Bio Content */}
+          <div className="max-w-4xl mx-auto">
+            <div className="prose prose-lg mx-auto text-gray-600">
+              <p className="text-lg leading-relaxed mb-6">
+                Marie Hack is the visionary founder and charismatic host behind The Birdie Briefing. With a passion for storytelling and a deep appreciation for the game of golf, Marie has created a platform that celebrates the incredible women who make the LPGA Tour one of the most exciting and competitive sports leagues in the world.
+              </p>
+              <p className="text-lg leading-relaxed mb-6">
+                As the host of The Birdie Briefing podcast, Marie brings her unique perspective and engaging personality to every episode, diving deep into the stories that matter most to women&apos;s golf fans. Her interviews with players, coaches, and industry professionals provide listeners with unprecedented access to the personalities and insights that shape the sport.
+              </p>
+              <p className="text-lg leading-relaxed">
+                Marie&apos;s commitment to elevating women&apos;s golf goes beyond the microphone. She believes that every swing, every putt, and every victory deserves to be celebrated with the same enthusiasm and respect as any other professional sport. Through The Birdie Briefing, she&apos;s building a community of fans who share her passion for the game and its remarkable athletes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="george-hack" className="py-16 lg:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Hero Section with Full-Width Image */}
+          <div className="relative mb-16">
+            {/* Full-Width Image Container */}
+            <div className="w-full mb-8">
+              <div className="w-full h-96 bg-gradient-to-b from-gray-100 to-gray-200 rounded-lg overflow-hidden">
+                <Image
+                  src="/optimized/hull.webp"
                   alt="George Hack"
                   width={1200}
                   height={384}
@@ -67,7 +108,7 @@ export default function About() {
                 <h2 className="text-5xl font-bold text-gray-900 leading-tight">George Hack</h2>
                 <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
               </div>
-              <p className="text-2xl text-gray-600">Founder & Host</p>
+              <p className="text-2xl text-gray-600">Writer, Analyst, & Head of Marketing</p>
             </div>
           </div>
 

@@ -9,7 +9,7 @@
       "date": "2025-08-13",
       "category": "LPGA Analysis",
       "order": 3,
-      "featured": true,
+      "featured": false,
       "excerpt": "The 22-year-old from Bangkok methodically reclaimed the top spot in the Rolex Rankings with the kind of composure that defines greatness.",
       "content": [
         "Let's put it plainly: Jeeno Thitikul is the best golfer in the world right now, and she did it by finishing tied for 30th at the AIG Women's Open.",
@@ -21,8 +21,8 @@
         "And the greater truth? Jeeno doesn't even need a major to have her place among the game's best. That's exactly what makes her so brilliant to watch."
       ],
       "image": {
-        "src": "https://hackinator07.github.io/thebirdiebriefing.github.io/images/articles/jeeno-thitikul.jpg",
-        "alt": "Jeeno Thitikul atAIG Women's Open",
+        "src": "/optimized/jeeno-thitikul.webp",
+        "alt": "Jeeno Thitikul at AIG Women's Open",
         "caption": "Jeeno Thitikul during the AIG Women's Open at Royal Porthcawl.",
         "courtesy": "Getty Images"
       },
@@ -56,7 +56,7 @@
         "Tickets for The Standard Portland Classic are on sale now at PortlandClassic.com, starting from $25. Fans seeking a closer vantage can opt for upgraded passes with VIP seating inside the Champions Club, while a special combo package pairs tournament access with a ticket to the Portland Thorns FC match on August 10. On August 15, $5 from every ticket purchased will be donated to the Sunshine Division. As ever, juniors aged 17 and under are welcomed free of charge, ensuring the next generation can experience golf's greatest players up close."
       ],
       "image": {
-        "src": "https://hackinator07.github.io/thebirdiebriefing.github.io/images/articles/portland-classic-mack.jpg",
+        "src": "/optimized/portland-classic-mack.webp",
         "alt": "Columbia Edgewater Country Club",
         "caption": "Columbia Edgewater Country Club, home of The Standard Portland Classic.",
         "courtesy": "Getty, LPGA"
@@ -105,20 +105,20 @@
           "title": "How to Watch The Standard Portland Classic",
           "schedule": [
             {
-              "day": "Thursday and Friday",
+              "day": "Thursday Aug 14 2025 and Friday Aug 15 2025",
               "times": [
                 "Golf Channel: 10:00 AM – 12:00 PM CDT",
                 "NBC Sports: 12:00 PM – 1:00 PM CDT"
               ]
             },
             {
-              "day": "Saturday",
+              "day": "Saturday Aug 16 2025",
               "times": [
                 "Golf Channel: 5:00 PM – 8:00 PM CDT"
               ]
             },
             {
-              "day": "Sunday",
+              "day": "Sunday Aug 17 2025",
               "times": [
                 "Golf Channel: 3:00 PM – 6:00 PM CDT"
               ]
@@ -136,7 +136,7 @@
       "date": "2025-08-11",
       "category": "LPGA Analysis",
       "order": 2,
-      "featured": false,
+      "featured": true,
       "excerpt": "A deep dive into Charley Hull's remarkable performance at the AIG Women's Open, where she defied expectations and nearly claimed victory.",
       "content": [
         "By all accounts, Charley Hull should have collapsed again, physically or metaphorically. She said herself she came into the AIG Women's Open thinking she wouldn't make the cut. That's not just false modesty; she collapsed three times at Evian, suffered a back injury that limited her practice time, and still showed up at Royal Porthcawl like she'd just fought off an adder with a long iron.",
@@ -160,7 +160,7 @@
         "Charley Hull won't be satisfied with another second place, and neither should you. But if you're looking for a true soul of women's golf, the kind that will not go gentle into that good night (or press tent) she's out there on Porthcawl's 16th, putter in hand: a little chipped, a little cheeky, and unmistakably alive."
       ],
       "image": {
-        "src": "https://hackinator07.github.io/thebirdiebriefing.github.io/images/articles/hull.png",
+        "src": "/optimized/hull.webp",
         "alt": "Charley Hull at AIG Women's Open",
         "caption": "Charley Hull post tournament interview at the AIG Women's Open.",
         "courtesy": "https://media.lpga.com"

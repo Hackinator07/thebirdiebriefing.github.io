@@ -12,6 +12,9 @@ const config = {
   maxHeight: 1080, // Maximum height for images
   formats: ['webp'], // Only generate WebP for build (smaller, modern format)
   replaceOriginals: false, // Don't replace originals during build
+  // Directories to process (skip optimized directory)
+  sourceDirs: ['images', 'videos'], // Only process these directories
+  skipDirs: ['optimized'], // Skip these directories
 };
 
 // Supported image extensions
@@ -23,6 +26,26 @@ function getFileSizeInMB(filePath) {
   return (stats.size / (1024 * 1024)).toFixed(2);
 }
 
+// Function to check if a path should be skipped
+function shouldSkipPath(filePath, publicDir) {
+  const relativePath = path.relative(publicDir, filePath);
+  const pathParts = relativePath.split(path.sep);
+
+  // Skip if any part of the path is in skipDirs
+  for (const skipDir of config.skipDirs) {
+    if (pathParts.includes(skipDir)) {
+      return true;
+    }
+  }
+
+  // Only process if the first directory is in sourceDirs
+  if (pathParts.length > 0 && !config.sourceDirs.includes(pathParts[0])) {
+    return true;
+  }
+
+  return false;
+}
+
 // Function to optimize a single image
 async function optimizeImage(inputPath, outputDir) {
   try {
@@ -31,6 +54,13 @@ async function optimizeImage(inputPath, outputDir) {
     const ext = path.parse(filename).ext.toLowerCase();
 
     if (!supportedExtensions.includes(ext)) {
+      return null;
+    }
+
+    // Check if optimized version already exists
+    const webpPath = path.join(outputDir, `${nameWithoutExt}.webp`);
+    if (fs.existsSync(webpPath)) {
+      console.log(`⏭️  Skipping ${filename} - already optimized`);
       return null;
     }
 
@@ -48,7 +78,6 @@ async function optimizeImage(inputPath, outputDir) {
     }
 
     // Generate WebP version (most efficient for web)
-    const webpPath = path.join(outputDir, `${nameWithoutExt}.webp`);
     await processedImage
       .webp({ quality: config.webpQuality })
       .toFile(webpPath);
@@ -72,7 +101,7 @@ async function optimizeImage(inputPath, outputDir) {
 }
 
 // Function to recursively find all images in a directory
-async function findImages(dir) {
+async function findImages(dir, publicDir) {
   const images = [];
 
   try {
@@ -82,11 +111,14 @@ async function findImages(dir) {
       const fullPath = path.join(dir, item.name);
 
       if (item.isDirectory()) {
-        const subImages = await findImages(fullPath);
-        images.push(...subImages);
+        // Skip directories that should be skipped
+        if (!shouldSkipPath(fullPath, publicDir)) {
+          const subImages = await findImages(fullPath, publicDir);
+          images.push(...subImages);
+        }
       } else if (item.isFile()) {
         const ext = path.extname(item.name).toLowerCase();
-        if (supportedExtensions.includes(ext)) {
+        if (supportedExtensions.includes(ext) && !shouldSkipPath(fullPath, publicDir)) {
           images.push(fullPath);
         }
       }
@@ -114,7 +146,7 @@ async function optimizeImagesForBuild() {
   }
 
   // Find all images
-  const images = await findImages(publicDir);
+  const images = await findImages(publicDir, publicDir);
 
   if (images.length === 0) {
     console.log('No images found to optimize.');
@@ -127,6 +159,7 @@ async function optimizeImagesForBuild() {
   let totalOriginalSize = 0;
   let totalOptimizedSize = 0;
   let processedCount = 0;
+  let skippedCount = 0;
   const results = [];
 
   for (const imagePath of images) {
@@ -137,33 +170,43 @@ async function optimizeImagesForBuild() {
       totalOriginalSize += parseFloat(result.originalSize);
       totalOptimizedSize += parseFloat(result.optimizedSize);
       results.push(result);
+    } else {
+      skippedCount++;
     }
   }
 
   // Summary
-  const totalSavings = ((totalOriginalSize - totalOptimizedSize) / totalOriginalSize * 100).toFixed(1);
+  if (processedCount > 0) {
+    const totalSavings = ((totalOriginalSize - totalOptimizedSize) / totalOriginalSize * 100).toFixed(1);
+    console.log(`✅ Optimized ${processedCount} images`);
+    if (skippedCount > 0) {
+      console.log(`⏭️  Skipped ${skippedCount} images (already optimized)`);
+    }
+    console.log(`📊 Size reduction: ${totalSavings}% (${totalOriginalSize.toFixed(2)}MB → ${totalOptimizedSize.toFixed(2)}MB)`);
 
-  console.log(`✅ Optimized ${processedCount} images`);
-  console.log(`📊 Size reduction: ${totalSavings}% (${totalOriginalSize.toFixed(2)}MB → ${totalOptimizedSize.toFixed(2)}MB)`);
+    // Create a manifest file for the build process
+    const manifest = {
+      timestamp: new Date().toISOString(),
+      processed: processedCount,
+      skipped: skippedCount,
+      totalOriginalSize: totalOriginalSize.toFixed(2),
+      totalOptimizedSize: totalOptimizedSize.toFixed(2),
+      savings: totalSavings,
+      images: results.map(r => ({
+        original: path.relative(publicDir, r.original),
+        optimized: path.relative(publicDir, r.optimized),
+        savings: r.savings
+      }))
+    };
 
-  // Create a manifest file for the build process
-  const manifest = {
-    timestamp: new Date().toISOString(),
-    processed: processedCount,
-    totalOriginalSize: totalOriginalSize.toFixed(2),
-    totalOptimizedSize: totalOptimizedSize.toFixed(2),
-    savings: totalSavings,
-    images: results.map(r => ({
-      original: path.relative(publicDir, r.original),
-      optimized: path.relative(publicDir, r.optimized),
-      savings: r.savings
-    }))
-  };
+    const manifestPath = path.join(outputDir, 'optimization-manifest.json');
+    await fsPromises.writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
-  const manifestPath = path.join(outputDir, 'optimization-manifest.json');
-  await fsPromises.writeFile(manifestPath, JSON.stringify(manifest, null, 2));
+    console.log('📝 Optimization manifest saved');
+  } else {
+    console.log('✅ All images already optimized');
+  }
 
-  console.log('📝 Optimization manifest saved');
   console.log('🚀 Build process continuing...\n');
 }
 

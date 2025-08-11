@@ -45,7 +45,7 @@ export default function Home() {
                   </div>
                   <div className="text-left">
                     <p className="font-medium text-gray-900">Marie Hack</p>
-                    <p className="text-sm text-gray-600">Editor & Founder</p>
+                    <p className="text-sm text-gray-600">Founder & Host</p>
                   </div>
                 </div>
 

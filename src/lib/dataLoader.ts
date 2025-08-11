@@ -30,16 +30,6 @@ export async function loadPodcasts() {
   }
 }
 
-export async function loadCocktails() {
-  try {
-    const cocktailsData = await import('@/data/cocktails.json');
-    return cocktailsData.default.cocktails || [];
-  } catch (error) {
-    console.error('Error loading cocktails:', error);
-    return [];
-  }
-}
-
 export async function loadRankings() {
   try {
     const rankingsData = await import('@/data/rankings.json');

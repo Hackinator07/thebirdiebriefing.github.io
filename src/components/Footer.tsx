@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import NewsletterSignup from './NewsletterSignup';
-import { FaInstagram, FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaYoutube } from 'react-icons/fa';
 
 export default function Footer() {
   const navigation = {
@@ -9,7 +9,6 @@ export default function Footer() {
       { name: 'News', href: '/news' },
       { name: 'Podcast', href: '/podcast' },
       { name: 'Rankings', href: '/rankings' },
-      { name: 'Cocktails', href: '/cocktails' },
       { name: 'About', href: '/about' },
       { name: 'Contact', href: '/contact-us' },
     ],
@@ -29,9 +28,9 @@ export default function Footer() {
         ),
       },
       {
-        name: 'Facebook',
-        href: 'https://www.facebook.com/birdiebriefing',
-        icon: (props: React.SVGProps<SVGSVGElement>) => <FaFacebook {...props} />,
+        name: 'YouTube',
+        href: 'https://www.youtube.com/channel/UCW2vyHWE3bMfum9FPq-8xGw',
+        icon: (props: React.SVGProps<SVGSVGElement>) => <FaYoutube {...props} />,
       },
     ],
   };

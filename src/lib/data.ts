@@ -1,6 +1,5 @@
 import newsData from '@/data/news.json';
 import podcastsData from '@/data/podcasts.json';
-import cocktailsData from '@/data/cocktails.json';
 import rankingsData from '@/data/rankings.json';
 import articlesData from '@/data/articles.json';
 import configData from '@/data/config.json';
@@ -30,20 +29,6 @@ export interface PodcastEpisode {
     amazon?: string;
   };
 }
-
-
-
-export interface Cocktail {
-  id: string;
-  name: string;
-  description: string;
-  ingredients: string[];
-  instructions: string[];
-  garnish: string;
-  image?: string;
-}
-
-
 
 export interface ArticleSection {
   type: 'links' | 'tv-schedule';
@@ -120,8 +105,6 @@ interface Author {
   callouts: Record<string, string>;
 }
 
-
-
 export function getNewsArticles(): NewsArticle[] {
   return newsData.articles;
 }
@@ -133,14 +116,6 @@ export function getNewsArticle(slug: string): NewsArticle | undefined {
 export function getPodcastEpisodes(): PodcastEpisode[] {
   return podcastsData.episodes;
 }
-
-
-
-export function getCocktails(): Cocktail[] {
-  return cocktailsData.cocktails;
-}
-
-
 
 export function getArticles(): Article[] {
   const articles = articlesData.articles as Article[];
@@ -165,8 +140,6 @@ export function getFeaturedArticle(): Article | undefined {
   const articles = articlesData.articles as Article[];
   return articles.find(article => article.featured === true);
 }
-
-
 
 export function getRankings(): Rankings {
   return rankingsData;
@@ -211,7 +184,6 @@ export function updateCallout(authorId: string, type: string, newMessage: string
   // In a real application, you might want to persist this to a database
   console.log(`Callout "${type}" for author "${authorId}" updated to: ${newMessage}`);
 }
-
 
 export function formatDate(dateString: string): string {
   const date = new Date(dateString);

@@ -3,7 +3,7 @@ import { Playfair_Display, Poppins } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import TranslationWidget from '@/components/TranslationWidget';
+// import TranslationWidget from '@/components/TranslationWidget';
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
@@ -34,7 +34,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <TranslationWidget />
+        {/* <TranslationWidget /> */}
       </body>
     </html>
   );

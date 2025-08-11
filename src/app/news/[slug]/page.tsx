@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PrintButton from './PrintButton';
 import EmailShareButton from './EmailShareButton';
-import FacebookShareButton from './FacebookShareButton';
+
 import BlueskyShareButton from './BlueskyShareButton';
 import RedditShareButton from './RedditShareButton';
 import CopyUrlButton from './CopyUrlButton';
@@ -156,10 +156,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <div className="mt-12 pt-8 border-t border-gray-200 social-sharing">
                 <div className="flex items-center justify-between">
                   <div className="flex gap-4">
-                    <FacebookShareButton
-                      title={article.title}
-                      excerpt={article.excerpt}
-                    />
                     <BlueskyShareButton
                       title={article.title}
                       excerpt={article.excerpt}
