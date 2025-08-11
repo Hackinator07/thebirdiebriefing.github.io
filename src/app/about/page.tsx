@@ -75,9 +75,11 @@ export default function About() {
               </p>
               <p className="text-lg leading-relaxed mb-6">
                 My experience with golf as a young adult was minimal - half-hearted attempts to learn it because “that&apos;s what lawyers do” never quite stuck. Neither did the happy hours disguised as golf outings at Topgolf during my years in D.C. It wasn&apos;t until my friend introduced me to the LPGA that I fell in love with the game. I signed up for lessons, started following tournaments, and never looked back.
-              <p className="text-lg leading-relaxed">
-                What I love most about women&apos;s golf is its diversity - not just in the players&apos; global backgrounds, but in the way each brings her own style, strategy, and personality to the course. The tour is full of athletes whose openness and authenticity give the game a uniquely warm and quietly cool vibe. I&apos;d love to see the LPGA lean into that - spotlighting players&apos; personalities and bringing a fresher, more inclusive energy that makes it clear this isn&apos;t our father&apos;s golf tour. 
+              </p>
               <p className="text-lg leading-relaxed mb-6">
+                What I love most about women&apos;s golf is its diversity - not just in the players&apos; global backgrounds, but in the way each brings her own style, strategy, and personality to the course. The tour is full of athletes whose openness and authenticity give the game a uniquely warm and quietly cool vibe. I&apos;d love to see the LPGA lean into that - spotlighting players&apos; personalities and bringing a fresher, more inclusive energy that makes it clear this isn&apos;t our father&apos;s golf tour. 
+              </p>
+              <p className="text-lg leading-relaxed">
                 For me, women&apos;s golf is the nervous-system-regulating sport of my dreams - the perfect backdrop to life, always there when I want to tune in and cheer for a cast of funny, grounded, and genuinely good-hearted women. My hope is that The Birdie Briefing shows you exactly why - and maybe even makes you fall for women&apos;s golf, too. 
               </p>
             </div>
