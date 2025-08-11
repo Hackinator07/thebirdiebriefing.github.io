@@ -36,7 +36,7 @@ A modern, responsive website for The Birdie Briefing - your premier source for L
 1. Clone the repository
    ```bash
    git clone git@github.com:Hackinator07/thebirdiebriefing.github.io.git
-   cd thebirdiebriefing.github.io
+   cd golfgirlgazette
    ```
 
 2. Install dependencies
@@ -107,6 +107,8 @@ Team member information is in `src/data/bios.json`:
 - *Italic*: `*text*`
 - [Links](https://example.com): `[text](url)`
 - ~~Strikethrough~~: `~~text~~`
+
+**Note**: Markdown support is available in articles, bios, author callouts, and news excerpts.
 
 ### Adding News Articles
 News articles are in `src/data/news.json`:
@@ -293,7 +295,7 @@ golfgirlgazette/
 - **Component classes**: Reusable utility classes
 
 ### Custom Components
-- **MarkdownContent**: Renders Markdown with custom styling
+- **MarkdownContent**: Renders Markdown with custom styling for articles, bios, and callouts
 - **VideoBackground**: Dynamic video backgrounds
 - **InstagramSlider**: Social media integration
 - **SpotifyEmbed**: Podcast embedding
@@ -325,6 +327,7 @@ npm run build:no-optimize
 - Check JSON syntax in content files
 - Verify Markdown syntax is correct
 - Ensure content is properly escaped
+- Check that MarkdownContent component is being used (not LinkifyText)
 
 **Images not loading:**
 - Check file paths in JSON files
