@@ -139,14 +139,10 @@ export default function ContactUsPage() {
             <div className='bg-white rounded-lg p-6 lg:p-8'>
               {/* Main Headlines */}
               <div className='text-center mb-6'>
-                <div className="flex items-center justify-center gap-4 mb-6">
-                  <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
-                  <h1 className='text-4xl lg:text-5xl font-bold text-gray-900 leading-tight'>
-                    <span className='text-primary-500'>Contact</span>{" "}
-                    <span className='text-secondary-500'>Us</span>
-                  </h1>
-                  <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
-                </div>
+                <h1 className='text-4xl lg:text-5xl font-bold text-gray-900 leading-tight'>
+                  <span className='text-primary-500'>Contact</span>{" "}
+                  <span className='text-secondary-500'>Us</span>
+                </h1>
               </div>
 
               {/* Introduction */}
