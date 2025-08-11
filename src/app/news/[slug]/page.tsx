@@ -8,7 +8,7 @@ import EmailShareButton from './EmailShareButton';
 import BlueskyShareButton from './BlueskyShareButton';
 import RedditShareButton from './RedditShareButton';
 import CopyUrlButton from './CopyUrlButton';
-import LinkifyText from './LinkifyText';
+import MarkdownContent from '@/components/MarkdownContent';
 import TagList from '@/components/TagList';
 import AuthorCallout from '@/components/AuthorCallout';
 import ArticleSections from '@/components/ArticleSections';
@@ -130,9 +130,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               {/* Article Content */}
               <div className="prose prose-lg max-w-none article-content">
                 {article.content.map((paragraph, index) => (
-                  <p key={index} className="mb-6 text-lg text-gray-800 leading-relaxed">
-                    <LinkifyText text={paragraph} />
-                  </p>
+                  <MarkdownContent
+                    key={index}
+                    content={paragraph}
+                    className="mb-6 text-lg text-gray-800 leading-relaxed"
+                  />
                 ))}
               </div>
 

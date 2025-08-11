@@ -13,7 +13,7 @@ export default function MarkdownContent({ content, className = '' }: MarkdownCon
         remarkPlugins={[remarkGfm]}
         components={{
           // Customize link styling
-          a: ({ node, ...props }) => (
+          a: ({ ...props }) => (
             <a
               {...props}
               className="text-primary-600 hover:text-primary-700 underline transition-colors duration-200"
@@ -22,15 +22,15 @@ export default function MarkdownContent({ content, className = '' }: MarkdownCon
             />
           ),
           // Customize strong/bold styling
-          strong: ({ node, ...props }) => (
+          strong: ({ ...props }) => (
             <strong {...props} className="font-semibold text-gray-900" />
           ),
           // Customize emphasis/italic styling
-          em: ({ node, ...props }) => (
+          em: ({ ...props }) => (
             <em {...props} className="italic text-gray-800" />
           ),
           // Customize paragraph styling
-          p: ({ node, ...props }) => (
+          p: ({ ...props }) => (
             <p {...props} className="text-lg leading-relaxed text-gray-600 mb-6 last:mb-0" />
           ),
         }}

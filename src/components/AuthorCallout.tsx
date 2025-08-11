@@ -1,4 +1,4 @@
-import LinkifyText from '@/app/news/[slug]/LinkifyText';
+import MarkdownContent from '@/components/MarkdownContent';
 import { FaGolfBall } from 'react-icons/fa';
 import { getAuthorCallout } from '@/lib/data';
 
@@ -42,7 +42,7 @@ export default function AuthorCallout({
             {/* Message content with editorial styling */}
             <div className="flex-1">
               <div className="text-gray-700 font-medium italic leading-relaxed text-lg">
-                <LinkifyText text={calloutMessage} />
+                <MarkdownContent content={calloutMessage} />
               </div>
             </div>
           </div>

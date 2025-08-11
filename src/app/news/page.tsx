@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { getArticles, formatDate, calculateReadTime } from '@/lib/data';
-import LinkifyText from '@/app/news/[slug]/LinkifyText';
+import MarkdownContent from '@/components/MarkdownContent';
 
 export default function NewsPage() {
   const [articles] = useState(getArticles());
@@ -127,7 +127,7 @@ export default function NewsPage() {
                     <div className="prose prose-lg max-w-none mb-8">
                       {/* Show first paragraph as featured text */}
                       <p className="mb-6 text-lg text-gray-800 leading-relaxed">
-                        <LinkifyText text={article.content[0]} />
+                        <MarkdownContent content={article.content[0]} />
                       </p>
                     </div>
 
