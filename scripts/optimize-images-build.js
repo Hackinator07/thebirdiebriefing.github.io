@@ -137,6 +137,19 @@ async function optimizeImagesForBuild() {
   const publicDir = path.join(__dirname, '..', 'public');
   const outputDir = path.join(publicDir, 'optimized');
 
+  // Copy CNAME file to public directory for GitHub Pages
+  const cnameSource = path.join(__dirname, '..', 'CNAME');
+  const cnameDest = path.join(publicDir, 'CNAME');
+
+  try {
+    if (fs.existsSync(cnameSource)) {
+      await fsPromises.copyFile(cnameSource, cnameDest);
+      console.log('📄 CNAME file copied to public directory');
+    }
+  } catch (error) {
+    console.error('Error copying CNAME file:', error.message);
+  }
+
   // Create output directory if it doesn't exist
   try {
     await fsPromises.mkdir(outputDir, { recursive: true });

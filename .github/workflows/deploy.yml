@@ -37,6 +37,15 @@ jobs:
           NODE_ENV: production
           NEXT_PUBLIC_TRANSLATION_WIDGET_KEY: ${{ secrets.TRANSLATION_WIDGET_KEY }}
 
+      - name: Ensure CNAME is in build output
+        run: |
+          if [ -f "CNAME" ]; then
+            cp CNAME out/
+            echo "CNAME file copied to build output"
+          else
+            echo "CNAME file not found in root"
+          fi
+
       - name: List build output
         run: ls -la out/
 
