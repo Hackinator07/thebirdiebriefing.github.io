@@ -106,9 +106,13 @@ export default function CocktailsPage() {
       <section className="bg-gray-50 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Featured This Month
-            </h2>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                Featured This Month
+              </h2>
+              <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
+            </div>
             <p className="text-xl text-gray-600">
               Our top picks for the perfect golf course refreshment
             </p>

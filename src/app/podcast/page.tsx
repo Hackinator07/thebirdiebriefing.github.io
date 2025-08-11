@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import SpotifyEmbed from '@/components/SpotifyEmbed';
 import VideoBackground from '@/components/VideoBackground';
 
@@ -23,13 +24,14 @@ export default function PodcastPage() {
               <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                 {/* Podcast Image */}
                 <div className="w-full lg:w-1/3 flex justify-center">
-                  <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-32 h-32 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span className="text-white font-bold text-4xl">TB</span>
-                      </div>
-                      <h2 className="text-2xl font-bold text-primary-600">The Birdie Briefing</h2>
-                    </div>
+                  <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden flex items-center justify-center">
+                    <Image
+                      src="/images/logo.png"
+                      alt="The Birdie Briefing Logo"
+                      width={384}
+                      height={384}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
 
@@ -67,18 +69,18 @@ export default function PodcastPage() {
                     <ul className="flex flex-wrap justify-center lg:justify-start gap-4">
                       <li>
                         <a
-                          href="https://podcasts.apple.com/us/podcast/the-birdie-briefing"
+                          href="https://podcasts.apple.com/us/podcast/the-birdie-briefing/id1832371066"
                           target="_blank"
                           rel="noreferrer noopener"
                           title="Apple Podcasts"
                           className="block"
                         >
                           <button className="subscribe-icon bg-white border border-gray-200 rounded-lg px-4 py-3 hover:border-gray-300 hover:shadow-md transition-all duration-200 flex items-center gap-3">
-                            <img
+                            <Image
                               src="https://assets.podcastpage.io/img/icons/apple_podcasts.svg"
                               alt="Apple Podcasts"
-                              width="24"
-                              height="24"
+                              width={24}
+                              height={24}
                               className="subscribe-img"
                             />
                             <span className="icon-title text-sm font-medium text-gray-700">Apple Podcasts</span>
@@ -94,11 +96,11 @@ export default function PodcastPage() {
                           className="block"
                         >
                           <button className="subscribe-icon bg-white border border-gray-200 rounded-lg px-4 py-3 hover:border-gray-300 hover:shadow-md transition-all duration-200 flex items-center gap-3">
-                            <img
+                            <Image
                               src="https://assets.podcastpage.io/img/icons/spotify.svg"
                               alt="Spotify"
-                              width="24"
-                              height="24"
+                              width={24}
+                              height={24}
                               className="subscribe-img"
                             />
                             <span className="icon-title text-sm font-medium text-gray-700">Spotify</span>
@@ -114,11 +116,11 @@ export default function PodcastPage() {
                           className="block"
                         >
                           <button className="subscribe-icon bg-white border border-gray-200 rounded-lg px-4 py-3 hover:border-gray-300 hover:shadow-md transition-all duration-200 flex items-center gap-3">
-                            <img
+                            <Image
                               src="https://assets.podcastpage.io/img/icons/google_podcasts.svg"
                               alt="Google Podcasts"
-                              width="24"
-                              height="24"
+                              width={24}
+                              height={24}
                               className="subscribe-img"
                             />
                             <span className="icon-title text-sm font-medium text-gray-700">Google Podcasts</span>
@@ -134,11 +136,11 @@ export default function PodcastPage() {
                           className="block"
                         >
                           <button className="subscribe-icon bg-white border border-gray-200 rounded-lg px-4 py-3 hover:border-gray-300 hover:shadow-md transition-all duration-200 flex items-center gap-3">
-                            <img
+                            <Image
                               src="https://assets.podcastpage.io/img/icons/amazon_music.svg"
                               alt="Amazon Music"
-                              width="24"
-                              height="24"
+                              width={24}
+                              height={24}
                               className="subscribe-img"
                             />
                             <span className="icon-title text-sm font-medium text-gray-700">Amazon Music</span>
@@ -154,11 +156,11 @@ export default function PodcastPage() {
                           className="block"
                         >
                           <button className="subscribe-icon bg-white border border-gray-200 rounded-lg px-4 py-3 hover:border-gray-300 hover:shadow-md transition-all duration-200 flex items-center gap-3">
-                            <img
+                            <Image
                               src="https://assets.podcastpage.io/img/icons/rss.svg"
                               alt="RSS"
-                              width="24"
-                              height="24"
+                              width={24}
+                              height={24}
                               className="subscribe-img"
                             />
                             <span className="icon-title text-sm font-medium text-gray-700">RSS</span>

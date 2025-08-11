@@ -1,6 +1,6 @@
 'use client';
 
-import { FaInstagram, FaTiktok, FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa';
 
 // Custom Bluesky icon component
 const BlueskyIcon = ({ size = 32 }: { size?: number }) => (
@@ -19,6 +19,7 @@ const SOCIALS = [
 	{ href: 'https://www.instagram.com/birdiebriefing/', label: 'Instagram', icon: <FaInstagram size={32} /> },
 	{ href: 'https://bsky.app/profile/birdiebriefing.bsky.social', label: 'Bluesky', icon: <BlueskyIcon size={32} /> },
 	{ href: 'https://www.facebook.com/birdiebriefing', label: 'Facebook', icon: <FaFacebook size={32} /> },
+	{ href: 'https://www.youtube.com/channel/UCW2vyHWE3bMfum9FPq-8xGw', label: 'YouTube', icon: <FaYoutube size={32} /> },
 ];
 
 export default function Socials({ className = '' }: { className?: string }) {

@@ -65,9 +65,13 @@ export default function OnTheCoursePage() {
       <section className="bg-primary-500 text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold title-overlap mb-6">
-              On The Course
-            </h1>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="flex-1 h-px bg-gray-200 max-w-32"></div>
+              <h1 className="text-4xl lg:text-6xl font-bold title-overlap">
+                On The Course
+              </h1>
+              <div className="flex-1 h-px bg-gray-200 max-w-32"></div>
+            </div>
             <p className="text-xl lg:text-2xl leading-relaxed text-gray-100">
               Refreshing drinks perfect for enjoying during your round of golf
             </p>

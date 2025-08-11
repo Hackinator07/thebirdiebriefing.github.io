@@ -94,13 +94,9 @@ export default function ContactUsPage() {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // Get the target email and generate subject based on inquiry type
-      const selectedInquiry = inquiryTypes.find(
-        (type) => type.value === formData.inquiryType
-      );
-      const targetEmail = selectedInquiry?.email || "hello@birdiebriefing.com";
-      const subject = selectedInquiry?.label
-        ? `${selectedInquiry.label} - Contact Form Submission`
-        : "Contact Form Submission";
+      // const selectedInquiry = inquiryTypes.find(
+      //   (type) => type.value === formData.inquiryType
+      // );
 
       // Here you would typically send to your backend API
       // const response = await fetch('/api/contact', {
@@ -143,10 +139,14 @@ export default function ContactUsPage() {
             <div className='bg-white rounded-lg p-6 lg:p-8'>
               {/* Main Headlines */}
               <div className='text-center mb-6'>
-                <h1 className='text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight'>
-                  <span className='text-primary-500'>Contact</span>{" "}
-                  <span className='text-secondary-500'>Us</span>
-                </h1>
+                <div className="flex items-center justify-center gap-4 mb-6">
+                  <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
+                  <h1 className='text-4xl lg:text-5xl font-bold text-gray-900 leading-tight'>
+                    <span className='text-primary-500'>Contact</span>{" "}
+                    <span className='text-secondary-500'>Us</span>
+                  </h1>
+                  <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
+                </div>
               </div>
 
               {/* Introduction */}

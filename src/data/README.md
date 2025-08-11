@@ -1,134 +1,65 @@
-# Configuration System
+# Article Management Guide
 
-This directory contains centralized configuration files that can be updated once and used throughout the application.
+## Article Ordering and Featured Articles
 
-## Files
+This guide explains how to control the order of articles on the `/news` page and mark articles as featured for the homepage.
 
-### `config.json`
-Contains reusable content and settings:
-- `authors`: Object containing author information and their callouts
-  - Each author has:
-    - `name`: Author's display name
-    - `email`: Author's contact email
-    - `callouts`: Object containing different callout types for this author
-      - `author`: Default author callout message
-      - `newsletter`: Newsletter subscription callout
-      - `podcast`: Podcast promotion callout
-      - `social`: Social media follow callout
-      - `feedback`: Feedback request callout
-- `siteName`: The name of the website
+### Article Fields
 
-## Usage
+Each article in `articles.json` can have the following additional fields:
 
-### In Components
+#### `order` (optional)
+- **Type**: `number`
+- **Purpose**: Controls the display order on the `/news` page
+- **Behavior**:
+  - Lower numbers appear first (1, 2, 3, etc.)
+  - Articles without an `order` field are sorted by date (newest first)
+  - Articles with `order` are prioritized over date-based sorting
 
-```typescript
-import { getAuthorCallout, getAuthor, getAllAuthors } from '@/lib/data';
+#### `featured` (optional)
+- **Type**: `boolean`
+- **Purpose**: Marks an article as the featured story for the homepage
+- **Behavior**:
+  - Only one article should have `featured: true`
+  - If no article is marked as featured, the first article (by order/date) is used
+  - Featured article appears in the "Featured Story" section on the homepage
 
-// Get a specific author's callout
-const georgeCallout = getAuthorCallout('george-hack', 'author');
-const sarahNewsletter = getAuthorCallout('sarah-jones', 'newsletter');
-
-// Get author information
-const author = getAuthor('mike-chen');
-
-// Get all authors
-const allAuthors = getAllAuthors();
-```
-
-### In AuthorCallout Component
-
-The `AuthorCallout` component supports author-specific callouts:
-
-```tsx
-// Use specific author's callout
-<AuthorCallout authorId="george-hack" calloutType="author" />
-<AuthorCallout authorId="sarah-jones" calloutType="newsletter" />
-<AuthorCallout authorId="mike-chen" calloutType="podcast" />
-
-// Use default author (george-hack) if no authorId provided
-<AuthorCallout calloutType="social" />
-
-// Override with custom message
-<AuthorCallout message="Custom message here" />
-```
-
-### In Articles
-
-Specify which author and callout type to use in your article data:
+### Example Configuration
 
 ```json
 {
-  "id": "article-slug",
-  "title": "Article Title",
+  "id": "example-article",
+  "slug": "example-article",
+  "title": "Example Article Title",
   "author": "George Hack",
   "authorId": "george-hack",
-  "calloutType": "newsletter",
-  // ... other article properties
+  "date": "2025-08-13",
+  "category": "LPGA Analysis",
+  "order": 1,
+  "featured": true,
+  "excerpt": "Article excerpt...",
+  "content": [...],
+  "image": {...},
+  "tags": [...],
+  "sections": [...]
 }
 ```
 
-## Available Authors
+### Current Configuration
 
-- **george-hack**: George Hack - General LPGA coverage and analysis
-- **sarah-jones**: Sarah Jones - Tournament analysis and player insights
-- **mike-chen**: Mike Chen - Statistical analysis and data-driven insights
+- **Jeeno Thitikul Article**: `order: 1, featured: true` (appears first on news page, featured on homepage)
+- **Portland Classic Article**: `order: 2, featured: false` (appears second on news page)
+- **Charley Hull Article**: `order: 3, featured: false` (appears third on news page)
 
-## Available Callout Types (per author)
+### How to Change Order
 
-Each author has their own versions of these callout types:
-- **author**: Default callout for author contact
-- **newsletter**: Promotes newsletter subscription
-- **podcast**: Promotes podcast episodes
-- **social**: Encourages social media follows
-- **feedback**: Requests reader feedback
+1. **To reorder articles**: Update the `order` field for each article
+2. **To change featured article**: Set `featured: true` on the desired article and `featured: false` on others
+3. **To remove ordering**: Remove the `order` field to fall back to date-based sorting
 
-## Adding New Authors
+### Best Practices
 
-To add a new author:
-
-1. Add a new author object to the `authors` section in `config.json`:
-```json
-"new-author-id": {
-  "name": "New Author Name",
-  "email": "newauthor@birdiebriefing.com",
-  "callouts": {
-    "author": "Custom author callout message...",
-    "newsletter": "Custom newsletter callout...",
-    "podcast": "Custom podcast callout...",
-    "social": "Custom social callout...",
-    "feedback": "Custom feedback callout..."
-  }
-}
-```
-
-2. Use the new author in articles:
-```json
-{
-  "authorId": "new-author-id",
-  "calloutType": "author"
-}
-```
-
-## Updating Configuration
-
-To update callout messages:
-
-1. Edit `src/data/config.json`
-2. Modify the desired callout message in the specific author's `callouts` object
-3. The changes will be reflected everywhere that author's callout type is used
-
-To update author information:
-
-1. Edit the author's object in the `authors` section of `config.json`
-2. Update name, email, or callout messages as needed
-
-## Benefits
-
-- **Author-Specific Callouts**: Each author has their own voice and callout messages
-- **Per-Article Control**: Specify which author and callout type to use per article
-- **Single Source of Truth**: Update once, use everywhere
-- **Consistency**: Ensures the same message appears across all articles using that author's callout type
-- **Maintainability**: Easy to update author information or callout messages
-- **Flexibility**: Components can still override with custom messages when needed
-- **Scalability**: Easy to add new authors with their own callout styles
+- Use consecutive numbers for order (1, 2, 3, etc.)
+- Only mark one article as featured at a time
+- Consider the featured article as your "top story" for the week
+- Update order/featured status when publishing new articles

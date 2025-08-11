@@ -45,6 +45,20 @@ export interface Cocktail {
 
 
 
+export interface ArticleSection {
+  type: 'links' | 'tv-schedule';
+  title: string;
+  links?: Array<{
+    text: string;
+    url: string;
+    description: string;
+  }>;
+  schedule?: Array<{
+    day: string;
+    times: string[];
+  }>;
+}
+
 export interface Article {
   id: string;
   slug: string;
@@ -64,6 +78,9 @@ export interface Article {
   callout?: string;
   calloutType?: string;
   tags: string[];
+  sections?: ArticleSection[];
+  order?: number;
+  featured?: boolean;
 }
 
 export interface RankingPlayer {
@@ -126,15 +143,27 @@ export function getCocktails(): Cocktail[] {
 
 
 export function getArticles(): Article[] {
-  return articlesData.articles;
+  const articles = articlesData.articles as Article[];
+  // Sort by order field if present, otherwise by date (newest first)
+  return articles.sort((a, b) => {
+    if (a.order !== undefined && b.order !== undefined) {
+      return a.order - b.order;
+    }
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
 }
 
 export function getArticleBySlug(slug: string): Article | undefined {
-  return articlesData.articles.find(article => article.slug === slug);
+  return articlesData.articles.find(article => article.slug === slug) as Article | undefined;
 }
 
 export function getLatestArticle(): Article | undefined {
-  return articlesData.articles[0];
+  return articlesData.articles[0] as Article | undefined;
+}
+
+export function getFeaturedArticle(): Article | undefined {
+  const articles = articlesData.articles as Article[];
+  return articles.find(article => article.featured === true);
 }
 
 

@@ -84,7 +84,7 @@ export default function NewsPage() {
                       <div className="flex items-center gap-2">
                         <span className="text-gray-600">By</span>
                         <Link
-                          href="/about"
+                          href={article.authorId === "george-hack" ? "/about#george-hack" : "/about"}
                           className="text-primary-500 hover:text-primary-600 font-medium"
                         >
                           {article.author}

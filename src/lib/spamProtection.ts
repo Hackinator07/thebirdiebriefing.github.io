@@ -8,7 +8,7 @@ export interface SpamCheckResult {
 export interface FormData {
   email?: string;
   message?: string;
-  [key: string]: any;
+  [key: string]: string | undefined;
 }
 
 // Common spam email patterns

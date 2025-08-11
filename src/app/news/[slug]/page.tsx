@@ -11,6 +11,7 @@ import CopyUrlButton from './CopyUrlButton';
 import LinkifyText from './LinkifyText';
 import TagList from '@/components/TagList';
 import AuthorCallout from '@/components/AuthorCallout';
+import ArticleSections from '@/components/ArticleSections';
 
 interface ArticlePageProps {
   params: Promise<{
@@ -85,7 +86,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8 article-meta">
                   <div className="flex items-center gap-2">
                     <span className="text-gray-600">By</span>
-                    <Link href="/about" className="text-primary-500 hover:text-primary-600 font-medium article-author">
+                    <Link
+                      href={article.authorId === "george-hack" ? "/about#george-hack" : "/about"}
+                      className="text-primary-500 hover:text-primary-600 font-medium article-author"
+                    >
                       {article.author}
                     </Link>
                   </div>
@@ -131,6 +135,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   </p>
                 ))}
               </div>
+
+              {/* Article Sections */}
+              <ArticleSections sections={article.sections} />
 
               {/* Author Callout */}
               <AuthorCallout

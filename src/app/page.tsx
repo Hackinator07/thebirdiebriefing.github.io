@@ -1,14 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import NewsletterSignup from '@/components/NewsletterSignup';
 import SpotifyEmbed from '@/components/SpotifyEmbed';
 import Socials from '@/components/Socials';
 import VideoBackground from '@/components/VideoBackground';
-import { getArticles, formatDate } from '@/lib/data';
+import { getArticles, getFeaturedArticle, formatDate } from '@/lib/data';
 
 export default function Home() {
   const articles = getArticles();
-  const latestNewsArticle = articles[0]; // Get the most recent article
+  const featuredArticle = getFeaturedArticle() || articles[0]; // Get featured article or fallback to latest
 
 
   return (
@@ -71,20 +70,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Latest News Section */}
-      {latestNewsArticle && (
+      {/* Featured News Section */}
+      {featuredArticle && (
         <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-6">
             <div className="max-w-2xl mx-auto text-center mb-16">
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight tracking-tight title-overlap">
-                  Latest News
+                  Featured Story
                 </h2>
                 <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Stay updated with the latest LPGA news and insights.
+                Our top story of the week, handpicked for you.
               </p>
             </div>
 
@@ -95,8 +94,8 @@ export default function Home() {
                   <div className="lg:w-1/2">
                     <div className="aspect-[16/10] bg-gray-200">
                       <Image
-                        src={latestNewsArticle.image.src}
-                        alt={latestNewsArticle.image.alt}
+                        src={featuredArticle.image.src}
+                        alt={featuredArticle.image.alt}
                         width={600}
                         height={375}
                         className="w-full h-full object-cover"
@@ -109,35 +108,35 @@ export default function Home() {
                   <div className="lg:w-1/2 p-8">
                     {/* Category */}
                     <span className="inline-block text-primary-500 font-semibold text-sm uppercase tracking-wide mb-3">
-                      {latestNewsArticle.category}
+                      {featuredArticle.category}
                     </span>
 
                     {/* Title */}
                     <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
                       <Link
-                        href={`/news/${latestNewsArticle.slug}`}
+                        href={`/news/${featuredArticle.slug}`}
                         className="hover:text-primary-500 transition-colors"
                       >
-                        {latestNewsArticle.title}
+                        {featuredArticle.title}
                       </Link>
                     </h3>
 
                     {/* Excerpt */}
                     <p className="text-gray-600 mb-6 leading-relaxed">
-                      {latestNewsArticle.excerpt}
+                      {featuredArticle.excerpt}
                     </p>
 
                     {/* Meta */}
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                       <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm text-gray-500">
-                        <span>By {latestNewsArticle.author}</span>
+                        <span>By {featuredArticle.author}</span>
                         <span className="hidden sm:inline">•</span>
-                        <time dateTime={latestNewsArticle.date}>
-                          {formatDate(latestNewsArticle.date)}
+                        <time dateTime={featuredArticle.date}>
+                          {formatDate(featuredArticle.date)}
                         </time>
                       </div>
                       <Link
-                        href={`/news/${latestNewsArticle.slug}`}
+                        href={`/news/${featuredArticle.slug}`}
                         className="text-primary-500 hover:text-primary-600 font-medium text-sm inline-flex items-center self-start sm:self-auto"
                       >
                         Read article →
@@ -206,7 +205,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
-                href="https://discord.gg/Chbmx2f6Xv"
+                href="https://discord.com/invite/rqB6T7uVtN"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-primary-500 px-8 py-4 rounded-md font-medium text-lg border border-primary-500 hover:bg-primary-500 hover:text-white transition-all duration-300 hover:-translate-y-1 inline-flex items-center gap-2"

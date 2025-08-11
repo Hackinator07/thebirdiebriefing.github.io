@@ -1,0 +1,29 @@
+{
+  "timestamp": "2025-08-11T00:45:25.662Z",
+  "processed": 4,
+  "totalOriginalSize": "9.56",
+  "totalOptimizedSize": "0.23",
+  "savings": "97.6",
+  "images": [
+    {
+      "original": "images/articles/hull.png",
+      "optimized": "optimized/hull.webp",
+      "savings": 92.7
+    },
+    {
+      "original": "images/articles/jeeno-thitikul.jpg",
+      "optimized": "optimized/jeeno-thitikul.webp",
+      "savings": 98.2
+    },
+    {
+      "original": "images/articles/portland-classic-mack.jpg",
+      "optimized": "optimized/portland-classic-mack.webp",
+      "savings": 97.6
+    },
+    {
+      "original": "images/logo.png",
+      "optimized": "optimized/logo.webp",
+      "savings": 85.7
+    }
+  ]
+}

@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
     unoptimized: true
   },
   basePath: process.env.NODE_ENV === 'production' ? '/thebirdiebriefing.github.io' : '',
+  turbopack: {
+    rules: {
+      '*.json': {
+        loaders: ['json'],
+        as: '*.json',
+      },
+    },
+  },
 };
 
 export default nextConfig;
