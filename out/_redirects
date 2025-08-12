@@ -1,5 +1,0 @@
-# Custom domain redirects for GitHub Pages
-/*    /index.html   200
-
-# Ensure index.html is served for root
-/    /index.html   200

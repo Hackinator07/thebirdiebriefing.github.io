@@ -150,6 +150,8 @@ async function optimizeImagesForBuild() {
     console.error('Error copying CNAME file:', error.message);
   }
 
+  // Note: out directory is now ignored by git and handled by GitHub Actions
+
   // Create output directory if it doesn't exist
   try {
     await fsPromises.mkdir(outputDir, { recursive: true });
@@ -221,6 +223,20 @@ async function optimizeImagesForBuild() {
   }
 
   console.log('🚀 Build process continuing...\n');
+}
+
+// Post-build verification function
+function verifyBuildOutput() {
+  const outDir = path.join(__dirname, '..', 'out');
+  const indexPath = path.join(outDir, 'index.html');
+
+  if (fs.existsSync(indexPath)) {
+    console.log('✅ Build verification: index.html created successfully');
+    return true;
+  } else {
+    console.error('❌ Build verification failed: index.html not found');
+    return false;
+  }
 }
 
 // Run the script
