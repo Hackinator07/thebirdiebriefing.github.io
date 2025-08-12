@@ -69,20 +69,27 @@
             margin-bottom: 2rem;
         }
 
+        .logo {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
         .logo h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin: 0;
+        }
+
+        .logo h1 .birdie {
             color: #8B5A8C;
         }
 
-        .logo h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
+        .logo h1 .briefing {
             color: #5F6242;
-            margin-bottom: 2rem;
         }
 
         .status {
@@ -175,10 +182,9 @@
         <!-- Content Overlay -->
         <div class="content-overlay">
             <div class="maintenance-container">
-        <div class="logo">
-            <h1>The Birdie</h1>
-            <h2>Briefing</h2>
-        </div>
+            <div class="logo">
+              <h1><span class="birdie">The Birdie</span> <span class="briefing">Briefing</span></h1>
+            </div>
 
         <div class="status">🔄 Site Maintenance in Progress</div>
 
