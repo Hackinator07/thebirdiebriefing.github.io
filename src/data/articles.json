@@ -44,7 +44,7 @@
       "date": "2025-08-12",
       "category": "Tournament Preview",
       "order": 1,
-      "featured": false,
+      "featured": true,
       "excerpt": "At Columbia Edgewater Country Club, the greens are ready as one of the LPGA Tour's enduring pillars returns under a new banner.",
       "content": [
         "At Columbia Edgewater Country Club, the greens are ready as one of the LPGA Tour's enduring pillars returns under a new banner. [The Standard Insurance Company](https://www.standard.com/get-to-know-standard/newsroom/press-releases/standard-portland-classic-welcomes-top-women-golfers-aug-14-17-2025) has stepped in with a 3-year commitment as title sponsor for the longest-running non-major on the LPGA Tour, reaffirming tradition, evolution, and a celebration of women golf's.",
@@ -137,7 +137,7 @@
       "date": "2025-08-11",
       "category": "LPGA Analysis",
       "order": 2,
-      "featured": true,
+      "featured": false,
       "excerpt": "A look at Charley Hull's remarkable performance at the AIG Women's Open, where she defied expectations and nearly claimed victory.",
       "content": [
         "By all accounts, Charley Hull should have collapsed again, physically or metaphorically. She said herself she came into the AIG Women's Open thinking she wouldn't make the cut. That's not just false modesty; she [collapsed at Evian](https://www.skratch.golf/news/news/charley-hull-evian-illness-update-womens-scottish-open), suffered a back injury that limited her practice time, and still showed up at Royal Porthcawl like she'd just fought off an adder with a long iron.",
