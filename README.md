@@ -44,15 +44,37 @@ A modern, responsive website for The Birdie Briefing - your premier source for L
    npm install
    ```
 
-3. Run development server
+3. Set up environment variables (optional)
+   ```bash
+   # Create .env.local file
+   cp .env.example .env.local
+   # Edit .env.local and add your translation widget API key
+   ```
+
+4. Run development server
    ```bash
    npm run dev
    ```
 
-4. Build for production
+5. Build for production
    ```bash
    npm run build
    ```
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```bash
+# Translation Widget API Key (required for translation functionality)
+# Get your free API key from: https://jigsawstack.com/translation-widget
+NEXT_PUBLIC_TRANSLATION_WIDGET_KEY=your_api_key_here
+
+# Base URL for the site
+NEXT_PUBLIC_BASE_URL=https://www.birdiebriefing.com
+```
+
+**Note**: The translation widget requires an API key to function. Get a free API key from JigsawStack to enable multi-language support.
 
 ## 📝 Content Management
 

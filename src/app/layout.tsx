@@ -4,7 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Analytics from '@/components/Analytics';
-// import TranslationWidget from '@/components/TranslationWidget';
+import TranslationWidget from '@/components/TranslationWidget';
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
@@ -49,7 +49,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <Analytics />
-        {/* <TranslationWidget /> */}
+        <TranslationWidget />
       </body>
     </html>
   );

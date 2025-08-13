@@ -164,7 +164,8 @@ export default function TranslationWidget() {
       const key = process.env.NEXT_PUBLIC_TRANSLATION_WIDGET_KEY;
 
       if (!key) {
-        console.warn('TranslationWidget: No NEXT_PUBLIC_TRANSLATION_WIDGET_KEY found in environment variables');
+        // Widget requires an API key to function
+        console.info('TranslationWidget: No API key provided. Translation widget disabled.');
         return;
       }
 
