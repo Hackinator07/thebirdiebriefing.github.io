@@ -5,7 +5,7 @@ import VideoBackground from "@/components/VideoBackground";
 export const metadata = {
   title: "Podcast - The Birdie Briefing",
   description:
-    "Listen to the latest episodes of The Birdie Briefing podcast featuring LPGA news, upcoming tournaments, and golf insights.",
+    "Listen to our latest episode as Marie breaks down the players to watch and the atmosphere leading into the Portland Classic.",
 };
 
 export default function PodcastPage() {
