@@ -1,8 +1,9 @@
 import ArticleLinks from './ArticleLinks';
 import TVSchedule from './TVSchedule';
+import FieldData from './FieldData';
 
 interface Section {
-  type: 'links' | 'tv-schedule';
+  type: 'links' | 'tv-schedule' | 'field-data';
   title: string;
   links?: Array<{
     text: string;
@@ -13,6 +14,14 @@ interface Section {
     day: string;
     times: string[];
   }>;
+  data?: {
+    pastChampions?: string[];
+    lpga2025Winners?: string[];
+    rolexTop25?: string[];
+    rookies2025?: string[];
+    sponsorExemptions?: string[];
+    mondayQualifiers?: string[];
+  };
 }
 
 interface ArticleSectionsProps {
@@ -42,6 +51,14 @@ export default function ArticleSections({ sections }: ArticleSectionsProps) {
                 key={index}
                 title={section.title}
                 schedule={section.schedule || []}
+              />
+            );
+          case 'field-data':
+            return (
+              <FieldData
+                key={index}
+                title={section.title}
+                data={section.data || {}}
               />
             );
           default:

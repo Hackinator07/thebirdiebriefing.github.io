@@ -1,21 +1,8 @@
-import newsData from '@/data/news.json';
 import podcastsData from '@/data/podcasts.json';
 import rankingsData from '@/data/rankings.json';
 import articlesData from '@/data/articles.json';
 import configData from '@/data/config.json';
 import biosData from '@/data/bios.json';
-
-export interface NewsArticle {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  date: string;
-  category: string;
-  author: string;
-  image?: string;
-}
 
 export interface PodcastEpisode {
   id: string;
@@ -32,7 +19,7 @@ export interface PodcastEpisode {
 }
 
 export interface ArticleSection {
-  type: 'links' | 'tv-schedule';
+  type: 'links' | 'tv-schedule' | 'field-data';
   title: string;
   links?: Array<{
     text: string;
@@ -43,6 +30,14 @@ export interface ArticleSection {
     day: string;
     times: string[];
   }>;
+  data?: {
+    pastChampions?: string[];
+    lpga2025Winners?: string[];
+    rolexTop25?: string[];
+    rookies2025?: string[];
+    sponsorExemptions?: string[];
+    mondayQualifiers?: string[];
+  };
 }
 
 export interface Article {
@@ -65,7 +60,6 @@ export interface Article {
   calloutType?: string;
   tags: string[];
   sections?: ArticleSection[];
-  order?: number;
   featured?: boolean;
 }
 
@@ -136,13 +130,7 @@ interface Bios {
   contact: Contact;
 }
 
-export function getNewsArticles(): NewsArticle[] {
-  return newsData.articles;
-}
 
-export function getNewsArticle(slug: string): NewsArticle | undefined {
-  return newsData.articles.find(article => article.slug === slug);
-}
 
 export function getPodcastEpisodes(): PodcastEpisode[] {
   return podcastsData.episodes;
@@ -150,13 +138,8 @@ export function getPodcastEpisodes(): PodcastEpisode[] {
 
 export function getArticles(): Article[] {
   const articles = articlesData.articles as Article[];
-  // Sort by order field if present, otherwise by date (newest first)
-  return articles.sort((a, b) => {
-    if (a.order !== undefined && b.order !== undefined) {
-      return a.order - b.order;
-    }
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  });
+  // Return articles in the order they appear in the JSON file
+  return articles;
 }
 
 export function getArticleBySlug(slug: string): Article | undefined {

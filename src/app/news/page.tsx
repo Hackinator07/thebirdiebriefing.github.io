@@ -122,8 +122,18 @@ export default function NewsPage() {
                           />
                         </div>
                         <figcaption className="text-sm text-gray-600 border-b border-gray-200 pb-4">
-                          <div>{article.image.caption}</div>
-                          <div className="text-xs text-gray-500 mt-1 italic">Photo courtesy: {article.image.courtesy}</div>
+                          <div>
+                            <MarkdownContent
+                              content={article.image.caption}
+                              className="text-sm text-gray-600"
+                            />
+                          </div>
+                          <div className="text-xs text-gray-500 mt-1 italic">
+                            Photo courtesy: <MarkdownContent
+                              content={article.image.courtesy}
+                              className="inline text-xs text-gray-500 italic [&_p]:text-xs [&_p]:text-gray-500 [&_p]:italic [&_p]:mb-0 [&_p]:leading-none [&_p]:inline"
+                            />
+                          </div>
                         </figcaption>
                       </figure>
                     </div>

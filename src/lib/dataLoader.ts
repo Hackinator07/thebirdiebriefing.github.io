@@ -10,15 +10,7 @@ export async function loadArticles() {
   }
 }
 
-export async function loadNews() {
-  try {
-    const newsData = await import('@/data/news.json');
-    return newsData.default.articles || [];
-  } catch (error) {
-    console.error('Error loading news:', error);
-    return [];
-  }
-}
+
 
 export async function loadPodcasts() {
   try {
