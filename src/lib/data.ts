@@ -200,17 +200,35 @@ export function updateCallout(authorId: string, type: string, newMessage: string
 }
 
 export function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  // Use a consistent format that doesn't depend on user's locale
+  // Expecting an ISO date without time (YYYY-MM-DD). Parse as a pure calendar date
+  // to avoid timezone shifts that can move the date back a day locally.
+  const parts = dateString.split('-');
+
   const months = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
 
-  const month = months[date.getMonth()];
-  const day = date.getDate();
-  const year = date.getFullYear();
+  if (parts.length === 3) {
+    const year = Number(parts[0]);
+    const monthIndex = Number(parts[1]) - 1; // 0-based
+    const day = Number(parts[2]);
 
+    if (
+      Number.isFinite(year) &&
+      Number.isFinite(monthIndex) &&
+      monthIndex >= 0 && monthIndex <= 11 &&
+      Number.isFinite(day)
+    ) {
+      return `${months[monthIndex]} ${day}, ${year}`;
+    }
+  }
+
+  // Fallback: try Date parsing and use UTC getters to avoid local TZ skew
+  const date = new Date(dateString);
+  const month = months[date.getUTCMonth()] ?? '';
+  const day = date.getUTCDate();
+  const year = date.getUTCFullYear();
   return `${month} ${day}, ${year}`;
 }
 
