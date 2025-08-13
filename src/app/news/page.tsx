@@ -123,16 +123,20 @@ export default function NewsPage() {
                         </div>
                         <figcaption className="text-sm text-gray-600 border-b border-gray-200 pb-4">
                           <div>
-                            <MarkdownContent
-                              content={article.image.caption}
-                              className="text-sm text-gray-600"
-                            />
+                            {article.image.caption && (
+                              <MarkdownContent
+                                content={article.image.caption}
+                                className="text-sm text-gray-600"
+                              />
+                            )}
                           </div>
                           <div className="text-xs text-gray-500 mt-1 italic">
-                            Photo courtesy: <MarkdownContent
-                              content={article.image.courtesy}
-                              className="inline text-xs text-gray-500 italic [&_p]:text-xs [&_p]:text-gray-500 [&_p]:italic [&_p]:mb-0 [&_p]:leading-none [&_p]:inline"
-                            />
+                            Photo courtesy: {article.image.courtesy && (
+                              <MarkdownContent
+                                content={article.image.courtesy}
+                                className="inline text-xs text-gray-500 italic [&_p]:text-xs [&_p]:text-gray-500 [&_p]:italic [&_p]:mb-0 [&_p]:leading-none [&_p]:inline"
+                              />
+                            )}
                           </div>
                         </figcaption>
                       </figure>
@@ -141,7 +145,9 @@ export default function NewsPage() {
                     {/* Article Content Summary */}
                     <div className="prose prose-lg max-w-none mb-8">
                       {/* Show first paragraph as featured text */}
-                      <MarkdownContent content={article.content[0]} />
+                      {article.content[0] && (
+                        <MarkdownContent content={article.content[0]} />
+                      )}
                     </div>
 
                     {/* Read Full Article Link */}

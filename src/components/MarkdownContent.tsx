@@ -7,6 +7,18 @@ interface MarkdownContentProps {
 }
 
 export default function MarkdownContent({ content, className = '' }: MarkdownContentProps) {
+  // Safety check for content
+  if (!content || typeof content !== 'string') {
+    return null;
+  }
+
+  // Clean the content to prevent React errors
+  const cleanContent = content.trim();
+
+  if (!cleanContent) {
+    return null;
+  }
+
   return (
     <div className={className}>
       <ReactMarkdown
@@ -35,7 +47,7 @@ export default function MarkdownContent({ content, className = '' }: MarkdownCon
           ),
         }}
       >
-        {content}
+        {cleanContent}
       </ReactMarkdown>
     </div>
   );
