@@ -73,14 +73,47 @@ Articles are managed in `src/data/articles.json`:
   "image": {
     "src": "/optimized/image.webp",
     "alt": "Alt text",
-    "caption": "Image caption",
-    "courtesy": "Photo credit"
+    "caption": "Image caption with [markdown links](https://example.com)",
+    "courtesy": "Photo by [Photographer](https://photographer.com/) via [Getty Images](https://gettyimages.com/)"
   },
   "tags": ["tag1", "tag2"],
   "featured": true,
-  "order": 1
+  "sections": [
+    {
+      "type": "links",
+      "title": "Related Links",
+      "links": [
+        {
+          "text": "Link Title",
+          "url": "https://example.com",
+          "description": "Link description"
+        }
+      ]
+    },
+    {
+      "type": "tv-schedule",
+      "title": "How to Watch",
+      "schedule": [
+        {
+          "day": "Thursday and Friday",
+          "times": ["Golf Channel: 10:00 AM – 12:00 PM"]
+        }
+      ]
+    },
+    {
+      "type": "field-data",
+      "title": "Tournament Field",
+      "data": {
+        "pastChampions": ["Player Name (2024)", "Player Name (2023)"],
+        "rolexTop25": ["Player Name (1)", "Player Name (2)"],
+        "rookies2025": ["Rookie Player 1", "Rookie Player 2"]
+      }
+    }
+  ]
 }
 ```
+
+**Article Ordering**: Articles display in the order they appear in the JSON file. No `order` field is needed.
 
 ### Managing Team Bios
 Team member information is in `src/data/bios.json`:
@@ -108,24 +141,9 @@ Team member information is in `src/data/bios.json`:
 - [Links](https://example.com): `[text](url)`
 - ~~Strikethrough~~: `~~text~~`
 
-**Note**: Markdown support is available in articles, bios, author callouts, and news excerpts.
+**Note**: Markdown support is available in articles, bios, author callouts, image captions, and courtesy text.
 
-### Adding News Articles
-News articles are in `src/data/news.json`:
 
-```json
-{
-  "id": "news-slug",
-  "title": "News Title",
-  "slug": "news-slug",
-  "excerpt": "Brief description",
-  "content": "Full article content",
-  "date": "2025-01-01",
-  "category": "Category",
-  "author": "Author Name",
-  "image": "/path/to/image.jpg"
-}
-```
 
 ### Managing Podcasts
 Podcast episodes are in `src/data/podcasts.json`:
@@ -209,6 +227,19 @@ Global configuration is in `src/data/config.json`:
 3. Optimized images will be saved to `public/optimized/` as WebP files
 4. Reference optimized images in content: `/optimized/filename.webp`
 
+### Image Guidelines
+- **Quality**: Use high-resolution images that look crisp on all devices
+- **Optimization**: Compress images for web use to improve loading speed
+- **Accessibility**: Ensure images have good contrast for text overlay
+- **Branding**: Choose images that align with The Birdie Briefing brand and aesthetic
+
+### Image Sources
+If you need images for the website, consider:
+- Stock photo websites (Unsplash, Pexels, Shutterstock)
+- LPGA official media resources
+- Professional golf photography
+- Golf course promotional materials (with permission)
+
 ### Image Optimization
 - **Build-time optimization**: Automatically runs during `npm run build`
 - **Manual optimization**: `npm run optimize-images`
@@ -257,6 +288,39 @@ npm run optimize-images  # Optimize images manually
 npm run export           # Build and export static files
 ```
 
+## 🤖 Automation Scripts
+
+### LPGA Rankings Automation
+
+The system automatically fetches and updates LPGA Rolex World Rankings data.
+
+#### Manual Update
+```bash
+node scripts/fetch-rankings.js
+```
+
+#### Automated Updates
+The rankings are automatically updated nightly via GitHub Actions (`.github/workflows/update-rankings.yml`).
+
+**Schedule:** Every day at 2:00 AM UTC
+
+**What it does:**
+1. Fetches latest rankings from Rolex Rankings API
+2. Saves data to `src/data/rankings.json`
+3. Commits and pushes changes to the repository
+
+#### Data Structure
+The rankings data includes:
+- **lastUpdated**: ISO timestamp of when data was fetched
+- **week**: Information about the current ranking week
+- **players**: Array of player objects with ranking details
+
+#### API Source
+Data is sourced from the official Rolex Women's World Golf Rankings API:
+- **URL**: https://www.rolexrankings.com/core/rankings/list
+- **Format**: JSON
+- **Update Frequency**: Weekly (typically Mondays)
+
 ## 📁 Project Structure
 
 ```
@@ -276,7 +340,6 @@ thebirdiebriefing.github.io/
 │   ├── data/                # Content JSON files
 │   │   ├── articles.json    # Article content
 │   │   ├── bios.json        # Team bios
-│   │   ├── news.json        # News articles
 │   │   ├── podcasts.json    # Podcast episodes
 │   │   ├── rankings.json    # Player rankings
 │   │   └── config.json      # Site configuration
@@ -300,7 +363,10 @@ thebirdiebriefing.github.io/
 - **Component classes**: Reusable utility classes
 
 ### Custom Components
-- **MarkdownContent**: Renders Markdown with custom styling for articles, bios, and callouts
+- **MarkdownContent**: Renders Markdown with custom styling for articles, bios, callouts, and image captions
+- **FieldData**: Displays tournament field information in organized cards
+- **ArticleLinks**: Shows related links and resources
+- **TVSchedule**: Displays tournament broadcast schedules
 - **VideoBackground**: Dynamic video backgrounds
 - **InstagramSlider**: Social media integration
 - **SpotifyEmbed**: Podcast embedding
@@ -370,7 +436,26 @@ For technical issues or questions about managing the site:
 - **Articles**: 500-2000 words, include images
 - **Images**: Use WebP format, optimize for web
 - **Links**: Always include alt text and proper attribution
-- **Markdown**: Use for rich formatting in bios and content
+- **Markdown**: Use for rich formatting in bios, content, and image captions
+- **Field Data**: Include comprehensive tournament information for tournament previews
+- **Sections**: Use appropriate section types (links, tv-schedule, field-data) to enhance articles
+
+### Article Management Best Practices
+
+#### Featured Articles
+- Only mark one article as `featured: true` at a time
+- Consider the featured article as your "top story" for the week
+- Update featured status when publishing new articles
+
+#### Article Ordering
+- Articles display in the order they appear in the JSON file
+- No `order` field is needed - simply arrange articles in the desired order in `articles.json`
+- The first article in the array appears first on the `/news` page
+
+#### Section Types
+- **links**: For related resources and external links
+- **tv-schedule**: For tournament broadcast schedules
+- **field-data**: For tournament field information (past champions, rankings, rookies, etc.)
 
 ---
 
