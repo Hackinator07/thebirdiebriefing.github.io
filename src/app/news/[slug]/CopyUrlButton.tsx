@@ -6,6 +6,9 @@ export default function CopyUrlButton() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+    
     const url = window.location.href;
 
     try {

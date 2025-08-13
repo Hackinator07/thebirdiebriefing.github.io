@@ -52,7 +52,7 @@ export default function ArticleJsonLd({ article, url }: ArticleJsonLdProps) {
     "articleSection": article.category,
     "keywords": article.tags.join(", "),
     "wordCount": article.content.join(" ").split(" ").length,
-    "timeRequired": `PT${Math.ceil(article.content.join(" ").split(" ").length / 200)}M`, // Rough estimate: 200 words per minute
+    "timeRequired": `PT${Math.max(1, Math.ceil(article.content.join(" ").split(" ").length / 200))}M`, // Rough estimate: 200 words per minute
     "url": url
   };
 

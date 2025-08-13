@@ -122,6 +122,11 @@ export function validateMessage(message: string, minLength = 10, maxLength = 200
  * Check rate limiting
  */
 export function validateRateLimit(lastSubmission: number, cooldownMs = 5000): SpamCheckResult {
+  // Only run on client side to avoid hydration mismatch
+  if (typeof window === 'undefined') {
+    return { isValid: true };
+  }
+  
   const now = Date.now();
   if (now - lastSubmission < cooldownMs) {
     return {

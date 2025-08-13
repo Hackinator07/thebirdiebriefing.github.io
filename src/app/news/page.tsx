@@ -14,6 +14,9 @@ export default function NewsPage() {
 
   // Simulate infinite scroll
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
     const handleScroll = () => {
       if (
         window.innerHeight + document.documentElement.scrollTop >=

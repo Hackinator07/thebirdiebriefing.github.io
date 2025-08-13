@@ -14,6 +14,9 @@ export default function NewsletterSignup() {
     e.preventDefault();
     setError('');
 
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
     // Perform comprehensive spam check
     const spamCheck = performSpamCheck({
       email,

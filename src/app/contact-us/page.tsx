@@ -73,6 +73,9 @@ export default function ContactUsPage() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
+    // Only run on client side
+    if (typeof window === 'undefined') return;
+
     // Perform comprehensive spam check
     const spamCheck = performSpamCheck({
       email: formData.email,
