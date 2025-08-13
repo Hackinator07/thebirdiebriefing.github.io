@@ -8,9 +8,6 @@ export default function Analytics() {
   const pathname = usePathname()
 
   useEffect(() => {
-    // Initialize analytics on first load
-    console.log('Analytics: Initializing page tracking for:', pathname)
-
     // Track page views
     analytics.page({
       url: window.location.href,
