@@ -73,40 +73,40 @@ At the end of Round 1 Adéla Cernousek rests alone atop the leaderboard at 8 und
 
 ## Round 1 Competition Highlights
 
-Brooke Henderson stuck a solid third shot on the par-5 10th for birdie to start her round, added another on 11, and went a perfect four-for-four on birdies through 13.
+**Brooke Henderson** stuck a solid third shot on the par-5 10th for birdie to start her round, added another on 11, and went a perfect four-for-four on birdies through 13.
 
-Adéla Cernousek, the rookie from Antibes, France, showcased her technical, course management driven style to finish alone in first at 8-under including an eagle on 7.
+**Adéla Cernousek**, the rookie from Antibes, France, showcased her technical, course management driven style to finish alone in first at 8-under including an eagle on 7.
 
-Caroline Masson's 7-iron at the par-3 second was so pure she didn't even see it disappear. Hidden behind a bunker, the ball found the cup for her first ace of the year, sending a ripple of cheers across the gallery.
+**Caroline Masson's** 7-iron at the par-3 second was so pure she didn't even see it disappear. Hidden behind a bunker, the ball found the cup for her first ace of the year, sending a ripple of cheers across the gallery.
 
-Perrine Delacour, currently ranked 118 in the world, had a phenomenal day posting 4 birdies on the front 9 and finishing tied for 7th. steve
+**Perrine Delacour**, currently ranked 118 in the world, had a phenomenal day posting 4 birdies on the front 9 and finishing tied for 7th. steve
 
-Rose Zhang, hindered by injury and a stop-start schedule struggled early, including double bogeys on 10 and 13, never quite finding her rhythm.
+**Rose Zhang**, hindered by injury and a stop-start schedule struggled early, including double bogeys on 10 and 13, never quite finding her rhythm.
 
-Wichanee Meechai fired off a birdie-eagle-birdie start but finished even for the day.
+**Wichanee Meechai** fired off a birdie-eagle-birdie start but finished even for the day.
 
-Lilia Vu was working to regain the form that once took her to World No. 1. 16 pars and 1 birdie on the day to end even.
+**Lilia Vu** was working to regain the form that once took her to World No. 1. 16 pars and 1 birdie on the day to end even.
 
-Caroline Inglis playing on her home course came close to recreating her past heroics at the 13th, setting up a short birdie putt and finishing at 2-under.
+**Caroline Inglis** playing on her home course came close to recreating her past heroics at the 13th, setting up a short birdie putt and finishing at 2-under.
 
-Chisato Iwai, blending in with her Oregon green top, finished at three under, highlighted by an impressive eagle on the 463-yard par-5 seventh.
+**Chisato Iwai**, blending in with her Oregon green top, finished at three under, highlighted by an impressive eagle on the 463-yard par-5 seventh.
 
-Jin Young Ko ball striking was sharp all day, producing a commanding five-under round built on 13 pars and five birdies.
+**Jin Young Ko's** ball striking was sharp all day, producing a commanding five-under round built on 13 pars and five birdies.
 
-Lauren Coughlin pushed her way to four-under with a strong putting performance and an aggressive approach off the tees.
+**Lauren Coughlin** pushed her way to four-under with a strong putting performance and an aggressive approach off the tees.
 
-Yuka Saso carded four birdies, but double bogeys on 9 and 11 knocked her back, leaving her at 6-over for the day.
+**Yuka Saso** carded four birdies, but double bogeys on 9 and 11 knocked her back, leaving her at 6-over for the day.
 
-Abacaya Yubol held a one-shot lead at one point and kept a spotless card with twelve pars and no bogeys, ending the day tied for 6th.
+**Abacaya Yubol** held a one-shot lead at one point and kept a spotless card with twelve pars and no bogeys, ending the day tied for 6th.
 
-American Gurleen Kaur posted eight birdies.
+American **Gurleen Kaur** posted eight birdies.
 
-Gigi Stoll stumbled with a triple bogey on the 426-yard par-4 third but recovered to shoot an even-par 72 for the round.
+**Gigi Stoll** stumbled with a triple bogey on the 426-yard par-4 third but recovered to shoot an even-par 72 for the round.
 
 ## Shout Out
 
-Filipino golf fans have reason to be excited as Dottie Ardina posted a superb -3 for the day. Ardina looked incredibly sharp throughout her round, displaying a level of control and confidence that suggests her game may reach top form over the course of the weekend.
+Filipino golf fans have reason to be excited as **Dottie Ardina** posted a superb -3 for the day. Ardina looked incredibly sharp throughout her round, displaying a level of control and confidence that suggests her game may reach top form over the course of the weekend.
 
 ## Gear Notes
 
-Brooke Henderson is playing with a new TaylorMade Spider putter, fitted with a Garsen Quad Tour grip.
+Brooke Henderson is playing with a new TaylorMade Spider putter, fitted with a [Garsen Quad Tour grip](https://garsengolf.com/).
