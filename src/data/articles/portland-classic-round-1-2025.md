@@ -21,11 +21,11 @@ tags:
   - "Columbia Edgewater"
 sections:
   - type: "field-data"
-    title: "Round 1 Highlights"
+    title: "Round 1 Shoot Your Shot"
     backgroundColor: "bg-primary-50"
     data:
       ace:
-        - "Caroline Masson – Hole 2"
+        - "Caroline Masson – Hole-in-One on Hole 2"
       eagles:
         - "Hyo Joon Jang – Hole 5"
         - "Chisato Iwai – Hole 7"
