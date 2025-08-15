@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
 
 const biosDirectory = path.join(process.cwd(), 'src/data/bios');
 
@@ -49,22 +47,12 @@ export async function loadTeamMember(memberId: string): Promise<TeamMember | nul
       .filter(paragraph => paragraph.trim().length > 0)
       .map(paragraph => paragraph.trim());
 
-    // Process the markdown content to HTML for display
-    const processedBio = await Promise.all(
-      bioArray.map(async (paragraph) => {
-        const processed = await remark()
-          .use(html)
-          .process(paragraph);
-        return processed.toString();
-      })
-    );
-
     return {
       name: data.name,
       title: data.title,
       image: data.image,
       imageAlt: data.imageAlt,
-      bio: processedBio
+      bio: bioArray
     };
   } catch (error) {
     console.error(`Error loading team member ${memberId}:`, error);
@@ -85,20 +73,10 @@ export async function loadMission(): Promise<Mission | null> {
       .filter(paragraph => paragraph.trim().length > 0)
       .map(paragraph => paragraph.trim());
 
-    // Process the markdown content to HTML for display
-    const processedContent = await Promise.all(
-      contentArray.map(async (paragraph) => {
-        const processed = await remark()
-          .use(html)
-          .process(paragraph);
-        return processed.toString();
-      })
-    );
-
     return {
       title: data.title,
       description: data.description,
-      content: processedContent
+      content: contentArray
     };
   } catch (error) {
     console.error('Error loading mission:', error);
