@@ -155,7 +155,6 @@ This makes it easy to write and edit content without dealing with JSON formattin
 | `authorId` | string | Yes | Author identifier (e.g., "george-hack") |
 | `date` | string | Yes | Publication date (YYYY-MM-DD) |
 | `category` | string | Yes | Article category |
-| `featured` | boolean | No | **Deprecated** - Use global `featuredArticleId` in config instead |
 | `excerpt` | string | Yes | Brief description for previews |
 | `image` | object | Yes | Article image metadata |
 | `calloutType` | string | No | Type of author callout |
