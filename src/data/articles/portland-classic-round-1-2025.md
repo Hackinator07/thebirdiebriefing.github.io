@@ -6,7 +6,7 @@ author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-14"
 category: "Tournament Recap"
-featured: false
+featured: true
 excerpt: "Columbia Edgewater opened cool and calm on day one, with barely a hint of wind – perfect conditions for what felt like a spring-loaded leaderboard."
 image:
   src: "/optimized/adela-cernousek.webp"
