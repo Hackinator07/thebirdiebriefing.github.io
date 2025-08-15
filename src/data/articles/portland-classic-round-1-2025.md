@@ -1,7 +1,7 @@
 ---
 id: "portland-classic-round-1-2025"
 slug: "portland-classic-round-1-2025"
-title: "Round 1 at The 2025 Standard Portland Classic: France's Bold Start, Brooke's Birdie Streak, and Wichanee's Early Eagle"
+title: "Round 1 of The 2025 Standard Portland Classic: France's Bold Start, Brooke's Birdie Streak, and Wichanee's Early Eagle"
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-14"
