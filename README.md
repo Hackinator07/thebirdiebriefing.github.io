@@ -337,18 +337,23 @@ Your feedback callout message goes here.
 The site now supports comprehensive markdown formatting throughout all content areas. Here's what you can use:
 
 ### Basic Text Formatting
+```markdown
 - **Bold text**: `**bold**` or `__bold__`
 - *Italic text*: `*italic*` or `_italic_`
 - ~~Strikethrough~~: `~~strikethrough~~`
 - `Inline code`: `` `code` ``
+```
 
 ### Links and References
+```markdown
 - [External links](https://example.com): `[text](url)`
 - [Links with titles](https://example.com): `[text](url "title")`
 - Email links: `[email us](mailto:user@example.com)`
 - Phone links: `[call us](tel:+1234567890)`
+```
 
 ### Lists
+```markdown
 **Unordered lists:**
 - Item 1
 - Item 2
@@ -362,47 +367,62 @@ The site now supports comprehensive markdown formatting throughout all content a
    1. Nested numbered item
    2. Another nested item
 3. Third item
+```
 
 ### Headers
+```markdown
 # H1 Header
 ## H2 Header
 ### H3 Header
 #### H4 Header
 ##### H5 Header
 ###### H6 Header
+```
 
 ### Code Blocks
+````markdown
 ```javascript
 // Code block with syntax highlighting
 function example() {
   return "Hello World!";
 }
 ```
+````
 
 ### Blockquotes
+```markdown
 > This is a blockquote
 >
 > It can span multiple lines
 >
 > > And even be nested
+```
 
 ### Tables
+```markdown
 | Column 1 | Column 2 | Column 3 |
 |----------|----------|----------|
 | Row 1    | Data     | Data     |
 | Row 2    | Data     | Data     |
 | Row 3    | Data     | Data     |
+```
 
 ### Task Lists
+```markdown
 - [x] Completed task
 - [ ] Pending task
 - [ ] Another pending task
+```
 
 ### Horizontal Rules
+```markdown
 ---
+```
 
 ### Escaping Characters
+```markdown
 Use backslashes to escape special characters: \*not italic\*
+```
 
 ### Where Markdown Works
 - **Article content** - All article paragraphs support full markdown
@@ -416,6 +436,7 @@ Use backslashes to escape special characters: \*not italic\*
 ### Examples for Different Content Types
 
 #### Article Content
+````markdown
 ```markdown
 This is a **bold paragraph** with *italic emphasis* and a [link to the LPGA](https://www.lpga.com/).
 
@@ -430,13 +451,17 @@ This is a **bold paragraph** with *italic emphasis* and a [link to the LPGA](htt
 | Player A | -5 | 1st |
 | Player B | -3 | 2nd |
 ```
+````
 
 #### Image Captions
+````markdown
 ```markdown
 **Player Name** during the [Tournament Name](https://tournament.com/) with a spectacular shot on the 18th hole.
 ```
+````
 
 #### Author Callouts
+````markdown
 ```markdown
 ## Author Callout
 
@@ -444,8 +469,10 @@ If something here made you laugh, smile, or throw your ball into the nearest wat
 
 **Stay in the loop** with the latest LPGA updates and golf insights. Subscribe to our newsletter for *exclusive content* delivered to your inbox.
 ```
+````
 
 #### Bio Content
+````markdown
 ```markdown
 Marie is a **passionate golf enthusiast** with over 10 years of experience covering the LPGA Tour. She specializes in:
 
@@ -456,25 +483,33 @@ Marie is a **passionate golf enthusiast** with over 10 years of experience cover
 
 > "Golf is more than a game—it's a way of life that teaches patience, precision, and perseverance."
 ```
+````
 
 ### Advanced Markdown Features
 
 #### Footnotes
+```markdown
 You can add footnotes to your content[^1].
 
 [^1]: This is a footnote that appears at the bottom of the content.
+```
 
 #### Definition Lists
+```markdown
 Term 1
 : Definition 1
 
 Term 2
 : Definition 2
+```
 
 #### Strikethrough and Emphasis
+```markdown
 ~~Old information~~ and **new information** with *emphasis*.
+```
 
 #### Code with Language Specification
+````markdown
 ```javascript
 // JavaScript code
 const player = "Nelly Korda";
@@ -488,6 +523,7 @@ console.log(`${player} is amazing!`);
   color: #8B5A8C;
 }
 ```
+````
 
 ### Best Practices for Content Creation
 
