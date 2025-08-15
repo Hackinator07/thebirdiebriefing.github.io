@@ -37,4 +37,4 @@ And speaking of admiration, the tournament's ambassador, Suzann Pettersen, also 
 
 So yes, Champy might not spin like a Pro V1, but it's got heart and hustle and is the face of what's arguably one of the best weeks on the LPGA calendar. And it knows how to host the kind of party where the buzz never fades, strangers turn into friends, and the drama on the course has a rival in the fun and growth happening off it.
 
-That's the kind of golf week that reminds you why we watch, why we play, and why, no matter the ball in your bag, it's the spirit of the game that sticks with you long after Champy blows out the candles.
+It’s the kind of experience that folds itself into you and reminds you why we watch, why we play, and why, no matter the ball in your bag, the soul of the game stays with you long after Champy blows out the candles.
