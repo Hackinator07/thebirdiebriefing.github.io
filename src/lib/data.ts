@@ -1,22 +1,7 @@
-import podcastsData from '@/data/podcasts.json';
-import rankingsData from '@/data/rankings.json';
-import articlesData from '@/data/articles.json';
-import configData from '@/data/config.json';
-import biosData from '@/data/bios.json';
 
-export interface PodcastEpisode {
-  id: string;
-  title: string;
-  description: string;
-  duration: string;
-  date: string;
-  platforms: {
-    spotify?: string;
-    apple?: string;
-    google?: string;
-    amazon?: string;
-  };
-}
+import configData from '@/data/config.json';
+
+
 
 export interface ArticleSection {
   type: 'links' | 'tv-schedule' | 'field-data';
@@ -132,71 +117,25 @@ interface Bios {
 
 
 
-export function getPodcastEpisodes(): PodcastEpisode[] {
-  return podcastsData.episodes;
-}
 
-export function getArticles(): Article[] {
-  const articles = articlesData.articles as Article[];
-  // Return articles in the order they appear in the JSON file
-  return articles;
-}
 
-export function getArticleBySlug(slug: string): Article | undefined {
-  return articlesData.articles.find(article => article.slug === slug) as Article | undefined;
-}
+// Re-export article functions from the articles module
+export { getArticles, getArticleBySlug, getLatestArticle, getFeaturedArticle } from './articles';
 
-export function getLatestArticle(): Article | undefined {
-  return articlesData.articles[0] as Article | undefined;
-}
-
-export function getFeaturedArticle(): Article | undefined {
-  const articles = articlesData.articles as Article[];
-  return articles.find(article => article.featured === true);
-}
-
-export function getRankings(): Rankings {
-  return rankingsData;
-}
+// Re-export rankings function from the rankings module
+export { getRankings } from './rankings';
 
 export function getConfig() {
   return configData;
 }
 
-export function getAuthor(authorId: string): Author | null {
-  const authors = configData.authors as Record<string, Author>;
-  return authors[authorId] || null;
-}
+// Re-export callout functions from the callouts module
+export { getAuthor, getAuthorCallout, getAllAuthors, getAllCallouts, updateCallout } from './callouts';
 
-export function getAuthorCallout(authorId: string, calloutType: string = 'author'): string {
-  const author = getAuthor(authorId);
-  if (!author) {
-    // Fallback to default author if author not found
-    const defaultAuthor = getAuthor('george-hack');
-    return defaultAuthor?.callouts[calloutType] || 'Contact us for more information.';
-  }
-  return author.callouts[calloutType] || author.callouts.author || 'Contact us for more information.';
-}
-
-export function getCallout(type: string = 'author'): string {
-  // Legacy function - now uses default author
+// Legacy function for backward compatibility
+export async function getCallout(type: string = 'author'): Promise<string> {
+  const { getAuthorCallout } = await import('./callouts');
   return getAuthorCallout('george-hack', type);
-}
-
-export function getAllAuthors(): Record<string, Author> {
-  return configData.authors as Record<string, Author>;
-}
-
-export function getAllCallouts(): Record<string, string> {
-  // Legacy function - returns default author's callouts
-  const defaultAuthor = getAuthor('george-hack');
-  return defaultAuthor?.callouts || {};
-}
-
-export function updateCallout(authorId: string, type: string, newMessage: string): void {
-  // This function can be used to update callout messages
-  // In a real application, you might want to persist this to a database
-  console.log(`Callout "${type}" for author "${authorId}" updated to: ${newMessage}`);
 }
 
 export function formatDate(dateString: string): string {
@@ -248,21 +187,5 @@ export function calculateReadTime(content: string[]): number {
   return readTimeMinutes;
 }
 
-export function getBios(): Bios {
-  return biosData as Bios;
-}
-
-export function getTeamMember(memberId: 'marie' | 'george'): TeamMember | null {
-  const bios = biosData as Bios;
-  return bios.team[memberId] || null;
-}
-
-export function getMission(): Mission {
-  const bios = biosData as Bios;
-  return bios.mission;
-}
-
-export function getContact(): Contact {
-  const bios = biosData as Bios;
-  return bios.contact;
-}
+// Re-export bios functions from the bios module
+export { getBios, getTeamMember, getMission, getContact } from './bios';

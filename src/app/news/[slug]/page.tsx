@@ -10,7 +10,7 @@ import RedditShareButton from './RedditShareButton';
 import CopyUrlButton from './CopyUrlButton';
 import MarkdownContent from '@/components/MarkdownContent';
 import TagList from '@/components/TagList';
-import AuthorCallout from '@/components/AuthorCallout';
+import AuthorCalloutServer from '@/components/AuthorCalloutServer';
 import ArticleSections from '@/components/ArticleSections';
 import ArticleJsonLd from '@/components/ArticleJsonLd';
 
@@ -21,7 +21,7 @@ interface ArticlePageProps {
 }
 
 export async function generateStaticParams() {
-  const articles = getArticles();
+  const articles = await getArticles();
 
   return articles.map((article) => ({
     slug: article.slug,
@@ -30,7 +30,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: ArticlePageProps) {
   const resolvedParams = await params;
-  const article = getArticleBySlug(resolvedParams.slug);
+  const article = await getArticleBySlug(resolvedParams.slug);
 
   if (!article) {
     return {
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: ArticlePageProps) {
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const resolvedParams = await params;
   console.log('Looking for article with slug:', resolvedParams.slug);
-  const article = getArticleBySlug(resolvedParams.slug);
+  const article = await getArticleBySlug(resolvedParams.slug);
   console.log('Found article:', article);
 
   if (!article) {
@@ -163,7 +163,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <ArticleSections sections={article.sections} />
 
               {/* Author Callout */}
-              <AuthorCallout
+              <AuthorCalloutServer
                 message={article.callout}
                 calloutType={article.calloutType}
                 authorId={article.authorId}

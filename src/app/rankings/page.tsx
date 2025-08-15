@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { getRankings } from '@/lib/data';
+import { getRankings } from '@/lib/rankings';
 
 type SortField = 'rank' | 'fullName' | 'countryCode' | 'pointsAverage' | 'pointsTotal' | 'tournamentCount' | 'rankDelta';
 type SortDirection = 'asc' | 'desc';

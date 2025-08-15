@@ -10,7 +10,7 @@ function getBaseUrl(): string {
     : 'https://www.birdiebriefing.com';
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = getBaseUrl();
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/rankings`, changeFrequency: 'weekly', priority: 0.7 },
   ];
 
-  const articles = getArticles();
+  const articles = await getArticles();
   const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${baseUrl}/news/${article.slug}`,
     lastModified: article.date,

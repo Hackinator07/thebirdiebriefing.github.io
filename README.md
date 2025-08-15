@@ -11,8 +11,8 @@ A modern, responsive website for The Birdie Briefing - your premier source for L
 - **Instagram Integration**: Social media feed
 - **Spotify Embed**: Podcast and music integration
 - **Video Background**: Dynamic homepage with golf video
-- **Content Management**: Easy-to-edit JSON files for all content
-- **Markdown Support**: Rich formatting in bio content
+- **Content Management**: Markdown-based articles with YAML frontmatter
+- **Markdown Support**: Rich formatting in all content
 - **Image Optimization**: Automatic WebP conversion and optimization
 - **Custom Domain**: www.birdiebriefing.com
 
@@ -23,7 +23,7 @@ A modern, responsive website for The Birdie Briefing - your premier source for L
 - **Language**: TypeScript
 - **Deployment**: GitHub Pages
 - **Translation**: JigsawStack Translation Widget
-- **Markdown**: react-markdown with remark-gfm
+- **Markdown**: gray-matter, remark, remark-html
 - **Image Processing**: Sharp for optimization
 
 ## 🚀 Getting Started
@@ -79,112 +79,199 @@ NEXT_PUBLIC_BASE_URL=https://www.birdiebriefing.com
 ## 📝 Content Management
 
 ### Adding/Editing Articles
-Articles are managed in `src/data/articles.json`:
+Articles are now managed as individual markdown files in `src/data/articles/`. Each article is a separate `.md` file with YAML frontmatter and markdown content.
 
-```json
-{
-  "id": "article-slug",
-  "slug": "article-slug",
-  "title": "Article Title",
-  "author": "Author Name",
-  "authorId": "author-id",
-  "date": "2025-01-01",
-  "category": "Category",
-  "excerpt": "Brief description",
-  "content": ["Paragraph 1", "Paragraph 2"],
-  "image": {
-    "src": "/optimized/image.webp",
-    "alt": "Alt text",
-    "caption": "Image caption with [markdown links](https://example.com)",
-    "courtesy": "Photo by [Photographer](https://photographer.com/) via [Getty Images](https://gettyimages.com/)"
-  },
-  "tags": ["tag1", "tag2"],
-  "featured": true,
-  "sections": [
-    {
-      "type": "links",
-      "title": "Related Links",
-      "links": [
-        {
-          "text": "Link Title",
-          "url": "https://example.com",
-          "description": "Link description"
-        }
-      ]
-    },
-    {
-      "type": "tv-schedule",
-      "title": "How to Watch",
-      "schedule": [
-        {
-          "day": "Thursday and Friday",
-          "times": ["Golf Channel: 10:00 AM – 12:00 PM"]
-        }
-      ]
-    },
-    {
-      "type": "field-data",
-      "title": "Tournament Field",
-      "data": {
-        "pastChampions": ["Player Name (2024)", "Player Name (2023)"],
-        "rolexTop25": ["Player Name (1)", "Player Name (2)"],
-        "rookies2025": ["Rookie Player 1", "Rookie Player 2"]
-      }
-    }
-  ]
-}
+#### Article File Structure
+Create a new file: `src/data/articles/your-article-slug.md`
+
+```markdown
+---
+id: "your-article-slug"
+slug: "your-article-slug"
+title: "Your Article Title"
+author: "Author Name"
+authorId: "author-id"
+date: "2025-01-01"
+category: "Category"
+featured: false
+excerpt: "Brief description of the article"
+image:
+  src: "/optimized/image.webp"
+  alt: "Alt text for the image"
+  caption: "Image caption with [markdown links](https://example.com)"
+  courtesy: "Photo by [Photographer](https://photographer.com/) via [Getty Images](https://gettyimages.com/)"
+calloutType: "author"
+tags:
+  - "tag1"
+  - "tag2"
+sections:
+  - type: "links"
+    title: "Related Links"
+    links:
+      - text: "Link Title"
+        url: "https://example.com"
+        description: "Link description"
+  - type: "tv-schedule"
+    title: "How to Watch"
+    schedule:
+      - day: "Thursday and Friday"
+        times:
+          - "Golf Channel: 10:00 AM – 12:00 PM"
+  - type: "field-data"
+    title: "Tournament Field"
+    data:
+      pastChampions:
+        - "Player Name (2024)"
+        - "Player Name (2023)"
+      rolexTop25:
+        - "Player Name (1)"
+        - "Player Name (2)"
+      rookies2025:
+        - "Rookie Player 1"
+        - "Rookie Player 2"
+      sponsorExemptions:
+        - "Player Name (a)"
+      mondayQualifiers:
+        - "Player Name"
+---
+
+Your article content goes here in markdown format.
+
+You can use **bold text**, *italic text*, and [links](https://example.com).
+
+Each paragraph should be separated by a blank line.
+
+This makes it easy to write and edit content without dealing with JSON formatting.
 ```
 
-**Article Ordering**: Articles display in the order they appear in the JSON file. No `order` field is needed.
+#### Article Metadata Fields
 
-### Managing Team Bios
-Team member information is in `src/data/bios.json`:
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `id` | string | Yes | Unique identifier (same as slug) |
+| `slug` | string | Yes | URL-friendly identifier |
+| `title` | string | Yes | Article title |
+| `author` | string | Yes | Author name |
+| `authorId` | string | Yes | Author identifier (e.g., "george-hack") |
+| `date` | string | Yes | Publication date (YYYY-MM-DD) |
+| `category` | string | Yes | Article category |
+| `featured` | boolean | No | Whether to feature on homepage (default: false) |
+| `excerpt` | string | Yes | Brief description for previews |
+| `image` | object | Yes | Article image metadata |
+| `calloutType` | string | No | Type of author callout |
+| `tags` | array | No | Article tags |
+| `sections` | array | No | Additional content sections |
 
-```json
-{
-  "team": {
-    "marie": {
-      "name": "Marie Hack",
-      "title": "Founder & Host",
-      "image": "/images/bios/marie.jpg",
-      "imageAlt": "Marie Hack",
-      "bio": [
-        "**Bold text** and [links](https://example.com) supported",
-        "Markdown formatting available"
-      ]
-    }
-  }
-}
+#### Image Object Structure
+```yaml
+image:
+  src: "/optimized/image.webp"  # Path to optimized image
+  alt: "Alt text for accessibility"
+  caption: "Image caption with [markdown links](https://example.com)"
+  courtesy: "Photo by [Photographer](https://photographer.com/) via [Getty Images](https://gettyimages.com/)"
 ```
 
-**Markdown Features Available:**
+#### Section Types
+
+**Links Section:**
+```yaml
+- type: "links"
+  title: "Related Links"
+  links:
+    - text: "Link Title"
+      url: "https://example.com"
+      description: "Link description"
+```
+
+**TV Schedule Section:**
+```yaml
+- type: "tv-schedule"
+  title: "How to Watch"
+  schedule:
+    - day: "Thursday and Friday"
+      times:
+        - "Golf Channel: 10:00 AM – 12:00 PM"
+        - "NBC Sports: 12:00 PM – 1:00 PM"
+```
+
+**Field Data Section:**
+```yaml
+- type: "field-data"
+  title: "Tournament Field"
+  data:
+    pastChampions:
+      - "Player Name (2024)"
+      - "Player Name (2023)"
+    lpga2025Winners:
+      - "Player Name"
+    rolexTop25:
+      - "Player Name (1)"
+    rookies2025:
+      - "Rookie Player 1"
+    sponsorExemptions:
+      - "Player Name (a)"
+    mondayQualifiers:
+      - "Player Name"
+```
+
+#### Article Ordering
+Articles are automatically sorted by date (newest first). The featured article appears on the homepage.
+
+#### Markdown Features Available in Content
 - **Bold**: `**text**`
 - *Italic*: `*text*`
 - [Links](https://example.com): `[text](url)`
 - ~~Strikethrough~~: `~~text~~`
+- Headers: `# H1`, `## H2`, etc.
+- Lists: `- item` or `1. item`
+- Blockquotes: `> quote`
+
+### Managing Team Bios
+Team member information is now managed as individual markdown files in `src/data/bios/`. Each team member has their own `.md` file with YAML frontmatter and markdown content.
+
+#### Team Member File Structure
+Create a new file: `src/data/bios/member-name.md`
+
+```markdown
+---
+name: "Member Name"
+title: "Member Title"
+image: "/optimized/member-image.webp"
+imageAlt: "Member Name"
+---
+
+Your bio content goes here in markdown format.
+
+You can use **bold text**, *italic text*, and [links](https://example.com).
+
+Each paragraph should be separated by a blank line.
+
+This makes it easy to write and edit bios without dealing with JSON formatting.
+```
+
+#### Current Team Members
+- `marie.md` - Marie Hack (Founder & Host)
+- `george.md` - George Hack (Writer, Analyst, & Head of Marketing)
+
+#### Mission and Contact
+- `mission.md` - About Us section content
+- `contact.md` - Contact section metadata
+
+#### Markdown Features Available in Bios
+- **Bold**: `**text**`
+- *Italic*: `*text*`
+- [Links](https://example.com): `[text](url)`
+- ~~Strikethrough~~: `~~text~~`
+- Headers: `# H1`, `## H2`, etc.
+- Lists: `- item` or `1. item`
+- Blockquotes: `> quote`
 
 **Note**: Markdown support is available in articles, bios, author callouts, image captions, and courtesy text.
 
-
-
 ### Managing Podcasts
-Podcast episodes are in `src/data/podcasts.json`:
+Podcast episodes are managed through the Spotify embed on the podcast page:
 
-```json
-{
-  "id": "episode-slug",
-  "title": "Episode Title",
-  "description": "Episode description",
-  "duration": "45:30",
-  "date": "2025-01-01",
-  "platforms": {
-    "spotify": "https://open.spotify.com/...",
-    "apple": "https://podcasts.apple.com/...",
-    "google": "https://podcasts.google.com/...",
-    "amazon": "https://music.amazon.com/..."
-  }
-}
-```
+The podcast page uses a static Spotify embed component (`src/components/SpotifyEmbed.tsx`) to display the latest episodes. The page includes hardcoded links to various podcast platforms.
 
 ### Updating Rankings
 Rankings are managed in `src/data/rankings.json`:
@@ -215,26 +302,67 @@ Rankings are managed in `src/data/rankings.json`:
 }
 ```
 
+### Managing Author Callouts
+Author callouts are now managed as individual markdown files in `src/data/authors/`. Each author has their own `.md` file with YAML frontmatter and markdown content for different callout types.
+
+#### Author Callout File Structure
+Create a new file: `src/data/authors/author-id.md`
+
+```markdown
+---
+name: "Author Name"
+email: "author@example.com"
+---
+
+## Author Callout
+
+Your author callout message goes here. This appears at the end of articles.
+
+You can use **bold text**, *italic text*, and [links](https://example.com).
+
+## Newsletter Callout
+
+Your newsletter callout message goes here.
+
+## Podcast Callout
+
+Your podcast callout message goes here.
+
+## Social Callout
+
+Your social media callout message goes here.
+
+## Feedback Callout
+
+Your feedback callout message goes here.
+```
+
+#### Current Authors
+- `george-hack.md` - George Hack
+- `marie-hack.md` - Marie Hack
+
+#### Callout Types
+- **Author Callout**: Appears at the end of articles
+- **Newsletter Callout**: For newsletter signup prompts
+- **Podcast Callout**: For podcast promotion
+- **Social Callout**: For social media engagement
+- **Feedback Callout**: For reader feedback requests
+
+#### Markdown Features Available in Callouts
+- **Bold**: `**text**`
+- *Italic*: `*text*`
+- [Links](https://example.com): `[text](url)`
+- ~~Strikethrough~~: `~~text~~`
+- Headers: `# H1`, `## H2`, etc.
+- Lists: `- item` or `1. item`
+- Blockquotes: `> quote`
+
 ### Site Configuration
 Global configuration is in `src/data/config.json`:
 
 ```json
 {
-  "site": {
-    "title": "The Birdie Briefing",
-    "description": "Site description",
-    "url": "https://www.birdiebriefing.com"
-  },
-  "authors": {
-    "author-id": {
-      "name": "Author Name",
-      "email": "author@example.com",
-      "callouts": {
-        "author": "Author callout message",
-        "default": "Default callout message"
-      }
-    }
-  }
+  "siteName": "The Birdie Briefing"
 }
 ```
 
@@ -359,13 +487,19 @@ thebirdiebriefing.github.io/
 │   │   ├── Header.tsx       # Site header
 │   │   ├── Footer.tsx       # Site footer
 │   │   └── ...
-│   ├── data/                # Content JSON files
-│   │   ├── articles.json    # Article content
-│   │   ├── bios.json        # Team bios
-│   │   ├── podcasts.json    # Podcast episodes
-│   │   ├── rankings.json    # Player rankings
+│   ├── data/                # Content files
+│   │   ├── articles/        # Individual markdown article files
+│   │   ├── authors/         # Individual markdown author callout files
+│   │   ├── bios/            # Individual markdown bio files
+│   │   ├── rankings.json    # LPGA rankings data
 │   │   └── config.json      # Site configuration
 │   └── lib/                 # Utility functions
+│       ├── articles.ts      # Article loading functions
+│       ├── bios.ts          # Bios loading functions
+│       ├── biosLoader.ts    # Bios markdown parsing utilities
+│       ├── callouts.ts      # Author callouts loading functions
+│       ├── calloutsLoader.ts # Author callouts markdown parsing utilities
+│       ├── markdownLoader.ts # Article markdown parsing utilities
 │       └── data.ts          # Data access functions
 ├── public/                  # Static assets
 │   ├── images/              # Original images
@@ -417,13 +551,13 @@ npm run build:no-optimize
 ```
 
 **Markdown not rendering:**
-- Check JSON syntax in content files
+- Check YAML frontmatter syntax in markdown files
 - Verify Markdown syntax is correct
-- Ensure content is properly escaped
-- Check that MarkdownContent component is being used (not LinkifyText)
+- Ensure content is properly formatted
+- Check that MarkdownContent component is being used
 
 **Images not loading:**
-- Check file paths in JSON files
+- Check file paths in markdown frontmatter
 - Ensure images exist in `public/` directory
 - Run image optimization: `npm run optimize-images`
 
@@ -434,7 +568,7 @@ npm run build:no-optimize
 
 ### Development Tips
 
-1. **Content updates**: Edit JSON files, no code changes needed
+1. **Content updates**: Edit markdown files, no code changes needed
 2. **Image optimization**: Always run after adding new images
 3. **Markdown testing**: Use development server to preview changes
 4. **Deployment**: Push to main branch for automatic deployment
@@ -458,26 +592,39 @@ For technical issues or questions about managing the site:
 - **Articles**: 500-2000 words, include images
 - **Images**: Use WebP format, optimize for web
 - **Links**: Always include alt text and proper attribution
-- **Markdown**: Use for rich formatting in bios, content, and image captions
+- **Markdown**: Use for rich formatting in all content
 - **Field Data**: Include comprehensive tournament information for tournament previews
 - **Sections**: Use appropriate section types (links, tv-schedule, field-data) to enhance articles
 
 ### Article Management Best Practices
+
+#### Creating New Articles
+1. Create a new `.md` file in `src/data/articles/`
+2. Use the filename as the slug (e.g., `my-article.md` for slug `my-article`)
+3. Add YAML frontmatter with all required metadata
+4. Write content in markdown format
+5. Test locally with `npm run dev`
 
 #### Featured Articles
 - Only mark one article as `featured: true` at a time
 - Consider the featured article as your "top story" for the week
 - Update featured status when publishing new articles
 
-#### Article Ordering
-- Articles display in the order they appear in the JSON file
-- No `order` field is needed - simply arrange articles in the desired order in `articles.json`
-- The first article in the array appears first on the `/news` page
+#### Article Organization
+- Articles are automatically sorted by date (newest first)
+- No manual ordering needed - just set the correct date in frontmatter
+- The featured article appears on the homepage
 
 #### Section Types
 - **links**: For related resources and external links
 - **tv-schedule**: For tournament broadcast schedules
 - **field-data**: For tournament field information (past champions, rankings, rookies, etc.)
+
+#### Markdown Writing Tips
+- Use blank lines to separate paragraphs
+- Use markdown formatting for emphasis and links
+- Keep image captions and courtesy text concise
+- Test your markdown locally before deploying
 
 ---
 

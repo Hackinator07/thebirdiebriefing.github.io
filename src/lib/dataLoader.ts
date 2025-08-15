@@ -1,9 +1,9 @@
 // Dynamic data loader for better Turbopack compatibility
+import { getArticles } from './articles';
 
 export async function loadArticles() {
   try {
-    const articlesData = await import('@/data/articles.json');
-    return articlesData.default.articles || [];
+    return await getArticles();
   } catch (error) {
     console.error('Error loading articles:', error);
     return [];
@@ -12,15 +12,7 @@ export async function loadArticles() {
 
 
 
-export async function loadPodcasts() {
-  try {
-    const podcastsData = await import('@/data/podcasts.json');
-    return podcastsData.default.episodes || [];
-  } catch (error) {
-    console.error('Error loading podcasts:', error);
-    return [];
-  }
-}
+
 
 export async function loadRankings() {
   try {

@@ -9,11 +9,23 @@ export const metadata = {
   description: 'Learn about The Birdie Briefing, founded in 2025 to amplify the stories, achievements, and voices of women in golf.',
 };
 
-export default function About() {
-  const mission = getMission();
-  const marie = getTeamMember('marie');
-  const george = getTeamMember('george');
-  const contact = getContact();
+export default async function About() {
+  const mission = await getMission();
+  const marie = await getTeamMember('marie');
+  const george = await getTeamMember('george');
+  const contact = await getContact();
+
+  // Handle null cases
+  if (!mission || !marie || !george || !contact) {
+    return (
+      <div className="bg-white min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Content Not Found</h1>
+          <p className="text-gray-600">Unable to load about page content.</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-white">

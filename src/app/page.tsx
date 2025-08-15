@@ -5,9 +5,9 @@ import Socials from '@/components/Socials';
 import VideoBackground from '@/components/VideoBackground';
 import { getArticles, getFeaturedArticle, formatDate } from '@/lib/data';
 
-export default function Home() {
-  const articles = getArticles();
-  const featuredArticle = getFeaturedArticle() || articles[0]; // Get featured article or fallback to latest
+export default async function Home() {
+  const articles = await getArticles();
+  const featuredArticle = await getFeaturedArticle() || articles[0]; // Get featured article or fallback to latest
 
 
   return (

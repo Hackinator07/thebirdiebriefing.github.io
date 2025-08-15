@@ -1,6 +1,5 @@
 import MarkdownContent from '@/components/MarkdownContent';
 import { FaGolfBall } from 'react-icons/fa';
-import { getAuthorCallout } from '@/lib/data';
 
 interface AuthorCalloutProps {
   message?: string;
@@ -15,15 +14,8 @@ export default function AuthorCallout({
   authorId,
   className = ''
 }: AuthorCalloutProps) {
-  // Use provided message, or get author-specific callout, or fall back to default
-  let calloutMessage = message;
-
-  if (!calloutMessage && authorId) {
-    calloutMessage = getAuthorCallout(authorId, calloutType);
-  } else if (!calloutMessage) {
-    // Fallback to default author if no authorId provided
-    calloutMessage = getAuthorCallout('george-hack', calloutType);
-  }
+  // Use provided message (loaded server-side by AuthorCalloutServer)
+  const calloutMessage = message || 'Contact us for more information.';
 
   return (
     <div className={`my-8 ${className}`}>
