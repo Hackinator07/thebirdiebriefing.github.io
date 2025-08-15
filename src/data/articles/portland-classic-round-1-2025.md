@@ -66,9 +66,9 @@ Brooke Henderson set the tone with a four-birdie streak right out of the gate. W
 
 American Gurleen Kaur posted up eight birdies, while China's Miranda Wang navigated around the towering trees to card a bogey-free round, saving par eleven times. Abacaya Yubol kept her card clean with twelve pars and no bogeys, finishing the day tied for fourth alongside Haeran Ryu. Jin Young Ko of South Korea delivered a commanding performance, carding a five-under-par round with 13 pars and five birdies.
 
-In the afternoon wave, rookie Adéla Cernousek and fellow Frenchwoman Perrine Delacour made their presence felt, finishing at 7-under and 6-under, respectively.
+In the afternoon wave, rookie Adéla Cernousek and fellow Frenchwoman Perrine Delacour made their presence felt, finishing at 8-under and 6-under, respectively.
 
-At the end of Round 1 Adéla Cernousek rests alone atop the leaderboard at 8 under. A five-way logjam at 7-under sees Henderson, Kaur, Lee5, Park, and M. Wang all in the mix, while a tightly packed chase group -- including Buhai, Grant, Ryu, Yubol, and Delacour -- tied for seventh, keeps the tension high heading into Round 2.
+So, at the end of Round 1 Adéla Cernousek rests alone atop the leaderboard at 8-under. A five-way logjam at 7-under sees Henderson, Kaur, Lee5, Park, and M. Wang all in the mix, while a tightly packed chase group -- including Buhai, Grant, Ryu, Yubol, and Delacour -- tied for seventh, keeps the tension high heading into Round 2.
 
 ## Round 1 Competition Highlights
 
