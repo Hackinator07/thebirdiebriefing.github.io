@@ -6,7 +6,7 @@ author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-12"
 category: "Tournament Preview"
-featured: true
+featured: false
 excerpt: "At Columbia Edgewater Country Club, the greens are ready as one of the LPGA Tour's enduring pillars returns under a new banner."
 image:
   src: "/optimized/portland-classic-mack.webp"
