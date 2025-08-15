@@ -7,14 +7,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  turbopack: {
-    rules: {
-      '*.json': {
-        loaders: ['json'],
-        as: '*.json',
-      },
-    },
-  },
 };
 
 export default nextConfig;

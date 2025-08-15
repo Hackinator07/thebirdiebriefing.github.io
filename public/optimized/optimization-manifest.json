@@ -1,15 +1,15 @@
 {
-  "timestamp": "2025-08-13T22:12:43.303Z",
+  "timestamp": "2025-08-15T13:19:50.925Z",
   "processed": 1,
-  "skipped": 6,
-  "totalOriginalSize": "0.89",
-  "totalOptimizedSize": "0.06",
-  "savings": "93.3",
+  "skipped": 7,
+  "totalOriginalSize": "0.71",
+  "totalOptimizedSize": "0.02",
+  "savings": "97.2",
   "images": [
     {
-      "original": "images/articles/champy.png",
-      "optimized": "optimized/champy.webp",
-      "savings": 93.3
+      "original": "images/articles/adela-cernousek.png",
+      "optimized": "optimized/adela-cernousek.webp",
+      "savings": 97.2
     }
   ]
 }

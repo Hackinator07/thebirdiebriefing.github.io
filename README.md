@@ -195,9 +195,12 @@ image:
 ```
 
 **Field Data Section:**
+The field-data section is now fully dynamic and supports custom background colors:
+
 ```yaml
 - type: "field-data"
   title: "Tournament Field"
+  backgroundColor: "bg-primary-50"  # Optional: Custom background color
   data:
     pastChampions:
       - "Player Name (2024)"
@@ -212,6 +215,24 @@ image:
       - "Player Name (a)"
     mondayQualifiers:
       - "Player Name"
+```
+
+**Dynamic Features:**
+- **Dynamic sections**: Sections are automatically generated from the data object keys
+- **Auto-generated labels**: Section titles are automatically formatted from keys (e.g., `pastChampions` → "Past Champions")
+- **Custom styling**: Use `backgroundColor: "bg-primary-50"` for TV schedule-like styling
+- **Flexible data**: Any key-value pairs in the data object will create sections
+
+**Field Table Section:**
+For tabular data like leaderboards:
+
+```yaml
+- type: "field-table"
+  title: "Leaderboard After Round 1"
+  headers: ["Position", "Player", "To Par", "Score"]
+  tableData:
+    - ["1", "Player Name", "-8", "64"]
+    - ["T2", "Player Name", "-7", "65"]
 ```
 
 #### Article Ordering
@@ -680,6 +701,38 @@ npm run lint             # Run ESLint
 npm run optimize-images  # Optimize images manually
 npm run export           # Build and export static files
 ```
+
+## 🔄 Development Workflow
+
+### Content Editing Workflow
+The site uses a simple and reliable development workflow for content editing:
+
+1. **Edit markdown files** in your preferred editor
+2. **Save the file** (Cmd+S)
+3. **Refresh browser** (Cmd+R) to see changes
+4. **Repeat** as needed
+
+### Why Manual Refresh?
+- **Reliability**: No complex auto-reload configurations to maintain
+- **Stability**: Avoids browser auto-refresh glitches during content editing
+- **Simplicity**: Straightforward workflow that works consistently
+- **Performance**: Server-side content compilation is fast and efficient
+
+### File Watching
+The development server automatically detects changes to:
+- ✅ **React components** (automatic hot reload)
+- ✅ **TypeScript files** (automatic hot reload)
+- ✅ **CSS files** (automatic hot reload)
+- ✅ **Markdown files** (server-side reload, manual browser refresh)
+
+### Content File Locations
+- **Articles**: `src/data/articles/*.md`
+- **Author callouts**: `src/data/authors/*.md`
+- **Team bios**: `src/data/bios/*.md`
+- **Site config**: `src/data/config.json`
+- **Rankings**: `src/data/rankings.json`
+
+**Note**: This workflow is optimized for content-heavy sites where reliability is more important than automatic browser refresh for data files.
 
 ## 🤖 Automation Scripts
 

@@ -28,7 +28,10 @@ export async function loadMarkdownArticle(slug: string): Promise<Article | null>
         title: section.title,
         links: section.links,
         schedule: section.schedule,
-        data: section.data
+        data: section.data,
+        headers: section.headers,
+        tableData: section.tableData,
+        backgroundColor: section.backgroundColor
       }));
     }
 

@@ -4,7 +4,7 @@ import configData from '@/data/config.json';
 
 
 export interface ArticleSection {
-  type: 'links' | 'tv-schedule' | 'field-data';
+  type: 'links' | 'tv-schedule' | 'field-data' | 'field-table';
   title: string;
   links?: Array<{
     text: string;
@@ -15,14 +15,10 @@ export interface ArticleSection {
     day: string;
     times: string[];
   }>;
-  data?: {
-    pastChampions?: string[];
-    lpga2025Winners?: string[];
-    rolexTop25?: string[];
-    rookies2025?: string[];
-    sponsorExemptions?: string[];
-    mondayQualifiers?: string[];
-  };
+  data?: Record<string, string[]>;
+  headers?: string[];
+  tableData?: string[][];
+  backgroundColor?: string;
 }
 
 export interface Article {
