@@ -25,12 +25,12 @@ sections:
     backgroundColor: "bg-primary-50"
     data:
       ace:
-        - "Caroline Masson – Hole-in-One on Hole 2"
+        - "Hole 2 - Caroline Masson (Hole-in-One) "
       eagles:
-        - "Hyo Joon Jang – Hole 5"
-        - "Chisato Iwai – Hole 7"
-        - "Wichanee Meechai – Hole 11"
-        - "Adéla Cernousek – Hole 7"
+      - "Hole 5 – Hyo Joon Jang"
+      - "Hole 7 – Adéla Cernousek"
+      - "Hole 7 – Chisato Iwai"
+      - "Hole 11 – Wichanee Meechai"
   - type: "field-table"
     title: "Leaderboard After Round 1"
     headers: ["Position", "Player", "To Par", "Score"]
