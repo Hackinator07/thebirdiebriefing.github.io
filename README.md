@@ -217,14 +217,7 @@ image:
 #### Article Ordering
 Articles are automatically sorted by date (newest first). The featured article appears on the homepage.
 
-#### Markdown Features Available in Content
-- **Bold**: `**text**`
-- *Italic*: `*text*`
-- [Links](https://example.com): `[text](url)`
-- ~~Strikethrough~~: `~~text~~`
-- Headers: `# H1`, `## H2`, etc.
-- Lists: `- item` or `1. item`
-- Blockquotes: `> quote`
+**Note**: All content supports comprehensive markdown formatting. See the [Markdown Features Guide](#markdown-features-guide) for complete details.
 
 ### Managing Team Bios
 Team member information is now managed as individual markdown files in `src/data/bios/`. Each team member has their own `.md` file with YAML frontmatter and markdown content.
@@ -257,16 +250,7 @@ This makes it easy to write and edit bios without dealing with JSON formatting.
 - `mission.md` - About Us section content
 - `contact.md` - Contact section metadata
 
-#### Markdown Features Available in Bios
-- **Bold**: `**text**`
-- *Italic*: `*text*`
-- [Links](https://example.com): `[text](url)`
-- ~~Strikethrough~~: `~~text~~`
-- Headers: `# H1`, `## H2`, etc.
-- Lists: `- item` or `1. item`
-- Blockquotes: `> quote`
-
-**Note**: Markdown support is available in articles, bios, author callouts, image captions, and courtesy text.
+**Note**: All bio content supports comprehensive markdown formatting. See the [Markdown Features Guide](#markdown-features-guide) for complete details.
 
 ### Managing Podcasts
 Podcast episodes are managed through the Spotify embed on the podcast page:
@@ -348,13 +332,236 @@ Your feedback callout message goes here.
 - **Social Callout**: For social media engagement
 - **Feedback Callout**: For reader feedback requests
 
-#### Markdown Features Available in Callouts
-- **Bold**: `**text**`
-- *Italic*: `*text*`
-- [Links](https://example.com): `[text](url)`
-- ~~Strikethrough~~: `~~text~~`
-- Headers: `# H1`, `## H2`, etc.
-- Lists: `- item` or `1. item`
+## Markdown Features Guide
+
+The site now supports comprehensive markdown formatting throughout all content areas. Here's what you can use:
+
+### Basic Text Formatting
+- **Bold text**: `**bold**` or `__bold__`
+- *Italic text*: `*italic*` or `_italic_`
+- ~~Strikethrough~~: `~~strikethrough~~`
+- `Inline code`: `` `code` ``
+
+### Links and References
+- [External links](https://example.com): `[text](url)`
+- [Links with titles](https://example.com): `[text](url "title")`
+- Email links: `[email us](mailto:user@example.com)`
+- Phone links: `[call us](tel:+1234567890)`
+
+### Lists
+**Unordered lists:**
+- Item 1
+- Item 2
+  - Nested item
+  - Another nested item
+- Item 3
+
+**Ordered lists:**
+1. First item
+2. Second item
+   1. Nested numbered item
+   2. Another nested item
+3. Third item
+
+### Headers
+# H1 Header
+## H2 Header
+### H3 Header
+#### H4 Header
+##### H5 Header
+###### H6 Header
+
+### Code Blocks
+```javascript
+// Code block with syntax highlighting
+function example() {
+  return "Hello World!";
+}
+```
+
+### Blockquotes
+> This is a blockquote
+>
+> It can span multiple lines
+>
+> > And even be nested
+
+### Tables
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Row 1    | Data     | Data     |
+| Row 2    | Data     | Data     |
+| Row 3    | Data     | Data     |
+
+### Task Lists
+- [x] Completed task
+- [ ] Pending task
+- [ ] Another pending task
+
+### Horizontal Rules
+---
+
+### Escaping Characters
+Use backslashes to escape special characters: \*not italic\*
+
+### Where Markdown Works
+- **Article content** - All article paragraphs support full markdown
+- **Article excerpts** - Brief descriptions with basic formatting
+- **Image captions** - Rich captions with links and formatting
+- **Image courtesy text** - Attribution with links
+- **Author callouts** - All callout types support markdown
+- **Bio content** - Team member bios and mission statements
+- **Article sections** - Field data, links, and schedules
+
+### Examples for Different Content Types
+
+#### Article Content
+```markdown
+This is a **bold paragraph** with *italic emphasis* and a [link to the LPGA](https://www.lpga.com/).
+
+> "This is a quote from a player or official."
+
+- List item 1
+- List item 2
+  - Nested item
+
+| Player | Score | Position |
+|--------|-------|----------|
+| Player A | -5 | 1st |
+| Player B | -3 | 2nd |
+```
+
+#### Image Captions
+```markdown
+**Player Name** during the [Tournament Name](https://tournament.com/) with a spectacular shot on the 18th hole.
+```
+
+#### Author Callouts
+```markdown
+## Author Callout
+
+If something here made you laugh, smile, or throw your ball into the nearest water hazard, you can **[email us](mailto:george@birdiebriefing.com)**.
+
+**Stay in the loop** with the latest LPGA updates and golf insights. Subscribe to our newsletter for *exclusive content* delivered to your inbox.
+```
+
+#### Bio Content
+```markdown
+Marie is a **passionate golf enthusiast** with over 10 years of experience covering the LPGA Tour. She specializes in:
+
+- Player interviews and profiles
+- Tournament analysis and predictions
+- Behind-the-scenes stories
+- Community engagement
+
+> "Golf is more than a game—it's a way of life that teaches patience, precision, and perseverance."
+```
+
+### Advanced Markdown Features
+
+#### Footnotes
+You can add footnotes to your content[^1].
+
+[^1]: This is a footnote that appears at the bottom of the content.
+
+#### Definition Lists
+Term 1
+: Definition 1
+
+Term 2
+: Definition 2
+
+#### Strikethrough and Emphasis
+~~Old information~~ and **new information** with *emphasis*.
+
+#### Code with Language Specification
+```javascript
+// JavaScript code
+const player = "Nelly Korda";
+console.log(`${player} is amazing!`);
+```
+
+```css
+/* CSS styling */
+.player-name {
+  font-weight: bold;
+  color: #8B5A8C;
+}
+```
+
+### Best Practices for Content Creation
+
+#### Article Writing
+1. **Use headers** to structure your content logically
+2. **Include relevant links** to official sources, player social media, etc.
+3. **Use blockquotes** for player quotes and official statements
+4. **Create tables** for tournament results, player statistics, etc.
+5. **Use lists** for key points, player highlights, or tournament features
+
+#### Image Captions
+- Keep captions concise but informative
+- Include player names in **bold**
+- Link to tournament websites or player profiles
+- Use proper attribution with courtesy links
+
+#### Author Callouts
+- Keep messages personal and engaging
+- Use **bold** for key calls-to-action
+- Include email links for direct contact
+- Vary callout types for different contexts
+
+#### Bio Content
+- Use a mix of paragraphs and lists
+- Include relevant experience and specialties
+- Add personal quotes or mission statements
+- Keep content professional but approachable
+
+### Markdown Tips and Tricks
+
+#### Linking to Internal Pages
+- Use relative URLs for internal links: `[About Us](/about)`
+- Link to specific articles: `[Latest News](/news)`
+- Link to rankings: `[Current Rankings](/rankings)`
+
+#### Creating Rich Content
+- Use tables for tournament schedules and results
+- Create task lists for tournament checklists
+- Use blockquotes for player and official quotes
+- Add footnotes for additional context
+
+#### SEO-Friendly Content
+- Use descriptive link text: `[LPGA Official Site](https://www.lpga.com/)` instead of `[click here](url)`
+- Include relevant keywords naturally in your content
+- Use headers to create logical content structure
+- Add alt text descriptions in image captions
+
+### Technical Implementation
+
+#### Markdown Processing Pipeline
+1. **Content Creation**: Write markdown in `.md` files with YAML frontmatter
+2. **Server-Side Loading**: `markdownLoader.ts`, `biosLoader.ts`, `calloutsLoader.ts` parse files
+3. **Data Access**: Modular functions in `articles.ts`, `bios.ts`, `callouts.ts` provide clean APIs
+4. **Client Rendering**: `MarkdownContent` component uses `ReactMarkdown` with `remarkGfm`
+5. **Styling**: Custom CSS classes applied to different markdown elements
+
+#### Supported Markdown Libraries
+- **ReactMarkdown**: Core markdown rendering
+- **remarkGfm**: GitHub Flavored Markdown support
+- **gray-matter**: YAML frontmatter parsing
+- **remark/remark-html**: Server-side markdown processing (for callouts)
+
+#### Custom Styling
+The `MarkdownContent` component applies custom styling:
+- **Links**: Primary color with hover effects
+- **Bold text**: Semibold weight with dark color
+- **Italic text**: Italic style with medium gray
+- **Paragraphs**: Large text with relaxed line height
+
+#### Performance Considerations
+- **Caching**: Data is cached after first load to avoid repeated file system access
+- **Server Components**: Markdown processing happens on the server for better performance
+- **Dynamic Imports**: Server-side modules are dynamically imported to prevent client bundling
+- **Static Generation**: All markdown content is processed at build time for optimal performance
 - Blockquotes: `> quote`
 
 ### Site Configuration
