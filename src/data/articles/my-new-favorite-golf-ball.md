@@ -6,7 +6,6 @@ author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-13"
 category: "LPGA Analysis"
-featured: false
 excerpt: "A tribute to Champy, the mascot of The Dow Championship, and the community spirit that makes this tournament special."
 image:
   src: "/optimized/champy.webp"

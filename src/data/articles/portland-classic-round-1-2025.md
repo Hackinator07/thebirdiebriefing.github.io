@@ -1,12 +1,11 @@
 ---
 id: "portland-classic-round-1-2025"
 slug: "portland-classic-round-1-2025"
-title: "Round 1 at The 2025 Standard Portland Classic: France's Bold Start, Brooke's Birdie Streak, and Wichanee's Early Eagle" 
+title: "Round 1 at The 2025 Standard Portland Classic: France's Bold Start, Brooke's Birdie Streak, and Wichanee's Early Eagle"
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-14"
 category: "Tournament Recap"
-featured: true
 excerpt: "Columbia Edgewater opened cool and calm on day one, with barely a hint of wind – perfect conditions for what felt like a spring-loaded leaderboard."
 image:
   src: "/optimized/adela-cernousek.webp"
@@ -79,7 +78,7 @@ At the end of Round 1 Adéla Cernousek rests alone atop the leaderboard at 8 und
 
 **Caroline Masson's** 7-iron at the par-3 second was so pure she didn't even see it disappear. Hidden behind a bunker, the ball found the cup for her first ace of the year, sending a ripple of cheers across the gallery.
 
-**Perrine Delacour**, currently ranked 118 in the world, had a phenomenal day posting 4 birdies on the front 9 and finishing tied for 7th. steve
+**Perrine Delacour**, currently ranked 118 in the world, had a phenomenal day posting 4 birdies on the front 9 and finishing tied for 7th.
 
 **Rose Zhang**, hindered by injury and a stop-start schedule struggled early, including double bogeys on 10 and 13, never quite finding her rhythm.
 

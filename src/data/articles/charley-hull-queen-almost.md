@@ -6,7 +6,6 @@ author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-11"
 category: "LPGA Analysis"
-featured: false
 excerpt: "A look at Charley Hull's remarkable performance at the AIG Women's Open, where she defied expectations and nearly claimed victory."
 image:
   src: "/optimized/hull.webp"

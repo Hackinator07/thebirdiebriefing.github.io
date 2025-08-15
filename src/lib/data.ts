@@ -1,7 +1,10 @@
 
 import configData from '@/data/config.json';
 
-
+export interface SiteConfig {
+  siteName: string;
+  featuredArticleId: string;
+}
 
 export interface ArticleSection {
   type: 'links' | 'tv-schedule' | 'field-data' | 'field-table';
@@ -41,7 +44,6 @@ export interface Article {
   calloutType?: string;
   tags: string[];
   sections?: ArticleSection[];
-  featured?: boolean;
 }
 
 export interface RankingPlayer {
@@ -75,41 +77,7 @@ export interface Rankings {
   players: RankingPlayer[];
 }
 
-interface Author {
-  name: string;
-  email: string;
-  callouts: Record<string, string>;
-}
 
-interface TeamMember {
-  name: string;
-  title: string;
-  image: string;
-  imageAlt: string;
-  bio: string[];
-}
-
-interface Mission {
-  title: string;
-  description: string;
-  content: string[];
-}
-
-interface Contact {
-  title: string;
-  subtitle: string;
-  buttonText: string;
-  buttonLink: string;
-}
-
-interface Bios {
-  team: {
-    marie: TeamMember;
-    george: TeamMember;
-  };
-  mission: Mission;
-  contact: Contact;
-}
 
 
 
@@ -121,8 +89,8 @@ export { getArticles, getArticleBySlug, getLatestArticle, getFeaturedArticle } f
 // Re-export rankings function from the rankings module
 export { getRankings } from './rankings';
 
-export function getConfig() {
-  return configData;
+export function getConfig(): SiteConfig {
+  return configData as SiteConfig;
 }
 
 // Re-export callout functions from the callouts module

@@ -72,9 +72,9 @@ export default async function Home() {
 
       {/* Featured News Section */}
       {featuredArticle && (
-        <section className="py-16 lg:py-24">
+        <section className="py-8 lg:py-12">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="max-w-2xl mx-auto text-center mb-16">
+            <div className="max-w-2xl mx-auto text-center mb-8">
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight tracking-tight title-overlap">
@@ -83,16 +83,16 @@ export default async function Home() {
                 <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our top story of the week, handpicked for you.
+                Our birdie worthy story, handpicked for you.
               </p>
             </div>
 
                         <div className="max-w-6xl mx-auto">
               <article className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                <div className="flex flex-col lg:flex-row">
+                <div className="flex flex-col lg:flex-row h-full">
                   {/* Image */}
-                  <div className="lg:w-1/2">
-                    <div className="aspect-[16/10] bg-gray-200">
+                  <div className="lg:w-1/2 lg:h-auto">
+                    <div className="h-full lg:min-h-[400px] bg-gray-200">
                       <Image
                         src={featuredArticle.image.src}
                         alt={featuredArticle.image.alt}
@@ -105,7 +105,7 @@ export default async function Home() {
                   </div>
 
                   {/* Content */}
-                  <div className="lg:w-1/2 p-8">
+                  <div className="lg:w-1/2 p-8 flex flex-col justify-center">
                     {/* Category */}
                     <span className="inline-block text-primary-500 font-semibold text-sm uppercase tracking-wide mb-3">
                       {featuredArticle.category}

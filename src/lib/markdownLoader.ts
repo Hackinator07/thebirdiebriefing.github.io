@@ -23,15 +23,15 @@ export async function loadMarkdownArticle(slug: string): Promise<Article | null>
     // Parse sections if they exist
     let sections: ArticleSection[] | undefined;
     if (data.sections) {
-      sections = data.sections.map((section: any) => ({
-        type: section.type,
-        title: section.title,
-        links: section.links,
-        schedule: section.schedule,
-        data: section.data,
-        headers: section.headers,
-        tableData: section.tableData,
-        backgroundColor: section.backgroundColor
+      sections = data.sections.map((section: Record<string, unknown>) => ({
+        type: section.type as ArticleSection['type'],
+        title: section.title as string,
+        links: section.links as ArticleSection['links'],
+        schedule: section.schedule as ArticleSection['schedule'],
+        data: section.data as ArticleSection['data'],
+        headers: section.headers as string[],
+        tableData: section.tableData as string[][],
+        backgroundColor: section.backgroundColor as string
       }));
     }
 
@@ -48,8 +48,7 @@ export async function loadMarkdownArticle(slug: string): Promise<Article | null>
       image: data.image,
       calloutType: data.calloutType,
       tags: data.tags,
-      sections,
-      featured: data.featured || false
+      sections
     };
 
     return article;

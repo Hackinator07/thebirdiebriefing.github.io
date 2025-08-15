@@ -155,7 +155,7 @@ This makes it easy to write and edit content without dealing with JSON formattin
 | `authorId` | string | Yes | Author identifier (e.g., "george-hack") |
 | `date` | string | Yes | Publication date (YYYY-MM-DD) |
 | `category` | string | Yes | Article category |
-| `featured` | boolean | No | Whether to feature on homepage (default: false) |
+| `featured` | boolean | No | **Deprecated** - Use global `featuredArticleId` in config instead |
 | `excerpt` | string | Yes | Brief description for previews |
 | `image` | object | Yes | Article image metadata |
 | `calloutType` | string | No | Type of author callout |
@@ -236,7 +236,28 @@ For tabular data like leaderboards:
 ```
 
 #### Article Ordering
-Articles are automatically sorted by date (newest first). The featured article appears on the homepage.
+Articles are automatically sorted by date (newest first). The featured article is determined by the `featuredArticleId` setting in `src/data/config.json`.
+
+#### Featured Article Management
+The featured article is now managed globally in the site configuration:
+
+```json
+{
+  "siteName": "The Birdie Briefing",
+  "featuredArticleId": "portland-classic-round-1-2025"
+}
+```
+
+To change the featured article:
+1. Update the `featuredArticleId` in `src/data/config.json`
+2. Use the exact article ID (same as the slug)
+3. The homepage will automatically display the new featured article
+
+**Benefits:**
+- ✅ **Single source of truth** - One place to manage the featured article
+- ✅ **No markdown changes** - Don't need to edit individual article files
+- ✅ **Easy switching** - Change featured article without touching content
+- ✅ **Fallback protection** - If configured article not found, uses first article
 
 **Note**: All content supports comprehensive markdown formatting. See the [Markdown Features Guide](#markdown-features-guide) for complete details.
 
@@ -902,7 +923,7 @@ For technical issues or questions about managing the site:
 5. Test locally with `npm run dev`
 
 #### Featured Articles
-- Only mark one article as `featured: true` at a time
+- Use the global `featuredArticleId` setting in `src/data/config.json` to manage the featured article
 - Consider the featured article as your "top story" for the week
 - Update featured status when publishing new articles
 

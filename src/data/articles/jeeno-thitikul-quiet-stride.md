@@ -6,7 +6,6 @@ author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-12"
 category: "LPGA Analysis"
-featured: false
 excerpt: "The 22-year-old from Bangkok methodically reclaimed the top spot in the Rolex Rankings with the kind of composure that defines greatness."
 image:
   src: "/optimized/jeeno-thitikul.webp"

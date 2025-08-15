@@ -27,8 +27,6 @@ export default async function AuthorCalloutServer({
   return (
     <AuthorCallout
       message={calloutMessage}
-      calloutType={calloutType}
-      authorId={authorId}
       className={className}
     />
   );

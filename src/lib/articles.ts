@@ -1,54 +1,16 @@
 import { Article } from './data';
-import fs from 'fs';
-import path from 'path';
+import { loadAllMarkdownArticles, getAllArticleSlugs } from './markdownLoader';
 
 // Server-side functions
 let cachedArticles: Article[] | null = null;
-let lastLoadTime: number = 0;
-
-
 
 export async function getArticles(): Promise<Article[]> {
-  const articlesDirectory = path.join(process.cwd(), 'src/data/articles');
-
-  try {
-    // Check if any markdown files have been modified since last load
-    const fileNames = fs.readdirSync(articlesDirectory);
-    const mdFiles = fileNames.filter(fileName => fileName.endsWith('.md'));
-
-    const currentTime = Date.now();
-    let shouldReload = false;
-
-    for (const fileName of mdFiles) {
-      const filePath = path.join(articlesDirectory, fileName);
-      const stats = fs.statSync(filePath);
-      if (stats.mtime.getTime() > lastLoadTime) {
-        shouldReload = true;
-        break;
-      }
-    }
-
-    if (cachedArticles && !shouldReload) {
-      return cachedArticles;
-    }
-
-    // Dynamic import to avoid bundling fs in client
-    const { loadAllMarkdownArticles } = await import('./markdownLoader');
-    cachedArticles = await loadAllMarkdownArticles();
-    lastLoadTime = currentTime;
-    return cachedArticles;
-  } catch (error) {
-    console.error('Error checking file modifications:', error);
-    // Fallback to cached version if available
-    if (cachedArticles) {
-      return cachedArticles;
-    }
-    // Dynamic import to avoid bundling fs in client
-    const { loadAllMarkdownArticles } = await import('./markdownLoader');
-    cachedArticles = await loadAllMarkdownArticles();
-    lastLoadTime = Date.now();
+  if (cachedArticles) {
     return cachedArticles;
   }
+
+  cachedArticles = await loadAllMarkdownArticles();
+  return cachedArticles;
 }
 
 export async function getArticleBySlug(slug: string): Promise<Article | undefined> {
@@ -63,10 +25,19 @@ export async function getLatestArticle(): Promise<Article | undefined> {
 
 export async function getFeaturedArticle(): Promise<Article | undefined> {
   const articles = await getArticles();
-  return articles.find(article => article.featured === true);
+  const { getConfig } = await import('./data');
+  const config = getConfig();
+
+  // Find article by the configured featured article ID
+  const featuredArticle = articles.find(article => article.id === config.featuredArticleId);
+
+  // Fallback to the first article if configured article is not found
+  if (!featuredArticle && articles.length > 0) {
+    console.warn(`Featured article with ID "${config.featuredArticleId}" not found. Using first article as fallback.`);
+    return articles[0];
+  }
+
+  return featuredArticle;
 }
 
-export function getAllArticleSlugs(): Promise<string[]> {
-  // Dynamic import to avoid bundling fs in client
-  return import('./markdownLoader').then(({ getAllArticleSlugs }) => getAllArticleSlugs());
-}
+export { getAllArticleSlugs };

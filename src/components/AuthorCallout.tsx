@@ -3,15 +3,11 @@ import { FaGolfBall } from 'react-icons/fa';
 
 interface AuthorCalloutProps {
   message?: string;
-  calloutType?: string;
-  authorId?: string;
   className?: string;
 }
 
 export default function AuthorCallout({
   message,
-  calloutType = 'author',
-  authorId,
   className = ''
 }: AuthorCalloutProps) {
   // Use provided message (loaded server-side by AuthorCalloutServer)

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getArticles } from '@/lib/data';
+import { getConfig } from '@/lib/data';
 
 export const dynamic = 'force-static';
 
@@ -12,6 +13,7 @@ function getBaseUrl(): string {
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = getBaseUrl();
+  const config = getConfig();
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${baseUrl}/`, changeFrequency: 'daily', priority: 1 },
@@ -27,7 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/news/${article.slug}`,
     lastModified: article.date,
     changeFrequency: 'yearly',
-    priority: article.featured ? 0.9 : 0.7,
+    priority: article.id === config.featuredArticleId ? 0.9 : 0.7,
   }));
 
   return [...staticRoutes, ...articleRoutes];

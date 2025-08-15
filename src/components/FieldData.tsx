@@ -7,7 +7,7 @@ interface FieldDataProps {
 export default function FieldData({ title, data, backgroundColor = 'bg-gray-50' }: FieldDataProps) {
   // Create sections dynamically from the data object
   const sections = Object.entries(data)
-    .filter(([key, value]) => Array.isArray(value) && value.length > 0)
+    .filter(([, value]) => Array.isArray(value) && value.length > 0)
     .map(([key, value]) => ({
       key,
       label: key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1'),
