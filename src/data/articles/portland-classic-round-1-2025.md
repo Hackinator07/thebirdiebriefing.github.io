@@ -9,8 +9,8 @@ category: "Tournament Recap"
 excerpt: "Columbia Edgewater opened cool and calm on day one, with barely a hint of wind – perfect conditions for what felt like a spring-loaded leaderboard."
 image:
   src: "/optimized/adela-cernousek.webp"
-  alt: "Adéla Cernousek at the 2025 Portland Classic"
-  caption: "Adéla Cernousek at the 2025 Portland Classic."
+  alt: "Adéla Cernousek at the 2024 U.S. Women’s Open"
+  caption: "Adéla Cernousek at the 2024 U.S. Women’s Open."
   courtesy: "D. Muse/Zuma Press"
 calloutType: "author"
 tags:
