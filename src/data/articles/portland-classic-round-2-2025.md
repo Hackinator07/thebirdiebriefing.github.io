@@ -1,7 +1,7 @@
 ---
 id: "portland-classic-round-2-2025"
 slug: "portland-classic-round-2-2025"
-title: "Round 2 of the 2025 Standard Portland Classic: Wind Can't Slow Jeong-eun Lee5's Streak, Jaravee Boonchant's 65, and a Yellow Tutu?"
+title: "Round 2 of the 2025 Standard Portland Classic: Wind Can't Slow Jeongeun Lee5's Streak, Jaravee Boonchant's 65, and a Yellow Tutu?"
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-15"
@@ -9,8 +9,8 @@ category: "Tournament Recap"
 excerpt: "Round 2 of the Standard Portland Classic brought cooler conditions and a livelier breeze to Columbia Edgewater."
 image:
   src: "/images/articles/jeong-eun-lee5-round2.png"
-  alt: "Jeong-eun Lee5 during Round 2 of the 2025 Portland Classic"
-  caption: "Jeong-eun Lee5 during Round 2 of the 2025 Portland Classic."
+  alt: "Jeongeun Lee5 during Round 2 of the 2025 Portland Classic"
+  caption: "Jeongeun Lee5 during Round 2 of the 2025 Portland Classic."
   courtesy: "Getty & LPGA Media"
 calloutType: "author"
 tags:
@@ -123,11 +123,11 @@ sections:
 
 Round 2 of the Standard Portland Classic brought cooler conditions and a livelier breeze to Columbia Edgewater. Gray skies hung overhead as the wind swirled the trees and swept across the ryegrass and fescue of the roughs. Still, the conditions favored those with pinpoint approach shots and steady, disciplined play.
 
-Jeong-eun Lee5 found her rhythm in a big way, rattling off five birdies in a row from holes 5 through 9. Also making moves was Canada's Savannah Grewal, posting a 67 on the day and making her tied for 8th at -8. Thailand's Jaravee Boonchant (WR 374) stole the spotlight with seven birdies on her way to an impressive 65. 
+Jeongeun Lee5 found her rhythm in a big way, rattling off five birdies in a row from holes 5 through 9. Also making moves was Canada's Savannah Grewal, posting a 67 on the day and making her tied for 8th at -8. Thailand's Jaravee Boonchant (WR 374) stole the spotlight with seven birdies on her way to an impressive 65. 
 
 Grace Kim kept herself in the hunt with some clutch up-and-downs, including a delicate chip from the water's edge on 10 and a textbook bunker escape on 14. That momentum carried her to -11, locking in a two way tie for second place. And now, thanks to a 7-under bet, her physical therapist is officially donning a yellow tutu at the International Crown -- with any luck Skippy will be in tow for good measure!
 
-As Round 2 concludes, Jeong-eun Lee5 holds solo first, with Gurleen Kaur and Grace Kim tied for second. A three-way tie for third includes Pajaree Anannarukarn, Ashleigh Buhai, and Akie Iwai, while Aline Krauter, Amelia Lewis, Yealimi Noh, and Miranda Wang share fourth place.
+As Round 2 concludes, Jeongeun Lee5 holds solo first, with Gurleen Kaur and Grace Kim tied for second. A three-way tie for third includes Pajaree Anannarukarn, Ashleigh Buhai, and Akie Iwai, while Aline Krauter, Amelia Lewis, Yealimi Noh, and Miranda Wang share fourth place.
 
 ## Round 2 Competition Highlights
 
