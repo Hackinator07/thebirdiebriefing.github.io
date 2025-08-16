@@ -24,8 +24,6 @@ sections:
     title: "Round 2 Shoot Your Shot"
     backgroundColor: "bg-primary-50"
     data:
-      ace:
-        - "Caroline Masson – Hole-in-One on Hole 2"
       eagles:
         - "Hole 05 – Grace Kim"
         - "Hole 05 – Kelly Tan"
