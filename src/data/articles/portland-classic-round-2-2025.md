@@ -123,7 +123,9 @@ sections:
 
 Round 2 of the Standard Portland Classic brought cooler conditions and a livelier breeze to Columbia Edgewater. Gray skies hung overhead as the wind swirled the trees and swept across the ryegrass and fescue of the roughs. Still, the conditions favored those with pinpoint approach shots and steady, disciplined play.
 
-Jeongeun Lee5 found her rhythm in a big way, rattling off five birdies in a row from holes 5 through 9. Also making moves was Canada's Savannah Grewal, posting a 67 on the day and making her tied for 8th at -8. Thailand's Jaravee Boonchant (WR 374) stole the spotlight with seven birdies on her way to an impressive 65. 
+Jeongeun Lee5 found her rhythm in a big way, rattling off five birdies in a row from holes 5 through 9. She has been cashing checks with her wedges through two rounds, trusting the sharp end of the bag to do the talking. She’s found 30 of 36 greens, and from that sweet spot of 100 to 125 yards she’s been carving darts -- twelve swings averaging just 17 and a half feet from the pin! That’s more than five feet better than the tour’s norm, the kind of margin that helps explains why Korea keeps producing world-beaters and why Lee5 looks perfectly comfortable on the course. 
+
+Also making moves was Canada's Savannah Grewal, posting a 67 on the day and making her tied for 8th at -8. Thailand's Jaravee Boonchant (WR 374) stole the spotlight with seven birdies on her way to an impressive 65. 
 
 Grace Kim kept herself in the hunt with some clutch up-and-downs, including a delicate chip from the water's edge on 10 and a textbook bunker escape on 14. That momentum carried her to -11, locking in a two way tie for second place. And now, thanks to a 7-under bet, her physical therapist is officially donning a yellow tutu at the International Crown -- with any luck Skippy will be in tow for good measure!
 
