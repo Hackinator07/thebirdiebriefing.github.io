@@ -8,7 +8,7 @@ date: "2025-08-15"
 category: "Tournament Recap"
 excerpt: "Round 2 of the Standard Portland Classic brought cooler conditions and a livelier breeze to Columbia Edgewater."
 image:
-  src: "/images/articles/jeong-eun-lee5-round2.jpg"
+  src: "/images/articles/jeong-eun-lee5-round2.png"
   alt: "Jeong-eun Lee5 during Round 2 of the 2025 Portland Classic"
   caption: "Jeong-eun Lee5 during Round 2 of the 2025 Portland Classic."
   courtesy: "Getty & LPGA Media"
