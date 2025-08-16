@@ -41,7 +41,7 @@ sections:
         - "Hole 17 – Somi Lee"
   - type: "field-table"
     title: "Leaderboard and Cutmakers After Round 2"
-    headers: ["Position", "Player", "To Par", "Scores, Total"]
+    headers: ["Position", "Player", "To Par", "Scores", "Total"]
     tableData:
       - ["1", "Jeongeun Lee5", "-12", "65-67", "132"]
       - ["T2", "Grace Kim", "-11", "68-65", "133"]
