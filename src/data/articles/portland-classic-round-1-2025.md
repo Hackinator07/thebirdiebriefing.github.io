@@ -27,9 +27,17 @@ sections:
       ace:
         - "Hole 2 - Caroline Masson (Hole-in-One) "
       eagles:
+      - "Hole 5 - Maria Fassi"
       - "Hole 5 – Hyo Joon Jang"
+      - "Hole 5 - Liqi Zeng"
       - "Hole 7 – Adéla Cernousek"
+      - "Hole 7 - Lauren Hartlage"
       - "Hole 7 – Chisato Iwai"
+      - "Hole 7 - Moriya Jutanugarn"
+      - "Hole 7 - Bianca Pagdanganan"
+      - "Hole 7 - Yuri Yoshida"
+      - "Hole 7 - Weiwei Zhang"
+      - "Hole 9 - Kaitlyn Papp Budde"
       - "Hole 11 – Wichanee Meechai"
   - type: "field-table"
     title: "Leaderboard After Round 1"
