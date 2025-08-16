@@ -116,4 +116,4 @@ Filipino golf fans have reason to be excited as **Dottie Ardina** posted a super
 
 ## Gear Notes
 
-Brooke Henderson is playing with a new TaylorMade Spider putter, fitted with a [Garsen Quad Tour grip](https://garsengolf.com/).
+Brooke Henderson is playing with a new TaylorMade Spider putter, fitted with a [Garsen Quad Tour NT grip](https://garsengolf.com/).
