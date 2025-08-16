@@ -131,7 +131,7 @@ As Round 2 concludes, Jeongeun Lee5 holds solo first, with Gurleen Kaur and Grac
 
 ## Round 2 Competition Highlights
 
-**Jeong-eun Lee5** surged to the top with a blistering stretch of five straight birdies, reaching 12-under and leading by two shots at one stage. She followed her hot streak with a key par save at the par-5 10th.
+**Jeongeun Lee5** surged to the top with a blistering stretch of five straight birdies, reaching 12-under and leading by two shots at one stage. She followed her hot streak with a key par save at the par-5 10th.
 
 **Gurleen Kaur** posted 12 pars and birdies for a 68, tying her with Grace Kim for second place.  
 
