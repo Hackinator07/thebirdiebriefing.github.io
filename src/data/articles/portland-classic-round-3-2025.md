@@ -1,7 +1,7 @@
 ---
 id: "portland-classic-round-3-2025"
 slug: "portland-classic-round-3-2025"
-title: "Round 3 of the 2025 Standard Portland Classic: Akie Iwai Eyes First LPGA Victory While Grace Kim and Haeran Ryu Make Noise"
+title: "Round 3 of The 2025 Standard Portland Classic: Akie Iwai Eyes First LPGA Victory While Grace Kim and Haeran Ryu Make Noise"
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-16"
