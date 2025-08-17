@@ -37,7 +37,7 @@ sections:
         - "Hole 07 – Rio Takeda"
         - "Hole 07 - Miranda Wang"
         - "Hole 10 - Sung Hyun Park"
-        - "Hole 71 - Grace Kim"
+        - "Hole 17 - Grace Kim"
   - type: "field-table"
     title: "Leaderboard After Round 3"
     headers: ["Position", "Player", "To Par", "Scores", "Total"]
@@ -126,7 +126,7 @@ If Akie Iwai hangs on, it'll be a tidy LPGA rookie story: first win, big smile, 
 
 We'd be remiss if we didn't start with Akie Iwai's driver off the deck on 12. She absolutely smoked it -- wide left, steep enough to look like it was hunting for kindling -- and into the towering sequoias it went. Somehow, someway, the ball bounced back into play. What followed wasn't just a save; it was a birdie. What viewed like mayhem was, in fact, a show of artistry.
 
-She stumbled early. A single bogey at 2. That was followed by playing five holes in five under. A 5 wood to 3 feet for eagle on 5, a trio of birdies coming fast. Her pièce de résistance: a 152 yard approach to a foot on the 18th that ended her round at an even keeled 18 under 198. 
+She stumbled early. A single bogey at 2. That was followed by playing five holes in five under. A 5 wood to 3 feet for eagle on 5, a trio of birdies coming fast. Her pièce de résistance: a 152 yard approach to a foot on the 18th closing her round at 64 and leaving her a steady 18 under 198.
 
 Iwai kept it simple when asked later: "Rely on Good tempo. No change (in approach). Aggressive. Aim to the pin." She capped it with a smirk and a cheeky "Pew pew," sharp and focused. Marie and I spun and laughed.
 
@@ -134,7 +134,7 @@ Hot on her trail? Grace Kim. Her 17th hole provided the most important and drama
 
 In her head and said afterwards: "Oh, please get through the rough." There was a glimmer of hope as the ball landed just right of the green, kicked off the slope, and rolled in for a surreal eagle. An amazing performance sprinkled with a bit of luck.
 
-Other performances include Swede Linn Grant stayed in contention at 14 under after a 65, saying she wasn't "happy," but was embracing what the round would bring and having fun along the way. 
+Other performances include Swede Linn Grant who stayed in contention at 14 under after a 65, saying she wasn't "happy," but was embracing what the round would bring and having fun along the way. 
 
 Gurleen Kaur (70) and Aditi Ashok (65) are just behind, at 13 and 12 under respectively.
 
