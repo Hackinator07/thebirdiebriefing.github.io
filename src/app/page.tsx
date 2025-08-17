@@ -83,7 +83,7 @@ export default async function Home() {
                 <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our birdie worthy story, handpicked for you.
+                A birdie worthy story, handpicked for you.
               </p>
             </div>
 
