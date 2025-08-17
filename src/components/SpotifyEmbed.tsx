@@ -11,8 +11,8 @@ export default function SpotifyEmbed() {
             The Birdie Briefing Podcast
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Listen to our latest episodes featuring LPGA news, player interviews,
-            and insights from the world of women's golf.
+            Catch our latest episodes with LPGA news, player interviews, and 
+            insights from the world of women's golf.
           </p>
         </div>
 
