@@ -122,7 +122,7 @@ sections:
         description: "Live tournament coverage and highlights"
 ---
 
-If Akie Iwai hangs on, it'll be a tidy LPGA rookie story: first win, big smile, trophy hoisted. But Round 3 at The Standard Portland Classic proved golf isn't always that neat getting there and how little box scores capture the raw, aggressive golf behind them. 
+If Akie Iwai hangs on, it'll be a tidy LPGA rookie story: first win, big smile, trophy hoisted. But Round 3 at The Standard Portland Classic proved golf isn't always that neat getting there and how little box scores capture the raw, aggressive play behind them. 
 
 We'd be remiss if we didn't start with Akie Iwai's driver off the deck on 12. She absolutely smoked it -- wide left, steep enough to look like it was hunting for kindling -- and into the towering sequoias it went. Somehow, someway, the ball bounced back into play. What followed wasn't just a save; it was a birdie. What viewed like mayhem was, in fact, a show of artistry.
 
