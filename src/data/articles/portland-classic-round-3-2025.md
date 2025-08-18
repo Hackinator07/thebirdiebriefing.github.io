@@ -128,7 +128,7 @@ We'd be remiss if we didn't start with Akie Iwai's driver off the deck on 12. Sh
 
 She stumbled early. A single bogey at 2. That was followed by playing five holes in five under. A 5 wood to 3 feet for eagle on 5, a trio of birdies coming fast. Her pièce de résistance: a 152 yard approach to a foot on the 18th closing her round at 64 and leaving her a steady 18 under 198.
 
-Iwai kept it simple when asked later: "Rely on Good tempo. No change (in approach). Aggressive. Aim to the pin." She capped it with a smirk and a cheeky "Pew pew," sharp and focused. Marie and I spun and laughed.
+Iwai kept it simple when asked later: "Rely on good tempo. No change (in approach). Aggressive. Aim to the pin." She capped it with a smirk and a cheeky "Pew pew," sharp and focused. Marie and I spun and laughed.
 
 Hot on her trail? Grace Kim. Her 17th hole provided the most important and dramatic incident after her tee shot landed in a nasty lie in the left rough by a sprinkler box. Relief? Denied. The crowd held its breath as she studied the shot, gripped her 7-iron, and ripped it anyway.
 
