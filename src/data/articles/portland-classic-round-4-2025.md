@@ -1,7 +1,7 @@
 ---
 id: "portland-classic-round-4-2025"
 slug: "portland-classic-round-4-2025"
-title: "From Saitama to the Stumptown: Akie Iwai's First LPGA Win in Portland"
+title: "From Saitama to Stumptown: Akie Iwai's First LPGA Win in Portland"
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-17"
