@@ -195,7 +195,7 @@ export default async function Home() {
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="flex-1 h-px bg-gray-200 max-w-32"></div>
               <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight title-overlap">
-                Join the The Birdie Briefing Community
+                Become Part of the Birdie Briefing Community
               </h2>
               <div className="flex-1 h-px bg-gray-200 max-w-32"></div>
             </div>
