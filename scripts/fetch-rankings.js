@@ -54,7 +54,10 @@ async function fetchRankings() {
     if (error.response) {
       console.error('Response status:', error.response.status);
       console.error('Response data:', error.response.data);
+    } else if (error.code) {
+      console.error('Error code:', error.code);
     }
+    console.error('Full error:', error);
     process.exit(1);
   }
 }
