@@ -87,7 +87,7 @@ npm run fetch-rankings
 ```
 
 ### Automatic Updates
-A GitHub Action runs daily at 2 AM UTC to automatically fetch and update the latest rankings data. The workflow:
+A GitHub Action runs weekly on Sundays at 2 AM UTC to automatically fetch and update the latest rankings data. The workflow:
 - Fetches data from the Rolex Rankings API
 - Updates `src/data/rankings.json`
 - Commits and pushes changes to the repository
@@ -790,7 +790,7 @@ node scripts/fetch-rankings.js
 #### Automated Updates
 The rankings are automatically updated nightly via GitHub Actions (`.github/workflows/update-rankings.yml`).
 
-**Schedule:** Every day at 2:00 AM UTC
+**Schedule:** Every Sunday at 2:00 AM UTC
 
 **What it does:**
 1. Fetches latest rankings from Rolex Rankings API
