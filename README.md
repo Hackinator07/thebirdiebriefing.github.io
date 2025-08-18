@@ -76,6 +76,28 @@ NEXT_PUBLIC_BASE_URL=https://www.birdiebriefing.com
 
 **Note**: The translation widget requires an API key to function. Get a free API key from JigsawStack to enable multi-language support.
 
+## 📊 Rankings Management
+
+The LPGA Rolex World Rankings are automatically updated from the official Rolex Rankings API.
+
+### Manual Update
+To manually update the rankings data:
+```bash
+npm run fetch-rankings
+```
+
+### Automatic Updates
+A GitHub Action runs daily at 2 AM UTC to automatically fetch and update the latest rankings data. The workflow:
+- Fetches data from the Rolex Rankings API
+- Updates `src/data/rankings.json`
+- Commits and pushes changes to the repository
+
+### Rankings Data Structure
+The rankings data is stored in `src/data/rankings.json` and includes:
+- `lastUpdated`: Timestamp of when data was last fetched
+- `week`: Current rankings week information (start_date, end_date, etc.)
+- `players`: Array of player rankings with points and statistics
+
 ## 📝 Content Management
 
 ### Adding/Editing Articles

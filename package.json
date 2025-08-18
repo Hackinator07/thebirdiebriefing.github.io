@@ -10,7 +10,8 @@
     "lint": "next lint",
     "export": "next build && next export",
     "optimize-images": "node scripts/optimize-images.js",
-    "build:no-optimize": "next build"
+    "build:no-optimize": "next build",
+    "fetch-rankings": "node scripts/fetch-rankings.js"
   },
   "dependencies": {
     "@analytics/google-analytics": "^1.1.0",

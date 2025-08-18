@@ -87,6 +87,30 @@ export default function RankingsPage() {
           </p>
           <p className="text-sm text-gray-500 mt-2 text-center">
             Week of {rankings.week.start_date} to {rankings.week.end_date}
+            {(() => {
+              const today = new Date();
+              const currentWeekStart = new Date(today);
+              currentWeekStart.setDate(today.getDate() - today.getDay()); // Start of week (Sunday)
+              const currentWeekEnd = new Date(currentWeekStart);
+              currentWeekEnd.setDate(currentWeekStart.getDate() + 6); // End of week (Saturday)
+              
+              const formatDate = (date: Date) => {
+                return date.toISOString().split('T')[0];
+              };
+              
+              const currentWeekStartStr = formatDate(currentWeekStart);
+              const currentWeekEndStr = formatDate(currentWeekEnd);
+              
+              // If the stored dates are different from current week, show both
+              if (rankings.week.start_date !== currentWeekStartStr || rankings.week.end_date !== currentWeekEndStr) {
+                return (
+                  <span className="block mt-1 text-xs text-orange-600">
+                    (Rankings data may be from a previous week. Current week: {currentWeekStartStr} to {currentWeekEndStr})
+                  </span>
+                );
+              }
+              return null;
+            })()}
           </p>
         </div>
       </section>
