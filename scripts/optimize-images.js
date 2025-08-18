@@ -102,7 +102,7 @@ async function findImages(dir) {
   const images = [];
 
   try {
-    const items = await fs.readdir(dir, { withFileTypes: true });
+    const items = await fsPromises.readdir(dir, { withFileTypes: true });
 
     for (const item of items) {
       const fullPath = path.join(dir, item.name);
@@ -133,7 +133,7 @@ async function optimizeAllImages() {
 
   // Create output directory if it doesn't exist
   try {
-    await fs.mkdir(outputDir, { recursive: true });
+    await fsPromises.mkdir(outputDir, { recursive: true });
   } catch (error) {
     console.error('Error creating output directory:', error.message);
     return;
