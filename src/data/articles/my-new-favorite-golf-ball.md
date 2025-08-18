@@ -5,7 +5,7 @@ title: "My New Favorite Golf Ball"
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-13"
-category: "LPGA Analysis"
+category: "Opinion"
 excerpt: "A tribute to Champy, the mascot of The Dow Championship, and the community spirit that makes this tournament special."
 image:
   src: "/optimized/champy.webp"

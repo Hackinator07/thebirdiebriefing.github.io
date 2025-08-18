@@ -5,7 +5,7 @@ title: "Round 1 of The 2025 Standard Portland Classic: France's Bold Start, Broo
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-14"
-category: "Tournament Recap"
+category: "Tournament Golf"
 excerpt: "Columbia Edgewater opened cool and calm on day one, with barely a hint of wind – perfect conditions for what felt like a spring-loaded leaderboard."
 image:
   src: "/optimized/adela-cernousek.webp"
@@ -16,7 +16,7 @@ calloutType: "author"
 tags:
   - "Portland Classic"
   - "LPGA Tour"
-  - "Tournament Recap"
+  - "Tournament Golf"
   - "Round 1"
   - "Columbia Edgewater"
 sections:

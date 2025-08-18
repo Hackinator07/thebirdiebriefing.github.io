@@ -24,9 +24,9 @@ export default async function Home() {
             <div className="bg-white rounded-lg p-6 lg:p-8">
               {/* Main Headlines */}
               <div className="text-center mb-8">
-                <h1 className="text-5xl lg:text-7xl xl:text-8xl font-heading text-primary-500 leading-none mb-2">
-                  The Birdie
-                </h1>
+                                 <h1 className="text-5xl lg:text-7xl xl:text-8xl font-heading text-primary-500 leading-none mb-2">
+                   The Birdie
+                 </h1>
                 <h2 className="text-5xl lg:text-7xl xl:text-8xl font-heading text-secondary-500 leading-none mb-8">
                   Briefing
                 </h2>
@@ -181,25 +181,25 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Follow Along Section */}
-      <section className="bg-primary-500 text-white py-16 lg:py-24">
+                           {/* Follow Along Section */}
+                 <section className="bg-primary-500 text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <Socials />
         </div>
       </section>
 
-      {/* Call to Action */}
-              <section className="bg-secondary-500 text-white py-16 lg:py-24">
+                           {/* Call to Action */}
+                                 <section className="bg-secondary-500 text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="flex-1 h-px bg-gray-200 max-w-32"></div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight title-overlap">
-                Become Part of the Birdie Briefing Community
-              </h2>
+                                                           <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight title-overlap">
+                  Become Part of the Birdie Briefing Community
+                </h2>
               <div className="flex-1 h-px bg-gray-200 max-w-32"></div>
             </div>
-            <p className="text-xl text-gray-200 leading-relaxed mb-12 max-w-3xl mx-auto">
+                                                   <p className="text-xl text-gray-200 leading-relaxed mb-12 max-w-3xl mx-auto">
               Connect with fellow golf enthusiasts, attend exclusive events, and be part of the movement
               celebrating women in golf.
             </p>

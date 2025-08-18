@@ -5,7 +5,7 @@ title: "Round 2 of The 2025 Standard Portland Classic: Wind Can't Slow Jeongeun 
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-15"
-category: "Tournament Recap"
+category: "Tournament Golf"
 excerpt: "Round 2 of The Standard Portland Classic brought cooler conditions and a livelier breeze to Columbia Edgewater."
 image:
   src: "/optimized/jeong-eun-lee5-round2.webp"
@@ -16,7 +16,7 @@ calloutType: "author"
 tags:
   - "Portland Classic"
   - "LPGA Tour"
-  - "Tournament Recap"
+  - "Tournament Golf"
   - "Round 2"
   - "Columbia Edgewater"
 sections:

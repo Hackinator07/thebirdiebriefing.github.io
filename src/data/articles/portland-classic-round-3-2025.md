@@ -5,7 +5,7 @@ title: "Round 3 of The 2025 Standard Portland Classic: Akie Iwai Eyes First LPGA
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-16"
-category: "Tournament Recap"
+category: "Tournament Golf"
 excerpt: "If Akie Iwai hangs on, it'll be a tidy LPGA rookie story: first win, big smile, trophy hoisted. But Round 3 at The Standard Portland Classic proved golf isn't always that neat getting there and how little box scores capture the raw, aggressive golf behind them."
 image:
   src: "/optimized/akie-iwai-round3.webp"
@@ -16,7 +16,7 @@ calloutType: "author"
 tags:
   - "Portland Classic"
   - "LPGA Tour"
-  - "Tournament Recap"
+  - "Tournament Golf"
   - "Round 3"
   - "Columbia Edgewater"
 sections:

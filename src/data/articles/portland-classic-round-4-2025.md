@@ -5,7 +5,7 @@ title: "From Saitama to Stumptown: Akie Iwai Wins Portland Classic"
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-17"
-category: "Tournament Recap"
+category: "Tournament Golf"
 excerpt: "The 23-year-old rookie from Saitama closed with a bogey-free 66 to win The Standard Portland Classic by four, finishing at 24-under. Six birdies and no errors -- the kind of round players dream about but rarely manage when it matters most."
 image:
   src: "/optimized/akie-iwai-round4.webp"
@@ -16,7 +16,7 @@ calloutType: "author"
 tags:
   - "Portland Classic"
   - "LPGA Tour"
-  - "Tournament Recap"
+  - "Tournament Golf"
   - "Round 4"
   - "Columbia Edgewater"
 sections:
