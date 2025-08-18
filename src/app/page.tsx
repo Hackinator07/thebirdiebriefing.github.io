@@ -35,7 +35,7 @@ export default async function Home() {
               {/* Introduction */}
               <div className="max-w-4xl mx-auto text-center">
                 <p className="text-lg lg:text-xl text-gray-700 leading-relaxed mb-6">
-                  The Birdie Briefing is your go-to source for celebrating women in golf. We amplify the stories, achievements, and voices of women on and off the course. Dive into LPGA coverage, tournament insights, and exclusive content that brings the vibrant world of women's professional golf to life.
+                  At The Birdie Briefing, we amplify women in golf -- sharing the journeys, victories, and voices of LPGA players and future stars. With tournament coverage, insights, and exclusive stories, we bring the vibrant world of women’s professional golf closer to fans everywhere.
                 </p>
 
                 {/* Author Attribution */}
