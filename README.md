@@ -583,7 +583,7 @@ console.log(`${player} is amazing!`);
 /* CSS styling */
 .player-name {
   font-weight: bold;
-  color: #8B5A8C;
+  color: #BE385B;
 }
 ```
 ````
