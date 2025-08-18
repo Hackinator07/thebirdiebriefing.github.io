@@ -9,8 +9,8 @@ category: "Tournament Golf"
 excerpt: "The 23-year-old rookie from Saitama closed with a bogey-free 66 to win The Standard Portland Classic by four, finishing at 24-under. Six birdies and no errors -- the kind of round players dream about but rarely manage when it matters most."
 image:
   src: "/optimized/akie-iwai-round4.webp"
-  alt: "Akie Iwai posing with the Portland Classic trophy"
-  caption: "Akie Iwai posing with the Portland Classic trophy."
+  alt: "Akie Iwai with the Portland Classic trophy"
+  caption: "Akie Iwai with the Portland Classic trophy."
   courtesy: "Getty & LPGA Media"
 calloutType: "author"
 tags:
