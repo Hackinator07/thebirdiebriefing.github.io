@@ -8,7 +8,7 @@ date: "2025-08-16"
 category: "Tournament Recap"
 excerpt: "If Akie Iwai hangs on, it'll be a tidy LPGA rookie story: first win, big smile, trophy hoisted. But Round 3 at The Standard Portland Classic proved golf isn't always that neat getting there and how little box scores capture the raw, aggressive golf behind them."
 image:
-  src: "/images/articles/akie-iwai-round3.png"
+  src: "/optimized/akie-iwai-round3.webp"
   alt: "Akie Iwai during Round 3 of the 2025 Portland Classic"
   caption: "Akie Iwai during Round 3 of the 2025 Portland Classic."
   courtesy: "Getty & LPGA Media"
