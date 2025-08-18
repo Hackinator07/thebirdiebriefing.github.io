@@ -35,7 +35,7 @@ export default async function Home() {
               {/* Introduction */}
               <div className="max-w-4xl mx-auto text-center">
                 <p className="text-lg lg:text-xl text-gray-700 leading-relaxed mb-6">
-                  At The Birdie Briefing, we amplify women in golf -- sharing the journeys, victories, and voices of LPGA players and future stars. With tournament coverage, insights, and exclusive stories, we bring the vibrant world of women’s professional golf closer to fans everywhere.
+                  At The Birdie Briefing, we amplify women in golf -- sharing the journeys, victories, and voices of LPGA players and future stars. With tournament coverage, insights, and exclusive stories, we bring the vibrant world of women’s golf closer to fans everywhere.
                 </p>
 
                 {/* Author Attribution */}
