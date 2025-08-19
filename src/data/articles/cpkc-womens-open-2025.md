@@ -161,11 +161,11 @@ Brooke Henderson, the face of Canadian golf and a 13-time LPGA Tour winner is in
 
 **The World's Best Are Back**
 
-Newly crowned No. 1 Jeeno Thitikul makes her first start since climbing past Nelly Korda in the rankings. Korda, meanwhile, is still searching for her first win of 2025 despite a season full of close calls. Lydia Ko, a three-time winner of the Canadian Open, returns with the kind of experience that makes her dangerous. And rising star Lottie Woad, fresh off wins in Ireland and Scotland, adds another layer of intrigue to an already loaded entry list.
+[Newly crowned No. 1 Jeeno Thitikul](https://www.birdiebriefing.com/news/jeeno-thitikul-quiet-stride/) makes her first start since climbing past Nelly Korda in the rankings. Korda, meanwhile, is still searching for her first win of 2025 despite a season full of close calls. Lydia Ko, a three-time winner of the Canadian Open, returns with the kind of experience that makes her dangerous. And rising star Lottie Woad, fresh off wins in Ireland and Scotland, adds another layer of intrigue to an already loaded entry list.
 
 **Coughlin Returns**
 
-At Earl Grey Golf Club in Calgary last year, Lauren Coughlin finally cracked through with her first LPGA victory at this very event. That win ignited a streak that carried her to a second title at Dundonald and a victorious debut in the Solheim Cup. Now, back in Canada to defend, she brings momentum with her, fresh off a T7 finish last week in Portland.
+[At Earl Grey Golf Club](https://earlgreygolfclub.com/) in Calgary last year, Lauren Coughlin finally cracked through with her first LPGA victory at this very event. That win ignited a streak that carried her to a second title at Dundonald and a victorious debut in the Solheim Cup. Now, back in Canada to defend, she brings momentum with her, fresh off a T7 finish last week in Portland.
 
 **How's Yah Going?**
 
@@ -181,7 +181,7 @@ The CPKC Women's Open is a full-on festival for fans of all ages, and this year 
 
 For those looking to elevate the experience, the Heritage Lounge offers an exclusive viewing deck between the 11th and 12th holes, complete with covered seating, upgraded food and beverage, reserved washrooms, and closed circuit televisions.
 
-Fans can also upgrade their tickets for $30 per day to access the themed 10th hole, The Rink. Yes, we're talking puckboards. Somebody better roll in with an Odyssey Hockey Stick Putter. What's more, your upgrade is a donation to support MacKids, and every dollar will be matched by CPKC.
+Fans can also upgrade their tickets for $30 per day to access the themed 10th hole, The Rink. Yes, we're talking puckboards. Somebody better roll in with an [Odyssey Hockey Stick Putter](https://odyssey.callawaygolf.com/putters/putters-2025-happy-gilmore.html). What's more, your upgrade is a donation to support MacKids, and every dollar will be matched by CPKC.
 
 The CPKC fan experiences beyond The Rink include the First Tee Long Putt Challenge, golf-inspired carnival games, Autograph Alley presented by Golf Town, and two Brooke Brigade viewing zones give juniors front-row access to the 1st and 15th greens. Participants also get t-shirts, snacks, and drinks, making it a full-on fan experience for the next generation of golf enthusiasts.
 
@@ -189,4 +189,4 @@ So whether you're chasing the thrill of the leaderboard, enjoying the festival a
 
 And hey, keep your stick on the ice.
 
-*On a personal note, Marie and I feel a connection here -- Mississaugua saw revisions in 1919 by Donald Ross, the same mind behind Kenosha Country Club. Anyone who's played the restored Kenosha knows how effortlessly Ross's designs merge with the natural terrain.*
+*On a personal note, Marie and I feel a connection here -- Mississaugua saw revisions in 1919 by Donald Ross, the same mind behind [Kenosha Country Club](https://www.kenoshacountryclub.com/). Anyone who's played the restored Kenosha knows how effortlessly Ross's designs merge with the natural terrain.*
