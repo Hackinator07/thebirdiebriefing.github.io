@@ -156,4 +156,4 @@ And so, among the verdure of Portland's towering trees and fairways, Akie Iwai h
 
 ## Gear Notes
 
-**Akie Iwai** captured The Standard Portland Classic [gaming the Z-STAR XV](https://us.dunlopsports.com/srixon/steady-dominance-products/z-star-xv-golf-balls/10360119.html), putting the ball back in the winner's circle. Srixon's has had a dominant 2025 season, collecting three majors at the Chevron Championship, Amundi Evian, and AIG Women's Open.
+**Akie Iwai** captured The Standard Portland Classic [gaming the Z-STAR XV](https://us.dunlopsports.com/srixon/steady-dominance-products/z-star-xv-golf-balls/10360119.html), putting the ball back in the winner's circle. Srixon has had a dominant 2025 season, collecting three majors at the Chevron Championship, Amundi Evian, and AIG Women's Open.
