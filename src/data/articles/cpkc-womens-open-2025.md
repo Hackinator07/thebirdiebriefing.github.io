@@ -28,7 +28,7 @@ sections:
         - "Paula Reto (2022)"
         - "Jin Young Ko (2019)"
         - "Brooke Henderson (2018)"
-      lpga2025Winners:
+      LPGA2025Winners:
         - "Carlota Ciganda"
         - "Jin Hee Im"
         - "Akie Iwai"
