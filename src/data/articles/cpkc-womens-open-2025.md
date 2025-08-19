@@ -149,7 +149,7 @@ The 51st CPKC Women's Open doesn't just look like a major, it feels like it. The
 
 **The Venue**
 
-This year's Open takes place on the storied fairways of Mississaugua Golf & Country Club, a course that carries real gravitas. The Credit River winds through its valley, shaping a landscape at once pastoral and formidable. The greens and bunkers, refined by Donald Ross, still bear the original mark of George Cumming's design. And as the spotlight shines, Canada is poised to put its finest golf on display for the world.
+This year's Canadian Open takes place on the fairways of Mississaugua Golf & Country Club, a course that carries real gravitas. The Credit River winds through its valley, shaping a landscape at once pastoral and formidable. The greens and bunkers, refined by Donald Ross, still bear the original mark of George Cumming's design. And as the spotlight shines, Canada is poised to put its finest golf and hospitality on display for us.
 
 **The Past in Play**
 
@@ -161,32 +161,32 @@ Brooke Henderson, the face of Canadian golf and a 13-time LPGA Tour winner, is i
 
 **The World's Best Are Back**
 
-[Newly crowned No. 1 Jeeno Thitikul](https://www.birdiebriefing.com/news/jeeno-thitikul-quiet-stride/) makes her first start since climbing past Nelly Korda in the rankings. Korda, meanwhile, is still searching for her first win of 2025 despite a season full of close calls. Lydia Ko, a three-time winner of the Canadian Open, returns with the kind of experience that makes her dangerous. And rising star Lottie Woad, fresh off wins in Ireland and Scotland, adds another layer of intrigue to an already loaded entry list.
+[Newly crowned No. 1 Jeeno Thitikul](https://www.birdiebriefing.com/news/jeeno-thitikul-quiet-stride/) makes her first start since climbing past Nelly Korda in the rankings. Korda, meanwhile, is still searching for her first win of 2025 despite a season full of close calls. Lydia Ko, a three-time winner of the Canadian Open, returns with the kind of experience that makes her dangerous. And rising star Lottie Woad, riding wins in Ireland and Scotland, adds another layer of intrigue to an already loaded entry list.
 
 **Coughlin Returns**
 
-[At Earl Grey Golf Club](https://earlgreygolfclub.com/) in Calgary last year, Lauren Coughlin finally cracked through with her first LPGA victory at this very event. That win ignited a streak that carried her to a second title at Dundonald and a victorious debut in the Solheim Cup. Now, back in Canada to defend, she brings momentum with her, fresh off a T7 finish last week in Portland.
+[At Earl Grey Golf Club](https://earlgreygolfclub.com/) in Calgary last year, Lauren Coughlin finally cracked through with her first LPGA victory at this very event. That win ignited a streak that carried her to a second title at Dundonald and a victorious debut in the Solheim Cup. Now, back in Canada to defend, she brings momentum with her, a T7 finish last week in Portland.
 
-**How's She Goin'?**
+**Sponsor Invites**
 
 The championship has also welcomed sponsor invites that ensure the next wave has its chance to shine. Ontario's Alena Sharp and Quebec's Maude-Aimée Leblanc are in the field, joined by rising amateurs like Anna Davis, Carla Bernat Escuder, and U.S. Women's Amateur champion Megha Ganne.
 
 **Sustainable Approach**
 
-Golf Canada is raising the bar on sustainability at the Open, aiming to make the tournament zero-waste and carbon-neutral. Partnering with the Green Event Ninjas, the event has already diverted 75% of waste, recycled thousands of kilograms of material, and eliminated nearly 68,000 single-use water bottles. With fans encouraged to bike, carpool, and engage in eco-friendly practices, the Open is setting a new standard for environmentally responsible professional golf.
+Golf Canada is raising the bar on sustainability at the Open, aiming to make the tournament zero-waste and carbon-neutral. Partnering with the Green Event Ninjas, the event has already diverted 75% of waste, recycled thousands of kilograms of material, and eliminated nearly 68,000 single-use water bottles. With fans encouraged to bike, carpool, and engage in eco-friendly practices, the Open is setting a new standard for environmental responsibility.
 
 **Be Part of It**
 
 The CPKC Women's Open is a full-on festival for fans of all ages, and this year there are plenty of ways to make your tournament experience unforgettable. [General admission tickets](https://www.cpkcwomensopen.com/tickets/) start at $21 for Wednesday, $52 Thursday through Saturday, and $63 for Sunday. A full-week pass is available for $147. Juniors 12 and under get free grounds access when accompanied by an adult, and those 13–17 enjoy a 15% discount on specific single-day grounds tickets, making it easy to bring the next generation of fans to the action.
 
-For those looking to elevate the experience, the Heritage Lounge offers an exclusive viewing deck between the 11th and 12th holes, complete with covered seating, upgraded food and beverage, reserved washrooms, and closed-circuit televisions.
+For those looking to elevate the experience, the **Heritage Lounge** offers an exclusive viewing deck between the 11th and 12th holes, complete with covered seating, upgraded food and beverage, reserved washrooms, and closed-circuit televisions.
 
 Fans can also upgrade their tickets for $30 per day to access the themed 10th hole, The Rink. Yes, we're talking puckboards. Somebody better roll in with an [Odyssey Hockey Stick Putter](https://odyssey.callawaygolf.com/putters/putters-2025-happy-gilmore.html). What's more, your upgrade is a donation to support MacKids, and every dollar will be matched by CPKC.
 
-The CPKC fan experiences beyond The Rink include the First Tee Long Putt Challenge, golf-inspired carnival games, Autograph Alley presented by Golf Town, and two Brooke Brigade viewing zones that give juniors front-row access to the 1st and 15th greens. Participants also get t-shirts, snacks, and drinks, making it a full-on fan experience for the next generation of golf enthusiasts.
+The CPKC fan experiences beyond The Rink include the First Tee Long Putt Challenge, golf-inspired carnival games, Autograph Alley presented by Golf Town, and two Brooke Brigade viewing zones that give juniors front-row access to the 1st and 15th greens. Participants also get t-shirts, snacks, and drinks, making it a full-on fan experience for all.
 
 So whether you're chasing the thrill of the leaderboard, enjoying the festival atmosphere, or simply looking for a unique day out with family and friends, the CPKC Women's Open delivers a chance to see the world's best up close while making memories that last long after the final putt.
 
 And hey, keep your stick on the ice.
 
-*On a personal note, Marie and I feel a connection here -- Mississaugua saw revisions in 1919 by Donald Ross, the same mind behind [Kenosha Country Club](https://www.kenoshacountryclub.com/). Anyone who's played the restored Kenosha knows how effortlessly Ross's designs merge with the natural terrain.*
+*On a personal note, Marie and I feel a connection here -- Mississaugua saw revisions in 1919 by Donald Ross, the same mind behind [Kenosha Country Club](https://www.kenoshacountryclub.com/). Anyone who's played the restored Kenosha or another Ross course knows how effortlessly his designs merge with the natural terrain.*
