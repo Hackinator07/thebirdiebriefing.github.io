@@ -6,7 +6,7 @@ author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-19"
 category: "Tournament Preview"
-excerpt: "The 51st CPKC Women's Open doesn't just look like a major, it feels like one. The field would pass for one in any corner of the golf world. 156 players are here, six of them sitting in the Rolex top 10..."
+excerpt: "The 51st CPKC Women's Open doesn't just look like a major; it feels like it. The field would pass for one in any corner of the golf world. 156 players are here, six of them sitting in the Rolex top 10..."
 image:
   src: "/optimized/cpkc-mississaugua.webp"
   alt: "A View of Mississaugua Golf & Country Club"
@@ -145,7 +145,7 @@ sections:
           - "CBS: 3:00 PM - 5:00 PM"
 ---
 
-The 51st CPKC Women's Open doesn't just look like a major, it feels like one. The field would pass for one in any corner of the golf world. 156 players are here, six of them sitting in the Rolex top 10, and every one chasing a slice of $2.75 million and the chance to carve their name on the open trophy.
+The 51st CPKC Women's Open doesn't just look like a major, it feels like it. The field would pass for one in any corner of the golf world. 156 players are here, six of them sitting in the Rolex top 10, and every one chasing a slice of $2.75 million and the chance to carve their name on the open trophy.
 
 **The Venue**
 
@@ -157,7 +157,7 @@ For some in the field, Mississaugua is not entirely new ground. In 2016, the clu
 
 **Maple Leaf Standouts**
 
-Brooke Henderson, the face of Canadian golf and a 13-time LPGA Tour winner is in the field and hot off a T23 finish in Portland. Henderson's 2018 triumph at this championship remains one of the defining moments in Canadian sport, ending a 45-year drought and the first national win since Jocelyne Bourassa in 1973. She leads a group of Canadians in the field, each chasing that same dream of lifting their country's championship trophy on home soil (maybe sneaking in a few celebratory Tim Hortons Timbiebs for good measure).
+Brooke Henderson, the face of Canadian golf and a 13-time LPGA Tour winner, is in the field and hot off a T23 finish in Portland. Henderson's 2018 triumph at this championship remains one of the defining moments in Canadian sport, ending a 45-year drought and being the first national win since Jocelyne Bourassa in 1973. She leads a group of Canadians in the field, each chasing that same dream of lifting their country's championship trophy on home soil (maybe sneaking in a few celebratory Tim Hortons Timbiebs for good measure).
 
 **The World's Best Are Back**
 
@@ -177,13 +177,13 @@ Golf Canada is raising the bar on sustainability at the Open, aiming to make the
 
 **Be Part of It**
 
-The CPKC Women's Open is a full-on festival for fans of all ages, and this year there are plenty of ways to make your tournament experience unforgettable. [General admission tickets](https://www.cpkcwomensopen.com/tickets/) start at $21 for Wednesday, $52 Thursday through Saturday, and $63 for Sunday. A full-week pass is available for $147. Juniors 12 and under get free grounds access when accompanied by an adult, and those 13–17 enjoy a 15% discount on specific single day grounds tickets, making it easy to bring the next generation of fans to the action.
+The CPKC Women's Open is a full-on festival for fans of all ages, and this year there are plenty of ways to make your tournament experience unforgettable. [General admission tickets](https://www.cpkcwomensopen.com/tickets/) start at $21 for Wednesday, $52 Thursday through Saturday, and $63 for Sunday. A full-week pass is available for $147. Juniors 12 and under get free grounds access when accompanied by an adult, and those 13–17 enjoy a 15% discount on specific single-day grounds tickets, making it easy to bring the next generation of fans to the action.
 
-For those looking to elevate the experience, the Heritage Lounge offers an exclusive viewing deck between the 11th and 12th holes, complete with covered seating, upgraded food and beverage, reserved washrooms, and closed circuit televisions.
+For those looking to elevate the experience, the Heritage Lounge offers an exclusive viewing deck between the 11th and 12th holes, complete with covered seating, upgraded food and beverage, reserved washrooms, and closed-circuit televisions.
 
 Fans can also upgrade their tickets for $30 per day to access the themed 10th hole, The Rink. Yes, we're talking puckboards. Somebody better roll in with an [Odyssey Hockey Stick Putter](https://odyssey.callawaygolf.com/putters/putters-2025-happy-gilmore.html). What's more, your upgrade is a donation to support MacKids, and every dollar will be matched by CPKC.
 
-The CPKC fan experiences beyond The Rink include the First Tee Long Putt Challenge, golf-inspired carnival games, Autograph Alley presented by Golf Town, and two Brooke Brigade viewing zones give juniors front-row access to the 1st and 15th greens. Participants also get t-shirts, snacks, and drinks, making it a full-on fan experience for the next generation of golf enthusiasts.
+The CPKC fan experiences beyond The Rink include the First Tee Long Putt Challenge, golf-inspired carnival games, Autograph Alley presented by Golf Town, and two Brooke Brigade viewing zones that give juniors front-row access to the 1st and 15th greens. Participants also get t-shirts, snacks, and drinks, making it a full-on fan experience for the next generation of golf enthusiasts.
 
 So whether you're chasing the thrill of the leaderboard, enjoying the festival atmosphere, or simply looking for a unique day out with family and friends, the CPKC Women's Open delivers a chance to see the world's best up close while making memories that last long after the final putt.
 
