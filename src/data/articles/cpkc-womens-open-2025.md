@@ -1,7 +1,7 @@
 ---
 id: "cpkc-womens-open-2025"
 slug: "cpkc-womens-open-2025"
-title: "The CPKC Women's Open: A Guide to Canada's Championship"
+title: "A Guide to Canada's Championship: The CPKC Women's Open: "
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-19"
@@ -28,7 +28,7 @@ sections:
         - "Paula Reto (2022)"
         - "Jin Young Ko (2019)"
         - "Brooke Henderson (2018)"
-      LPGA2025Winners:
+      lpga2025Winners:
         - "Carlota Ciganda"
         - "Jin Hee Im"
         - "Akie Iwai"
