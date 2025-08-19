@@ -134,7 +134,7 @@ Her win folds neatly into a larger Japanese surge on tour this year. She became 
 
 What will linger from this Sunday, though, isn't the data. It's the image of Akie exhaling on the 72nd green, her mother in tears nearby, the pressure of all those close calls finally lifting.
 
-And so, among the verdure of Portland's towering trees and fairways, Akie Iwai hoisted her first LPGA trophy, champagne-soaked and smiling. She departed Columbia Edgewater not as the twin chasing but standing in the place she had long been chasing.
+And so, among the verdure of Portland's towering trees and fairways, Akie Iwai hoisted her first LPGA trophy, champagne-soaked and smiling. She departed Columbia Edgewater no longer the twin giving chase, but the one who had at last arrived.
 
 ## Final Round Competition Highlights
 
