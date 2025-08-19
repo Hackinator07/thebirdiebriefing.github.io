@@ -5,13 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "dev:turbo": "next dev --turbopack",
-    "build": "node scripts/optimize-images-build.js && next build",
+    "build": "node scripts/optimize-images-build.js && next build && node scripts/apply-cache-headers.js",
     "start": "next start",
     "lint": "next lint",
     "export": "next build && next export",
     "optimize-images": "node scripts/optimize-images.js",
     "build:no-optimize": "next build",
-    "fetch-rankings": "node scripts/fetch-rankings.js"
+    "fetch-rankings": "node scripts/fetch-rankings.js",
+    "apply-cache-headers": "node scripts/apply-cache-headers.js"
   },
   "dependencies": {
     "@analytics/google-analytics": "^1.1.0",
