@@ -265,7 +265,7 @@ The featured article is now managed globally in the site configuration:
 ```json
 {
   "siteName": "The Birdie Briefing",
-  "featuredArticleId": "portland-classic-round-1-2025"
+  "featuredArticleId": "cpkc-womens-open-2025"
 }
 ```
 
