@@ -1,7 +1,7 @@
 ---
 id: "cpkc-womens-open-2025"
 slug: "cpkc-womens-open-2025"
-title: "A Guide to Canada's Championship: The CPKC Women's Open"
+title: "A Guide to Canada's Championship: The 2025 CPKC Women's Open"
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-19"
@@ -185,8 +185,8 @@ Fans can also upgrade their tickets for $30 per day to access the themed 10th ho
 
 The CPKC fan experiences beyond The Rink include the First Tee Long Putt Challenge, golf-inspired carnival games, Autograph Alley presented by Golf Town, and two Brooke Brigade viewing zones that give juniors front-row access to the 1st and 15th greens. Participants also get t-shirts, snacks, and drinks, making it a full-on fan experience for all.
 
-So whether you're chasing the thrill of the leaderboard, enjoying the festival atmosphere, or simply looking for a unique day out with family and friends, the CPKC Women's Open delivers a chance to see the world's best up close while making memories that last long after the final putt.
+So whether you're chasing the thrill of the leaderboard, enjoying the festival atmosphere, or simply looking for a unique day out with family and friends, the CPKC Women's Open delivers a chance to see the world's best up close while creating memories that last.
 
-And hey, keep your stick on the ice.
+And remember -- keep your stick on the ice.
 
 *On a personal note, Marie and I feel a connection here -- Mississaugua saw revisions in 1919 by Donald Ross, the same mind behind [Kenosha Country Club](https://www.kenoshacountryclub.com/). Anyone who's played the restored Kenosha or another Ross course knows how effortlessly his designs merge with the natural terrain.*
