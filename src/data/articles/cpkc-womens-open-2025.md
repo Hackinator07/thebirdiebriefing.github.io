@@ -167,7 +167,7 @@ Brooke Henderson, the face of Canadian golf and a 13-time LPGA Tour winner, is i
 
 [At Earl Grey Golf Club](https://earlgreygolfclub.com/) in Calgary last year, Lauren Coughlin finally cracked through with her first LPGA victory at this very event. That win ignited a streak that carried her to a second title at Dundonald and a victorious debut in the Solheim Cup. Now, back in Canada to defend, she brings momentum with her, a T7 finish last week in Portland.
 
-**Sponsor Invites**
+**Sponsor Invitees**
 
 The championship has also welcomed sponsor invites that ensure the next wave has its chance to shine. Ontario's Alena Sharp and Quebec's Maude-Aimée Leblanc are in the field, joined by rising amateurs like Anna Davis, Carla Bernat Escuder, and U.S. Women's Amateur champion Megha Ganne.
 
@@ -181,7 +181,7 @@ The CPKC Women's Open is a full-on festival for fans of all ages, and this year 
 
 For those looking to elevate the experience, the **Heritage Lounge** offers an exclusive viewing deck between the 11th and 12th holes, complete with covered seating, upgraded food and beverage, reserved washrooms, and closed-circuit televisions.
 
-Fans can also upgrade their tickets for $30 per day to access the themed 10th hole, The Rink. Yes, we're talking puckboards. Somebody better roll in with an [Odyssey Hockey Stick Putter](https://odyssey.callawaygolf.com/putters/putters-2025-happy-gilmore.html). What's more, your upgrade is a donation to support MacKids, and every dollar will be matched by CPKC.
+Fans can also upgrade their tickets for $30 per day to access the themed 10th hole, The Rink. Yes, we're talking puckboards. Somebody better roll in with an [Odyssey Hockey Stick Putter](https://odyssey.callawaygolf.com/putters/putters-2025-happy-gilmore.html) while wearing a hockey jersey. What's more, your upgrade is a donation to support MacKids, and every dollar will be matched by CPKC.
 
 The CPKC fan experiences beyond The Rink include the First Tee Long Putt Challenge, golf-inspired carnival games, Autograph Alley presented by Golf Town, and two Brooke Brigade viewing zones that give juniors front-row access to the 1st and 15th greens. Participants also get t-shirts, snacks, and drinks, making it a full-on fan experience for all.
 
