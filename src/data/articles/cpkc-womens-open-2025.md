@@ -167,7 +167,7 @@ Brooke Henderson, the face of Canadian golf and a 13-time LPGA Tour winner, is i
 
 [At Earl Grey Golf Club](https://earlgreygolfclub.com/) in Calgary last year, Lauren Coughlin finally cracked through with her first LPGA victory at this very event. That win ignited a streak that carried her to a second title at Dundonald and a victorious debut in the Solheim Cup. Now, back in Canada to defend, she brings momentum with her, fresh off a T7 finish last week in Portland.
 
-**How's Yah Going?**
+**How's She Goin'?**
 
 The championship has also welcomed sponsor invites that ensure the next wave has its chance to shine. Ontario's Alena Sharp and Quebec's Maude-Aimée Leblanc are in the field, joined by rising amateurs like Anna Davis, Carla Bernat Escuder, and U.S. Women's Amateur champion Megha Ganne.
 
