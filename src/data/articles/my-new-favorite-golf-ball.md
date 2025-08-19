@@ -10,7 +10,7 @@ excerpt: "A tribute to Champy, the mascot of The Dow Championship, and the commu
 image:
   src: "/optimized/champy.webp"
   alt: "Champy during the 4th round of the 2025 Dow Championship"
-  caption: "Champy during the 4th round of the [2025 Dow Championship](https://dowchampionship.com/)."
+  caption: "Champy during the 4th round of the 2025 Dow Championship."
   courtesy: "[Outlyr](https://outlyr.com/) & The Dow Championship"
 calloutType: "author"
 tags:
@@ -21,7 +21,7 @@ tags:
   - "Suzann Pettersen"
 ---
 
-I've picked up my share of Titleist Pro V1s and Srixon Z-STARs. Balls lost and found like trophies from roughs and water hazards. I keep a handful in my bag, pulling them out when I'm convinced my slice has checked out for good. Call it superstition, but those balls start feeling like more than just urethane. But now, I have a new favorite: Champ. Or Champy, as Marie and I call him, the mascot of The Dow Championship.
+I've picked up my share of Titleist Pro V1s and Srixon Z-STARs. Balls lost and found like trophies from roughs and water hazards. I keep a handful in my bag, pulling them out when I'm convinced my slice has checked out for good. Call it superstition, but those balls start feeling like more than just urethane. But now, I have a new favorite: Champ. Or Champy, as Marie and I call him, the mascot of [The Dow Championship](https://dowchampionship.com/).
 
 Why Champy? It's not sold in fun colors and doesn't offer a short game spin that my skills barely benefit from. Well, it's garnered something else from me: admiration.
 
