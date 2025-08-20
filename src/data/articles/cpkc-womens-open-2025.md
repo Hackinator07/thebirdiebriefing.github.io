@@ -23,7 +23,7 @@ sections:
   - type: "field-data"
     title: "Field Snapshot at The CPKC Women's Open"
     data:
-      pastChampion:
+      pastChampions:
         - "Lauren Coughlin (2024)"
         - "Megan Khang (2023)"
         - "Paula Reto (2022)"
