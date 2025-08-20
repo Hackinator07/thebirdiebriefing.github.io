@@ -49,7 +49,7 @@ npm run maintenance:status
 ### How It Works
 
 1. **Flag-based Control**: Create a `.maintenance` file to enable maintenance mode for the next build
-2. **Automatic Integration**: The GitHub Actions workflow uses `npm run build:smart` which automatically detects maintenance flags
+2. **Automatic Integration**: The GitHub Actions workflow uses `npm run build` which automatically detects maintenance flags
 3. **Backup System**: The original `index.html` is backed up when maintenance mode is enabled
 4. **Production Ready**: Maintenance page includes video background, social links, and auto-refresh functionality
 
