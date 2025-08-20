@@ -1,66 +1,13 @@
-'use client';
-
-import { useState } from 'react';
 import { getRankings } from '@/lib/rankings';
 
 type SortField = 'rank' | 'fullName' | 'countryCode' | 'pointsAverage' | 'pointsTotal' | 'tournamentCount' | 'rankDelta';
-type SortDirection = 'asc' | 'desc';
 
 export default function RankingsPage() {
   const rankings = getRankings();
-  const [sortField, setSortField] = useState<SortField>('rank');
-  const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
-
-  // Sort players based on current sort field and direction
-  const sortedPlayers = [...rankings.players].sort((a, b) => {
-    let aValue: string | number = a[sortField];
-    let bValue: string | number = b[sortField];
-
-    // Handle string values
-    if (typeof aValue === 'string' && typeof bValue === 'string') {
-      aValue = aValue.toLowerCase();
-      bValue = bValue.toLowerCase();
-    }
-
-    if (aValue < bValue) {
-      return sortDirection === 'asc' ? -1 : 1;
-    }
-    if (aValue > bValue) {
-      return sortDirection === 'asc' ? 1 : -1;
-    }
-    return 0;
-  });
-
+  
+  // Sort players by rank (default sorting)
+  const sortedPlayers = [...rankings.players].sort((a, b) => a.rank - b.rank);
   const topPlayers = sortedPlayers.slice(0, 50); // Show top 50
-
-  const handleSort = (field: SortField) => {
-    if (sortField === field) {
-      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
-    } else {
-      setSortField(field);
-      setSortDirection('asc');
-    }
-  };
-
-  const SortIcon = ({ field }: { field: SortField }) => {
-    if (sortField !== field) {
-      return (
-        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
-        </svg>
-      );
-    }
-
-    return sortDirection === 'asc' ? (
-      <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-      </svg>
-    ) : (
-      <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-      </svg>
-    );
-  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -99,68 +46,26 @@ export default function RankingsPage() {
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                      onClick={() => handleSort('rank')}
-                    >
-                      <div className="flex items-center space-x-1">
-                        <span>Rank</span>
-                        <SortIcon field="rank" />
-                      </div>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Rank
                     </th>
-                    <th
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                      onClick={() => handleSort('fullName')}
-                    >
-                      <div className="flex items-center space-x-1">
-                        <span>Player</span>
-                        <SortIcon field="fullName" />
-                      </div>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Player
                     </th>
-                    <th
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                      onClick={() => handleSort('countryCode')}
-                    >
-                      <div className="flex items-center space-x-1">
-                        <span>Country</span>
-                        <SortIcon field="countryCode" />
-                      </div>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Country
                     </th>
-                    <th
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                      onClick={() => handleSort('pointsAverage')}
-                    >
-                      <div className="flex items-center space-x-1">
-                        <span>Avg Points</span>
-                        <SortIcon field="pointsAverage" />
-                      </div>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Avg Points
                     </th>
-                    <th
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                      onClick={() => handleSort('pointsTotal')}
-                    >
-                      <div className="flex items-center space-x-1">
-                        <span>Total Points</span>
-                        <SortIcon field="pointsTotal" />
-                      </div>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Total Points
                     </th>
-                    <th
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                      onClick={() => handleSort('tournamentCount')}
-                    >
-                      <div className="flex items-center space-x-1">
-                        <span>Events</span>
-                        <SortIcon field="tournamentCount" />
-                      </div>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Events
                     </th>
-                    <th
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                      onClick={() => handleSort('rankDelta')}
-                    >
-                      <div className="flex items-center space-x-1">
-                        <span>Change</span>
-                        <SortIcon field="rankDelta" />
-                      </div>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Change
                     </th>
                   </tr>
                 </thead>
