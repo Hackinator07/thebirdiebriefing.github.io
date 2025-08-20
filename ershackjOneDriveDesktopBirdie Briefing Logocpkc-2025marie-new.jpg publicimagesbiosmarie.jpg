@@ -1,4 +1,0 @@
-[33m50c8e46[m Add maintenance page with video background and updated logo styling
-[33mb227843[m Fixed h1 formatting on maintenance mode index.html
-[33m3445b50[m Updated maintenance mode index.html to match branding and styles
-[33mc957ac9[m Created maintenance mode index.html to prevent github 404 during deployments
