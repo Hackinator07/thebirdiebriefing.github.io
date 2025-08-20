@@ -170,7 +170,9 @@ The 51st CPKC Women's Open doesn't just look like a major, it feels like it. The
 
 **The Venue**
 
-This year's Canadian Open takes place on the fairways of Mississaugua Golf & Country Club, a course that carries real gravitas. The Credit River winds through its valley, shaping a landscape at once pastoral and formidable. The greens and bunkers, refined by Donald Ross, still bear the original mark of George Cumming's design. And as the spotlight shines, Canada is poised to put its finest golf and hospitality on display for us.
+This year's Canadian Open takes place on the fairways of Mississaugua Golf & Country Club, a course that carries real gravitas. The Credit River winds through its valley, shaping a landscape at once pastoral and formidable. The greens and bunkers, refined by Donald Ross, still bear the original mark of George Cumming's design. And as the spotlight shines, Canada is poised to put its finest golf and hospitality on display for us. 
+
+It is important to recognize that this course stands on the traditional lands of the [Mississaugas of the Credit First Nation](https://mncfn.ca/), whose history and connection to this traditional territory carries significance greater than the game played upon it.
 
 **The Past in Play**
 
