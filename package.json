@@ -11,7 +11,13 @@
     "export": "next build",
     "optimize-images": "node scripts/optimize-images.js",
     "build:no-optimize": "next build",
-    "fetch-rankings": "node scripts/fetch-rankings.js"
+    "fetch-rankings": "node scripts/fetch-rankings.js",
+    "maintenance:deploy:enable": "node scripts/deployment-maintenance.js enable",
+    "maintenance:deploy:disable": "node scripts/deployment-maintenance.js disable",
+    "maintenance:deploy:check": "node scripts/deployment-maintenance.js check",
+    "maintenance:deploy:apply": "node scripts/deployment-maintenance.js apply",
+    "maintenance:auto:enable": "echo 'Add AUTO_DEPLOY_MAINTENANCE=true to GitHub repository environment variables'",
+    "maintenance:auto:disable": "echo 'Remove AUTO_DEPLOY_MAINTENANCE from GitHub repository environment variables'"
   },
   "dependencies": {
     "@analytics/google-analytics": "^1.1.0",

@@ -37,7 +37,13 @@ jobs:
         run: npm ci
 
       - name: Build with Next.js
-        run: npm run build
+        run: npm run build:smart
+
+      - name: Apply deployment maintenance if needed
+        run: node scripts/deployment-maintenance.js apply
+        env:
+          GITHUB_EVENT_HEAD_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          AUTO_DEPLOY_MAINTENANCE: true
 
       - name: Add .nojekyll file
         run: touch out/.nojekyll
