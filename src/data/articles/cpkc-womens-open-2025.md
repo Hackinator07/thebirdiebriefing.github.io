@@ -132,7 +132,7 @@ sections:
   - type: "links"
     title: "Tournament Resources"
     links:
-       - text: "Mississaugas of the Credit First Nation"
+      - text: "Mississaugas of the Credit First Nation"
         url: "https://mncfn.ca/"
         description: "The tournament's host nation"
       - text: "Mississaugua Golf & Country Club"
