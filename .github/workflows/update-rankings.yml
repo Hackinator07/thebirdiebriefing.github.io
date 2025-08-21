@@ -30,10 +30,37 @@ jobs:
     - name: Fetch latest rankings
       run: npm run fetch-rankings
       
+    - name: Validate rankings data
+      run: |
+        # Check if rankings.json exists and is valid JSON
+        if [ ! -f "src/data/rankings.json" ]; then
+          echo "❌ rankings.json file not found"
+          exit 1
+        fi
+        
+        # Validate JSON structure
+        if ! node -e "JSON.parse(require('fs').readFileSync('src/data/rankings.json', 'utf8'))" 2>/dev/null; then
+          echo "❌ rankings.json is not valid JSON"
+          exit 1
+        fi
+        
+        # Check if rankings have players
+        PLAYER_COUNT=$(node -e "const data = JSON.parse(require('fs').readFileSync('src/data/rankings.json', 'utf8')); console.log(data.players ? data.players.length : 0)")
+        if [ "$PLAYER_COUNT" -eq 0 ]; then
+          echo "❌ No players found in rankings data"
+          exit 1
+        fi
+        
+        echo "✅ Rankings data validation passed"
+        echo "📊 Player count: $PLAYER_COUNT"
+      
+    - name: Test build with new rankings
+      run: npm run build
+      
     - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add src/data/rankings.json
-        git diff --quiet && git diff --staged --quiet || git commit -m "Update rankings data"
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update rankings data - $(date +%Y-%m-%d)"
         git push
