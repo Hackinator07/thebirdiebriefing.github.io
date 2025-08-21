@@ -1,7 +1,7 @@
 ---
 name: "Marie Hack"
 title: "Founder & Host"
-image: "/optimized/marie-new.webp"
+image: "/optimized/marie-new.jpg"
 imageAlt: "Marie Hack"
 ---
 
