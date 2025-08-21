@@ -171,7 +171,7 @@ sections:
 
 The 51st CPKC Women's Open doesn't just look like a major, it feels like it. The field would pass for one in any corner of the golf world. 156 players are here, six of them sitting in the Rolex top 10, and every one chasing a slice of $2.75 million and the chance to carve their name on the open trophy.
 
-**The Venue**
+**The Venu**
 
 This year's Canadian Open takes place on the fairways of Mississaugua Golf & Country Club, a course that carries real gravitas. The Credit River winds through its valley, shaping a landscape at once pastoral and formidable. The greens and bunkers, refined by Donald Ross, still bear the original mark of George Cumming's design. And as the spotlight shines, Canada is poised to put its finest golf and hospitality on display for us. 
 
