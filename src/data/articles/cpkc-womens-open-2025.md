@@ -14,7 +14,7 @@ image:
   courtesy: "https://mississauguagolf.com/"
 calloutType: "author"
 tags:
-  - "CPKC Women's Ope"
+  - "CPKC Women's Open"
   - "LPGA Tour"
   - "Tournament Preview"
   - "Mississaugua"
