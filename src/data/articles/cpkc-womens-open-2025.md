@@ -1,7 +1,7 @@
 ---
 id: "cpkc-womens-open-2025"
 slug: "cpkc-womens-open-2025"
-title: "A Guide to Canada's Championship: The 2025 CPKC Women's Open"
+title: "A Guide to Canada's Championship: The 2025 CPKC Women's Ope"
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-19"
