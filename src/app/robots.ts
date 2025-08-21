@@ -4,10 +4,16 @@ import robotsConfig from '@/data/robots.json';
 export const dynamic = 'force-static';
 
 function getBaseUrl(): string {
+  // For GitHub Pages deployment, use the correct base URL
+  // This should match your GitHub Pages domain
   const envUrl = process.env.NEXT_PUBLIC_BASE_URL?.trim();
-  return envUrl && /^https?:\/\//i.test(envUrl)
-    ? envUrl.replace(/\/$/, '')
-    : 'https://www.birdiebriefing.com';
+  
+  if (envUrl && /^https?:\/\//i.test(envUrl)) {
+    return envUrl.replace(/\/$/, '');
+  }
+  
+  // Use the custom domain from CNAME file
+  return 'https://www.birdiebriefing.com';
 }
 
 export default function robots(): MetadataRoute.Robots {
