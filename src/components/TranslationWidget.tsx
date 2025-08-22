@@ -88,7 +88,7 @@ export default function TranslationWidget() {
               C60.671,11.274,48.79,2.489,34.894,2.489c-17.888,0-32.438,14.552-32.438,32.439c0,7.848,2.802,15.053,7.456,20.668
               c0.025-1.133,0.532-2.018,1.465-2.617c1.578-1.014,3.288-0.744,5.161,1.07c-1.653-0.725-2.979-0.99-4.302-0.254
               c-0.985,0.549-1.539,1.344-1.801,2.415c1.443,1.657,3.053,3.166,4.8,4.5c0.886,0.669,1.804,1.3,2.756,1.875
-              c-0.007,0.003-0.011,0.005-0.019,0.007C22.902,65.618,28.698,67.365,34.894,67.365z" fill="#ffffff"/>
+              c-0.007,0.003-0.011,0.005-0.019,0.007C22.902,65.618,28.698,67.365,34.894,67.365z" fill="#F8F6F2"/>
           </g>
         </svg>
       `;
@@ -118,7 +118,7 @@ export default function TranslationWidget() {
       const message = document.createElement('div');
       message.textContent = loadingMessage;
       message.style.cssText = `
-        color: #ffffff;
+        color: #F8F6F2;
         font-size: 11px;
         font-weight: 500;
         text-align: center;
@@ -198,7 +198,7 @@ export default function TranslationWidget() {
           autoDetectLanguage: false,
           theme: {
             baseColor: '#67405C',
-            textColor: '#ffffff'
+            textColor: '#F8F6F2'
           },
           showUI: true,
           loadingMessage: {

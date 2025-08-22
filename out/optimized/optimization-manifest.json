@@ -1,0 +1,20 @@
+{
+  "timestamp": "2025-08-18T04:43:38.716Z",
+  "processed": 2,
+  "skipped": 9,
+  "totalOriginalSize": "1.54",
+  "totalOptimizedSize": "0.06",
+  "savings": "96.1",
+  "images": [
+    {
+      "original": "images\\articles\\akie-iwai-round3.png",
+      "optimized": "optimized\\akie-iwai-round3.webp",
+      "savings": 97.3
+    },
+    {
+      "original": "images\\articles\\jeong-eun-lee5-round2.png",
+      "optimized": "optimized\\jeong-eun-lee5-round2.webp",
+      "savings": 95
+    }
+  ]
+}
