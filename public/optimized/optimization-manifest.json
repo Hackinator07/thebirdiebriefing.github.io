@@ -1,15 +1,15 @@
 {
-  "timestamp": "2025-08-22T13:19:42.621Z",
+  "timestamp": "2025-08-22T13:56:57.695Z",
   "processed": 1,
-  "skipped": 13,
-  "totalOriginalSize": "0.70",
+  "skipped": 14,
+  "totalOriginalSize": "0.65",
   "totalOptimizedSize": "0.04",
-  "savings": "94.3",
+  "savings": "93.8",
   "images": [
     {
-      "original": "images\\articles\\cpkc-iwai-rd1.png",
-      "optimized": "optimized\\cpkc-iwai-rd1.webp",
-      "savings": 94.3
+      "original": "images\\articles\\cpkc-deng-rd1.png",
+      "optimized": "optimized\\cpkc-deng-rd1.webp",
+      "savings": 93.8
     }
   ]
 }
