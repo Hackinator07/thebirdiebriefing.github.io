@@ -58,7 +58,7 @@ sections:
 
 The first round of the CPKC Women's Open gave us a leaderboard that was equal parts expected and surprising. Familiar champions like Jin Young Ko and Nelly Korda went searching for form, Akie Iwai posted a flawless 64 to take the solo lead, and a 15-year-old Canadian amateur with an unshakable stare stole much of the spotlight.
 
-Jin Young Ko--once unstoppable, now two years removed from her last win--looked steady, carding 5 birdies, including the par 5s of 12 and 13. Flashing the precision iron play that made her world No. 1 in 2020. This is the same player who went bogey-free over 72 holes to win this event in 2019, and she's showing everyone she may do it again.
+Jin Young Ko--once unstoppable, now two years removed from her last win looked steady, carding 5 birdies, including the par 5s of 12 and 13. Showing the pinpoint iron play that earned her the world No. 1 spot in 2020, this is the same player who went bogey-free over 72 holes to claim this event in 2019--and she’s signaling she could do it again.
 
 Nelly Korda, meanwhile, is still chasing her first victory of 2025 after piling up seven a year ago. Her round was a blend of sharp birdies and a rare stumble at the 175-yard par-3 third. Still, she exhibited the brilliance that makes her game so unmistakable--none better than a wedge from 81 yards that back-spun into easy scoring range. The mudball she faced at 11, the toughest hole of the day, was the kind of bad break that can throw off rhythm, but she salvaged enough to save par.
 
