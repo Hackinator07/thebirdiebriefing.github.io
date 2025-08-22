@@ -21,7 +21,7 @@ tags:
   - "Canada"
 sections:
   - type: "field-data"
-    title: "Field Snapshot at The CPKC Women's Open"
+    title: "Field Snapshot at The CPKC Women's Ope"
     data:
       pastChampions:
         - "Lauren Coughlin (2024)"
