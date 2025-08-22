@@ -11,7 +11,7 @@ image:
   src: "/optimized/cpkc-deng-rd1.webp"
   alt: "Aphrodite Deng lining up her putt at the 2025 CPKC Women's Open"
   caption: "Aphrodite Deng lining up her putt at the 2025 CPKC Women's Open"
-  courtesy: "Bernard Brault, C.M."
+  courtesy: "Bernard Brault"
 calloutType: "author"
 tags:
   - "CPKC Women's Open"
