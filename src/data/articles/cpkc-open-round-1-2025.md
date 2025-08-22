@@ -30,18 +30,18 @@ sections:
     title: "Leaderboard After Round 1"
     headers: ["Position", "Player", "To Par", "Score"]
     tableData:
-	  - ["1", "Akie Iwai", "-7", "64"]
-	  - ["T2", "Leona Maguire", "-5", "66"]
-	  - ["T2", "Jeeno Thitikul", "-5", "66"]
-	  - ["T2", "Gaby Lopez", "-5", "66"]
-	  - ["T2", "Megan Khang", "-5", "66"]
-	  - ["T2", "Aphrodite Deng", "-5", "66"]
-	  - ["7", "Soo Bin Joo", "-4", "67"]
-	  - ["T8", "Jeongeun Lee5", "-3", "68"]
-	  - ["T8", "Peiyun Chien", "-3", "68"]
-	  - ["T8", "Jenny Bae", "-3", "68"]
-	  - ["T8", "Ariya Jutanugarn", "-3", "68"] 
-	  - ["T8", "Mao Saigo", "-3", "68"]
+      - ["1", "Akie Iwai", "-7", "64"]
+      - ["T2", "Leona Maguire", "-5", "66"]
+      - ["T2", "Jeeno Thitikul", "-5", "66"]
+      - ["T2", "Gaby Lopez", "-5", "66"]
+      - ["T2", "Megan Khang", "-5", "66"]
+      - ["T2", "Aphrodite Deng", "-5", "66"]
+      - ["7", "Soo Bin Joo", "-4", "67"]
+      - ["T8", "Jeongeun Lee5", "-3", "68"]
+      - ["T8", "Peiyun Chien", "-3", "68"]
+      - ["T8", "Jenny Bae", "-3", "68"]
+      - ["T8", "Ariya Jutanugarn", "-3", "68"] 
+      - ["T8", "Mao Saigo", "-3", "68"]
   - type: "links"
     title: "Tournament Resources"
     links:
