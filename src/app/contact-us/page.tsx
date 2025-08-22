@@ -169,16 +169,16 @@ export default function ContactUsPage() {
                       >
                         First Name *
                       </label>
-                      <input
-                        type='text'
-                        id='firstName'
-                        name='firstName'
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        required
-                        className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
-                        placeholder='Enter your first name'
-                      />
+                                             <input
+                         type='text'
+                         id='firstName'
+                         name='firstName'
+                         value={formData.firstName}
+                         onChange={handleInputChange}
+                         required
+                         className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
+                         placeholder='Enter your first name'
+                       />
                     </div>
                     <div>
                       <label
@@ -187,16 +187,16 @@ export default function ContactUsPage() {
                       >
                         Last Name *
                       </label>
-                      <input
-                        type='text'
-                        id='lastName'
-                        name='lastName'
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        required
-                        className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
-                        placeholder='Enter your last name'
-                      />
+                                             <input
+                         type='text'
+                         id='lastName'
+                         name='lastName'
+                         value={formData.lastName}
+                         onChange={handleInputChange}
+                         required
+                         className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
+                         placeholder='Enter your last name'
+                       />
                     </div>
                   </div>
 
@@ -208,16 +208,16 @@ export default function ContactUsPage() {
                     >
                       Email Address *
                     </label>
-                    <input
-                      type='email'
-                      id='email'
-                      name='email'
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
-                      placeholder='Enter your email address'
-                    />
+                                         <input
+                       type='email'
+                       id='email'
+                       name='email'
+                       value={formData.email}
+                       onChange={handleInputChange}
+                       required
+                       className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
+                       placeholder='Enter your email address'
+                     />
                   </div>
 
                   {/* Inquiry Type Dropdown */}
@@ -228,14 +228,14 @@ export default function ContactUsPage() {
                     >
                       Inquiry Type *
                     </label>
-                    <select
-                      id='inquiryType'
-                      name='inquiryType'
-                      value={formData.inquiryType}
-                      onChange={handleInputChange}
-                      required
-                      className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
-                    >
+                                         <select
+                       id='inquiryType'
+                       name='inquiryType'
+                       value={formData.inquiryType}
+                       onChange={handleInputChange}
+                       required
+                       className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
+                     >
                       {inquiryTypes.map((type) => (
                         <option key={type.value} value={type.value}>
                           {type.label}
@@ -252,16 +252,16 @@ export default function ContactUsPage() {
                     >
                       Message *
                     </label>
-                    <textarea
-                      id='message'
-                      name='message'
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      required
-                      rows={5}
-                      className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200 resize-none'
-                      placeholder='Enter your message here...'
-                    />
+                                         <textarea
+                       id='message'
+                       name='message'
+                       value={formData.message}
+                       onChange={handleInputChange}
+                       required
+                       rows={5}
+                       className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200 resize-none'
+                       placeholder='Enter your message here...'
+                     />
                     <p className='text-xs text-gray-500 mt-1'>
                       {formData.message.length}/2000 characters
                     </p>
