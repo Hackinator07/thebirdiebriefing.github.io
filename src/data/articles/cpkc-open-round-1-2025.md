@@ -1,7 +1,7 @@
 ---
 id: "cpkc-open-round-1-2025"
 slug: "cpkc-open-round-1-2025"
-title: "Deng Dazzles, Vet Moves, and a Muddy Moment for Korda: Round 1 of the CPKC Women's Open"
+title: "Den Dazzles, Vet Moves, and a Muddy Moment for Korda: Round 1 of the CPKC Women's Open"
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-08-22"
