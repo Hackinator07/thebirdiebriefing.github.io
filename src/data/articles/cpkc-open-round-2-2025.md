@@ -127,7 +127,7 @@ sections:
 
 At Mississaugua, round two delivered shifts, scares, and cheers as players fought for weekend ground. Mississaugua’s first crack at hosting the CPKC Women’s Open showed off quick greens, heavy rough, and a layout built that demanded patience while keeping eagles and birdies hard-earned.
 
-Akie Iwai, fresh off her breakthrough in Portland, continued her strong play and showed flashes of her aggressive style, though it occasionally cost her. Even so, she closed the day with a steady 2-under 69 to build a three-shot cushion at 9-under, though afterward she admitted to leaving too many birdie chances on the table.
+Akie Iwai, fresh off her breakthrough in Portland, continued her strong play and aggressive style. It occasionally cost her. Even so, she closed the day with a steady 2-under 69 to build a three-shot cushion at 9-under, though afterward she admitted to leaving too many birdie chances on the table.
 
 Leona Maguire, one of the most consistent drivers on tour, delivered several long-range putts to stay in contention despite battling with the flatstick at shorter range. Australia’s Minjee Lee and world No. 1 Jeeno Thitikul joined Maguire in the chasing pack at 6-under.
 
