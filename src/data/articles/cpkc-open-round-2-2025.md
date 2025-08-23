@@ -31,7 +31,7 @@ sections:
         - "Hole 15 - Wei Ling Hsu"
   - type: "field-table"
     title: "Leaderboard and Cut Makers After Round 2"
-    headers: ["Position", "Player", "To Par", "Score"]
+    headers: ["Position", "Player", "To Par", "Scores", "Total"]
     tableData:
       - ["1", "Akie Iwai", "-9", "64-69", "133"]
       - ["T2", "Minjee Lee", "-6", "69-67", "136"]
