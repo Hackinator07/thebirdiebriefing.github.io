@@ -25,7 +25,7 @@ sections:
     backgroundColor: "bg-primary-50"
     data:
       eagles:
-        - "Hole 04 – Yu Liu"
+        - "Hole 4 – Yu Liu"
         - "Hole 12 - Minjee Lee"
         - "Hole 17 - Brooke Henderson"
         - "Hole 17 - Minjee Lee"
