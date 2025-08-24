@@ -1,15 +1,15 @@
 {
-  "timestamp": "2025-08-23T13:52:54.909Z",
+  "timestamp": "2025-08-24T11:53:25.712Z",
   "processed": 1,
-  "skipped": 15,
-  "totalOriginalSize": "0.65",
-  "totalOptimizedSize": "0.02",
-  "savings": "96.9",
+  "skipped": 16,
+  "totalOriginalSize": "0.95",
+  "totalOptimizedSize": "0.07",
+  "savings": "92.6",
   "images": [
     {
-      "original": "images\\articles\\cpkc-iwai-rd2.png",
-      "optimized": "optimized\\cpkc-iwai-rd2.webp",
-      "savings": 96.9
+      "original": "images\\articles\\cpkc-henderson-rd3.png",
+      "optimized": "optimized\\cpkc-henderson-rd3.webp",
+      "savings": 92.6
     }
   ]
 }
