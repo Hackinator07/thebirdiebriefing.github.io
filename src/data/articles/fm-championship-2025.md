@@ -140,20 +140,20 @@ The LPGA’s top golfers tee off this week at the 2025 FM Championship, running 
 
 TPC Boston is a New England venue shaped with design elements reminiscent of golf’s old-country heritage.  Arnold Palmer laid down the original plan in 2003, but four years later [Gil Hanse]( https://www.hansegolfdesign.com/) and PGA Tour player [Brad Faxon]( https://en.wikipedia.org/wiki/Brad_Faxon) were called in to rough it up. Their job was to make the course feel less like a set of lines on paper and more like a stretch of New England countryside you might wander across. They succeeded.
 
-Don’t let the pastoral charm fool you. TPC Boston has its tests, and they show most clearly at the 18th. Nicknamed the “Hell Hole,” it plays 504 yards for the tournament with birdie written on the scorecard, but it can easily wreck a round. Trouble lurks everywhere: bunkers right, slopes that reject even well-struck wedges. The hole has humbled more players than it has rewarded. Reach the green in one piece, and a par feels like a small victory; a birdie, a cause for celebration. [Haeran Ryu herself birdied 18 in 2024]( https://youtu.be/S7k6bxwnpC0?t=346) to win in a playoff against Jin Young Ko.
+Don’t let the pastoral charm fool you. TPC Boston has its tests, and they show most clearly at the 18th. Nicknamed the “Hell Hole,” it plays 504 yards for the tournament with "birdie" written on the scorecard, but it can easily wreck a round. Trouble lurks everywhere: bunkers right, slopes that reject even well-struck wedges. The hole has humbled more players than it has rewarded. Reach the green in one piece, and a par feels like a small victory; a birdie, a cause for celebration. [Haeran Ryu herself birdied 18 in 2024]( https://youtu.be/S7k6bxwnpC0?t=346) to win in a playoff against Jin Young Ko.
 
 **LPGA’s Elite Players Tee Off Again**
 
 Thirty-six of the top 40 players in the Rolex Women’s World Golf Rankings are here, led by No. 1 Jeeno Thitikul and No. 2 Nelly Korda. There are 70 LPGA Tour winners in the mix, including defending champ Haeran Ryu and last year’s runner-up, Jin Young Ko. Every single one of the 2025 major champions will be swinging, and 21 of this year’s 23 LPGA Tour winners are on hand.
 
-Local fans have some familiar faces to cheer for: Massachusetts native and FM Ambassador Megan Khang (Rockland), Brittany Altomare (Shrewsbury), and Alexa Pano (Westborough) will all be in the mix. Add two top amateurs--Megha Ganne and Amelie Zalsman--, and you’ve got a field that’s part global powerhouse, part hometown story.
+Local fans have some familiar faces to cheer for: Massachusetts natives Megan Khang (Rockland), Brittany Altomare (Shrewsbury), and Alexa Pano (Westborough) will all be in the mix. Add two top amateurs--Megha Ganne and Amelie Zalsman--, and you’ve got a field that’s part global powerhouse, part hometown story.
 
 **Be Part of It**
 
-[Tickets for the FM Championship]( https://www.fmchampionship.com/tickets) are now available on SeatGeek.com
+[Tickets for the FM Championship]( https://www.fmchampionship.com/tickets) are now available on SeatGeek.com.
 
-Daily General Admission tickets start at $59 for Thursday and Friday, $64 for Saturday and Sunday, and weekly passes start at $124.There is an upgrade available as The Del's Lemonade ticket package, starting at $64, includes a daily general admission ticket and a large Del's Lemonade.
+Daily general admission tickets start at $59 for Thursday and Friday and $64 for Saturday and Sunday, and weekly passes start at $124.There is an upgrade available as the Del's Lemonade ticket package, starting at $64, includes a daily general admission ticket and a large Del's Lemonade.
 
 For those seeking a premium experience, the U.S. Virgin Islands Champions Club offers daily admission at $385 or weekly access for $1,199. Situated at the 16th green, the open-air tent provides sweeping views of the course, lunch and an afternoon snack, complimentary beer and wine, general parking, and upgraded restroom facilities.
 
-In partnership with SERVPRO, the LPGA is providing complimentary grounds admission for current and former U.S. military members. Additionally, juniors 17 and under can attend free when accompanied by a purchased adult ticket.
+In partnership with SERVPRO, the LPGA is providing complimentary grounds admission for current and former U.S. military members. Additionally, juniors 17 and under can attend free when accompanied by an adult with a purchased ticket.
