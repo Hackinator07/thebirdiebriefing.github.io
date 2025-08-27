@@ -69,7 +69,7 @@ sections:
         - "Akie Iwai (22)"
         - "Esther Henseleit (23)"
         - "Hye-Jin Choi (24)"
-        - "Brooke M. Henderson (25)"
+        - "Brooke Henderson (25)"
       rookies2025:
         - "Saki Baba"
         - "Jenny Bae"
