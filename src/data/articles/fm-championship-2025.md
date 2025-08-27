@@ -144,7 +144,7 @@ Don’t let the pastoral charm fool you. TPC Boston has its tests, and they show
 
 **LPGA’s Elite Players Tee Off Again**
 
-Thirty-six of the top 40 players in the Rolex Women’s World Golf Rankings are here, led by No. 1 Jeeno Thitikul and No. 2 Nelly Korda. There are 70 LPGA Tour winners in the mix, including defending champ Haeran Ryu and last year’s runner-up, Jin Young Ko. Every single one of the 2025 major champions will be swinging, and 20 of this year’s 22 LPGA Tour winners are on hand.
+Thirty-six of the top 40 players in the Rolex Women’s World Golf Rankings are here, led by No. 1 Jeeno Thitikul and No. 2 Nelly Korda. There are 70 LPGA Tour winners in the mix, including defending champ Haeran Ryu and last year’s runner-up, Jin Young Ko. Every single one of the 2025 major champions will be swinging, and 21 of this year’s 23 LPGA Tour winners are on hand.
 
 Local fans have some familiar faces to cheer for: Massachusetts native and FM Ambassador Megan Khang (Rockland), Brittany Altomare (Shrewsbury), and Alexa Pano (Westborough) will all be in the mix. Add two top amateurs--Megha Ganne and Amelie Zalsman--, and you’ve got a field that’s part global powerhouse, part hometown story.
 
