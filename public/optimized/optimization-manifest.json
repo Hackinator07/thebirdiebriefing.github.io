@@ -1,15 +1,15 @@
 {
-  "timestamp": "2025-08-24T11:53:25.712Z",
+  "timestamp": "2025-08-27T16:20:32.369Z",
   "processed": 1,
-  "skipped": 16,
-  "totalOriginalSize": "0.95",
-  "totalOptimizedSize": "0.07",
-  "savings": "92.6",
+  "skipped": 18,
+  "totalOriginalSize": "0.85",
+  "totalOptimizedSize": "0.08",
+  "savings": "90.6",
   "images": [
     {
-      "original": "images\\articles\\cpkc-henderson-rd3.png",
-      "optimized": "optimized\\cpkc-henderson-rd3.webp",
-      "savings": 92.6
+      "original": "images\\articles\\tpc-boston.png",
+      "optimized": "optimized\\tpc-boston.webp",
+      "savings": 90.6
     }
   ]
 }
