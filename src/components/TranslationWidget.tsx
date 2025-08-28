@@ -192,6 +192,14 @@ export default function TranslationWidget() {
         console.log('API Key starts with pk_:', key ? key.startsWith('pk_') : 'N/A');
         console.log('API Key verified with JigsawStack - deploying with updated secret!');
         
+        // Clear any existing widgets to prevent conflicts
+        const existingWidgets = document.querySelectorAll('.jigts-translation-widget');
+        existingWidgets.forEach(widget => widget.remove());
+        
+        // Clear any existing scripts to prevent conflicts
+        const existingScripts = document.querySelectorAll('script[src*="translation-widget"]');
+        existingScripts.forEach(script => script.remove());
+        
         // Create and show loading overlay
         const loadingOverlay = createLoadingOverlay();
 
@@ -226,6 +234,26 @@ export default function TranslationWidget() {
         if (process.env.NODE_ENV === 'development') {
           console.log('Saved language preference:', savedLanguage);
         }
+
+        // Test direct API call to verify authentication
+        fetch('https://api.jigsawstack.com/v1/ai/translate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': key
+          },
+          body: JSON.stringify({
+            text: 'Hello',
+            target_language: 'ja'
+          })
+        }).then(response => {
+          console.log('Direct API test response status:', response.status);
+          if (!response.ok) {
+            console.error('Direct API test failed:', response.status, response.statusText);
+          }
+        }).catch(error => {
+          console.error('Direct API test error:', error);
+        });
 
         // Store the widget instance globally for custom UI access
         window.jigsawTranslationInstance = window.TranslationWidget(key, {
