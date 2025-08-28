@@ -37,6 +37,8 @@ jobs:
         run: npm ci
 
       - name: Build with Next.js
+        env:
+          NEXT_PUBLIC_TRANSLATION_WIDGET_KEY: ${{ secrets.NEXT_PUBLIC_TRANSLATION_WIDGET_KEY }}
         run: npm run build
 
       - name: Add .nojekyll file
