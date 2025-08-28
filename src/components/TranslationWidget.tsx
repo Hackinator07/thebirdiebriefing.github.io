@@ -222,10 +222,6 @@ export default function TranslationWidget() {
           pageLanguage: 'en',
           position: 'top-right',
           autoDetectLanguage: false,
-          preserveUrls: true,
-          urlRewriting: false,
-          baseUrl: 'https://www.birdiebriefing.com',
-          staticSite: true,
           theme: {
             baseColor: '#ad345a',
             textColor: '#F8F6F2'
