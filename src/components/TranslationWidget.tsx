@@ -175,8 +175,10 @@ export default function TranslationWidget() {
       const key = process.env.NEXT_PUBLIC_TRANSLATION_WIDGET_KEY;
 
       if (!key) {
-        // Widget requires an API key to function
-        console.info('TranslationWidget: No API key provided. Translation widget disabled.');
+        // Widget requires an API key to function - silent fail in production
+        if (process.env.NODE_ENV === 'development') {
+          console.info('TranslationWidget: No API key provided. Translation widget disabled.');
+        }
         return;
       }
 
@@ -205,7 +207,9 @@ export default function TranslationWidget() {
 
         // Check for previously saved language preference
         const savedLanguage = localStorage.getItem('jss-pref');
-        console.log('Saved language preference:', savedLanguage);
+        if (process.env.NODE_ENV === 'development') {
+          console.log('Saved language preference:', savedLanguage);
+        }
 
         window.TranslationWidget(key, {
           pageLanguage: 'en',
@@ -239,23 +243,31 @@ export default function TranslationWidget() {
             
             // Auto-restore previously saved language if available
             if (savedLanguage && savedLanguage !== 'en') {
-              console.log('Auto-restoring language:', savedLanguage);
+              if (process.env.NODE_ENV === 'development') {
+                console.log('Auto-restoring language:', savedLanguage);
+              }
               setTimeout(() => {
                 if (window.translate) {
                   window.translate(savedLanguage)
                     .then((result) => {
-                      console.log('Language restored successfully:', result);
+                      if (process.env.NODE_ENV === 'development') {
+                        console.log('Language restored successfully:', result);
+                      }
                     })
                     .catch((error) => {
-                      console.warn('Failed to restore language:', error);
+                      if (process.env.NODE_ENV === 'development') {
+                        console.warn('Failed to restore language:', error);
+                      }
                     });
                 }
-              }, 500);
+              }, 300); // Faster language restoration
             }
           });
-        }, 2000); // Wait for widget to fully load
+        }, 1500); // Optimized timing for production
       } catch (error) {
-        console.error('TranslationWidget initialization error:', error);
+        if (process.env.NODE_ENV === 'development') {
+          console.error('TranslationWidget initialization error:', error);
+        }
       }
     };
 

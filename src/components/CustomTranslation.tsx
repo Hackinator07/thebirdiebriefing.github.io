@@ -39,7 +39,7 @@ export default function CustomTranslation() {
   // Focus search input when dropdown opens
   useEffect(() => {
     if (isOpen && searchInputRef.current) {
-      setTimeout(() => searchInputRef.current?.focus(), 100);
+      setTimeout(() => searchInputRef.current?.focus(), 50);
     }
   }, [isOpen]);
 
@@ -87,7 +87,9 @@ export default function CustomTranslation() {
         window.dispatchEvent(translateEvent);
       }
     } catch (error) {
-      console.log('Direct API call failed:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Direct API call failed:', error);
+      }
     }
 
     // Fallback: Try to interact with the hidden widget DOM elements
@@ -119,9 +121,11 @@ export default function CustomTranslation() {
         document.dispatchEvent(fallbackEvent);
 
       } catch (error) {
-        console.log('DOM interaction failed:', error);
+        if (process.env.NODE_ENV === 'development') {
+          console.log('DOM interaction failed:', error);
+        }
       }
-    }, 100);
+    }, 50); // Faster fallback timing for production
   };
 
   const toggleDropdown = () => {
