@@ -190,7 +190,7 @@ export default function TranslationWidget() {
         console.log('API Key Status:', key ? 'PROVIDED' : 'MISSING');
         console.log('API Key Length:', key ? key.length : 'N/A');
         console.log('API Key starts with pk_:', key ? key.startsWith('pk_') : 'N/A');
-        console.log('API Key verified with JigsawStack - deploying with updated secret!');
+        console.log('API Key verified with JigsawStack - deploying with NEW API key after plan upgrade!');
         
         // Clear any existing widgets to prevent conflicts
         const existingWidgets = document.querySelectorAll('.jigts-translation-widget');

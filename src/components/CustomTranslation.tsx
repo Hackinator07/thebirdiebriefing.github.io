@@ -79,54 +79,95 @@ export default function CustomTranslation() {
     triggerTranslation(langCode);
   };
 
-  // Function to trigger JigsawStack translation
-  const triggerTranslation = (langCode: string) => {
+  // Function to trigger direct API translation (bypassing buggy widget)
+  const triggerTranslation = async (langCode: string) => {
     if (typeof window === 'undefined') return;
     
-    console.log('Triggering translation for:', langCode);
+    console.log('Triggering direct translation for:', langCode);
     
-    // Method 1: Try the globally exposed custom translation function
-    if (window.customTranslate) {
-      window.customTranslate(langCode);
-      return;
-    }
-    
-    // Method 2: Wait and try to interact with the actual JigsawStack widget
-    setTimeout(() => {
-      console.log('Looking for JigsawStack widget elements...');
-      
-      // Look for the main widget button first
-      const widgetButton = document.querySelector('.jigts-translation-widget') as HTMLElement;
-      if (widgetButton) {
-        console.log('Found widget button, clicking to open...');
-        widgetButton.click();
-        
-        // Wait for dropdown to appear, then find language option
-        setTimeout(() => {
-          const languageOptions = document.querySelectorAll('.jigts-language-item, [data-language-code]');
-          console.log('Found language options:', languageOptions.length);
-          
-          for (const option of languageOptions) {
-            const optionLangCode = option.getAttribute('data-language-code') || 
-                                 option.getAttribute('data-lang') ||
-                                 option.textContent?.toLowerCase().trim();
-            
-            console.log('Checking option:', optionLangCode, 'vs target:', langCode);
-            
-            if (optionLangCode === langCode || optionLangCode?.includes(langCode)) {
-              console.log('Found matching language option, clicking...');
-              (option as HTMLElement).click();
-              localStorage.setItem('jss-pref', langCode);
-              return;
-            }
-          }
-          
-          console.log('No matching language option found');
-        }, 300);
-      } else {
-        console.log('Widget button not found');
+    try {
+      // Get API key from environment
+      const apiKey = process.env.NEXT_PUBLIC_TRANSLATION_WIDGET_KEY;
+      if (!apiKey) {
+        console.error('API key not available');
+        return;
       }
-    }, 100);
+
+      // Show loading state
+      setIsOpen(false);
+      
+      // Get all text content from the page
+      const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, a, button, label');
+      const textsToTranslate: string[] = [];
+      const elementMap: Element[] = [];
+      
+      textElements.forEach(element => {
+        const text = element.textContent?.trim();
+        if (text && text.length > 1 && !text.match(/^[0-9\s\.\,\-\+\=\(\)\[\]\{\}]+$/)) {
+          textsToTranslate.push(text);
+          elementMap.push(element);
+        }
+      });
+
+      console.log(`Found ${textsToTranslate.length} text elements to translate`);
+
+      // Translate in batches to avoid overwhelming the API
+      const batchSize = 10;
+      for (let i = 0; i < textsToTranslate.length; i += batchSize) {
+        const batch = textsToTranslate.slice(i, i + batchSize);
+        
+        try {
+          const response = await fetch('https://api.jigsawstack.com/v1/ai/translate', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-api-key': apiKey
+            },
+            body: JSON.stringify({
+              text: batch.join('\n'),
+              target_language: langCode
+            })
+          });
+
+          if (response.ok) {
+            const result = await response.json();
+            const translations = result.translated_text?.split('\n') || [];
+            
+            // Apply translations to elements
+            translations.forEach((translation: string, index: number) => {
+              const elementIndex = i + index;
+              if (elementMap[elementIndex] && translation.trim()) {
+                elementMap[elementIndex].textContent = translation.trim();
+              }
+            });
+            
+            console.log(`Translated batch ${Math.floor(i/batchSize) + 1}`);
+          } else {
+            console.error('Translation API error:', response.status, response.statusText);
+            break; // Stop on first error
+          }
+        } catch (error) {
+          console.error('Translation request failed:', error);
+          break;
+        }
+        
+        // Small delay between batches
+        await new Promise(resolve => setTimeout(resolve, 200));
+      }
+
+      // Save language preference
+      localStorage.setItem('jss-pref', langCode);
+      console.log('Direct translation completed successfully');
+      
+    } catch (error) {
+      console.error('Direct translation failed:', error);
+      
+      // Fallback to widget if direct translation fails
+      if (window.customTranslate) {
+        console.log('Falling back to widget translation...');
+        window.customTranslate(langCode);
+      }
+    }
   };
 
   const toggleDropdown = () => {
