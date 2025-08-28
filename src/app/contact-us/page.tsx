@@ -176,7 +176,7 @@ export default function ContactUsPage() {
                          value={formData.firstName}
                          onChange={handleInputChange}
                          required
-                         className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
+                         className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
                          placeholder='Enter your first name'
                        />
                     </div>
@@ -194,7 +194,7 @@ export default function ContactUsPage() {
                          value={formData.lastName}
                          onChange={handleInputChange}
                          required
-                         className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
+                         className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
                          placeholder='Enter your last name'
                        />
                     </div>
@@ -215,7 +215,7 @@ export default function ContactUsPage() {
                        value={formData.email}
                        onChange={handleInputChange}
                        required
-                       className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
+                       className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
                        placeholder='Enter your email address'
                      />
                   </div>
@@ -234,7 +234,7 @@ export default function ContactUsPage() {
                        value={formData.inquiryType}
                        onChange={handleInputChange}
                        required
-                       className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
+                       className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
                      >
                       {inquiryTypes.map((type) => (
                         <option key={type.value} value={type.value}>
@@ -259,7 +259,7 @@ export default function ContactUsPage() {
                        onChange={handleInputChange}
                        required
                        rows={5}
-                       className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200 resize-none'
+                       className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200 resize-none'
                        placeholder='Enter your message here...'
                      />
                     <p className='text-xs text-gray-500 mt-1'>
