@@ -208,11 +208,7 @@ export default function TranslationWidget() {
       }
 
       try {
-        console.log('API Key being used:', key ? `${key.substring(0, 15)}...` : 'MISSING');
-        console.log('API Key Status:', key ? 'PROVIDED' : 'MISSING');
-        console.log('API Key Length:', key ? key.length : 'N/A');
-        console.log('API Key starts with pk_:', key ? key.startsWith('pk_') : 'N/A');
-        console.log('API Key verified with JigsawStack - deploying with NEW API key after plan upgrade!');
+
         
         // Clear any existing widgets to prevent conflicts
         const existingWidgets = document.querySelectorAll('.jigts-translation-widget');
@@ -253,9 +249,7 @@ export default function TranslationWidget() {
 
         // Check for previously saved language preference
         const savedLanguage = localStorage.getItem('jss-pref');
-        if (process.env.NODE_ENV === 'development') {
-          console.log('Saved language preference:', savedLanguage);
-        }
+
 
         // Test direct API call to verify authentication
         fetch('https://api.jigsawstack.com/v1/ai/translate', {
@@ -269,7 +263,6 @@ export default function TranslationWidget() {
             target_language: 'ja'
           })
         }).then(response => {
-          console.log('Direct API test response status:', response.status);
           if (!response.ok) {
             console.error('Direct API test failed:', response.status, response.statusText);
           }
@@ -324,7 +317,7 @@ export default function TranslationWidget() {
                     (button as HTMLElement).click();
                     found = true;
                     if (process.env.NODE_ENV === 'development') {
-                      console.log('Translation triggered via button click for:', langCode);
+
                     }
                   }
                 });
@@ -333,7 +326,7 @@ export default function TranslationWidget() {
                 if (!found && window.translate) {
                   window.translate(langCode);
                   if (process.env.NODE_ENV === 'development') {
-                    console.log('Translation triggered via direct API for:', langCode);
+
                   }
                 }
 
@@ -350,13 +343,13 @@ export default function TranslationWidget() {
             // Auto-restore previously saved language if available
             if (savedLanguage && savedLanguage !== 'en') {
               if (process.env.NODE_ENV === 'development') {
-                console.log('Auto-restoring language:', savedLanguage);
+
               }
               setTimeout(() => {
                 if (window.customTranslate) {
                   window.customTranslate(savedLanguage);
                   if (process.env.NODE_ENV === 'development') {
-                    console.log('Language restored successfully:', savedLanguage);
+
                   }
                 }
               }, 300); // Faster language restoration

@@ -83,14 +83,14 @@ export default function CustomTranslation() {
   const triggerTranslation = (langCode: string) => {
     if (typeof window === 'undefined') return;
     
-    console.log('Triggering translation for:', langCode);
+
     
     // Close dropdown
     setIsOpen(false);
     
     // Try using JigsawStack widget first (better layout preservation)
     if (window.customTranslate) {
-      console.log('Using JigsawStack widget translation...');
+
       window.customTranslate(langCode);
       return;
     }
@@ -101,7 +101,7 @@ export default function CustomTranslation() {
 
   // Direct API translation as fallback
   const triggerDirectTranslation = async (langCode: string) => {
-    console.log('Using direct API translation fallback...');
+
     
     try {
       // Get API key from environment
@@ -162,7 +162,7 @@ export default function CustomTranslation() {
         }
       });
 
-      console.log(`Found ${textsToTranslate.length} text elements to translate`);
+
 
       // Translate in smaller batches to avoid 400 errors
       const batchSize = 5; // Reduced from 10 to avoid overwhelming API
@@ -203,11 +203,11 @@ export default function CustomTranslation() {
               }
             });
             
-            console.log(`Translated batch ${Math.floor(i/batchSize) + 1}`);
+
           } else {
             console.error('Translation API error:', response.status, response.statusText);
             if (response.status === 400) {
-              console.log('Skipping problematic batch and continuing...');
+
               continue; // Continue with next batch instead of stopping
             }
             break; // Stop on other errors
@@ -223,14 +223,14 @@ export default function CustomTranslation() {
 
       // Save language preference
       localStorage.setItem('jss-pref', langCode);
-      console.log('Direct translation completed successfully');
+
       
     } catch (error) {
       console.error('Direct translation failed:', error);
       
       // Fallback to widget if direct translation fails
       if (window.customTranslate) {
-        console.log('Falling back to widget translation...');
+
         window.customTranslate(langCode);
       }
     }
