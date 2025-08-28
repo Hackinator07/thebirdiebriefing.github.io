@@ -16,6 +16,7 @@ const ALLOWED_LANGUAGES = [
   { code: 'ko', name: 'Korean', native: '한국어' },
   { code: 'th', name: 'Thai', native: 'ไทย' },
   { code: 'zh', name: 'Chinese', native: '中文' },
+  { code: 'tl', name: 'Tagalog', native: 'Tagalog' },
   { code: 'sv', name: 'Swedish', native: 'Svenska' },
   { code: 'no', name: 'Norwegian', native: 'Norsk' },
   { code: 'fr', name: 'French', native: 'Français' },

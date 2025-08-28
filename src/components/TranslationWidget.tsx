@@ -105,11 +105,12 @@ export default function TranslationWidget() {
       // Detect browser language and get appropriate loading message
       const browserLang = navigator.language.split('-')[0]; // Get primary language code
       const loadingMessages = {
-        ja: '翻訳を準備中です。少しお待ちください。',
-        ko: '번역을 준비하고 있습니다. 잠시만 기다려 주세요.',
-        th: 'กำลังเตรียมการแปลให้คุณ กรุณารอสักครู่',
-        zh: '我们正在为您准备翻译，请稍等片刻。',
-        sv: 'Vi förbereder din översättning. Bara en kort väntan.',
+                    ja: '翻訳を準備中です。少しお待ちください。',
+            ko: '번역을 준비하고 있습니다. 잠시만 기다려 주세요.',
+            th: 'กำลังเตรียมการแปลให้คุณ กรุณารอสักครู่',
+            zh: '我们正在为您准备翻译，请稍等片刻。',
+            tl: 'Inihahanda namin ang inyong pagsasalin. Sandali lang.',
+            sv: 'Vi förbereder din översättning. Bara en kort väntan.',
         no: 'Vi forbereder oversettelsen din. Bare en kort ventetid.',
         fr: 'Nous préparons votre traduction. Juste un court délai.',
         es: 'Estamos preparando tu traducción. Solo una breve espera.',
@@ -285,6 +286,7 @@ export default function TranslationWidget() {
             ko: '번역을 준備하고 있습니다. 잠시만 기다려 주세요.',
             th: 'กำลังเตรียมการแปลให้คุณ กรุณารอสักครู่',
             zh: '我们正在为您准备翻译，请稍等片刻。',
+            tl: 'Inihahanda namin ang inyong pagsasalin. Sandali lang.',
             sv: 'Vi förbereder din översättning. Bara en kort väntan.',
             no: 'Vi forbereder oversettelsen din. Bare et kort øyeblikk.',
             fr: 'Nous préparons votre traduction. Un court instant.',
@@ -364,7 +366,7 @@ export default function TranslationWidget() {
     };
 
     const filterLanguages = (callback?: () => void) => {
-      const allowedLanguages = ['en', 'ja', 'ko', 'th', 'zh', 'sv', 'no', 'fr', 'es', 'de'];
+      const allowedLanguages = ['en', 'ja', 'ko', 'th', 'zh', 'tl', 'sv', 'no', 'fr', 'es', 'de'];
 
       // Function to hide unwanted language elements
       const hideUnwantedLanguages = () => {
