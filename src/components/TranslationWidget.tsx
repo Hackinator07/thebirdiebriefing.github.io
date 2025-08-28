@@ -142,14 +142,36 @@ export default function TranslationWidget() {
           to {transform: rotate(360deg);}
         }
         
-        /* Hide JigsawStack widget off-screen but keep it accessible */
-        .jigts-translation-widget {
+        /* Completely hide JigsawStack widget UI but keep it functional */
+        .jigts-translation-widget,
+        .jigts-language-dropdown,
+        .jigts-widget-container {
           position: fixed !important;
-          top: 20px !important;
-          right: 20px !important;
-          z-index: 999999 !important;
-          opacity: 0.1 !important;
+          top: -9999px !important;
+          left: -9999px !important;
+          width: 1px !important;
+          height: 1px !important;
+          opacity: 0 !important;
+          visibility: hidden !important;
           pointer-events: auto !important;
+          z-index: -1 !important;
+        }
+        
+        /* Prevent JigsawStack from modifying page layout */
+        .jigts-translated {
+          display: contents !important;
+        }
+        
+        /* Preserve original styling during translation */
+        * {
+          box-sizing: border-box !important;
+        }
+        
+        /* Ensure our custom dropdown is never translated */
+        .notranslate,
+        [translate="no"] {
+          -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
         }
       `;
 

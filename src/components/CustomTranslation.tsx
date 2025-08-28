@@ -79,11 +79,29 @@ export default function CustomTranslation() {
     triggerTranslation(langCode);
   };
 
-  // Function to trigger direct API translation (bypassing buggy widget)
-  const triggerTranslation = async (langCode: string) => {
+  // Function to trigger JigsawStack translation with fallback to direct API
+  const triggerTranslation = (langCode: string) => {
     if (typeof window === 'undefined') return;
     
-    console.log('Triggering direct translation for:', langCode);
+    console.log('Triggering translation for:', langCode);
+    
+    // Close dropdown
+    setIsOpen(false);
+    
+    // Try using JigsawStack widget first (better layout preservation)
+    if (window.customTranslate) {
+      console.log('Using JigsawStack widget translation...');
+      window.customTranslate(langCode);
+      return;
+    }
+    
+    // Fallback to direct API if widget not available
+    triggerDirectTranslation(langCode);
+  };
+
+  // Direct API translation as fallback
+  const triggerDirectTranslation = async (langCode: string) => {
+    console.log('Using direct API translation fallback...');
     
     try {
       // Get API key from environment
@@ -92,28 +110,52 @@ export default function CustomTranslation() {
         console.error('API key not available');
         return;
       }
-
-      // Show loading state
-      setIsOpen(false);
       
-      // Get all text content from the page, excluding notranslate elements
-      const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, a, button, label');
+      // Get specific text content from the page, excluding notranslate elements and layout elements
+      const textSelectors = [
+        'main h1', 'main h2', 'main h3', 'main h4', 'main h5', 'main h6', // Only main content headings
+        'main p', // Only main content paragraphs
+        'article h1', 'article h2', 'article h3', 'article h4', 'article h5', 'article h6',
+        'article p',
+        '.content h1', '.content h2', '.content h3', '.content h4', '.content h5', '.content h6',
+        '.content p'
+      ];
+      
+      const textElements = document.querySelectorAll(textSelectors.join(', '));
       const textsToTranslate: string[] = [];
       const elementMap: Element[] = [];
       
       textElements.forEach(element => {
         // Skip elements with notranslate class or inside notranslate containers
-        if (element.classList.contains('notranslate') || element.closest('.notranslate')) {
+        if (element.classList.contains('notranslate') || 
+            element.closest('.notranslate') ||
+            element.closest('nav') || // Skip navigation
+            element.closest('header') || // Skip header
+            element.closest('footer') || // Skip footer
+            element.closest('[class*="translate"]') // Skip translation-related elements
+        ) {
           return;
         }
         
+        // Only translate elements that have direct text content (not just child elements)
         const text = element.textContent?.trim();
+        const hasOnlyTextContent = element.children.length === 0 || 
+                                  Array.from(element.children).every(child => 
+                                    child.tagName === 'BR' || 
+                                    child.tagName === 'SPAN' ||
+                                    child.tagName === 'STRONG' ||
+                                    child.tagName === 'EM'
+                                  );
+        
         if (text && 
-            text.length > 1 && 
-            text.length < 500 && // Skip very long text blocks that might cause 400 errors
+            hasOnlyTextContent &&
+            text.length > 3 && 
+            text.length < 300 && // Conservative length limit
             !text.match(/^[0-9\s\.\,\-\+\=\(\)\[\]\{\}]+$/) && // Skip number-only text
             !text.match(/^https?:\/\//) && // Skip URLs
-            !text.includes('javascript:') // Skip JS code
+            !text.includes('javascript:') && // Skip JS code
+            !text.includes('class=') && // Skip HTML-like content
+            !text.includes('src=') // Skip HTML attributes
         ) {
           textsToTranslate.push(text);
           elementMap.push(element);
@@ -202,7 +244,7 @@ export default function CustomTranslation() {
   };
 
   return (
-    <div className="relative flex items-center gap-2 notranslate" ref={dropdownRef}>
+    <div className="relative flex items-center gap-2 notranslate" ref={dropdownRef} translate="no">
       {/* Language Code Display */}
       <span 
         className="font-mono font-bold text-gray-600 tracking-wider uppercase select-none"
@@ -236,10 +278,10 @@ export default function CustomTranslation() {
 
       {/* Dropdown */}
       {isOpen && (
-        <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50 notranslate">
+        <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50 notranslate" translate="no">
           {/* Header */}
-          <div className="p-4 border-b border-gray-200">
-            <h3 className="text-sm font-medium text-gray-900 mb-2">Select Language</h3>
+          <div className="p-4 border-b border-gray-200 notranslate">
+            <h3 className="text-sm font-medium text-gray-900 mb-2 notranslate">Select Language</h3>
             {/* Search Input */}
             <input
               ref={searchInputRef}
@@ -252,9 +294,9 @@ export default function CustomTranslation() {
           </div>
 
           {/* Language List */}
-          <div className="max-h-64 overflow-y-auto">
+          <div className="max-h-64 overflow-y-auto notranslate">
             {filteredLanguages.length > 0 ? (
-              <div className="py-2">
+              <div className="py-2 notranslate">
                 {filteredLanguages.map((language) => (
                   <button
                     key={language.code}
