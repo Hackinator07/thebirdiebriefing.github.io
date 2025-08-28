@@ -41,8 +41,14 @@ export default async function Home() {
 
                 {/* Author Attribution */}
                 <div className="flex items-center justify-center space-x-4 mb-8">
-                  <div className="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-base font-heading">M</span>
+                  <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                    <Image
+                      src="/images/birdie-briefing-4040.png"
+                      alt="Marie Hack"
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="text-left">
                     <p className="font-medium text-gray-900">Marie Hack</p>
