@@ -186,6 +186,9 @@ export default function TranslationWidget() {
       }
 
       try {
+        console.log('API Key being used:', key ? `${key.substring(0, 10)}...` : 'MISSING');
+        console.log('Full API Key:', key);
+        
         // Create and show loading overlay
         const loadingOverlay = createLoadingOverlay();
 
