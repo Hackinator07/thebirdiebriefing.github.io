@@ -245,13 +245,16 @@ export default function CustomTranslation() {
 
   return (
     <div className="relative flex items-center gap-2 notranslate" ref={dropdownRef} translate="no">
-      {/* Language Display */}
-      <span 
-        className="font-medium text-gray-700 select-none notranslate"
+      {/* Clickable Language Display */}
+      <button
+        onClick={toggleDropdown}
+        className="font-medium text-gray-700 select-none notranslate hover:text-primary-500 transition-colors duration-200 cursor-pointer"
         translate="no"
+        type="button"
+        aria-label="Select language for translation"
       >
         {ALLOWED_LANGUAGES.find(lang => lang.code === selectedLanguage)?.native || selectedLanguage.toUpperCase()}
-      </span>
+      </button>
       
       {/* Translation Icon Button */}
       <button
