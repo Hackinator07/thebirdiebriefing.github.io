@@ -83,34 +83,50 @@ export default function CustomTranslation() {
   const triggerTranslation = (langCode: string) => {
     if (typeof window === 'undefined') return;
     
-    // Use the globally exposed custom translation function
+    console.log('Triggering translation for:', langCode);
+    
+    // Method 1: Try the globally exposed custom translation function
     if (window.customTranslate) {
       window.customTranslate(langCode);
-      if (process.env.NODE_ENV === 'development') {
-        console.log('Translation triggered via global customTranslate for:', langCode);
-      }
-    } else {
-      // Fallback for when the global function isn't ready yet
-      if (process.env.NODE_ENV === 'development') {
-        console.log('Global customTranslate not ready, trying fallback methods...');
-      }
-      
-      setTimeout(() => {
-        if (window.customTranslate) {
-          window.customTranslate(langCode);
-        } else {
-          // Last resort: try DOM interaction
-          const languageButtons = document.querySelectorAll('.jigts-language-item');
-          languageButtons.forEach((button) => {
-            const buttonLangCode = button.getAttribute('data-language-code') || 
-                                  button.getAttribute('data-lang');
-            if (buttonLangCode === langCode) {
-              (button as HTMLElement).click();
-            }
-          });
-        }
-      }, 500);
+      return;
     }
+    
+    // Method 2: Wait and try to interact with the actual JigsawStack widget
+    setTimeout(() => {
+      console.log('Looking for JigsawStack widget elements...');
+      
+      // Look for the main widget button first
+      const widgetButton = document.querySelector('.jigts-translation-widget') as HTMLElement;
+      if (widgetButton) {
+        console.log('Found widget button, clicking to open...');
+        widgetButton.click();
+        
+        // Wait for dropdown to appear, then find language option
+        setTimeout(() => {
+          const languageOptions = document.querySelectorAll('.jigts-language-item, [data-language-code]');
+          console.log('Found language options:', languageOptions.length);
+          
+          for (const option of languageOptions) {
+            const optionLangCode = option.getAttribute('data-language-code') || 
+                                 option.getAttribute('data-lang') ||
+                                 option.textContent?.toLowerCase().trim();
+            
+            console.log('Checking option:', optionLangCode, 'vs target:', langCode);
+            
+            if (optionLangCode === langCode || optionLangCode?.includes(langCode)) {
+              console.log('Found matching language option, clicking...');
+              (option as HTMLElement).click();
+              localStorage.setItem('jss-pref', langCode);
+              return;
+            }
+          }
+          
+          console.log('No matching language option found');
+        }, 300);
+      } else {
+        console.log('Widget button not found');
+      }
+    }, 100);
   };
 
   const toggleDropdown = () => {
