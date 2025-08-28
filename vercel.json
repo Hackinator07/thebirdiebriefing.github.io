@@ -1,0 +1,26 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "out",
+  "trailingSlash": false,
+  "cleanUrls": true,
+  "env": {
+    "NEXT_PUBLIC_TRANSLATION_WIDGET_KEY": "@translation_widget_key"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_TRANSLATION_WIDGET_KEY": "@translation_widget_key"
+    }
+  },
+  "functions": {
+    "app/**": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html",
+      "statusCode": 404
+    }
+  ]
+}
