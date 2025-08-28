@@ -17,7 +17,9 @@ declare global {
         showUI?: boolean;
         loadingMessage?: Record<string, string>;
       }
-    ) => void;
+    ) => any;
+    jigsawTranslationInstance: any;
+    customTranslate: (langCode: string) => void;
     translate: (langCode: string) => Promise<any>;
     resetTranslation: (defaultLang: string) => void;
   }
@@ -140,13 +142,16 @@ export default function TranslationWidget() {
           to {transform: rotate(360deg);}
         }
         
-        /* Hide JigsawStack widget off-screen */
+        /* Hide JigsawStack widget off-screen but keep it accessible */
         .jigts-translation-widget {
           position: fixed !important;
           top: -9999px !important;
           right: -9999px !important;
-          visibility: hidden !important;
-          opacity: 0 !important;
+          width: 1px !important;
+          height: 1px !important;
+          overflow: hidden !important;
+          clip: rect(1px, 1px, 1px, 1px) !important;
+          pointer-events: auto !important;
         }
       `;
 
@@ -218,7 +223,8 @@ export default function TranslationWidget() {
           console.log('Saved language preference:', savedLanguage);
         }
 
-        window.TranslationWidget(key, {
+        // Store the widget instance globally for custom UI access
+        window.jigsawTranslationInstance = window.TranslationWidget(key, {
           pageLanguage: 'en',
           position: 'top-right',
           autoDetectLanguage: false,
@@ -248,24 +254,56 @@ export default function TranslationWidget() {
             showWidget();
             removeLoadingOverlay(loadingOverlay);
             
+            // Expose custom translation function globally
+            window.customTranslate = (langCode: string) => {
+              try {
+                // Method 1: Try to find and click the language in the widget
+                const languageButtons = document.querySelectorAll('.jigts-language-item, [data-language-code], [data-lang]');
+                let found = false;
+                
+                languageButtons.forEach((button) => {
+                  const buttonLangCode = button.getAttribute('data-language-code') || 
+                                        button.getAttribute('data-lang') ||
+                                        button.textContent?.toLowerCase().trim();
+                  
+                  if (buttonLangCode === langCode || buttonLangCode?.includes(langCode)) {
+                    (button as HTMLElement).click();
+                    found = true;
+                    if (process.env.NODE_ENV === 'development') {
+                      console.log('Translation triggered via button click for:', langCode);
+                    }
+                  }
+                });
+
+                // Method 2: Try direct API if available
+                if (!found && window.translate) {
+                  window.translate(langCode);
+                  if (process.env.NODE_ENV === 'development') {
+                    console.log('Translation triggered via direct API for:', langCode);
+                  }
+                }
+
+                // Save preference
+                localStorage.setItem('jss-pref', langCode);
+                
+              } catch (error) {
+                if (process.env.NODE_ENV === 'development') {
+                  console.error('Translation trigger failed:', error);
+                }
+              }
+            };
+            
             // Auto-restore previously saved language if available
             if (savedLanguage && savedLanguage !== 'en') {
               if (process.env.NODE_ENV === 'development') {
                 console.log('Auto-restoring language:', savedLanguage);
               }
               setTimeout(() => {
-                if (window.translate) {
-                  window.translate(savedLanguage)
-                    .then((result) => {
-                      if (process.env.NODE_ENV === 'development') {
-                        console.log('Language restored successfully:', result);
-                      }
-                    })
-                    .catch((error) => {
-                      if (process.env.NODE_ENV === 'development') {
-                        console.warn('Failed to restore language:', error);
-                      }
-                    });
+                if (window.customTranslate) {
+                  window.customTranslate(savedLanguage);
+                  if (process.env.NODE_ENV === 'development') {
+                    console.log('Language restored successfully:', savedLanguage);
+                  }
                 }
               }, 300); // Faster language restoration
             }

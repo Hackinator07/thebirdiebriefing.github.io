@@ -2,6 +2,13 @@
 
 import { useState, useEffect, useRef } from 'react';
 
+// Global window interface extension
+declare global {
+  interface Window {
+    customTranslate: (langCode: string) => void;
+  }
+}
+
 // Language configuration matching TranslationWidget
 const ALLOWED_LANGUAGES = [
   { code: 'en', name: 'English', native: 'English' },
@@ -76,56 +83,34 @@ export default function CustomTranslation() {
   const triggerTranslation = (langCode: string) => {
     if (typeof window === 'undefined') return;
     
-    // First, try to access JigsawStack's global API if available
-    try {
-      // Check if JigsawStack widget is available globally
-      if (typeof window.TranslationWidget === 'function' && process.env.NEXT_PUBLIC_TRANSLATION_WIDGET_KEY) {
-        // Try to call JigsawStack's translate function directly
-        const translateEvent = new CustomEvent('jigsawTranslate', { 
-          detail: { targetLanguage: langCode } 
-        });
-        window.dispatchEvent(translateEvent);
-      }
-    } catch (error) {
+    // Use the globally exposed custom translation function
+    if (window.customTranslate) {
+      window.customTranslate(langCode);
       if (process.env.NODE_ENV === 'development') {
-        console.log('Direct API call failed:', error);
+        console.log('Translation triggered via global customTranslate for:', langCode);
       }
+    } else {
+      // Fallback for when the global function isn't ready yet
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Global customTranslate not ready, trying fallback methods...');
+      }
+      
+      setTimeout(() => {
+        if (window.customTranslate) {
+          window.customTranslate(langCode);
+        } else {
+          // Last resort: try DOM interaction
+          const languageButtons = document.querySelectorAll('.jigts-language-item');
+          languageButtons.forEach((button) => {
+            const buttonLangCode = button.getAttribute('data-language-code') || 
+                                  button.getAttribute('data-lang');
+            if (buttonLangCode === langCode) {
+              (button as HTMLElement).click();
+            }
+          });
+        }
+      }, 500);
     }
-
-    // Fallback: Try to interact with the hidden widget DOM elements
-    setTimeout(() => {
-      try {
-        // Look for language items in the hidden widget
-        const languageItems = document.querySelectorAll('.jigts-language-item[data-language-code="' + langCode + '"]');
-        if (languageItems.length > 0) {
-          (languageItems[0] as HTMLElement).click();
-          return;
-        }
-
-        // Alternative: try to find any language selection mechanism
-        const allLanguageItems = document.querySelectorAll('.jigts-language-item');
-        allLanguageItems.forEach(item => {
-          const itemLangCode = item.getAttribute('data-language-code') || 
-                              item.getAttribute('data-lang') ||
-                              item.textContent?.toLowerCase().includes(langCode);
-          if (itemLangCode === langCode) {
-            (item as HTMLElement).click();
-          }
-        });
-
-        // Last resort: dispatch a generic translation event
-        const fallbackEvent = new CustomEvent('requestTranslation', {
-          detail: { language: langCode },
-          bubbles: true
-        });
-        document.dispatchEvent(fallbackEvent);
-
-      } catch (error) {
-        if (process.env.NODE_ENV === 'development') {
-          console.log('DOM interaction failed:', error);
-        }
-      }
-    }, 50); // Faster fallback timing for production
   };
 
   const toggleDropdown = () => {
