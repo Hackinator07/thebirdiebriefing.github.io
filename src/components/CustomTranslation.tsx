@@ -245,12 +245,12 @@ export default function CustomTranslation() {
 
   return (
     <div className="relative flex items-center gap-2 notranslate" ref={dropdownRef} translate="no">
-      {/* Language Code Display */}
+      {/* Language Display */}
       <span 
-        className="font-mono font-bold text-gray-600 tracking-wider uppercase select-none"
-        style={{ fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace' }}
+        className="font-medium text-gray-700 select-none notranslate"
+        translate="no"
       >
-        {selectedLanguage.toUpperCase()}
+        {ALLOWED_LANGUAGES.find(lang => lang.code === selectedLanguage)?.native || selectedLanguage.toUpperCase()}
       </span>
       
       {/* Translation Icon Button */}
