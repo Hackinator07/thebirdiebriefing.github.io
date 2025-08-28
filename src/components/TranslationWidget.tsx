@@ -205,6 +205,13 @@ export default function TranslationWidget() {
           }
         };
 
+        // Fix URL routing issue in production
+        const currentUrl = window.location.href;
+        if (currentUrl.includes('/index.txt')) {
+          const correctedUrl = currentUrl.replace('/index.txt', '/');
+          window.history.replaceState({}, '', correctedUrl);
+        }
+
         // Check for previously saved language preference
         const savedLanguage = localStorage.getItem('jss-pref');
         if (process.env.NODE_ENV === 'development') {
@@ -215,6 +222,10 @@ export default function TranslationWidget() {
           pageLanguage: 'en',
           position: 'top-right',
           autoDetectLanguage: false,
+          preserveUrls: true,
+          urlRewriting: false,
+          baseUrl: 'https://www.birdiebriefing.com',
+          staticSite: true,
           theme: {
             baseColor: '#ad345a',
             textColor: '#F8F6F2'
