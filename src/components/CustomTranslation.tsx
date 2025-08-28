@@ -178,7 +178,7 @@ export default function CustomTranslation() {
   };
 
   return (
-    <div className="relative flex items-center gap-2" ref={dropdownRef}>
+    <div className="relative flex items-center gap-2 notranslate" ref={dropdownRef}>
       {/* Language Code Display */}
       <span 
         className="font-mono font-bold text-gray-600 tracking-wider uppercase select-none"
@@ -212,7 +212,7 @@ export default function CustomTranslation() {
 
       {/* Dropdown */}
       {isOpen && (
-        <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+        <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50 notranslate">
           {/* Header */}
           <div className="p-4 border-b border-gray-200">
             <h3 className="text-sm font-medium text-gray-900 mb-2">Select Language</h3>
@@ -223,7 +223,7 @@ export default function CustomTranslation() {
               placeholder="Search languages..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 notranslate"
             />
           </div>
 
