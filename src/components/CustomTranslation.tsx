@@ -96,14 +96,25 @@ export default function CustomTranslation() {
       // Show loading state
       setIsOpen(false);
       
-      // Get all text content from the page
+      // Get all text content from the page, excluding notranslate elements
       const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, div, a, button, label');
       const textsToTranslate: string[] = [];
       const elementMap: Element[] = [];
       
       textElements.forEach(element => {
+        // Skip elements with notranslate class or inside notranslate containers
+        if (element.classList.contains('notranslate') || element.closest('.notranslate')) {
+          return;
+        }
+        
         const text = element.textContent?.trim();
-        if (text && text.length > 1 && !text.match(/^[0-9\s\.\,\-\+\=\(\)\[\]\{\}]+$/)) {
+        if (text && 
+            text.length > 1 && 
+            text.length < 500 && // Skip very long text blocks that might cause 400 errors
+            !text.match(/^[0-9\s\.\,\-\+\=\(\)\[\]\{\}]+$/) && // Skip number-only text
+            !text.match(/^https?:\/\//) && // Skip URLs
+            !text.includes('javascript:') // Skip JS code
+        ) {
           textsToTranslate.push(text);
           elementMap.push(element);
         }
@@ -111,12 +122,21 @@ export default function CustomTranslation() {
 
       console.log(`Found ${textsToTranslate.length} text elements to translate`);
 
-      // Translate in batches to avoid overwhelming the API
-      const batchSize = 10;
+      // Translate in smaller batches to avoid 400 errors
+      const batchSize = 5; // Reduced from 10 to avoid overwhelming API
       for (let i = 0; i < textsToTranslate.length; i += batchSize) {
         const batch = textsToTranslate.slice(i, i + batchSize);
         
         try {
+          // Clean and validate the batch
+          const cleanBatch = batch.filter(text => 
+            text.length > 0 && 
+            text.length < 300 && // Further limit text length
+            !text.includes('\n\n') // Avoid texts with multiple line breaks
+          );
+          
+          if (cleanBatch.length === 0) continue;
+          
           const response = await fetch('https://api.jigsawstack.com/v1/ai/translate', {
             method: 'POST',
             headers: {
@@ -124,14 +144,14 @@ export default function CustomTranslation() {
               'x-api-key': apiKey
             },
             body: JSON.stringify({
-              text: batch.join('\n'),
+              text: cleanBatch.join(' | '), // Use separator instead of newlines
               target_language: langCode
             })
           });
 
           if (response.ok) {
             const result = await response.json();
-            const translations = result.translated_text?.split('\n') || [];
+            const translations = result.translated_text?.split(' | ') || [];
             
             // Apply translations to elements
             translations.forEach((translation: string, index: number) => {
@@ -144,15 +164,19 @@ export default function CustomTranslation() {
             console.log(`Translated batch ${Math.floor(i/batchSize) + 1}`);
           } else {
             console.error('Translation API error:', response.status, response.statusText);
-            break; // Stop on first error
+            if (response.status === 400) {
+              console.log('Skipping problematic batch and continuing...');
+              continue; // Continue with next batch instead of stopping
+            }
+            break; // Stop on other errors
           }
         } catch (error) {
           console.error('Translation request failed:', error);
-          break;
+          continue; // Continue with next batch
         }
         
-        // Small delay between batches
-        await new Promise(resolve => setTimeout(resolve, 200));
+        // Longer delay between batches to avoid rate limiting
+        await new Promise(resolve => setTimeout(resolve, 500));
       }
 
       // Save language preference
@@ -235,14 +259,14 @@ export default function CustomTranslation() {
                   <button
                     key={language.code}
                     onClick={() => handleLanguageSelect(language.code)}
-                    className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors duration-150 ${
+                    className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors duration-150 notranslate ${
                       selectedLanguage === language.code ? 'bg-primary-50 text-primary-700' : 'text-gray-700'
                     }`}
                     type="button"
                   >
-                    <div className="flex justify-between items-center">
-                      <span className="font-medium">{language.name}</span>
-                      <span className="text-gray-500 text-xs">{language.native}</span>
+                    <div className="flex justify-between items-center notranslate">
+                      <span className="font-medium notranslate">{language.name}</span>
+                      <span className="text-gray-500 text-xs notranslate">{language.native}</span>
                     </div>
                   </button>
                 ))}
