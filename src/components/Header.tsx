@@ -154,8 +154,7 @@ export default function Header() {
                     
                     {/* Mobile Translation Section */}
                     <div className="pt-4 mt-4 border-t border-gray-200 notranslate">
-                      <div className="flex items-center justify-between py-3 -mx-6 px-6 notranslate">
-                        <span className="font-medium text-gray-700 notranslate">Translate</span>
+                      <div className="flex items-center py-3 -mx-6 px-6 notranslate">
                         <CustomTranslation />
                       </div>
                     </div>
