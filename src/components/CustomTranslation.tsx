@@ -244,11 +244,11 @@ export default function CustomTranslation() {
   };
 
   return (
-    <div className="relative flex items-center gap-2 notranslate" ref={dropdownRef} translate="no">
+    <div className="relative flex items-center gap-2 notranslate group" ref={dropdownRef} translate="no">
       {/* Clickable Language Display */}
       <button
         onClick={toggleDropdown}
-        className="font-medium text-gray-700 select-none notranslate hover:text-primary-500 transition-colors duration-200 cursor-pointer"
+        className="font-medium text-gray-700 select-none notranslate group-hover:text-primary-500 transition-colors duration-200 cursor-pointer"
         translate="no"
         type="button"
         aria-label="Select language for translation"
@@ -259,7 +259,7 @@ export default function CustomTranslation() {
       {/* Translation Icon Button */}
       <button
         onClick={toggleDropdown}
-        className="flex items-center justify-center w-6 h-6 text-gray-700 hover:text-primary-500 transition-colors duration-200"
+        className="flex items-center justify-center w-6 h-6 text-gray-700 group-hover:text-primary-500 transition-colors duration-200"
         aria-label="Select language for translation"
         type="button"
       >
