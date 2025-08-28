@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import CustomTranslation from './CustomTranslation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,7 +57,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => {
               const isActive = isLinkActive(item.href);
               return (
@@ -73,6 +74,12 @@ export default function Header() {
                 </Link>
               );
             })}
+            
+            {/* Vertical Divider */}
+            <div className="h-5 w-px bg-black"></div>
+            
+            {/* Custom Translation Icon */}
+            <CustomTranslation />
           </nav>
 
           {/* Mobile menu button */}
@@ -144,6 +151,14 @@ export default function Header() {
                         </Link>
                       );
                     })}
+                    
+                    {/* Mobile Translation Section */}
+                    <div className="pt-4 mt-4 border-t border-gray-200">
+                      <div className="flex items-center justify-between py-3 -mx-6 px-6">
+                        <span className="font-medium text-gray-700">Translate</span>
+                        <CustomTranslation />
+                      </div>
+                    </div>
                   </div>
                 </nav>
 

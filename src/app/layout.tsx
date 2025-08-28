@@ -49,7 +49,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <Analytics />
-        {process.env.NODE_ENV === 'production' && <TranslationWidget />}
+        <TranslationWidget />
       </body>
     </html>
   );

@@ -18,6 +18,8 @@ declare global {
         loadingMessage?: Record<string, string>;
       }
     ) => void;
+    translate: (langCode: string) => Promise<any>;
+    resetTranslation: (defaultLang: string) => void;
   }
 }
 
@@ -31,11 +33,11 @@ export default function TranslationWidget() {
       overlay.id = 'jigts-loading-overlay';
       overlay.style.cssText = `
         position: fixed;
-        top: 0;
-        right: 0;
+        top: -9999px;
+        right: -9999px;
         width: 120px;
         height: 80px;
-        background: #67405C;
+        background: #ad345a;
         border-radius: 8px;
         margin: 20px;
         display: flex;
@@ -137,6 +139,15 @@ export default function TranslationWidget() {
           from {transform: rotate(0);}
           to {transform: rotate(360deg);}
         }
+        
+        /* Hide JigsawStack widget off-screen */
+        .jigts-translation-widget {
+          position: fixed !important;
+          top: -9999px !important;
+          right: -9999px !important;
+          visibility: hidden !important;
+          opacity: 0 !important;
+        }
       `;
 
       document.head.appendChild(style);
@@ -164,8 +175,10 @@ export default function TranslationWidget() {
       const key = process.env.NEXT_PUBLIC_TRANSLATION_WIDGET_KEY;
 
       if (!key) {
-        // Widget requires an API key to function
-        console.info('TranslationWidget: No API key provided. Translation widget disabled.');
+        // Widget requires an API key to function - silent fail in production
+        if (process.env.NODE_ENV === 'development') {
+          console.info('TranslationWidget: No API key provided. Translation widget disabled.');
+        }
         return;
       }
 
@@ -192,18 +205,24 @@ export default function TranslationWidget() {
           }
         };
 
+        // Check for previously saved language preference
+        const savedLanguage = localStorage.getItem('jss-pref');
+        if (process.env.NODE_ENV === 'development') {
+          console.log('Saved language preference:', savedLanguage);
+        }
+
         window.TranslationWidget(key, {
           pageLanguage: 'en',
           position: 'top-right',
           autoDetectLanguage: false,
           theme: {
-            baseColor: '#67405C',
+            baseColor: '#ad345a',
             textColor: '#F8F6F2'
           },
           showUI: true,
           loadingMessage: {
             ja: '翻訳を準備中です。少しお待ちください。',
-            ko: '번역을 준비하고 있습니다. 잠시만 기다려 주세요.',
+            ko: '번역을 준備하고 있습니다. 잠시만 기다려 주세요.',
             th: 'กำลังเตรียมการแปลให้คุณ กรุณารอสักครู่',
             zh: '我们正在为您准备翻译，请稍等片刻。',
             sv: 'Vi förbereder din översättning. Bara en kort väntan.',
@@ -221,10 +240,34 @@ export default function TranslationWidget() {
           filterLanguages(() => {
             showWidget();
             removeLoadingOverlay(loadingOverlay);
+            
+            // Auto-restore previously saved language if available
+            if (savedLanguage && savedLanguage !== 'en') {
+              if (process.env.NODE_ENV === 'development') {
+                console.log('Auto-restoring language:', savedLanguage);
+              }
+              setTimeout(() => {
+                if (window.translate) {
+                  window.translate(savedLanguage)
+                    .then((result) => {
+                      if (process.env.NODE_ENV === 'development') {
+                        console.log('Language restored successfully:', result);
+                      }
+                    })
+                    .catch((error) => {
+                      if (process.env.NODE_ENV === 'development') {
+                        console.warn('Failed to restore language:', error);
+                      }
+                    });
+                }
+              }, 300); // Faster language restoration
+            }
           });
-        }, 2000); // Wait for widget to fully load
+        }, 1500); // Optimized timing for production
       } catch (error) {
-        console.error('TranslationWidget initialization error:', error);
+        if (process.env.NODE_ENV === 'development') {
+          console.error('TranslationWidget initialization error:', error);
+        }
       }
     };
 
