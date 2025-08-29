@@ -1,0 +1,486 @@
+{
+  "lastUpdated": "2025-08-25T10:20:00",
+  "type": "cme-globe",
+  "players": [
+    {
+      "id": 1,
+      "rank": 1,
+      "fullName": "Jeeno Thitikul",
+      "countryCode": "THA",
+      "points": 2299.950,
+      "events": 15
+    },
+    {
+      "id": 2,
+      "rank": 2,
+      "fullName": "Minjee Lee",
+      "countryCode": "AUS",
+      "points": 2245.295,
+      "events": 18
+    },
+    {
+      "id": 3,
+      "rank": 3,
+      "fullName": "Rio Takeda",
+      "countryCode": "JPN",
+      "points": 1743.118,
+      "events": 16
+    },
+    {
+      "id": 4,
+      "rank": 4,
+      "fullName": "Mao Saigo",
+      "countryCode": "JPN",
+      "points": 1600.692,
+      "events": 14
+    },
+    {
+      "id": 5,
+      "rank": 5,
+      "fullName": "Miyu Yamashita",
+      "countryCode": "JPN",
+      "points": 1583.528,
+      "events": 17
+    },
+    {
+      "id": 6,
+      "rank": 6,
+      "fullName": "Hyo Joo Kim",
+      "countryCode": "KOR",
+      "points": 1471.792,
+      "events": 16
+    },
+    {
+      "id": 7,
+      "rank": 7,
+      "fullName": "Nelly Korda",
+      "countryCode": "USA",
+      "points": 1425.796,
+      "events": 12
+    },
+    {
+      "id": 8,
+      "rank": 8,
+      "fullName": "Angel Yin",
+      "countryCode": "USA",
+      "points": 1411.000,
+      "events": 15
+    },
+    {
+      "id": 9,
+      "rank": 9,
+      "fullName": "Somi Lee",
+      "countryCode": "KOR",
+      "points": 1357.892,
+      "events": 18
+    },
+    {
+      "id": 10,
+      "rank": 10,
+      "fullName": "Akie Iwai",
+      "countryCode": "JPN",
+      "points": 1321.481,
+      "events": 16
+    },
+    {
+      "id": 11,
+      "rank": 11,
+      "fullName": "Hye-Jin Choi",
+      "countryCode": "KOR",
+      "points": 1223.486,
+      "events": 17
+    },
+    {
+      "id": 12,
+      "rank": 12,
+      "fullName": "A Lim Kim",
+      "countryCode": "KOR",
+      "points": 1206.275,
+      "events": 14
+    },
+    {
+      "id": 13,
+      "rank": 13,
+      "fullName": "Chisato Iwai",
+      "countryCode": "JPN",
+      "points": 1192.556,
+      "events": 15
+    },
+    {
+      "id": 14,
+      "rank": 14,
+      "fullName": "Jin Hee Im",
+      "countryCode": "KOR",
+      "points": 1162.376,
+      "events": 16
+    },
+    {
+      "id": 15,
+      "rank": 15,
+      "fullName": "Haeran Ryu",
+      "countryCode": "KOR",
+      "points": 1093.903,
+      "events": 18
+    },
+    {
+      "id": 16,
+      "rank": 16,
+      "fullName": "Lydia Ko",
+      "countryCode": "NZL",
+      "points": 1073.791,
+      "events": 14
+    },
+    {
+      "id": 17,
+      "rank": 17,
+      "fullName": "Yealimi Noh",
+      "countryCode": "USA",
+      "points": 1065.846,
+      "events": 16
+    },
+    {
+      "id": 18,
+      "rank": 18,
+      "fullName": "Carlota Ciganda",
+      "countryCode": "ESP",
+      "points": 1044.080,
+      "events": 15
+    },
+    {
+      "id": 19,
+      "rank": 19,
+      "fullName": "Celine Boutier",
+      "countryCode": "FRA",
+      "points": 1043.343,
+      "events": 17
+    },
+    {
+      "id": 20,
+      "rank": 20,
+      "fullName": "Lauren Coughlin",
+      "countryCode": "USA",
+      "points": 1042.895,
+      "events": 18
+    },
+    {
+      "id": 21,
+      "rank": 21,
+      "fullName": "Ariya Jutanugarn",
+      "countryCode": "THA",
+      "points": 1032.418,
+      "events": 16
+    },
+    {
+      "id": 22,
+      "rank": 22,
+      "fullName": "Ayaka Furue",
+      "countryCode": "JPN",
+      "points": 1010.333,
+      "events": 17
+    },
+    {
+      "id": 23,
+      "rank": 23,
+      "fullName": "Grace Kim",
+      "countryCode": "AUS",
+      "points": 986.045,
+      "events": 18
+    },
+    {
+      "id": 24,
+      "rank": 24,
+      "fullName": "Megan Khang",
+      "countryCode": "USA",
+      "points": 962.150,
+      "events": 16
+    },
+    {
+      "id": 25,
+      "rank": 25,
+      "fullName": "Ruoning Yin",
+      "countryCode": "CHN",
+      "points": 949.938,
+      "events": 15
+    },
+    {
+      "id": 26,
+      "rank": 26,
+      "fullName": "Brooke M. Henderson",
+      "countryCode": "CAN",
+      "points": 940.806,
+      "events": 17
+    },
+    {
+      "id": 27,
+      "rank": 27,
+      "fullName": "Jin Young Ko",
+      "countryCode": "KOR",
+      "points": 918.280,
+      "events": 14
+    },
+    {
+      "id": 28,
+      "rank": 28,
+      "fullName": "Andrea Lee",
+      "countryCode": "USA",
+      "points": 899.028,
+      "events": 18
+    },
+    {
+      "id": 29,
+      "rank": 29,
+      "fullName": "Charley Hull",
+      "countryCode": "ENG",
+      "points": 866.941,
+      "events": 16
+    },
+    {
+      "id": 30,
+      "rank": 30,
+      "fullName": "Esther Henseleit",
+      "countryCode": "GER",
+      "points": 863.896,
+      "events": 17
+    },
+    {
+      "id": 31,
+      "rank": 31,
+      "fullName": "Jennifer Kupcho",
+      "countryCode": "USA",
+      "points": 849.956,
+      "events": 15
+    },
+    {
+      "id": 32,
+      "rank": 32,
+      "fullName": "Maja Stark",
+      "countryCode": "SWE",
+      "points": 832.706,
+      "events": 16
+    },
+    {
+      "id": 33,
+      "rank": 33,
+      "fullName": "Lindy Duncan",
+      "countryCode": "USA",
+      "points": 832.023,
+      "events": 18
+    },
+    {
+      "id": 34,
+      "rank": 34,
+      "fullName": "Chanettee Wannasaen",
+      "countryCode": "THA",
+      "points": 793.712,
+      "events": 14
+    },
+    {
+      "id": 35,
+      "rank": 35,
+      "fullName": "Sei Young Kim",
+      "countryCode": "KOR",
+      "points": 791.052,
+      "events": 16
+    },
+    {
+      "id": 36,
+      "rank": 36,
+      "fullName": "Minami Katsu",
+      "countryCode": "JPN",
+      "points": 780.050,
+      "events": 17
+    },
+    {
+      "id": 37,
+      "rank": 37,
+      "fullName": "Linn Grant",
+      "countryCode": "SWE",
+      "points": 778.200,
+      "events": 15
+    },
+    {
+      "id": 38,
+      "rank": 38,
+      "fullName": "Auston Kim",
+      "countryCode": "USA",
+      "points": 772.886,
+      "events": 18
+    },
+    {
+      "id": 39,
+      "rank": 39,
+      "fullName": "Sarah Schmelzel",
+      "countryCode": "USA",
+      "points": 695.475,
+      "events": 16
+    },
+    {
+      "id": 40,
+      "rank": 40,
+      "fullName": "Stephanie Kyriacou",
+      "countryCode": "AUS",
+      "points": 683.840,
+      "events": 17
+    },
+    {
+      "id": 41,
+      "rank": 41,
+      "fullName": "Madelene Sagstrom",
+      "countryCode": "SWE",
+      "points": 650.950,
+      "events": 14
+    },
+    {
+      "id": 42,
+      "rank": 42,
+      "fullName": "Gaby Lopez",
+      "countryCode": "MEX",
+      "points": 650.583,
+      "events": 16
+    },
+    {
+      "id": 43,
+      "rank": 43,
+      "fullName": "Ingrid Lindblad",
+      "countryCode": "SWE",
+      "points": 632.934,
+      "events": 18
+    },
+    {
+      "id": 44,
+      "rank": 44,
+      "fullName": "Mi Hyang Lee",
+      "countryCode": "KOR",
+      "points": 607.603,
+      "events": 15
+    },
+    {
+      "id": 45,
+      "rank": 45,
+      "fullName": "Lottie Woad",
+      "countryCode": "ENG",
+      "points": 606.167,
+      "events": 16
+    },
+    {
+      "id": 46,
+      "rank": 46,
+      "fullName": "Nanna Koerstz Madsen",
+      "countryCode": "DEN",
+      "points": 591.508,
+      "events": 17
+    },
+    {
+      "id": 47,
+      "rank": 47,
+      "fullName": "Lexi Thompson",
+      "countryCode": "USA",
+      "points": 564.629,
+      "events": 14
+    },
+    {
+      "id": 48,
+      "rank": 48,
+      "fullName": "Allisen Corpuz",
+      "countryCode": "USA",
+      "points": 552.778,
+      "events": 16
+    },
+    {
+      "id": 49,
+      "rank": 49,
+      "fullName": "Jenny Bae",
+      "countryCode": "USA",
+      "points": 528.160,
+      "events": 18
+    },
+    {
+      "id": 50,
+      "rank": 50,
+      "fullName": "Leona Maguire",
+      "countryCode": "IRL",
+      "points": 525.807,
+      "events": 15
+    },
+    {
+      "id": 51,
+      "rank": 51,
+      "fullName": "Nasa Hataoka",
+      "countryCode": "JPN",
+      "points": 524.972,
+      "events": 16
+    },
+    {
+      "id": 52,
+      "rank": 52,
+      "fullName": "Hannah Green",
+      "countryCode": "AUS",
+      "points": 485.553,
+      "events": 17
+    },
+    {
+      "id": 53,
+      "rank": 53,
+      "fullName": "Patty Tavatanakit",
+      "countryCode": "THA",
+      "points": 461.630,
+      "events": 14
+    },
+    {
+      "id": 54,
+      "rank": 54,
+      "fullName": "Pajaree Anannarukarn",
+      "countryCode": "THA",
+      "points": 461.546,
+      "events": 16
+    },
+    {
+      "id": 55,
+      "rank": 55,
+      "fullName": "Manon De Roey",
+      "countryCode": "BEL",
+      "points": 444.263,
+      "events": 18
+    },
+    {
+      "id": 56,
+      "rank": 56,
+      "fullName": "Wei-Ling Hsu",
+      "countryCode": "TPE",
+      "points": 441.592,
+      "events": 15
+    },
+    {
+      "id": 57,
+      "rank": 57,
+      "fullName": "Miranda Wang",
+      "countryCode": "CHN",
+      "points": 400.401,
+      "events": 16
+    },
+    {
+      "id": 58,
+      "rank": 58,
+      "fullName": "Cassie Porter",
+      "countryCode": "AUS",
+      "points": 399.383,
+      "events": 17
+    },
+    {
+      "id": 59,
+      "rank": 59,
+      "fullName": "Yan Liu",
+      "countryCode": "CHN",
+      "points": 394.578,
+      "events": 14
+    },
+    {
+      "id": 60,
+      "rank": 60,
+      "fullName": "Jenny Shin",
+      "countryCode": "KOR",
+      "points": 385.992,
+      "events": 16
+    }
+  ]
+}

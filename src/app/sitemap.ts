@@ -1,19 +1,15 @@
-import type { MetadataRoute } from 'next';
-import { getArticles } from '@/lib/data';
+import { MetadataRoute } from 'next';
+import { getArticles } from '@/lib/articles';
 import { getConfig } from '@/lib/data';
 
 export const dynamic = 'force-static';
 
 function getBaseUrl(): string {
-  // For GitHub Pages deployment, use the correct base URL
-  // This should match your GitHub Pages domain
-  const envUrl = process.env.NEXT_PUBLIC_BASE_URL?.trim();
-  
-  if (envUrl && /^https?:\/\//i.test(envUrl)) {
-    return envUrl.replace(/\/$/, '');
+  // Check if we're in development or production
+  if (process.env.NODE_ENV === 'development') {
+    return 'http://localhost:3000';
   }
-  
-  // Use the custom domain from CNAME file
+
   return 'https://www.birdiebriefing.com';
 }
 
@@ -28,6 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/contact-us`, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${baseUrl}/podcast`, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${baseUrl}/rankings`, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${baseUrl}/rankings/cme-globe`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${baseUrl}/schedule`, changeFrequency: 'monthly', priority: 0.6 },
   ];
 

@@ -8,10 +8,13 @@ export default function Footer() {
       { name: 'Home', href: '/' },
       { name: 'News', href: '/news' },
       { name: 'Podcast', href: '/podcast' },
-      { name: 'Rankings', href: '/rankings' },
       { name: 'Schedule', href: '/schedule' },
       { name: 'About', href: '/about' },
       { name: 'Contact', href: '/contact-us' },
+    ],
+    rankings: [
+      { name: 'Rolex World Rankings', href: '/rankings' },
+      { name: 'CME Globe Rankings', href: '/rankings/cme-globe' },
     ],
     social: [
       {
@@ -79,39 +82,42 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter Signup Section - Spans 6 columns */}
-          <div className="lg:col-span-6">
-            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
-              <div className="text-center mb-6">
-                <h3 className="text-xl font-bold text-white mb-2">Stay Connected</h3>
-                <p className="text-gray-300 text-sm">
-                  Get the latest LPGA news, tournament updates, and exclusive content delivered to your inbox.
-                </p>
-              </div>
-              <NewsletterSignup />
-            </div>
+          {/* Rankings Links */}
+          <div className="lg:col-span-2">
+            <h3 className="text-lg font-semibold mb-4">Rankings</h3>
+            <ul className="space-y-3">
+              {navigation.rankings.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Newsletter Signup Section - Spans 4 columns */}
+          <div className="lg:col-span-4">
+            <h3 className="text-lg font-semibold mb-4">Stay Updated</h3>
+            <p className="text-gray-300 mb-4">
+              Get the latest LPGA news, tournament updates, and exclusive content delivered to your inbox.
+            </p>
+            <NewsletterSignup />
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
+        {/* Bottom Footer */}
+        <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex flex-col items-center md:items-start">
+            <p className="text-gray-400 text-sm">
+              © 2025 The Birdie Briefing. All rights reserved.
+            </p>
+            <div className="mt-4 md:mt-0">
               <p className="text-gray-400 text-sm">
-                © {new Date().getFullYear()} The Birdie Briefing. All rights reserved.
-              </p>
-            </div>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-            <p className="text-gray-500 text-xs mt-1">
-                Website developed by{' '}
-                <a
-                  href="https://foxsideweb.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
-                >
-                  Foxside Web Development
-                </a>
+                Celebrating women's golf and the LPGA Tour
               </p>
             </div>
           </div>
