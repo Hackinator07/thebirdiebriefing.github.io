@@ -86,7 +86,11 @@ export default async function Home() {
                     </svg>
                   </div>
                   <div className="text-left">
-                    <p className="font-medium text-gray-900">Marie Hack</p>
+                                         <p className="font-medium">
+                       <Link href="/about#marie-hack" className="text-primary-500 hover:text-primary-600 transition-colors">
+                         Marie Hack
+                       </Link>
+                     </p>
                     <p className="text-sm text-gray-600">Founder & Host</p>
                   </div>
                 </div>

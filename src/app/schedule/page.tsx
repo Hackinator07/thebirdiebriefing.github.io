@@ -41,34 +41,34 @@ export default function SchedulePage() {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Date
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Tournament
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Purse
-                    </th>
-                  </tr>
-                </thead>
+                                 <thead className="bg-gray-50">
+                   <tr>
+                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                       Date
+                     </th>
+                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                       Tournament
+                     </th>
+                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                       Purse
+                     </th>
+                   </tr>
+                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {schedule.tournaments.map((tournament) => (
-                    <tr key={tournament.id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        {tournament.date}
-                      </td>
-                                             <td className="px-6 py-4 text-sm text-gray-900">
+                                         <tr key={tournament.id} className="hover:bg-gray-50">
+                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                         {tournament.date}
+                       </td>
+                       <td className="px-6 py-4 text-sm text-gray-900">
                          <div className="space-y-1">
-                                                       <div className={`font-medium ${tournament.isMajor ? 'text-primary-600 font-bold' : ''} ${tournament.isExhibition ? 'italic text-gray-600' : ''}`}>
-                              <a
-                                href={tournament.website}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`${tournament.isMajor ? 'text-secondary-500 hover:text-secondary-700' : 'text-primary-500 hover:text-primary-700'} hover:underline transition-colors`}
-                              >
+                           <div className={`font-medium ${tournament.isMajor ? 'text-primary-600 font-bold' : ''} ${tournament.isExhibition ? 'italic text-gray-600' : ''}`}>
+                             <a
+                               href={tournament.website}
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               className={`${tournament.isMajor ? 'text-secondary-500 hover:text-secondary-700' : 'text-primary-500 hover:text-primary-700'} hover:underline transition-colors`}
+                             >
                                {tournament.title}
                              </a>
                            </div>
@@ -87,10 +87,10 @@ export default function SchedulePage() {
                            )}
                          </div>
                        </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        {tournament.purse}
-                      </td>
-                    </tr>
+                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                         {tournament.purse}
+                       </td>
+                     </tr>
                   ))}
                 </tbody>
               </table>
