@@ -134,13 +134,13 @@ export default async function Home() {
                 <div className="flex flex-col lg:flex-row h-full">
                   {/* Image */}
                   <div className="lg:w-1/2 lg:h-auto">
-                    <div className="h-full lg:min-h-[400px] bg-gray-200">
+                    <div className="h-full lg:min-h-[400px] bg-gray-200 flex items-center justify-center">
                       <Image
                         src={featuredArticle.image.src}
                         alt={featuredArticle.image.alt}
                         width={600}
                         height={375}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                         priority
                       />
                     </div>
