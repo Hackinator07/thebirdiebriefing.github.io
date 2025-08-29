@@ -22,9 +22,7 @@ export default function SchedulePage() {
               <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
             </div>
           </div>
-          <p className="text-lg text-gray-600 text-center">
-            Schedule Information provided by the LPGA
-          </p>
+
           <p className="text-sm text-gray-500 mt-2 text-center">
             Last updated {new Date(schedule.lastUpdated).toLocaleDateString('en-US', {
               year: 'numeric',
@@ -41,19 +39,22 @@ export default function SchedulePage() {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
-                                 <thead className="bg-gray-50">
-                   <tr>
-                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                       Date
-                     </th>
-                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                       Tournament
-                     </th>
-                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                       Purse
-                     </th>
-                   </tr>
-                 </thead>
+                                                 <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Date
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Tournament
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Winner
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Purse
+                    </th>
+                  </tr>
+                </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {schedule.tournaments.map((tournament) => (
                                          <tr key={tournament.id} className="hover:bg-gray-50">
@@ -80,16 +81,30 @@ export default function SchedulePage() {
                                Major Championship
                              </div>
                            )}
-                           {tournament.isExhibition && (
-                             <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                               Exhibition
-                             </div>
-                           )}
+                                                       {tournament.isExhibition && (
+                              <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                Exhibition
+                              </div>
+                            )}
+                            {tournament.isCancelled && (
+                              <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                Cancelled
+                              </div>
+                            )}
                          </div>
                        </td>
-                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                         {tournament.purse}
-                       </td>
+                                               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                          {tournament.winner && tournament.winner !== "N/A" ? (
+                            <span className="font-medium text-gray-900">{tournament.winner}</span>
+                          ) : tournament.winner === "N/A" ? (
+                            <span className="text-gray-400">N/A</span>
+                          ) : (
+                            <span className="text-gray-400">TBD</span>
+                          )}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          {tournament.purse}
+                        </td>
                      </tr>
                   ))}
                 </tbody>

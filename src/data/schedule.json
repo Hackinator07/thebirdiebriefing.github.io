@@ -9,7 +9,8 @@
       "location": "Lake Nona Golf & Country Club in Orlando, Florida",
       "purse": "$2M",
       "isMajor": false,
-      "website": "https://www.hgvtoc.com"
+      "website": "https://www.hgvtoc.com",
+      "winner": "A Lim Kim"
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "location": "Bradenton Country Club in Bradenton, Florida",
       "purse": "$2M",
       "isMajor": false,
-      "website": "https://www.thefounderslpga.com"
+      "website": "https://www.thefounderslpga.com",
+      "winner": "Yealimi Noh"
     },
     {
       "id": 3,
@@ -27,7 +29,8 @@
       "location": "Siam Country Club (Old Course) in Pattaya, Thailand",
       "purse": "$1.7M",
       "isMajor": false,
-      "website": "https://hondalpgathailand.com"
+      "website": "https://hondalpgathailand.com",
+      "winner": "Angel Yin"
     },
     {
       "id": 4,
@@ -36,7 +39,8 @@
       "location": "Sentosa Golf Club (Tanjong Course) in Singapore",
       "purse": "$2.4M",
       "isMajor": false,
-      "website": "https://www.hsbcgolf.com/womens"
+      "website": "https://www.hsbcgolf.com/womens",
+      "winner": "Lydia Ko"
     },
     {
       "id": 5,
@@ -45,7 +49,8 @@
       "location": "Jian Lake Blue Bay in Hainan, People's Rep. of China",
       "purse": "$2.5M",
       "isMajor": false,
-      "website": "https://www.lpga.com/tournaments/blue-bay-lpga"
+      "website": "https://www.lpga.com/tournaments/blue-bay-lpga",
+      "winner": "Rio Takeda"
     },
     {
       "id": 6,
@@ -54,7 +59,9 @@
       "location": "Palos Verdes Golf Club in Palos Verdes Estates, California",
       "purse": "$2M",
       "isMajor": false,
-      "website": "https://seripakchampionship.com"
+      "isCancelled": true,
+      "website": "https://seripakchampionship.com",
+      "winner": "N/A"
     },
     {
       "id": 7,
@@ -63,7 +70,8 @@
       "location": "Whirlwind Golf Club at Wild Horse Pass in Phoenix, Arizona",
       "purse": "$2.25M",
       "isMajor": false,
-      "website": "https://www.fordchampionship.com"
+      "website": "https://www.fordchampionship.com",
+      "winner": "Hyo Joo Kim"
     },
     {
       "id": 8,
@@ -72,7 +80,8 @@
       "location": "Shadow Creek Golf Course in North Las Vegas, Nevada",
       "purse": "$2M",
       "isMajor": false,
-      "website": "https://www.lpga.com/tournaments/t-mobile-match-play"
+      "website": "https://www.lpga.com/tournaments/t-mobile-match-play",
+      "winner": "Madelene Sagstrom"
     },
     {
       "id": 9,
@@ -81,7 +90,8 @@
       "location": "El Caballero Country Club in Los Angeles, California",
       "purse": "$3.75M",
       "isMajor": false,
-      "website": "https://jmeaglelachampionship.com"
+      "website": "https://jmeaglelachampionship.com",
+      "winner": "Ingrid Lindblad"
     },
     {
       "id": 10,
@@ -90,7 +100,8 @@
       "location": "The Club at Carlton Woods in The Woodlands, Texas",
       "purse": "$7.9M",
       "isMajor": true,
-      "website": "https://www.chevronchampionship.com"
+      "website": "https://www.chevronchampionship.com",
+      "winner": "Mao Saigo"
     },
     {
       "id": 11,
@@ -99,7 +110,8 @@
       "location": "Black Desert Resort in Ivins, Utah",
       "purse": "$3M",
       "isMajor": false,
-      "website": "https://blackdesertevents.com"
+      "website": "https://blackdesertevents.com",
+      "winner": "Haeran Ryu"
     },
     {
       "id": 12,
@@ -108,7 +120,8 @@
       "location": "Liberty National Golf Club in Jersey City, New Jersey",
       "purse": "$3M",
       "isMajor": false,
-      "website": "https://www.mizuhoamericasopen.com"
+      "website": "https://www.mizuhoamericasopen.com",
+      "winner": "Jeeno Thitikul"
     },
     {
       "id": 13,
@@ -117,7 +130,8 @@
       "location": "TBD in Cancun, Mexico",
       "purse": "$2.5M",
       "isMajor": false,
-      "website": "https://www.rivieramayaopen.com"
+      "website": "https://www.rivieramayaopen.com",
+      "winner": "Chisato Iwai"
     },
     {
       "id": 14,
@@ -126,7 +140,8 @@
       "location": "Erin Hills in Erin, Wisconsin",
       "purse": "$12M",
       "isMajor": true,
-      "website": "https://www.uswomensopen.com"
+      "website": "https://www.uswomensopen.com",
+      "winner": "Maja Stark"
     },
     {
       "id": 15,
@@ -135,7 +150,8 @@
       "location": "Seaview, A Dolce Hotel (Bay Course) in Galloway, New Jersey",
       "purse": "$1.75M",
       "isMajor": false,
-      "website": "https://www.shopritelpgaclassic.com"
+      "website": "https://www.shopritelpgaclassic.com",
+      "winner": "Jennifer Kupcho"
     },
     {
       "id": 16,
@@ -144,7 +160,8 @@
       "location": "Blythefield Country Club in Belmont, Michigan",
       "purse": "$3M",
       "isMajor": false,
-      "website": "https://www.meijerlpgaclassic.com"
+      "website": "https://www.meijerlpgaclassic.com",
+      "winner": "Carlota Ciganda"
     },
     {
       "id": 17,
@@ -153,7 +170,8 @@
       "location": "Fields Ranch East at PGA Frisco in Frisco, Texas",
       "purse": "$10.4M",
       "isMajor": true,
-      "website": "https://www.kpmgwomenspgachampionship.com"
+      "website": "https://www.kpmgwomenspgachampionship.com",
+      "winner": "Minjee Lee"
     },
     {
       "id": 18,
@@ -162,7 +180,8 @@
       "location": "Midland Country Club in Midland, Michigan",
       "purse": "$3.3M",
       "isMajor": false,
-      "website": "https://dowchampionship.com"
+      "website": "https://dowchampionship.com",
+      "winner": "Somi Lee, Jin Hee Im"
     },
     {
       "id": 19,
@@ -171,7 +190,8 @@
       "location": "Evian Resort Golf Club in Evian-les-Bains, France",
       "purse": "$8.0M",
       "isMajor": true,
-      "website": "https://www.evianchampionship.com"
+      "website": "https://www.evianchampionship.com",
+      "winner": "Grace Kim"
     },
     {
       "id": 20,
@@ -180,7 +200,8 @@
       "location": "Dundonald Links in Gailes, Ayrshire, Scotland",
       "purse": "$2M",
       "isMajor": false,
-      "website": "https://www.womensscottish.com"
+      "website": "https://www.womensscottish.com",
+      "winner": "Lottie Woad"
     },
     {
       "id": 21,
@@ -189,7 +210,8 @@
       "location": "Royal Porthcawl in Porthcawl, Wales, United Kingdom",
       "purse": "$9.5M",
       "isMajor": true,
-      "website": "https://www.aigwomensopen.com"
+      "website": "https://www.aigwomensopen.com",
+      "winner": "Miyu Yamashita"
     },
     {
       "id": 22,
@@ -198,7 +220,8 @@
       "location": "TBD in Portland, Oregon",
       "purse": "$2M",
       "isMajor": false,
-      "website": "https://www.portlandclassic.com"
+      "website": "https://www.portlandclassic.com",
+      "winner": "Akie Iwai"
     },
     {
       "id": 23,
@@ -207,7 +230,8 @@
       "location": "Mississaugua Golf & Country Club in Mississauga, Ontario, Canada",
       "purse": "$2.6M",
       "isMajor": false,
-      "website": "https://www.cpkcwomensopen.com"
+      "website": "https://www.cpkcwomensopen.com",
+      "winner": "Brooke M. Henderson"
     },
     {
       "id": 24,
@@ -216,7 +240,8 @@
       "location": "TPC Boston in Norton, Massachusetts",
       "purse": "$4.1M",
       "isMajor": false,
-      "website": "https://www.fmchampionship.com"
+      "website": "https://www.fmchampionship.com",
+      "winner": ""
     },
     {
       "id": 25,
@@ -225,7 +250,8 @@
       "location": "TPC River's Bend in Maineville, Ohio",
       "purse": "$2M",
       "isMajor": false,
-      "website": "https://queencitylpga.com"
+      "website": "https://queencitylpga.com",
+      "winner": ""
     },
     {
       "id": 26,
@@ -234,7 +260,8 @@
       "location": "Pinnacle Country Club in Rogers, Arkansas",
       "purse": "$3M",
       "isMajor": false,
-      "website": "https://www.nwachampionship.com"
+      "website": "https://www.nwachampionship.com",
+      "winner": ""
     },
     {
       "id": 27,
@@ -243,7 +270,8 @@
       "location": "Hoakalei Country Club in Ewa Beach, Oahu, Hawaii",
       "purse": "$3M",
       "isMajor": false,
-      "website": "https://www.lottechampionship.com"
+      "website": "https://www.lottechampionship.com",
+      "winner": ""
     },
     {
       "id": 28,
@@ -252,7 +280,8 @@
       "location": "Qizhong Garden Golf Club in Shanghai, People's Rep. of China",
       "purse": "$2.2M",
       "isMajor": false,
-      "website": "https://buick-lpgashanghai.com"
+      "website": "https://buick-lpgashanghai.com",
+      "winner": ""
     },
     {
       "id": 29,
@@ -261,7 +290,8 @@
       "location": "TBD in Republic of Korea",
       "purse": "$2.3M",
       "isMajor": false,
-      "website": "https://www.bmw.co.kr/ko/discover/bmw-golfsport/bmw-ladies-championship-english.html"
+      "website": "https://www.bmw.co.kr/ko/discover/bmw-golfsport/bmw-ladies-championship-english.html",
+      "winner": ""
     },
     {
       "id": 30,
@@ -270,7 +300,8 @@
       "location": "New Korea Country Club in Goyang, Republic of Korea",
       "purse": "$2M",
       "isMajor": false,
-      "website": "https://crown.lpga.com"
+      "website": "https://crown.lpga.com",
+      "winner": ""
     },
     {
       "id": 31,
@@ -279,7 +310,8 @@
       "location": "Kuala Lumpur Golf and Country Club in Kuala Lumpur, Malaysia",
       "purse": "$3M",
       "isMajor": false,
-      "website": "https://www.klgcc.com/annual-event/maybank-championship-2025"
+      "website": "https://www.klgcc.com/annual-event/maybank-championship-2025",
+      "winner": ""
     },
     {
       "id": 32,
@@ -288,7 +320,8 @@
       "location": "Seta Golf Course in Otsu-shi, Shiga, Japan",
       "purse": "$2.1M",
       "isMajor": false,
-      "website": "https://toto-japan-classic.com/en"
+      "website": "https://toto-japan-classic.com/en",
+      "winner": ""
     },
     {
       "id": 33,
@@ -297,7 +330,8 @@
       "location": "Pelican Golf Club in Belleair, Florida",
       "purse": "$3.25M",
       "isMajor": false,
-      "website": "https://theannika.com"
+      "website": "https://theannika.com",
+      "winner": ""
     },
     {
       "id": 34,
@@ -306,7 +340,8 @@
       "location": "Tiburon Golf Club in Naples, Florida",
       "purse": "$11M",
       "isMajor": false,
-      "website": "https://www.cmegrouptourchampionship.com"
+      "website": "https://www.cmegrouptourchampionship.com",
+      "winner": ""
     },
     {
       "id": 35,
@@ -316,7 +351,8 @@
       "purse": "$2M",
       "isMajor": false,
       "isExhibition": true,
-      "website": "https://www.grantthorntoninv.com"
+      "website": "https://www.grantthorntoninv.com",
+      "winner": ""
     }
   ]
 }

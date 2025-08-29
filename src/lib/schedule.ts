@@ -8,7 +8,9 @@ export interface Tournament {
   purse: string;
   isMajor: boolean;
   isExhibition?: boolean;
+  isCancelled?: boolean;
   website: string;
+  winner?: string;
 }
 
 export interface Schedule {
