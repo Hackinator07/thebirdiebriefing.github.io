@@ -133,8 +133,8 @@ export default async function Home() {
               <article className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                 <div className="flex flex-col lg:flex-row h-full">
                   {/* Image */}
-                  <div className="lg:w-1/2 lg:h-auto">
-                    <div className="h-full lg:min-h-[400px] bg-gray-200">
+                  <div className="lg:w-1/2">
+                    <div className="aspect-[16/10] bg-gray-200">
                       <Image
                         src={featuredArticle.image.src}
                         alt={featuredArticle.image.alt}
