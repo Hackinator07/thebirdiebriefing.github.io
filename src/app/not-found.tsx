@@ -81,6 +81,12 @@ export default function NotFound() {
                       Rankings
                     </Link>
                     <Link
+                      href="/schedule"
+                      className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+                    >
+                      Schedule
+                    </Link>
+                    <Link
                       href="/contact-us"
                       className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
                     >

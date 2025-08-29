@@ -1,0 +1,322 @@
+{
+  "year": 2025,
+  "lastUpdated": "2025-01-15",
+  "tournaments": [
+    {
+      "id": 1,
+      "date": "Jan. 30-Feb. 2",
+      "title": "Hilton Grand Vacations Tournament of Champions",
+      "location": "Lake Nona Golf & Country Club in Orlando, Florida",
+      "purse": "$2M",
+      "isMajor": false,
+      "website": "https://www.hgvtoc.com"
+    },
+    {
+      "id": 2,
+      "date": "Feb. 6-9",
+      "title": "Founders Cup",
+      "location": "Bradenton Country Club in Bradenton, Florida",
+      "purse": "$2M",
+      "isMajor": false,
+      "website": "https://www.thefounderslpga.com"
+    },
+    {
+      "id": 3,
+      "date": "Feb. 20-23",
+      "title": "Honda LPGA Thailand",
+      "location": "Siam Country Club (Old Course) in Pattaya, Thailand",
+      "purse": "$1.7M",
+      "isMajor": false,
+      "website": "https://hondalpgathailand.com"
+    },
+    {
+      "id": 4,
+      "date": "Feb. 27-Mar. 2",
+      "title": "HSBC Women's World Championship",
+      "location": "Sentosa Golf Club (Tanjong Course) in Singapore",
+      "purse": "$2.4M",
+      "isMajor": false,
+      "website": "https://www.hsbcgolf.com/womens"
+    },
+    {
+      "id": 5,
+      "date": "March 6-9",
+      "title": "Blue Bay LPGA",
+      "location": "Jian Lake Blue Bay in Hainan, People's Rep. of China",
+      "purse": "$2.5M",
+      "isMajor": false,
+      "website": "https://www.lpga.com/tournaments/blue-bay-lpga"
+    },
+    {
+      "id": 6,
+      "date": "March 20-23",
+      "title": "FIR HILLS SERI PAK Championship",
+      "location": "Palos Verdes Golf Club in Palos Verdes Estates, California",
+      "purse": "$2M",
+      "isMajor": false,
+      "website": "https://seripakchampionship.com"
+    },
+    {
+      "id": 7,
+      "date": "March 27-30",
+      "title": "Ford Championship presented by Wild Horse Pass",
+      "location": "Whirlwind Golf Club at Wild Horse Pass in Phoenix, Arizona",
+      "purse": "$2.25M",
+      "isMajor": false,
+      "website": "https://www.fordchampionship.com"
+    },
+    {
+      "id": 8,
+      "date": "April 2-6",
+      "title": "T-Mobile Match Play presented by MGM Rewards",
+      "location": "Shadow Creek Golf Course in North Las Vegas, Nevada",
+      "purse": "$2M",
+      "isMajor": false,
+      "website": "https://www.lpga.com/tournaments/t-mobile-match-play"
+    },
+    {
+      "id": 9,
+      "date": "April 17-20",
+      "title": "JM Eagle LA Championship presented by Plastpro",
+      "location": "El Caballero Country Club in Los Angeles, California",
+      "purse": "$3.75M",
+      "isMajor": false,
+      "website": "https://jmeaglelachampionship.com"
+    },
+    {
+      "id": 10,
+      "date": "April 24-27",
+      "title": "The Chevron Championship",
+      "location": "The Club at Carlton Woods in The Woodlands, Texas",
+      "purse": "$7.9M",
+      "isMajor": true,
+      "website": "https://www.chevronchampionship.com"
+    },
+    {
+      "id": 11,
+      "date": "May 1-4",
+      "title": "Black Desert Championship",
+      "location": "Black Desert Resort in Ivins, Utah",
+      "purse": "$3M",
+      "isMajor": false,
+      "website": "https://blackdesertevents.com"
+    },
+    {
+      "id": 12,
+      "date": "May 8-11",
+      "title": "Mizuho Americas Open",
+      "location": "Liberty National Golf Club in Jersey City, New Jersey",
+      "purse": "$3M",
+      "isMajor": false,
+      "website": "https://www.mizuhoamericasopen.com"
+    },
+    {
+      "id": 13,
+      "date": "May 22-25",
+      "title": "Riviera Maya Open",
+      "location": "TBD in Cancun, Mexico",
+      "purse": "$2.5M",
+      "isMajor": false,
+      "website": "https://www.rivieramayaopen.com"
+    },
+    {
+      "id": 14,
+      "date": "May 29-June 1",
+      "title": "U.S. Women's Open presented by Ally",
+      "location": "Erin Hills in Erin, Wisconsin",
+      "purse": "$12M",
+      "isMajor": true,
+      "website": "https://www.uswomensopen.com"
+    },
+    {
+      "id": 15,
+      "date": "June 6-8",
+      "title": "ShopRite LPGA Classic presented by Acer",
+      "location": "Seaview, A Dolce Hotel (Bay Course) in Galloway, New Jersey",
+      "purse": "$1.75M",
+      "isMajor": false,
+      "website": "https://www.shopritelpgaclassic.com"
+    },
+    {
+      "id": 16,
+      "date": "June 12-15",
+      "title": "Meijer LPGA Classic for Simply Give",
+      "location": "Blythefield Country Club in Belmont, Michigan",
+      "purse": "$3M",
+      "isMajor": false,
+      "website": "https://www.meijerlpgaclassic.com"
+    },
+    {
+      "id": 17,
+      "date": "June 19-22",
+      "title": "KPMG Women's PGA Championship",
+      "location": "Fields Ranch East at PGA Frisco in Frisco, Texas",
+      "purse": "$10.4M",
+      "isMajor": true,
+      "website": "https://www.kpmgwomenspgachampionship.com"
+    },
+    {
+      "id": 18,
+      "date": "June 26-29",
+      "title": "Dow Championship",
+      "location": "Midland Country Club in Midland, Michigan",
+      "purse": "$3.3M",
+      "isMajor": false,
+      "website": "https://dowchampionship.com"
+    },
+    {
+      "id": 19,
+      "date": "July 10-13",
+      "title": "Amundi Evian Championship",
+      "location": "Evian Resort Golf Club in Evian-les-Bains, France",
+      "purse": "$8.0M",
+      "isMajor": true,
+      "website": "https://www.evianchampionship.com"
+    },
+    {
+      "id": 20,
+      "date": "July 24-27",
+      "title": "ISPS Handa Women's Scottish Open",
+      "location": "Dundonald Links in Gailes, Ayrshire, Scotland",
+      "purse": "$2M",
+      "isMajor": false,
+      "website": "https://www.womensscottish.com"
+    },
+    {
+      "id": 21,
+      "date": "July 31-Aug. 3",
+      "title": "AIG Women's Open",
+      "location": "Royal Porthcawl in Porthcawl, Wales, United Kingdom",
+      "purse": "$9.5M",
+      "isMajor": true,
+      "website": "https://www.aigwomensopen.com"
+    },
+    {
+      "id": 22,
+      "date": "Aug. 14-17",
+      "title": "The Standard Portland Classic",
+      "location": "TBD in Portland, Oregon",
+      "purse": "$2M",
+      "isMajor": false,
+      "website": "https://www.portlandclassic.com"
+    },
+    {
+      "id": 23,
+      "date": "Aug. 21-24",
+      "title": "CPKC Women's Open",
+      "location": "Mississaugua Golf & Country Club in Mississauga, Ontario, Canada",
+      "purse": "$2.6M",
+      "isMajor": false,
+      "website": "https://www.cpkcwomensopen.com"
+    },
+    {
+      "id": 24,
+      "date": "Aug. 28-31",
+      "title": "FM Championship",
+      "location": "TPC Boston in Norton, Massachusetts",
+      "purse": "$4.1M",
+      "isMajor": false,
+      "website": "https://www.fmchampionship.com"
+    },
+    {
+      "id": 25,
+      "date": "Sept. 11-14",
+      "title": "Kroger Queen City Championship presented by P&G",
+      "location": "TPC River's Bend in Maineville, Ohio",
+      "purse": "$2M",
+      "isMajor": false,
+      "website": "https://queencitylpga.com"
+    },
+    {
+      "id": 26,
+      "date": "Sept. 19-21",
+      "title": "Walmart NW Arkansas Championship presented by P&G",
+      "location": "Pinnacle Country Club in Rogers, Arkansas",
+      "purse": "$3M",
+      "isMajor": false,
+      "website": "https://www.nwachampionship.com"
+    },
+    {
+      "id": 27,
+      "date": "Oct. 1-4",
+      "title": "LOTTE Championship presented by Hoakalei",
+      "location": "Hoakalei Country Club in Ewa Beach, Oahu, Hawaii",
+      "purse": "$3M",
+      "isMajor": false,
+      "website": "https://www.lottechampionship.com"
+    },
+    {
+      "id": 28,
+      "date": "Oct. 9-12",
+      "title": "Buick LPGA Shanghai",
+      "location": "Qizhong Garden Golf Club in Shanghai, People's Rep. of China",
+      "purse": "$2.2M",
+      "isMajor": false,
+      "website": "https://buick-lpgashanghai.com"
+    },
+    {
+      "id": 29,
+      "date": "Oct. 16-19",
+      "title": "BMW Ladies Championship",
+      "location": "TBD in Republic of Korea",
+      "purse": "$2.3M",
+      "isMajor": false,
+      "website": "https://www.bmw.co.kr/ko/discover/bmw-golfsport/bmw-ladies-championship-english.html"
+    },
+    {
+      "id": 30,
+      "date": "Oct. 23-26",
+      "title": "Hanwha LIFEPLUS International Crown",
+      "location": "New Korea Country Club in Goyang, Republic of Korea",
+      "purse": "$2M",
+      "isMajor": false,
+      "website": "https://crown.lpga.com"
+    },
+    {
+      "id": 31,
+      "date": "Oct. 30-Nov. 2",
+      "title": "Maybank Championship",
+      "location": "Kuala Lumpur Golf and Country Club in Kuala Lumpur, Malaysia",
+      "purse": "$3M",
+      "isMajor": false,
+      "website": "https://www.klgcc.com/annual-event/maybank-championship-2025"
+    },
+    {
+      "id": 32,
+      "date": "Nov. 6-9",
+      "title": "TOTO Japan Classic",
+      "location": "Seta Golf Course in Otsu-shi, Shiga, Japan",
+      "purse": "$2.1M",
+      "isMajor": false,
+      "website": "https://toto-japan-classic.com/en"
+    },
+    {
+      "id": 33,
+      "date": "Nov. 13-16",
+      "title": "The ANNIKA driven by Gainbridge at Pelican",
+      "location": "Pelican Golf Club in Belleair, Florida",
+      "purse": "$3.25M",
+      "isMajor": false,
+      "website": "https://theannika.com"
+    },
+    {
+      "id": 34,
+      "date": "Nov. 20-23",
+      "title": "CME Group Tour Championship",
+      "location": "Tiburon Golf Club in Naples, Florida",
+      "purse": "$11M",
+      "isMajor": false,
+      "website": "https://www.cmegrouptourchampionship.com"
+    },
+    {
+      "id": 35,
+      "date": "Dec. 12-14",
+      "title": "Grant Thornton Invitational",
+      "location": "Tiburon Golf Club in Naples, Florida",
+      "purse": "$2M",
+      "isMajor": false,
+      "isExhibition": true,
+      "website": "https://www.grantthorntoninv.com"
+    }
+  ]
+}
