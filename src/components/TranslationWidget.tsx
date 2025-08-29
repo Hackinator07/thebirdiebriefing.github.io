@@ -109,6 +109,7 @@ export default function TranslationWidget() {
             ko: '번역을 준비하고 있습니다. 잠시만 기다려 주세요.',
             th: 'กำลังเตรียมการแปลให้คุณ กรุณารอสักครู่',
             zh: '我们正在为您准备翻译，请稍等片刻。',
+            vi: 'Chúng tôi đang chuẩn bị bản dịch cho bạn. Chỉ cần chờ một chút.',
             tl: 'Inihahanda namin ang inyong pagsasalin. Sandali lang.',
             sv: 'Vi förbereder din översättning. Bara en kort väntan.',
         no: 'Vi forbereder oversettelsen din. Bare en kort ventetid.',
@@ -286,6 +287,7 @@ export default function TranslationWidget() {
             ko: '번역을 준備하고 있습니다. 잠시만 기다려 주세요.',
             th: 'กำลังเตรียมการแปลให้คุณ กรุณารอสักครู่',
             zh: '我们正在为您准备翻译，请稍等片刻。',
+            vi: 'Đang chuẩn bị bản dịch của bạn. Chỉ một chút nữa.',
             tl: 'Inihahanda namin ang inyong pagsasalin. Sandali lang.',
             sv: 'Vi förbereder din översättning. Bara en kort väntan.',
             no: 'Vi forbereder oversettelsen din. Bare et kort øyeblikk.',
@@ -366,7 +368,7 @@ export default function TranslationWidget() {
     };
 
     const filterLanguages = (callback?: () => void) => {
-      const allowedLanguages = ['en', 'ja', 'ko', 'th', 'zh', 'tl', 'sv', 'no', 'fr', 'es', 'de'];
+      const allowedLanguages = ['en', 'ja', 'ko', 'th', 'zh', 'vi', 'tl', 'sv', 'no', 'fr', 'es', 'de'];
 
       // Function to hide unwanted language elements
       const hideUnwantedLanguages = () => {
