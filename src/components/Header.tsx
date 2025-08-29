@@ -68,8 +68,8 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Changed from md: to lg: to prevent cramped layout in landscape */}
+          <nav className="hidden xl:flex items-center space-x-6 xl:space-x-8">
             {navigation.map((item, index) => {
               const isActive = isLinkActive(item.href);
               return (
@@ -85,9 +85,9 @@ export default function Header() {
                     {item.name}
                   </Link>
                   
-                  {/* Insert Rankings dropdown after Podcast */}
+                  {/* Insert Rankings dropdown after Podcast - Adjusted spacing */}
                   {item.name === 'Podcast' && (
-                    <div className="relative inline-block ml-8">
+                    <div className="relative inline-block ml-6 xl:ml-8">
                       <button
                         onClick={() => setIsRankingsDropdownOpen(!isRankingsDropdownOpen)}
                         className={`font-medium transition-colors duration-200 flex items-center ${
@@ -144,8 +144,8 @@ export default function Header() {
             <CustomTranslation />
           </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button - Changed from lg:hidden to xl:hidden */}
+          <div className="xl:hidden">
             <button
               type="button"
               className="text-gray-700 hover:text-primary-500 focus:outline-none focus:text-primary-500"
@@ -166,9 +166,9 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Changed from md:hidden to lg:hidden */}
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 z-50">
+          <div className="xl:hidden fixed inset-0 z-50">
             {/* Backdrop */}
             <div
               className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
@@ -179,7 +179,7 @@ export default function Header() {
             <div className="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ease-in-out">
               <div className="flex flex-col h-full">
                 {/* Header */}
-                <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
                   <span className="text-xl font-bold text-primary-500">Menu</span>
                   <button
                     type="button"
@@ -193,8 +193,8 @@ export default function Header() {
                   </button>
                 </div>
 
-                {/* Navigation Links */}
-                <nav className="flex-1 px-6 py-4">
+                {/* Navigation Links - Made scrollable only in landscape */}
+                <nav className="flex-1 px-6 py-4 overflow-y-auto landscape:overflow-y-auto portrait:overflow-y-visible">
                   <div className="space-y-2">
                     {navigation.map((item) => {
                       const isActive = isLinkActive(item.href);
@@ -277,7 +277,7 @@ export default function Header() {
                 </nav>
 
                 {/* Footer */}
-                <div className="p-6 border-t border-gray-200">
+                <div className="p-6 border-t border-gray-200 flex-shrink-0">
                   <p className="text-sm text-center font-heading">
                     <span className="text-primary-500">The Birdie</span>
                     <span className="text-secondary-500 ml-1">Briefing</span>

@@ -62,8 +62,21 @@
     line-height: 1.4;
     margin: 0 0 0.75rem 0;
   }
+}
 
-
+@layer utilities {
+  /* Orientation-specific utilities for mobile menu */
+  @media (orientation: landscape) {
+    .landscape\:overflow-y-auto {
+      overflow-y: auto;
+    }
+  }
+  
+  @media (orientation: portrait) {
+    .portrait\:overflow-y-visible {
+      overflow-y: visible;
+    }
+  }
 }
 
 /* Custom color palette */
