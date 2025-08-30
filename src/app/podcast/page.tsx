@@ -46,10 +46,7 @@ export default function PodcastPage() {
 
                   <div className='mb-8 text-lg leading-relaxed text-gray-700'>
                     <p className='mb-4'>
-                      Stay up to date on all things women’s golf with quick, digestible episodes
-                      covering the latest LPGA tournaments, standout moments, and must-know news. 
-                      Each week, The Birdie Briefing brings you fast, fresh updates 
-                      so you can follow the game you love - no endless chatter, just the highlights that matter.
+                      Your go-to LPGA podcast for quick weekly updates on tournaments, highlights, and women's golf news. The Birdie Briefing brings fresh insights--fast, focused, and no fluff.
                     </p>
                   </div>
 
