@@ -139,7 +139,7 @@ Finally, Rose Zhang showed the kind of calm, mature play you wouldn't expect fro
 
 With the forecast calling for clearer skies, both tournament officials and players are optimistic about getting the schedule back on track for Saturday and Sunday. The main adjustment: after the cut, players will tee off in threesomes for Round 3.
 
-At the time of this posting, the cut has been set and Round 3 is underway.
+*At the time of this article posting, the cut has been set and Round 3 is underway.*
 
 ## Round 2 Competition Highlights
 
