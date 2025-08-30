@@ -115,7 +115,11 @@ export default function Header() {
                       
                       {/* Dropdown Menu */}
                       {isRankingsDropdownOpen && (
-                        <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50">
+                        <div 
+                          className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50"
+                          onMouseEnter={() => setIsRankingsDropdownOpen(true)}
+                          onMouseLeave={() => setIsRankingsDropdownOpen(false)}
+                        >
                           {rankingsSubmenu.map((subItem) => {
                             const isSubActive = pathname === subItem.href;
                             return (
