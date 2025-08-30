@@ -1,12 +1,111 @@
+'use client';
+
+import { useState, useMemo } from 'react';
 import { getSchedule } from '@/lib/schedule';
 
-export const metadata = {
-  title: 'LPGA Schedule - The Birdie Briefing',
-  description: 'Complete 2025 LPGA Tour tournament schedule with dates, locations, and purse information.',
-};
+type SortField = 'date' | 'title' | 'winner' | 'purse';
+type SortDirection = 'asc' | 'desc';
 
 export default function SchedulePage() {
   const schedule = getSchedule();
+  const [sortField, setSortField] = useState<SortField>('date');
+  const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+
+  // Sort tournaments based on current sort field and direction
+  const sortedTournaments = useMemo(() => {
+    const tournaments = [...schedule.tournaments];
+    
+    return tournaments.sort((a, b) => {
+      let aValue: any;
+      let bValue: any;
+
+      switch (sortField) {
+        case 'date':
+          // Extract the start date for sorting (first date in range)
+          const aDateStr = a.date.split('-')[0].trim();
+          const bDateStr = b.date.split('-')[0].trim();
+          
+          // Convert to comparable format (assuming format like "Jan. 30" or "March 6")
+          const aDate = new Date(aDateStr + ', 2025');
+          const bDate = new Date(bDateStr + ', 2025');
+          
+          aValue = aDate.getTime();
+          bValue = bDate.getTime();
+          break;
+        case 'title':
+          aValue = a.title.toLowerCase();
+          bValue = b.title.toLowerCase();
+          break;
+        case 'winner':
+          // Handle TBD, N/A, and undefined cases
+          if (!a.winner || a.winner === 'TBD' || a.winner === 'N/A') aValue = 'zzz'; // Sort to end
+          else aValue = a.winner.toLowerCase();
+          
+          if (!b.winner || b.winner === 'TBD' || b.winner === 'N/A') bValue = 'zzz'; // Sort to end
+          else bValue = b.winner.toLowerCase();
+          break;
+        case 'purse':
+          // Convert purse strings to numbers for sorting
+          const aPurseStr = a.purse.replace(/[$,]/g, '');
+          const bPurseStr = b.purse.replace(/[$,]/g, '');
+          
+          // Handle M (millions) and K (thousands)
+          const aMultiplier = aPurseStr.includes('M') ? 1000000 : aPurseStr.includes('K') ? 1000 : 1;
+          const bMultiplier = bPurseStr.includes('M') ? 1000000 : bPurseStr.includes('K') ? 1000 : 1;
+          
+          const aNumber = parseFloat(aPurseStr.replace(/[MK]/g, '')) * aMultiplier;
+          const bNumber = parseFloat(bPurseStr.replace(/[MK]/g, '')) * bMultiplier;
+          
+          aValue = aNumber;
+          bValue = bNumber;
+          break;
+        default:
+          aValue = a.date;
+          bValue = b.date;
+      }
+
+      if (aValue < bValue) {
+        return sortDirection === 'asc' ? -1 : 1;
+      }
+      if (aValue > bValue) {
+        return sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+  }, [schedule.tournaments, sortField, sortDirection]);
+
+  const handleSort = (field: SortField) => {
+    if (sortField === field) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortField(field);
+      setSortDirection('asc');
+    }
+  };
+
+  const getSortIcon = (field: SortField) => {
+    if (sortField !== field) {
+      return (
+        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+        </svg>
+      );
+    }
+    
+    if (sortDirection === 'asc') {
+      return (
+        <svg className="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+        </svg>
+      );
+    } else {
+      return (
+        <svg className="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      );
+    }
+  };
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -38,7 +137,7 @@ export default function SchedulePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Mobile Card Layout */}
           <div className="block lg:hidden space-y-4">
-            {schedule.tournaments.map((tournament) => (
+            {sortedTournaments.map((tournament) => (
               <div key={tournament.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
                 <div className="flex justify-between items-start mb-3">
                   <div className="text-sm font-medium text-gray-900">
@@ -103,22 +202,46 @@ export default function SchedulePage() {
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Date
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('date')}
+                    >
+                      <div className="flex items-center gap-1">
+                        Date
+                        {getSortIcon('date')}
+                      </div>
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Tournament
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('title')}
+                    >
+                      <div className="flex items-center gap-1">
+                        Tournament
+                        {getSortIcon('title')}
+                      </div>
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Winner
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('winner')}
+                    >
+                      <div className="flex items-center gap-1">
+                        Winner
+                        {getSortIcon('winner')}
+                      </div>
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Purse
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('purse')}
+                    >
+                      <div className="flex items-center gap-1">
+                        Purse
+                        {getSortIcon('purse')}
+                      </div>
                     </th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {schedule.tournaments.map((tournament) => (
+                  {sortedTournaments.map((tournament) => (
                     <tr key={tournament.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                         {tournament.date}

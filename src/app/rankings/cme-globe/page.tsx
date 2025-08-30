@@ -1,17 +1,95 @@
+'use client';
+
+import { useState, useMemo } from 'react';
 import { getCmeGlobeRankings } from '@/lib/rankings';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'CME Globe Rankings - The Birdie Briefing',
-  description: 'Complete 2025 LPGA Tour CME Globe Rankings with points and event information.',
-};
+type SortField = 'rank' | 'fullName' | 'countryCode' | 'points' | 'events';
+type SortDirection = 'asc' | 'desc';
 
 export default function CmeGlobeRankingsPage() {
   const rankings = getCmeGlobeRankings();
-  
-  // Sort players by rank (default sorting)
-  const sortedPlayers = [...rankings.players].sort((a, b) => a.rank - b.rank);
+  const [sortField, setSortField] = useState<SortField>('rank');
+  const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+
+  // Sort players based on current sort field and direction
+  const sortedPlayers = useMemo(() => {
+    const players = [...rankings.players];
+    
+    return players.sort((a, b) => {
+      let aValue: any;
+      let bValue: any;
+
+      switch (sortField) {
+        case 'rank':
+          aValue = a.rank;
+          bValue = b.rank;
+          break;
+        case 'fullName':
+          aValue = a.fullName.toLowerCase().split(' ').pop() || a.fullName.toLowerCase();
+          bValue = b.fullName.toLowerCase().split(' ').pop() || b.fullName.toLowerCase();
+          break;
+        case 'countryCode':
+          aValue = a.countryCode.toLowerCase();
+          bValue = b.countryCode.toLowerCase();
+          break;
+        case 'points':
+          aValue = a.points;
+          bValue = b.points;
+          break;
+        case 'events':
+          aValue = a.events;
+          bValue = b.events;
+          break;
+        default:
+          aValue = a.rank;
+          bValue = b.rank;
+      }
+
+      if (aValue < bValue) {
+        return sortDirection === 'asc' ? -1 : 1;
+      }
+      if (aValue > bValue) {
+        return sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+  }, [rankings.players, sortField, sortDirection]);
+
   const topPlayers = sortedPlayers.slice(0, 60); // Show top 60
+
+  const handleSort = (field: SortField) => {
+    if (sortField === field) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortField(field);
+      setSortDirection('asc');
+    }
+  };
+
+  const getSortIcon = (field: SortField) => {
+    if (sortField !== field) {
+      return (
+        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+        </svg>
+      );
+    }
+    
+    if (sortDirection === 'asc') {
+      return (
+        <svg className="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+        </svg>
+      );
+    } else {
+      return (
+        <svg className="w-4 h-4 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      );
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -65,12 +143,12 @@ export default function CmeGlobeRankingsPage() {
       {/* Rankings Content */}
       <section className="py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Mobile Card Layout */}
-          <div className="block lg:hidden space-y-3">
-            {topPlayers.map((player) => (
-              <div key={player.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-3">
+                     {/* Mobile Card Layout */}
+           <div className="block lg:hidden space-y-3">
+               {topPlayers.map((player) => (
+                 <div key={player.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+                   <div className="flex items-center justify-between mb-3">
+                     <div className="flex items-center gap-3">
                     <div className="flex-shrink-0 w-8 h-8 bg-secondary-100 rounded-full flex items-center justify-center">
                       <span className="text-sm font-bold text-secondary-800">{player.rank}</span>
                     </div>
@@ -101,20 +179,50 @@ export default function CmeGlobeRankingsPage() {
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Rank
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('rank')}
+                    >
+                      <div className="flex items-center gap-1">
+                        Rank
+                        {getSortIcon('rank')}
+                      </div>
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Player
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('fullName')}
+                    >
+                      <div className="flex items-center gap-1">
+                        Player
+                        {getSortIcon('fullName')}
+                      </div>
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Country
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('countryCode')}
+                    >
+                      <div className="flex items-center gap-1">
+                        Country
+                        {getSortIcon('countryCode')}
+                      </div>
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Points
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('points')}
+                    >
+                      <div className="flex items-center gap-1">
+                        Points
+                        {getSortIcon('points')}
+                      </div>
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Events
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('events')}
+                    >
+                      <div className="flex items-center gap-1">
+                        Events
+                        {getSortIcon('events')}
+                      </div>
                     </th>
                   </tr>
                 </thead>
