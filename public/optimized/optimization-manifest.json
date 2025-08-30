@@ -1,15 +1,15 @@
 {
-  "timestamp": "2025-08-30T18:09:46.470Z",
+  "timestamp": "2025-08-30T20:04:56.645Z",
   "processed": 1,
-  "skipped": 24,
-  "totalOriginalSize": "0.48",
-  "totalOptimizedSize": "0.01",
-  "savings": "97.9",
+  "skipped": 25,
+  "totalOriginalSize": "0.57",
+  "totalOptimizedSize": "0.02",
+  "savings": "96.5",
   "images": [
     {
-      "original": "images\\articles\\fm-kim-rd2.png",
-      "optimized": "optimized\\fm-kim-rd2.webp",
-      "savings": 97.9
+      "original": "images\\articles\\gigi-stoll.png",
+      "optimized": "optimized\\gigi-stoll.webp",
+      "savings": 96.5
     }
   ]
 }
