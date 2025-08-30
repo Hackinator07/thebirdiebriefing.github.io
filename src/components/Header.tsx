@@ -87,7 +87,11 @@ export default function Header() {
                   
                   {/* Insert Rankings dropdown after Podcast - Adjusted spacing */}
                   {item.name === 'Podcast' && (
-                    <div className="relative inline-block ml-6 xl:ml-8">
+                    <div 
+                      className="relative inline-block ml-6 xl:ml-8"
+                      onMouseEnter={() => setIsRankingsDropdownOpen(true)}
+                      onMouseLeave={() => setIsRankingsDropdownOpen(false)}
+                    >
                       <button
                         onClick={() => setIsRankingsDropdownOpen(!isRankingsDropdownOpen)}
                         className={`font-medium transition-colors duration-200 flex items-center ${
@@ -289,13 +293,7 @@ export default function Header() {
         )}
       </div>
       
-      {/* Click outside to close dropdown */}
-      {isRankingsDropdownOpen && (
-        <div
-          className="fixed inset-0 z-40"
-          onClick={() => setIsRankingsDropdownOpen(false)}
-        />
-      )}
+
     </header>
   );
 }
