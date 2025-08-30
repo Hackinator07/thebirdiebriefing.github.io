@@ -15,6 +15,10 @@ export interface CmeGlobeRankings {
   lastUpdated: string;
   type: string;
   players: CmeGlobePlayer[];
+  week: {
+    start_date: string;
+    end_date: string;
+  };
 }
 
 export function getRankings(): Rankings {
