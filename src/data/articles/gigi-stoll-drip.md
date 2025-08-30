@@ -23,7 +23,7 @@ tags:
 
 Gigi,
 
-Marie and I have been following your game both on and off the course [(thanks to your Insta)](https://www.instagram.com/gigistoll_/), and we just have to say -- go crush it tomorrow. The swagger, baseball Oakleys, long socks, and street-style threads made for golf -- your whole package just works. You’re showing that golf doesn’t have to be stiff, that it doesn’t have to wear pastel polos. You make it look easy.
+Marie and I have been following your game both on and off the course [(thanks to your Insta)](https://www.instagram.com/gigistoll_/), and we just have to say -- you crush it. The swagger, baseball Oakleys, long socks, and street-style threads made for golf -- your whole package just works. You’re showing that golf doesn’t have to be stiff, that it doesn’t have to wear pastel polos. You make it look easy.
 
 And then there’s your music. [GG AKA Golf God](https://youtu.be/8v4wqc8X3hQ?si=upVZ6uXtvCR9sdzm). You’re writing lyrics and recording tracks like “Attention,” “Jealous,” and “Summer Love” while living as a touring pro. You do it without anyone needing to validate it. Few athletes -- or people, really -- could pull that off with this much truth.
 
