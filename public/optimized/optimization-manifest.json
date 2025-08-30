@@ -1,15 +1,15 @@
 {
-  "timestamp": "2025-08-30T15:21:32.397Z",
+  "timestamp": "2025-08-30T18:09:46.470Z",
   "processed": 1,
-  "skipped": 23,
-  "totalOriginalSize": "0.05",
+  "skipped": 24,
+  "totalOriginalSize": "0.48",
   "totalOptimizedSize": "0.01",
-  "savings": "80.0",
+  "savings": "97.9",
   "images": [
     {
-      "original": "images\\lpga-logo-75.png",
-      "optimized": "optimized\\lpga-logo-75.webp",
-      "savings": 80
+      "original": "images\\articles\\fm-kim-rd2.png",
+      "optimized": "optimized\\fm-kim-rd2.webp",
+      "savings": 97.9
     }
   ]
 }
