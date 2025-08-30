@@ -116,10 +116,11 @@ export default function Header() {
                       {/* Dropdown Menu */}
                       {isRankingsDropdownOpen && (
                         <div 
-                          className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50"
+                          className="absolute top-full left-0 pt-1 w-48 z-50"
                           onMouseEnter={() => setIsRankingsDropdownOpen(true)}
                           onMouseLeave={() => setIsRankingsDropdownOpen(false)}
                         >
+                          <div className="bg-white rounded-md shadow-lg border border-gray-200 py-1">
                           {rankingsSubmenu.map((subItem) => {
                             const isSubActive = pathname === subItem.href;
                             return (
@@ -137,6 +138,7 @@ export default function Header() {
                               </Link>
                             );
                           })}
+                          </div>
                         </div>
                       )}
                     </div>
