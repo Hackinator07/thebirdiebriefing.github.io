@@ -1,5 +1,9 @@
 {
   "lastUpdated": "2025-08-25T10:20:00",
+  "week": {
+    "start_date": "2025-08-18",
+    "end_date": "2025-08-24"
+  },
   "type": "cme-globe",
   "players": [
     {

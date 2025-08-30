@@ -38,6 +38,9 @@ export default function CmeGlobeRankingsPage() {
               hour12: true
             })}
           </p>
+          <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center">
+            Week of {rankings.week.start_date} to {rankings.week.end_date}
+          </p>
           
           {/* Rankings Navigation */}
           <div className="mt-6 flex justify-center">

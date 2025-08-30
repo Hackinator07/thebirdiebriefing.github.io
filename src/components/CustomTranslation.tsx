@@ -29,6 +29,7 @@ export default function CustomTranslation() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const [isMobile, setIsMobile] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -58,6 +59,17 @@ export default function CustomTranslation() {
     if (savedLanguage && ALLOWED_LANGUAGES.some(lang => lang.code === savedLanguage)) {
       setSelectedLanguage(savedLanguage);
     }
+  }, []);
+
+  // Detect mobile device on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   // Filter languages based on search
@@ -283,7 +295,9 @@ export default function CustomTranslation() {
 
       {/* Dropdown */}
       {isOpen && (
-        <div className="absolute right-0 top-full mt-2 w-80 max-w-[90vw] bg-white border border-gray-200 rounded-lg shadow-lg z-50 notranslate" translate="no">
+        <div className={`absolute w-80 max-w-[90vw] bg-white border border-gray-200 rounded-lg shadow-lg z-50 notranslate ${
+          isMobile ? 'bottom-full mb-2 right-0' : 'top-full mt-2 right-0'
+        }`} translate="no">
           {/* Header */}
           <div className="p-4 border-b border-gray-200 notranslate">
             <h3 className="text-sm font-medium text-gray-900 mb-2 notranslate">Select Language</h3>
