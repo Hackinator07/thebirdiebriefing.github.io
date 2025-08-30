@@ -151,4 +151,4 @@ To the **Tournament Officials and Players** for pressing on regardless.
 
 ## Gear Notes
 
-In the future, for moments like these you can bust out the [Drizzle Stick](https://www.drizzlestik.com/) or "Drizzy" as Marie and I call them.
+In the future, for moments like these you can bust out a [DrizzleStik](https://www.drizzlestik.com/) or "Drizzy" as Marie and I call it.
