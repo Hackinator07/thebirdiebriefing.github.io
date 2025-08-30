@@ -8,13 +8,10 @@ export default function Footer() {
       { name: 'Home', href: '/' },
       { name: 'News', href: '/news' },
       { name: 'Podcast', href: '/podcast' },
+      { name: 'Rankings', href: '/rankings' },
       { name: 'Schedule', href: '/schedule' },
       { name: 'About', href: '/about' },
       { name: 'Contact', href: '/contact-us' },
-    ],
-    rankings: [
-      { name: 'Rolex World Rankings', href: '/rankings' },
-      { name: 'CME Globe Rankings', href: '/rankings/cme-globe' },
     ],
     social: [
       {
@@ -82,25 +79,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Rankings Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-lg font-semibold mb-4">Rankings</h3>
-            <ul className="space-y-3">
-              {navigation.rankings.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-gray-300 hover:text-white transition-colors duration-200"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter Signup Section - Spans 4 columns */}
-          <div className="lg:col-span-4">
+          {/* Newsletter Signup Section - Spans 6 columns now */}
+          <div className="lg:col-span-6">
             <h3 className="text-lg font-semibold mb-4">Stay Updated</h3>
             <p className="text-gray-300 mb-4">
               Get the latest LPGA news, tournament updates, and exclusive content delivered to your inbox.
@@ -117,7 +97,15 @@ export default function Footer() {
             </p>
             <div className="mt-4 md:mt-0">
               <p className="text-gray-400 text-sm">
-                Celebrating women's golf and the LPGA Tour
+                Website developed by{' '}
+                <a
+                  href="https://foxsideweb.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  Foxside Web Development
+                </a>
               </p>
             </div>
           </div>
