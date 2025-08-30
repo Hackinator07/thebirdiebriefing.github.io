@@ -121,6 +121,14 @@ export default function RankingsPage() {
       <section className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
           <div className="text-center mb-4">
+            {/* Rolex Rankings Logo */}
+                         <div className="flex justify-center mb-6">
+               <img
+                 src="/images/rolex-rankings-logo.png"
+                 alt="Rolex Rankings Logo"
+                 className="h-16 sm:h-20 md:h-24 object-contain"
+               />
+             </div>
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="flex-1 h-px bg-gray-300 max-w-16 sm:max-w-32"></div>
               <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 leading-tight tracking-tight title-overlap">
