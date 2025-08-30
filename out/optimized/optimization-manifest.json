@@ -1,20 +1,15 @@
 {
-  "timestamp": "2025-08-29T13:24:25.915Z",
-  "processed": 2,
-  "skipped": 19,
-  "totalOriginalSize": "0.60",
-  "totalOptimizedSize": "0.02",
-  "savings": "96.7",
+  "timestamp": "2025-08-30T14:13:50.748Z",
+  "processed": 1,
+  "skipped": 22,
+  "totalOriginalSize": "0.02",
+  "totalOptimizedSize": "0.00",
+  "savings": "100.0",
   "images": [
     {
-      "original": "images\\articles\\fm-shadoff-rd1.png",
-      "optimized": "optimized\\fm-shadoff-rd1.webp",
-      "savings": 96.7
-    },
-    {
-      "original": "images\\birdie-briefing-4040.png",
-      "optimized": "optimized\\birdie-briefing-4040.webp",
-      "savings": null
+      "original": "images\\cme-logo-rankings.png",
+      "optimized": "optimized\\cme-logo-rankings.webp",
+      "savings": 100
     }
   ]
 }

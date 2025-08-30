@@ -124,7 +124,7 @@ export default function RankingsPage() {
             {/* Rolex Rankings Logo */}
                          <div className="flex justify-center mb-6">
                <img
-                 src="/images/rolex-rankings-logo.png"
+                 src="/optimized/rolex-rankings-logo.webp"
                  alt="Rolex Rankings Logo"
                  className="h-16 sm:h-20 md:h-24 object-contain"
                />

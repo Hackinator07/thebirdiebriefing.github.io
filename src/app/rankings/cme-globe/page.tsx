@@ -100,7 +100,7 @@ export default function CmeGlobeRankingsPage() {
             {/* CME Globe Rankings Logo */}
             <div className="flex justify-center mb-6">
               <img
-                src="/images/cme-logo-rankings.png"
+                src="/optimized/cme-logo-rankings.webp"
                 alt="CME Globe Rankings Logo"
                 className="h-16 sm:h-20 md:h-24 object-contain"
               />
