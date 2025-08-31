@@ -113,25 +113,25 @@ sections:
     schedule:
       - day: "Thursday Aug 28 and Friday Aug 29 2025"
         times:
-          - "Golf Channel: 4:00 PM – 7:00 PM"
+          - "Golf Channel: 2:00 PM – 5:00 PM"
       - day: "Saturday Aug 30 2025"
         times:
-          - "Golf Channel: 4:00 PM - 7:00 PM"
+          - "Golf Channel: 2:00 PM - 5:00 PM"
       - day: "Sunday Aug 31 2025"
         times:
-          - "Golf Channel: 4:00 PM – 7:00 PM"
+          - "Golf Channel: 2:00 PM – 5:00 PM"
   - type: "tv-schedule"
     title: "How to Watch Featured Group Coverage (all times CDT)"
     schedule:
       - day: "Thursday Aug 28 and Friday Aug 29 2025"
         times:
-          - "ESPN+: 9:00 AM – 7:30 PM"
+          - "ESPN+: 8:00 AM – 6:30 PM"
       - day: "Saturday Aug 30 2025"
         times:
-          - "ESPN+: 9:30 AM - 6:00 PM"
+          - "ESPN+: 8:30 AM - 5:00 PM"
       - day: "Sunday Aug 31 2025"
         times:
-          - "ESPN+: 9:30 AM – 6:00 PM"
+          - "ESPN+: 8:30 AM – 5:00 PM"
 ---
 
 The LPGA’s top golfers tee off this week at the 2025 FM Championship, running August 28-31 at TPC Boston. With a $4.1 million prize purse, the event ranks among the biggest on the LPGA Tour outside of the major championships.
