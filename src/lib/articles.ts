@@ -40,4 +40,14 @@ export async function getFeaturedArticle(): Promise<Article | undefined> {
   return featuredArticle;
 }
 
+export async function getArticlesByTag(tag: string): Promise<Article[]> {
+  const articles = await getArticles();
+  const decodedTag = decodeURIComponent(tag);
+  return articles.filter(article => 
+    article.tags.some(articleTag => 
+      articleTag.toLowerCase() === decodedTag.toLowerCase()
+    )
+  );
+}
+
 export { getAllArticleSlugs };

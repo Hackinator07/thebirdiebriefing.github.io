@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 interface TagListProps {
   tags?: string[];
   className?: string;
@@ -16,15 +18,32 @@ export default function TagList({ tags = [], className = '', size = 'md' }: TagL
     return null;
   }
 
+  // Function to get the URL for a tag
+  const getTagUrl = (tag: string) => {
+    switch (tag) {
+      case 'Tournament Preview':
+        return '/news/tournament-preview';
+      case 'Tournament Golf':
+        return '/news/tournament-golf';
+      case 'LPGA Analysis':
+        return '/news/lpga-analysis';
+      case 'Opinion':
+        return '/news/opinion';
+      default:
+        return `/news/tag/${encodeURIComponent(tag)}`;
+    }
+  };
+
   return (
     <div className={`flex flex-wrap gap-2 ${className}`}>
       {tags.map((tag, index) => (
-        <span
+        <Link
           key={index}
-          className={`bg-gray-100 text-gray-700 rounded-full font-medium ${sizeClasses[size]} hover:bg-gray-200 transition-colors`}
+          href={getTagUrl(tag)}
+          className={`bg-gray-100 text-gray-700 rounded-full font-medium ${sizeClasses[size]} hover:bg-gray-200 transition-colors cursor-pointer`}
         >
           {tag}
-        </span>
+        </Link>
       ))}
     </div>
   );

@@ -90,7 +90,10 @@ export default function NewsList({ articles }: NewsListProps) {
             {/* Category Tag */}
             <div className="mb-6">
               <Link
-                href="/news"
+                href={article.category === 'Tournament Preview' ? '/news/tournament-preview' :
+                      article.category === 'Tournament Golf' ? '/news/tournament-golf' :
+                      article.category === 'LPGA Analysis' ? '/news/lpga-analysis' :
+                      article.category === 'Opinion' ? '/news/opinion' : '/news'}
                 className="inline-block text-primary-500 font-semibold text-lg border-b-2 border-primary-500 pb-1"
               >
                 {article.category}

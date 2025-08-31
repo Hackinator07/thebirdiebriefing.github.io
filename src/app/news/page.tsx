@@ -24,6 +24,8 @@ export default async function NewsPage() {
                 </div>
               </div>
 
+
+
               {/* Articles Feed */}
               <section className="pb-16">
                 <NewsListServer />

@@ -8,14 +8,18 @@ import CustomTranslation from './CustomTranslation';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isRankingsDropdownOpen, setIsRankingsDropdownOpen] = useState(false);
+  const [isNewsDropdownOpen, setIsNewsDropdownOpen] = useState(false);
   const [isMobileRankingsOpen, setIsMobileRankingsOpen] = useState(false);
+  const [isMobileNewsOpen, setIsMobileNewsOpen] = useState(false);
   const pathname = usePathname();
 
   // Close menu when pathname changes
   useEffect(() => {
     setIsMenuOpen(false);
     setIsRankingsDropdownOpen(false);
+    setIsNewsDropdownOpen(false);
     setIsMobileRankingsOpen(false);
+    setIsMobileNewsOpen(false);
   }, [pathname]);
 
   // Prevent body scroll when menu is open
@@ -40,6 +44,14 @@ export default function Header() {
     { name: 'Contact', href: '/contact-us' },
   ];
 
+  const newsSubmenu = [
+    { name: 'Explore All', href: '/news' },
+    { name: 'Tournament Previews', href: '/news/tournament-preview' },
+    { name: 'Tournament Golf', href: '/news/tournament-golf' },
+    { name: 'LPGA Analysis', href: '/news/lpga-analysis' },
+    { name: 'Opinion', href: '/news/opinion' },
+  ];
+
   const rankingsSubmenu = [
     { name: 'Rolex World', href: '/rankings' },
     { name: 'CME Globe', href: '/rankings/cme-globe' },
@@ -55,6 +67,9 @@ export default function Header() {
 
   // Check if rankings section is active
   const isRankingsActive = pathname.startsWith('/rankings');
+  
+  // Check if news section is active
+  const isNewsActive = pathname.startsWith('/news');
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
@@ -70,20 +85,82 @@ export default function Header() {
 
           {/* Desktop Navigation - Changed from md: to lg: to prevent cramped layout in landscape */}
           <nav className="hidden xl:flex items-center space-x-6 xl:space-x-8">
-            {navigation.map((item, index) => {
+            {navigation.map((item) => {
               const isActive = isLinkActive(item.href);
               return (
                 <div key={item.name}>
-                  <Link
-                    href={item.href}
-                    className={`font-medium transition-colors duration-200 ${
-                      isActive
-                        ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
-                        : 'text-gray-700 hover:text-primary-500'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
+                  {/* News dropdown */}
+                  {item.name === 'News' && (
+                    <div 
+                      className="relative inline-block"
+                      onMouseEnter={() => setIsNewsDropdownOpen(true)}
+                      onMouseLeave={() => setIsNewsDropdownOpen(false)}
+                    >
+                      <button
+                        onClick={() => setIsNewsDropdownOpen(!isNewsDropdownOpen)}
+                        className={`font-medium transition-colors duration-200 flex items-center ${
+                          isNewsActive
+                            ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
+                            : 'text-gray-700 hover:text-primary-500'
+                        }`}
+                      >
+                        News
+                        <svg
+                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                            isNewsDropdownOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      
+                      {/* Dropdown Menu */}
+                      {isNewsDropdownOpen && (
+                        <div 
+                          className="absolute top-full left-0 pt-1 w-48 z-50"
+                          onMouseEnter={() => setIsNewsDropdownOpen(true)}
+                          onMouseLeave={() => setIsNewsDropdownOpen(false)}
+                        >
+                          <div className="bg-white rounded-md shadow-lg border border-gray-200 py-1">
+                          {newsSubmenu.map((subItem) => {
+                            const isSubActive = pathname === subItem.href;
+                            return (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                                  isSubActive
+                                    ? 'text-primary-500 bg-primary-50 font-medium'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                                onClick={() => setIsNewsDropdownOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            );
+                          })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  
+                  {/* Regular navigation items */}
+                  {item.name !== 'News' && (
+                    <Link
+                      href={item.href}
+                      className={`font-medium transition-colors duration-200 ${
+                        isActive
+                          ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
+                          : 'text-gray-700 hover:text-primary-500'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                   
                   {/* Insert Rankings dropdown after Podcast - Adjusted spacing */}
                   {item.name === 'Podcast' && (
@@ -210,17 +287,69 @@ export default function Header() {
                       const isActive = isLinkActive(item.href);
                       return (
                         <div key={item.name}>
-                          <Link
-                            href={item.href}
-                            className={`block py-3 font-medium transition-colors duration-200 rounded-lg -mx-6 px-6 ${
-                              isActive
-                                ? 'text-primary-500 bg-primary-50 font-semibold'
-                                : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
-                            }`}
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            {item.name}
-                          </Link>
+                          {/* News dropdown in mobile */}
+                          {item.name === 'News' ? (
+                            <div className="-mx-6">
+                              <button
+                                onClick={() => setIsMobileNewsOpen(!isMobileNewsOpen)}
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg ${
+                                  isNewsActive
+                                    ? 'text-primary-500 bg-primary-50 font-semibold'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                              >
+                                <span>News</span>
+                                <svg
+                                  className={`h-4 w-4 transition-transform duration-200 ${
+                                    isMobileNewsOpen ? 'rotate-180' : ''
+                                  }`}
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </button>
+                              
+                              {/* Mobile News Dropdown */}
+                              {isMobileNewsOpen && (
+                                <div className="bg-gray-50 border-t border-gray-100">
+                                  {newsSubmenu.map((subItem) => {
+                                    const isSubActive = pathname === subItem.href;
+                                    return (
+                                      <Link
+                                        key={subItem.name}
+                                        href={subItem.href}
+                                        className={`block py-3 px-6 text-sm transition-colors duration-200 ${
+                                          isSubActive
+                                            ? 'text-primary-500 bg-primary-100 font-medium'
+                                            : 'text-gray-600 hover:text-primary-500 hover:bg-gray-100'
+                                        }`}
+                                        onClick={() => {
+                                          setIsMenuOpen(false);
+                                          setIsMobileNewsOpen(false);
+                                        }}
+                                      >
+                                        {subItem.name}
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <Link
+                              href={item.href}
+                              className={`block py-3 font-medium transition-colors duration-200 rounded-lg -mx-6 px-6 ${
+                                isActive
+                                  ? 'text-primary-500 bg-primary-50 font-semibold'
+                                  : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                              }`}
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {item.name}
+                            </Link>
+                          )}
                           
                           {/* Insert Rankings dropdown after Podcast in mobile */}
                           {item.name === 'Podcast' && (

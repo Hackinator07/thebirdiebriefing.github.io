@@ -19,6 +19,7 @@ tags:
   - "LPGA Tour"
   - "Community Spirit"
   - "Suzann Pettersen"
+  - "Opinion"
 ---
 
 I've picked up my share of Titleist Pro V1s and Srixon Z-STARs. Balls lost and found like trophies from roughs and water hazards. I keep a handful in my bag, pulling them out when I'm convinced my slice has checked out for good. Call it superstition, but those balls start feeling like more than just urethane. But now, I have a new favorite: Champ. Or Champy, as Marie and I call him, the mascot of [The Dow Championship](https://dowchampionship.com/).

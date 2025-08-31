@@ -17,8 +17,8 @@ tags:
   - "Gigi Stoll"
   - "GG Aka Golf God"
   - "Lifestyle"
-  - "Player Profile"
   - "Drip"
+  - "Opinion"
 ---
 
 Gigi,
