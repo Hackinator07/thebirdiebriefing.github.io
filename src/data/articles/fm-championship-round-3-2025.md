@@ -31,7 +31,7 @@ sections:
         - "Hole 12 - Ina Yoon"
         - "Hole 18 - A Lim Kim"
   - type: "field-table"
-    title: "Leaderboard and Cut Makers After Round 3"
+    title: "Leaderboard After Round 3"
     headers: ["Position", "Player", "To Par", "Scores", "Total"]
     tableData:
       - ["1", "Miranda Wang", "66-67-65", "198", "-18"]
