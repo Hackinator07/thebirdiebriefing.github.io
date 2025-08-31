@@ -1,15 +1,15 @@
 {
-  "timestamp": "2025-08-30T20:04:56.645Z",
+  "timestamp": "2025-08-31T16:56:50.747Z",
   "processed": 1,
-  "skipped": 25,
-  "totalOriginalSize": "0.57",
-  "totalOptimizedSize": "0.02",
-  "savings": "96.5",
+  "skipped": 26,
+  "totalOriginalSize": "0.54",
+  "totalOptimizedSize": "0.01",
+  "savings": "98.1",
   "images": [
     {
-      "original": "images\\articles\\gigi-stoll.png",
-      "optimized": "optimized\\gigi-stoll.webp",
-      "savings": 96.5
+      "original": "images\\articles\\fm-wang-rd3.png",
+      "optimized": "optimized\\fm-wang-rd3.webp",
+      "savings": 98.1
     }
   ]
 }
