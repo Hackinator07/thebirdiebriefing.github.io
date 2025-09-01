@@ -1,15 +1,15 @@
 {
-  "timestamp": "2025-08-31T16:56:50.747Z",
+  "timestamp": "2025-09-01T13:57:35.644Z",
   "processed": 1,
-  "skipped": 26,
-  "totalOriginalSize": "0.54",
+  "skipped": 27,
+  "totalOriginalSize": "0.02",
   "totalOptimizedSize": "0.01",
-  "savings": "98.1",
+  "savings": "50.0",
   "images": [
     {
-      "original": "images\\articles\\fm-wang-rd3.png",
-      "optimized": "optimized\\fm-wang-rd3.webp",
-      "savings": 98.1
+      "original": "images\\lpga-money-logo.png",
+      "optimized": "optimized\\lpga-money-logo.webp",
+      "savings": 50
     }
   ]
 }

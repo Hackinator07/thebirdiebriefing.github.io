@@ -190,16 +190,16 @@ export default function SchedulePage() {
                   )}
                 </div>
 
-                <div className="text-sm">
-                  <span className="text-gray-500">Winner: </span>
-                  {tournament.winner && tournament.winner !== "N/A" ? (
-                    <span className="font-medium text-gray-900">{tournament.winner}</span>
-                  ) : tournament.winner === "N/A" ? (
-                    <span className="text-gray-400">N/A</span>
-                  ) : (
-                    <span className="text-gray-400">TBD</span>
-                  )}
-                </div>
+                                 <div className="text-sm">
+                   <span className="text-gray-500">Winner: </span>
+                   {tournament.winner && tournament.winner !== "N/A" ? (
+                     <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-800">{tournament.winner}</span>
+                   ) : tournament.winner === "N/A" ? (
+                     <span className="text-gray-400">N/A</span>
+                   ) : (
+                     <span className="text-gray-400">TBD</span>
+                   )}
+                 </div>
               </div>
             ))}
           </div>
@@ -286,15 +286,15 @@ export default function SchedulePage() {
                           )}
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {tournament.winner && tournament.winner !== "N/A" ? (
-                          <span className="font-medium text-gray-900">{tournament.winner}</span>
-                        ) : tournament.winner === "N/A" ? (
-                          <span className="text-gray-400">N/A</span>
-                        ) : (
-                          <span className="text-gray-400">TBD</span>
-                        )}
-                      </td>
+                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                         {tournament.winner && tournament.winner !== "N/A" ? (
+                           <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-800">{tournament.winner}</span>
+                         ) : tournament.winner === "N/A" ? (
+                           <span className="text-gray-400">N/A</span>
+                         ) : (
+                           <span className="text-gray-400">TBD</span>
+                         )}
+                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                         {tournament.purse}
                       </td>
@@ -307,18 +307,18 @@ export default function SchedulePage() {
 
           {/* Footer */}
           <div className="mt-8 text-center text-xs sm:text-sm text-gray-500">
-            <p className="mb-2">
-              <span className="font-medium text-secondary-500">Major Championships</span> are highlighted in green
-            </p>
+                         <p className="mb-2">
+               <span className="font-medium text-secondary-500">Major Championships</span> appear in green
+             </p>
             <p>
-              Schedule information provided by the{' '}
+              Schedule Information Provided by the{' '}
               <a
                 href="https://www.lpga.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-500 hover:text-primary-600"
               >
-                LPGA
+                LPGA Tour
               </a>
             </p>
           </div>

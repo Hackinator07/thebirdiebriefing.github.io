@@ -165,6 +165,12 @@ export default function RankingsPage() {
               >
                 CME Globe
               </Link>
+              <Link
+                href="/rankings/money-list"
+                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md"
+              >
+                LPGA Money
+              </Link>
             </div>
           </div>
         </div>

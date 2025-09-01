@@ -1,14 +1,14 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { getCmeGlobeRankings } from '@/lib/rankings';
+import { getMoneyListRankings } from '@/lib/rankings';
 import Link from 'next/link';
 
-type SortField = 'rank' | 'fullName' | 'countryCode' | 'points' | 'events';
+type SortField = 'rank' | 'fullName' | 'countryCode' | 'earnings' | 'events';
 type SortDirection = 'asc' | 'desc';
 
-export default function CmeGlobeRankingsPage() {
-  const rankings = getCmeGlobeRankings();
+export default function MoneyListRankingsPage() {
+  const rankings = getMoneyListRankings();
   const [sortField, setSortField] = useState<SortField>('rank');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
 
@@ -33,9 +33,9 @@ export default function CmeGlobeRankingsPage() {
           aValue = a.countryCode.toLowerCase();
           bValue = b.countryCode.toLowerCase();
           break;
-        case 'points':
-          aValue = a.points;
-          bValue = b.points;
+        case 'earnings':
+          aValue = a.earnings;
+          bValue = b.earnings;
           break;
         case 'events':
           aValue = a.events;
@@ -56,7 +56,7 @@ export default function CmeGlobeRankingsPage() {
     });
   }, [rankings.players, sortField, sortDirection]);
 
-  const topPlayers = sortedPlayers.slice(0, 60); // Show top 60
+  const topPlayers = sortedPlayers; // Show all players
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
@@ -91,44 +91,45 @@ export default function CmeGlobeRankingsPage() {
     }
   };
 
+  const formatEarnings = (earnings: number) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(earnings);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <section className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
           <div className="text-center mb-4">
-            {/* CME Globe Rankings Logo */}
+            {/* LPGA Money List Logo */}
             <div className="flex justify-center mb-6">
-              <img
-                src="/optimized/cme-logo-rankings.webp"
-                alt="CME Globe Rankings Logo"
-                className="h-16 sm:h-20 md:h-24 object-contain"
-              />
+                             <img
+                 src="/optimized/lpga-money-logo.webp"
+                 alt="LPGA Money List Logo"
+                 className="h-16 sm:h-20 md:h-24 object-contain"
+               />
             </div>
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="flex-1 h-px bg-gray-300 max-w-16 sm:max-w-32"></div>
               <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 leading-tight tracking-tight title-overlap">
-                CME Globe Rankings
+                LPGA Money List
               </h1>
               <div className="flex-1 h-px bg-gray-300 max-w-16 sm:max-w-32"></div>
             </div>
           </div>
-          <p className="text-base sm:text-lg text-gray-600 text-center">
-            Updated {new Date(rankings.lastUpdated).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })} at {new Date(rankings.lastUpdated).toLocaleTimeString('en-US', {
-              hour: 'numeric',
-              minute: '2-digit',
-              hour12: true
-            })}
-          </p>
-          <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center">
-            Week of {rankings.week.start_date} to {rankings.week.end_date}
-          </p>
+                     <p className="text-base sm:text-lg text-gray-600 text-center">
+             Updated August 24, 2025 at 6:00AM
+           </p>
+           <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center">
+             Week of 2025-08-18 to 2025-08-24
+           </p>
           
-                    {/* Rankings Navigation */}
+          {/* Rankings Navigation */}
           <div className="mt-6 flex justify-center">
             <div className="inline-flex rounded-lg border border-gray-200 bg-white p-1">
               <Link
@@ -137,18 +138,18 @@ export default function CmeGlobeRankingsPage() {
               >
                 Rolex World
               </Link>
-                             <Link
-                 href="/rankings/cme-globe"
-                 className="px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 rounded-md"
-               >
-                 CME Globe
-               </Link>
               <Link
-                href="/rankings/money-list"
+                href="/rankings/cme-globe"
                 className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md"
               >
-                LPGA Money
+                CME Globe
               </Link>
+                             <Link
+                 href="/rankings/money-list"
+                 className="px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 rounded-md"
+               >
+                 LPGA Money
+               </Link>
             </div>
           </div>
         </div>
@@ -157,12 +158,12 @@ export default function CmeGlobeRankingsPage() {
       {/* Rankings Content */}
       <section className="py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                     {/* Mobile Card Layout */}
-           <div className="block lg:hidden space-y-3">
-               {topPlayers.map((player) => (
-                 <div key={player.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-                   <div className="flex items-center justify-between mb-3">
-                     <div className="flex items-center gap-3">
+          {/* Mobile Card Layout */}
+          <div className="block lg:hidden space-y-3">
+            {topPlayers.map((player) => (
+              <div key={player.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-3">
                                          <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
                        <span className="text-sm font-bold text-primary-800">{player.rank}</span>
                      </div>
@@ -175,8 +176,8 @@ export default function CmeGlobeRankingsPage() {
                 
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
-                    <div className="text-gray-500 text-xs uppercase tracking-wide">Points</div>
-                    <div className="font-medium text-gray-900">{player.points.toFixed(3)}</div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wide">EARNINGS (USD)</div>
+                    <div className="font-medium text-gray-900">{formatEarnings(player.earnings)}</div>
                   </div>
                   <div>
                     <div className="text-gray-500 text-xs uppercase tracking-wide">Events</div>
@@ -222,11 +223,11 @@ export default function CmeGlobeRankingsPage() {
                     </th>
                     <th 
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                      onClick={() => handleSort('points')}
+                      onClick={() => handleSort('earnings')}
                     >
                       <div className="flex items-center gap-1">
-                        Points
-                        {getSortIcon('points')}
+                        EARNINGS (USD)
+                        {getSortIcon('earnings')}
                       </div>
                     </th>
                     <th 
@@ -253,7 +254,7 @@ export default function CmeGlobeRankingsPage() {
                         {player.countryCode}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {player.points.toFixed(3)}
+                        {formatEarnings(player.earnings)}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {player.events}
@@ -265,20 +266,20 @@ export default function CmeGlobeRankingsPage() {
             </div>
           </div>
 
-                     {/* Footer */}
-           <div className="mt-8 text-center text-xs sm:text-sm text-gray-500">
-             <p>
-               Official Tour Rankings Provided by the{' '}
-               <a
-                 href="https://www.lpga.com/"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="text-primary-500 hover:text-primary-600"
-               >
-                 LPGA Tour
-               </a>
-             </p>
-           </div>
+          {/* Footer */}
+          <div className="mt-8 text-center text-xs sm:text-sm text-gray-500">
+            <p>
+              Official Tour Rankings Provided by the{' '}
+              <a
+                href="https://www.lpga.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-500 hover:text-primary-600"
+              >
+                LPGA Tour
+              </a>
+            </p>
+          </div>
         </div>
       </section>
     </div>

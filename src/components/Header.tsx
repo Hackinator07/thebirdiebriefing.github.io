@@ -9,8 +9,10 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isRankingsDropdownOpen, setIsRankingsDropdownOpen] = useState(false);
   const [isNewsDropdownOpen, setIsNewsDropdownOpen] = useState(false);
+  const [isScheduleDropdownOpen, setIsScheduleDropdownOpen] = useState(false);
   const [isMobileRankingsOpen, setIsMobileRankingsOpen] = useState(false);
   const [isMobileNewsOpen, setIsMobileNewsOpen] = useState(false);
+  const [isMobileScheduleOpen, setIsMobileScheduleOpen] = useState(false);
   const pathname = usePathname();
 
   // Close menu when pathname changes
@@ -18,8 +20,10 @@ export default function Header() {
     setIsMenuOpen(false);
     setIsRankingsDropdownOpen(false);
     setIsNewsDropdownOpen(false);
+    setIsScheduleDropdownOpen(false);
     setIsMobileRankingsOpen(false);
     setIsMobileNewsOpen(false);
+    setIsMobileScheduleOpen(false);
   }, [pathname]);
 
   // Prevent body scroll when menu is open
@@ -55,6 +59,11 @@ export default function Header() {
   const rankingsSubmenu = [
     { name: 'Rolex World', href: '/rankings' },
     { name: 'CME Globe', href: '/rankings/cme-globe' },
+    { name: 'LPGA Money', href: '/rankings/money-list' },
+  ];
+
+  const scheduleSubmenu = [
+    { name: 'All Tournaments', href: '/schedule' },
   ];
 
   // Helper function to check if a link is active
@@ -70,6 +79,9 @@ export default function Header() {
   
   // Check if news section is active
   const isNewsActive = pathname.startsWith('/news');
+
+  // Check if schedule section is active
+  const isScheduleActive = pathname.startsWith('/schedule');
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
@@ -147,9 +159,68 @@ export default function Header() {
                       )}
                     </div>
                   )}
+
+                  {/* Schedule dropdown */}
+                  {item.name === 'Schedule' && (
+                    <div 
+                      className="relative inline-block"
+                      onMouseEnter={() => setIsScheduleDropdownOpen(true)}
+                      onMouseLeave={() => setIsScheduleDropdownOpen(false)}
+                    >
+                      <button
+                        onClick={() => setIsScheduleDropdownOpen(!isScheduleDropdownOpen)}
+                        className={`font-medium transition-colors duration-200 flex items-center ${
+                          isScheduleActive
+                            ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
+                            : 'text-gray-700 hover:text-primary-500'
+                        }`}
+                      >
+                        Schedule
+                        <svg
+                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                            isScheduleDropdownOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      
+                      {/* Dropdown Menu */}
+                      {isScheduleDropdownOpen && (
+                        <div 
+                          className="absolute top-full left-0 pt-1 w-48 z-50"
+                          onMouseEnter={() => setIsScheduleDropdownOpen(true)}
+                          onMouseLeave={() => setIsScheduleDropdownOpen(false)}
+                        >
+                          <div className="bg-white rounded-md shadow-lg border border-gray-200 py-1">
+                          {scheduleSubmenu.map((subItem) => {
+                            const isSubActive = pathname === subItem.href;
+                            return (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                                  isSubActive
+                                    ? 'text-primary-500 bg-primary-50 font-medium'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                                onClick={() => setIsScheduleDropdownOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            );
+                          })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
                   
                   {/* Regular navigation items */}
-                  {item.name !== 'News' && (
+                  {item.name !== 'News' && item.name !== 'Schedule' && (
                     <Link
                       href={item.href}
                       className={`font-medium transition-colors duration-200 ${
@@ -328,6 +399,55 @@ export default function Header() {
                                         onClick={() => {
                                           setIsMenuOpen(false);
                                           setIsMobileNewsOpen(false);
+                                        }}
+                                      >
+                                        {subItem.name}
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          ) : item.name === 'Schedule' ? (
+                            <div className="-mx-6">
+                              <button
+                                onClick={() => setIsMobileScheduleOpen(!isMobileScheduleOpen)}
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg ${
+                                  isScheduleActive
+                                    ? 'text-primary-500 bg-primary-50 font-semibold'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                              >
+                                <span>Schedule</span>
+                                <svg
+                                  className={`h-4 w-4 transition-transform duration-200 ${
+                                    isMobileScheduleOpen ? 'rotate-180' : ''
+                                  }`}
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </button>
+                              
+                              {/* Mobile Schedule Dropdown */}
+                              {isMobileScheduleOpen && (
+                                <div className="bg-gray-50 border-t border-gray-100">
+                                  {scheduleSubmenu.map((subItem) => {
+                                    const isSubActive = pathname === subItem.href;
+                                    return (
+                                      <Link
+                                        key={subItem.name}
+                                        href={subItem.href}
+                                        className={`block py-3 px-6 text-sm transition-colors duration-200 ${
+                                          isSubActive
+                                            ? 'text-primary-500 bg-primary-100 font-medium'
+                                            : 'text-gray-600 hover:text-primary-500 hover:bg-gray-100'
+                                        }`}
+                                        onClick={() => {
+                                          setIsMenuOpen(false);
+                                          setIsMobileScheduleOpen(false);
                                         }}
                                       >
                                         {subItem.name}
