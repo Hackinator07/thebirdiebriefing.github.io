@@ -121,7 +121,7 @@ sections:
         description: "Official Cleanup and Restoration Company of the PGA TOUR"
 ---
 
-Miranda Wang, the rookie from China who made her name at Duke and ground her way through the Epson Tour, finally turned years of effort into triumph, holding off World No. 1 Jeeno Thitikul to claim her first LPGA title.
+Miranda Wang, the rookie from China who made her name at Duke and ground her way through the Epson Tour, finally turned years of effort into triumph, holding off World No. 1 Jeeno Thitikul to claim her first LPGA title at the FM Championship.
 
 She entered Sunday with a three-shot lead and clung to it most of the way. The 15th hole nearly unraveled her—an errant fairway shot, a rare flash of urgency, and a break from her usual pre-shot routine led to bogey, dropping her a shot behind Thitikul. But Wang steadied herself quickly: she brushed off a missed birdie on 16, then answered with a flawless approach to six feet on 17 and buried the putt to retake the lead. Thitikul, meanwhile, blinked—her chip skidding across the green and setting up a bogey.
 
