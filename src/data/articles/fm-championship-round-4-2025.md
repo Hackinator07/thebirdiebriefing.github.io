@@ -121,7 +121,7 @@ sections:
         description: "Official Cleanup and Restoration Company of the PGA TOUR"
 ---
 
-Miranda Wang, the rookie from China, who made a name for herself at Duke and battled through years on the Epson Tour, finally translated years of work and struggle bus riding into triumph, holding off World No. 1 Jeeno Thitikul to claim her first LPGA title. At 26, Wang became the 24th different winner on the LPGA in 2025.
+Miranda Wang, the rookie from China, who made a name for herself at Duke and battled through years on the Epson Tour, finally translated those effots into triumph, holding off World No. 1 Jeeno Thitikul to claim her first LPGA title. At 26, Wang became the 24th different winner on the LPGA in 2025.
 
 Wang came into Sunday with a three-shot lead and held at least a share of it through most of the round. The 15th hole shook her briefly--an errant fairway shot, a rare sense of urgency, and a break from her usual pre-shot routine combined to produce a bogey, dropping her a shot behind Thitikul. But Wang’s poise returned immediately: a missed birdie on 16 didn’t flinch her focus. On the 17th, Wang delivered a flawless approach to six feet and holed the putt to retake the lead, while Thitikul stumbled with an uncharacteristic chip across the green, leaving her with a bogey.
 
