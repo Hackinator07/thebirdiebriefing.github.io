@@ -2,6 +2,7 @@ import ArticleLinks from './ArticleLinks';
 import TVSchedule from './TVSchedule';
 import FieldData from './FieldData';
 import FieldTable from './FieldTable';
+import { TimezoneProvider } from './TimezoneContext';
 
 interface Section {
   type: 'links' | 'tv-schedule' | 'field-data' | 'field-table';
@@ -30,6 +31,64 @@ export default function ArticleSections({ sections }: ArticleSectionsProps) {
     return null;
   }
 
+  // Check if there are TV schedules
+  const hasTVSchedules = sections.some(section => section.type === 'tv-schedule');
+  let isFirstTVSchedule = true;
+
+  // If there are TV schedules, wrap everything in a single TimezoneProvider
+  if (hasTVSchedules) {
+    return (
+      <TimezoneProvider>
+        <div className="mt-12">
+          {sections.map((section, index) => {
+            switch (section.type) {
+              case 'links':
+                return (
+                  <ArticleLinks
+                    key={index}
+                    title={section.title}
+                    links={section.links || []}
+                  />
+                );
+              case 'tv-schedule':
+                const showSelector = isFirstTVSchedule;
+                isFirstTVSchedule = false;
+                return (
+                  <TVSchedule
+                    key={index}
+                    title={section.title}
+                    schedule={section.schedule || []}
+                    showTimezoneSelector={showSelector}
+                  />
+                );
+              case 'field-data':
+                return (
+                  <FieldData
+                    key={index}
+                    title={section.title}
+                    data={section.data || {}}
+                    backgroundColor={section.backgroundColor}
+                  />
+                );
+              case 'field-table':
+                return (
+                  <FieldTable
+                    key={index}
+                    title={section.title}
+                    headers={section.headers || []}
+                    data={section.tableData || []}
+                  />
+                );
+              default:
+                return null;
+            }
+          })}
+        </div>
+      </TimezoneProvider>
+    );
+  }
+
+  // If no TV schedules, render normally without TimezoneProvider
   return (
     <div className="mt-12">
       {sections.map((section, index) => {
@@ -40,14 +99,6 @@ export default function ArticleSections({ sections }: ArticleSectionsProps) {
                 key={index}
                 title={section.title}
                 links={section.links || []}
-              />
-            );
-          case 'tv-schedule':
-            return (
-              <TVSchedule
-                key={index}
-                title={section.title}
-                schedule={section.schedule || []}
               />
             );
           case 'field-data':

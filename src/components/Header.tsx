@@ -458,17 +458,27 @@ export default function Header() {
                               )}
                             </div>
                           ) : (
-                            <Link
-                              href={item.href}
-                              className={`block py-3 font-medium transition-colors duration-200 rounded-lg -mx-6 px-6 ${
-                                isActive
-                                  ? 'text-primary-500 bg-primary-50 font-semibold'
-                                  : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
-                              }`}
-                              onClick={() => setIsMenuOpen(false)}
-                            >
-                              {item.name}
-                            </Link>
+                            <div className="-mx-6">
+                              <Link
+                                href={item.href}
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg ${
+                                  isActive
+                                    ? 'text-primary-500 bg-primary-50 font-semibold'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                <span>{item.name}</span>
+                                {/* Logo positioned on the right, aligned with Home */}
+                                {item.name === 'Home' && (
+                                  <img 
+                                    src="/images/logo.png" 
+                                    alt="Birdie Briefing Logo" 
+                                    className="w-8 h-8 rounded-full object-cover"
+                                  />
+                                )}
+                              </Link>
+                            </div>
                           )}
                           
                           {/* Insert Rankings dropdown after Podcast in mobile */}

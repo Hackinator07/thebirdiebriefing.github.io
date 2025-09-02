@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import TimezoneSelect from 'react-timezone-select';
+import { useTimezone } from './TimezoneContext';
 
 interface ScheduleDay {
   day: string;
@@ -11,6 +12,7 @@ interface ScheduleDay {
 interface TVScheduleProps {
   title: string;
   schedule: ScheduleDay[];
+  showTimezoneSelector?: boolean;
 }
 
 // Default timezone (Central Time)
@@ -102,17 +104,9 @@ function getTimezoneLabel(timezone: string): string {
   }
 }
 
-export default function TVSchedule({ title, schedule }: TVScheduleProps) {
-  const [selectedTimezone, setSelectedTimezone] = useState(DEFAULT_TIMEZONE);
+export default function TVSchedule({ title, schedule, showTimezoneSelector = true }: TVScheduleProps) {
+  const { selectedTimezone, updateTimezone } = useTimezone();
   const [convertedSchedule, setConvertedSchedule] = useState(schedule);
-
-  // Load saved timezone preference
-  useEffect(() => {
-    const savedTimezone = localStorage.getItem('preferred-timezone');
-    if (savedTimezone) {
-      setSelectedTimezone(savedTimezone);
-    }
-  }, []);
 
   // Convert schedule when timezone changes
   useEffect(() => {
@@ -129,10 +123,9 @@ export default function TVSchedule({ title, schedule }: TVScheduleProps) {
     }
   }, [selectedTimezone, schedule]);
 
-  // Save timezone preference
+  // Handle timezone change
   const handleTimezoneChange = (newTimezone: string) => {
-    setSelectedTimezone(newTimezone);
-    localStorage.setItem('preferred-timezone', newTimezone);
+    updateTimezone(newTimezone);
   };
 
   return (
@@ -141,71 +134,73 @@ export default function TVSchedule({ title, schedule }: TVScheduleProps) {
         <h3 className="text-2xl font-bold text-gray-900 mb-6">{title}</h3>
         
         {/* Timezone Selector */}
-        <div className="mb-6">
-          <label htmlFor="timezone-select" className="block text-sm font-semibold text-gray-900 mb-2">
-            Time Zone: {getTimezoneLabel(selectedTimezone)}
-          </label>
-          <div className="max-w-xs">
-            <TimezoneSelect
-              value={selectedTimezone}
-              onChange={(tz) => handleTimezoneChange(tz.value)}
-              onBlur={() => {}}
-              placeholder="Select timezone..."
-              className="w-full"
-              menuPlacement="auto"
-              isSearchable={true}
-              isClearable={false}
-              aria-label="Select timezone"
-              instanceId="timezone-selector"
-              styles={{
-                control: (base, state) => ({
-                  ...base,
-                  borderColor: state.isFocused ? '#ad345a' : '#d1d5db',
-                  borderWidth: '1px',
-                  borderRadius: '0.5rem',
+        {showTimezoneSelector && (
+          <div className="mb-6">
+            <label htmlFor="timezone-select" className="block text-sm font-semibold text-gray-900 mb-2">
+              {getTimezoneLabel(selectedTimezone)}
+            </label>
+            <div className="max-w-xs">
+              <TimezoneSelect
+                value={selectedTimezone}
+                onChange={(tz) => handleTimezoneChange(tz.value)}
+                onBlur={() => {}}
+                placeholder="Select timezone..."
+                className="w-full"
+                menuPlacement="auto"
+                isSearchable={true}
+                isClearable={false}
+                aria-label="Select timezone"
+                instanceId="timezone-selector"
+                styles={{
+                  control: (base, state) => ({
+                    ...base,
+                    borderColor: state.isFocused ? '#ad345a' : '#d1d5db',
+                    borderWidth: '1px',
+                    borderRadius: '0.5rem',
                   padding: '0.5rem 0.75rem',
-                  minHeight: '42px',
-                  boxShadow: state.isFocused ? '0 0 0 2px #ad345a' : 'none',
-                  transition: 'all 0.2s ease',
-                  '&:hover': {
-                    borderColor: '#ad345a'
-                  }
-                }),
-                menu: (base) => ({
-                  ...base,
-                  border: '1px solid #d1d5db',
-                  borderRadius: '0.5rem',
-                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                  zIndex: 50
-                }),
-                option: (base, state) => ({
-                  ...base,
-                  backgroundColor: state.isSelected 
-                    ? '#ad345a' 
-                    : state.isFocused 
-                    ? '#f9f3f5' 
-                    : 'white',
-                  color: state.isSelected ? 'white' : '#374151',
-                  '&:hover': {
-                    backgroundColor: state.isSelected ? '#ad345a' : '#f9f3f5'
-                  }
-                }),
-                singleValue: (base) => ({
-                  ...base,
-                  color: '#374151'
-                }),
-                placeholder: (base) => ({
-                  ...base,
-                  color: '#9ca3af'
-                }),
-                input: (base) => ({
-                  ...base,
-                  color: '#374151'
-                })
-              }}
-            />
+                    minHeight: '42px',
+                    boxShadow: state.isFocused ? '0 0 0 2px #ad345a' : 'none',
+                    transition: 'all 0.2s ease',
+                    '&:hover': {
+                      borderColor: '#ad345a'
+                    }
+                  }),
+                  menu: (base) => ({
+                    ...base,
+                    border: '1px solid #d1d5db',
+                    borderRadius: '0.5rem',
+                    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                    zIndex: 50
+                  }),
+                  option: (base, state) => ({
+                    ...base,
+                    backgroundColor: state.isSelected 
+                      ? '#ad345a' 
+                      : state.isFocused 
+                      ? '#f9f3f5' 
+                      : 'white',
+                    color: state.isSelected ? 'white' : '#374151',
+                    '&:hover': {
+                      backgroundColor: state.isSelected ? '#ad345a' : '#f9f3f5'
+                    }
+                  }),
+                  singleValue: (base) => ({
+                    ...base,
+                    color: '#374151'
+                  }),
+                  placeholder: (base) => ({
+                    ...base,
+                    color: '#9ca3af'
+                  }),
+                  input: (base) => ({
+                    ...base,
+                    color: '#374151'
+                  })
+                }}
+              />
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="space-y-6">
           {convertedSchedule.map((day, index) => (
