@@ -39,9 +39,39 @@ export async function generateMetadata({ params }: ArticlePageProps) {
     };
   }
 
+  const articleUrl = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/news/${article.slug}`;
+  const imageUrl = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}${article.image.src}`;
+
   return {
     title: `${article.title} - The Birdie Briefing`,
     description: article.excerpt,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: articleUrl,
+      siteName: 'The Birdie Briefing',
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: article.image.alt,
+        },
+      ],
+      locale: 'en_US',
+      type: 'article',
+      authors: [article.author],
+      publishedTime: article.date,
+      modifiedTime: article.date,
+      section: article.category,
+      tags: article.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+      images: [imageUrl],
+    },
   };
 }
 

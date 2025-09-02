@@ -8,6 +8,28 @@ export async function generateMetadata() {
   return {
     title: 'Opinion - News - The Birdie Briefing',
     description: 'Latest opinion articles from The Birdie Briefing. Expert opinions and commentary on LPGA women\'s golf news and exclusive content.',
+    openGraph: {
+      title: 'Opinion - News - The Birdie Briefing',
+      description: 'Latest opinion articles from The Birdie Briefing. Expert opinions and commentary on LPGA women\'s golf news and exclusive content.',
+      url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/news/opinion`,
+      siteName: 'The Birdie Briefing',
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/images/logo.png`,
+          width: 1200,
+          height: 630,
+          alt: 'The Birdie Briefing Logo',
+        },
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Opinion - News - The Birdie Briefing',
+      description: 'Latest opinion articles from The Birdie Briefing. Expert opinions and commentary on LPGA women\'s golf news and exclusive content.',
+      images: [`${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/images/logo.png`],
+    },
   };
 }
 

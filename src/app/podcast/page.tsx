@@ -6,6 +6,28 @@ export const metadata = {
   title: "Podcast - The Birdie Briefing",
   description:
     "Listen to our latest episode as Marie breaks down the players to watch and the atmosphere leading into the Portland Classic.",
+  openGraph: {
+    title: "Podcast - The Birdie Briefing",
+    description: "Listen to our latest episode as Marie breaks down the players to watch and the atmosphere leading into the Portland Classic.",
+    url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/podcast`,
+    siteName: 'The Birdie Briefing',
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/images/logo.png`,
+        width: 1200,
+        height: 630,
+        alt: 'The Birdie Briefing Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Podcast - The Birdie Briefing",
+    description: "Listen to our latest episode as Marie breaks down the players to watch and the atmosphere leading into the Portland Classic.",
+    images: [`${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/images/logo.png`],
+  },
 };
 
 export default function PodcastPage() {

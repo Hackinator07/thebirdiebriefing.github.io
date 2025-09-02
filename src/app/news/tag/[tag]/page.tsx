@@ -38,6 +38,28 @@ export async function generateMetadata({ params }: TagPageProps) {
   return {
     title: `${tag.charAt(0).toUpperCase() + tag.slice(1)} - News - The Birdie Briefing`,
     description: `Latest ${tag} articles from The Birdie Briefing. LPGA women's golf news, tournament coverage, and exclusive content.`,
+    openGraph: {
+      title: `${tag.charAt(0).toUpperCase() + tag.slice(1)} - News - The Birdie Briefing`,
+      description: `Latest ${tag} articles from The Birdie Briefing. LPGA women's golf news, tournament coverage, and exclusive content.`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/news/tag/${resolvedParams.tag}`,
+      siteName: 'The Birdie Briefing',
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/images/logo.png`,
+          width: 1200,
+          height: 630,
+          alt: 'The Birdie Briefing Logo',
+        },
+      ],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${tag.charAt(0).toUpperCase() + tag.slice(1)} - News - The Birdie Briefing`,
+      description: `Latest ${tag} articles from The Birdie Briefing. LPGA women's golf news, tournament coverage, and exclusive content.`,
+      images: [`${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/images/logo.png`],
+    },
   };
 }
 

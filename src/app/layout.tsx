@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://thebirdiebriefing.github.io'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'The Birdie Briefing - LPGA Podcast, News, and Rankings',
     description: 'Your premier source for LPGA women\'s golf news, tournament coverage, exclusive content, and comprehensive rankings.',
-    url: 'https://thebirdiebriefing.github.io',
+    url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}`,
     siteName: 'The Birdie Briefing',
     images: [
       {
