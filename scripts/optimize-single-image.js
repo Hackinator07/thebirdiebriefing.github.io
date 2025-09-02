@@ -15,8 +15,8 @@ async function optimizeSingleImage(inputPath, outputPath) {
   }
 }
 
-// Optimize the LPGA money logo
-const inputPath = 'public/images/lpga-money-logo.png';
-const outputPath = 'public/optimized/lpga-money-logo.webp';
+// Optimize the fm-wang-rd4.png image
+const inputPath = 'public/images/articles/fm-wang-rd4.png';
+const outputPath = 'public/optimized/fm-wang-rd4.webp';
 
 optimizeSingleImage(inputPath, outputPath);
