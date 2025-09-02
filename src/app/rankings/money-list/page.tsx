@@ -123,11 +123,17 @@ export default function MoneyListRankingsPage() {
             </div>
           </div>
                      <p className="text-base sm:text-lg text-gray-600 text-center">
-             Updated August 24, 2025 at 6:00AM
-           </p>
-           <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center">
-             Week of 2025-08-18 to 2025-08-24
-           </p>
+            Updated {new Date(rankings.lastUpdated).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit'
+            })}
+          </p>
+          <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center">
+            Week of {rankings.week.start_date} to {rankings.week.end_date}
+          </p>
           
           {/* Rankings Navigation */}
           <div className="mt-6 flex justify-center">
