@@ -221,8 +221,8 @@ export default function Header() {
                     </div>
                   )}
                   
-                  {/* Regular navigation items */}
-                  {item.name !== 'News' && item.name !== 'Schedule' && (
+                                     {/* Regular navigation items */}
+                   {item.name !== t('news') && item.name !== t('schedule') && (
                     <Link
                       href={item.href}
                       className={`font-medium transition-colors duration-200 ${
