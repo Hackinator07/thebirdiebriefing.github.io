@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import CustomTranslation from './CustomTranslation';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +15,7 @@ export default function Header() {
   const [isMobileNewsOpen, setIsMobileNewsOpen] = useState(false);
   const [isMobileScheduleOpen, setIsMobileScheduleOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useTranslation();
 
   // Close menu when pathname changes
   useEffect(() => {
@@ -40,30 +42,30 @@ export default function Header() {
   }, [isMenuOpen]);
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'News', href: '/news' },
-    { name: 'Podcast', href: '/podcast' },
-    { name: 'Schedule', href: '/schedule' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact-us' },
+    { name: t('home'), href: '/' },
+    { name: t('news'), href: '/news' },
+    { name: t('podcast'), href: '/podcast' },
+    { name: t('schedule'), href: '/schedule' },
+    { name: t('about'), href: '/about' },
+    { name: t('contact'), href: '/contact-us' },
   ];
 
   const newsSubmenu = [
-    { name: 'Explore All', href: '/news' },
-    { name: 'Tournament Previews', href: '/news/tournament-preview' },
-    { name: 'Tournament Golf', href: '/news/tournament-golf' },
-    { name: 'LPGA Analysis', href: '/news/lpga-analysis' },
-    { name: 'Opinion', href: '/news/opinion' },
+    { name: t('exploreAll'), href: '/news' },
+    { name: t('tournamentPreviews'), href: '/news/tournament-preview' },
+    { name: t('tournamentGolf'), href: '/news/tournament-golf' },
+    { name: t('lpgaAnalysis'), href: '/news/lpga-analysis' },
+    { name: t('opinion'), href: '/news/opinion' },
   ];
 
   const rankingsSubmenu = [
-    { name: 'Rolex World', href: '/rankings' },
-    { name: 'CME Globe', href: '/rankings/cme-globe' },
-    { name: 'LPGA Money', href: '/rankings/money-list' },
+    { name: t('rolexWorld'), href: '/rankings' },
+    { name: t('cmeGlobe'), href: '/rankings/cme-globe' },
+    { name: t('lpgaMoney'), href: '/rankings/money-list' },
   ];
 
   const scheduleSubmenu = [
-    { name: 'All Tournaments', href: '/schedule' },
+    { name: t('allTournaments'), href: '/schedule' },
   ];
 
   // Helper function to check if a link is active
@@ -102,7 +104,7 @@ export default function Header() {
               return (
                 <div key={item.name}>
                   {/* News dropdown */}
-                  {item.name === 'News' && (
+                  {item.name === t('news') && (
                     <div 
                       className="relative inline-block"
                       onMouseEnter={() => setIsNewsDropdownOpen(true)}
@@ -116,7 +118,7 @@ export default function Header() {
                             : 'text-gray-700 hover:text-primary-500'
                         }`}
                       >
-                        News
+                                                 {t('news')}
                         <svg
                           className={`ml-1 h-4 w-4 transition-transform duration-200 ${
                             isNewsDropdownOpen ? 'rotate-180' : ''
@@ -161,7 +163,7 @@ export default function Header() {
                   )}
 
                   {/* Schedule dropdown */}
-                  {item.name === 'Schedule' && (
+                  {item.name === t('schedule') && (
                     <div 
                       className="relative inline-block"
                       onMouseEnter={() => setIsScheduleDropdownOpen(true)}
@@ -175,7 +177,7 @@ export default function Header() {
                             : 'text-gray-700 hover:text-primary-500'
                         }`}
                       >
-                        Schedule
+                                                 {t('schedule')}
                         <svg
                           className={`ml-1 h-4 w-4 transition-transform duration-200 ${
                             isScheduleDropdownOpen ? 'rotate-180' : ''
@@ -234,7 +236,7 @@ export default function Header() {
                   )}
                   
                   {/* Insert Rankings dropdown after Podcast - Adjusted spacing */}
-                  {item.name === 'Podcast' && (
+                  {item.name === t('podcast') && (
                     <div 
                       className="relative inline-block ml-6 xl:ml-8"
                       onMouseEnter={() => setIsRankingsDropdownOpen(true)}
@@ -248,7 +250,7 @@ export default function Header() {
                             : 'text-gray-700 hover:text-primary-500'
                         }`}
                       >
-                        Rankings
+                        {t('rankings')}
                         <svg
                           className={`ml-1 h-4 w-4 transition-transform duration-200 ${
                             isRankingsDropdownOpen ? 'rotate-180' : ''
@@ -308,9 +310,9 @@ export default function Header() {
               type="button"
               className="text-gray-700 hover:text-primary-500 focus:outline-none focus:text-primary-500"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={isMenuOpen ? t('closeMenu') : t('openMenu')}
             >
-              <span className="sr-only">{isMenuOpen ? 'Close main menu' : 'Open main menu'}</span>
+                              <span className="sr-only">{isMenuOpen ? t('closeMenu') : t('openMenu')}</span>
               {isMenuOpen ? (
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -338,7 +340,7 @@ export default function Header() {
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
-                  <span className="text-xl font-bold text-primary-500">Menu</span>
+                  <span className="text-xl font-bold text-primary-500">{t('menu')}</span>
                   <button
                     type="button"
                     className="text-gray-700 hover:text-primary-500 focus:outline-none"
@@ -359,7 +361,7 @@ export default function Header() {
                       return (
                         <div key={item.name}>
                           {/* News dropdown in mobile */}
-                          {item.name === 'News' ? (
+                          {item.name === t('news') ? (
                             <div className="-mx-6">
                               <button
                                 onClick={() => setIsMobileNewsOpen(!isMobileNewsOpen)}
@@ -369,7 +371,7 @@ export default function Header() {
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
                                 }`}
                               >
-                                <span>News</span>
+                                                                 <span>{t('news')}</span>
                                 <svg
                                   className={`h-4 w-4 transition-transform duration-200 ${
                                     isMobileNewsOpen ? 'rotate-180' : ''
@@ -408,7 +410,7 @@ export default function Header() {
                                 </div>
                               )}
                             </div>
-                          ) : item.name === 'Schedule' ? (
+                          ) : item.name === t('schedule') ? (
                             <div className="-mx-6">
                               <button
                                 onClick={() => setIsMobileScheduleOpen(!isMobileScheduleOpen)}
@@ -418,7 +420,7 @@ export default function Header() {
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
                                 }`}
                               >
-                                <span>Schedule</span>
+                                                                 <span>{t('schedule')}</span>
                                 <svg
                                   className={`h-4 w-4 transition-transform duration-200 ${
                                     isMobileScheduleOpen ? 'rotate-180' : ''
@@ -482,7 +484,7 @@ export default function Header() {
                           )}
                           
                           {/* Insert Rankings dropdown after Podcast in mobile */}
-                          {item.name === 'Podcast' && (
+                          {item.name === t('podcast') && (
                             <div className="-mx-6">
                               <button
                                 onClick={() => setIsMobileRankingsOpen(!isMobileRankingsOpen)}
@@ -492,7 +494,7 @@ export default function Header() {
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
                                 }`}
                               >
-                                <span>Rankings</span>
+                                                                 <span>{t('rankings')}</span>
                                 <svg
                                   className={`h-4 w-4 transition-transform duration-200 ${
                                     isMobileRankingsOpen ? 'rotate-180' : ''

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { getTranslation, getCurrentLanguage, type TranslationKeys } from '@/lib/translations';
 
 // Global window interface extension
 declare global {
@@ -32,6 +33,33 @@ export default function CustomTranslation() {
   const [isMobile, setIsMobile] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  // Get current language for translations
+  const [currentLang, setCurrentLang] = useState(getCurrentLanguage());
+  const t = (key: keyof TranslationKeys) => getTranslation(currentLang, key);
+
+  // Listen for language changes
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'jss-pref') {
+        setCurrentLang(e.newValue || 'en');
+      }
+    };
+
+    const handleLanguageChange = (e: CustomEvent) => {
+      if (e.detail && e.detail.language) {
+        setCurrentLang(e.detail.language);
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('languageChange', handleLanguageChange as EventListener);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('languageChange', handleLanguageChange as EventListener);
+    };
+  }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -300,12 +328,12 @@ export default function CustomTranslation() {
         }`} translate="no">
           {/* Header */}
           <div className="p-4 border-b border-gray-200 notranslate">
-            <h3 className="text-sm font-medium text-gray-900 mb-2 notranslate">Select Language</h3>
+            <h3 className="text-sm font-medium text-gray-900 mb-2 notranslate">{t('selectLanguage')}</h3>
             {/* Search Input */}
             <input
               ref={searchInputRef}
               type="text"
-              placeholder="Search languages..."
+              placeholder={t('searchLanguages')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 notranslate"
@@ -334,7 +362,7 @@ export default function CustomTranslation() {
               </div>
             ) : (
               <div className="py-4 px-4 text-sm text-gray-500 text-center">
-                No languages found
+                {t('noLanguagesFound')}
               </div>
             )}
           </div>
@@ -342,7 +370,7 @@ export default function CustomTranslation() {
           {/* Footer */}
           <div className="p-3 border-t border-gray-200 bg-gray-50 rounded-b-lg">
             <p className="text-xs text-gray-500 text-center">
-              {filteredLanguages.length} language{filteredLanguages.length !== 1 ? 's' : ''} available
+              {filteredLanguages.length} {t('languagesAvailable')}
             </p>
           </div>
         </div>
