@@ -92,18 +92,20 @@ sections:
         url: "https://www.thorns.com/"
         description: "NWSL team with combo ticket packages available"
   - type: "tv-schedule"
-    title: "How to Watch The Standard Portland Classic (all times CDT)"
+    title: "How to Watch The Standard Portland Classic"
     schedule:
-      - day: "Thursday Aug 14 and Friday Aug 15 2025"
+      - day: 'Thursday Aug 14 and Friday Aug 15 2025'
         times:
-          - "Golf Channel: 10:00 AM – 12:00 PM"
-          - "NBC Sports: 12:00 PM – 1:00 PM"
-      - day: "Saturday Aug 16 2025"
+          - 'Golf Channel: 10:00 AM – 12:00 PM'
+          - 'NBC Sports: 12:00 PM – 1:00 PM'
+      - day: 'Saturday Aug 16 2025'
         times:
-          - "Golf Channel: 5:00 PM – 8:00 PM"
-      - day: "Sunday Aug 17 2025"
+          - 'Golf Channel: 10:00 AM – 12:00 PM'
+          - 'NBC Sports: 12:00 PM – 1:00 PM'
+      - day: 'Sunday Aug 17 2025'
         times:
-          - "Golf Channel: 3:00 PM – 6:00 PM"
+          - 'Golf Channel: 10:00 AM – 12:00 PM'
+          - 'NBC Sports: 12:00 PM – 1:00 PM'
 ---
 
 At Columbia Edgewater Country Club, the greens are ready as one of the LPGA Tour's enduring pillars returns under a new banner. [The Standard Insurance Company](https://www.standard.com/get-to-know-standard/newsroom/press-releases/standard-portland-classic-welcomes-top-women-golfers-aug-14-17-2025) has stepped in with a 3-year commitment as title sponsor for the longest-running non-major on the LPGA Tour, reaffirming tradition, evolution, and a celebration of women golf's.

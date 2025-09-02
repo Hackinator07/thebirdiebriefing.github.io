@@ -154,7 +154,7 @@ sections:
         url: "https://www.golftown.com/"
         description: "Canada's golf superstore"
   - type: "tv-schedule"
-    title: "How to Watch The CPKC Women's Open (all times CDT)"
+    title: "How to Watch The CPKC Women's Open"
     schedule:
       - day: "Thursday Aug 21 and Friday Aug 22 2025"
         times:

@@ -109,7 +109,7 @@ sections:
         url: "https://www.servpro.com/about/golf"
         description: "Official Cleanup and Restoration Company of the PGA TOUR"
   - type: "tv-schedule"
-    title: "How to Watch The FM Championship (all times CDT)"
+    title: "How to Watch The FM Championship"
     schedule:
       - day: "Thursday Aug 28 and Friday Aug 29 2025"
         times:
@@ -119,9 +119,9 @@ sections:
           - "Golf Channel: 2:00 PM - 5:00 PM"
       - day: "Sunday Aug 31 2025"
         times:
-          - "Golf Channel: 2:00 PM – 5:00 PM"
+          - "Golf Channel: 2:00 PM - 5:00 PM"
   - type: "tv-schedule"
-    title: "How to Watch Featured Group Coverage (all times CDT)"
+    title: "How to Watch Featured Group Coverage"
     schedule:
       - day: "Thursday Aug 28 and Friday Aug 29 2025"
         times:
@@ -131,7 +131,7 @@ sections:
           - "ESPN+: 8:30 AM - 5:00 PM"
       - day: "Sunday Aug 31 2025"
         times:
-          - "ESPN+: 8:30 AM – 5:00 PM"
+          - "ESPN+: 8:30 AM - 5:00 PM"
 ---
 
 The LPGA’s top golfers tee off this week at the 2025 FM Championship, running August 28-31 at TPC Boston. With a $4.1 million prize purse, the event ranks among the biggest on the LPGA Tour outside of the major championships.
