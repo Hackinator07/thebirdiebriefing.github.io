@@ -14,7 +14,7 @@ interface Tournament {
 }
 
 interface LPGATournamentsProps {
-  onTournamentSelect?: (espnId: string | null) => void;
+  onTournamentSelect?: (espnId: string) => void;
   selectedTournamentForAnalysis?: string | null;
 }
 
@@ -38,8 +38,6 @@ const LPGATournaments: React.FC<LPGATournamentsProps> = ({ onTournamentSelect, s
   const [tournamentStatus, setTournamentStatus] = useState<TournamentStatus | null>(null);
   const [refreshing, setRefreshing] = useState(false);
   const [tournamentWinners, setTournamentWinners] = useState<{ [key: string]: string }>({});
-  const [playerScores, setPlayerScores] = useState<{ [key: string]: any[] }>({});
-  const [roundScores, setRoundScores] = useState<{ [key: string]: any[] }>({});
 
   const API_BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8585';
 
@@ -123,32 +121,9 @@ const LPGATournaments: React.FC<LPGATournamentsProps> = ({ onTournamentSelect, s
             [espnId]: winner.player_name
           }));
         }
-        
-        // Store player scores for display
-        setPlayerScores(prev => ({
-          ...prev,
-          [espnId]: data.leaderboard.slice(0, 10) // Top 10 players
-        }));
       }
     } catch (err) {
       console.error('Failed to fetch tournament winner:', err);
-    }
-  };
-
-  const fetchRoundScores = async (espnId: string) => {
-    try {
-      const response = await fetch(`${API_BASE}/tournament/${espnId}/round_analysis`);
-      if (!response.ok) throw new Error('Failed to fetch round analysis');
-      
-      const data = await response.json();
-      if (data.rounds && data.rounds.length > 0) {
-        setRoundScores(prev => ({
-          ...prev,
-          [espnId]: data.rounds
-        }));
-      }
-    } catch (err) {
-      console.error('Failed to fetch round scores:', err);
     }
   };
 
@@ -195,7 +170,6 @@ const LPGATournaments: React.FC<LPGATournamentsProps> = ({ onTournamentSelect, s
       setSelectedTournament(espnId);
       fetchTournamentStatus(espnId);
       fetchTournamentWinner(espnId); // Fetch winner when tournament is selected
-      fetchRoundScores(espnId); // Fetch round-by-round scores
       onTournamentSelect?.(espnId); // Notify parent of selection
     }
   };
@@ -317,7 +291,6 @@ const LPGATournaments: React.FC<LPGATournamentsProps> = ({ onTournamentSelect, s
                <div className="border-t border-primary-200 bg-primary-50">
                  <div className="p-6">
                    <div className="space-y-4">
-                     {/* Tournament Progress */}
                      <div className="flex items-center justify-between">
                        <span className="text-sm font-medium text-primary-700">Tournament Rounds</span>
                        <span className="text-sm text-primary-900">{tournamentStatus.rounds_completed}/{tournamentStatus.total_rounds} completed</span>
@@ -331,7 +304,6 @@ const LPGATournaments: React.FC<LPGATournamentsProps> = ({ onTournamentSelect, s
                        ></div>
                      </div>
                      
-                     {/* Tournament Stats Grid */}
                      <div className="grid grid-cols-2 gap-4 text-sm">
                        <div>
                          <span className="text-primary-600">Players:</span>
@@ -353,90 +325,6 @@ const LPGATournaments: React.FC<LPGATournamentsProps> = ({ onTournamentSelect, s
                          </div>
                        </div>
                      )}
-                     
-                     {/* Top Players Leaderboard */}
-                     {playerScores[tournament.espn_id] && playerScores[tournament.espn_id].length > 0 && (
-                       <div className="border-t border-primary-200 pt-4">
-                         <h4 className="text-sm font-medium text-primary-700 mb-3">Top Players</h4>
-                         <div className="space-y-2 max-h-32 overflow-y-auto">
-                           {playerScores[tournament.espn_id].map((player: any, index: number) => (
-                             <div key={player.player_id || index} className="flex items-center justify-between text-xs">
-                               <div className="flex items-center space-x-2">
-                                 <span className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
-                                   index === 0 ? 'bg-golden-500 text-white' : 
-                                   index === 1 ? 'bg-gray-400 text-white' : 
-                                   index === 2 ? 'bg-amber-600 text-white' : 
-                                   'bg-primary-100 text-primary-800'
-                                 }`}>
-                                   {index + 1}
-                                 </span>
-                                 <span className="font-medium text-primary-900 truncate max-w-24">
-                                   {player.player_name}
-                                 </span>
-                               </div>
-                               <div className="flex items-center space-x-2">
-                                 <span className={`font-bold ${
-                                   player.to_par > 0 ? 'text-red-600' : 
-                                   player.to_par < 0 ? 'text-green-600' : 'text-primary-600'
-                                 }`}>
-                                   {player.to_par > 0 ? `+${player.to_par}` : player.to_par}
-                                 </span>
-                                 <span className="text-secondary-600">
-                                   {player.total_strokes} strokes
-                                 </span>
-                               </div>
-                             </div>
-                           ))}
-                         </div>
-                       </div>
-                     )}
-                     
-                     {/* Round-by-Round Scoring */}
-                     {roundScores[tournament.espn_id] && roundScores[tournament.espn_id].length > 0 && (
-                       <div className="border-t border-primary-200 pt-4">
-                         <h4 className="text-sm font-medium text-primary-700 mb-3">Round Analysis</h4>
-                         <div className="space-y-2 max-h-32 overflow-y-auto">
-                           {roundScores[tournament.espn_id].map((round: any, index: number) => (
-                             <div key={index} className="flex items-center justify-between text-xs">
-                               <div className="flex items-center space-x-2">
-                                 <span className="w-6 h-6 rounded-full bg-primary-100 text-primary-800 flex items-center justify-center text-xs font-bold">
-                                   R{round.round_number}
-                                 </span>
-                                 <span className="text-primary-900">
-                                   {round.completion_date ? new Date(round.completion_date).toLocaleDateString() : 'N/A'}
-                                 </span>
-                               </div>
-                               <div className="flex items-center space-x-2">
-                                 <span className="text-secondary-600">
-                                   {round.players_completed || 0} players
-                                 </span>
-                                 <span className="text-secondary-600">
-                                   {round.average_score || 'N/A'} avg
-                                 </span>
-                               </div>
-                             </div>
-                           ))}
-                         </div>
-                       </div>
-                     )}
-                     
-                     {/* Quick Actions */}
-                     <div className="border-t border-primary-200 pt-4">
-                       <div className="flex space-x-2">
-                         <button
-                           onClick={() => window.open(`/leaderboard?tournament=${tournament.espn_id}`, '_blank')}
-                           className="flex-1 bg-primary-600 text-white px-3 py-2 rounded text-xs font-medium hover:bg-primary-700 transition-colors"
-                         >
-                           View Leaderboard
-                         </button>
-                         <button
-                           onClick={() => window.open(`/leaderboard?tournament=${tournament.espn_id}&tab=stats`, '_blank')}
-                           className="flex-1 bg-secondary-600 text-white px-3 py-2 rounded text-xs font-medium hover:bg-secondary-700 transition-colors"
-                         >
-                           Detailed Stats
-                         </button>
-                       </div>
-                     </div>
                    </div>
                  </div>
                </div>
