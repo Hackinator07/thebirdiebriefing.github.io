@@ -45,6 +45,7 @@ export default function Header() {
     { name: t('home'), href: '/' },
     { name: t('news'), href: '/news' },
     { name: t('podcast'), href: '/podcast' },
+    { name: t('rankings'), href: '/rankings' },
     { name: t('schedule'), href: '/schedule' },
     { name: t('about'), href: '/about' },
     { name: t('contact'), href: '/contact-us' },
@@ -222,7 +223,7 @@ export default function Header() {
                   )}
                   
                                      {/* Regular navigation items */}
-                   {item.name !== t('news') && item.name !== t('schedule') && (
+                   {item.name !== t('news') && item.name !== t('schedule') && item.name !== t('rankings') && (
                     <Link
                       href={item.href}
                       className={`font-medium transition-colors duration-200 text-sm sm:text-base ${
@@ -235,10 +236,10 @@ export default function Header() {
                     </Link>
                   )}
                   
-                  {/* Insert Rankings dropdown after Podcast - Adjusted spacing */}
-                  {item.name === t('podcast') && (
+                  {/* Rankings dropdown */}
+                  {item.name === t('rankings') && (
                     <div 
-                      className="relative inline-block ml-3 sm:ml-4 md:ml-6 xl:ml-8"
+                      className="relative inline-block"
                       onMouseEnter={() => setIsRankingsDropdownOpen(true)}
                       onMouseLeave={() => setIsRankingsDropdownOpen(false)}
                     >
@@ -420,7 +421,7 @@ export default function Header() {
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
                                 }`}
                               >
-                                                                 <span>{t('schedule')}</span>
+                                <span>{t('schedule')}</span>
                                 <svg
                                   className={`h-4 w-4 transition-transform duration-200 ${
                                     isMobileScheduleOpen ? 'rotate-180' : ''
@@ -459,32 +460,7 @@ export default function Header() {
                                 </div>
                               )}
                             </div>
-                          ) : (
-                            <div className="-mx-6">
-                              <Link
-                                href={item.href}
-                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg ${
-                                  isActive
-                                    ? 'text-primary-500 bg-primary-50 font-semibold'
-                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
-                                }`}
-                                onClick={() => setIsMenuOpen(false)}
-                              >
-                                <span>{item.name}</span>
-                                {/* Logo positioned on the right, aligned with Home */}
-                                {item.name === 'Home' && (
-                                  <img 
-                                    src="/images/logo.png" 
-                                    alt="Birdie Briefing Logo" 
-                                    className="w-8 h-8 rounded-full object-cover"
-                                  />
-                                )}
-                              </Link>
-                            </div>
-                          )}
-                          
-                          {/* Insert Rankings dropdown after Podcast in mobile */}
-                          {item.name === t('podcast') && (
+                          ) : item.name === t('rankings') ? (
                             <div className="-mx-6">
                               <button
                                 onClick={() => setIsMobileRankingsOpen(!isMobileRankingsOpen)}
@@ -494,7 +470,7 @@ export default function Header() {
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
                                 }`}
                               >
-                                                                 <span>{t('rankings')}</span>
+                                <span>{t('rankings')}</span>
                                 <svg
                                   className={`h-4 w-4 transition-transform duration-200 ${
                                     isMobileRankingsOpen ? 'rotate-180' : ''
@@ -533,7 +509,32 @@ export default function Header() {
                                 </div>
                               )}
                             </div>
-                          )}
+                                                     ) : (
+                             <div className="-mx-6">
+                               <Link
+                                 href={item.href}
+                                 className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg ${
+                                   isActive
+                                     ? 'text-primary-500 bg-primary-50 font-semibold'
+                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                 }`}
+                                 onClick={() => setIsMenuOpen(false)}
+                               >
+                                 <span>{item.name}</span>
+                                 {/* Logo positioned on the right, perfectly aligned with dropdown carets */}
+                                 {item.name === 'Home' && (
+                                   <div className="flex items-center justify-center w-6 h-6">
+                                     <img 
+                                       src="/images/logo.png" 
+                                       alt="Birdie Briefing Logo" 
+                                       className="w-6 h-6 rounded-full object-cover"
+                                     />
+                                   </div>
+                                 )}
+                               </Link>
+                             </div>
+                           )}
+
                         </div>
                       );
                     })}
