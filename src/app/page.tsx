@@ -10,7 +10,7 @@ export default async function Home() {
   const articles = await getArticles();
   const featuredArticle = await getFeaturedArticle() || articles[0]; // Get featured article or fallback to latest
 
-
+  // Force new deployment to test GitHub Pages
 
   return (
     <div className="bg-white">
