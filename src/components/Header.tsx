@@ -87,18 +87,18 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold text-primary-500 font-heading">The Birdie</span>
-              <span className="text-xl font-bold text-secondary-500 font-heading ml-1">Briefing</span>
+              <span className="text-lg sm:text-xl font-bold text-primary-500 font-heading">The Birdie</span>
+              <span className="text-lg sm:text-xl font-bold text-secondary-500 font-heading ml-1">Briefing</span>
             </Link>
           </div>
 
-          {/* Desktop Navigation - Changed from md: to lg: to prevent cramped layout in landscape */}
-          <nav className="hidden xl:flex items-center space-x-6 xl:space-x-8">
+          {/* Desktop Navigation - Changed from xl: to lg: and made more responsive */}
+          <nav className="hidden lg:flex items-center space-x-3 sm:space-x-4 md:space-x-6 xl:space-x-8">
             {navigation.map((item) => {
               const isActive = isLinkActive(item.href);
               return (
@@ -112,7 +112,7 @@ export default function Header() {
                     >
                       <button
                         onClick={() => setIsNewsDropdownOpen(!isNewsDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base ${
                           isNewsActive
                             ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
                             : 'text-gray-700 hover:text-primary-500'
@@ -120,7 +120,7 @@ export default function Header() {
                       >
                                                  {t('news')}
                         <svg
-                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                          className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 ${
                             isNewsDropdownOpen ? 'rotate-180' : ''
                           }`}
                           fill="none"
@@ -134,7 +134,7 @@ export default function Header() {
                       {/* Dropdown Menu */}
                       {isNewsDropdownOpen && (
                         <div 
-                          className="absolute top-full left-0 pt-1 w-48 z-50"
+                          className="absolute top-full left-0 pt-1 w-40 sm:w-48 z-50"
                           onMouseEnter={() => setIsNewsDropdownOpen(true)}
                           onMouseLeave={() => setIsNewsDropdownOpen(false)}
                         >
@@ -145,7 +145,7 @@ export default function Header() {
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
-                                className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 ${
                                   isSubActive
                                     ? 'text-primary-500 bg-primary-50 font-medium'
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
@@ -171,7 +171,7 @@ export default function Header() {
                     >
                       <button
                         onClick={() => setIsScheduleDropdownOpen(!isScheduleDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base ${
                           isScheduleActive
                             ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
                             : 'text-gray-700 hover:text-primary-500'
@@ -179,7 +179,7 @@ export default function Header() {
                       >
                                                  {t('schedule')}
                         <svg
-                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                          className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 ${
                             isScheduleDropdownOpen ? 'rotate-180' : ''
                           }`}
                           fill="none"
@@ -193,7 +193,7 @@ export default function Header() {
                       {/* Dropdown Menu */}
                       {isScheduleDropdownOpen && (
                         <div 
-                          className="absolute top-full left-0 pt-1 w-48 z-50"
+                          className="absolute top-full left-0 pt-1 w-40 sm:w-48 z-50"
                           onMouseEnter={() => setIsScheduleDropdownOpen(true)}
                           onMouseLeave={() => setIsScheduleDropdownOpen(false)}
                         >
@@ -204,7 +204,7 @@ export default function Header() {
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
-                                className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 ${
                                   isSubActive
                                     ? 'text-primary-500 bg-primary-50 font-medium'
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
@@ -225,7 +225,7 @@ export default function Header() {
                    {item.name !== t('news') && item.name !== t('schedule') && (
                     <Link
                       href={item.href}
-                      className={`font-medium transition-colors duration-200 ${
+                      className={`font-medium transition-colors duration-200 text-sm sm:text-base ${
                         isActive
                           ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
                           : 'text-gray-700 hover:text-primary-500'
@@ -238,13 +238,13 @@ export default function Header() {
                   {/* Insert Rankings dropdown after Podcast - Adjusted spacing */}
                   {item.name === t('podcast') && (
                     <div 
-                      className="relative inline-block ml-6 xl:ml-8"
+                      className="relative inline-block ml-3 sm:ml-4 md:ml-6 xl:ml-8"
                       onMouseEnter={() => setIsRankingsDropdownOpen(true)}
                       onMouseLeave={() => setIsRankingsDropdownOpen(false)}
                     >
                       <button
                         onClick={() => setIsRankingsDropdownOpen(!isRankingsDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base ${
                           isRankingsActive
                             ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
                             : 'text-gray-700 hover:text-primary-500'
@@ -252,7 +252,7 @@ export default function Header() {
                       >
                         {t('rankings')}
                         <svg
-                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                          className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 ${
                             isRankingsDropdownOpen ? 'rotate-180' : ''
                           }`}
                           fill="none"
@@ -266,7 +266,7 @@ export default function Header() {
                       {/* Dropdown Menu */}
                       {isRankingsDropdownOpen && (
                         <div 
-                          className="absolute top-full left-0 pt-1 w-48 z-50"
+                          className="absolute top-full left-0 pt-1 w-40 sm:w-48 z-50"
                           onMouseEnter={() => setIsRankingsDropdownOpen(true)}
                           onMouseLeave={() => setIsRankingsDropdownOpen(false)}
                         >
@@ -277,7 +277,7 @@ export default function Header() {
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
-                                className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 ${
                                   isSubActive
                                     ? 'text-primary-500 bg-primary-50 font-medium'
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
@@ -304,8 +304,8 @@ export default function Header() {
             <CustomTranslation />
           </nav>
 
-          {/* Mobile menu button - Changed from lg:hidden to xl:hidden */}
-          <div className="xl:hidden">
+          {/* Mobile menu button - Changed from xl:hidden to lg:hidden */}
+          <div className="lg:hidden">
             <button
               type="button"
               className="text-gray-700 hover:text-primary-500 focus:outline-none focus:text-primary-500"
@@ -326,9 +326,9 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation - Changed from md:hidden to lg:hidden */}
+        {/* Mobile Navigation - Changed from xl:hidden to lg:hidden */}
         {isMenuOpen && (
-          <div className="xl:hidden fixed inset-0 z-50">
+          <div className="lg:hidden fixed inset-0 z-50">
             {/* Backdrop */}
             <div
               className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
