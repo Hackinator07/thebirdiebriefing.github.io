@@ -77,12 +77,9 @@ export async function generateMetadata({ params }: ArticlePageProps) {
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const resolvedParams = await params;
-  console.log('Looking for article with slug:', resolvedParams.slug);
   const article = await getArticleBySlug(resolvedParams.slug);
-  console.log('Found article:', article);
 
   if (!article) {
-    console.log('Article not found, calling notFound()');
     notFound();
   }
 

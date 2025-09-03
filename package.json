@@ -6,15 +6,19 @@
     "dev": "next dev",
     "dev:turbo": "next dev --turbopack",
     "build": "node scripts/optimize-images-build.js && next build",
+    "build:prod": "NODE_ENV=production node scripts/optimize-images-build.js && next build",
     "start": "next start",
+    "start:prod": "NODE_ENV=production next start -p 3000",
     "lint": "next lint",
     "export": "next build",
     "optimize-images": "node scripts/optimize-images.js",
     "build:no-optimize": "next build",
-    "fetch-rankings": "node scripts/fetch-rankings.js"
+    "fetch-rankings": "node scripts/fetch-rankings.js",
+    "deploy:prod": "npm run build:prod && npm run start:prod"
   },
   "dependencies": {
     "@analytics/google-analytics": "^1.1.0",
+    "@heroicons/react": "^2.2.0",
     "analytics": "^0.8.19",
     "axios": "^1.11.0",
     "gray-matter": "^4.0.3",
