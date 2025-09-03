@@ -51,6 +51,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: 'The Birdie Briefing Logo',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
