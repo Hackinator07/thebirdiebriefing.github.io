@@ -121,19 +121,19 @@ sections:
         description: "Official Cleanup and Restoration Company of the PGA TOUR"
 ---
 
-Miranda Wang, the rookie from China, who made a name for herself at Duke and battled through years on the Epson Tour, finally translated years of work and struggle bus riding into triumph, holding off World No. 1 Jeeno Thitikul to claim her first LPGA title. At 26, Wang became the 24th different winner on the LPGA in 2025.
+Miranda Wang, the rookie from China who made her name at Duke and ground her way through the Epson Tour, finally turned years of effort into triumph, holding off World No. 1 Jeeno Thitikul to claim her first LPGA title at the FM Championship.
 
-Wang came into Sunday with a three-shot lead and held at least a share of it through most of the round. The 15th hole shook her briefly--an errant fairway shot, a rare sense of urgency, and a break from her usual pre-shot routine combined to produce a bogey, dropping her a shot behind Thitikul. But Wang’s poise returned immediately: a missed birdie on 16 didn’t flinch her focus. On the 17th, Wang delivered a flawless approach to six feet and holed the putt to retake the lead, while Thitikul stumbled with an uncharacteristic chip across the green, leaving her with a bogey.
+She entered Sunday with a three-shot lead and clung to it most of the way. The 15th hole nearly unraveled her—an errant fairway shot, a rare flash of urgency, and a break from her usual pre-shot routine led to bogey, dropping her a shot behind Thitikul. But Wang steadied herself quickly: she brushed off a missed birdie on 16, then answered with a flawless approach to six feet on 17 and buried the putt to retake the lead. Thitikul, meanwhile, blinked—her chip skidding across the green and setting up a bogey.
 
-“I felt like this could be my week,” Wang said, reflecting on the start of the tournament when her front-nine 29 on Thursday set the tone. “The shots and putts were going so well for me… I just worked really hard and didn’t give up on that.” Her steady two-putt par on 18 sealed a 20-under-par 268 and $615,000, prompting champagne celebrations from Rose Zhang, her final-round playing partner and longtime friend.
+“I felt like this could be my week,” Wang said, recalling how her front-nine 29 on Thursday set the tone. “The shots and putts were going so well for me… I just worked really hard and didn’t give up on that.” A composed two-putt par on 18 sealed her 20-under 268 and a $615,000 winner’s check, punctuated by champagne showers from Rose Zhang, her final-round partner and longtime friend.
 
-The win is the latest chapter in an impressive journey. Wang, who helped the Blue Devils to the 2019 NCAA team title, was the 2022 WAPT Player of the Year. Her rise to prominence adds her to an elite list of Chinese LPGA winners alongside Shanshan Feng and Ronni Yin, while also marking her as the fourth Duke alum to win on tour.
+The win is another step in an impressive journey. Wang helped the Blue Devils capture the 2019 NCAA team title, was the 2022 WAPT Player of the Year, and now joins Shanshan Feng and Ronni Yin as one of China’s LPGA champions—while also becoming the fourth Duke alum to win on tour.
 
-Thitikul, confident as always with her irons and putting, finished a shot back at 19 under, while Sei Young Kim closed solo third, Andrea Lee fourth, and Jin Hee Im tied for fifth with Rose Zhang after a record-tying 10-under 62 on the final day. 
+Thitikul, sharp as ever with her irons and putter, finished a shot back at 19 under. Sei Young Kim took solo third, Andrea Lee fourth, and Jin Hee Im tied with Rose Zhang for fifth after a record-tying 10-under 62 on Sunday.
 
-We need to have an honest conversation about the LPGA’s depth this season. Twenty-four different winners across 23 events says it all. Wang’s win stands with the others not just for the stats--only seven bogeys in 72 holes--but for the story: a mix of resilience, experience built on the developmental tours, and a rookie seizing her moment.
+It all underscores the LPGA’s depth this year: 24 winners across 23 events. Wang’s performance adds another, now including 7 rookies.
 
-“Winning on the LPGA has been my dream since I was eight,” Wang said. “I hope this is just the first of many, and I’ll keep pushing myself.” At TPC Boston, her patience, precision, and determination came together flawlessly. Here’s to Miranda--and to the ongoing thrill of the LPGA’s remarkable 75th season.
+“Winning on the LPGA has been my dream since I was eight,” Wang said. “I hope this is just the first of many, and I’ll keep pushing myself.” At The FM Championship, her patience, precision, and determination came together beautifully. Here’s to Miranda and her win. A fitting moment in the LPGA’s 75th season--one that keeps finding new ways to thrill.
 
 ## Round 4 Competition Highlights
 
