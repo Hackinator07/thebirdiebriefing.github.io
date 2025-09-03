@@ -237,8 +237,7 @@ const LPGATournaments: React.FC<LPGATournamentsProps> = ({ onTournamentSelect, s
                      onClick={() => handleTournamentClick(tournament.espn_id)}
                      className="flex-1 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                      style={{
-                       backgroundColor: '#ad345a',
-                       ':hover': { backgroundColor: '#8a2a48' }
+                       backgroundColor: '#ad345a'
                      }}
                      onMouseEnter={(e) => {
                        e.currentTarget.style.backgroundColor = '#8a2a48';
@@ -269,8 +268,7 @@ const LPGATournaments: React.FC<LPGATournamentsProps> = ({ onTournamentSelect, s
                     }}
                     className="w-full text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                     style={{
-                      backgroundColor: selectedTournamentForAnalysis === tournament.espn_id ? '#6b6b6b' : '#355743',
-                      ':hover': { backgroundColor: selectedTournamentForAnalysis === tournament.espn_id ? '#6b6b6b' : '#2a4535' }
+                      backgroundColor: selectedTournamentForAnalysis === tournament.espn_id ? '#6b6b6b' : '#355743'
                     }}
                     onMouseEnter={(e) => {
                       if (selectedTournamentForAnalysis !== tournament.espn_id) {
