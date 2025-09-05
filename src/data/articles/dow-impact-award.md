@@ -14,6 +14,7 @@ image:
   courtesy: "Getty & LPGA"
 calloutType: "author"
 tags:
+  - "Tournament Golf"
   - "Dow Championship"
   - "Dow Impact Award"
   - "Celebrating the Green"
