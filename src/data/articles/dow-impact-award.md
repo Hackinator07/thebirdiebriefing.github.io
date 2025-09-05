@@ -10,7 +10,7 @@ excerpt: "The LPGA and Dow launched the Dow Impact Award to honor players not on
 image:
   src: "/optimized/dow-impact.webp"
   alt: "Dow Impact Award nominee Ariya Jutanugarn."
-  caption: "Dow Impact Award nominee Ariya Jutanugarn."
+  caption: "Dow Impact Award nominee Ariya Jutanugarn"
   courtesy: "Getty & LPGA"
 calloutType: "author"
 tags:
