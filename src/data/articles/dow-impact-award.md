@@ -26,19 +26,22 @@ tags:
   - "Gaby Lopez"
   - "Lexi Thompson"
   - "Rose Zhang"
+sections:
+  - type: "field-data"
+    title: "Dow Impact Award"
+    backgroundColor: "bg-primary-50"
+    data:
+      nominees:
+        - "Ariya & Moriya Jutanugarn - Major champions, community leadership and charitable work"
+        - "Jennifer Kupcho - Major winner, advocacy efforts"
+        - "Gaby Lopez - International success, community impact"
+        - "Lexi Thompson - Major champion, youth development"
+        - "Rose Zhang - Rising star, educational initiatives"
 ---
 
 On June 26th, the LPGA and Dow put a new marker down with the [Dow Impact Award](https://corporate.dow.com/en-us/collaborations/dow-sports/sports-partnerships.html), an honor that recognizes players not just for the tournament trophies they collect but for the reach of their work away from the tour.
 
-The inaugural nominees reflect both competitive success and leadership in their communities:
-
-| Nominee | Notable Achievements |
-|---------|---------------------|
-| Ariya and Moriya Jutanugarn | Sisters known for their charitable work and community impact |
-| Jennifer Kupcho | Major champion with strong community engagement |
-| Gaby Lopez | Olympic medalist and advocate for women's golf |
-| Lexi Thompson | Veteran player with extensive philanthropic efforts |
-| Rose Zhang | Rising star with growing influence in the sport |
+The inaugural nominees reflect both competitive success and leadership in their communities.
 
 From this group, a committee will cut the list to two finalists on October 7th. Fans will then get their say with open voting, combining with the committee's input to decide the first winner on November 6th. The top award comes with $25,000 and a matching donation to the player's chosen charity, while the runner-up receives $10,000. The money matters, but the real weight here is in giving players a louder microphone for the causes they care about. (Fingers crossed we get a good batch of shots with Mascot Champ, and if there's a little dancing involved, all the better.)
 
