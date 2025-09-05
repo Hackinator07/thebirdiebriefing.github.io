@@ -9,8 +9,8 @@ category: "Opinion"
 excerpt: "Lee5 spends a day on the course with her mom, and it's magic. Not lessons, not drills..."
 image:
   src: "/optimized/lee5.webp"
-  alt: "Jeongeun Lee5 and Mom Share Lighthearted Moments While Golfing Together."
-  caption: "Jeongeun Lee5 and Mom Share Lighthearted Moments While Golfing Together."
+  alt: "Jeongeun Lee5 and her mom share a lighthearted moments while golfing together."
+  caption: "Jeongeun Lee5 and her mom share a lighthearted moments while golfing together"
   courtesy: "YouTube of 이정은5의"
 calloutType: "author"
 tags:
