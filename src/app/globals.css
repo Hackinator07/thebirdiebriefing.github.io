@@ -187,6 +187,15 @@
     padding: 0 !important;
   }
 
+  /* Reset all link styles to ensure consistency */
+  a {
+    color: black !important;
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+  }
+
   /* Article container */
   .article-container {
     max-width: none !important;
@@ -271,10 +280,32 @@
     text-align: center !important;
   }
 
-  /* Links */
-  a {
+  /* Links - ensure consistent styling in print */
+  * a,
+  a,
+  a.underline,
+  .prose a,
+  .article-content a,
+  .prose a.underline,
+  .article-content a.underline,
+  a[class*="underline"],
+  a[class*="text-primary"],
+  a[href] {
     color: black !important;
-    text-decoration: underline !important;
+    text-decoration: none !important;
+  }
+
+  /* Force all links to have no underline regardless of any other styles */
+  a:not([style*="text-decoration: none"]) {
+    text-decoration: none !important;
+  }
+
+  /* Additional browser compatibility for print links */
+  @media print {
+    a, a:visited, a:link, a:active, a:hover {
+      color: black !important;
+      text-decoration: none !important;
+    }
   }
 
   /* Headings */
@@ -346,11 +377,9 @@
     padding-top: 0.5em !important;
   }
 
-  /* URL display for links */
+  /* Hide URL display for links in print */
   a[href]:after {
-    content: " (" attr(href) ")" !important;
-    font-size: 8pt !important;
-    color: #666 !important;
+    content: "" !important;
   }
 
   /* Hide URLs for author links */

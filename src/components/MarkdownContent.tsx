@@ -28,7 +28,7 @@ export default function MarkdownContent({ content, className = '' }: MarkdownCon
           a: ({ ...props }) => (
             <a
               {...props}
-              className="text-primary-600 hover:text-primary-700 underline transition-colors duration-200"
+              className="text-primary-600 hover:text-primary-700 transition-colors duration-200"
               target="_blank"
               rel="noopener noreferrer"
             />

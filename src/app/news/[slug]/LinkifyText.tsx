@@ -36,7 +36,7 @@ export default function LinkifyText({ text, className }: LinkifyTextProps) {
             href={part}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary-500 hover:text-primary-600 underline"
+            className="text-primary-500 hover:text-primary-600"
           >
             {part}
           </a>
@@ -49,7 +49,7 @@ export default function LinkifyText({ text, className }: LinkifyTextProps) {
           <a
             key={Math.random()}
             href={`mailto:${part}`}
-            className="text-primary-500 hover:text-primary-600 underline"
+            className="text-primary-500 hover:text-primary-600"
           >
             {part}
           </a>
