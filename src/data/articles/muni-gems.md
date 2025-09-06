@@ -26,7 +26,7 @@ tags:
 
 ![Village Bar view of The Glen Golf Course](/optimized/villagebar.webp)
 
-*See Golfers Play at The Glen Golf Course from Village Bar*
+*See Golfers Play at The Glen Golf Park from Village Bar*
 
 These are places where golf actually works. Compact, untamed, forgiving when it needs to be, harsh when it doesn't.
 
