@@ -245,7 +245,7 @@ If you need images for the website, consider:
 - **Manual optimization**: `npm run optimize-images`
 - **Supported formats**: JPG, PNG, WebP
 - **Output format**: WebP (modern, efficient)
-- **Quality**: 85% (configurable in `scripts/optimize-images-build.js`)
+- **Quality**: 85% (configurable in `scripts/optimize-images.js`)
 
 ## 🚀 Deployment
 
@@ -350,7 +350,7 @@ thebirdiebriefing.github.io/
 │   ├── optimized/           # Optimized WebP images
 │   └── videos/              # Video files
 ├── scripts/                 # Build scripts
-│   └── optimize-images-build.js  # Image optimization
+│   └── optimize-images.js  # Image optimization
 └── .github/workflows/       # GitHub Actions
     └── deploy.yml           # Deployment workflow
 ```
