@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import CustomTranslation from './CustomTranslation';
 import { useTranslation } from '@/hooks/useTranslation';
+import { FaInstagram, FaYoutube } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -551,6 +553,43 @@ export default function Header() {
 
                 {/* Footer */}
                 <div className="p-6 border-t border-gray-200 flex-shrink-0">
+                  {/* Social Media Icons */}
+                  <div className="flex justify-center gap-6 mb-4">
+                    <a
+                      href="https://www.instagram.com/birdiebriefing/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-primary-500 transition-colors duration-200"
+                      aria-label="Follow us on Instagram"
+                    >
+                      <FaInstagram size={24} />
+                    </a>
+                    <a
+                      href="https://open.spotify.com/show/3ZwjiD6IZeHqCNrCwBdrP2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-primary-500 transition-colors duration-200"
+                      aria-label="Listen on Spotify"
+                    >
+                      <Image
+                        src="https://assets.podcastpage.io/img/icons/spotify.svg"
+                        alt="Spotify"
+                        width={24}
+                        height={24}
+                        className="w-6 h-6"
+                      />
+                    </a>
+                    <a
+                      href="https://www.youtube.com/channel/UCW2vyHWE3bMfum9FPq-8xGw"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-primary-500 transition-colors duration-200"
+                      aria-label="Subscribe on YouTube"
+                    >
+                      <FaYoutube size={24} />
+                    </a>
+                  </div>
+                  
                   <p className="text-sm text-center font-heading">
                     <span className="text-primary-500">The Birdie</span>
                     <span className="text-secondary-500 ml-1">Briefing</span>
