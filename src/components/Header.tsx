@@ -90,6 +90,27 @@ export default function Header() {
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16">
+          {/* Mobile menu button - Moved to left side */}
+          <div className="lg:hidden">
+            <button
+              type="button"
+              className="text-gray-700 hover:text-primary-500 focus:outline-none focus:text-primary-500"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? t('closeMenu') : t('openMenu')}
+            >
+              <span className="sr-only">{isMenuOpen ? t('closeMenu') : t('openMenu')}</span>
+              {isMenuOpen ? (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          </div>
+
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
@@ -305,26 +326,6 @@ export default function Header() {
             <CustomTranslation />
           </nav>
 
-          {/* Mobile menu button - Changed from xl:hidden to lg:hidden */}
-          <div className="lg:hidden">
-            <button
-              type="button"
-              className="text-gray-700 hover:text-primary-500 focus:outline-none focus:text-primary-500"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? t('closeMenu') : t('openMenu')}
-            >
-                              <span className="sr-only">{isMenuOpen ? t('closeMenu') : t('openMenu')}</span>
-              {isMenuOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
-            </button>
-          </div>
         </div>
 
         {/* Mobile Navigation - Changed from xl:hidden to lg:hidden */}
@@ -337,7 +338,7 @@ export default function Header() {
             />
 
             {/* Slide-out menu */}
-            <div className="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ease-in-out">
+            <div className="fixed left-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ease-in-out">
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
@@ -394,7 +395,7 @@ export default function Header() {
                                       <Link
                                         key={subItem.name}
                                         href={subItem.href}
-                                        className={`block py-3 px-6 text-sm transition-colors duration-200 ${
+                                        className={`block py-3 pl-10 pr-6 text-sm transition-colors duration-200 ${
                                           isSubActive
                                             ? 'text-primary-500 bg-primary-100 font-medium'
                                             : 'text-gray-600 hover:text-primary-500 hover:bg-gray-100'
@@ -443,7 +444,7 @@ export default function Header() {
                                       <Link
                                         key={subItem.name}
                                         href={subItem.href}
-                                        className={`block py-3 px-6 text-sm transition-colors duration-200 ${
+                                        className={`block py-3 pl-10 pr-6 text-sm transition-colors duration-200 ${
                                           isSubActive
                                             ? 'text-primary-500 bg-primary-100 font-medium'
                                             : 'text-gray-600 hover:text-primary-500 hover:bg-gray-100'
@@ -492,7 +493,7 @@ export default function Header() {
                                       <Link
                                         key={subItem.name}
                                         href={subItem.href}
-                                        className={`block py-3 px-6 text-sm transition-colors duration-200 ${
+                                        className={`block py-3 pl-10 pr-6 text-sm transition-colors duration-200 ${
                                           isSubActive
                                             ? 'text-primary-500 bg-primary-100 font-medium'
                                             : 'text-gray-600 hover:text-primary-500 hover:bg-gray-100'
@@ -541,7 +542,7 @@ export default function Header() {
                     
                     {/* Mobile Translation Section */}
                     <div className="pt-4 mt-4 border-t border-gray-200 notranslate">
-                      <div className="flex items-center justify-end py-3 -mx-6 px-6 notranslate">
+                      <div className="flex items-center justify-start py-3 -mx-6 px-6 notranslate">
                         <CustomTranslation />
                       </div>
                     </div>

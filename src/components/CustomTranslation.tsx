@@ -323,9 +323,7 @@ export default function CustomTranslation() {
 
       {/* Dropdown */}
       {isOpen && (
-        <div className={`absolute w-80 max-w-[90vw] bg-white border border-gray-200 rounded-lg shadow-lg z-50 notranslate ${
-          isMobile ? 'bottom-full mb-2 right-0' : 'top-full mt-2 right-0'
-        }`} translate="no">
+        <div className={`absolute w-64 max-w-[90vw] bg-white border border-gray-200 rounded-lg shadow-lg z-50 notranslate bottom-full mb-2 left-0`} translate="no">
           {/* Header */}
           <div className="p-4 border-b border-gray-200 notranslate">
             <h3 className="text-sm font-medium text-gray-900 mb-2 notranslate">{t('selectLanguage')}</h3>
