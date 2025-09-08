@@ -53,10 +53,11 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 relative group"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
                 </a>
               ))}
             </div>
@@ -70,9 +71,10 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-300 hover:text-white transition-colors duration-200"
+                    className="text-gray-300 hover:text-white transition-colors duration-200 relative group"
                   >
                     {item.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
                   </Link>
                 </li>
               ))}
@@ -102,9 +104,10 @@ export default function Footer() {
                   href="https://foxsideweb.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-gray-400 hover:text-white transition-colors duration-200 relative group"
                 >
                   Foxside Web Development
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
                 </a>
               </p>
             </div>
