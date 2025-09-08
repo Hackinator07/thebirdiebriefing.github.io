@@ -16,7 +16,7 @@ const tournaments = [
   { name: 'Black Desert Championship', filename: 'black-desert.svg' },
   { name: 'Mizuho Americas Open', filename: 'mizuho-americas.png' },
   { name: 'Riviera Maya Open', filename: 'riviera-maya.png' },
-  { name: 'U.S. Women\'s Open presented by Ally', filename: 'us-womens-open.svg' },
+  { name: 'U.S. Women\'s Open presented by Ally', filename: 'us-womens-open.png' },
   { name: 'ShopRite LPGA Classic presented by Acer', filename: 'shoprite-lpga.png' },
   { name: 'Meijer LPGA Classic for Simply Give', filename: 'meijer-lpga.webp' },
   { name: 'KPMG Women\'s PGA Championship', filename: 'kpmg-womens-pga.png' },

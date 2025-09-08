@@ -24,7 +24,7 @@ const getTournamentLogo = (tournamentTitle: string): string | null => {
     'Black Desert Championship': 'black-desert.svg',
     'Mizuho Americas Open': 'mizuho-americas.png',
     'Riviera Maya Open': 'riviera-maya.png',
-    'U.S. Women\'s Open presented by Ally': 'us-womens-open.svg',
+    'U.S. Women\'s Open presented by Ally': 'us-womens-open.png',
     'ShopRite LPGA Classic presented by Acer': 'shoprite-lpga.webp',
     'Meijer LPGA Classic for Simply Give': 'meijer-lpga.webp',
     'KPMG Women\'s PGA Championship': 'kpmg-womens-pga.png',
