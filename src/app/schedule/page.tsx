@@ -1,10 +1,56 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import Image from 'next/image';
 import { getSchedule } from '@/lib/schedule';
 
 type SortField = 'date' | 'title' | 'winner' | 'purse';
 type SortDirection = 'asc' | 'desc';
+
+// Helper function to get tournament logo URL
+const getTournamentLogo = (tournamentTitle: string): string | null => {
+  // Map tournament titles to their logo filenames
+  const logoMap: Record<string, string> = {
+    'Hilton Grand Vacations Tournament of Champions': 'hilton-grand-vacations.png',
+    'Founders Cup': 'founders-cup.png',
+    'Honda LPGA Thailand': 'honda-lpga-thailand.png',
+    'HSBC Women\'s World Championship': 'hsbc-womens-world.png',
+    'Blue Bay LPGA': 'blue-bay-lpga.svg',
+    'FIR HILLS SERI PAK Championship': 'seri-pak-championship.webp',
+    'Ford Championship presented by Wild Horse Pass': 'ford-championship.png',
+    'T-Mobile Match Play presented by MGM Rewards': 'tmobile-match-play.png',
+    'JM Eagle LA Championship presented by Plastpro': 'jm-eagle-la.webp',
+    'The Chevron Championship': 'chevron-championship.png',
+    'Black Desert Championship': 'black-desert.png',
+    'Mizuho Americas Open': 'mizuho-americas.png',
+    'Riviera Maya Open': 'riviera-maya.png',
+    'U.S. Women\'s Open presented by Ally': 'us-womens-open.svg',
+    'ShopRite LPGA Classic presented by Acer': 'shoprite-lpga.png',
+    'Meijer LPGA Classic for Simply Give': 'meijer-lpga.png',
+    'KPMG Women\'s PGA Championship': 'kpmg-womens-pga.png',
+    'Dow Championship': 'dow-championship.webp',
+    'Amundi Evian Championship': 'amundi-evian.png',
+    'ISPS Handa Women\'s Scottish Open': 'isps-handa-scottish.svg',
+    'AIG Women\'s Open': 'aig-womens-open.png',
+    'The Standard Portland Classic': 'portland-classic.png',
+    'CPKC Women\'s Open': 'cpkc-womens-open.svg',
+    'FM Championship': 'fm-championship.png',
+    'Kroger Queen City Championship presented by P&G': 'kroger-queen-city.png',
+    'Walmart NW Arkansas Championship presented by P&G': 'walmart-nw-arkansas.png',
+    'LOTTE Championship presented by Hoakalei': 'lotte-championship.png',
+    'Buick LPGA Shanghai': 'buick-lpga-shanghai.png',
+    'BMW Ladies Championship': 'bmw-ladies.png',
+    'Hanwha LIFEPLUS International Crown': 'hanwha-crown.png',
+    'Maybank Championship': 'maybank-championship.jpg',
+    'TOTO Japan Classic': 'toto-japan.png',
+    'The ANNIKA driven by Gainbridge at Pelican': 'annika-pelican.webp',
+    'CME Group Tour Championship': 'cme-tour-championship.png',
+    'Grant Thornton Invitational': 'grant-thornton.svg',
+  };
+
+  const logoFilename = logoMap[tournamentTitle];
+  return logoFilename ? `/images/tournaments/${logoFilename}` : null;
+};
 
 export default function SchedulePage() {
   const schedule = getSchedule();
@@ -158,14 +204,31 @@ export default function SchedulePage() {
                 
                 <div className="mb-3">
                   <div className={`font-medium text-base ${tournament.isMajor ? 'text-primary-600 font-bold' : ''} ${tournament.isExhibition ? 'italic text-gray-600' : ''}`}>
-                    <a
-                      href={tournament.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${tournament.isMajor ? 'text-secondary-500 hover:text-secondary-700' : 'text-primary-500 hover:text-primary-700'} hover:underline transition-colors`}
-                    >
-                      {tournament.title}
-                    </a>
+                    <div className="flex items-center gap-3">
+                      {getTournamentLogo(tournament.title) && (
+                        <div className="flex-shrink-0">
+                          <Image
+                            src={getTournamentLogo(tournament.title)!}
+                            alt={`${tournament.title} logo`}
+                            width={32}
+                            height={32}
+                            className="w-8 h-8 object-contain"
+                            onError={(e) => {
+                              // Hide the image if it fails to load
+                              e.currentTarget.style.display = 'none';
+                            }}
+                          />
+                        </div>
+                      )}
+                      <a
+                        href={tournament.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${tournament.isMajor ? 'text-secondary-500 hover:text-secondary-700' : 'text-primary-500 hover:text-primary-700'} hover:underline transition-colors`}
+                      >
+                        {tournament.title}
+                      </a>
+                    </div>
                   </div>
                   <div className="text-gray-500 text-sm mt-1">
                     {tournament.location}
@@ -257,14 +320,31 @@ export default function SchedulePage() {
                       <td className="px-6 py-4 text-sm text-gray-900">
                         <div className="space-y-1">
                           <div className={`font-medium ${tournament.isMajor ? 'text-primary-600 font-bold' : ''} ${tournament.isExhibition ? 'italic text-gray-600' : ''}`}>
-                            <a
-                              href={tournament.website}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={`${tournament.isMajor ? 'text-secondary-500 hover:text-secondary-700' : 'text-primary-500 hover:text-primary-700'} hover:underline transition-colors`}
-                            >
-                              {tournament.title}
-                            </a>
+                            <div className="flex items-center gap-3">
+                              {getTournamentLogo(tournament.title) && (
+                                <div className="flex-shrink-0">
+                                  <Image
+                                    src={getTournamentLogo(tournament.title)!}
+                                    alt={`${tournament.title} logo`}
+                                    width={24}
+                                    height={24}
+                                    className="w-6 h-6 object-contain"
+                                    onError={(e) => {
+                                      // Hide the image if it fails to load
+                                      e.currentTarget.style.display = 'none';
+                                    }}
+                                  />
+                                </div>
+                              )}
+                              <a
+                                href={tournament.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`${tournament.isMajor ? 'text-secondary-500 hover:text-secondary-700' : 'text-primary-500 hover:text-primary-700'} hover:underline transition-colors`}
+                              >
+                                {tournament.title}
+                              </a>
+                            </div>
                           </div>
                           <div className="text-gray-500 text-xs">
                             {tournament.location}

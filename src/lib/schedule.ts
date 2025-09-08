@@ -11,6 +11,7 @@ export interface Tournament {
   isCancelled?: boolean;
   website: string;
   winner?: string;
+  logo?: string;
 }
 
 export interface Schedule {
