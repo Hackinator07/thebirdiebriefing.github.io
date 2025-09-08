@@ -31,6 +31,8 @@ export default function CustomTranslation() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState('en');
   const [isMobile, setIsMobile] = useState(false);
+  const [isTranslating, setIsTranslating] = useState(false);
+  const [translationProgress, setTranslationProgress] = useState(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
@@ -125,15 +127,16 @@ export default function CustomTranslation() {
   const triggerTranslation = (langCode: string) => {
     if (typeof window === 'undefined') return;
     
-
+    setIsTranslating(true);
+    setTranslationProgress(0);
     
     // Close dropdown
     setIsOpen(false);
     
     // Try using JigsawStack widget first (better layout preservation)
     if (window.customTranslate) {
-
       window.customTranslate(langCode);
+      setIsTranslating(false);
       return;
     }
     
@@ -153,14 +156,32 @@ export default function CustomTranslation() {
         return;
       }
       
+      // Check for cached translations first
+      const cacheKey = `translation_${langCode}_${window.location.pathname}`;
+      const cachedTranslations = localStorage.getItem(cacheKey);
+      if (cachedTranslations) {
+        try {
+          const cached = JSON.parse(cachedTranslations);
+          if (cached.timestamp && (Date.now() - cached.timestamp) < 24 * 60 * 60 * 1000) { // 24 hour cache
+            console.log('Using cached translations');
+            applyCachedTranslations(cached.translations);
+            setIsTranslating(false);
+            setTranslationProgress(100);
+            return;
+          }
+        } catch (e) {
+          // Invalid cache, continue with fresh translation
+        }
+      }
+      
       // Get specific text content from the page, excluding notranslate elements and layout elements
       const textSelectors = [
-        'main h1', 'main h2', 'main h3', 'main h4', 'main h5', 'main h6', // Only main content headings
-        'main p', // Only main content paragraphs
+        'main h1', 'main h2', 'main h3', 'main h4', 'main h5', 'main h6',
+        'main p', 'main li', 'main td', 'main th',
         'article h1', 'article h2', 'article h3', 'article h4', 'article h5', 'article h6',
-        'article p',
+        'article p', 'article li', 'article td', 'article th',
         '.content h1', '.content h2', '.content h3', '.content h4', '.content h5', '.content h6',
-        '.content p'
+        '.content p', '.content li', '.content td', '.content th'
       ];
       
       const textElements = document.querySelectorAll(textSelectors.join(', '));
@@ -179,25 +200,27 @@ export default function CustomTranslation() {
           return;
         }
         
-        // Only translate elements that have direct text content (not just child elements)
+        // Only translate elements that have direct text content
         const text = element.textContent?.trim();
         const hasOnlyTextContent = element.children.length === 0 || 
                                   Array.from(element.children).every(child => 
                                     child.tagName === 'BR' || 
                                     child.tagName === 'SPAN' ||
                                     child.tagName === 'STRONG' ||
-                                    child.tagName === 'EM'
+                                    child.tagName === 'EM' ||
+                                    child.tagName === 'A'
                                   );
         
         if (text && 
             hasOnlyTextContent &&
-            text.length > 3 && 
-            text.length < 300 && // Conservative length limit
-            !text.match(/^[0-9\s\.\,\-\+\=\(\)\[\]\{\}]+$/) && // Skip number-only text
-            !text.match(/^https?:\/\//) && // Skip URLs
-            !text.includes('javascript:') && // Skip JS code
-            !text.includes('class=') && // Skip HTML-like content
-            !text.includes('src=') // Skip HTML attributes
+            text.length > 2 && 
+            text.length < 500 && // Increased length limit
+            !text.match(/^[0-9\s\.\,\-\+\=\(\)\[\]\{\}]+$/) &&
+            !text.match(/^https?:\/\//) &&
+            !text.includes('javascript:') &&
+            !text.includes('class=') &&
+            !text.includes('src=') &&
+            !text.match(/^[A-Z\s]+$/) // Skip all-caps text (likely navigation)
         ) {
           textsToTranslate.push(text);
           elementMap.push(element);
@@ -206,65 +229,111 @@ export default function CustomTranslation() {
 
 
 
-      // Translate in smaller batches to avoid 400 errors
-      const batchSize = 5; // Reduced from 10 to avoid overwhelming API
-      for (let i = 0; i < textsToTranslate.length; i += batchSize) {
-        const batch = textsToTranslate.slice(i, i + batchSize);
-        
-        try {
-          // Clean and validate the batch
-          const cleanBatch = batch.filter(text => 
-            text.length > 0 && 
-            text.length < 300 && // Further limit text length
-            !text.includes('\n\n') // Avoid texts with multiple line breaks
-          );
-          
-          if (cleanBatch.length === 0) continue;
-          
-          const response = await fetch('https://api.jigsawstack.com/v1/ai/translate', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'x-api-key': apiKey
-            },
-            body: JSON.stringify({
-              text: cleanBatch.join(' | '), // Use separator instead of newlines
-              target_language: langCode
-            })
-          });
-
-          if (response.ok) {
-            const result = await response.json();
-            const translations = result.translated_text?.split(' | ') || [];
-            
-            // Apply translations to elements
-            translations.forEach((translation: string, index: number) => {
-              const elementIndex = i + index;
-              if (elementMap[elementIndex] && translation.trim()) {
-                elementMap[elementIndex].textContent = translation.trim();
-              }
-            });
-            
-
-          } else {
-            console.error('Translation API error:', response.status, response.statusText);
-            if (response.status === 400) {
-
-              continue; // Continue with next batch instead of stopping
-            }
-            break; // Stop on other errors
-          }
-        } catch (error) {
-          console.error('Translation request failed:', error);
-          continue; // Continue with next batch
-        }
-        
-        // Longer delay between batches to avoid rate limiting
-        await new Promise(resolve => setTimeout(resolve, 500));
+      if (textsToTranslate.length === 0) {
+        console.log('No text to translate');
+        return;
       }
 
+      console.log(`Translating ${textsToTranslate.length} text elements in optimized batches`);
+
+      // Optimized batch processing with parallel execution
+      const batchSize = 15; // Increased from 5 to 15
+      const maxConcurrentBatches = 3; // Process up to 3 batches in parallel
+      const batches: string[][] = [];
+      
+      // Create batches
+      for (let i = 0; i < textsToTranslate.length; i += batchSize) {
+        const batch = textsToTranslate.slice(i, i + batchSize);
+        batches.push(batch);
+      }
+
+      // Process batches in parallel groups
+      const translations: string[] = new Array(textsToTranslate.length);
+      
+      for (let i = 0; i < batches.length; i += maxConcurrentBatches) {
+        const batchGroup = batches.slice(i, i + maxConcurrentBatches);
+        
+        const batchPromises = batchGroup.map(async (batch, groupIndex) => {
+          const batchIndex = i + groupIndex;
+          const startIndex = batchIndex * batchSize;
+          
+          try {
+            // Clean and validate the batch
+            const cleanBatch = batch.filter(text => 
+              text.length > 0 && 
+              text.length < 500 &&
+              !text.includes('\n\n')
+            );
+            
+            if (cleanBatch.length === 0) return;
+            
+            const response = await fetch('https://api.jigsawstack.com/v1/ai/translate', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': apiKey
+              },
+              body: JSON.stringify({
+                text: cleanBatch.join(' | '),
+                target_language: langCode
+              })
+            });
+
+            if (response.ok) {
+              const result = await response.json();
+              const batchTranslations = result.translated_text?.split(' | ') || [];
+              
+              // Store translations in correct positions
+              batchTranslations.forEach((translation: string, index: number) => {
+                const globalIndex = startIndex + index;
+                if (globalIndex < translations.length && translation.trim()) {
+                  translations[globalIndex] = translation.trim();
+                }
+              });
+              
+              console.log(`Batch ${batchIndex + 1}/${batches.length} completed`);
+              setTranslationProgress(Math.round(((batchIndex + 1) / batches.length) * 100));
+            } else {
+              console.error(`Translation API error for batch ${batchIndex + 1}:`, response.status);
+            }
+          } catch (error) {
+            console.error(`Translation request failed for batch ${batchIndex + 1}:`, error);
+          }
+        });
+        
+        // Wait for all batches in this group to complete
+        await Promise.all(batchPromises);
+        
+        // Small delay between batch groups to respect rate limits
+        if (i + maxConcurrentBatches < batches.length) {
+          await new Promise(resolve => setTimeout(resolve, 200));
+        }
+      }
+
+      // Apply all translations
+      let appliedCount = 0;
+      translations.forEach((translation, index) => {
+        if (translation && elementMap[index]) {
+          elementMap[index].textContent = translation;
+          appliedCount++;
+        }
+      });
+
+      // Cache the translations
+      const translationCache = {
+        translations: translations.filter(t => t),
+        timestamp: Date.now()
+      };
+      localStorage.setItem(cacheKey, JSON.stringify(translationCache));
+
+      console.log(`Translation completed: ${appliedCount}/${textsToTranslate.length} elements translated`);
+      
       // Save language preference
       localStorage.setItem('jss-pref', langCode);
+      
+      // Complete translation
+      setIsTranslating(false);
+      setTranslationProgress(100);
 
       
     } catch (error) {
@@ -272,10 +341,51 @@ export default function CustomTranslation() {
       
       // Fallback to widget if direct translation fails
       if (window.customTranslate) {
-
         window.customTranslate(langCode);
       }
+      
+      // Reset translation state
+      setIsTranslating(false);
+      setTranslationProgress(0);
     }
+  };
+
+  // Helper function to apply cached translations
+  const applyCachedTranslations = (cachedTranslations: string[]) => {
+    const textSelectors = [
+      'main h1', 'main h2', 'main h3', 'main h4', 'main h5', 'main h6',
+      'main p', 'main li', 'main td', 'main th',
+      'article h1', 'article h2', 'article h3', 'article h4', 'article h5', 'article h6',
+      'article p', 'article li', 'article td', 'article th',
+      '.content h1', '.content h2', '.content h3', '.content h4', '.content h5', '.content h6',
+      '.content p', '.content li', '.content td', '.content th'
+    ];
+    
+    const textElements = document.querySelectorAll(textSelectors.join(', '));
+    const elementMap: Element[] = [];
+    
+    textElements.forEach(element => {
+      if (element.classList.contains('notranslate') || 
+          element.closest('.notranslate') ||
+          element.closest('nav') ||
+          element.closest('header') ||
+          element.closest('footer') ||
+          element.closest('[class*="translate"]')
+      ) {
+        return;
+      }
+      
+      const text = element.textContent?.trim();
+      if (text && text.length > 2 && text.length < 500) {
+        elementMap.push(element);
+      }
+    });
+
+    cachedTranslations.forEach((translation, index) => {
+      if (translation && elementMap[index]) {
+        elementMap[index].textContent = translation;
+      }
+    });
   };
 
   const toggleDropdown = () => {
@@ -307,24 +417,51 @@ export default function CustomTranslation() {
       {/* Translation Icon Button */}
       <button
         onClick={toggleDropdown}
-        className="flex items-center justify-center w-6 h-6 text-gray-700 group-hover:text-primary-500 transition-colors duration-200"
+        disabled={isTranslating}
+        className="flex items-center justify-center w-6 h-6 text-gray-700 group-hover:text-primary-500 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Select language for translation"
         type="button"
       >
-        {/* Universal Translation Icon */}
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-5 h-5"
-        >
-          <path
-            d="M12.87 15.07L10.33 12.56L10.36 12.53C12.1 10.59 13.34 8.36 14.07 6H17V4H10V2H8V4H1V6H12.17C11.5 7.92 10.44 9.75 9 11.35C8.07 10.32 7.3 9.19 6.69 8H4.69C5.42 9.63 6.42 11.17 7.67 12.56L2.58 17.58L4 19L9 14L12.11 17.11L12.87 15.07ZM18.5 10H16.5L12 22H14L15.12 19H19.87L21 22H23L18.5 10ZM15.88 17L17.5 12.67L19.12 17H15.88Z"
-            fill="currentColor"
-          />
-        </svg>
+        {isTranslating ? (
+          /* Spinner for translation progress */
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-5 h-5 animate-spin"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeDasharray="31.416"
+              strokeDashoffset="31.416"
+              style={{
+                strokeDashoffset: 31.416 * (1 - translationProgress / 100)
+              }}
+            />
+          </svg>
+        ) : (
+          /* Universal Translation Icon */
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-5 h-5"
+          >
+            <path
+              d="M12.87 15.07L10.33 12.56L10.36 12.53C12.1 10.59 13.34 8.36 14.07 6H17V4H10V2H8V4H1V6H12.17C11.5 7.92 10.44 9.75 9 11.35C8.07 10.32 7.3 9.19 6.69 8H4.69C5.42 9.63 6.42 11.17 7.67 12.56L2.58 17.58L4 19L9 14L12.11 17.11L12.87 15.07ZM18.5 10H16.5L12 22H14L15.12 19H19.87L21 22H23L18.5 10ZM15.88 17L17.5 12.67L19.12 17H15.88Z"
+              fill="currentColor"
+            />
+          </svg>
+        )}
       </button>
 
       {/* Dropdown */}
