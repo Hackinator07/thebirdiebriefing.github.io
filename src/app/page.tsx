@@ -131,10 +131,10 @@ export default async function Home() {
               </p>
             </div>
 
-            {/* Featured Articles - Horizontal scroll on mobile, grid on larger screens */}
-            <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0" style={{ scrollbarWidth: 'thin', scrollbarColor: '#d1d5db #f3f4f6' }}>
+            {/* Featured Articles - Horizontal scroll when hamburger menu is active, grid on xl screens and up */}
+            <div className="flex gap-6 overflow-x-auto pb-4 xl:grid xl:grid-cols-3 xl:gap-8 xl:overflow-visible xl:pb-0" style={{ scrollbarWidth: 'thin', scrollbarColor: '#d1d5db #f3f4f6' }}>
               {featuredArticles.map((article, index) => (
-                <article key={article.id} className="flex-shrink-0 w-80 md:w-auto bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300 group">
+                <article key={article.id} className="flex-shrink-0 w-80 xl:w-auto bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300 group">
                   {/* Image */}
                   <div className="aspect-[4/3] bg-gray-200">
                     <Link href={`/news/${article.slug}`}>
