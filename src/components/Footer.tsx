@@ -10,8 +10,8 @@ export default function Footer() {
       { name: 'Podcast', href: '/podcast' },
       { name: 'Rankings', href: '/rankings' },
       { name: 'Schedule', href: '/schedule' },
-      { name: 'About', href: '/about' },
-      { name: 'Contact', href: '/contact-us' },
+      { name: 'About Us', href: '/about' },
+      { name: 'Contact Us', href: '/contact-us' },
     ],
     social: [
       {
