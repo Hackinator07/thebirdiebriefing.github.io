@@ -286,7 +286,13 @@ export default function CustomTranslation() {
   };
 
   return (
-    <div className="relative flex items-center gap-2 notranslate group" ref={dropdownRef} translate="no">
+    <div 
+      className="relative flex items-center gap-2 notranslate group" 
+      ref={dropdownRef} 
+      translate="no"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
       {/* Clickable Language Display */}
       <button
         onClick={toggleDropdown}
@@ -323,9 +329,14 @@ export default function CustomTranslation() {
 
       {/* Dropdown */}
       {isOpen && (
-        <div className={`absolute w-64 max-w-[90vw] bg-white border border-gray-200 rounded-lg shadow-lg z-50 notranslate ${
-          isMobile ? 'bottom-full mb-2 left-0' : 'top-full mt-2 left-0'
-        }`} translate="no">
+        <div 
+          className={`absolute w-64 max-w-[90vw] bg-white border border-gray-200 rounded-lg shadow-lg z-50 notranslate ${
+            isMobile ? 'bottom-full mb-2 left-0' : 'top-full pt-1 left-0'
+          }`} 
+          translate="no"
+          onMouseEnter={() => setIsOpen(true)}
+          onMouseLeave={() => setIsOpen(false)}
+        >
           {/* Header */}
           <div className="p-4 border-b border-gray-200 notranslate">
             <h3 className="text-sm font-medium text-gray-900 mb-2 notranslate">{t('selectLanguage')}</h3>
