@@ -443,9 +443,10 @@ For technical issues or questions about managing the site:
 ### Article Management Best Practices
 
 #### Featured Articles
-- Only mark one article as `featured: true` at a time
-- Consider the featured article as your "top story" for the week
-- Update featured status when publishing new articles
+- Configure up to 3 featured articles in `src/data/config.json` under `featuredArticles`
+- Featured articles display in a 3-panel grid on the homepage
+- Update the `featuredArticles` array when you want to change which articles are featured
+- Use article IDs (slugs) to reference articles in the featured articles configuration
 
 #### Article Ordering
 - Articles display in the order they appear in the JSON file

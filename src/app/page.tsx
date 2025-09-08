@@ -3,12 +3,10 @@ import Image from 'next/image';
 import SpotifyEmbed from '@/components/SpotifyEmbed';
 import Socials from '@/components/Socials';
 import VideoBackground from '@/components/VideoBackground';
-import { getArticles, getFeaturedArticle, formatDate, calculateReadTime } from '@/lib/data';
-import { FaGolfBall } from 'react-icons/fa';
+import { getFeaturedArticles, formatDate } from '@/lib/data';
 
 export default async function Home() {
-  const articles = await getArticles();
-  const featuredArticle = await getFeaturedArticle() || articles[0]; // Get featured article or fallback to latest
+  const featuredArticles = await getFeaturedArticles();
 
   // Force new deployment to test GitHub Pages
 
@@ -116,98 +114,93 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Featured News Section */}
-      {featuredArticle && (
+      {/* Featured Articles Section */}
+      {featuredArticles.length > 0 && (
         <section className="py-8 lg:py-12">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="max-w-2xl mx-auto text-center mb-8">
+            <div className="max-w-2xl mx-auto text-center mb-12">
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight tracking-tight title-overlap">
-                  Featured Story
+                  Featured Articles
                 </h2>
                 <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
               </div>
               <p className="text-lg text-gray-600 leading-relaxed">
-                A birdie worthy story, handpicked for you.
+                Birdie worthy stories, handpicked for you.
               </p>
             </div>
 
-                        <div className="max-w-6xl mx-auto">
-              <article className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                <div className="flex flex-col lg:flex-row h-full">
+            {/* 3 Panel Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredArticles.map((article, index) => (
+                <article key={article.id} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300 group">
                   {/* Image */}
-                  <div className="lg:w-1/2 lg:h-auto">
-                    <div className="h-full lg:min-h-[400px] bg-gray-200">
+                  <div className="aspect-[4/3] bg-gray-200">
+                    <Link href={`/news/${article.slug}`}>
                       <Image
-                        src={featuredArticle.image.src}
-                        alt={featuredArticle.image.alt}
-                        width={600}
-                        height={375}
-                        className="w-full h-full object-cover"
-                        priority
+                        src={article.image.src}
+                        alt={article.image.alt}
+                        width={400}
+                        height={300}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        priority={index < 3}
                       />
-                    </div>
+                    </Link>
                   </div>
 
                   {/* Content */}
-                  <div className="lg:w-1/2 p-8 flex flex-col justify-center">
+                  <div className="p-6">
                     {/* Category */}
                     <span className="inline-block text-primary-500 font-semibold text-sm uppercase tracking-wide mb-3">
-                      {featuredArticle.category}
+                      {article.category}
                     </span>
 
                     {/* Title */}
-                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight line-clamp-2">
                       <Link
-                        href={`/news/${featuredArticle.slug}`}
-                        className="hover:text-primary-500 transition-colors"
+                        href={`/news/${article.slug}`}
+                        className="group-hover:text-primary-500 transition-colors"
                       >
-                        {featuredArticle.title}
+                        {article.title}
                       </Link>
                     </h3>
 
                     {/* Excerpt */}
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                      {featuredArticle.excerpt}
+                    <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+                      {article.excerpt}
                     </p>
 
                     {/* Meta */}
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm text-gray-500">
-                        <span>By {featuredArticle.author}</span>
-                        <span className="hidden sm:inline">•</span>
-                        <time dateTime={featuredArticle.date}>
-                          {formatDate(featuredArticle.date)}
-                        </time>
-                        <span className="hidden sm:inline">•</span>
-                        <span className="flex items-center gap-1">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                          {calculateReadTime(featuredArticle.content)} min read
-                        </span>
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                        <span>By {article.author}</span>
+                        <span>•</span>
+                        <span>{formatDate(article.date)}</span>
                       </div>
                       <Link
-                        href={`/news/${featuredArticle.slug}`}
-                        className="text-primary-500 hover:text-primary-600 font-medium text-sm inline-flex items-center self-start sm:self-auto"
+                        href={`/news/${article.slug}`}
+                        className="inline-flex items-center text-primary-500 hover:text-primary-600 font-semibold text-sm transition-colors group"
                       >
-                        Read article →
+                        Read More
+                        <svg
+                          className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
                       </Link>
                     </div>
                   </div>
-                </div>
-              </article>
-
-              {/* View All News Link */}
-              <div className="text-center mt-12">
-                <Link
-                  href="/news"
-                  className="bg-primary-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1 shadow-lg"
-                >
-                  View All News
-                </Link>
-              </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>

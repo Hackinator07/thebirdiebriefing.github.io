@@ -37,7 +37,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}/news/${article.slug}`,
     lastModified: article.date,
     changeFrequency: 'yearly',
-    priority: article.id === config.featuredArticleId ? 0.9 : 0.7,
+    priority: config.featuredArticles.includes(article.id) ? 0.9 : 0.7,
   }));
 
   return [...staticRoutes, ...articleRoutes];

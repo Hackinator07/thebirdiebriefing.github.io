@@ -1,4 +1,8 @@
 {
   "siteName": "The Birdie Briefing",
-  "featuredArticleId": "dow-impact-award"
+  "featuredArticles": [
+    "dow-impact-award",
+    "lee5-youtube",
+    "gigi-stoll-drip"
+  ]
 }

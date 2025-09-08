@@ -28,16 +28,48 @@ export async function getFeaturedArticle(): Promise<Article | undefined> {
   const { getConfig } = await import('./data');
   const config = getConfig();
 
-  // Find article by the configured featured article ID
-  const featuredArticle = articles.find(article => article.id === config.featuredArticleId);
+  // For backward compatibility, use first featured article if available
+  if (config.featuredArticles && config.featuredArticles.length > 0) {
+    const featuredArticle = articles.find(article => article.id === config.featuredArticles[0]);
+    if (featuredArticle) {
+      return featuredArticle;
+    }
+  }
 
-  // Fallback to the first article if configured article is not found
-  if (!featuredArticle && articles.length > 0) {
-    console.warn(`Featured article with ID "${config.featuredArticleId}" not found. Using first article as fallback.`);
+  // Fallback to the first article if no featured articles found
+  if (articles.length > 0) {
+    console.warn('No featured articles found. Using first article as fallback.');
     return articles[0];
   }
 
-  return featuredArticle;
+  return undefined;
+}
+
+export async function getFeaturedArticles(): Promise<Article[]> {
+  const articles = await getArticles();
+  const { getConfig } = await import('./data');
+  const config = getConfig();
+
+  if (!config.featuredArticles || config.featuredArticles.length === 0) {
+    console.warn('No featured articles configured. Returning empty array.');
+    return [];
+  }
+
+  // Find articles by the configured featured article IDs
+  const featuredArticles = config.featuredArticles
+    .map(id => articles.find(article => article.id === id))
+    .filter((article): article is Article => article !== undefined);
+
+  // Log warning for any missing articles
+  const missingIds = config.featuredArticles.filter(id =>
+    !articles.some(article => article.id === id)
+  );
+
+  if (missingIds.length > 0) {
+    console.warn(`Featured articles with IDs "${missingIds.join(', ')}" not found.`);
+  }
+
+  return featuredArticles;
 }
 
 export async function getArticlesByTag(tag: string): Promise<Article[]> {

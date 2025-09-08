@@ -3,7 +3,7 @@ import configData from '@/data/config.json';
 
 export interface SiteConfig {
   siteName: string;
-  featuredArticleId: string;
+  featuredArticles: string[];
 }
 
 export interface ArticleSection {
@@ -84,7 +84,7 @@ export interface Rankings {
 
 
 // Re-export article functions from the articles module
-export { getArticles, getArticleBySlug, getLatestArticle, getFeaturedArticle } from './articles';
+export { getArticles, getArticleBySlug, getLatestArticle, getFeaturedArticle, getFeaturedArticles } from './articles';
 
 // Re-export rankings function from the rankings module
 export { getRankings } from './rankings';
