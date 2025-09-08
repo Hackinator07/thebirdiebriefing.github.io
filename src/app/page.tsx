@@ -131,10 +131,10 @@ export default async function Home() {
               </p>
             </div>
 
-            {/* 3 Panel Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Featured Articles - Horizontal scroll on mobile, grid on larger screens */}
+            <div className="flex gap-6 overflow-x-auto pb-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:overflow-visible md:pb-0" style={{ scrollbarWidth: 'thin', scrollbarColor: '#d1d5db #f3f4f6' }}>
               {featuredArticles.map((article, index) => (
-                <article key={article.id} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300 group">
+                <article key={article.id} className="flex-shrink-0 w-80 md:w-auto bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300 group">
                   {/* Image */}
                   <div className="aspect-[4/3] bg-gray-200">
                     <Link href={`/news/${article.slug}`}>
@@ -143,7 +143,7 @@ export default async function Home() {
                         alt={article.image.alt}
                         width={400}
                         height={300}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         priority={index < 3}
                       />
                     </Link>
@@ -180,7 +180,7 @@ export default async function Home() {
                       </div>
                       <Link
                         href={`/news/${article.slug}`}
-                        className="inline-flex items-center text-primary-500 hover:text-primary-600 font-semibold text-sm transition-colors group"
+                        className="inline-flex items-center text-primary-500 hover:text-primary-600 font-semibold text-sm transition-colors"
                       >
                         Read More
                         <svg
