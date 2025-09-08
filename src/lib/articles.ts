@@ -25,11 +25,11 @@ export async function getLatestArticle(): Promise<Article | undefined> {
 
 export async function getFeaturedArticle(): Promise<Article | undefined> {
   const articles = await getArticles();
-  const { getConfig } = await import('./data');
-  const config = getConfig();
+  const { loadConfig } = await import('./dataLoader');
+  const config = await loadConfig();
 
   // For backward compatibility, use first featured article if available
-  if (config.featuredArticles && config.featuredArticles.length > 0) {
+  if (config && config.featuredArticles && config.featuredArticles.length > 0) {
     const featuredArticle = articles.find(article => article.id === config.featuredArticles[0]);
     if (featuredArticle) {
       return featuredArticle;
@@ -47,10 +47,10 @@ export async function getFeaturedArticle(): Promise<Article | undefined> {
 
 export async function getFeaturedArticles(): Promise<Article[]> {
   const articles = await getArticles();
-  const { getConfig } = await import('./data');
-  const config = getConfig();
+  const { loadConfig } = await import('./dataLoader');
+  const config = await loadConfig();
 
-  if (!config.featuredArticles || config.featuredArticles.length === 0) {
+  if (!config || !config.featuredArticles || config.featuredArticles.length === 0) {
     console.warn('No featured articles configured. Returning empty array.');
     return [];
   }
