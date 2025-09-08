@@ -246,8 +246,7 @@ export default async function Home() {
               <div className="flex-1 h-px bg-gray-200 max-w-32"></div>
             </div>
                                                    <p className="text-xl text-gray-200 leading-relaxed mb-12 max-w-3xl mx-auto">
-              Connect with fellow golf enthusiasts, attend exclusive events, and be part of the movement
-              celebrating women in golf.
+              Connect with golf fans, follow tournament action, and join a community celebrating women's golf.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
