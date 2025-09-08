@@ -55,7 +55,7 @@ jobs:
         echo "📊 Player count: $PLAYER_COUNT"
       
     - name: Test build with new rankings
-      run: npm run build:no-optimize
+      run: npm run build
       
     - name: Commit and push changes
       run: |
