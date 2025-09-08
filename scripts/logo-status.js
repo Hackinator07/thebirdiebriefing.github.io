@@ -13,7 +13,7 @@ const tournaments = [
   { name: 'T-Mobile Match Play presented by MGM Rewards', filename: 'tmobile-match-play.png' },
   { name: 'JM Eagle LA Championship presented by Plastpro', filename: 'jm-eagle-la.webp' },
   { name: 'The Chevron Championship', filename: 'chevron-championship.png' },
-  { name: 'Black Desert Championship', filename: 'black-desert.svg' },
+  { name: 'Black Desert Championship', filename: 'black-desert-championship.png' },
   { name: 'Mizuho Americas Open', filename: 'mizuho-americas.png' },
   { name: 'Riviera Maya Open', filename: 'riviera-maya.png' },
   { name: 'U.S. Women\'s Open presented by Ally', filename: 'us-womens-open.png' },

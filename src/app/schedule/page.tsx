@@ -21,7 +21,7 @@ const getTournamentLogo = (tournamentTitle: string): string | null => {
     'T-Mobile Match Play presented by MGM Rewards': 'tmobile-match-play.png',
     'JM Eagle LA Championship presented by Plastpro': 'jm-eagle-la.webp',
     'The Chevron Championship': 'chevron-championship.png',
-    'Black Desert Championship': 'black-desert.svg',
+    'Black Desert Championship': 'black-desert-championship.png',
     'Mizuho Americas Open': 'mizuho-americas.png',
     'Riviera Maya Open': 'riviera-maya.png',
     'U.S. Women\'s Open presented by Ally': 'us-womens-open.png',
