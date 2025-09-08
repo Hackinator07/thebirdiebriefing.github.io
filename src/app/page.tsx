@@ -203,7 +203,7 @@ export default async function Home() {
               <div className="text-center mt-12">
                 <Link
                   href="/news"
-                  className="bg-primary-500 text-white px-6 py-3 rounded-md font-medium hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1"
+                  className="bg-primary-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1 shadow-lg"
                 >
                   View All News
                 </Link>

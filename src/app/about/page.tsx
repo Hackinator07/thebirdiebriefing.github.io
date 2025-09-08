@@ -57,7 +57,7 @@ export default async function About() {
         <VideoBackground />
 
         {/* Content Overlay */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 lg:py-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="max-w-6xl mx-auto">
             {/* Text Content with White Background */}
             <div className="bg-white rounded-lg p-8 lg:p-12">
@@ -86,7 +86,7 @@ export default async function About() {
       {/* Marie Hack Section */}
       {marie && (
         <section id="marie-hack" className="py-16 lg:py-24">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               {/* Name Header */}
               <div className="text-center mb-12">
@@ -134,7 +134,7 @@ export default async function About() {
       {/* George Hack Section */}
       {george && (
         <section id="george-hack" className="py-16 lg:py-24 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               {/* Name Header */}
               <div className="text-center mb-12">
@@ -196,7 +196,7 @@ export default async function About() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
                 href={contact.buttonLink}
-                className="bg-primary-500 text-white px-8 py-4 rounded-md font-medium text-lg hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1"
+                className="bg-primary-500 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1 shadow-lg"
               >
                 {contact.buttonText}
               </Link>
