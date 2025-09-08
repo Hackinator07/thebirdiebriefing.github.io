@@ -41,7 +41,7 @@ jobs:
           NEXT_PUBLIC_TRANSLATION_WIDGET_KEY: ${{ secrets.NEXT_PUBLIC_TRANSLATION_WIDGET_KEY }}
         run: |
           # Skip image optimization if this is a rankings update commit
-          if [[ "${{ github.event.head_commit.message }}" == "Update rankings data"* ]]; then
+          if [[ "${{ github.event.head_commit.message }}" == "Update rankings data"* ]] || [[ "${{ github.event.head_commit.message }}" == *"rankings"* ]]; then
             echo "🔄 Rankings update detected - skipping image optimization"
             npm run build:no-optimize
           else
