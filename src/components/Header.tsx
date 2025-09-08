@@ -357,7 +357,7 @@ export default function Header() {
                 </div>
 
                 {/* Navigation Links - Made scrollable only in landscape */}
-                <nav className="flex-1 px-6 py-4 overflow-y-auto landscape:overflow-y-auto portrait:overflow-y-visible">
+                <nav className="flex-1 px-6 py-4 overflow-y-auto">
                   <div className="space-y-2">
                     {navigation.map((item) => {
                       const isActive = isLinkActive(item.href);
