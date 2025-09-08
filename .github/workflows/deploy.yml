@@ -39,7 +39,15 @@ jobs:
       - name: Build with Next.js
         env:
           NEXT_PUBLIC_TRANSLATION_WIDGET_KEY: ${{ secrets.NEXT_PUBLIC_TRANSLATION_WIDGET_KEY }}
-        run: npm run build
+        run: |
+          # Skip image optimization if this is a rankings update commit
+          if [[ "${{ github.event.head_commit.message }}" == "Update rankings data"* ]]; then
+            echo "🔄 Rankings update detected - skipping image optimization"
+            npm run build:no-optimize
+          else
+            echo "🏗️ Regular build - running with image optimization"
+            npm run build
+          fi
 
       - name: Add .nojekyll file
         run: touch out/.nojekyll
