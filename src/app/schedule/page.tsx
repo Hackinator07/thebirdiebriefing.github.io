@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
 import { getSchedule } from '@/lib/schedule';
 
@@ -64,6 +64,18 @@ export default function SchedulePage() {
   const schedule = getSchedule();
   const [sortField, setSortField] = useState<SortField>('date');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+  const [formattedDate, setFormattedDate] = useState<string>('');
+
+  // Format date on client side to avoid hydration mismatch
+  useEffect(() => {
+    setFormattedDate(
+      new Date(schedule.lastUpdated).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })
+    );
+  }, [schedule.lastUpdated]);
 
   // Sort tournaments based on current sort field and direction
   const sortedTournaments = useMemo(() => {
@@ -185,11 +197,7 @@ export default function SchedulePage() {
           </div>
 
           <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center">
-            Last updated {new Date(schedule.lastUpdated).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}
+            Last updated {formattedDate || 'Loading...'}
           </p>
         </div>
       </section>
