@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import NewsletterSignup from './NewsletterSignup';
-import { FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaYoutube, FaEnvelope } from 'react-icons/fa';
 
 export default function Footer() {
   const navigation = {
@@ -32,6 +32,11 @@ export default function Footer() {
         name: 'YouTube',
         href: 'https://www.youtube.com/channel/UCW2vyHWE3bMfum9FPq-8xGw',
         icon: (props: React.SVGProps<SVGSVGElement>) => <FaYoutube {...props} />,
+      },
+      {
+        name: 'Email',
+        href: 'mailto:contact@birdiebriefing.com',
+        icon: (props: React.SVGProps<SVGSVGElement>) => <FaEnvelope {...props} />,
       },
     ],
   };
