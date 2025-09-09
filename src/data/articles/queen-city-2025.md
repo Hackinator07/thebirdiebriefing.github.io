@@ -71,10 +71,10 @@ sections:
         - "Haeran Ryu (28)"
       sponsorExemptions:
         - "Maria Fassi"
-		- "Vidhi Lakhawala"
+        - "Vidhi Lakhawala"
       mondayQualifiers:
         - "Heather Lin"
-		- "Polly Mack"
+        - "Polly Mack"
   - type: "links"
     title: "Tournament Resources"
     links:
