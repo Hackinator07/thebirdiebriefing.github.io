@@ -89,10 +89,10 @@ sections:
         description: "Event Organizer"
       - text: "Kroger"
         url: "https://www.kroger.com/"
-        description: "Title Sponsor"
+        description: "Title Sponsor and the world's largest food retailer"
       - text: "Procter & Gamble"
         url: "https://us.pg.com/"
-        description: "Primary Sponsor and the world's largest food retailer"
+        description: "Primary Sponsor"
   - type: "tv-schedule"
     title: "How to Watch Kroger Queen City Championship"
     schedule:
