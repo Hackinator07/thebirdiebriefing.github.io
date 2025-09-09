@@ -156,9 +156,7 @@ export default function ContactUsPage() {
               {/* Introduction */}
               <div className='max-w-3xl mx-auto text-center mb-8'>
                 <p className='text-base lg:text-lg text-gray-700 leading-relaxed mb-6'>
-                  Whether you're a fan, media partner, equipment maker, or
-                  interested in partnering to reach our passionate audience,
-                  we'd love to hear from you!{" "}
+                  Be part of the community! Share your take with a gear review, course write-up, or even an article. Fans, media partners, brands, and makers--we'd love to hear from you.
                 </p>
               </div>
 
