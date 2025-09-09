@@ -92,7 +92,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16">
           {/* Mobile menu button - Moved to left side */}
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <button
               type="button"
               className="text-gray-700 hover:text-primary-500 focus:outline-none focus:text-primary-500"
@@ -121,7 +121,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation - Changed from lg: to xl: and made more responsive */}
-          <nav className="hidden lg:flex items-center space-x-3 sm:space-x-4 md:space-x-6 xl:space-x-8">
+          <nav className="hidden xl:flex items-center space-x-3 sm:space-x-4 md:space-x-6 xl:space-x-8">
             {navigation.map((item) => {
               const isActive = isLinkActive(item.href);
               return (
@@ -343,7 +343,7 @@ export default function Header() {
 
         {/* Mobile Navigation - Changed from lg:hidden to xl:hidden */}
         {isMenuOpen && (
-          <div className="lg:hidden fixed inset-0 z-50">
+          <div className="xl:hidden fixed inset-0 z-50">
             {/* Backdrop */}
             <div
               className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
