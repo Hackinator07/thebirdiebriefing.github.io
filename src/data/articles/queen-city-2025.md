@@ -92,7 +92,7 @@ sections:
         description: "Title Sponsor"
       - text: "Procter & Gamble"
         url: "https://us.pg.com/"
-        description: "Primary Sponsor"
+        description: "Primary Sponsor and the world's largest food retailer"
   - type: "tv-schedule"
     title: "How to Watch Kroger Queen City Championship"
     schedule:
@@ -110,24 +110,24 @@ sections:
           - "Golf Channel: 12:00 PM - 3:00 PM"
 ---
 
-The Kroger Queen City Championship presented by P&G is coming to Ohio, and this week it lands at TPC River’s Bend, a course carved into the rolling land just north of Cincinnati. From September 11–14, 144 of the best players in the world will tee it up for a $2 million purse, and with the way this LPGA season has gone—no repeat winners yet—the story feels wide open.
+[The Kroger Queen City Championship presented by P&G](https://queencitylpga.com/) is coming back to Ohio, and this week it lands at TPC River’s Bend, a course carved into the rolling land just north of Cincinnati. From September 11–14, 144 of the best players in the world will tee it up for a $2 million purse, and with the way this LPGA season has gone—no repeat winners yet—the story feels wide open.
 
 River’s Bend isn’t new to big stages. The course hosted the PGA TOUR Champions Kroger Classic, the Korn Ferry Tour’s Chiquita Classic, and the Epson Tour’s Prasco Charity Championship. Built in 2001, it’s an Arnold Palmer and Ed Seay course that asks players to hit every shot in the bag and has been called one of the best new private clubs in the country. It’s big enough for the crowds and precise enough to expose mistakes. It should be a compelling canvas for where the leaderboard will shift from day to day, and you’ll see desperate charges just to cling to the cut, along with the kind of bottom-of-the-board wreckage that draws out the morbidly curious.
 
 **Key Players to Follow**
 
-Heather Lin and Polly Mack punched their tickets through Monday qualifying, carding 3-under 69s to snag the final spots in a field that’s as stacked as the tour has seen short of a major. Keep an eye on Lin and Mack—they’ve already proven they can hang with the best, and this week, they could turn heads.
+**Heather Lin** and **Polly Mack** punched their tickets through Monday qualifying, carding 3-under 69s to snag the final spots in a field that’s as stacked as the tour has seen short of a major. Keep an eye on Lin and Mack—they’ve already proven they can hang with the best, and this week, they could turn heads.
 
-Defending champion Lydia Ko returns with the kind of iron will and ball-striking that makes her a natural favorite. After a five-stroke cinch here last year and a season highlighted by her 23rd career win at the HSBC Women’s World Championship, expect her near the top come Sunday.
+Defending champion **Lydia Ko** returns with the kind of iron will and ball-striking that makes her a natural favorite. After a five-stroke cinch here last year and a season highlighted by her 23rd career win at the HSBC Women’s World Championship, expect her near the top come Sunday.
 
-World No. 1 Jeeno Thitikul demands attention. The breaks are due to tilt her way. Four top-10s in six starts prove she’s steady, but she remembers the sting of finishing runner-up to Ko here last year—and she’s not planning to let that happen again.
+[World No. 1 Jeeno Thitikul](https://www.birdiebriefing.com/news/jeeno-thitikul-quiet-stride/) demands attention. The breaks are due to tilt her way. Four top-10s in six starts prove she’s steady, but she remembers the sting of finishing runner-up to Ko here last year—and she’s not planning to let that happen again.
 
-And keep an eye on Minjee Lee, the 2023 Queen City winner, who’s racking up top finishes all season, including a KPMG Women’s PGA victory. With the Rolex Player of the Year and CME Globe races heating up, she’s right on the leaders’ heels and tops the LPGA money list. Expect her to run the boards with confident putting and push hard every step of the way this week.
+And keep an eye on **Minjee Lee**, the 2023 Queen City winner, who’s racking up top finishes all season, including a KPMG Women’s PGA victory. With the Rolex Player of the Year and CME Globe races heating up, she’s right on the leaders’ heels and tops the LPGA money list. Expect her to run the boards with confident putting and push hard every step of the way this week.
 
 **Be Part of It**
 
 Kroger and P&G are betting big on what this tournament stands for: world-class women’s golf in Cincinnati and a stage for more than just the game. They’ve called in Outlyr—the folks behind the Meijer Classic and Dow Championship—so expect more than a typical tour stop. Smooth organization, a welcoming vibe, and something to see around every corner.
 
-There will be general admission tickets at $59.16 weekly, or $29.58 daily. Champions Club will be $757.25 weekly or $201.14 daily. Active duty, veterans, reservists, National Guard, and first responders receive free daily admission with ID or service verification. Children 17 & under get free daily grounds admission with a ticketed adult.
+There will be general [admission tickets](https://queencitylpga.com/tickets/) at $59.16 weekly, or $29.58 daily. Champions Club will be $757.25 weekly or $201.14 daily. Active duty, veterans, reservists, National Guard, and first responders receive free daily admission with ID or service verification. Children 17 & under get free daily grounds admission with a ticketed adult.
 
 Queen City is lining up the sharpest field on the planet in a season still figuring out its story. It might crown a repeat winner or throw a curve no one saw coming. Either way, you’ll want to be there.
