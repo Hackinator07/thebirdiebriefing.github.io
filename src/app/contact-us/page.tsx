@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { performSpamCheck } from "@/lib/spamProtection";
 import VideoBackground from "@/components/VideoBackground";
 
 export default function ContactUsPage() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -19,6 +21,17 @@ export default function ContactUsPage() {
   >("idle");
   const [error, setError] = useState("");
   const [lastSubmission, setLastSubmission] = useState(0);
+
+  // Auto-select user submission option if URL parameter is present
+  useEffect(() => {
+    const inquiryParam = searchParams.get('inquiry');
+    if (inquiryParam === 'user-submission') {
+      setFormData(prev => ({
+        ...prev,
+        inquiryType: 'user-submission'
+      }));
+    }
+  }, [searchParams]);
 
   const inquiryTypes = [
     { value: "", label: "Select an inquiry type" },
