@@ -170,8 +170,7 @@ export const getCountryFlagAlt = (countryCode: string): string => {
     'gab': 'Gabon',
     'gnq': 'Equatorial Guinea',
     'stp': 'São Tomé and Príncipe',
-    'ago': 'Angola',
-    'civ': 'Ivory Coast'
+    'ago': 'Angola'
   };
   
   return countryNames[code] || countryCode.toUpperCase();
