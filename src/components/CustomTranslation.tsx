@@ -406,12 +406,13 @@ export default function CustomTranslation() {
       {/* Clickable Language Display */}
       <button
         onClick={toggleDropdown}
-        className="font-medium text-gray-700 select-none notranslate group-hover:text-primary-500 transition-colors duration-200 cursor-pointer"
+        className="font-medium text-gray-700 select-none notranslate group-hover:text-primary-500 transition-colors duration-200 cursor-pointer relative"
         translate="no"
         type="button"
         aria-label="Select language for translation"
       >
         {ALLOWED_LANGUAGES.find(lang => lang.code === selectedLanguage)?.native || selectedLanguage.toUpperCase()}
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
       </button>
       
       {/* Translation Icon Button */}

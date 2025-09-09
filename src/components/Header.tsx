@@ -135,9 +135,9 @@ export default function Header() {
                     >
                       <button
                         onClick={() => setIsNewsDropdownOpen(!isNewsDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group ${
                           isNewsActive
-                            ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
+                            ? 'text-primary-500'
                             : 'text-gray-700 hover:text-primary-500'
                         }`}
                       >
@@ -152,6 +152,9 @@ export default function Header() {
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
+                        {!isNewsActive && (
+                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                        )}
                       </button>
                       
                       {/* Dropdown Menu */}
@@ -194,9 +197,9 @@ export default function Header() {
                     >
                       <button
                         onClick={() => setIsScheduleDropdownOpen(!isScheduleDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group ${
                           isScheduleActive
-                            ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
+                            ? 'text-primary-500'
                             : 'text-gray-700 hover:text-primary-500'
                         }`}
                       >
@@ -211,6 +214,9 @@ export default function Header() {
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
+                        {!isScheduleActive && (
+                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                        )}
                       </button>
                       
                       {/* Dropdown Menu */}
@@ -248,13 +254,16 @@ export default function Header() {
                    {item.name !== t('news') && item.name !== t('schedule') && item.name !== t('rankings') && (
                     <Link
                       href={item.href}
-                      className={`font-medium transition-colors duration-200 text-sm sm:text-base ${
+                      className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group ${
                         isActive
-                          ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
+                          ? 'text-primary-500'
                           : 'text-gray-700 hover:text-primary-500'
                       }`}
                     >
                       {item.name}
+                      {!isActive && (
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                      )}
                     </Link>
                   )}
                   
@@ -267,9 +276,9 @@ export default function Header() {
                     >
                       <button
                         onClick={() => setIsRankingsDropdownOpen(!isRankingsDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group ${
                           isRankingsActive
-                            ? 'text-primary-500 border-b-2 border-primary-500 pb-1'
+                            ? 'text-primary-500'
                             : 'text-gray-700 hover:text-primary-500'
                         }`}
                       >
@@ -284,6 +293,9 @@ export default function Header() {
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
+                        {!isRankingsActive && (
+                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                        )}
                       </button>
                       
                       {/* Dropdown Menu */}
