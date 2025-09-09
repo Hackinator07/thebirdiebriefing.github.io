@@ -76,7 +76,7 @@ export default function PodcastPage() {
                   <div className='mb-8'>
                     <a
                       href='#listen'
-                      className='inline-block bg-primary-500 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1 shadow-lg'
+                      className='inline-block bg-primary-500 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-primary-600 transition-all duration-300 shadow-lg'
                     >
                       Listen to The Birdie Briefing
                     </a>

@@ -44,13 +44,13 @@ export default function NotFound() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     href="/"
-                    className="inline-block bg-primary-500 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-primary-600 transition-all duration-300 hover:-translate-y-1 shadow-lg"
+                    className="inline-block bg-primary-500 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-primary-600 transition-all duration-300 shadow-lg"
                   >
                     Back to Home
                   </Link>
                   <Link
                     href="/news"
-                    className="inline-block bg-secondary-500 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-secondary-600 transition-all duration-300 hover:-translate-y-1 shadow-lg"
+                    className="inline-block bg-secondary-500 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-secondary-600 transition-all duration-300 shadow-lg"
                   >
                     Latest News
                   </Link>

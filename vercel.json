@@ -16,11 +16,4 @@
       "runtime": "nodejs20.x"
     }
   },
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html",
-      "statusCode": 404
-    }
-  ]
 }
