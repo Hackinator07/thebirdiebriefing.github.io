@@ -23,6 +23,11 @@ export default function ContactUsPage() {
   const inquiryTypes = [
     { value: "", label: "Select an inquiry type" },
     {
+      value: "user-submission",
+      label: "User Submission: equipment review, course write-up, or article",
+      email: "george@birdiebriefing.com",
+    },
+    {
       value: "general",
       label: "General Inquiries",
       email: "hello@birdiebriefing.com",
