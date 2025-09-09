@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { performSpamCheck } from "@/lib/spamProtection";
 import VideoBackground from "@/components/VideoBackground";
 
-export default function ContactUsPage() {
+function ContactUsForm() {
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     firstName: "",
@@ -366,5 +366,13 @@ export default function ContactUsPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function ContactUsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ContactUsForm />
+    </Suspense>
   );
 }
