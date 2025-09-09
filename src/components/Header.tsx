@@ -339,7 +339,7 @@ export default function Header() {
             />
 
             {/* Slide-out menu */}
-            <div className="fixed left-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ease-in-out">
+            <div className="fixed left-0 top-0 h-full w-80 landscape:w-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out">
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
