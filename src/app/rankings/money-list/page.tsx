@@ -2,7 +2,9 @@
 
 import { useState, useMemo } from 'react';
 import { getMoneyListRankings } from '@/lib/rankings';
+import { getCountryFlagUrl, getCountryFlagAlt } from '@/lib/countryFlags';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type SortField = 'rank' | 'fullName' | 'countryCode' | 'earnings' | 'events';
 type SortDirection = 'asc' | 'desc';
@@ -175,7 +177,16 @@ export default function MoneyListRankingsPage() {
                      </div>
                     <div>
                       <div className="font-medium text-gray-900">{player.fullName}</div>
-                      <div className="text-sm text-gray-500">{player.countryCode}</div>
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                        <Image
+                          src={getCountryFlagUrl(player.countryCode)}
+                          alt={getCountryFlagAlt(player.countryCode)}
+                          width={16}
+                          height={12}
+                          className="w-4 h-3 object-cover rounded-sm"
+                        />
+                        {player.countryCode}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -257,7 +268,16 @@ export default function MoneyListRankingsPage() {
                         {player.fullName}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {player.countryCode}
+                        <div className="flex items-center gap-2">
+                          <Image
+                            src={getCountryFlagUrl(player.countryCode)}
+                            alt={getCountryFlagAlt(player.countryCode)}
+                            width={20}
+                            height={15}
+                            className="w-5 h-4 object-cover rounded-sm"
+                          />
+                          {player.countryCode}
+                        </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         {formatEarnings(player.earnings)}
