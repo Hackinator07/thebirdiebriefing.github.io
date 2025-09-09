@@ -38,12 +38,11 @@ export default async function Home() {
                   At The Birdie Briefing, we amplify women in golf—sharing the stories of LPGA players, rising stars, and our community. With tournament coverage, insights, exclusive stories, and{' '}
                   <Link 
                     href="/contact-us?inquiry=user-submission" 
-                    className="text-primary-500 hover:text-primary-600 transition-colors duration-200 font-medium relative group"
+                    className="text-primary-500 hover:text-primary-600 transition-colors duration-200 font-medium"
                   >
-                    user-generated
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                    user submitted
                   </Link>
-                  {' '}reviews and articles, we bring the vibrant world of women's golf closer to fans everywhere.
+                  {' '}content, we bring the vibrant world of women's golf closer to fans everywhere.
                 </p>
 
                 {/* Author Attribution */}

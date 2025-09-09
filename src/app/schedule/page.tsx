@@ -41,7 +41,7 @@ const getTournamentLogo = (tournamentTitle: string): string | null => {
     'Buick LPGA Shanghai': 'buick-lpga-shanghai.png',
     'BMW Ladies Championship': 'bmw-ladies.svg',
     'Hanwha LIFEPLUS International Crown': 'hanwha-crown-new.svg',
-    'Maybank Championship': 'maybank-championship.jpg',
+    'Maybank Championship': 'maybank-championship.png',
     'TOTO Japan Classic': 'toto-japan.webp',
     'The ANNIKA driven by Gainbridge at Pelican': 'annika-pelican.webp',
     'CME Group Tour Championship': 'cme-tour-championship.png',
