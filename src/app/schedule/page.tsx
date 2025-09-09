@@ -16,7 +16,7 @@ const getTournamentLogo = (tournamentTitle: string): string | null => {
     'Honda LPGA Thailand': 'honda-lpga-thailand.png',
     'HSBC Women\'s World Championship': 'hsbc-womens-world.png',
     'Blue Bay LPGA': 'blue-bay-lpga.svg',
-    'FIR HILLS SERI PAK Championship': 'seri-pak-championship.webp',
+    'FIR HILLS SERI PAK Championship': 'seripak.png',
     'Ford Championship presented by Wild Horse Pass': 'ford-championship.png',
     'T-Mobile Match Play presented by MGM Rewards': 'tmobile-match-play.png',
     'JM Eagle LA Championship presented by Plastpro': 'jm-eagle-la.webp',
@@ -36,7 +36,7 @@ const getTournamentLogo = (tournamentTitle: string): string | null => {
     'CPKC Women\'s Open': 'cpkc-womens-open.svg',
     'FM Championship': 'fm-championship.png',
     'Kroger Queen City Championship presented by P&G': 'kroger-queen-city.png',
-    'Walmart NW Arkansas Championship presented by P&G': 'walmart-nw-arkansas.webp',
+    'Walmart NW Arkansas Championship presented by P&G': 'walmart-nw-arkansas.png',
     'LOTTE Championship presented by Hoakalei': 'lotte-championship.png',
     'Buick LPGA Shanghai': 'buick-lpga-shanghai.png',
     'BMW Ladies Championship': 'bmw-ladies.svg',
@@ -49,7 +49,15 @@ const getTournamentLogo = (tournamentTitle: string): string | null => {
   };
 
   const logoFilename = logoMap[tournamentTitle];
-  return logoFilename ? `/images/tournaments/${logoFilename}` : null;
+  if (!logoFilename) return null;
+  
+  // For SVG files, use the original path since they don't get optimized
+  if (logoFilename.endsWith('.svg')) {
+    return `/images/tournaments/${logoFilename}`;
+  }
+  
+  // For other formats, use the optimized WebP version
+  return `/optimized/${logoFilename.replace(/\.(png|jpg|jpeg)$/i, '.webp')}`;
 };
 
 export default function SchedulePage() {
