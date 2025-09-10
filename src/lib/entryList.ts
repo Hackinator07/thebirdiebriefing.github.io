@@ -203,8 +203,7 @@ EXEMPT
     'NED': 'NLD', // Netherlands
     'PAR': 'PRY', // Paraguay
     'ECU': 'ECU',
-    'SLO': 'SVN', // Slovenia
-    'TWN': 'TWN' // Taiwan
+    'SLO': 'SVN' // Slovenia
   };
 
   for (const line of lines) {
