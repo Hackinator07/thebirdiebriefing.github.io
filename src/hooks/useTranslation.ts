@@ -35,8 +35,8 @@ export function useTranslation() {
     window.addEventListener('storage', handleStorageChange);
     window.addEventListener('languageChange', handleLanguageChange as EventListener);
     
-    // Poll for JigsawStack changes (fallback)
-    const interval = setInterval(handleJigsawStackChange, 1000);
+    // Optimized polling for JigsawStack changes (fallback)
+    const interval = setInterval(handleJigsawStackChange, 2000); // Reduced frequency from 1000ms to 2000ms
 
     return () => {
       window.removeEventListener('storage', handleStorageChange);

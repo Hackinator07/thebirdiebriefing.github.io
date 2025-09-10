@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { getTranslation, getCurrentLanguage, type TranslationKeys } from '@/lib/translations';
+import { translationCache } from '@/lib/translationCache';
 
 // Global window interface extension
 declare global {
@@ -158,10 +159,10 @@ export default function CustomTranslation() {
       
       // Check for cached translations first
       const cacheKey = `translation_${langCode}_${window.location.pathname}`;
-      const cachedTranslations = localStorage.getItem(cacheKey);
-      if (cachedTranslations) {
+      const cachedTranslationsData = localStorage.getItem(cacheKey);
+      if (cachedTranslationsData) {
         try {
-          const cached = JSON.parse(cachedTranslations);
+          const cached = JSON.parse(cachedTranslationsData);
           if (cached.timestamp && (Date.now() - cached.timestamp) < 24 * 60 * 60 * 1000) { // 24 hour cache
             console.log('Using cached translations');
             applyCachedTranslations(cached.translations);
@@ -181,12 +182,16 @@ export default function CustomTranslation() {
         'article h1', 'article h2', 'article h3', 'article h4', 'article h5', 'article h6',
         'article p', 'article li', 'article td', 'article th',
         '.content h1', '.content h2', '.content h3', '.content h4', '.content h5', '.content h6',
-        '.content p', '.content li', '.content td', '.content th'
+        '.content p', '.content li', '.content td', '.content th',
+        'section h1', 'section h2', 'section h3', 'section h4', 'section h5', 'section h6',
+        'section p', 'section li'
       ];
       
       const textElements = document.querySelectorAll(textSelectors.join(', '));
       const textsToTranslate: string[] = [];
       const elementMap: Element[] = [];
+      const cachedTranslations: string[] = [];
+      const cachedElementMap: Element[] = [];
       
       textElements.forEach(element => {
         // Skip elements with notranslate class or inside notranslate containers
@@ -222,23 +227,39 @@ export default function CustomTranslation() {
             !text.includes('src=') &&
             !text.match(/^[A-Z\s]+$/) // Skip all-caps text (likely navigation)
         ) {
-          textsToTranslate.push(text);
-          elementMap.push(element);
+          // Check cache first
+          const cachedTranslation = translationCache.get(text, langCode);
+          if (cachedTranslation) {
+            cachedTranslations.push(cachedTranslation);
+            cachedElementMap.push(element);
+          } else {
+            textsToTranslate.push(text);
+            elementMap.push(element);
+          }
         }
       });
 
 
 
+      // Apply cached translations immediately
+      cachedTranslations.forEach((translation, index) => {
+        const element = cachedElementMap[index];
+        if (element && element.textContent) {
+          element.textContent = translation;
+        }
+      });
+
       if (textsToTranslate.length === 0) {
-        console.log('No text to translate');
+        console.log(`Applied ${cachedTranslations.length} cached translations, no new text to translate`);
+        setIsTranslating(false);
         return;
       }
 
-      console.log(`Translating ${textsToTranslate.length} text elements in optimized batches`);
+      console.log(`Applied ${cachedTranslations.length} cached translations, translating ${textsToTranslate.length} new text elements in optimized batches`);
 
       // Optimized batch processing with parallel execution
-      const batchSize = 15; // Increased from 5 to 15
-      const maxConcurrentBatches = 3; // Process up to 3 batches in parallel
+      const batchSize = 20; // Increased from 15 to 20 for better efficiency
+      const maxConcurrentBatches = 4; // Process up to 4 batches in parallel
       const batches: string[][] = [];
       
       // Create batches
@@ -304,27 +325,22 @@ export default function CustomTranslation() {
         // Wait for all batches in this group to complete
         await Promise.all(batchPromises);
         
-        // Small delay between batch groups to respect rate limits
+        // Reduced delay between batch groups for faster processing
         if (i + maxConcurrentBatches < batches.length) {
-          await new Promise(resolve => setTimeout(resolve, 200));
+          await new Promise(resolve => setTimeout(resolve, 100)); // Reduced from 200ms to 100ms
         }
       }
 
-      // Apply all translations
+      // Apply all translations and cache them
       let appliedCount = 0;
       translations.forEach((translation, index) => {
         if (translation && elementMap[index]) {
           elementMap[index].textContent = translation;
+          // Cache the translation for future use
+          translationCache.set(textsToTranslate[index], langCode, translation);
           appliedCount++;
         }
       });
-
-      // Cache the translations
-      const translationCache = {
-        translations: translations.filter(t => t),
-        timestamp: Date.now()
-      };
-      localStorage.setItem(cacheKey, JSON.stringify(translationCache));
 
       console.log(`Translation completed: ${appliedCount}/${textsToTranslate.length} elements translated`);
       

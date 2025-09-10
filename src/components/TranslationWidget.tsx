@@ -298,68 +298,87 @@ export default function TranslationWidget() {
           }
         });
 
-        // Wait for widget to load, then filter and show
-        setTimeout(() => {
-          hideWidget();
-          filterLanguages(() => {
-            showWidget();
-            removeLoadingOverlay(loadingOverlay);
+        // Optimized widget loading with faster initialization
+        const initWidgetWithRetry = (retryCount = 0) => {
+          const maxRetries = 3;
+          const retryDelay = 200; // Reduced from 1500ms
+          
+          const checkWidgetReady = () => {
+            const widget = document.querySelector('.jigts-translation-widget');
+            const languageItems = document.querySelectorAll('.jigts-language-item');
             
-            // Expose custom translation function globally
-            window.customTranslate = (langCode: string) => {
-              try {
-                // Method 1: Try to find and click the language in the widget
-                const languageButtons = document.querySelectorAll('.jigts-language-item, [data-language-code], [data-lang]');
-                let found = false;
+            if (widget && languageItems.length > 0) {
+              hideWidget();
+              filterLanguages(() => {
+                showWidget();
+                removeLoadingOverlay(loadingOverlay);
                 
-                languageButtons.forEach((button) => {
-                  const buttonLangCode = button.getAttribute('data-language-code') || 
-                                        button.getAttribute('data-lang') ||
-                                        button.textContent?.toLowerCase().trim();
-                  
-                  if (buttonLangCode === langCode || buttonLangCode?.includes(langCode)) {
-                    (button as HTMLElement).click();
-                    found = true;
-                    if (process.env.NODE_ENV === 'development') {
+                // Expose custom translation function globally
+                window.customTranslate = (langCode: string) => {
+                  try {
+                    // Method 1: Try to find and click the language in the widget
+                    const languageButtons = document.querySelectorAll('.jigts-language-item, [data-language-code], [data-lang]');
+                    let found = false;
+                    
+                    languageButtons.forEach((button) => {
+                      const buttonLangCode = button.getAttribute('data-language-code') || 
+                                            button.getAttribute('data-lang') ||
+                                            button.textContent?.toLowerCase().trim();
+                      
+                      if (buttonLangCode === langCode || buttonLangCode?.includes(langCode)) {
+                        (button as HTMLElement).click();
+                        found = true;
+                        if (process.env.NODE_ENV === 'development') {
 
+                        }
+                      }
+                    });
+
+                    // Method 2: Try direct API if available
+                    if (!found && window.translate) {
+                      window.translate(langCode);
+                      if (process.env.NODE_ENV === 'development') {
+
+                      }
+                    }
+
+                    // Save preference
+                    localStorage.setItem('jss-pref', langCode);
+                    
+                  } catch (error) {
+                    if (process.env.NODE_ENV === 'development') {
+                      console.error('Translation trigger failed:', error);
                     }
                   }
-                });
-
-                // Method 2: Try direct API if available
-                if (!found && window.translate) {
-                  window.translate(langCode);
-                  if (process.env.NODE_ENV === 'development') {
-
-                  }
-                }
-
-                // Save preference
-                localStorage.setItem('jss-pref', langCode);
+                };
                 
-              } catch (error) {
-                if (process.env.NODE_ENV === 'development') {
-                  console.error('Translation trigger failed:', error);
-                }
-              }
-            };
-            
-            // Auto-restore previously saved language if available
-            if (savedLanguage && savedLanguage !== 'en') {
-              if (process.env.NODE_ENV === 'development') {
-
-              }
-              setTimeout(() => {
-                if (window.customTranslate) {
-                  window.customTranslate(savedLanguage);
+                // Auto-restore previously saved language if available
+                if (savedLanguage && savedLanguage !== 'en') {
                   if (process.env.NODE_ENV === 'development') {
 
                   }
+                  setTimeout(() => {
+                    if (window.customTranslate) {
+                      window.customTranslate(savedLanguage);
+                      if (process.env.NODE_ENV === 'development') {
+
+                      }
+                    }
+                  }, 100); // Faster language restoration
                 }
-              }, 300); // Faster language restoration
+              });
+            } else if (retryCount < maxRetries) {
+              setTimeout(() => initWidgetWithRetry(retryCount + 1), retryDelay);
+            } else {
+              // Fallback: remove loading overlay even if widget isn't ready
+              removeLoadingOverlay(loadingOverlay);
             }
-          });
-        }, 1500); // Optimized timing for production
+          };
+          
+          checkWidgetReady();
+        };
+        
+        initWidgetWithRetry();
       } catch (error) {
         if (process.env.NODE_ENV === 'development') {
           console.error('TranslationWidget initialization error:', error);
@@ -485,20 +504,20 @@ export default function TranslationWidget() {
         subtree: true
       });
 
-      // Also run filter periodically to catch any missed elements
+      // Optimized periodic filtering with reduced frequency
       const interval = setInterval(() => {
         hideUnwantedLanguages();
         setupSearchFilter();
-      }, 1000);
+      }, 500); // Reduced from 1000ms to 500ms
 
-      // Clean up interval after 10 seconds
+      // Clean up interval after 5 seconds (reduced from 10)
       setTimeout(() => {
         clearInterval(interval);
-      }, 10000);
+      }, 5000);
 
       // Call callback when filtering is complete
       if (callback) {
-        setTimeout(callback, 500); // Give a little extra time for filtering to complete
+        setTimeout(callback, 200); // Reduced from 500ms to 200ms
       }
     };
 
