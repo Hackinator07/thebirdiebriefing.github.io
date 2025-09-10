@@ -115,7 +115,7 @@ export default function TournamentComponent({
         {/* Row 2: Entry List, Tee Times */}
         <Link
           href="/entry-list"
-          className="bg-green-600 hover:bg-green-700 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-teal-500 hover:bg-teal-800 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +127,7 @@ export default function TournamentComponent({
 
         <Link
           href={teeTimesUrl}
-          className="bg-gray-600 hover:bg-gray-700 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-gray-500 hover:bg-gray-800 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,7 +142,7 @@ export default function TournamentComponent({
           href={podcastUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-yellow-500 hover:bg-yellow-700 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,7 +154,7 @@ export default function TournamentComponent({
 
         <Link
           href={broadcastUrl}
-          className="bg-red-600 hover:bg-red-700 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-red-500 hover:bg-red-800 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
