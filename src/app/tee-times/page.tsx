@@ -3,109 +3,162 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import TimezoneSelect from 'react-timezone-select';
+import { TimezoneProvider, useTimezone } from '@/components/TimezoneContext';
 
-export default function TeeTimesPage() {
+// Default timezone (Central Time - tournament timezone)
+const DEFAULT_TIMEZONE = 'America/Chicago';
+
+// Function to convert tee time from Central to selected timezone
+function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: string): string {
+  try {
+    // If the timezones are the same, return the original time
+    if (fromTimezone === toTimezone) {
+      return timeString;
+    }
+    
+    // Parse the time (e.g., "6:20 AM" or "12:31 PM")
+    const timeMatch = timeString.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/);
+    if (!timeMatch) return timeString;
+    
+    const [, hour, minute, period] = timeMatch;
+    
+    // Convert to 24-hour format
+    let hour24 = parseInt(hour);
+    if (period === 'PM' && hour24 !== 12) hour24 += 12;
+    if (period === 'AM' && hour24 === 12) hour24 = 0;
+    
+    // Create a date string in the source timezone
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    const hourStr = String(hour24).padStart(2, '0');
+    const minuteStr = String(minute).padStart(2, '0');
+    
+    // Create the date string with timezone info
+    const dateString = `${year}-${month}-${day}T${hourStr}:${minuteStr}:00`;
+    
+    // Create date object and convert to target timezone
+    const sourceDate = new Date(dateString);
+    
+    // Format directly to target timezone
+    const formatted = sourceDate.toLocaleTimeString('en-US', {
+      timeZone: toTimezone,
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true
+    });
+    
+    return formatted;
+  } catch {
+    return timeString;
+  }
+}
+
+function TeeTimesContent() {
   const [activeRound, setActiveRound] = useState<'round1' | 'round2'>('round1');
+  const { selectedTimezone, updateTimezone } = useTimezone();
   const round1TeeTimes = [
-    { time: "7:20 AM", tee: "1", players: ["Daniela Darquea", "Gemma Dryburgh", "Alexa Pano"] },
-    { time: "7:20 AM", tee: "10", players: ["Soo Bin Joo", "Caroline Masson", "Lauren Morris"] },
-    { time: "7:31 AM", tee: "1", players: ["Aditi Ashok", "Jaravee Boonchant", "Madison Young"] },
-    { time: "7:31 AM", tee: "10", players: ["Narin An", "Eun-Hee Ji", "Wichanee Meechai"] },
-    { time: "7:42 AM", tee: "1", players: ["Hyo Joon Jang", "Danielle Kang", "Yuri Yoshida"] },
-    { time: "7:42 AM", tee: "10", players: ["Celine Borge", "Azahara Munoz", "Hira Naveed"] },
-    { time: "7:53 AM", tee: "1", players: ["Wei-Ling Hsu", "Stacy Lewis", "Anna Nordqvist"] },
-    { time: "7:53 AM", tee: "10", players: ["Allisen Corpuz", "Nasa Hataoka", "Madelene Sagstrom"] },
-    { time: "8:04 AM", tee: "1", players: ["Manon De Roey", "Megan Khang", "Chanettee Wannasaen"] },
-    { time: "8:04 AM", tee: "10", players: ["Jenny Bae", "Yan Liu", "Gaby Lopez"] },
-    { time: "8:15 AM", tee: "1", players: ["Lindy Duncan", "Andrea Lee", "Mao Saigo"] },
-    { time: "8:15 AM", tee: "10", players: ["Hannah Green", "Haeran Ryu", "Rio Takeda"] },
-    { time: "8:26 AM", tee: "1", players: ["Celine Boutier", "Hye-Jin Choi", "Linnea Strom"] },
-    { time: "8:26 AM", tee: "10", players: ["Nelly Korda", "Lottie Woad", "Rose Zhang"] },
-    { time: "8:37 AM", tee: "1", players: ["Esther Henseleit", "Ingrid Lindblad", "Jenny Shin"] },
-    { time: "8:37 AM", tee: "10", players: ["Charley Hull", "Maja Stark", "Lexi Thompson"] },
-    { time: "8:48 AM", tee: "1", players: ["Brittany Altomare", "Vidhi Lakhawala (a)", "Yuna Nishimura"] },
-    { time: "8:48 AM", tee: "10", players: ["Jodi Ewart Shadoff", "Aline Krauter", "Paula Reto"] },
-    { time: "8:59 AM", tee: "1", players: ["Muni He", "Bianca Pagdanganan", "Gabriela Ruffels"] },
-    { time: "8:59 AM", tee: "10", players: ["Polly Mack", "Pornanong Phatlum", "Kate Smith-Stroh"] },
-    { time: "9:10 AM", tee: "1", players: ["Mirim Lee", "Caley McGinty", "Stephanie Meadow"] },
-    { time: "9:10 AM", tee: "10", players: ["Peiyun Chien", "Olivia Cowan", "Mary Liu"] },
-    { time: "9:21 AM", tee: "1", players: ["Perrine Delacour", "Brianna Do", "Sofia Garcia"] },
-    { time: "9:21 AM", tee: "10", players: ["Adela Cernousek", "Maria Fassi", "Sophia Popov"] },
-    { time: "12:20 PM", tee: "1", players: ["Savannah Grewal", "Ryann O'Toole", "Yahui Zhang"] },
-    { time: "12:20 PM", tee: "10", players: ["Karis Anne Davidson", "Amanda Doherty", "Elizabeth Szokol"] },
-    { time: "12:31 PM", tee: "1", players: ["Haeji Kang", "Benedetta Moresco", "Arpichaya Yubol"] },
-    { time: "12:31 PM", tee: "10", players: ["Ashleigh Buhai", "Lauren Hartlage", "Xiaowen Yin"] },
-    { time: "12:42 PM", tee: "1", players: ["Alison Lee", "Emily Kristine Pedersen", "Dewi Weber"] },
-    { time: "12:42 PM", tee: "10", players: ["Fiona Xu", "Ina Yoon", "Weiwei Zhang"] },
-    { time: "12:53 PM", tee: "1", players: ["Akie Iwai", "Minami Katsu", "Somi Lee"] },
-    { time: "12:53 PM", tee: "10", players: ["Nanna Koerstz Madsen", "Lilia Vu", "Amy Yang"] },
-    { time: "1:04 PM", tee: "1", players: ["Mi Hyang Lee", "Bailey Tardy", "Patty Tavatanakit"] },
-    { time: "1:04 PM", tee: "10", players: ["Jin Hee Im", "Yuka Saso", "Jasmine Suwannapura"] },
-    { time: "1:15 PM", tee: "1", players: ["Julia Lopez Ramirez", "Yealimi Noh", "Cassie Porter"] },
-    { time: "1:15 PM", tee: "10", players: ["Ayaka Furue", "Sei Young Kim", "Jeeno Thitikul"] },
-    { time: "1:26 PM", tee: "1", players: ["Hyo Joo Kim", "Jennifer Kupcho", "Stephanie Kyriacou"] },
-    { time: "1:26 PM", tee: "10", players: ["Lydia Ko", "Minjee Lee", "Miranda Wang"] },
-    { time: "1:37 PM", tee: "1", players: ["Chisato Iwai", "Gurleen Kaur", "A Lim Kim"] },
-    { time: "1:37 PM", tee: "10", players: ["Grace Kim", "Jin Young Ko", "Miyu Yamashita"] },
-    { time: "1:48 PM", tee: "1", players: ["Kristen Gillman", "Hinako Shibuno", "Gigi Stoll"] },
-    { time: "1:48 PM", tee: "10", players: ["Brooke Matthews", "Morgane Metraux", "Kumkang Park"] },
-    { time: "1:59 PM", tee: "1", players: ["Caroline Inglis", "Heather Lin", "Ruixin Liu"] },
-    { time: "1:59 PM", tee: "10", players: ["Frida Kinhult", "Jeongeun Lee6", "Lucy Li"] },
-    { time: "2:10 PM", tee: "1", players: ["Bronte Law", "Ilhee Lee", "Jeongeun Lee5"] },
-    { time: "2:10 PM", tee: "10", players: ["Nataliya Guseva", "Jiwon Jeon", "Yu Liu"] },
-    { time: "2:21 PM", tee: "1", players: ["Robyn Choi", "Mariel Galdiano", "Jessica Porvasnik"] },
-    { time: "2:21 PM", tee: "10", players: ["Saki Baba", "Ana Belac", "Ssu-Chia Cheng"] }
+    { time: "6:20 AM", tee: "1", players: ["Daniela Darquea", "Gemma Dryburgh", "Alexa Pano"] },
+    { time: "6:20 AM", tee: "10", players: ["Soo Bin Joo", "Caroline Masson", "Lauren Morris"] },
+    { time: "6:31 AM", tee: "1", players: ["Aditi Ashok", "Jaravee Boonchant", "Madison Young"] },
+    { time: "6:31 AM", tee: "10", players: ["Narin An", "Eun-Hee Ji", "Wichanee Meechai"] },
+    { time: "6:42 AM", tee: "1", players: ["Hyo Joon Jang", "Danielle Kang", "Yuri Yoshida"] },
+    { time: "6:42 AM", tee: "10", players: ["Celine Borge", "Azahara Munoz", "Hira Naveed"] },
+    { time: "6:53 AM", tee: "1", players: ["Wei-Ling Hsu", "Stacy Lewis", "Anna Nordqvist"] },
+    { time: "6:53 AM", tee: "10", players: ["Allisen Corpuz", "Nasa Hataoka", "Madelene Sagstrom"] },
+    { time: "7:04 AM", tee: "1", players: ["Manon De Roey", "Megan Khang", "Chanettee Wannasaen"] },
+    { time: "7:04 AM", tee: "10", players: ["Jenny Bae", "Yan Liu", "Gaby Lopez"] },
+    { time: "7:15 AM", tee: "1", players: ["Lindy Duncan", "Andrea Lee", "Mao Saigo"] },
+    { time: "7:15 AM", tee: "10", players: ["Hannah Green", "Haeran Ryu", "Rio Takeda"] },
+    { time: "7:26 AM", tee: "1", players: ["Celine Boutier", "Hye-Jin Choi", "Linnea Strom"] },
+    { time: "7:26 AM", tee: "10", players: ["Nelly Korda", "Lottie Woad", "Rose Zhang"] },
+    { time: "7:37 AM", tee: "1", players: ["Esther Henseleit", "Ingrid Lindblad", "Jenny Shin"] },
+    { time: "7:37 AM", tee: "10", players: ["Charley Hull", "Maja Stark", "Lexi Thompson"] },
+    { time: "7:48 AM", tee: "1", players: ["Brittany Altomare", "Vidhi Lakhawala (a)", "Yuna Nishimura"] },
+    { time: "7:48 AM", tee: "10", players: ["Jodi Ewart Shadoff", "Aline Krauter", "Paula Reto"] },
+    { time: "7:59 AM", tee: "1", players: ["Muni He", "Bianca Pagdanganan", "Gabriela Ruffels"] },
+    { time: "7:59 AM", tee: "10", players: ["Polly Mack", "Pornanong Phatlum", "Kate Smith-Stroh"] },
+    { time: "8:10 AM", tee: "1", players: ["Mirim Lee", "Caley McGinty", "Stephanie Meadow"] },
+    { time: "8:10 AM", tee: "10", players: ["Peiyun Chien", "Olivia Cowan", "Mary Liu"] },
+    { time: "8:21 AM", tee: "1", players: ["Perrine Delacour", "Brianna Do", "Sofia Garcia"] },
+    { time: "8:21 AM", tee: "10", players: ["Adela Cernousek", "Maria Fassi", "Sophia Popov"] },
+    { time: "11:20 AM", tee: "1", players: ["Savannah Grewal", "Ryann O'Toole", "Yahui Zhang"] },
+    { time: "11:20 AM", tee: "10", players: ["Karis Anne Davidson", "Amanda Doherty", "Elizabeth Szokol"] },
+    { time: "11:31 AM", tee: "1", players: ["Haeji Kang", "Benedetta Moresco", "Arpichaya Yubol"] },
+    { time: "11:31 AM", tee: "10", players: ["Ashleigh Buhai", "Lauren Hartlage", "Xiaowen Yin"] },
+    { time: "11:42 AM", tee: "1", players: ["Alison Lee", "Emily Kristine Pedersen", "Dewi Weber"] },
+    { time: "11:42 AM", tee: "10", players: ["Fiona Xu", "Ina Yoon", "Weiwei Zhang"] },
+    { time: "11:53 AM", tee: "1", players: ["Akie Iwai", "Minami Katsu", "Somi Lee"] },
+    { time: "11:53 AM", tee: "10", players: ["Nanna Koerstz Madsen", "Lilia Vu", "Amy Yang"] },
+    { time: "12:04 PM", tee: "1", players: ["Mi Hyang Lee", "Bailey Tardy", "Patty Tavatanakit"] },
+    { time: "12:04 PM", tee: "10", players: ["Jin Hee Im", "Yuka Saso", "Jasmine Suwannapura"] },
+    { time: "12:15 PM", tee: "1", players: ["Julia Lopez Ramirez", "Yealimi Noh", "Cassie Porter"] },
+    { time: "12:15 PM", tee: "10", players: ["Ayaka Furue", "Sei Young Kim", "Jeeno Thitikul"] },
+    { time: "12:26 PM", tee: "1", players: ["Hyo Joo Kim", "Jennifer Kupcho", "Stephanie Kyriacou"] },
+    { time: "12:26 PM", tee: "10", players: ["Lydia Ko", "Minjee Lee", "Miranda Wang"] },
+    { time: "12:37 PM", tee: "1", players: ["Chisato Iwai", "Gurleen Kaur", "A Lim Kim"] },
+    { time: "12:37 PM", tee: "10", players: ["Grace Kim", "Jin Young Ko", "Miyu Yamashita"] },
+    { time: "12:48 PM", tee: "1", players: ["Kristen Gillman", "Hinako Shibuno", "Gigi Stoll"] },
+    { time: "12:48 PM", tee: "10", players: ["Brooke Matthews", "Morgane Metraux", "Kumkang Park"] },
+    { time: "12:59 PM", tee: "1", players: ["Caroline Inglis", "Heather Lin", "Ruixin Liu"] },
+    { time: "12:59 PM", tee: "10", players: ["Frida Kinhult", "Jeongeun Lee6", "Lucy Li"] },
+    { time: "1:10 PM", tee: "1", players: ["Bronte Law", "Ilhee Lee", "Jeongeun Lee5"] },
+    { time: "1:10 PM", tee: "10", players: ["Nataliya Guseva", "Jiwon Jeon", "Yu Liu"] },
+    { time: "1:21 PM", tee: "1", players: ["Robyn Choi", "Mariel Galdiano", "Jessica Porvasnik"] },
+    { time: "1:21 PM", tee: "10", players: ["Saki Baba", "Ana Belac", "Ssu-Chia Cheng"] }
   ];
 
   const round2TeeTimes = [
-    { time: "7:20 AM", tee: "1", players: ["Karis Anne Davidson", "Amanda Doherty", "Elizabeth Szokol"] },
-    { time: "7:20 AM", tee: "10", players: ["Savannah Grewal", "Yahui Zhang", "Ryann O'Toole"] },
-    { time: "7:31 AM", tee: "1", players: ["Ashleigh Buhai", "Lauren Hartlage", "Xiaowen Yin"] },
-    { time: "7:31 AM", tee: "10", players: ["Haeji Kang", "Arpichaya Yubol", "Benedetta Moresco"] },
-    { time: "7:42 AM", tee: "1", players: ["Fiona Xu", "Ina Yoon", "Weiwei Zhang"] },
-    { time: "7:42 AM", tee: "10", players: ["Dewi Weber", "Alison Lee", "Emily Kristine Pedersen"] },
-    { time: "7:53 AM", tee: "1", players: ["Lilia Vu", "Amy Yang", "Nanna Koerstz Madsen"] },
-    { time: "7:53 AM", tee: "10", players: ["Akie Iwai", "Minami Katsu", "Somi Lee"] },
-    { time: "8:04 AM", tee: "1", players: ["Jin Hee Im", "Jasmine Suwannapura", "Yuka Saso"] },
-    { time: "8:04 AM", tee: "10", players: ["Bailey Tardy", "Patty Tavatanakit", "Mi Hyang Lee"] },
-    { time: "8:15 AM", tee: "1", players: ["Ayaka Furue", "Sei Young Kim", "Jeeno Thitikul"] },
-    { time: "8:15 AM", tee: "10", players: ["Julia Lopez Ramirez", "Yealimi Noh", "Cassie Porter"] },
-    { time: "8:26 AM", tee: "1", players: ["Miranda Wang", "Lydia Ko", "Minjee Lee"] },
-    { time: "8:26 AM", tee: "10", players: ["Hyo Joo Kim", "Jennifer Kupcho", "Stephanie Kyriacou"] },
-    { time: "8:37 AM", tee: "1", players: ["Grace Kim", "Miyu Yamashita", "Jin Young Ko"] },
-    { time: "8:37 AM", tee: "10", players: ["Chisato Iwai", "Gurleen Kaur", "A Lim Kim"] },
-    { time: "8:48 AM", tee: "1", players: ["Brooke Matthews", "Morgane Metraux", "Kumkang Park"] },
-    { time: "8:48 AM", tee: "10", players: ["Kristen Gillman", "Gigi Stoll", "Hinako Shibuno"] },
-    { time: "8:59 AM", tee: "1", players: ["Frida Kinhult", "Jeongeun Lee6", "Lucy Li"] },
-    { time: "8:59 AM", tee: "10", players: ["Caroline Inglis", "Heather Lin", "Ruixin Liu"] },
-    { time: "9:10 AM", tee: "1", players: ["Nataliya Guseva", "Jiwon Jeon", "Yu Liu"] },
-    { time: "9:10 AM", tee: "10", players: ["Bronte Law", "Ilhee Lee", "Jeongeun Lee5"] },
-    { time: "9:21 AM", tee: "1", players: ["Saki Baba", "Ana Belac", "Ssu-Chia Cheng"] },
-    { time: "9:21 AM", tee: "10", players: ["Robyn Choi", "Mariel Galdiano", "Jessica Porvasnik"] },
-    { time: "12:20 PM", tee: "1", players: ["Soo Bin Joo", "Caroline Masson", "Lauren Morris"] },
-    { time: "12:20 PM", tee: "10", players: ["Daniela Darquea", "Gemma Dryburgh", "Alexa Pano"] },
-    { time: "12:31 PM", tee: "1", players: ["Narin An", "Eun-Hee Ji", "Wichanee Meechai"] },
-    { time: "12:31 PM", tee: "10", players: ["Aditi Ashok", "Jaravee Boonchant", "Madison Young"] },
-    { time: "12:42 PM", tee: "1", players: ["Celine Borge", "Azahara Munoz", "Hira Naveed"] },
-    { time: "12:42 PM", tee: "10", players: ["Hyo Joon Jang", "Danielle Kang", "Yuri Yoshida"] },
-    { time: "12:53 PM", tee: "1", players: ["Allisen Corpuz", "Nasa Hataoka", "Madelene Sagstrom"] },
-    { time: "12:53 PM", tee: "10", players: ["Wei-Ling Hsu", "Stacy Lewis", "Anna Nordqvist"] },
-    { time: "1:04 PM", tee: "1", players: ["Jenny Bae", "Yan Liu", "Gaby Lopez"] },
-    { time: "1:04 PM", tee: "10", players: ["Manon De Roey", "Megan Khang", "Chanettee Wannasaen"] },
-    { time: "1:15 PM", tee: "1", players: ["Hannah Green", "Rio Takeda", "Haeran Ryu"] },
-    { time: "1:15 PM", tee: "10", players: ["Lindy Duncan", "Andrea Lee", "Mao Saigo"] },
-    { time: "1:26 PM", tee: "1", players: ["Lottie Woad", "Rose Zhang", "Nelly Korda"] },
-    { time: "1:26 PM", tee: "10", players: ["Celine Boutier", "Hye-Jin Choi", "Linnea Strom"] },
-    { time: "1:37 PM", tee: "1", players: ["Charley Hull", "Maja Stark", "Lexi Thompson"] },
-    { time: "1:37 PM", tee: "10", players: ["Esther Henseleit", "Jenny Shin", "Ingrid Lindblad"] },
-    { time: "1:48 PM", tee: "1", players: ["Jodi Ewart Shadoff", "Aline Krauter", "Paula Reto"] },
-    { time: "1:48 PM", tee: "10", players: ["Brittany Altomare", "Vidhi Lakhawala (a)", "Yuna Nishimura"] },
-    { time: "1:59 PM", tee: "1", players: ["Kate Smith-Stroh", "Polly Mack", "Pornanong Phatlum"] },
-    { time: "1:59 PM", tee: "10", players: ["Muni He", "Bianca Pagdanganan", "Gabriela Ruffels"] },
-    { time: "2:10 PM", tee: "1", players: ["Peiyun Chien", "Olivia Cowan", "Mary Liu"] },
-    { time: "2:10 PM", tee: "10", players: ["Mirim Lee", "Caley McGinty", "Stephanie Meadow"] },
-    { time: "2:21 PM", tee: "1", players: ["Adela Cernousek", "Maria Fassi", "Sophia Popov"] },
-    { time: "2:21 PM", tee: "10", players: ["Perrine Delacour", "Brianna Do", "Sofia Garcia"] }
+    { time: "6:20 AM", tee: "1", players: ["Karis Anne Davidson", "Amanda Doherty", "Elizabeth Szokol"] },
+    { time: "6:20 AM", tee: "10", players: ["Savannah Grewal", "Yahui Zhang", "Ryann O'Toole"] },
+    { time: "6:31 AM", tee: "1", players: ["Ashleigh Buhai", "Lauren Hartlage", "Xiaowen Yin"] },
+    { time: "6:31 AM", tee: "10", players: ["Haeji Kang", "Arpichaya Yubol", "Benedetta Moresco"] },
+    { time: "6:42 AM", tee: "1", players: ["Fiona Xu", "Ina Yoon", "Weiwei Zhang"] },
+    { time: "6:42 AM", tee: "10", players: ["Dewi Weber", "Alison Lee", "Emily Kristine Pedersen"] },
+    { time: "6:53 AM", tee: "1", players: ["Lilia Vu", "Amy Yang", "Nanna Koerstz Madsen"] },
+    { time: "6:53 AM", tee: "10", players: ["Akie Iwai", "Minami Katsu", "Somi Lee"] },
+    { time: "7:04 AM", tee: "1", players: ["Jin Hee Im", "Jasmine Suwannapura", "Yuka Saso"] },
+    { time: "7:04 AM", tee: "10", players: ["Bailey Tardy", "Patty Tavatanakit", "Mi Hyang Lee"] },
+    { time: "7:15 AM", tee: "1", players: ["Ayaka Furue", "Sei Young Kim", "Jeeno Thitikul"] },
+    { time: "7:15 AM", tee: "10", players: ["Julia Lopez Ramirez", "Yealimi Noh", "Cassie Porter"] },
+    { time: "7:26 AM", tee: "1", players: ["Miranda Wang", "Lydia Ko", "Minjee Lee"] },
+    { time: "7:26 AM", tee: "10", players: ["Hyo Joo Kim", "Jennifer Kupcho", "Stephanie Kyriacou"] },
+    { time: "7:37 AM", tee: "1", players: ["Grace Kim", "Miyu Yamashita", "Jin Young Ko"] },
+    { time: "7:37 AM", tee: "10", players: ["Chisato Iwai", "Gurleen Kaur", "A Lim Kim"] },
+    { time: "7:48 AM", tee: "1", players: ["Brooke Matthews", "Morgane Metraux", "Kumkang Park"] },
+    { time: "7:48 AM", tee: "10", players: ["Kristen Gillman", "Gigi Stoll", "Hinako Shibuno"] },
+    { time: "7:59 AM", tee: "1", players: ["Frida Kinhult", "Jeongeun Lee6", "Lucy Li"] },
+    { time: "7:59 AM", tee: "10", players: ["Caroline Inglis", "Heather Lin", "Ruixin Liu"] },
+    { time: "8:10 AM", tee: "1", players: ["Nataliya Guseva", "Jiwon Jeon", "Yu Liu"] },
+    { time: "8:10 AM", tee: "10", players: ["Bronte Law", "Ilhee Lee", "Jeongeun Lee5"] },
+    { time: "8:21 AM", tee: "1", players: ["Saki Baba", "Ana Belac", "Ssu-Chia Cheng"] },
+    { time: "8:21 AM", tee: "10", players: ["Robyn Choi", "Mariel Galdiano", "Jessica Porvasnik"] },
+    { time: "11:20 AM", tee: "1", players: ["Soo Bin Joo", "Caroline Masson", "Lauren Morris"] },
+    { time: "11:20 AM", tee: "10", players: ["Daniela Darquea", "Gemma Dryburgh", "Alexa Pano"] },
+    { time: "11:31 AM", tee: "1", players: ["Narin An", "Eun-Hee Ji", "Wichanee Meechai"] },
+    { time: "11:31 AM", tee: "10", players: ["Aditi Ashok", "Jaravee Boonchant", "Madison Young"] },
+    { time: "11:42 AM", tee: "1", players: ["Celine Borge", "Azahara Munoz", "Hira Naveed"] },
+    { time: "11:42 AM", tee: "10", players: ["Hyo Joon Jang", "Danielle Kang", "Yuri Yoshida"] },
+    { time: "11:53 AM", tee: "1", players: ["Allisen Corpuz", "Nasa Hataoka", "Madelene Sagstrom"] },
+    { time: "11:53 AM", tee: "10", players: ["Wei-Ling Hsu", "Stacy Lewis", "Anna Nordqvist"] },
+    { time: "12:04 PM", tee: "1", players: ["Jenny Bae", "Yan Liu", "Gaby Lopez"] },
+    { time: "12:04 PM", tee: "10", players: ["Manon De Roey", "Megan Khang", "Chanettee Wannasaen"] },
+    { time: "12:15 PM", tee: "1", players: ["Hannah Green", "Rio Takeda", "Haeran Ryu"] },
+    { time: "12:15 PM", tee: "10", players: ["Lindy Duncan", "Andrea Lee", "Mao Saigo"] },
+    { time: "12:26 PM", tee: "1", players: ["Lottie Woad", "Rose Zhang", "Nelly Korda"] },
+    { time: "12:26 PM", tee: "10", players: ["Celine Boutier", "Hye-Jin Choi", "Linnea Strom"] },
+    { time: "12:37 PM", tee: "1", players: ["Charley Hull", "Maja Stark", "Lexi Thompson"] },
+    { time: "12:37 PM", tee: "10", players: ["Esther Henseleit", "Jenny Shin", "Ingrid Lindblad"] },
+    { time: "12:48 PM", tee: "1", players: ["Jodi Ewart Shadoff", "Aline Krauter", "Paula Reto"] },
+    { time: "12:48 PM", tee: "10", players: ["Brittany Altomare", "Vidhi Lakhawala (a)", "Yuna Nishimura"] },
+    { time: "12:59 PM", tee: "1", players: ["Kate Smith-Stroh", "Polly Mack", "Pornanong Phatlum"] },
+    { time: "12:59 PM", tee: "10", players: ["Muni He", "Bianca Pagdanganan", "Gabriela Ruffels"] },
+    { time: "1:10 PM", tee: "1", players: ["Peiyun Chien", "Olivia Cowan", "Mary Liu"] },
+    { time: "1:10 PM", tee: "10", players: ["Mirim Lee", "Caley McGinty", "Stephanie Meadow"] },
+    { time: "1:21 PM", tee: "1", players: ["Adela Cernousek", "Maria Fassi", "Sophia Popov"] },
+    { time: "1:21 PM", tee: "10", players: ["Perrine Delacour", "Brianna Do", "Sofia Garcia"] }
   ];
 
   return (
@@ -199,6 +252,35 @@ export default function TeeTimesPage() {
               </div>
             </div>
 
+            {/* Timezone Selector */}
+            <div className="mb-8 flex justify-center">
+              <div className="w-full max-w-md">
+                <label htmlFor="timezone-select" className="block text-sm font-medium text-gray-700 mb-2 text-center">
+                  Select Timezone
+                </label>
+                <TimezoneSelect
+                  value={selectedTimezone}
+                  onChange={(tz) => updateTimezone(tz.value)}
+                  styles={{
+                    control: (provided) => ({
+                      ...provided,
+                      border: '1px solid #d1d5db',
+                      borderRadius: '0.5rem',
+                      boxShadow: 'none',
+                      '&:hover': {
+                        border: '1px solid #9ca3af',
+                      },
+                    }),
+                    option: (provided, state) => ({
+                      ...provided,
+                      backgroundColor: state.isSelected ? '#3b82f6' : state.isFocused ? '#f3f4f6' : 'white',
+                      color: state.isSelected ? 'white' : '#374151',
+                    }),
+                  }}
+                />
+              </div>
+            </div>
+
             {/* Active Round Content */}
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -208,65 +290,131 @@ export default function TeeTimesPage() {
                 {activeRound === 'round1' ? 'Round 1 - Thursday, September 11' : 'Round 2 - Friday, September 12'}
               </h3>
               
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700">Time</th>
-                      <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700">Tee</th>
-                      <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700">Players</th>
-                      <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700">Tee</th>
-                      <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700">Players</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {(() => {
-                      const teeTimes = activeRound === 'round1' ? round1TeeTimes : round2TeeTimes;
-                      const groupedByTime = teeTimes.reduce((acc, group) => {
-                        if (!acc[group.time]) {
-                          acc[group.time] = { tee1: null, tee10: null };
-                        }
-                        if (group.tee === '1') {
-                          acc[group.time].tee1 = group;
-                        } else {
-                          acc[group.time].tee10 = group;
-                        }
-                        return acc;
-                      }, {} as Record<string, { tee1: any; tee10: any }>);
+              {(() => {
+                const teeTimes = activeRound === 'round1' ? round1TeeTimes : round2TeeTimes;
+                const groupedByTime = teeTimes.reduce((acc, group) => {
+                  if (!acc[group.time]) {
+                    acc[group.time] = { tee1: null, tee10: null };
+                  }
+                  if (group.tee === '1') {
+                    acc[group.time].tee1 = group;
+                  } else {
+                    acc[group.time].tee10 = group;
+                  }
+                  return acc;
+                }, {} as Record<string, { tee1: any; tee10: any }>);
 
-                      return Object.entries(groupedByTime).map(([time, groups], index) => (
-                        <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                          <td className="border border-gray-300 px-4 py-3 font-medium text-gray-900">{time}</td>
-                          <td className="border border-gray-300 px-4 py-3 text-center font-medium text-gray-900">
-                            {groups.tee1 ? '1' : '-'}
-                          </td>
-                          <td className="border border-gray-300 px-4 py-3">
-                            <div className="space-y-1">
-                              {groups.tee1 ? groups.tee1.players.map((player: string, playerIndex: number) => (
-                                <div key={playerIndex} className="text-gray-700">
-                                  {player}
-                                </div>
-                              )) : <div className="text-gray-400">-</div>}
+                return (
+                  <>
+                    {/* Mobile Card Layout */}
+                    <div className="block lg:hidden space-y-4">
+                      {Object.entries(groupedByTime).map(([time, groups], index) => (
+                        <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+                          <div className="flex items-center justify-between mb-4">
+                            <div className="flex items-center gap-3">
+                              <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span className="text-sm font-bold text-primary-800 text-center leading-none">
+                                  {convertTeeTime(time, DEFAULT_TIMEZONE, selectedTimezone)}
+                                </span>
+                              </div>
+                              <div>
+                                <div className="font-medium text-gray-900">Tee Time</div>
+                                <div className="text-sm text-gray-500">Both tees</div>
+                              </div>
                             </div>
-                          </td>
-                          <td className="border border-gray-300 px-4 py-3 text-center font-medium text-gray-900">
-                            {groups.tee10 ? '10' : '-'}
-                          </td>
-                          <td className="border border-gray-300 px-4 py-3">
-                            <div className="space-y-1">
-                              {groups.tee10 ? groups.tee10.players.map((player: string, playerIndex: number) => (
-                                <div key={playerIndex} className="text-gray-700">
-                                  {player}
+                          </div>
+                          
+                          <div className="space-y-4">
+                            {/* Tee 1 Group */}
+                            {groups.tee1 && (
+                              <div className="border-l-4 border-primary-500 pl-4">
+                                <div className="flex items-center gap-2 mb-2">
+                                  <span className="text-sm font-medium text-gray-700">Tee 1</span>
+                                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                                 </div>
-                              )) : <div className="text-gray-400">-</div>}
-                            </div>
-                          </td>
-                        </tr>
-                      ));
-                    })()}
-                  </tbody>
-                </table>
-              </div>
+                                <div className="space-y-1">
+                                  {groups.tee1.players.map((player: string, playerIndex: number) => (
+                                    <div key={playerIndex} className="text-gray-700 text-sm">
+                                      {player}
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                            
+                            {/* Tee 10 Group */}
+                            {groups.tee10 && (
+                              <div className="border-l-4 border-secondary-500 pl-4">
+                                <div className="flex items-center gap-2 mb-2">
+                                  <span className="text-sm font-medium text-gray-700">Tee 10</span>
+                                  <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
+                                </div>
+                                <div className="space-y-1">
+                                  {groups.tee10.players.map((player: string, playerIndex: number) => (
+                                    <div key={playerIndex} className="text-gray-700 text-sm">
+                                      {player}
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Desktop Table Layout */}
+                    <div className="hidden lg:block bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                      <div className="overflow-x-auto">
+                        <table className="w-full border-collapse">
+                          <thead>
+                            <tr className="bg-gray-100">
+                              <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700">Time</th>
+                              <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700">Tee</th>
+                              <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700">Players</th>
+                              <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700">Tee</th>
+                              <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700">Players</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {Object.entries(groupedByTime).map(([time, groups], index) => (
+                              <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                                <td className="border border-gray-300 px-4 py-3 font-medium text-gray-900">
+                                  {convertTeeTime(time, DEFAULT_TIMEZONE, selectedTimezone)}
+                                </td>
+                                <td className="border border-gray-300 px-4 py-3 text-center font-medium text-gray-900">
+                                  {groups.tee1 ? '1' : '-'}
+                                </td>
+                                <td className="border border-gray-300 px-4 py-3">
+                                  <div className="space-y-1">
+                                    {groups.tee1 ? groups.tee1.players.map((player: string, playerIndex: number) => (
+                                      <div key={playerIndex} className="text-gray-700">
+                                        {player}
+                                      </div>
+                                    )) : <div className="text-gray-400">-</div>}
+                                  </div>
+                                </td>
+                                <td className="border border-gray-300 px-4 py-3 text-center font-medium text-gray-900">
+                                  {groups.tee10 ? '10' : '-'}
+                                </td>
+                                <td className="border border-gray-300 px-4 py-3">
+                                  <div className="space-y-1">
+                                    {groups.tee10 ? groups.tee10.players.map((player: string, playerIndex: number) => (
+                                      <div key={playerIndex} className="text-gray-700">
+                                        {player}
+                                      </div>
+                                    )) : <div className="text-gray-400">-</div>}
+                                  </div>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </>
+                );
+              })()}
             </div>
 
 
@@ -274,5 +422,13 @@ export default function TeeTimesPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function TeeTimesPage() {
+  return (
+    <TimezoneProvider>
+      <TeeTimesContent />
+    </TimezoneProvider>
   );
 }
