@@ -54,7 +54,7 @@ export default function ArticleSections({ sections }: ArticleSectionsProps) {
                 const showSelector = isFirstTVSchedule;
                 isFirstTVSchedule = false;
                 return (
-                  <div key={index} id="tv-schedule">
+                  <div key={index} id="tv-schedule" className="scroll-mt-20">
                     <TVSchedule
                       title={section.title}
                       schedule={section.schedule || []}
