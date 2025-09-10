@@ -9,6 +9,8 @@ interface TournamentComponentProps {
   officialSiteUrl?: string;
   teeTimesUrl?: string;
   broadcastUrl?: string;
+  entryListUrl?: string;
+  podcastUrl?: string;
 }
 
 export default function TournamentComponent({
@@ -18,12 +20,14 @@ export default function TournamentComponent({
   buyTicketsUrl = "https://queencitylpga.com/tickets/",
   officialSiteUrl = "https://queencitylpga.com/",
   teeTimesUrl = "/tee-times",
-  broadcastUrl = "https://www.birdiebriefing.com/news/queen-city-2025/#tv-schedule"
+  broadcastUrl = "https://www.birdiebriefing.com/news/queen-city-2025/#tv-schedule",
+  entryListUrl = "#",
+  podcastUrl = "https://open.spotify.com/show/3ZwjiD6IZeHqCNrCwBdrP2"
 }: TournamentComponentProps) {
   return (
     <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg border border-gray-200">
       {/* Tournament Header */}
-      <div className="mb-10">
+      <div className="mb-12">
         <div className="flex items-start justify-between gap-4 mb-2">
           <h3 className="text-xl lg:text-2xl font-bold text-gray-900 flex-1">
             {tournamentName}
@@ -78,18 +82,19 @@ export default function TournamentComponent({
       </div>
 
       {/* Action Tiles */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-2">
+        {/* Row 1: Buy Tickets, Official Site */}
         <Link
           href={buyTicketsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-primary-500 hover:bg-primary-600 text-white p-4 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-primary-500 hover:bg-primary-600 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
         >
-          <div className="flex flex-col items-center gap-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex flex-col items-center gap-1">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
             </svg>
-            <span className="text-sm font-semibold">Buy Tickets</span>
+            <span className="text-xs font-semibold">Buy Tickets</span>
           </div>
         </Link>
 
@@ -97,37 +102,65 @@ export default function TournamentComponent({
           href={officialSiteUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-secondary-500 hover:bg-secondary-600 text-white p-4 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-secondary-500 hover:bg-secondary-600 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
         >
-          <div className="flex flex-col items-center gap-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex flex-col items-center gap-1">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
             </svg>
-            <span className="text-sm font-semibold">Official Site</span>
+            <span className="text-xs font-semibold">Official Site</span>
+          </div>
+        </Link>
+
+        {/* Row 2: Entry List, Tee Times */}
+        <Link
+          href="/entry-list"
+          className="bg-green-600 hover:bg-green-700 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
+        >
+          <div className="flex flex-col items-center gap-1">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+            </svg>
+            <span className="text-xs font-semibold">Entry List</span>
           </div>
         </Link>
 
         <Link
           href={teeTimesUrl}
-          className="bg-gray-600 hover:bg-gray-700 text-white p-4 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-gray-600 hover:bg-gray-700 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
         >
-          <div className="flex flex-col items-center gap-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex flex-col items-center gap-1">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span className="text-sm font-semibold">Tee Times</span>
+            <span className="text-xs font-semibold">Tee Times</span>
+          </div>
+        </Link>
+
+        {/* Row 3: Podcast, TV Schedule */}
+        <Link
+          href={podcastUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
+        >
+          <div className="flex flex-col items-center gap-1">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+            </svg>
+            <span className="text-xs font-semibold">Podcast</span>
           </div>
         </Link>
 
         <Link
           href={broadcastUrl}
-          className="bg-red-600 hover:bg-red-700 text-white p-4 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-red-600 hover:bg-red-700 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
         >
-          <div className="flex flex-col items-center gap-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex flex-col items-center gap-1">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
-            <span className="text-sm font-semibold">TV Schedule</span>
+            <span className="text-xs font-semibold">TV Schedule</span>
           </div>
         </Link>
       </div>
