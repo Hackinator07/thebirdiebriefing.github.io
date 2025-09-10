@@ -147,6 +147,26 @@ function renderTimeWithLogo(time: string) {
     );
   }
   
+  // Check if the time string contains "CBS"
+  if (time.includes('CBS')) {
+    const parts = time.split(':');
+    const channel = parts[0] + ':';
+    const timeRange = parts.slice(1).join(':');
+    
+    return (
+      <div className="flex items-center">
+        <Image
+          src="/images/networks/cbs-sports.png"
+          alt="CBS Sports"
+          width={20}
+          height={20}
+          className="mr-2 flex-shrink-0"
+        />
+        <span className="text-gray-700 font-medium">{channel} {timeRange}</span>
+      </div>
+    );
+  }
+  
   // For other channels, render normally
   return <span className="text-gray-700 font-medium">{time}</span>;
 }
