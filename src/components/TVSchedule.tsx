@@ -122,7 +122,7 @@ function renderTimeWithLogo(time: string) {
           height={20}
           className="mr-2 flex-shrink-0"
         />
-        <span className="text-gray-700 font-medium">{channel} {timeRange}</span>
+        <span className="text-gray-700 font-medium font-lock-base">{channel} {timeRange}</span>
       </div>
     );
   }
@@ -142,7 +142,7 @@ function renderTimeWithLogo(time: string) {
           height={20}
           className="mr-2 flex-shrink-0"
         />
-        <span className="text-gray-700 font-medium">{channel} {timeRange}</span>
+        <span className="text-gray-700 font-medium font-lock-base">{channel} {timeRange}</span>
       </div>
     );
   }
@@ -162,13 +162,13 @@ function renderTimeWithLogo(time: string) {
           height={20}
           className="mr-2 flex-shrink-0"
         />
-        <span className="text-gray-700 font-medium">{channel} {timeRange}</span>
+        <span className="text-gray-700 font-medium font-lock-base">{channel} {timeRange}</span>
       </div>
     );
   }
   
   // For other channels, render normally
-  return <span className="text-gray-700 font-medium">{time}</span>;
+  return <span className="text-gray-700 font-medium font-lock-base">{time}</span>;
 }
 
 export default function TVSchedule({ title, schedule, showTimezoneSelector = true }: TVScheduleProps) {
@@ -198,12 +198,12 @@ export default function TVSchedule({ title, schedule, showTimezoneSelector = tru
   return (
     <section className="my-12">
       <div className="bg-primary-50 rounded-lg p-8 border border-primary-200">
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">{title}</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-6 font-lock-2xl">{title}</h3>
         
         {/* Timezone Selector */}
         {showTimezoneSelector && (
           <div className="mb-6">
-            <label htmlFor="timezone-select" className="block text-sm font-semibold text-gray-900 mb-2">
+            <label htmlFor="timezone-select" className="block text-sm font-semibold text-gray-900 mb-2 font-lock-label">
               {getTimezoneLabel(selectedTimezone)}
             </label>
             <div className="max-w-xs">
@@ -272,7 +272,7 @@ export default function TVSchedule({ title, schedule, showTimezoneSelector = tru
         <div className="space-y-6">
           {convertedSchedule.map((day, index) => (
             <div key={index} className="bg-white rounded-lg p-6 border border-primary-100">
-              <h4 className="text-lg font-semibold text-primary-700 mb-3">{day.day}</h4>
+              <h4 className="text-lg font-semibold text-primary-700 mb-3 font-lock-lg">{day.day}</h4>
               <div className="space-y-2">
                 {day.times.map((time, timeIndex) => (
                   <div key={timeIndex} className="flex items-center">

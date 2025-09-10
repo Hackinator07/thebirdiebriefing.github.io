@@ -12,7 +12,7 @@ export const metadata: Metadata = {
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/images/logo.png`,
         width: 1200,
-        height: '630',
+        height: 630,
         alt: 'The Birdie Briefing Logo',
       },
     ],

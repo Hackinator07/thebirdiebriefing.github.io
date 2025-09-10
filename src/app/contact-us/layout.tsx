@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact Us - The Birdie Briefing',
     description: 'Get in touch with The Birdie Briefing team for inquiries, partnerships, press opportunities, and more.',
-    url: 'https://thebirdiebriefing.github.io/contact-us',
+    url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.birdiebriefing.com'}/contact-us`,
     siteName: 'The Birdie Briefing',
     images: [
       {

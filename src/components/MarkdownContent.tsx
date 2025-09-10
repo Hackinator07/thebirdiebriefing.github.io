@@ -43,7 +43,7 @@ export default function MarkdownContent({ content, className = '' }: MarkdownCon
           ),
           // Customize paragraph styling
           p: ({ ...props }) => (
-            <p {...props} className="text-lg leading-relaxed text-gray-600 mb-6 last:mb-0" />
+            <p {...props} className="text-lg leading-relaxed text-gray-600 mb-6 last:mb-0 font-lock-lg" />
           ),
         }}
       >

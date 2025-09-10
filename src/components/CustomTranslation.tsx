@@ -241,11 +241,22 @@ export default function CustomTranslation() {
 
 
 
-      // Apply cached translations immediately
+      // Apply cached translations immediately while preserving font sizes
       cachedTranslations.forEach((translation, index) => {
         const element = cachedElementMap[index];
         if (element && element.textContent) {
+          // Store original font size classes before applying cached translation
+          const originalClasses = element.className;
+          const fontSizeClasses = originalClasses.match(/font-lock-\w+|text-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/g) || [];
+          
+          // Apply cached translation
           element.textContent = translation;
+          
+          // Restore font size classes to maintain consistent sizing
+          if (fontSizeClasses.length > 0) {
+            const cleanedClasses = originalClasses.replace(/font-lock-\w+|text-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/g, '').trim();
+            element.className = `${cleanedClasses} ${fontSizeClasses.join(' ')}`.trim();
+          }
         }
       });
 
@@ -331,11 +342,27 @@ export default function CustomTranslation() {
         }
       }
 
-      // Apply all translations and cache them
+      // Apply all translations and cache them while preserving font sizes
       let appliedCount = 0;
       translations.forEach((translation, index) => {
         if (translation && elementMap[index]) {
-          elementMap[index].textContent = translation;
+          const element = elementMap[index];
+          
+          // Store original font size classes before translation
+          const originalClasses = element.className;
+          const fontSizeClasses = originalClasses.match(/font-lock-\w+|text-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/g) || [];
+          
+          // Apply translation
+          element.textContent = translation;
+          
+          // Restore font size classes to maintain consistent sizing
+          if (fontSizeClasses.length > 0) {
+            // Remove any existing font size classes that might have been added by translation
+            const cleanedClasses = originalClasses.replace(/font-lock-\w+|text-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/g, '').trim();
+            // Add back the original font size classes
+            element.className = `${cleanedClasses} ${fontSizeClasses.join(' ')}`.trim();
+          }
+          
           // Cache the translation for future use
           translationCache.set(textsToTranslate[index], langCode, translation);
           appliedCount++;
@@ -493,7 +520,7 @@ export default function CustomTranslation() {
         >
           {/* Header */}
           <div className="p-4 border-b border-gray-200 notranslate">
-            <h3 className="text-sm font-medium text-gray-900 mb-2 notranslate">{t('selectLanguage')}</h3>
+            <h3 className="text-sm font-medium text-gray-900 mb-2 notranslate font-lock-sm">{t('selectLanguage')}</h3>
             {/* Search Input */}
             <input
               ref={searchInputRef}
@@ -501,7 +528,7 @@ export default function CustomTranslation() {
               placeholder={t('searchLanguages')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 notranslate"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 notranslate font-lock-sm"
             />
           </div>
 
@@ -513,20 +540,20 @@ export default function CustomTranslation() {
                   <button
                     key={language.code}
                     onClick={() => handleLanguageSelect(language.code)}
-                    className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors duration-150 notranslate ${
+                    className={`w-full px-4 py-2 text-left text-sm hover:bg-gray-50 transition-colors duration-150 notranslate font-lock-sm ${
                       selectedLanguage === language.code ? 'bg-primary-50 text-primary-700' : 'text-gray-700'
                     }`}
                     type="button"
                   >
                     <div className="flex justify-between items-center notranslate">
                       <span className="font-medium notranslate">{language.name}</span>
-                      <span className="text-gray-500 text-xs notranslate">{language.native}</span>
+                      <span className="text-gray-500 text-xs notranslate font-lock-xs">{language.native}</span>
                     </div>
                   </button>
                 ))}
               </div>
             ) : (
-              <div className="py-4 px-4 text-sm text-gray-500 text-center">
+              <div className="py-4 px-4 text-sm text-gray-500 text-center font-lock-sm">
                 {t('noLanguagesFound')}
               </div>
             )}
@@ -534,7 +561,7 @@ export default function CustomTranslation() {
 
           {/* Footer */}
           <div className="p-3 border-t border-gray-200 bg-gray-50 rounded-b-lg">
-            <p className="text-xs text-gray-500 text-center">
+            <p className="text-xs text-gray-500 text-center font-lock-xs">
               {filteredLanguages.length} {t('languagesAvailable')}
             </p>
           </div>

@@ -25,13 +25,13 @@ export default function FieldData({ title, data, backgroundColor = 'bg-gray-50' 
     : 'bg-white rounded-lg p-5 border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200';
 
   const titleClass = isPrimary
-    ? 'text-lg font-semibold text-primary-700 mb-3'
-    : 'text-lg font-semibold text-gray-800 mb-4';
+    ? 'text-lg font-semibold text-primary-700 mb-3 font-lock-lg'
+    : 'text-lg font-semibold text-gray-800 mb-4 font-lock-lg';
 
   return (
     <section className="my-12" aria-labelledby={`field-data-${title.toLowerCase().replace(/\s+/g, '-')}`}>
       <div className={containerClass}>
-        <h3 id={`field-data-${title.toLowerCase().replace(/\s+/g, '-')}`} className="text-2xl font-bold text-gray-900 mb-6">{title}</h3>
+        <h3 id={`field-data-${title.toLowerCase().replace(/\s+/g, '-')}`} className="text-2xl font-bold text-gray-900 mb-6 font-lock-2xl">{title}</h3>
         <div className={isPrimary ? 'space-y-6' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'} role="list" aria-label={`${title} data sections`}>
           {sections.map((section) => (
             <div key={section.key} className={cardClass} role="listitem">
@@ -42,14 +42,14 @@ export default function FieldData({ title, data, backgroundColor = 'bg-gray-50' 
                     {section.data?.map((item, index) => (
                       <div key={index} className="flex items-center" role="listitem">
                         <div className="w-2 h-2 bg-primary-500 rounded-full mr-3 flex-shrink-0" aria-hidden="true"></div>
-                        <span className="text-gray-700 font-medium">{item}</span>
+                        <span className="text-gray-700 font-medium font-lock-base">{item}</span>
                       </div>
                     ))}
                   </div>
                 ) : (
                   <ul className="space-y-2" aria-label={`${section.label} items`}>
                     {section.data?.map((item, index) => (
-                      <li key={index} className="text-sm text-gray-700 pl-4 border-l-2 border-gray-200 hover:border-primary-500 transition-colors duration-200">
+                      <li key={index} className="text-sm text-gray-700 pl-4 border-l-2 border-gray-200 hover:border-primary-500 transition-colors duration-200 font-lock-sm">
                         {item}
                       </li>
                     ))}
