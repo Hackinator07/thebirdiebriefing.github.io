@@ -54,12 +54,13 @@ export default function ArticleSections({ sections }: ArticleSectionsProps) {
                 const showSelector = isFirstTVSchedule;
                 isFirstTVSchedule = false;
                 return (
-                  <TVSchedule
-                    key={index}
-                    title={section.title}
-                    schedule={section.schedule || []}
-                    showTimezoneSelector={showSelector}
-                  />
+                  <div key={index} id="tv-schedule">
+                    <TVSchedule
+                      title={section.title}
+                      schedule={section.schedule || []}
+                      showTimezoneSelector={showSelector}
+                    />
+                  </div>
                 );
               case 'field-data':
                 return (
