@@ -94,7 +94,7 @@ sections:
         url: "https://us.pg.com/"
         description: "Primary Sponsor"
   - type: "tv-schedule"
-    title: "How to Watch Kroger Queen City Championship"
+    title: "How to Watch The Kroger Queen City Championship"
     schedule:
       - day: "Thursday Sep 11 2025"
         times:
