@@ -141,7 +141,6 @@ export const getCountryFlagAlt = (countryCode: string): string => {
     'zwe': 'Zimbabwe',
     'bwa': 'Botswana',
     'nam': 'Namibia',
-    'zaf': 'South Africa',
     'lso': 'Lesotho',
     'swz': 'Eswatini',
     'moz': 'Mozambique',
