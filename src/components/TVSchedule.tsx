@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import TimezoneSelect from 'react-timezone-select';
 import { useTimezone } from './TimezoneContext';
+import Image from 'next/image';
 
 interface ScheduleDay {
   day: string;
@@ -102,6 +103,32 @@ function getTimezoneLabel(timezone: string): string {
   } catch {
     return timezone;
   }
+}
+
+// Function to render time with network logos
+function renderTimeWithLogo(time: string) {
+  // Check if the time string contains "Golf Channel"
+  if (time.includes('Golf Channel')) {
+    const parts = time.split(':');
+    const channel = parts[0] + ':';
+    const timeRange = parts.slice(1).join(':');
+    
+    return (
+      <div className="flex items-center">
+        <Image
+          src="/images/networks/golf-channel.png"
+          alt="Golf Channel"
+          width={20}
+          height={20}
+          className="mr-2 flex-shrink-0"
+        />
+        <span className="text-gray-700 font-medium">{channel} {timeRange}</span>
+      </div>
+    );
+  }
+  
+  // For other channels, render normally
+  return <span className="text-gray-700 font-medium">{time}</span>;
 }
 
 export default function TVSchedule({ title, schedule, showTimezoneSelector = true }: TVScheduleProps) {
@@ -210,7 +237,7 @@ export default function TVSchedule({ title, schedule, showTimezoneSelector = tru
                 {day.times.map((time, timeIndex) => (
                   <div key={timeIndex} className="flex items-center">
                     <div className="w-2 h-2 bg-primary-500 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-gray-700 font-medium">{time}</span>
+                    {renderTimeWithLogo(time)}
                   </div>
                 ))}
               </div>
