@@ -39,7 +39,10 @@ export default function CustomTranslation() {
 
   // Get current language for translations
   const [currentLang, setCurrentLang] = useState(getCurrentLanguage());
-  const t = (key: keyof TranslationKeys) => getTranslation(currentLang, key);
+  const t = (key: keyof TranslationKeys): string => {
+    const result = getTranslation(currentLang, key);
+    return typeof result === 'string' ? result : '';
+  };
 
   // Listen for language changes
   useEffect(() => {

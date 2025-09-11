@@ -47,7 +47,7 @@ export default function TournamentScoresWidget({
   isOpen,
   onToggle
 }: TournamentScoresWidgetProps) {
-  const { t } = useTranslation();
+  const { t, getPlayerNames } = useTranslation();
   const [activeTab, setActiveTab] = useState('leaderboard');
   const [tournamentData, setTournamentData] = useState<TournamentData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -120,6 +120,12 @@ export default function TournamentScoresWidget({
 
   const getCountryCode = (countryName: string): string => {
     return countryCodeMap[countryName] || countryName.substring(0, 3).toUpperCase();
+  };
+
+  // Function to get translated player name
+  const getTranslatedPlayerName = (shortName: string): string => {
+    const playerNames = getPlayerNames();
+    return playerNames[shortName] || shortName;
   };
 
   // Fetch tournament data from ESPN API
@@ -416,12 +422,12 @@ export default function TournamentScoresWidget({
           animation: 'subtle-bounce 2s ease-in-out 1',
           animationDelay: '1s'
         } : {}}
-        aria-label={isOpen ? 'Close scores' : 'Open scores'}
+        aria-label={isOpen ? t('closeScores') : t('openScores')}
       >
         <div className="flex flex-col items-center gap-0.5 sm:gap-1">
           <div className="px-1 sm:px-2 py-0.5 sm:py-1">
             <div className="text-[10px] sm:text-[12px] font-medium leading-tight" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
-              Scorecard
+              {t('scorecard')}
             </div>
           </div>
           {isOpen ? (
@@ -462,11 +468,11 @@ export default function TournamentScoresWidget({
           </div>
           {tournamentData?.status && (
             <p className="text-[8px] sm:text-[10px] opacity-75 mt-1 break-words leading-tight">
-              {tournamentData.status} • Round {tournamentData.currentRound}
+              {tournamentData.status} • {t('round')} {tournamentData.currentRound}
             </p>
           )}
           <p className="text-[8px] sm:text-[10px] opacity-60 mt-1 break-words leading-tight">
-            Note: Thru-hole data not currently available
+            {t('thruHoleNote')}
           </p>
         </div>
 
@@ -498,20 +504,20 @@ export default function TournamentScoresWidget({
               {error ? (
                 <div className="flex flex-col items-center justify-center h-16 p-2">
                   <div className="text-red-500 text-center">
-                    <p className="font-medium mb-1 text-xs">Unable to load scores</p>
+                    <p className="font-medium mb-1 text-xs">{t('unableToLoadScores')}</p>
                     <p className="text-xs text-gray-600 mb-2">{error}</p>
                     <button
                       onClick={fetchTournamentData}
                       className="bg-primary-500 text-white px-2 py-1 rounded text-xs hover:bg-primary-600 transition-colors"
                     >
-                      Try Again
+                      {t('tryAgain')}
                     </button>
                   </div>
                 </div>
               ) : isLoading ? (
                 <div className="flex items-center justify-center h-16">
                   <RefreshCw className="w-3 h-3 animate-spin text-primary-500" />
-                  <span className="ml-2 text-gray-600 text-xs">Loading scores...</span>
+                  <span className="ml-2 text-gray-600 text-xs">{t('loadingScores')}</span>
                 </div>
               ) : tournamentData?.players ? (
                 <div className="p-0.5 sm:p-1">
@@ -521,7 +527,7 @@ export default function TournamentScoresWidget({
                     <div>{t('player')}</div>
                     <div className="text-center">{t('score')}</div>
                     <div className="text-center">{t('today')}</div>
-                    <div className="text-center">TOTAL</div>
+                    <div className="text-center">{t('total')}</div>
                   </div>
                   
                   {/* Player Rows */}
@@ -535,7 +541,7 @@ export default function TournamentScoresWidget({
                           {player.tiedPosition || player.position}
                         </div>
                         <div className="min-w-0">
-                          <p className="font-medium text-gray-900 text-[8px] sm:text-[10px] truncate">{player.name}</p>
+                          <p className="font-medium text-gray-900 text-[8px] sm:text-[10px] truncate">{getTranslatedPlayerName(player.name)}</p>
                           {player.country && (
                             <span className="text-[8px] sm:text-[10px] text-gray-500 truncate block">{player.country}</span>
                           )}
@@ -565,7 +571,7 @@ export default function TournamentScoresWidget({
                 </div>
               ) : (
                 <div className="flex items-center justify-center h-16">
-                  <p className="text-gray-500 text-xs">No tournament data available</p>
+                  <p className="text-gray-500 text-xs">{t('noTournamentData')}</p>
                 </div>
               )}
             </div>
@@ -576,20 +582,20 @@ export default function TournamentScoresWidget({
               {error ? (
                 <div className="flex flex-col items-center justify-center h-16 p-2">
                   <div className="text-red-500 text-center">
-                    <p className="font-medium mb-1 text-xs">Unable to load scores</p>
+                    <p className="font-medium mb-1 text-xs">{t('unableToLoadScores')}</p>
                     <p className="text-xs text-gray-600 mb-2">{error}</p>
                     <button
                       onClick={fetchTournamentData}
                       className="bg-primary-500 text-white px-2 py-1 rounded text-xs hover:bg-primary-600 transition-colors"
                     >
-                      Try Again
+                      {t('tryAgain')}
                     </button>
                   </div>
                 </div>
               ) : isLoading ? (
                 <div className="flex items-center justify-center h-16">
                   <RefreshCw className="w-3 h-3 animate-spin text-primary-500" />
-                  <span className="ml-2 text-gray-600 text-xs">Loading scores...</span>
+                  <span className="ml-2 text-gray-600 text-xs">{t('loadingScores')}</span>
                 </div>
               ) : tournamentData?.players ? (
                 <div className="p-0.5 sm:p-1">
@@ -610,7 +616,7 @@ export default function TournamentScoresWidget({
                         className="grid grid-cols-[2fr_0.4fr_0.4fr_0.4fr_0.4fr] sm:grid-cols-[2fr_0.5fr_0.5fr_0.5fr_0.5fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px]"
                       >
                         <div className="min-w-0">
-                          <p className="font-medium text-gray-900 text-[8px] sm:text-[10px] truncate">{player.name}</p>
+                          <p className="font-medium text-gray-900 text-[8px] sm:text-[10px] truncate">{getTranslatedPlayerName(player.name)}</p>
                           {player.country && (
                             <span className="text-[8px] sm:text-[10px] text-gray-500 truncate block">{player.country}</span>
                           )}
@@ -641,7 +647,7 @@ export default function TournamentScoresWidget({
                 </div>
               ) : (
                 <div className="flex items-center justify-center h-16">
-                  <p className="text-gray-500 text-xs">No tournament data available</p>
+                  <p className="text-gray-500 text-xs">{t('noTournamentData')}</p>
                 </div>
               )}
             </div>
@@ -652,20 +658,20 @@ export default function TournamentScoresWidget({
               {error ? (
                 <div className="flex flex-col items-center justify-center h-16 p-2">
                   <div className="text-red-500 text-center">
-                    <p className="font-medium mb-1 text-xs">Unable to load scores</p>
+                    <p className="font-medium mb-1 text-xs">{t('unableToLoadScores')}</p>
                     <p className="text-xs text-gray-600 mb-2">{error}</p>
                     <button
                       onClick={fetchTournamentData}
                       className="bg-primary-500 text-white px-2 py-1 rounded text-xs hover:bg-primary-600 transition-colors"
                     >
-                      Try Again
+                      {t('tryAgain')}
                     </button>
                   </div>
                 </div>
               ) : isLoading ? (
                 <div className="flex items-center justify-center h-16">
                   <RefreshCw className="w-3 h-3 animate-spin text-primary-500" />
-                  <span className="ml-2 text-gray-600 text-xs">Loading scores...</span>
+                  <span className="ml-2 text-gray-600 text-xs">{t('loadingScores')}</span>
                 </div>
               ) : tournamentData?.players ? (
                 <div className="p-0.5 sm:p-1">
@@ -685,7 +691,7 @@ export default function TournamentScoresWidget({
                   <div className="grid grid-cols-[1.8fr_0.7fr_0.7fr] sm:grid-cols-[1.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 text-[8px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1 pb-1 border-b border-gray-200">
                     <div>{t('player')}</div>
                     <div className="text-center">{t('score')}</div>
-                    <div className="text-center">TOTAL</div>
+                    <div className="text-center">{t('total')}</div>
                   </div>
                   
                   {/* Player Rows - Show only 8 players to account for search input */}
@@ -697,7 +703,7 @@ export default function TournamentScoresWidget({
                           className="grid grid-cols-[1.8fr_0.7fr_0.7fr] sm:grid-cols-[1.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px] cursor-pointer"
                         >
                           <div className="min-w-0">
-                            <p className="font-medium text-gray-900 text-[8px] sm:text-[10px] truncate">{player.name}</p>
+                            <p className="font-medium text-gray-900 text-[8px] sm:text-[10px] truncate">{getTranslatedPlayerName(player.name)}</p>
                             {player.country && (
                               <span className="text-[8px] sm:text-[10px] text-gray-500 truncate block">{player.country}</span>
                             )}
@@ -717,7 +723,7 @@ export default function TournamentScoresWidget({
                     ) : (
                       <div className="flex items-center justify-center py-4">
                         <p className="text-gray-500 text-[8px] sm:text-[10px]">
-                          {searchQuery.trim() ? 'No players found' : 'No tournament data available'}
+                          {searchQuery.trim() ? t('noPlayersFound') : t('noTournamentData')}
                         </p>
                       </div>
                     )}
@@ -725,7 +731,7 @@ export default function TournamentScoresWidget({
                 </div>
               ) : (
                 <div className="flex items-center justify-center h-16">
-                  <p className="text-gray-500 text-xs">No tournament data available</p>
+                  <p className="text-gray-500 text-xs">{t('noTournamentData')}</p>
                 </div>
               )}
             </div>

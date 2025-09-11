@@ -46,8 +46,14 @@ export function useTranslation() {
   }, [currentLang]);
 
   const t = (key: keyof TranslationKeys): string => {
-    return getTranslation(currentLang, key);
+    const result = getTranslation(currentLang, key);
+    return typeof result === 'string' ? result : '';
   };
 
-  return { t, currentLang };
+  const getPlayerNames = (): Record<string, string> => {
+    const result = getTranslation(currentLang, 'playerNames');
+    return typeof result === 'object' ? result : {};
+  };
+
+  return { t, getPlayerNames, currentLang };
 }
