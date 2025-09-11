@@ -109,7 +109,7 @@ sections:
           - "Golf Channel: 12:00 PM - 3:00 PM"
 ---
 
-[The Kroger Queen City Championship presented by P&G](https://queencitylpga.com/) is coming back to Ohio, and this week it lands at TPC River’s Bend, a course carved into the rolling hills just north of Cincinnati. From September 11–14, 144 of the best players in the world will tee it up for a $2 million purse, and with the way this LPGA season has gone—no repeat winners yet—the story feels wide open.
+[The Kroger Queen City Championship presented by P&G](https://queencitylpga.com/) is coming back to Ohio, and this week it lands again at TPC River’s Bend, a course carved into the rolling hills just north of Cincinnati. From September 11–14, 144 of the best players in the world will tee it up for a $2 million purse, and with the way this LPGA season has gone—no repeat winners yet—the story feels wide open.
 
 River’s Bend isn’t new to big stages. The course hosted the PGA TOUR Champions Kroger Classic, the Korn Ferry Tour’s Chiquita Classic, and the Epson Tour’s Prasco Charity Championship. Built in 2001, it’s an Arnold Palmer and Ed Seay course that asks players to hit every shot in the bag and has been called one of the best new private clubs in the country. It’s big enough for the crowds and precise enough to expose mistakes. It should be a compelling canvas for where the leaderboard will shift from day to day, and you’ll see desperate charges just to cling to the cut, along with the kind of bottom-of-the-board wreckage that draws out the morbidly curious.
 
