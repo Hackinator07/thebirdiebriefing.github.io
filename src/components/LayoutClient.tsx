@@ -21,14 +21,11 @@ export default function LayoutClient({ children }: LayoutClientProps) {
     setIsScoresOpen(!isScoresOpen);
   };
 
-  // Set scorecard state based on homepage status and first visit
+  // Set scorecard state based on homepage status
   useEffect(() => {
     if (isHomepage) {
-      // Only open automatically on first visit to homepage
-      if (!hasVisitedHomepage) {
-        setIsScoresOpen(true);
-        setHasVisitedHomepage(true);
-      }
+      // Scorecard remains collapsed by default - no auto-open behavior
+      setHasVisitedHomepage(true);
     } else {
       setIsScoresOpen(false);
     }

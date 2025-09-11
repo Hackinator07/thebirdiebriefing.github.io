@@ -50,6 +50,7 @@ export default function TournamentScoresWidget({
   const [error, setError] = useState<string | null>(null);
   const [lastRefresh, setLastRefresh] = useState<Date | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   // Country name to 3-letter code mapping
   const countryCodeMap: { [key: string]: string } = {
@@ -307,6 +308,17 @@ export default function TournamentScoresWidget({
     return () => clearInterval(interval);
   }, [isOpen, fetchTournamentData]);
 
+  // Trigger subtle animation on initial load when collapsed
+  useEffect(() => {
+    if (!isOpen && !hasAnimated) {
+      const timer = setTimeout(() => {
+        setHasAnimated(true);
+      }, 1000); // Start animation after 1 second
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, hasAnimated]);
+
   const formatScore = (score: number) => {
     if (score === 0) return 'E';
     return score > 0 ? `+${score}` : `${score}`;
@@ -365,8 +377,12 @@ export default function TournamentScoresWidget({
         className={`fixed z-30 bg-primary-500 hover:bg-primary-600 text-white shadow-lg transition-all duration-300 ${
           isOpen 
             ? 'top-[65px] right-80 sm:right-80 p-1 sm:p-2' 
-            : 'top-[65px] right-0 p-1 sm:p-2'
+            : `top-[65px] right-0 p-1 sm:p-2 ${!hasAnimated ? 'animate-pulse' : ''}`
         }`}
+        style={!hasAnimated && !isOpen ? {
+          animation: 'subtle-bounce 2s ease-in-out 1',
+          animationDelay: '1s'
+        } : {}}
         aria-label={isOpen ? 'Close scores' : 'Open scores'}
       >
         <div className="flex flex-col items-center gap-0.5 sm:gap-1">

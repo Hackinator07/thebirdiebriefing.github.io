@@ -29,6 +29,19 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
 
+  /* Subtle bounce animation for scorecard widget */
+  @keyframes subtle-bounce {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-4px);
+    }
+    75% {
+      transform: translateX(-2px);
+    }
+  }
+
   /* Font utilities */
   .font-heading {
     font-family: 'Playfair Display', serif;
