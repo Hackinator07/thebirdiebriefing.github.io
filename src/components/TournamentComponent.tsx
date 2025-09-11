@@ -22,7 +22,7 @@ export default function TournamentComponent({
   teeTimesUrl = "/tee-times",
   broadcastUrl = "https://www.birdiebriefing.com/news/queen-city-2025/#tv-schedule",
   entryListUrl = "#",
-  podcastUrl = "https://open.spotify.com/show/3ZwjiD6IZeHqCNrCwBdrP2"
+  podcastUrl = "https://open.spotify.com/episode/4MlMpATb0MHcQRZeuMqxey?si=8xzWaryDS3u09jAE-BtMIg"
 }: TournamentComponentProps) {
   return (
     <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg border border-gray-200">
