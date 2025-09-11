@@ -198,6 +198,32 @@
     font-size: 0.75rem !important; /* 12px */
     line-height: 1rem !important; /* 16px */
   }
+
+  /* Translation layout protection */
+  .translation-safe {
+    min-height: 2.5rem; /* Prevent height changes during translation */
+  }
+
+  .translation-safe-nav {
+    min-height: 3rem; /* Prevent navigation height changes */
+  }
+
+  .translation-safe-container {
+    min-height: 20rem; /* Prevent container height changes */
+  }
+
+  /* Prevent text overflow in translated content */
+  .translation-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Fixed width for navigation items to prevent wrapping */
+  .nav-item-fixed {
+    min-width: 4rem;
+    text-align: center;
+  }
 }
 
 /* Custom color palette */

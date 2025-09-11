@@ -127,7 +127,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
 
 
           {/* Desktop Navigation - Changed from lg: to xl: and made more responsive */}
-          <nav className="hidden xl:flex items-center space-x-3 sm:space-x-4 md:space-x-6 xl:space-x-8">
+          <nav className="hidden xl:flex items-center space-x-2 sm:space-x-3 md:space-x-4 xl:space-x-6 translation-safe-nav">
             {navigation.map((item) => {
               const isActive = isLinkActive(item.href);
               return (
@@ -141,7 +141,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                     >
                       <button
                         onClick={() => setIsNewsDropdownOpen(!isNewsDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap ${
                           isNewsActive
                             ? 'text-primary-500'
                             : 'text-gray-700 hover:text-primary-500'
@@ -166,7 +166,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                       {/* Dropdown Menu */}
                       {isNewsDropdownOpen && (
                         <div 
-                          className="absolute top-full left-0 pt-1 w-40 sm:w-48 z-50"
+                          className="absolute top-full left-0 pt-1 w-48 sm:w-56 z-50"
                           onMouseEnter={() => setIsNewsDropdownOpen(true)}
                           onMouseLeave={() => setIsNewsDropdownOpen(false)}
                         >
@@ -177,7 +177,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
-                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 ${
+                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 whitespace-nowrap ${
                                   isSubActive
                                     ? 'text-primary-500 bg-primary-50 font-medium'
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
@@ -204,7 +204,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                     >
                       <button
                         onClick={() => setIsScheduleDropdownOpen(!isScheduleDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap ${
                           isScheduleActive
                             ? 'text-primary-500'
                             : 'text-gray-700 hover:text-primary-500'
@@ -229,7 +229,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                       {/* Dropdown Menu */}
                       {isScheduleDropdownOpen && (
                         <div 
-                          className="absolute top-full left-0 pt-1 w-40 sm:w-48 z-50"
+                          className="absolute top-full left-0 pt-1 w-48 sm:w-56 z-50"
                           onMouseEnter={() => setIsScheduleDropdownOpen(true)}
                           onMouseLeave={() => setIsScheduleDropdownOpen(false)}
                         >
@@ -240,7 +240,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
-                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 ${
+                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 whitespace-nowrap ${
                                   isSubActive
                                     ? 'text-primary-500 bg-primary-50 font-medium'
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
@@ -261,11 +261,11 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                   {item.name !== t('news') && item.name !== t('schedule') && item.name !== t('rankings') && (
                     <Link
                       href={item.href}
-                      className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group ${
+                      className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap ${
                         isActive
                           ? 'text-primary-500'
                           : 'text-gray-700 hover:text-primary-500'
-                      }`}
+                        }`}
                     >
                       {item.name}
                       {!isActive && (
@@ -283,7 +283,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                     >
                       <button
                         onClick={() => setIsRankingsDropdownOpen(!isRankingsDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap ${
                           isRankingsActive
                             ? 'text-primary-500'
                             : 'text-gray-700 hover:text-primary-500'
@@ -308,7 +308,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                       {/* Dropdown Menu */}
                       {isRankingsDropdownOpen && (
                         <div 
-                          className="absolute top-full left-0 pt-1 w-40 sm:w-48 z-50"
+                          className="absolute top-full left-0 pt-1 w-48 sm:w-56 z-50"
                           onMouseEnter={() => setIsRankingsDropdownOpen(true)}
                           onMouseLeave={() => setIsRankingsDropdownOpen(false)}
                         >
@@ -319,7 +319,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
-                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 ${
+                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 whitespace-nowrap ${
                                   isSubActive
                                     ? 'text-primary-500 bg-primary-50 font-medium'
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
@@ -343,7 +343,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
             {onToggleScores && (
               <button
                 onClick={onToggleScores}
-                className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group ${
+                className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap ${
                   isScoresOpen
                     ? 'text-primary-500'
                     : 'text-gray-700 hover:text-primary-500'
@@ -376,7 +376,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
             />
 
             {/* Slide-out menu */}
-            <div className="fixed left-0 top-0 h-full w-80 landscape:w-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out">
+            <div className="fixed left-0 top-0 h-full w-80 landscape:w-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out translation-safe-container">
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
@@ -395,7 +395,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
 
 
                 {/* Navigation Links - Made scrollable only in landscape */}
-                <nav className="flex-1 px-6 py-4 overflow-y-auto">
+                <nav className="flex-1 px-6 py-4 overflow-y-auto translation-safe">
                   <div className="space-y-2">
                     {navigation.map((item) => {
                       const isActive = isLinkActive(item.href);
@@ -406,7 +406,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                             <div className="-mx-6">
                               <button
                                 onClick={() => setIsMobileNewsOpen(!isMobileNewsOpen)}
-                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg ${
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
                                   isNewsActive
                                     ? 'text-primary-500 bg-primary-50 font-semibold'
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
@@ -455,7 +455,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                             <div className="-mx-6">
                               <button
                                 onClick={() => setIsMobileScheduleOpen(!isMobileScheduleOpen)}
-                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg ${
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
                                   isScheduleActive
                                     ? 'text-primary-500 bg-primary-50 font-semibold'
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
@@ -504,7 +504,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                             <div className="-mx-6">
                               <button
                                 onClick={() => setIsMobileRankingsOpen(!isMobileRankingsOpen)}
-                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg ${
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
                                   isRankingsActive
                                     ? 'text-primary-500 bg-primary-50 font-semibold'
                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
@@ -553,7 +553,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                              <div className="-mx-6">
                                <Link
                                  href={item.href}
-                                 className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg ${
+                                 className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
                                    isActive
                                      ? 'text-primary-500 bg-primary-50 font-semibold'
                                      : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
@@ -587,7 +587,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                             onToggleScores();
                             setIsMenuOpen(false);
                           }}
-                          className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg ${
+                          className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
                             isScoresOpen
                               ? 'text-primary-500 bg-primary-50 font-semibold'
                               : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'

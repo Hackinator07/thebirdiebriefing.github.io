@@ -25,11 +25,11 @@ export default function TournamentComponent({
   podcastUrl = "https://open.spotify.com/episode/4MlMpATb0MHcQRZeuMqxey?si=8xzWaryDS3u09jAE-BtMIg"
 }: TournamentComponentProps) {
   return (
-    <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg border border-gray-200">
+    <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg border border-gray-200 w-full max-w-md mx-auto translation-safe-container">
       {/* Tournament Header */}
       <div className="mb-12">
         <div className="flex items-start justify-between gap-4 mb-2">
-          <h3 className="text-xl lg:text-2xl font-bold text-gray-900 flex-1">
+          <h3 className="text-xl lg:text-2xl font-bold text-gray-900 flex-1 break-words translation-text">
             {tournamentName}
           </h3>
           <div className="flex-shrink-0 -mt-2 -ml-2">
