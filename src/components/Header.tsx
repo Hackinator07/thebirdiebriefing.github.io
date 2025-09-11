@@ -6,8 +6,14 @@ import { usePathname } from 'next/navigation';
 import CustomTranslation from './CustomTranslation';
 import { useTranslation } from '@/hooks/useTranslation';
 import Image from 'next/image';
+import { Trophy } from 'lucide-react';
 
-export default function Header() {
+interface HeaderProps {
+  isScoresOpen?: boolean;
+  onToggleScores?: () => void;
+}
+
+export default function Header({ isScoresOpen = false, onToggleScores }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isRankingsDropdownOpen, setIsRankingsDropdownOpen] = useState(false);
   const [isNewsDropdownOpen, setIsNewsDropdownOpen] = useState(false);
@@ -119,6 +125,24 @@ export default function Header() {
               <span className="text-lg sm:text-xl font-bold text-secondary-500 font-heading ml-1">Briefing</span>
             </Link>
           </div>
+
+          {/* Scores Widget Toggle - Desktop */}
+          {onToggleScores && (
+            <div className="hidden lg:flex items-center">
+              <button
+                onClick={onToggleScores}
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  isScoresOpen
+                    ? 'bg-primary-500 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-600'
+                }`}
+                aria-label={isScoresOpen ? 'Close live scores' : 'Open live scores'}
+              >
+                <Trophy className="w-4 h-4" />
+                <span className="hidden xl:inline">Live Scores</span>
+              </button>
+            </div>
+          )}
 
           {/* Desktop Navigation - Changed from lg: to xl: and made more responsive */}
           <nav className="hidden xl:flex items-center space-x-3 sm:space-x-4 md:space-x-6 xl:space-x-8">
@@ -367,6 +391,26 @@ export default function Header() {
                     </svg>
                   </button>
                 </div>
+
+                {/* Mobile Scores Widget Toggle */}
+                {onToggleScores && (
+                  <div className="px-6 py-3 border-b border-gray-200">
+                    <button
+                      onClick={() => {
+                        onToggleScores();
+                        setIsMenuOpen(false);
+                      }}
+                      className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        isScoresOpen
+                          ? 'bg-primary-500 text-white'
+                          : 'bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-600'
+                      }`}
+                    >
+                      <Trophy className="w-5 h-5" />
+                      <span>Live Scores</span>
+                    </button>
+                  </div>
+                )}
 
                 {/* Navigation Links - Made scrollable only in landscape */}
                 <nav className="flex-1 px-6 py-4 overflow-y-auto">
