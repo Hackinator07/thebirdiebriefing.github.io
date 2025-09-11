@@ -40,4 +40,4 @@ Her channel really is essential viewing. For fans, players, anyone who wants to 
 
 이정은5의, 여자는 힘!
 
-*To translate YouTube subtitles into your language, first turn on captions by clicking the CC icon. Then, click the gear icon to access settings. Open the Subtitles/CC menu, select Auto-translate, and choose English. YouTube will then automatically translate the video's audio into English.*
+*To translate YouTube subtitles into your language, first turn on captions by clicking the CC icon. Then, click the gear icon to access settings. Open the Subtitles/CC menu, select Auto-translate, and choose English (or other language). YouTube will then automatically translate the video's subtitles into your selected language.*
