@@ -7,9 +7,13 @@ import { useTranslation } from '@/hooks/useTranslation';
 interface Player {
   id: string;
   name: string;
+  fullName?: string;
+  displayName?: string;
+  shortName?: string;
   position: number;
   tiedPosition?: string;
   totalScore: number;
+  totalStrokes: number;
   round1?: number;
   round2?: number;
   round3?: number;
@@ -182,6 +186,11 @@ export default function TournamentScoresWidget({
         const roundScores = [round1, round2, round3, round4].filter(score => score !== undefined);
         const totalScore = roundScores.length > 0 ? 
           roundScores.reduce((sum, score) => sum + (score || 0), 0) : 0;
+
+        // Calculate total strokes from linescores value field
+        const totalStrokes = linescores.reduce((sum: number, linescore: any) => {
+          return sum + (linescore.value || 0);
+        }, 0);
         
         // Get current round score (TODAY) - this should be the score for the current round only
         // We'll determine which round to show based on the tournament's current round
@@ -205,9 +214,13 @@ export default function TournamentScoresWidget({
         
         return {
           id: competitor.id || athlete.id || index.toString(),
-          name: athlete.displayName || athlete.fullName,
+          name: athlete.shortName || athlete.displayName || athlete.fullName,
+          fullName: athlete.fullName,
+          displayName: athlete.displayName,
+          shortName: athlete.shortName,
           position: competitor.order || index + 1,
           totalScore,
+          totalStrokes,
           round1,
           round2,
           round3,
@@ -222,9 +235,13 @@ export default function TournamentScoresWidget({
           // Return a fallback player object
           return {
             id: competitor.id || index.toString(),
-            name: competitor.athlete?.displayName || 'Unknown Player',
+            name: competitor.athlete?.shortName || competitor.athlete?.displayName || 'Unknown Player',
+            fullName: competitor.athlete?.fullName,
+            displayName: competitor.athlete?.displayName,
+            shortName: competitor.athlete?.shortName,
             position: competitor.order || index + 1,
             totalScore: 0,
+            totalStrokes: 0,
             status: 'active' as const,
             country: competitor.athlete?.flag?.alt ? getCountryCode(competitor.athlete.flag.alt) : undefined
           };
@@ -338,10 +355,26 @@ export default function TournamentScoresWidget({
       return tournamentData.players.slice(0, 9);
     }
     
-    return tournamentData.players.filter(player => 
-      player.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (player.country && player.country.toLowerCase().includes(searchQuery.toLowerCase()))
-    );
+    const query = searchQuery.toLowerCase();
+    
+    return tournamentData.players.filter(player => {
+      // Search in the displayed name (shortName)
+      const nameMatch = player.name.toLowerCase().includes(query);
+      
+      // Search in fullName
+      const fullNameMatch = player.fullName && player.fullName.toLowerCase().includes(query);
+      
+      // Search in displayName
+      const displayNameMatch = player.displayName && player.displayName.toLowerCase().includes(query);
+      
+      // Search in shortName
+      const shortNameMatch = player.shortName && player.shortName.toLowerCase().includes(query);
+      
+      // Search in country
+      const countryMatch = player.country && player.country.toLowerCase().includes(query);
+      
+      return nameMatch || fullNameMatch || displayNameMatch || shortNameMatch || countryMatch;
+    });
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -483,11 +516,12 @@ export default function TournamentScoresWidget({
               ) : tournamentData?.players ? (
                 <div className="p-0.5 sm:p-1">
                   {/* Column Headers */}
-                  <div className="grid grid-cols-[0.8fr_2fr_0.8fr_0.8fr] sm:grid-cols-[1fr_2fr_1fr_1fr] gap-0.5 sm:gap-1 text-[8px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1 pb-1 border-b border-gray-200">
+                  <div className="grid grid-cols-[0.7fr_1.8fr_0.7fr_0.7fr_0.7fr] sm:grid-cols-[0.8fr_1.8fr_0.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 text-[8px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1 pb-1 border-b border-gray-200">
                     <div>{t('pos')}</div>
                     <div>{t('player')}</div>
                     <div className="text-center">{t('score')}</div>
                     <div className="text-center">{t('today')}</div>
+                    <div className="text-center">TOTAL</div>
                   </div>
                   
                   {/* Player Rows */}
@@ -495,7 +529,7 @@ export default function TournamentScoresWidget({
                     {tournamentData.players.slice(0, 9).map((player) => (
                       <div
                         key={player.id}
-                        className="grid grid-cols-[0.8fr_2fr_0.8fr_0.8fr] sm:grid-cols-[1fr_2fr_1fr_1fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px]"
+                        className="grid grid-cols-[0.7fr_1.8fr_0.7fr_0.7fr_0.7fr] sm:grid-cols-[0.8fr_1.8fr_0.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px]"
                       >
                         <div className="flex-shrink-0 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-[8px] sm:text-[10px] font-bold">
                           {player.tiedPosition || player.position}
@@ -519,6 +553,11 @@ export default function TournamentScoresWidget({
                           ) : (
                             <span className="text-gray-400 text-[8px] sm:text-[10px]">-</span>
                           )}
+                        </div>
+                        <div className="text-center">
+                          <p className="font-medium text-[8px] sm:text-[10px] text-gray-700">
+                            {player.totalStrokes}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -643,9 +682,10 @@ export default function TournamentScoresWidget({
                   </div>
                   
                   {/* Column Headers */}
-                  <div className="grid grid-cols-[2fr_0.8fr] sm:grid-cols-[2fr_1fr] gap-0.5 sm:gap-1 text-[8px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1 pb-1 border-b border-gray-200">
+                  <div className="grid grid-cols-[1.8fr_0.7fr_0.7fr] sm:grid-cols-[1.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 text-[8px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1 pb-1 border-b border-gray-200">
                     <div>{t('player')}</div>
                     <div className="text-center">{t('score')}</div>
+                    <div className="text-center">TOTAL</div>
                   </div>
                   
                   {/* Player Rows - Show only 8 players to account for search input */}
@@ -654,7 +694,7 @@ export default function TournamentScoresWidget({
                       getFilteredPlayers().slice(0, 8).map((player) => (
                         <div
                           key={player.id}
-                          className="grid grid-cols-[2fr_0.8fr] sm:grid-cols-[2fr_1fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px] cursor-pointer"
+                          className="grid grid-cols-[1.8fr_0.7fr_0.7fr] sm:grid-cols-[1.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px] cursor-pointer"
                         >
                           <div className="min-w-0">
                             <p className="font-medium text-gray-900 text-[8px] sm:text-[10px] truncate">{player.name}</p>
@@ -665,6 +705,11 @@ export default function TournamentScoresWidget({
                           <div className="text-center">
                             <p className={`font-bold text-[8px] sm:text-[10px] ${getScoreColor(player.totalScore)}`}>
                               {formatScore(player.totalScore)}
+                            </p>
+                          </div>
+                          <div className="text-center">
+                            <p className="font-medium text-[8px] sm:text-[10px] text-gray-700">
+                              {player.totalStrokes}
                             </p>
                           </div>
                         </div>
