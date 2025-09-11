@@ -96,7 +96,7 @@ export const translations: Record<string, TranslationKeys> = {
     closeScores: 'Close scores',
     noPlayersFound: 'No players found',
     noTournamentData: 'No tournament data available',
-    searchPlaceholder: 'Search...',
+    searchPlaceholder: 'Search top 20 players...',
     thruHoleNote: 'Note: Thru-hole data not currently available',
   },
   ja: {
@@ -140,7 +140,7 @@ export const translations: Record<string, TranslationKeys> = {
     closeScores: 'スコアを閉じる',
     noPlayersFound: 'プレイヤーが見つかりません',
     noTournamentData: 'トーナメントデータがありません',
-    searchPlaceholder: '検索...',
+    searchPlaceholder: 'トップ20プレイヤーを検索...',
     thruHoleNote: '注記: スルーホールデータは現在利用できません',
   },
   ko: {
@@ -184,7 +184,7 @@ export const translations: Record<string, TranslationKeys> = {
     closeScores: '스코어 닫기',
     noPlayersFound: '플레이어를 찾을 수 없습니다',
     noTournamentData: '토너먼트 데이터가 없습니다',
-    searchPlaceholder: '검색...',
+    searchPlaceholder: '상위 20명 선수 검색...',
     thruHoleNote: '참고: 스루홀 데이터는 현재 사용할 수 없습니다',
   },
   th: {
@@ -229,7 +229,7 @@ export const translations: Record<string, TranslationKeys> = {
     closeScores: 'ปิดคะแนน',
     noPlayersFound: 'ไม่พบผู้เล่น',
     noTournamentData: 'ไม่มีข้อมูลทัวร์นาเมนต์',
-    searchPlaceholder: 'ค้นหา...',
+    searchPlaceholder: 'ค้นหาผู้เล่น 20 อันดับแรก...',
     thruHoleNote: 'หมายเหตุ: ข้อมูลผ่านหลุมไม่พร้อมใช้งานในขณะนี้',
   },
   zh: {
@@ -274,7 +274,7 @@ export const translations: Record<string, TranslationKeys> = {
     closeScores: '关闭分数',
     noPlayersFound: '未找到球员',
     noTournamentData: '无赛事数据',
-    searchPlaceholder: '搜索...',
+    searchPlaceholder: '搜索前20名球员...',
     thruHoleNote: '注意：当前无法获取通过球洞数据',
   },
   vi: {
@@ -318,7 +318,7 @@ export const translations: Record<string, TranslationKeys> = {
     closeScores: 'Đóng điểm',
     noPlayersFound: 'Không tìm thấy người chơi',
     noTournamentData: 'Không có dữ liệu giải đấu',
-    searchPlaceholder: 'Tìm kiếm...',
+    searchPlaceholder: 'Tìm kiếm 20 người chơi hàng đầu...',
     thruHoleNote: 'Lưu ý: Dữ liệu lỗ hiện tại không khả dụng',
   },
   tl: {
@@ -363,7 +363,7 @@ export const translations: Record<string, TranslationKeys> = {
     closeScores: 'Isara ang mga score',
     noPlayersFound: 'Walang nahanap na mga player',
     noTournamentData: 'Walang data ng tournament',
-    searchPlaceholder: 'Maghanap...',
+    searchPlaceholder: 'Maghanap ng top 20 na manlalaro...',
     thruHoleNote: 'Tala: Ang data ng thru-hole ay hindi kasalukuyang magagamit',
   },
   sv: {
@@ -408,7 +408,7 @@ export const translations: Record<string, TranslationKeys> = {
     closeScores: 'Stäng poäng',
     noPlayersFound: 'Inga spelare hittades',
     noTournamentData: 'Ingen turneringsdata',
-    searchPlaceholder: 'Sök...',
+    searchPlaceholder: 'Sök topp 20 spelare...',
     thruHoleNote: 'Obs: Genom-hål data är för närvarande inte tillgänglig',
   },
   no: {
@@ -453,7 +453,7 @@ export const translations: Record<string, TranslationKeys> = {
     closeScores: 'Lukk poeng',
     noPlayersFound: 'Ingen spillere funnet',
     noTournamentData: 'Ingen turneringsdata',
-    searchPlaceholder: 'Søk...',
+    searchPlaceholder: 'Søk topp 20 spillere...',
     thruHoleNote: 'Merk: Gjennom-hull data er for øyeblikket ikke tilgjengelig',
   },
   fr: {
@@ -498,7 +498,7 @@ export const translations: Record<string, TranslationKeys> = {
     closeScores: 'Fermer les scores',
     noPlayersFound: 'Aucun joueur trouvé',
     noTournamentData: 'Aucune donnée de tournoi',
-    searchPlaceholder: 'Rechercher...',
+    searchPlaceholder: 'Rechercher les 20 meilleurs joueurs...',
     thruHoleNote: 'Note: Les données de trou actuel ne sont pas disponibles',
   },
   es: {
@@ -543,7 +543,7 @@ export const translations: Record<string, TranslationKeys> = {
     closeScores: 'Cerrar puntuaciones',
     noPlayersFound: 'No se encontraron jugadores',
     noTournamentData: 'Sin datos del torneo',
-    searchPlaceholder: 'Buscar...',
+    searchPlaceholder: 'Buscar los 20 mejores jugadores...',
     thruHoleNote: 'Nota: Los datos de hoyo actual no están disponibles',
   },
   de: {
@@ -588,7 +588,7 @@ export const translations: Record<string, TranslationKeys> = {
     closeScores: 'Punkte schließen',
     noPlayersFound: 'Keine Spieler gefunden',
     noTournamentData: 'Keine Turnierdaten',
-    searchPlaceholder: 'Suchen...',
+    searchPlaceholder: 'Top 20 Spieler suchen...',
     thruHoleNote: 'Hinweis: Durch-Loch-Daten sind derzeit nicht verfügbar',
   },
 };
