@@ -6,6 +6,26 @@
 export const getCountryFlagUrl = (countryCode: string): string => {
   const code = countryCode.toLowerCase();
   
+  // Special case for South Africa - use RSA code for ESPN URL
+  if (code === 'zaf') {
+    return 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/countries/500/rsa.png&w=40&h=40&scale=crop';
+  }
+  
+  // Special case for Taiwan - use TPO code for ESPN URL
+  if (code === 'twn') {
+    return 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/countries/500/tpo.png&w=40&h=40&scale=crop';
+  }
+  
+  // Special case for Paraguay - use PAR code for ESPN URL
+  if (code === 'pry') {
+    return 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/countries/500/par.png&w=40&h=40&scale=crop';
+  }
+  
+  // Special case for Philippines - use PHI code for ESPN URL
+  if (code === 'phl') {
+    return 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/countries/500/phi.png&w=40&h=40&scale=crop';
+  }
+  
   // ESPN country flag URL pattern: https://a.espncdn.com/i/teamlogos/countries/500/{code}.png
   return `https://a.espncdn.com/i/teamlogos/countries/500/${code}.png`;
 };
