@@ -25,7 +25,7 @@ export default async function Home() {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
               {/* Left Column - Birdie Briefing Content */}
               <div className="flex-1">
-                <div className="bg-white rounded-lg p-6 lg:p-8">
+                <div className="bg-white rounded-lg p-6 lg:p-8 h-full">
                   {/* Main Headlines */}
                   <div className="text-center mb-8">
                     <h1 className="text-4xl lg:text-6xl xl:text-7xl font-heading text-primary-500 leading-none mb-2">
@@ -125,7 +125,9 @@ export default async function Home() {
 
               {/* Right Column - Tournament Component */}
               <div className="w-full lg:w-96 flex-shrink-0">
-                <TournamentComponent />
+                <div className="h-full">
+                  <TournamentComponent />
+                </div>
               </div>
             </div>
           </div>

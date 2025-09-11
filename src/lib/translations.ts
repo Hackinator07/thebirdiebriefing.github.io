@@ -52,6 +52,14 @@ export interface TranslationKeys {
   noTournamentData: string;
   searchPlaceholder: string;
   thruHoleNote: string;
+  
+  // Tournament component
+  buyTickets: string;
+  officialSite: string;
+  entryList: string;
+  teeTimes: string;
+  tvSchedule: string;
+  followAction: string;
 }
 
 export const translations: Record<string, TranslationKeys> = {
@@ -98,6 +106,12 @@ export const translations: Record<string, TranslationKeys> = {
     noTournamentData: 'No tournament data available',
     searchPlaceholder: 'Search top 20 players...',
     thruHoleNote: 'Note: Thru-hole data not currently available',
+    buyTickets: 'Buy Tickets',
+    officialSite: 'Official Site',
+    entryList: 'Entry List',
+    teeTimes: 'Tee Times',
+    tvSchedule: 'TV Schedule',
+    followAction: 'Follow the action and stay updated with tournament coverage',
   },
   ja: {
     home: 'ホーム',
@@ -142,6 +156,12 @@ export const translations: Record<string, TranslationKeys> = {
     noTournamentData: 'トーナメントデータがありません',
     searchPlaceholder: 'トップ20プレイヤーを検索...',
     thruHoleNote: '注記: スルーホールデータは現在利用できません',
+    buyTickets: 'チケット購入',
+    officialSite: '公式サイト',
+    entryList: 'エントリーリスト',
+    teeTimes: 'ティータイム',
+    tvSchedule: 'TVスケジュール',
+    followAction: 'アクションをフォローし、トーナメントカバレッジで最新情報を入手',
   },
   ko: {
     home: '홈',
@@ -186,6 +206,12 @@ export const translations: Record<string, TranslationKeys> = {
     noTournamentData: '토너먼트 데이터가 없습니다',
     searchPlaceholder: '상위 20명 선수 검색...',
     thruHoleNote: '참고: 스루홀 데이터는 현재 사용할 수 없습니다',
+    buyTickets: '티켓 구매',
+    officialSite: '공식 사이트',
+    entryList: '엔트리 리스트',
+    teeTimes: '티 타임',
+    tvSchedule: 'TV 일정',
+    followAction: '액션을 따라하고 토너먼트 커버리지로 최신 정보를 얻으세요',
   },
   th: {
     home: 'หน้าแรก',
@@ -231,6 +257,12 @@ export const translations: Record<string, TranslationKeys> = {
     noTournamentData: 'ไม่มีข้อมูลทัวร์นาเมนต์',
     searchPlaceholder: 'ค้นหาผู้เล่น 20 อันดับแรก...',
     thruHoleNote: 'หมายเหตุ: ข้อมูลผ่านหลุมไม่พร้อมใช้งานในขณะนี้',
+    buyTickets: 'ซื้อตั๋ว',
+    officialSite: 'เว็บไซต์อย่างเป็นทางการ',
+    entryList: 'รายชื่อผู้เข้าแข่งขัน',
+    teeTimes: 'เวลาเริ่มเล่น',
+    tvSchedule: 'ตารางทีวี',
+    followAction: 'ติดตามการแข่งขันและรับข้อมูลล่าสุดจากรายงานการแข่งขัน',
   },
   zh: {
     home: '首页',
@@ -276,6 +308,12 @@ export const translations: Record<string, TranslationKeys> = {
     noTournamentData: '无赛事数据',
     searchPlaceholder: '搜索前20名球员...',
     thruHoleNote: '注意：当前无法获取通过球洞数据',
+    buyTickets: '购买门票',
+    officialSite: '官方网站',
+    entryList: '参赛名单',
+    teeTimes: '开球时间',
+    tvSchedule: '电视转播',
+    followAction: '关注比赛动态，通过赛事报道获取最新信息',
   },
   vi: {
     home: 'Trang chủ',
@@ -320,6 +358,12 @@ export const translations: Record<string, TranslationKeys> = {
     noTournamentData: 'Không có dữ liệu giải đấu',
     searchPlaceholder: 'Tìm kiếm 20 người chơi hàng đầu...',
     thruHoleNote: 'Lưu ý: Dữ liệu lỗ hiện tại không khả dụng',
+    buyTickets: 'Mua vé',
+    officialSite: 'Trang web chính thức',
+    entryList: 'Danh sách tham gia',
+    teeTimes: 'Giờ phát bóng',
+    tvSchedule: 'Lịch phát sóng',
+    followAction: 'Theo dõi hành động và cập nhật thông tin mới nhất từ báo cáo giải đấu',
   },
   tl: {
     home: 'Bahay',
@@ -365,6 +409,12 @@ export const translations: Record<string, TranslationKeys> = {
     noTournamentData: 'Walang data ng tournament',
     searchPlaceholder: 'Maghanap ng top 20 na manlalaro...',
     thruHoleNote: 'Tala: Ang data ng thru-hole ay hindi kasalukuyang magagamit',
+    buyTickets: 'Bumili ng tiket',
+    officialSite: 'Opisyal na website',
+    entryList: 'Lista ng mga kalahok',
+    teeTimes: 'Oras ng tee',
+    tvSchedule: 'Iskedyul ng TV',
+    followAction: 'Sundan ang aksyon at manatiling na-update sa tournament coverage',
   },
   sv: {
     home: 'Hem',
@@ -410,6 +460,12 @@ export const translations: Record<string, TranslationKeys> = {
     noTournamentData: 'Ingen turneringsdata',
     searchPlaceholder: 'Sök topp 20 spelare...',
     thruHoleNote: 'Obs: Genom-hål data är för närvarande inte tillgänglig',
+    buyTickets: 'Köp biljetter',
+    officialSite: 'Officiell webbplats',
+    entryList: 'Deltagarlista',
+    teeTimes: 'Tee-tider',
+    tvSchedule: 'TV-schema',
+    followAction: 'Följ handlingen och håll dig uppdaterad med turneringsrapportering',
   },
   no: {
     home: 'Hjem',
@@ -455,6 +511,12 @@ export const translations: Record<string, TranslationKeys> = {
     noTournamentData: 'Ingen turneringsdata',
     searchPlaceholder: 'Søk topp 20 spillere...',
     thruHoleNote: 'Merk: Gjennom-hull data er for øyeblikket ikke tilgjengelig',
+    buyTickets: 'Kjøp billetter',
+    officialSite: 'Offisiell nettside',
+    entryList: 'Deltakerliste',
+    teeTimes: 'Tee-tider',
+    tvSchedule: 'TV-program',
+    followAction: 'Følg handlingen og hold deg oppdatert med turneringsrapportering',
   },
   fr: {
     home: 'Accueil',
@@ -500,6 +562,12 @@ export const translations: Record<string, TranslationKeys> = {
     noTournamentData: 'Aucune donnée de tournoi',
     searchPlaceholder: 'Rechercher les 20 meilleurs joueurs...',
     thruHoleNote: 'Note: Les données de trou actuel ne sont pas disponibles',
+    buyTickets: 'Acheter des billets',
+    officialSite: 'Site officiel',
+    entryList: 'Liste des participants',
+    teeTimes: 'Heures de départ',
+    tvSchedule: 'Programme TV',
+    followAction: 'Suivez l\'action et restez informé avec la couverture du tournoi',
   },
   es: {
     home: 'Inicio',
@@ -545,6 +613,12 @@ export const translations: Record<string, TranslationKeys> = {
     noTournamentData: 'Sin datos del torneo',
     searchPlaceholder: 'Buscar los 20 mejores jugadores...',
     thruHoleNote: 'Nota: Los datos de hoyo actual no están disponibles',
+    buyTickets: 'Comprar entradas',
+    officialSite: 'Sitio oficial',
+    entryList: 'Lista de participantes',
+    teeTimes: 'Horarios de salida',
+    tvSchedule: 'Programación de TV',
+    followAction: 'Sigue la acción y mantente actualizado con la cobertura del torneo',
   },
   de: {
     home: 'Startseite',
@@ -590,6 +664,12 @@ export const translations: Record<string, TranslationKeys> = {
     noTournamentData: 'Keine Turnierdaten',
     searchPlaceholder: 'Top 20 Spieler suchen...',
     thruHoleNote: 'Hinweis: Durch-Loch-Daten sind derzeit nicht verfügbar',
+    buyTickets: 'Tickets kaufen',
+    officialSite: 'Offizielle Website',
+    entryList: 'Teilnehmerliste',
+    teeTimes: 'Abschlagzeiten',
+    tvSchedule: 'TV-Programm',
+    followAction: 'Folgen Sie der Aktion und bleiben Sie mit der Turnierberichterstattung auf dem Laufenden',
   },
 };
 

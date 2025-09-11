@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface TournamentComponentProps {
   tournamentName?: string;
@@ -24,10 +27,12 @@ export default function TournamentComponent({
   entryListUrl = "#",
   podcastUrl = "https://open.spotify.com/episode/4MlMpATb0MHcQRZeuMqxey?si=8xzWaryDS3u09jAE-BtMIg"
 }: TournamentComponentProps) {
+  const { t } = useTranslation();
   return (
-    <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg border border-gray-200 w-full max-w-md mx-auto translation-safe-container">
-      {/* Tournament Header */}
-      <div className="mb-12">
+    <div className="bg-white rounded-lg p-6 lg:p-8 shadow-lg border border-gray-200 w-full max-w-md mx-auto translation-safe-container tournament-container-fixed">
+      <div className="tournament-content">
+        {/* Tournament Header */}
+        <div className="mb-8">
         <div className="flex items-start justify-between gap-4 mb-2">
           <h3 className="text-xl lg:text-2xl font-bold text-gray-900 flex-1 break-words translation-text">
             {tournamentName}
@@ -81,8 +86,8 @@ export default function TournamentComponent({
         </div>
       </div>
 
-      {/* Action Tiles */}
-      <div className="grid grid-cols-2 gap-2">
+        {/* Action Tiles */}
+        <div className="grid grid-cols-2 gap-2">
         {/* Row 1: Buy Tickets, Official Site */}
         <Link
           href={buyTicketsUrl}
@@ -94,7 +99,7 @@ export default function TournamentComponent({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
             </svg>
-            <span className="text-xs font-semibold">Buy Tickets</span>
+            <span className="text-xs font-semibold">{t('buyTickets')}</span>
           </div>
         </Link>
 
@@ -108,7 +113,7 @@ export default function TournamentComponent({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
-            <span className="text-xs font-semibold">Official Site</span>
+            <span className="text-xs font-semibold">{t('officialSite')}</span>
           </div>
         </Link>
 
@@ -121,7 +126,7 @@ export default function TournamentComponent({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
             </svg>
-            <span className="text-xs font-semibold">Entry List</span>
+            <span className="text-xs font-semibold">{t('entryList')}</span>
           </div>
         </Link>
 
@@ -133,7 +138,7 @@ export default function TournamentComponent({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span className="text-xs font-semibold">Tee Times</span>
+            <span className="text-xs font-semibold">{t('teeTimes')}</span>
           </div>
         </Link>
 
@@ -148,7 +153,7 @@ export default function TournamentComponent({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
             </svg>
-            <span className="text-xs font-semibold">Podcast</span>
+            <span className="text-xs font-semibold">{t('podcast')}</span>
           </div>
         </Link>
 
@@ -160,17 +165,18 @@ export default function TournamentComponent({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
-            <span className="text-xs font-semibold">TV Schedule</span>
+            <span className="text-xs font-semibold">{t('tvSchedule')}</span>
           </div>
         </Link>
-      </div>
+        </div>
 
-      {/* Additional Info */}
-      <div className="mt-6 pt-4 border-t border-gray-200">
-        <div className="text-center">
-          <p className="text-sm text-gray-600">
-            Follow the action and stay updated with tournament coverage
-          </p>
+        {/* Additional Info */}
+        <div className="mt-6 pt-4 border-t border-gray-200">
+          <div className="text-center">
+            <p className="text-sm text-gray-600">
+              {t('followAction')}
+            </p>
+          </div>
         </div>
       </div>
     </div>
