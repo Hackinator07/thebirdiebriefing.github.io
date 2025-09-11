@@ -350,7 +350,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                 }`}
                 aria-label={isScoresOpen ? 'Close scorecard' : 'Open scorecard'}
               >
-                Scorecard
+                {t('scorecard')}
                 {!isScoresOpen && (
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
                 )}
