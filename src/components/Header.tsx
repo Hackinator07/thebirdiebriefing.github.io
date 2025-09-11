@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 import CustomTranslation from './CustomTranslation';
 import { useTranslation } from '@/hooks/useTranslation';
 import Image from 'next/image';
-import { Trophy } from 'lucide-react';
 
 interface HeaderProps {
   isScoresOpen?: boolean;
@@ -126,23 +125,6 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
             </Link>
           </div>
 
-          {/* Scores Widget Toggle - Desktop */}
-          {onToggleScores && (
-            <div className="hidden lg:flex items-center">
-              <button
-                onClick={onToggleScores}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  isScoresOpen
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-600'
-                }`}
-                aria-label={isScoresOpen ? 'Close live scores' : 'Open live scores'}
-              >
-                <Trophy className="w-4 h-4" />
-                <span className="hidden xl:inline">Live Scores</span>
-              </button>
-            </div>
-          )}
 
           {/* Desktop Navigation - Changed from lg: to xl: and made more responsive */}
           <nav className="hidden xl:flex items-center space-x-3 sm:space-x-4 md:space-x-6 xl:space-x-8">
@@ -212,6 +194,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                     </div>
                   )}
 
+
                   {/* Schedule dropdown */}
                   {item.name === t('schedule') && (
                     <div 
@@ -274,8 +257,8 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                     </div>
                   )}
                   
-                                     {/* Regular navigation items */}
-                   {item.name !== t('news') && item.name !== t('schedule') && item.name !== t('rankings') && (
+                  {/* Regular navigation items */}
+                  {item.name !== t('news') && item.name !== t('schedule') && item.name !== t('rankings') && (
                     <Link
                       href={item.href}
                       className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group ${
@@ -356,6 +339,24 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
               );
             })}
             
+            {/* Scorecard button - positioned after News */}
+            {onToggleScores && (
+              <button
+                onClick={onToggleScores}
+                className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group ${
+                  isScoresOpen
+                    ? 'text-primary-500'
+                    : 'text-gray-700 hover:text-primary-500'
+                }`}
+                aria-label={isScoresOpen ? 'Close scorecard' : 'Open scorecard'}
+              >
+                Scorecard
+                {!isScoresOpen && (
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                )}
+              </button>
+            )}
+            
             {/* Vertical Divider */}
             <div className="h-5 w-px bg-black"></div>
             
@@ -392,25 +393,6 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                   </button>
                 </div>
 
-                {/* Mobile Scores Widget Toggle */}
-                {onToggleScores && (
-                  <div className="px-6 py-3 border-b border-gray-200">
-                    <button
-                      onClick={() => {
-                        onToggleScores();
-                        setIsMenuOpen(false);
-                      }}
-                      className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
-                        isScoresOpen
-                          ? 'bg-primary-500 text-white'
-                          : 'bg-gray-100 text-gray-700 hover:bg-primary-100 hover:text-primary-600'
-                      }`}
-                    >
-                      <Trophy className="w-5 h-5" />
-                      <span>Live Scores</span>
-                    </button>
-                  </div>
-                )}
 
                 {/* Navigation Links - Made scrollable only in landscape */}
                 <nav className="flex-1 px-6 py-4 overflow-y-auto">
@@ -596,6 +578,25 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                         </div>
                       );
                     })}
+                    
+                    {/* Mobile Scorecard - Plain Text */}
+                    {onToggleScores && (
+                      <div className="-mx-6">
+                        <button
+                          onClick={() => {
+                            onToggleScores();
+                            setIsMenuOpen(false);
+                          }}
+                          className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg ${
+                            isScoresOpen
+                              ? 'text-primary-500 bg-primary-50 font-semibold'
+                              : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                          }`}
+                        >
+                          <span>{t('scorecard')}</span>
+                        </button>
+                      </div>
+                    )}
                     
                     {/* Mobile Translation Section */}
                     <div className="pt-4 mt-4 border-t border-gray-200 notranslate">

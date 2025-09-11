@@ -9,7 +9,7 @@ interface LayoutClientProps {
 }
 
 export default function LayoutClient({ children }: LayoutClientProps) {
-  const [isScoresOpen, setIsScoresOpen] = useState(false);
+  const [isScoresOpen, setIsScoresOpen] = useState(true);
 
   const handleToggleScores = () => {
     setIsScoresOpen(!isScoresOpen);
@@ -23,7 +23,7 @@ export default function LayoutClient({ children }: LayoutClientProps) {
       />
       <main>{children}</main>
       <TournamentScoresWidget
-        tournamentId="queen-city-2025"
+        tournamentId="401734778"
         tournamentName="Kroger Queen City Championship"
         isOpen={isScoresOpen}
         onToggle={handleToggleScores}
