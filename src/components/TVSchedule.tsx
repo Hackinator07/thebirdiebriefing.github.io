@@ -118,9 +118,9 @@ function renderTimeWithLogo(time: string) {
         <Image
           src="/images/networks/golf-channel.png"
           alt="Golf Channel"
-          width={20}
-          height={20}
-          className="mr-2 flex-shrink-0"
+          width={24}
+          height={24}
+          className="mr-3 flex-shrink-0"
         />
         <span className="text-gray-700 font-medium font-lock-base">{channel} {timeRange}</span>
       </div>
@@ -138,9 +138,9 @@ function renderTimeWithLogo(time: string) {
         <Image
           src="/images/networks/nbc-sports.png"
           alt="NBC Sports"
-          width={20}
-          height={20}
-          className="mr-2 flex-shrink-0"
+          width={24}
+          height={24}
+          className="mr-3 flex-shrink-0"
         />
         <span className="text-gray-700 font-medium font-lock-base">{channel} {timeRange}</span>
       </div>
@@ -158,17 +158,42 @@ function renderTimeWithLogo(time: string) {
         <Image
           src="/images/networks/cbs-sports.png"
           alt="CBS Sports"
-          width={20}
-          height={20}
-          className="mr-2 flex-shrink-0"
+          width={24}
+          height={24}
+          className="mr-3 flex-shrink-0"
         />
         <span className="text-gray-700 font-medium font-lock-base">{channel} {timeRange}</span>
       </div>
     );
   }
   
-  // For other channels, render normally
-  return <span className="text-gray-700 font-medium font-lock-base">{time}</span>;
+  // Check if the time string contains "ESPN"
+  if (time.includes('ESPN')) {
+    const parts = time.split(':');
+    const channel = parts[0] + ':';
+    const timeRange = parts.slice(1).join(':');
+    
+    return (
+      <div className="flex items-center">
+        <Image
+          src="/images/networks/espn.png"
+          alt="ESPN"
+          width={24}
+          height={24}
+          className="mr-3 flex-shrink-0"
+        />
+        <span className="text-gray-700 font-medium font-lock-base">{channel} {timeRange}</span>
+      </div>
+    );
+  }
+  
+  // For other channels, render with a generic bullet point
+  return (
+    <div className="flex items-center">
+      <div className="w-2 h-2 bg-primary-500 rounded-full mr-3 flex-shrink-0"></div>
+      <span className="text-gray-700 font-medium font-lock-base">{time}</span>
+    </div>
+  );
 }
 
 export default function TVSchedule({ title, schedule, showTimezoneSelector = true }: TVScheduleProps) {
@@ -275,8 +300,7 @@ export default function TVSchedule({ title, schedule, showTimezoneSelector = tru
               <h4 className="text-lg font-semibold text-primary-700 mb-3 font-lock-lg">{day.day}</h4>
               <div className="space-y-2">
                 {day.times.map((time, timeIndex) => (
-                  <div key={timeIndex} className="flex items-center">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full mr-3 flex-shrink-0"></div>
+                  <div key={timeIndex}>
                     {renderTimeWithLogo(time)}
                   </div>
                 ))}
