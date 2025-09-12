@@ -1,7 +1,7 @@
 ---
 id: "queen-city-round-1-2025"
 slug: "queen-city-round-1-2025"
-title: "Gigi $toll, Golf Baller, Drops a 65 on Queen City in Round 1"
+title: "Gigi $toll, Golf Baller, Drops a 65 on Queen City"
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-09-12"
@@ -80,7 +80,7 @@ sections:
         description: "Primary Sponsor"
 ---
 
-Thursday at TPC River's Bend was shared by two players, but we'll address the baller first.
+Thursday's Round 1 at the Kroger Queen City Championship was shared by two players, but we'll address the baller first.
 
 Gigi Stoll delivered the best round of her LPGA career to end the day two off Chanette Wannasaen with a 7-under 65.
 
