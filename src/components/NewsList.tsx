@@ -81,7 +81,7 @@ export default function NewsList({ articles }: NewsListProps) {
     <>
       <div className="space-y-16">
         {articles.slice(0, visibleArticles).map((article, index) => (
-          <article key={article.id} className="bg-white">
+          <article key={article.id} className="bg-white w-full max-w-full overflow-hidden">
             {/* Separator line for articles after the first */}
             {index > 0 && (
               <div className="border-t border-gray-200 mb-16"></div>
@@ -101,7 +101,7 @@ export default function NewsList({ articles }: NewsListProps) {
             </div>
 
             {/* Article Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight break-words">
               <Link
                 href={`/news/${article.slug}`}
                 className="hover:text-primary-500 transition-colors"
@@ -169,7 +169,7 @@ export default function NewsList({ articles }: NewsListProps) {
             </div>
 
             {/* Article Content Summary */}
-            <div className="prose prose-lg max-w-none mb-8">
+            <div className="prose prose-lg max-w-none mb-8 break-words overflow-hidden">
               {/* Show first paragraph as featured text */}
               {article.content[0] && (
                 <MarkdownContent content={article.content[0]} />

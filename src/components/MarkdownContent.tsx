@@ -20,7 +20,7 @@ export default function MarkdownContent({ content, className = '' }: MarkdownCon
   }
 
   return (
-    <div className={className}>
+    <div className={`break-words overflow-hidden ${className}`}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
@@ -43,7 +43,7 @@ export default function MarkdownContent({ content, className = '' }: MarkdownCon
           ),
           // Customize paragraph styling
           p: ({ ...props }) => (
-            <p {...props} className="text-lg leading-relaxed text-gray-600 mb-6 last:mb-0 font-lock-lg" />
+            <p {...props} className="text-lg leading-relaxed text-gray-600 mb-6 last:mb-0 font-lock-lg break-words" />
           ),
         }}
       >

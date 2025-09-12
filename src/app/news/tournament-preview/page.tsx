@@ -1,6 +1,7 @@
 import { getArticlesByTag } from '@/lib/articles';
 import NewsListJsonLd from '@/components/NewsListJsonLd';
 import NewsList from '@/components/NewsList';
+import LatestArticle from '@/components/LatestArticle';
 
 export async function generateMetadata() {
   const articles = await getArticlesByTag('Tournament Preview');
@@ -61,11 +62,11 @@ export default async function TournamentPreviewPage() {
               </section>
             </main>
 
-            {/* Sidebar - Empty for now but maintains layout consistency */}
+            {/* Sidebar */}
             <aside className="w-full lg:w-80 flex-shrink-0">
-              <div className="lg:sticky lg:top-24">
-                {/* Sidebar content can be added here in the future */}
-              </div>
+            <div className="lg:sticky lg:top-24">
+              <LatestArticle />
+            </div>
             </aside>
           </div>
         </div>

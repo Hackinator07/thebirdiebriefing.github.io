@@ -1,6 +1,8 @@
 import { getArticles } from '@/lib/articles';
 import NewsListJsonLd from '@/components/NewsListJsonLd';
 import NewsListServer from '@/components/NewsListServer';
+import NewsletterSignup from '@/components/NewsletterSignup';
+import LatestArticle from '@/components/LatestArticle';
 
 export default async function NewsPage() {
   const articles = await getArticles();
@@ -32,10 +34,19 @@ export default async function NewsPage() {
               </section>
             </main>
 
-            {/* Sidebar - Empty for now but maintains layout consistency */}
+            {/* Sidebar */}
             <aside className="w-full lg:w-80 flex-shrink-0">
-              <div className="lg:sticky lg:top-24">
-                {/* Sidebar content can be added here in the future */}
+            <div className="lg:sticky lg:top-24">
+              <LatestArticle />
+
+                {/* Newsletter Signup */}
+                <div className="mt-6 bg-gray-50 rounded-lg p-6">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-4">Stay Updated</h2>
+                  <p className="text-gray-600 text-sm mb-4">
+                    Get the latest LPGA news, tournament updates, and exclusive content delivered to your inbox.
+                  </p>
+                  <NewsletterSignup />
+                </div>
               </div>
             </aside>
           </div>

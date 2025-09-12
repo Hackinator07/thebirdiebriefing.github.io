@@ -13,6 +13,7 @@ import TagList from '@/components/TagList';
 import AuthorCalloutServer from '@/components/AuthorCalloutServer';
 import ArticleSections from '@/components/ArticleSections';
 import ArticleJsonLd from '@/components/ArticleJsonLd';
+import LatestArticle from '@/components/LatestArticle';
 
 interface ArticlePageProps {
   params: Promise<{
@@ -113,7 +114,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 </div>
 
                 {/* Article Title */}
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight article-title">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight article-title break-words">
                   {article.title}
                 </h1>
 
@@ -177,7 +178,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               </header>
 
               {/* Article Content */}
-              <div className="prose prose-lg max-w-none article-content">
+              <div className="prose prose-lg max-w-none article-content break-words overflow-hidden">
                 {article.content.map((paragraph, index) => (
                   paragraph && (
                     <MarkdownContent
@@ -231,25 +232,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           {/* Sidebar */}
           <aside className="w-full lg:w-80 flex-shrink-0">
             <div className="lg:sticky lg:top-24">
-              <section className="bg-gray-50 rounded-lg p-6">
-                <h2 className="text-xl font-semibold text-gray-900 mb-4">Latest News</h2>
-                <div className="space-y-4">
-                  <div className="border border-gray-200 rounded-lg p-4 bg-white">
-                    <h3 className="font-medium text-gray-900 mb-2">
-                      Stay Updated with LPGA News
-                    </h3>
-                    <p className="text-sm text-gray-600 mb-3">
-                      Get the latest updates, tournament results, and player insights delivered to your inbox.
-                    </p>
-                    <Link href="/news" className="inline-flex items-center text-primary-500 hover:text-primary-600 font-medium text-sm">
-                      Read More
-                      <svg className="ml-1 w-4 h-4" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.45262 0.738643L9.75592 5.92386C10.0814 6.24205 10.0814 6.75794 9.75592 7.07614L4.45262 12.2614C4.12718 12.5795 3.59955 12.5795 3.27411 12.2614C2.94867 11.9432 2.94867 11.4273 3.27411 11.1091L7.15482 7.31478H0V5.68522H7.15482L3.27411 1.89091C2.94867 1.57272 2.94867 1.05683 3.27411 0.738643C3.59955 0.420452 4.12718 0.420452 4.45262 0.738643Z" fill="currentColor"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </section>
+              <LatestArticle />
             </div>
           </aside>
         </div>
