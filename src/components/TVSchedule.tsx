@@ -122,7 +122,7 @@ function renderTimeWithLogo(time: string) {
           height={24}
           className="mr-3 flex-shrink-0"
         />
-        <span className="text-gray-700 font-medium font-lock-base">{channel} {timeRange}</span>
+        <span className="text-gray-700 font-medium font-lock-base whitespace-nowrap">{channel} {timeRange}</span>
       </div>
     );
   }
@@ -142,7 +142,7 @@ function renderTimeWithLogo(time: string) {
           height={24}
           className="mr-3 flex-shrink-0"
         />
-        <span className="text-gray-700 font-medium font-lock-base">{channel} {timeRange}</span>
+        <span className="text-gray-700 font-medium font-lock-base whitespace-nowrap">{channel} {timeRange}</span>
       </div>
     );
   }
@@ -162,7 +162,7 @@ function renderTimeWithLogo(time: string) {
           height={24}
           className="mr-3 flex-shrink-0"
         />
-        <span className="text-gray-700 font-medium font-lock-base">{channel} {timeRange}</span>
+        <span className="text-gray-700 font-medium font-lock-base whitespace-nowrap">{channel} {timeRange}</span>
       </div>
     );
   }
@@ -182,7 +182,7 @@ function renderTimeWithLogo(time: string) {
           height={24}
           className="mr-3 flex-shrink-0"
         />
-        <span className="text-gray-700 font-medium font-lock-base">{channel} {timeRange}</span>
+        <span className="text-gray-700 font-medium font-lock-base whitespace-nowrap">{channel} {timeRange}</span>
       </div>
     );
   }
@@ -191,7 +191,7 @@ function renderTimeWithLogo(time: string) {
   return (
     <div className="flex items-center">
       <div className="w-2 h-2 bg-primary-500 rounded-full mr-3 flex-shrink-0"></div>
-      <span className="text-gray-700 font-medium font-lock-base">{time}</span>
+      <span className="text-gray-700 font-medium font-lock-base whitespace-nowrap">{time}</span>
     </div>
   );
 }
