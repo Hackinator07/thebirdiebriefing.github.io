@@ -666,7 +666,7 @@ export default function TournamentScoresWidget({
                   
                   {/* Player Rows */}
                   <div className="space-y-0">
-                    {tournamentData.players.slice(0, 9).map((player) => (
+                    {tournamentData.players.slice(0, 10).map((player) => (
                       <div
                         key={player.id}
                         className="grid grid-cols-[0.6fr_1.6fr_0.6fr_0.6fr_0.6fr_0.6fr] sm:grid-cols-[0.7fr_1.7fr_0.7fr_0.7fr_0.7fr_0.7fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px]"
@@ -753,7 +753,7 @@ export default function TournamentScoresWidget({
                   
                   {/* Player Rows */}
                   <div className="space-y-0">
-                    {tournamentData.players.slice(0, 9).map((player) => (
+                    {tournamentData.players.slice(0, 10).map((player) => (
                       <div
                         key={player.id}
                         className="grid grid-cols-[2fr_0.4fr_0.4fr_0.4fr_0.4fr] sm:grid-cols-[2fr_0.5fr_0.5fr_0.5fr_0.5fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px]"
@@ -837,10 +837,10 @@ export default function TournamentScoresWidget({
                     <div className="text-center">{t('total')}</div>
                   </div>
                   
-                  {/* Player Rows - Show only 8 players to account for search input */}
+                  {/* Player Rows - Show top 9 players */}
                   <div className="space-y-0">
                     {getFilteredPlayers().length > 0 ? (
-                      getFilteredPlayers().slice(0, 8).map((player) => (
+                      getFilteredPlayers().slice(0, 9).map((player) => (
                         <div
                           key={player.id}
                           className="grid grid-cols-[1.8fr_0.7fr_0.7fr] sm:grid-cols-[1.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px] cursor-pointer"
