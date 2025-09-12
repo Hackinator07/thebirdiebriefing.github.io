@@ -16,11 +16,22 @@ export default function LayoutClient({ children }: LayoutClientProps) {
   // Only show scorecard widget on homepage
   const isHomepage = pathname === '/';
 
+  // Load widget state from localStorage on mount
+  useEffect(() => {
+    const savedState = localStorage.getItem('scorecard-widget-open');
+    if (savedState !== null) {
+      setIsScoresOpen(JSON.parse(savedState));
+    }
+  }, []);
+
+  // Save widget state to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('scorecard-widget-open', JSON.stringify(isScoresOpen));
+  }, [isScoresOpen]);
+
   const handleToggleScores = () => {
     setIsScoresOpen(!isScoresOpen);
   };
-
-  // Note: Widget stays open when navigating between pages
 
   return (
     <>
