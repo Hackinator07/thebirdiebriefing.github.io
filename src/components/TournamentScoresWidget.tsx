@@ -181,14 +181,10 @@ export default function TournamentScoresWidget({
         }
         
         // Parse round scores from displayValue (current score for each round)
-        const round1 = linescores[0]?.displayValue ? 
-          (linescores[0].displayValue === 'E' ? 0 : parseInt(linescores[0].displayValue)) : undefined;
-        const round2 = linescores[1]?.displayValue ? 
-          (linescores[1].displayValue === 'E' ? 0 : parseInt(linescores[1].displayValue)) : undefined;
-        const round3 = linescores[2]?.displayValue ? 
-          (linescores[2].displayValue === 'E' ? 0 : parseInt(linescores[2].displayValue)) : undefined;
-        const round4 = linescores[3]?.displayValue ? 
-          (linescores[3].displayValue === 'E' ? 0 : parseInt(linescores[3].displayValue)) : undefined;
+        const round1 = linescores[0]?.displayValue ? parseGolfScore(linescores[0].displayValue) : undefined;
+        const round2 = linescores[1]?.displayValue ? parseGolfScore(linescores[1].displayValue) : undefined;
+        const round3 = linescores[2]?.displayValue ? parseGolfScore(linescores[2].displayValue) : undefined;
+        const round4 = linescores[3]?.displayValue ? parseGolfScore(linescores[3].displayValue) : undefined;
 
         // Calculate total score by summing all completed round scores
         const roundScores = [round1, round2, round3, round4].filter(score => score !== undefined);
@@ -216,8 +212,7 @@ export default function TournamentScoresWidget({
         } else {
           // Fallback to the last available round
           const currentRound = linescores[linescores.length - 1];
-          today = currentRound?.displayValue ? 
-            (currentRound.displayValue === 'E' ? 0 : parseInt(currentRound.displayValue)) : undefined;
+          today = currentRound?.displayValue ? parseGolfScore(currentRound.displayValue) : undefined;
         }
         
         return {
@@ -344,7 +339,30 @@ export default function TournamentScoresWidget({
     }
   }, [isOpen, hasAnimated]);
 
+  // Helper function to safely parse golf scores
+  const parseGolfScore = (displayValue: string): number | undefined => {
+    if (!displayValue || displayValue === '-') {
+      return undefined; // Round not started
+    }
+    
+    if (displayValue === 'E') {
+      return 0; // Even par
+    }
+    
+    // Handle other status codes
+    const statusCodes = ['WD', 'DQ', 'CUT', 'MC', 'RTD', 'DNS', 'NR'];
+    if (statusCodes.includes(displayValue)) {
+      return undefined; // No valid score
+    }
+    
+    const parsed = parseInt(displayValue);
+    return isNaN(parsed) ? undefined : parsed;
+  };
+
   const formatScore = (score: number) => {
+    // Handle NaN values
+    if (isNaN(score)) return '-';
+    
     if (score === 0) return 'E';
     return score > 0 ? `+${score}` : `${score}`;
   };

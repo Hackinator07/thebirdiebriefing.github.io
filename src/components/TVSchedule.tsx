@@ -114,15 +114,15 @@ function renderTimeWithLogo(time: string) {
     const timeRange = parts.slice(1).join(':');
     
     return (
-      <div className="flex items-center">
+      <div className="flex items-center max-w-full">
         <Image
           src="/images/networks/golf-channel.png"
           alt="Golf Channel"
-          width={24}
-          height={24}
-          className="mr-3 flex-shrink-0"
+          width={14}
+          height={14}
+          className="mr-1 sm:mr-3 flex-shrink-0 w-3.5 h-3.5 sm:w-6 sm:h-6"
         />
-        <span className="text-gray-700 font-medium font-lock-base whitespace-nowrap">{channel} {timeRange}</span>
+        <span className="text-gray-700 font-medium text-sm sm:text-base whitespace-nowrap overflow-hidden" style={{maxWidth: 'calc(100% - 2rem)'}}>{channel} {timeRange}</span>
       </div>
     );
   }
@@ -134,15 +134,15 @@ function renderTimeWithLogo(time: string) {
     const timeRange = parts.slice(1).join(':');
     
     return (
-      <div className="flex items-center">
+      <div className="flex items-center max-w-full">
         <Image
           src="/images/networks/nbc-sports.png"
           alt="NBC Sports"
-          width={24}
-          height={24}
-          className="mr-3 flex-shrink-0"
+          width={14}
+          height={14}
+          className="mr-1 sm:mr-3 flex-shrink-0 w-3.5 h-3.5 sm:w-6 sm:h-6"
         />
-        <span className="text-gray-700 font-medium font-lock-base whitespace-nowrap">{channel} {timeRange}</span>
+        <span className="text-gray-700 font-medium text-sm sm:text-base whitespace-nowrap overflow-hidden" style={{maxWidth: 'calc(100% - 2rem)'}}>{channel} {timeRange}</span>
       </div>
     );
   }
@@ -154,15 +154,15 @@ function renderTimeWithLogo(time: string) {
     const timeRange = parts.slice(1).join(':');
     
     return (
-      <div className="flex items-center">
+      <div className="flex items-center max-w-full">
         <Image
           src="/images/networks/cbs-sports.png"
           alt="CBS Sports"
-          width={24}
-          height={24}
-          className="mr-3 flex-shrink-0"
+          width={14}
+          height={14}
+          className="mr-1 sm:mr-3 flex-shrink-0 w-3.5 h-3.5 sm:w-6 sm:h-6"
         />
-        <span className="text-gray-700 font-medium font-lock-base whitespace-nowrap">{channel} {timeRange}</span>
+        <span className="text-gray-700 font-medium text-sm sm:text-base whitespace-nowrap overflow-hidden" style={{maxWidth: 'calc(100% - 2rem)'}}>{channel} {timeRange}</span>
       </div>
     );
   }
@@ -174,24 +174,24 @@ function renderTimeWithLogo(time: string) {
     const timeRange = parts.slice(1).join(':');
     
     return (
-      <div className="flex items-center">
+      <div className="flex items-center max-w-full">
         <Image
           src="/images/networks/espn.png"
           alt="ESPN"
-          width={24}
-          height={24}
-          className="mr-3 flex-shrink-0"
+          width={14}
+          height={14}
+          className="mr-1 sm:mr-3 flex-shrink-0 w-3.5 h-3.5 sm:w-6 sm:h-6"
         />
-        <span className="text-gray-700 font-medium font-lock-base whitespace-nowrap">{channel} {timeRange}</span>
+        <span className="text-gray-700 font-medium text-sm sm:text-base whitespace-nowrap overflow-hidden" style={{maxWidth: 'calc(100% - 2rem)'}}>{channel} {timeRange}</span>
       </div>
     );
   }
   
   // For other channels, render with a generic bullet point
   return (
-    <div className="flex items-center">
-      <div className="w-2 h-2 bg-primary-500 rounded-full mr-3 flex-shrink-0"></div>
-      <span className="text-gray-700 font-medium font-lock-base whitespace-nowrap">{time}</span>
+    <div className="flex items-center max-w-full">
+      <div className="w-2 h-2 bg-primary-500 rounded-full mr-1 sm:mr-3 flex-shrink-0"></div>
+      <span className="text-gray-700 font-medium text-sm sm:text-base whitespace-nowrap overflow-hidden" style={{maxWidth: 'calc(100% - 2rem)'}}>{time}</span>
     </div>
   );
 }
@@ -296,7 +296,7 @@ export default function TVSchedule({ title, schedule, showTimezoneSelector = tru
 
         <div className="space-y-6">
           {convertedSchedule.map((day, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 border border-primary-100">
+            <div key={index} className="bg-white rounded-lg p-3 sm:p-6 border border-primary-100">
               <h4 className="text-lg font-semibold text-primary-700 mb-3 font-lock-lg">{day.day}</h4>
               <div className="space-y-2">
                 {day.times.map((time, timeIndex) => (
