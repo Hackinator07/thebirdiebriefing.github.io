@@ -19,6 +19,8 @@ interface Player {
   round3?: number;
   round4?: number;
   today?: number;
+  thru?: number;
+  thruDisplay?: string;
   status: 'active' | 'cut' | 'wd';
   country?: string;
   teeTime?: string;
@@ -130,13 +132,19 @@ export default function TournamentScoresWidget({
     return playerNames[shortName] || shortName;
   };
 
-  // Fetch tournament data from ESPN API
+  // Fetch tournament data from RapidAPI Live Golf Data
   const fetchTournamentData = useCallback(async () => {
       try {
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch(`https://site.api.espn.com/apis/site/v2/sports/golf/lpga/scoreboard/${tournamentId}`);
+        const response = await fetch(`https://live-golf-data1.p.rapidapi.com/leaderboard?league=lpga&eventId=${tournamentId}`, {
+          method: 'GET',
+          headers: {
+            'x-rapidapi-host': 'live-golf-data1.p.rapidapi.com',
+            'x-rapidapi-key': '517cb09524mshf243e8dc1b88e58p19efabjsne4e46b59b3c8'
+          }
+        });
 
         if (!response.ok) {
           throw new Error(`Failed to fetch tournament data: ${response.status}`);
@@ -145,19 +153,19 @@ export default function TournamentScoresWidget({
         const data = await response.json();
         
         // Debug: Log the API response
-        console.log('ESPN API Response:', {
-          tournamentName: data.name,
-          competitionCount: data.competitions?.length,
+        console.log('RapidAPI Response:', {
+          tournamentName: data.events?.[0]?.name,
+          competitionCount: data.events?.[0]?.competitions?.length,
           timestamp: new Date().toISOString()
         });
         
         // Validate the response structure
-        if (!data || !data.competitions || !Array.isArray(data.competitions)) {
+        if (!data || !data.events || !Array.isArray(data.events) || !data.events[0]?.competitions) {
           throw new Error('Invalid API response structure');
         }
       
-      // Parse the ESPN API response
-      const competition = data.competitions?.[0];
+      // Parse the RapidAPI response
+      const competition = data.events[0].competitions?.[0];
       if (!competition) {
         throw new Error('No competition data found');
       }
@@ -214,6 +222,10 @@ export default function TournamentScoresWidget({
           const currentRound = linescores[linescores.length - 1];
           today = currentRound?.displayValue ? parseGolfScore(currentRound.displayValue) : undefined;
         }
+
+        // Get THRU data from competitor status
+        const thru = competitor.status?.thru || 0;
+        const thruDisplay = competitor.status?.displayThru || (thru > 0 ? thru.toString() : undefined);
         
         return {
           id: competitor.id || athlete.id || index.toString(),
@@ -229,6 +241,8 @@ export default function TournamentScoresWidget({
           round3,
           round4,
           today,
+          thru,
+          thruDisplay,
           status: 'active' as const,
           country: athlete.flag?.alt ? getCountryCode(athlete.flag.alt) : undefined,
           teeTime: undefined
@@ -271,9 +285,9 @@ export default function TournamentScoresWidget({
         });
 
         const tournamentInfo: TournamentData = {
-          id: data.id,
-          name: data.name,
-          shortName: data.shortName,
+          id: data.events[0].id,
+          name: data.events[0].name,
+          shortName: data.events[0].shortName,
           status: competition.status?.type?.description || 'Unknown',
           players: playersWithTiedPositions,
           currentRound: competition.status?.period || 1,
@@ -323,7 +337,7 @@ export default function TournamentScoresWidget({
     
     const interval = setInterval(() => {
       fetchTournamentData();
-    }, 30000); // 30 seconds
+    }, 60000); // 60 seconds
     
     return () => clearInterval(interval);
   }, [isOpen, fetchTournamentData]);
@@ -469,7 +483,7 @@ export default function TournamentScoresWidget({
         {/* Header */}
         <div className="bg-primary-500 text-white p-1.5 sm:p-2">
           <div className="flex items-center justify-between mb-1">
-            <p className="text-[9px] sm:text-[10px] font-bold opacity-90 break-words leading-tight flex-1 pr-2">
+            <p className="text-[10px] sm:text-[11px] font-bold opacity-90 break-words leading-tight flex-1 pr-2">
               {tournamentData?.name || tournamentName}
             </p>
             <div className="flex items-center gap-0.5 sm:gap-1 flex-shrink-0">
@@ -489,13 +503,10 @@ export default function TournamentScoresWidget({
             </div>
           </div>
           {tournamentData?.status && (
-            <p className="text-[8px] sm:text-[10px] opacity-75 mt-1 break-words leading-tight">
+            <p className="text-[9px] sm:text-[11px] opacity-75 mt-1 break-words leading-tight">
               {tournamentData.status} • {t('round')} {tournamentData.currentRound}
             </p>
           )}
-          <p className="text-[8px] sm:text-[10px] opacity-60 mt-1 break-words leading-tight">
-            {t('thruHoleNote')}
-          </p>
         </div>
 
         {/* Tabs */}
@@ -544,11 +555,12 @@ export default function TournamentScoresWidget({
               ) : tournamentData?.players ? (
                 <div className="p-0.5 sm:p-1">
                   {/* Column Headers */}
-                  <div className="grid grid-cols-[0.7fr_1.8fr_0.7fr_0.7fr_0.7fr] sm:grid-cols-[0.8fr_1.8fr_0.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 text-[8px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1 pb-1 border-b border-gray-200">
+                  <div className="grid grid-cols-[0.6fr_1.6fr_0.6fr_0.6fr_0.6fr_0.6fr] sm:grid-cols-[0.7fr_1.7fr_0.7fr_0.7fr_0.7fr_0.7fr] gap-0.5 sm:gap-1 text-[8px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1 pb-1 border-b border-gray-200">
                     <div>{t('pos')}</div>
                     <div>{t('player')}</div>
                     <div className="text-center">{t('score')}</div>
                     <div className="text-center">{t('today')}</div>
+                    <div className="text-center">THRU</div>
                     <div className="text-center">{t('total')}</div>
                   </div>
                   
@@ -557,7 +569,7 @@ export default function TournamentScoresWidget({
                     {tournamentData.players.slice(0, 9).map((player) => (
                       <div
                         key={player.id}
-                        className="grid grid-cols-[0.7fr_1.8fr_0.7fr_0.7fr_0.7fr] sm:grid-cols-[0.8fr_1.8fr_0.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px]"
+                        className="grid grid-cols-[0.6fr_1.6fr_0.6fr_0.6fr_0.6fr_0.6fr] sm:grid-cols-[0.7fr_1.7fr_0.7fr_0.7fr_0.7fr_0.7fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px]"
                       >
                         <div className="flex-shrink-0 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-[8px] sm:text-[10px] font-bold">
                           {player.tiedPosition || player.position}
@@ -577,6 +589,15 @@ export default function TournamentScoresWidget({
                           {player.today !== undefined ? (
                             <p className={`font-medium text-[8px] sm:text-[10px] ${getScoreColor(player.today)}`}>
                               {formatScore(player.today)}
+                            </p>
+                          ) : (
+                            <span className="text-gray-400 text-[8px] sm:text-[10px]">-</span>
+                          )}
+                        </div>
+                        <div className="text-center">
+                          {player.thruDisplay ? (
+                            <p className="font-medium text-[8px] sm:text-[10px] text-gray-600">
+                              {player.thruDisplay}
                             </p>
                           ) : (
                             <span className="text-gray-400 text-[8px] sm:text-[10px]">-</span>
