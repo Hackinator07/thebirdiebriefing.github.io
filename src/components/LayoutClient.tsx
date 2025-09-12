@@ -15,6 +15,10 @@ export default function LayoutClient({ children }: LayoutClientProps) {
   
   // Only show scorecard widget on homepage
   const isHomepage = pathname === '/';
+  
+  // Show vertical button on non-homepage pages when widget is expanded
+  // On homepage, always show the button
+  const shouldShowToggleButton = isHomepage || isScoresOpen;
 
   // Load widget state from localStorage on mount
   useEffect(() => {
@@ -45,7 +49,7 @@ export default function LayoutClient({ children }: LayoutClientProps) {
         tournamentName="Kroger Queen City Championship"
         isOpen={isScoresOpen}
         onToggle={handleToggleScores}
-        showToggleButton={isHomepage}
+        showToggleButton={shouldShowToggleButton}
       />
     </>
   );
