@@ -41,6 +41,7 @@ export interface TranslationKeys {
   player: string;
   score: string;
   today: string;
+  thru: string;
   ranking: string;
   r1: string;
   r2: string;
@@ -104,6 +105,7 @@ export const translations: Record<string, TranslationKeys> = {
     player: 'PLAYER',
     score: 'SCORE',
     today: 'TODAY',
+    thru: 'THRU',
     ranking: 'RANKING',
     r1: 'R1',
     r2: 'R2',
@@ -177,6 +179,7 @@ export const translations: Record<string, TranslationKeys> = {
     player: 'プレイヤー',
     score: 'スコア',
     today: '今日',
+    thru: 'スルー',
     ranking: 'ランキング',
     r1: 'R1',
     r2: 'R2',
@@ -250,6 +253,7 @@ export const translations: Record<string, TranslationKeys> = {
     player: '플레이어',
     score: '스코어',
     today: '오늘',
+    thru: '스루',
     ranking: '랭킹',
     r1: 'R1',
     r2: 'R2',
@@ -324,6 +328,7 @@ export const translations: Record<string, TranslationKeys> = {
     player: 'ผู้เล่น',
     score: 'คะแนน',
     today: 'วันนี้',
+    thru: 'ผ่าน',
     r1: 'รอบ 1',
     r2: 'รอบ 2',
     r3: 'รอบ 3',
@@ -398,6 +403,7 @@ export const translations: Record<string, TranslationKeys> = {
     player: '球员',
     score: '分数',
     today: '今日',
+    thru: '通过',
     r1: '第1轮',
     r2: '第2轮',
     r3: '第3轮',
@@ -471,6 +477,7 @@ export const translations: Record<string, TranslationKeys> = {
     player: 'Người chơi',
     score: 'Điểm',
     today: 'Hôm nay',
+    thru: 'Qua',
     r1: 'R1',
     r2: 'R2',
     r3: 'R3',
@@ -545,6 +552,7 @@ export const translations: Record<string, TranslationKeys> = {
     player: 'Player',
     score: 'Score',
     today: 'Ngayon',
+    thru: 'Thru',
     r1: 'Round 1',
     r2: 'Round 2',
     r3: 'Round 3',
@@ -619,6 +627,7 @@ export const translations: Record<string, TranslationKeys> = {
     player: 'Spelare',
     score: 'Poäng',
     today: 'Idag',
+    thru: 'Genom',
     r1: 'Omgång 1',
     r2: 'Omgång 2',
     r3: 'Omgång 3',
@@ -693,6 +702,7 @@ export const translations: Record<string, TranslationKeys> = {
     player: 'Spiller',
     score: 'Poeng',
     today: 'I dag',
+    thru: 'Gjennom',
     r1: 'Runde 1',
     r2: 'Runde 2',
     r3: 'Runde 3',
@@ -767,6 +777,7 @@ export const translations: Record<string, TranslationKeys> = {
     player: 'Joueur',
     score: 'Score',
     today: 'Aujourd\'hui',
+    thru: 'Passé',
     r1: 'Tour 1',
     r2: 'Tour 2',
     r3: 'Tour 3',
@@ -841,6 +852,7 @@ export const translations: Record<string, TranslationKeys> = {
     player: 'Jugador',
     score: 'Puntuación',
     today: 'Hoy',
+    thru: 'Hasta',
     r1: 'Ronda 1',
     r2: 'Ronda 2',
     r3: 'Ronda 3',
@@ -915,6 +927,7 @@ export const translations: Record<string, TranslationKeys> = {
     player: 'Spieler',
     score: 'Punkte',
     today: 'Heute',
+    thru: 'Durch',
     r1: 'Runde 1',
     r2: 'Runde 2',
     r3: 'Runde 3',

@@ -560,7 +560,7 @@ export default function TournamentScoresWidget({
                     <div>{t('player')}</div>
                     <div className="text-center">{t('score')}</div>
                     <div className="text-center">{t('today')}</div>
-                    <div className="text-center">THRU</div>
+                    <div className="text-center">{t('thru')}</div>
                     <div className="text-center">{t('total')}</div>
                   </div>
                   
