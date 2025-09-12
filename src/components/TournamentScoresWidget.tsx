@@ -492,7 +492,7 @@ export default function TournamentScoresWidget({
     if (!tournamentData?.players) return [];
     
     if (!searchQuery.trim()) {
-      return tournamentData.players.slice(0, 9);
+      return tournamentData.players.slice(0, 10);
     }
     
     const query = searchQuery.toLowerCase();
@@ -817,7 +817,7 @@ export default function TournamentScoresWidget({
                   <span className="ml-2 text-gray-600 text-xs">{t('loadingScores')}</span>
                 </div>
               ) : tournamentData?.players ? (
-                <div className="p-0.5 sm:p-1">
+                <div className="p-1 sm:p-1.5">
                   {/* Search Input */}
                   <div className="mb-1">
                     <input
@@ -826,7 +826,7 @@ export default function TournamentScoresWidget({
                       value={searchQuery}
                       onChange={handleSearchChange}
                       onKeyPress={handleSearchKeyPress}
-                      className="w-full px-1 py-1 text-[8px] border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-transparent h-[29.2px]"
+                      className="w-full px-1 py-1 text-[8px] border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-transparent h-[32px]"
                     />
                   </div>
                   
@@ -837,13 +837,13 @@ export default function TournamentScoresWidget({
                     <div className="text-center">{t('total')}</div>
                   </div>
                   
-                  {/* Player Rows - Show top 9 players */}
+                  {/* Player Rows - Show top 10 players */}
                   <div className="space-y-0">
                     {getFilteredPlayers().length > 0 ? (
-                      getFilteredPlayers().slice(0, 9).map((player) => (
+                      getFilteredPlayers().slice(0, 10).map((player) => (
                         <div
                           key={player.id}
-                          className="grid grid-cols-[1.8fr_0.7fr_0.7fr] sm:grid-cols-[1.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px] cursor-pointer"
+                          className="grid grid-cols-[1.8fr_0.7fr_0.7fr] sm:grid-cols-[1.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 items-center p-0.75 hover:bg-gray-50 rounded transition-colors min-h-[20px] sm:min-h-[22px] cursor-pointer"
                         >
                           <div className="min-w-0">
                             <p className="font-medium text-gray-900 text-[8px] sm:text-[10px] truncate">{getTranslatedPlayerName(player.name)}</p>
