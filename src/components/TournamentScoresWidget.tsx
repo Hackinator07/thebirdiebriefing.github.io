@@ -39,13 +39,15 @@ interface TournamentScoresWidgetProps {
   tournamentName?: string;
   isOpen: boolean;
   onToggle: () => void;
+  showToggleButton?: boolean;
 }
 
 export default function TournamentScoresWidget({
   tournamentId = '401734778',
   tournamentName = 'Kroger Queen City Championship',
   isOpen,
-  onToggle
+  onToggle,
+  showToggleButton = true
 }: TournamentScoresWidgetProps) {
   const { t, getPlayerNames } = useTranslation();
   const [activeTab, setActiveTab] = useState('leaderboard');
@@ -410,33 +412,35 @@ export default function TournamentScoresWidget({
 
   return (
     <>
-      {/* Toggle Button */}
-      <button
-        onClick={onToggle}
-        className={`fixed z-30 bg-primary-500 hover:bg-primary-600 text-white shadow-lg transition-all duration-300 ${
-          isOpen 
-            ? 'top-[65px] right-80 sm:right-80 p-1 sm:p-2' 
-            : `top-[65px] right-0 p-1 sm:p-2 ${!hasAnimated ? 'animate-pulse' : ''}`
-        }`}
-        style={!hasAnimated && !isOpen ? {
-          animation: 'subtle-bounce 2s ease-in-out 1',
-          animationDelay: '1s'
-        } : {}}
-        aria-label={isOpen ? t('closeScores') : t('openScores')}
-      >
-        <div className="flex flex-col items-center gap-0.5 sm:gap-1">
-          <div className="px-1 sm:px-2 py-0.5 sm:py-1">
-            <div className="text-[10px] sm:text-[12px] font-medium leading-tight" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
-              {t('scorecard')}
+      {/* Toggle Button - only show when showToggleButton is true */}
+      {showToggleButton && (
+        <button
+          onClick={onToggle}
+          className={`fixed z-30 bg-primary-500 hover:bg-primary-600 text-white shadow-lg transition-all duration-300 ${
+            isOpen 
+              ? 'top-[65px] right-80 sm:right-80 p-1 sm:p-2' 
+              : `top-[65px] right-0 p-1 sm:p-2 ${!hasAnimated ? 'animate-pulse' : ''}`
+          }`}
+          style={!hasAnimated && !isOpen ? {
+            animation: 'subtle-bounce 2s ease-in-out 1',
+            animationDelay: '1s'
+          } : {}}
+          aria-label={isOpen ? t('closeScores') : t('openScores')}
+        >
+          <div className="flex flex-col items-center gap-0.5 sm:gap-1">
+            <div className="px-1 sm:px-2 py-0.5 sm:py-1">
+              <div className="text-[10px] sm:text-[12px] font-medium leading-tight" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+                {t('scorecard')}
+              </div>
             </div>
+            {isOpen ? (
+              <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 font-bold" />
+            ) : (
+              <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4 font-bold" />
+            )}
           </div>
-          {isOpen ? (
-            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 font-bold" />
-          ) : (
-            <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4 font-bold" />
-          )}
-        </div>
-      </button>
+        </button>
+      )}
 
       {/* Scores Widget Panel */}
       <div
