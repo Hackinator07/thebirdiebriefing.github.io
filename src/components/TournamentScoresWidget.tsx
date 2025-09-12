@@ -244,6 +244,9 @@ export default function TournamentScoresWidget({
           console.log(`Player ${index + 1} Raw Data:`, {
             name: athlete.displayName,
             competitorScore: competitor.score,
+            status: competitor.status,
+            thru: competitor.status?.thru,
+            displayThru: competitor.status?.displayThru,
             linescores: linescores.map((ls: any) => ({
               displayValue: ls.displayValue,
               value: ls.value,
@@ -289,7 +292,22 @@ export default function TournamentScoresWidget({
 
         // Get THRU data from competitor status
         const thru = competitor.status?.thru || 0;
-        const thruDisplay = competitor.status?.displayThru || (thru > 0 ? thru.toString() : undefined);
+        const rawDisplayThru = competitor.status?.displayThru;
+        
+        // Convert "18" to "F" for finished players, or use the raw value
+        const thruDisplay = rawDisplayThru === "18" ? 'F' : 
+                           rawDisplayThru || 
+                           (thru >= 18 ? 'F' : (thru > 0 ? thru.toString() : undefined));
+        
+        // Debug: Log thru calculation for first few players
+        if (index < 3) {
+          console.log(`Player ${index + 1} THRU Debug:`, {
+            name: athlete.displayName,
+            thru: thru,
+            rawDisplayThru: rawDisplayThru,
+            calculatedThruDisplay: thruDisplay
+          });
+        }
         
         return {
           id: competitor.id || athlete.id || index.toString(),
