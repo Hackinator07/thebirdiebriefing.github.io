@@ -339,23 +339,21 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
               );
             })}
             
-            {/* Scorecard button - positioned after News */}
-            {onToggleScores && (
-              <button
-                onClick={onToggleScores}
-                className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap ${
-                  isScoresOpen
-                    ? 'text-primary-500'
-                    : 'text-gray-700 hover:text-primary-500'
-                }`}
-                aria-label={isScoresOpen ? 'Close scorecard' : 'Open scorecard'}
-              >
-                {t('scorecard')}
-                {!isScoresOpen && (
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
-                )}
-              </button>
-            )}
+            {/* Scorecard button - always visible and functional */}
+            <button
+              onClick={() => onToggleScores?.()}
+              className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap ${
+                isScoresOpen
+                  ? 'text-primary-500'
+                  : 'text-gray-700 hover:text-primary-500'
+              }`}
+              aria-label={isScoresOpen ? 'Close scorecard' : 'Open scorecard'}
+            >
+              {t('scorecard')}
+              {!isScoresOpen && (
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+              )}
+            </button>
             
             {/* Vertical Divider */}
             <div className="h-5 w-px bg-black"></div>
@@ -579,24 +577,22 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                       );
                     })}
                     
-                    {/* Mobile Scorecard - Plain Text */}
-                    {onToggleScores && (
-                      <div className="-mx-6">
-                        <button
-                          onClick={() => {
-                            onToggleScores();
-                            setIsMenuOpen(false);
-                          }}
-                          className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
-                            isScoresOpen
-                              ? 'text-primary-500 bg-primary-50 font-semibold'
-                              : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
-                          }`}
-                        >
-                          <span>{t('scorecard')}</span>
-                        </button>
-                      </div>
-                    )}
+                    {/* Mobile Scorecard - always visible and functional */}
+                    <div className="-mx-6">
+                      <button
+                        onClick={() => {
+                          onToggleScores?.();
+                          setIsMenuOpen(false);
+                        }}
+                        className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
+                          isScoresOpen
+                            ? 'text-primary-500 bg-primary-50 font-semibold'
+                            : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                        }`}
+                      >
+                        <span>{t('scorecard')}</span>
+                      </button>
+                    </div>
                     
                     {/* Mobile Translation Section */}
                     <div className="pt-4 mt-4 border-t border-gray-200 notranslate">
