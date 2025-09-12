@@ -238,7 +238,7 @@ export default async function Home() {
               <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
             </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Your go-to LPGA podcast for women’s golf news, featuring tournament breakdowns, player interviews, and behind-the-scenes stories from the LPGA Tour.
+              Your go-to podcast for LPGA news, with tournament recaps, player interviews, and behind-the-scenes stories.
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
