@@ -30,7 +30,7 @@ The course itself? Well, "National" isn't that much of a stretch. IT IS HARD. Th
 
 *Marie on Lodi's 7th fairway*
 
-Then comes the pièce de résistance: the 8th hole, a 305-yard par 4. Go for the drive and you'll likely greet the old-growth oaks, sending your ball into some rabbit territory. Play it safe and lay up short of the trees, only to have it roll down the slope anyway. The best I've ever managed here? A 19-degree 3-hybrid striped straight, then some imitation Lee Trevino 9-iron chip to gets onto the green but not too far that it rolls off the backside. All while the beauty of the Wisconsin River stretches out below and a red-tailed hawk stares through you from above.
+Then comes the pièce de résistance: the 8th hole, a 305-yard par 4. Go for the drive and you'll likely greet the old-growth oaks, sending your ball into some rabbit territory. Play it safe and lay up short of the trees, only to have it roll down the slope anyway. The best I've ever managed here? A 19-degree 3-hybrid striped straight, then some imitation Lee Trevino 9-iron chip to get onto the green but not too much speed that it rolls off the backside. All while the beauty of the Wisconsin River stretches out below and a red-tailed hawk stares through you from above.
 
 And when you've survived that, you're nearly home! No. 9, with the clubhouse staring you down, you remember this isn't Pinehurst—it's Lodi, and par carries its own kind of nobility that comes with a Miller Lite.
 
