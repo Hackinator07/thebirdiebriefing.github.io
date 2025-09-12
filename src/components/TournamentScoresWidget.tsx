@@ -576,12 +576,12 @@ export default function TournamentScoresWidget({
 
       {/* Scores Widget Panel */}
       <div
-        className={`fixed top-16 right-0 h-auto max-h-[70vh] sm:max-h-[60vh] w-80 max-w-[calc(100vw-2rem)] bg-white shadow-2xl z-20 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-16 right-0 h-auto max-h-[70vh] sm:max-h-[60vh] w-80 max-w-[calc(100vw-2rem)] bg-white shadow-2xl z-20 transform transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {/* Header */}
-        <div className="bg-primary-500 text-white p-1.5 sm:p-2">
+        <div className="bg-primary-500 text-white p-1.5 sm:p-2 flex-shrink-0">
           <div className="flex items-center justify-between mb-1">
             <p className="text-[10px] sm:text-[11px] font-bold opacity-90 break-words leading-tight flex-1 pr-2">
               {tournamentData?.name || tournamentName}
@@ -610,7 +610,7 @@ export default function TournamentScoresWidget({
         </div>
 
         {/* Tabs */}
-        <div className="flex border-b border-gray-200">
+        <div className="flex border-b border-gray-200 flex-shrink-0">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             return (
@@ -631,9 +631,9 @@ export default function TournamentScoresWidget({
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-hidden">
+        <div className="flex-1 overflow-y-auto min-h-0">
           {activeTab === 'leaderboard' && (
-            <div className="overflow-y-auto">
+            <div>
               {error ? (
                 <div className="flex flex-col items-center justify-center h-16 p-2">
                   <div className="text-red-500 text-center">
@@ -721,7 +721,7 @@ export default function TournamentScoresWidget({
           )}
 
           {activeTab === 'rounds' && (
-            <div className="overflow-y-auto">
+            <div>
               {error ? (
                 <div className="flex flex-col items-center justify-center h-16 p-2">
                   <div className="text-red-500 text-center">
@@ -797,7 +797,7 @@ export default function TournamentScoresWidget({
           )}
 
           {activeTab === 'search' && (
-            <div className="overflow-y-auto">
+            <div>
               {error ? (
                 <div className="flex flex-col items-center justify-center h-16 p-2">
                   <div className="text-red-500 text-center">

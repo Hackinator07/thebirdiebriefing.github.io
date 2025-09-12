@@ -91,6 +91,7 @@
     }
   }
 
+
   /* Font size locking utilities for translation consistency */
   .font-lock-xs {
     font-size: 0.75rem !important; /* 12px */
