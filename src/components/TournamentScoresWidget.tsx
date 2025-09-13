@@ -493,13 +493,10 @@ export default function TournamentScoresWidget({
   }, [isOpen]);
 
   // Auto-refresh RapidAPI data every 5 minutes when widget is open (rate limited)
-  // Use longer interval on mobile to reduce battery drain and network usage
   useEffect(() => {
     if (!isOpen) return;
     
-    // Detect mobile device
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    const refreshInterval = isMobile ? 600000 : 300000; // 10 minutes on mobile, 5 minutes on desktop
+    const refreshInterval = 300000; // 5 minutes
     
     const rapidAPIInterval = setInterval(() => {
       fetchTournamentData();
