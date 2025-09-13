@@ -104,19 +104,21 @@ Here's to Round 2 of what we might have to start calling the *Yasss Queen City C
 
 ## Round 1 Competition Highlights
 
-**Chanettee Wannasaen** shot a bogey-free 63 with an eagle on 10 and seven birdies. She tied the tournament scoring record at TPC River's Bend adn matched Ko from last year.
+**Chanettee Wannasaen** shot a bogey-free 63 with an eagle on 10 and seven birdies. She tied the tournament scoring record at TPC River's Bend and matched Ko from last year.
 
 **Gigi Stoll** shot a career low 7-under 65. She posted six birdies and an eagle on the 479 yard, par 5 11th.
 
-**Six players — Peiyun Chien, Jenny Bae, Paphangkorn Tavatanakit, Sei Young Kim, A Lim Kim, and Kum Kang Park** all opened with 66s in round 1.
+**Six players — Peiyun Chien, Jenny Bae, Paphangkorn Tavatanakit, Sei Young Kim, A Lim Kim, and Kumkang Park** all opened with 66s in round 1.
 
-**Paphangkorn Tavatanakit and Jenny Bae** both closed birdie-eagle, and Park rattled off three straight birdies to end her round.
+**Paphangkorn Tavatanakit and Jenny Bae** both closed birdie-eagle.
+
+**Kumkang Park** rattled off three straight birdies to end her round.
 
 ## Shout Out
 
 **Gigi $toll.** Full stop.
 
-**Maria Fassi** for having two eagles on the trot (8 and 18)!
+**Maria Fassi** for having two eagles on the trot!
 
 ## Gear Notes
 
