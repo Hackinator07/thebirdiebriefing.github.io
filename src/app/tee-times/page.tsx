@@ -71,8 +71,9 @@ function TeeTimesContent() {
       const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
       
       // Check tournament status from localStorage (set by tournament widget)
-      const tournamentStatus = localStorage.getItem('tournamentStatus');
-      const tournamentRound = localStorage.getItem('tournamentRound');
+      // Only access localStorage on client side
+      const tournamentStatus = typeof window !== 'undefined' ? localStorage.getItem('tournamentStatus') : null;
+      const tournamentRound = typeof window !== 'undefined' ? localStorage.getItem('tournamentRound') : null;
       
       // If we have tournament status data, use it to determine the round
       if (tournamentStatus && tournamentRound) {
