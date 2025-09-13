@@ -2,7 +2,11 @@ import Link from 'next/link';
 import NewsletterSignup from './NewsletterSignup';
 import { FaInstagram, FaYoutube, FaEnvelope } from 'react-icons/fa';
 
-export default function Footer() {
+interface FooterProps {
+  onToggleScores?: () => void;
+}
+
+export default function Footer({ onToggleScores }: FooterProps) {
   const navigation = {
     main: [
       { name: 'Home', href: '/' },
@@ -12,6 +16,7 @@ export default function Footer() {
       { name: 'Schedule', href: '/schedule' },
       { name: 'About Us', href: '/about' },
       { name: 'Contact Us', href: '/contact-us' },
+      { name: 'Scorecard' },
     ],
     social: [
       {
@@ -73,13 +78,23 @@ export default function Footer() {
             <ul className="space-y-3">
               {navigation.main.map((item) => (
                 <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-gray-300 hover:text-white transition-colors duration-200 relative group"
-                  >
-                    {item.name}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
-                  </Link>
+                  {item.name === 'Scorecard' ? (
+                    <button
+                      onClick={onToggleScores}
+                      className="text-gray-300 hover:text-white transition-colors duration-200 relative group cursor-pointer"
+                    >
+                      {item.name}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-gray-300 hover:text-white transition-colors duration-200 relative group"
+                    >
+                      {item.name}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

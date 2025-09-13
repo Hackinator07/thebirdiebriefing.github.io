@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Playfair_Display, Poppins } from 'next/font/google';
 import './globals.css';
 import LayoutClient from '@/components/LayoutClient';
-import Footer from '@/components/Footer';
 import Analytics from '@/components/Analytics';
 import TranslationWidget from '@/components/TranslationWidget';
 import StructuredData from '@/components/StructuredData';
@@ -99,7 +98,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-white">
         <LayoutClient>{children}</LayoutClient>
-        <Footer />
         <Analytics />
         <TranslationWidget />
       </body>

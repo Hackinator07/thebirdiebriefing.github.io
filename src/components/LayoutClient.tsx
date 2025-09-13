@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Header from './Header';
+import Footer from './Footer';
 import TournamentScoresWidget from './TournamentScoresWidget';
 
 interface LayoutClientProps {
@@ -44,6 +45,7 @@ export default function LayoutClient({ children }: LayoutClientProps) {
         onToggleScores={handleToggleScores}
       />
       <main>{children}</main>
+      <Footer onToggleScores={handleToggleScores} />
       <TournamentScoresWidget
         tournamentId="401734778"
         tournamentName="Kroger Queen City Championship"
