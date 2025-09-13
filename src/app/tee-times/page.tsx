@@ -57,7 +57,30 @@ function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: st
 }
 
 function TeeTimesContent() {
-  const [activeRound, setActiveRound] = useState<'round1' | 'round2' | 'round3'>('round1');
+  // Tournament dates: September 11-14, 2025 (Thursday-Sunday)
+  const tournamentStartDate = new Date('2025-09-11'); // Thursday
+  const tournamentEndDate = new Date('2025-09-14'); // Sunday
+  
+  // Function to determine which round should be active based on current date
+  const getCurrentRound = (): 'round1' | 'round2' | 'round3' => {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    
+    // Check if we're within the tournament week
+    if (today >= tournamentStartDate && today <= tournamentEndDate) {
+      const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+      
+      // Thursday = 4, Friday = 5, Saturday = 6
+      if (dayOfWeek === 4) return 'round1'; // Thursday
+      if (dayOfWeek === 5) return 'round2'; // Friday  
+      if (dayOfWeek === 6) return 'round3'; // Saturday
+    }
+    
+    // Default to Round 1 if not during tournament or other days
+    return 'round1';
+  };
+
+  const [activeRound, setActiveRound] = useState<'round1' | 'round2' | 'round3'>(getCurrentRound());
   const { selectedTimezone, updateTimezone } = useTimezone();
   const round1TeeTimes = [
     { time: "6:20 AM", tee: "1", players: ["Daniela Darquea", "Gemma Dryburgh", "Alexa Pano"] },
