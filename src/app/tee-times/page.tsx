@@ -57,7 +57,7 @@ function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: st
 }
 
 function TeeTimesContent() {
-  const [activeRound, setActiveRound] = useState<'round1' | 'round2'>('round1');
+  const [activeRound, setActiveRound] = useState<'round1' | 'round2' | 'round3'>('round1');
   const { selectedTimezone, updateTimezone } = useTimezone();
   const round1TeeTimes = [
     { time: "6:20 AM", tee: "1", players: ["Daniela Darquea", "Gemma Dryburgh", "Alexa Pano"] },
@@ -161,6 +161,35 @@ function TeeTimesContent() {
     { time: "1:21 PM", tee: "10", players: ["Perrine Delacour", "Brianna Do", "Sofia Garcia"] }
   ];
 
+  const round3TeeTimes = [
+    { time: "7:30 AM", tee: "1", players: ["Rio Takeda", "Yealimi Noh", "Stephanie Kyriacou"] },
+    { time: "7:30 AM", tee: "10", players: ["Elizabeth Szokol", "A Lim Kim", "Jaravee Boonchant"] },
+    { time: "7:41 AM", tee: "1", players: ["Pornanong Phatlum", "Lydia Ko", "Hyo Joo Kim"] },
+    { time: "7:41 AM", tee: "10", players: ["Jasmine Suwannapura", "Allisen Corpuz", "Yuri Yoshida"] },
+    { time: "7:52 AM", tee: "1", players: ["Robyn Choi", "Nataliya Guseva", "Linnea Strom"] },
+    { time: "7:52 AM", tee: "10", players: ["Hye-Jin Choi", "Lexi Thompson", "Dewi Weber"] },
+    { time: "8:03 AM", tee: "1", players: ["Lindy Duncan", "Julia Lopez Ramirez", "Kumkang Park"] },
+    { time: "8:03 AM", tee: "10", players: ["Brooke Matthews", "Mao Saigo", "Madison Young"] },
+    { time: "8:14 AM", tee: "1", players: ["Andrea Lee", "Perrine Delacour", "Grace Kim"] },
+    { time: "8:14 AM", tee: "10", players: ["Wei-Ling Hsu", "Alena Sharp", "Narin An"] },
+    { time: "8:25 AM", tee: "1", players: ["Aline Krauter", "Gabriela Ruffels", "Bianca Pagdanganan"] },
+    { time: "8:25 AM", tee: "10", players: ["Emily Kristine Pedersen", "Stacy Lewis", "Jenny Shin"] },
+    { time: "8:36 AM", tee: "1", players: ["Bailey Tardy", "Ruixin Liu", "Celine Boutier"] },
+    { time: "8:36 AM", tee: "10", players: ["Xiaowen Yin", "Minami Katsu", "Yu Liu"] },
+    { time: "8:47 AM", tee: "1", players: ["Manon De Roey", "Minjee Lee", "Miyu Yamashita"] },
+    { time: "8:47 AM", tee: "10", players: ["Arpichaya Yubol", "Nasa Hataoka", "Sofia Garcia"] },
+    { time: "8:58 AM", tee: "1", players: ["Jenny Bae", "Jennifer Kupcho", "Chisato Iwai"] },
+    { time: "8:58 AM", tee: "10", players: ["Nanna Koerstz Madsen", "Daniela Darquea", "Jin Hee Im"] },
+    { time: "9:09 AM", tee: "1", players: ["Frida Kinhult", "Jiwon Jeon", "Nelly Korda"] },
+    { time: "9:09 AM", tee: "10", players: ["Ayaka Furue", "Ana Belac", "Esther Henseleit"] },
+    { time: "9:20 AM", tee: "1", players: ["Gigi Stoll", "Mary Liu", "Lottie Woad"] },
+    { time: "9:20 AM", tee: "10", players: ["Hira Naveed", "Jodi Ewart Shadoff", "Danielle Kang"] },
+    { time: "9:31 AM", tee: "1", players: ["Olivia Cowan", "Maja Stark", "Sei Young Kim"] },
+    { time: "9:31 AM", tee: "10", players: ["Mi Hyang Lee", "Gurleen Kaur", "Jessica Porvasnik"] },
+    { time: "9:42 AM", tee: "1", players: ["Chanettee Wannasaen", "Jeeno Thitikul", "Charley Hull"] },
+    { time: "9:42 AM", tee: "10", players: ["Yan Liu", "Patty Tavatanakit"] }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -243,6 +272,16 @@ function TeeTimesContent() {
                 >
                   Round 2 - Friday
                 </button>
+                <button
+                  onClick={() => setActiveRound('round3')}
+                  className={`px-6 py-3 text-sm font-medium rounded-md transition-colors ${
+                    activeRound === 'round3'
+                      ? 'text-primary-600 bg-primary-50'
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  Round 3 - Saturday
+                </button>
               </div>
             </div>
 
@@ -281,11 +320,15 @@ function TeeTimesContent() {
                 <svg className="w-6 h-6 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                {activeRound === 'round1' ? 'Round 1 - Thursday, September 11' : 'Round 2 - Friday, September 12'}
+                {activeRound === 'round1' ? 'Round 1 - Thursday, September 11' : 
+                 activeRound === 'round2' ? 'Round 2 - Friday, September 12' : 
+                 'Round 3 - Saturday, September 13'}
               </h3>
               
               {(() => {
-                const teeTimes = activeRound === 'round1' ? round1TeeTimes : round2TeeTimes;
+                const teeTimes = activeRound === 'round1' ? round1TeeTimes : 
+                                 activeRound === 'round2' ? round2TeeTimes : 
+                                 round3TeeTimes;
                 const groupedByTime = teeTimes.reduce((acc, group) => {
                   if (!acc[group.time]) {
                     acc[group.time] = { tee1: null, tee10: null };
