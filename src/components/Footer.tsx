@@ -16,7 +16,7 @@ export default function Footer({ onToggleScores }: FooterProps) {
       { name: 'Schedule', href: '/schedule' },
       { name: 'About Us', href: '/about' },
       { name: 'Contact Us', href: '/contact-us' },
-      { name: 'Scorecard' },
+      { name: 'Scorecard', href: undefined },
     ],
     social: [
       {
@@ -78,7 +78,7 @@ export default function Footer({ onToggleScores }: FooterProps) {
             <ul className="space-y-3">
               {navigation.main.map((item) => (
                 <li key={item.name}>
-                  {item.name === 'Scorecard' ? (
+                  {!item.href ? (
                     <button
                       onClick={onToggleScores}
                       className="text-gray-300 hover:text-white transition-colors duration-200 relative group cursor-pointer"
