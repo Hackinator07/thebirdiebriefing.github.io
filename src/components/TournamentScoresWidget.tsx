@@ -444,6 +444,10 @@ export default function TournamentScoresWidget({
       setTournamentData(tournamentInfo);
       setLastRefresh(new Date());
       
+      // Store tournament status and round in localStorage for tee times page
+      localStorage.setItem('tournamentStatus', tournamentInfo.status);
+      localStorage.setItem('tournamentRound', tournamentInfo.currentRound.toString());
+      
     } catch (err) {
       console.error('Error fetching tournament data:', err);
       const errorMessage = err instanceof Error ? err.message : 'Failed to load tournament data';
