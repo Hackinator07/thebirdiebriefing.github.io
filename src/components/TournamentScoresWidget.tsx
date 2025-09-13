@@ -418,15 +418,15 @@ export default function TournamentScoresWidget({
     }
   }, [fetchTournamentData, isOpen]);
 
-  // Auto-refresh ESPN data every 60 seconds when widget is open (no rate limiting)
+  // Auto-refresh ESPN data every 30 seconds when widget is open (no rate limiting)
   useEffect(() => {
     if (!isOpen) return;
     
     const espnInterval = setInterval(() => {
       // ESPN API call would go here for main tournament data
       // For now, we'll call the existing function but could be separated
-      console.log('ESPN API call every 60 seconds');
-    }, 60000); // 60 seconds
+      console.log('ESPN API call every 30 seconds');
+    }, 30000); // 30 seconds
     
     return () => clearInterval(espnInterval);
   }, [isOpen]);
