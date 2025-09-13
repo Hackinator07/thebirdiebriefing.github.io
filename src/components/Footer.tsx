@@ -42,7 +42,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="text-white" style={{backgroundColor: '#004677'}}>
       <div className="max-w-7xl mx-auto py-12 px-6">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
