@@ -71,9 +71,26 @@ function TeeTimesContent() {
       const dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
       
       // Check tournament status from localStorage (set by tournament widget)
-      // Only access localStorage on client side
-      const tournamentStatus = typeof window !== 'undefined' ? localStorage.getItem('tournamentStatus') : null;
-      const tournamentRound = typeof window !== 'undefined' ? localStorage.getItem('tournamentRound') : null;
+      // Only access localStorage on client side with Safari iOS fallback
+      let tournamentStatus = null;
+      let tournamentRound = null;
+      
+      if (typeof window !== 'undefined') {
+        try {
+          // Test localStorage availability first
+          const testKey = 'localStorage-test';
+          localStorage.setItem(testKey, 'test');
+          localStorage.removeItem(testKey);
+          
+          tournamentStatus = localStorage.getItem('tournamentStatus');
+          tournamentRound = localStorage.getItem('tournamentRound');
+        } catch (error) {
+          // Safari iOS private browsing or storage restrictions
+          console.warn('localStorage not available:', error);
+          tournamentStatus = null;
+          tournamentRound = null;
+        }
+      }
       
       // If we have tournament status data, use it to determine the round
       if (tournamentStatus && tournamentRound) {
@@ -96,28 +113,113 @@ function TeeTimesContent() {
         if (currentRound === 4) return 'round4';
       }
       
+      // Safari iOS fallback: Try to get tournament data from sessionStorage or other sources
+      if (typeof window !== 'undefined') {
+        try {
+          const sessionTournamentStatus = sessionStorage.getItem('tournamentStatus');
+          const sessionTournamentRound = sessionStorage.getItem('tournamentRound');
+          
+          if (sessionTournamentStatus && sessionTournamentRound) {
+            const currentRound = parseInt(sessionTournamentRound);
+            
+            // If tournament shows "Play Complete", advance to next round
+            if (sessionTournamentStatus.toLowerCase().includes('play complete') || 
+                sessionTournamentStatus.toLowerCase().includes('complete')) {
+              if (currentRound === 1) return 'round2';
+              if (currentRound === 2) return 'round3';
+              if (currentRound === 3) return 'round4';
+              if (currentRound === 4) return 'round4';
+            }
+            
+            // If tournament is still active, show current round
+            if (currentRound === 1) return 'round1';
+            if (currentRound === 2) return 'round2';
+            if (currentRound === 3) return 'round3';
+            if (currentRound === 4) return 'round4';
+          }
+        } catch (error) {
+          console.warn('sessionStorage not available:', error);
+        }
+      }
+      
+      // Safari iOS specific handling: Try to detect if we're in a tournament scenario
+      // and make educated guesses based on current time and day
+      if (typeof window !== 'undefined') {
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        
+        if (isSafari && isIOS) {
+          console.log('Safari iOS detected - using enhanced fallback logic');
+          
+          // Enhanced Safari iOS logic for all rounds
+          const currentHour = now.getHours();
+          
+          // Thursday (Round 1)
+          if (dayOfWeek === 4) {
+            // If it's after 6 PM on Thursday, Round 1 is likely complete
+            if (currentHour >= 18) {
+              return 'round2';
+            }
+            return 'round1';
+          }
+          
+          // Friday (Round 2)
+          if (dayOfWeek === 5) {
+            // If it's after 6 PM on Friday, Round 2 is likely complete
+            if (currentHour >= 18) {
+              return 'round3';
+            }
+            return 'round2';
+          }
+          
+          // Saturday (Round 3)
+          if (dayOfWeek === 6) {
+            // If it's after 6 PM on Saturday, Round 3 is likely complete
+            if (currentHour >= 18) {
+              return 'round4';
+            }
+            return 'round3';
+          }
+          
+          // Sunday (Round 4)
+          if (dayOfWeek === 0) {
+            return 'round4';
+          }
+          
+          // Monday-Wednesday: Default to Round 1
+          if (dayOfWeek >= 1 && dayOfWeek <= 3) {
+            return 'round1';
+          }
+        }
+      }
+      
       // Fallback to day-based logic with time check if no tournament data
-      const currentTime = now.getHours() * 100 + now.getMinutes(); // Convert to HHMM format
+      const currentHour = now.getHours();
       
       // Thursday = 4, Friday = 5, Saturday = 6, Sunday = 0
       if (dayOfWeek === 4) {
-        // Round 1 (Thursday) - check if round is complete (after 9 PM)
-        if (currentTime >= 2100) return 'round2'; // After 9 PM, advance to Round 2
+        // Round 1 (Thursday) - check if round is complete (after 6 PM)
+        if (currentHour >= 18) return 'round2'; // After 6 PM, advance to Round 2
         return 'round1';
       }
       if (dayOfWeek === 5) {
-        // Round 2 (Friday) - check if round is complete (after 9 PM)
-        if (currentTime >= 2100) return 'round3'; // After 9 PM, advance to Round 3
+        // Round 2 (Friday) - check if round is complete (after 6 PM)
+        if (currentHour >= 18) return 'round3'; // After 6 PM, advance to Round 3
         return 'round2';
       }
       if (dayOfWeek === 6) {
-        // Round 3 (Saturday) - check if round is complete (after 9 PM)
-        if (currentTime >= 2100) return 'round4'; // After 9 PM, advance to Round 4
+        // Round 3 (Saturday) - check if round is complete (after 6 PM)
+        if (currentHour >= 18) return 'round4'; // After 6 PM, advance to Round 4
         return 'round3';
       }
       if (dayOfWeek === 0) {
         // Round 4 (Sunday) - final round
         return 'round4';
+      }
+      
+      // Monday-Wednesday: Default to Round 1
+      if (dayOfWeek >= 1 && dayOfWeek <= 3) {
+        return 'round1';
       }
     }
     
@@ -127,6 +229,12 @@ function TeeTimesContent() {
 
   const [activeRound, setActiveRound] = useState<'round1' | 'round2' | 'round3' | 'round4'>(getCurrentRound());
   const { selectedTimezone, updateTimezone } = useTimezone();
+  const [isClient, setIsClient] = useState(false);
+
+  // Ensure component only renders on client to avoid hydration issues
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // Update active round when tournament status changes
   useEffect(() => {
@@ -286,32 +394,32 @@ function TeeTimesContent() {
   ];
 
   const round4TeeTimes = [
-    { time: "8:35 AM", tee: "1", players: ["Emily Kristine Pedersen", "Allisen Corpuz", "Robyn Choi"] },
-    { time: "8:35 AM", tee: "10", players: ["Pornanong Phatlum", "Stephanie Kyriacou", "Ayaka Furue"] },
-    { time: "8:46 AM", tee: "1", players: ["Jiwon Jeon", "Jenny Bae", "Nanna Koerstz Madsen"] },
-    { time: "8:46 AM", tee: "10", players: ["Xiaowen Yin", "Dewi Weber", "Mao Saigo"] },
-    { time: "8:57 AM", tee: "1", players: ["Perrine Delacour", "Aline Krauter", "Frida Kinhult"] },
-    { time: "8:57 AM", tee: "10", players: ["Elizabeth Szokol", "Kumkang Park", "Jin Hee Im"] },
-    { time: "9:08 AM", tee: "1", players: ["Minjee Lee", "Nasa Hataoka", "Lydia Ko"] },
-    { time: "9:08 AM", tee: "10", players: ["Gurleen Kaur", "Yan Liu", "Narin An"] },
-    { time: "9:19 AM", tee: "1", players: ["Jennifer Kupcho", "Chanettee Wannasaen", "Nataliya Guseva"] },
-    { time: "9:19 AM", tee: "10", players: ["Yuri Yoshida", "Linnea Strom", "Esther Henseleit"] },
-    { time: "9:30 AM", tee: "1", players: ["Brooke Matthews", "A Lim Kim", "Lindy Duncan"] },
-    { time: "9:30 AM", tee: "10", players: ["Hira Naveed", "Danielle Kang", "Madison Young"] },
-    { time: "9:41 AM", tee: "1", players: ["Manon De Roey", "Stacy Lewis", "Hye-Jin Choi"] },
-    { time: "9:41 AM", tee: "10", players: ["Jenny Shin", "Arpichaya Yubol", "Jaravee Boonchant"] },
-    { time: "9:52 AM", tee: "1", players: ["Bailey Tardy", "Ruixin Liu", "Celine Boutier"] },
-    { time: "9:52 AM", tee: "10", players: ["Jasmine Suwannapura", "Lexi Thompson", "Sofia Garcia"] },
-    { time: "10:03 AM", tee: "1", players: ["Olivia Cowan", "Andrea Lee", "Julia Lopez Ramirez"] },
-    { time: "10:03 AM", tee: "10", players: ["Jodi Ewart Shadoff", "Mi Hyang Lee", "Minami Katsu"] },
-    { time: "10:14 AM", tee: "1", players: ["Lottie Woad", "Maja Stark", "Sei Young Kim"] },
-    { time: "10:14 AM", tee: "10", players: ["Hyo Joo Kim", "Grace Kim", "Gigi Stoll"] },
-    { time: "10:25 AM", tee: "1", players: ["Mary Liu", "Nelly Korda", "Gabriela Ruffels"] },
-    { time: "10:25 AM", tee: "10", players: ["Patty Tavatanakit", "Rio Takeda", "Ana Belac"] },
-    { time: "10:36 AM", tee: "1", players: ["Miyu Yamashita", "Yealimi Noh", "Bianca Pagdanganan"] },
-    { time: "10:36 AM", tee: "10", players: ["Jessica Porvasnik", "Daniela Darquea", "Wei-Ling Hsu"] },
-    { time: "10:47 AM", tee: "1", players: ["Charley Hull", "Jeeno Thitikul", "Chisato Iwai"] },
-    { time: "10:47 AM", tee: "10", players: ["Alena Sharp", "Yu Liu"] }
+    { time: "7:35 AM", tee: "1", players: ["Emily Kristine Pedersen", "Allisen Corpuz", "Robyn Choi"] },
+    { time: "7:35 AM", tee: "10", players: ["Pornanong Phatlum", "Stephanie Kyriacou", "Ayaka Furue"] },
+    { time: "7:46 AM", tee: "1", players: ["Jiwon Jeon", "Jenny Bae", "Nanna Koerstz Madsen"] },
+    { time: "7:46 AM", tee: "10", players: ["Xiaowen Yin", "Dewi Weber", "Mao Saigo"] },
+    { time: "7:57 AM", tee: "1", players: ["Perrine Delacour", "Aline Krauter", "Frida Kinhult"] },
+    { time: "7:57 AM", tee: "10", players: ["Elizabeth Szokol", "Kumkang Park", "Jin Hee Im"] },
+    { time: "8:08 AM", tee: "1", players: ["Minjee Lee", "Nasa Hataoka", "Lydia Ko"] },
+    { time: "8:08 AM", tee: "10", players: ["Gurleen Kaur", "Yan Liu", "Narin An"] },
+    { time: "8:19 AM", tee: "1", players: ["Jennifer Kupcho", "Chanettee Wannasaen", "Nataliya Guseva"] },
+    { time: "8:19 AM", tee: "10", players: ["Yuri Yoshida", "Linnea Strom", "Esther Henseleit"] },
+    { time: "8:30 AM", tee: "1", players: ["Brooke Matthews", "A Lim Kim", "Lindy Duncan"] },
+    { time: "8:30 AM", tee: "10", players: ["Hira Naveed", "Danielle Kang", "Madison Young"] },
+    { time: "8:41 AM", tee: "1", players: ["Manon De Roey", "Stacy Lewis", "Hye-Jin Choi"] },
+    { time: "8:41 AM", tee: "10", players: ["Jenny Shin", "Arpichaya Yubol", "Jaravee Boonchant"] },
+    { time: "8:52 AM", tee: "1", players: ["Bailey Tardy", "Ruixin Liu", "Celine Boutier"] },
+    { time: "8:52 AM", tee: "10", players: ["Jasmine Suwannapura", "Lexi Thompson", "Sofia Garcia"] },
+    { time: "9:03 AM", tee: "1", players: ["Olivia Cowan", "Andrea Lee", "Julia Lopez Ramirez"] },
+    { time: "9:03 AM", tee: "10", players: ["Jodi Ewart Shadoff", "Mi Hyang Lee", "Minami Katsu"] },
+    { time: "9:14 AM", tee: "1", players: ["Lottie Woad", "Maja Stark", "Sei Young Kim"] },
+    { time: "9:14 AM", tee: "10", players: ["Hyo Joo Kim", "Grace Kim", "Gigi Stoll"] },
+    { time: "9:25 AM", tee: "1", players: ["Mary Liu", "Nelly Korda", "Gabriela Ruffels"] },
+    { time: "9:25 AM", tee: "10", players: ["Patty Tavatanakit", "Rio Takeda", "Ana Belac"] },
+    { time: "9:36 AM", tee: "1", players: ["Miyu Yamashita", "Yealimi Noh", "Bianca Pagdanganan"] },
+    { time: "9:36 AM", tee: "10", players: ["Jessica Porvasnik", "Daniela Darquea", "Wei-Ling Hsu"] },
+    { time: "9:47 AM", tee: "1", players: ["Charley Hull", "Jeeno Thitikul", "Chisato Iwai"] },
+    { time: "9:47 AM", tee: "10", players: ["Alena Sharp", "Yu Liu"] }
   ];
 
   return (
@@ -375,47 +483,96 @@ function TeeTimesContent() {
           <div className="p-6">
             {/* Round Navigation */}
             <div className="mb-8 flex justify-center">
-              <div className="inline-flex rounded-lg border border-gray-200 bg-white p-1">
-                <button
-                  onClick={() => setActiveRound('round1')}
-                  className={`px-6 py-3 text-sm font-medium rounded-md transition-colors ${
-                    activeRound === 'round1'
-                      ? 'text-primary-600 bg-primary-50'
-                      : 'text-gray-500 hover:text-gray-700'
-                  }`}
-                >
-                  Round 1 - Thursday
-                </button>
-                <button
-                  onClick={() => setActiveRound('round2')}
-                  className={`px-6 py-3 text-sm font-medium rounded-md transition-colors ${
-                    activeRound === 'round2'
-                      ? 'text-primary-600 bg-primary-50'
-                      : 'text-gray-500 hover:text-gray-700'
-                  }`}
-                >
-                  Round 2 - Friday
-                </button>
-                <button
-                  onClick={() => setActiveRound('round3')}
-                  className={`px-6 py-3 text-sm font-medium rounded-md transition-colors ${
-                    activeRound === 'round3'
-                      ? 'text-primary-600 bg-primary-50'
-                      : 'text-gray-500 hover:text-gray-700'
-                  }`}
-                >
-                  Round 3 - Saturday
-                </button>
-                <button
-                  onClick={() => setActiveRound('round4')}
-                  className={`px-6 py-3 text-sm font-medium rounded-md transition-colors ${
-                    activeRound === 'round4'
-                      ? 'text-primary-600 bg-primary-50'
-                      : 'text-gray-500 hover:text-gray-700'
-                  }`}
-                >
-                  Round 4 - Sunday
-                </button>
+              <div className="w-full max-w-4xl">
+                {/* Mobile: Stack buttons vertically */}
+                <div className="block sm:hidden space-y-2">
+                  <button
+                    onClick={() => setActiveRound('round1')}
+                    className={`w-full px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                      activeRound === 'round1'
+                        ? 'text-primary-600 bg-primary-50 border border-primary-200'
+                        : 'text-gray-500 hover:text-gray-700 border border-gray-200'
+                    }`}
+                  >
+                    Round 1 - Thursday
+                  </button>
+                  <button
+                    onClick={() => setActiveRound('round2')}
+                    className={`w-full px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                      activeRound === 'round2'
+                        ? 'text-primary-600 bg-primary-50 border border-primary-200'
+                        : 'text-gray-500 hover:text-gray-700 border border-gray-200'
+                    }`}
+                  >
+                    Round 2 - Friday
+                  </button>
+                  <button
+                    onClick={() => setActiveRound('round3')}
+                    className={`w-full px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                      activeRound === 'round3'
+                        ? 'text-primary-600 bg-primary-50 border border-primary-200'
+                        : 'text-gray-500 hover:text-gray-700 border border-gray-200'
+                    }`}
+                  >
+                    Round 3 - Saturday
+                  </button>
+                  <button
+                    onClick={() => setActiveRound('round4')}
+                    className={`w-full px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                      activeRound === 'round4'
+                        ? 'text-primary-600 bg-primary-50 border border-primary-200'
+                        : 'text-gray-500 hover:text-gray-700 border border-gray-200'
+                    }`}
+                  >
+                    Round 4 - Sunday
+                  </button>
+                </div>
+                
+                {/* Desktop: Horizontal layout */}
+                <div className="hidden sm:flex justify-center">
+                  <div className="inline-flex rounded-lg border border-gray-200 bg-white p-1">
+                    <button
+                      onClick={() => setActiveRound('round1')}
+                      className={`px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
+                        activeRound === 'round1'
+                          ? 'text-primary-600 bg-primary-50'
+                          : 'text-gray-500 hover:text-gray-700'
+                      }`}
+                    >
+                      Round 1 - Thursday
+                    </button>
+                    <button
+                      onClick={() => setActiveRound('round2')}
+                      className={`px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
+                        activeRound === 'round2'
+                          ? 'text-primary-600 bg-primary-50'
+                          : 'text-gray-500 hover:text-gray-700'
+                      }`}
+                    >
+                      Round 2 - Friday
+                    </button>
+                    <button
+                      onClick={() => setActiveRound('round3')}
+                      className={`px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
+                        activeRound === 'round3'
+                          ? 'text-primary-600 bg-primary-50'
+                          : 'text-gray-500 hover:text-gray-700'
+                      }`}
+                    >
+                      Round 3 - Saturday
+                    </button>
+                    <button
+                      onClick={() => setActiveRound('round4')}
+                      className={`px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
+                        activeRound === 'round4'
+                          ? 'text-primary-600 bg-primary-50'
+                          : 'text-gray-500 hover:text-gray-700'
+                      }`}
+                    >
+                      Round 4 - Sunday
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -425,26 +582,32 @@ function TeeTimesContent() {
                 <label htmlFor="timezone-select" className="block text-sm font-medium text-gray-700 mb-2 text-center">
                   Select Timezone
                 </label>
-                <TimezoneSelect
-                  value={selectedTimezone}
-                  onChange={(tz) => updateTimezone(tz.value)}
-                  styles={{
-                    control: (provided) => ({
-                      ...provided,
-                      border: '1px solid #d1d5db',
-                      borderRadius: '0.5rem',
-                      boxShadow: 'none',
-                      '&:hover': {
-                        border: '1px solid #9ca3af',
-                      },
-                    }),
-                    option: (provided, state) => ({
-                      ...provided,
-                      backgroundColor: state.isSelected ? '#3b82f6' : state.isFocused ? '#f3f4f6' : 'white',
-                      color: state.isSelected ? 'white' : '#374151',
-                    }),
-                  }}
-                />
+                {isClient ? (
+                  <TimezoneSelect
+                    value={selectedTimezone}
+                    onChange={(tz) => updateTimezone(tz.value)}
+                    styles={{
+                      control: (provided) => ({
+                        ...provided,
+                        border: '1px solid #d1d5db',
+                        borderRadius: '0.5rem',
+                        boxShadow: 'none',
+                        '&:hover': {
+                          border: '1px solid #9ca3af',
+                        },
+                      }),
+                      option: (provided, state) => ({
+                        ...provided,
+                        backgroundColor: state.isSelected ? '#3b82f6' : state.isFocused ? '#f3f4f6' : 'white',
+                        color: state.isSelected ? 'white' : '#374151',
+                      }),
+                    }}
+                  />
+                ) : (
+                  <div className="h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-500">
+                    Loading timezone selector...
+                  </div>
+                )}
               </div>
             </div>
 

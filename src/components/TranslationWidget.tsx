@@ -253,24 +253,7 @@ export default function TranslationWidget() {
         const savedLanguage = localStorage.getItem('jss-pref');
 
 
-        // Test direct API call to verify authentication
-        fetch('https://api.jigsawstack.com/v1/ai/translate', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-api-key': key
-          },
-          body: JSON.stringify({
-            text: 'Hello',
-            target_language: 'ja'
-          })
-        }).then(response => {
-          if (!response.ok) {
-            console.error('Direct API test failed:', response.status, response.statusText);
-          }
-        }).catch(error => {
-          console.error('Direct API test error:', error);
-        });
+        // Note: API authentication will be tested when the widget is actually used
 
         // Store the widget instance globally for custom UI access
         window.jigsawTranslationInstance = window.TranslationWidget(key, {

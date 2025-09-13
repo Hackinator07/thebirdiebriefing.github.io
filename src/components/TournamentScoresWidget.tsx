@@ -445,8 +445,20 @@ export default function TournamentScoresWidget({
       setLastRefresh(new Date());
       
       // Store tournament status and round in localStorage for tee times page
-      localStorage.setItem('tournamentStatus', tournamentInfo.status);
-      localStorage.setItem('tournamentRound', tournamentInfo.currentRound.toString());
+      try {
+        localStorage.setItem('tournamentStatus', tournamentInfo.status);
+        localStorage.setItem('tournamentRound', tournamentInfo.currentRound.toString());
+      } catch (error) {
+        console.warn('localStorage not available, using sessionStorage:', error);
+      }
+      
+      // Also store in sessionStorage for Safari iOS compatibility
+      try {
+        sessionStorage.setItem('tournamentStatus', tournamentInfo.status);
+        sessionStorage.setItem('tournamentRound', tournamentInfo.currentRound.toString());
+      } catch (error) {
+        console.warn('sessionStorage not available:', error);
+      }
       
     } catch (err) {
       console.error('Error fetching tournament data:', err);
