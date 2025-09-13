@@ -60,10 +60,15 @@ export default function TournamentScoresWidget({
   const [searchQuery, setSearchQuery] = useState('');
   const [hasAnimated, setHasAnimated] = useState(false);
   const [dailyUsage, setDailyUsage] = useState({ count: 0, date: '' });
+  const [retryCount, setRetryCount] = useState(0);
+  const [isRetrying, setIsRetrying] = useState(false);
 
   // RapidAPI rate limiting constants
   const RAPIDAPI_DAILY_LIMIT = 3000;
   const RAPIDAPI_STORAGE_KEY = 'rapidapi_daily_usage';
+  const MAX_RETRIES = 3;
+  const RETRY_DELAY_BASE = 1000; // 1 second base delay
+  const FETCH_TIMEOUT = 10000; // 10 second timeout
 
   // Check RapidAPI daily usage
   const checkRapidAPIUsage = useCallback(() => {
@@ -179,11 +184,48 @@ export default function TournamentScoresWidget({
     return playerNames[shortName] || shortName;
   };
 
+  // Timeout wrapper for fetch requests
+  const fetchWithTimeout = async (url: string, options: RequestInit, timeout: number = FETCH_TIMEOUT): Promise<Response> => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeout);
+    
+    try {
+      const response = await fetch(url, {
+        ...options,
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+      return response;
+    } catch (error) {
+      clearTimeout(timeoutId);
+      if (error instanceof Error && error.name === 'AbortError') {
+        throw new Error('Request timeout - please check your connection');
+      }
+      throw error;
+    }
+  };
+
+  // Retry mechanism with exponential backoff
+  const retryWithBackoff = async (fn: () => Promise<any>, retries: number = MAX_RETRIES): Promise<any> => {
+    try {
+      return await fn();
+    } catch (error) {
+      if (retries > 0) {
+        const delay = RETRY_DELAY_BASE * Math.pow(2, MAX_RETRIES - retries);
+        console.log(`Retrying in ${delay}ms... (${MAX_RETRIES - retries + 1}/${MAX_RETRIES})`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+        return retryWithBackoff(fn, retries - 1);
+      }
+      throw error;
+    }
+  };
+
   // Fetch tournament data from RapidAPI Live Golf Data
   const fetchTournamentData = useCallback(async () => {
       try {
         setIsLoading(true);
         setError(null);
+        setIsRetrying(false);
 
         // Check RapidAPI daily usage limit
         const usage = checkRapidAPIUsage();
@@ -200,12 +242,16 @@ export default function TournamentScoresWidget({
         // Increment usage counter before making the call
         incrementRapidAPIUsage();
 
-        const response = await fetch(`https://live-golf-data1.p.rapidapi.com/leaderboard?league=lpga&eventId=${tournamentId}`, {
-          method: 'GET',
-          headers: {
-            'x-rapidapi-host': 'live-golf-data1.p.rapidapi.com',
-            'x-rapidapi-key': process.env.NEXT_PUBLIC_RAPIDAPI_KEY || '517cb09524mshf243e8dc1b88e58p19efabjsne4e46b59b3c8'
-          }
+        // Use retry mechanism with timeout
+        const response = await retryWithBackoff(async () => {
+          setIsRetrying(true);
+          return await fetchWithTimeout(`https://live-golf-data1.p.rapidapi.com/leaderboard?league=lpga&eventId=${tournamentId}`, {
+            method: 'GET',
+            headers: {
+              'x-rapidapi-host': 'live-golf-data1.p.rapidapi.com',
+              'x-rapidapi-key': process.env.NEXT_PUBLIC_RAPIDAPI_KEY || '517cb09524mshf243e8dc1b88e58p19efabjsne4e46b59b3c8'
+            }
+          });
         });
 
         if (!response.ok) {
@@ -400,9 +446,24 @@ export default function TournamentScoresWidget({
       
     } catch (err) {
       console.error('Error fetching tournament data:', err);
-      setError(err instanceof Error ? err.message : 'Failed to load tournament data');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to load tournament data';
+      
+      // Provide more specific error messages for mobile users
+      if (errorMessage.includes('timeout')) {
+        setError('Connection timeout - please check your mobile data or WiFi connection');
+      } else if (errorMessage.includes('Failed to fetch')) {
+        setError('Network error - please check your internet connection and try again');
+      } else if (errorMessage.includes('AbortError')) {
+        setError('Request cancelled - please try again');
+      } else {
+        setError(errorMessage);
+      }
+      
+      // Reset retry count on final failure
+      setRetryCount(0);
       } finally {
         setIsLoading(false);
+        setIsRetrying(false);
       }
     }, [tournamentId]);
 
@@ -432,12 +493,17 @@ export default function TournamentScoresWidget({
   }, [isOpen]);
 
   // Auto-refresh RapidAPI data every 5 minutes when widget is open (rate limited)
+  // Use longer interval on mobile to reduce battery drain and network usage
   useEffect(() => {
     if (!isOpen) return;
     
+    // Detect mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const refreshInterval = isMobile ? 600000 : 300000; // 10 minutes on mobile, 5 minutes on desktop
+    
     const rapidAPIInterval = setInterval(() => {
       fetchTournamentData();
-    }, 300000); // 300 seconds (5 minutes)
+    }, refreshInterval);
     
     return () => clearInterval(rapidAPIInterval);
   }, [isOpen, fetchTournamentData]);
@@ -452,6 +518,24 @@ export default function TournamentScoresWidget({
       return () => clearTimeout(timer);
     }
   }, [isOpen, hasAnimated]);
+
+  // Pause refreshes when page is not visible (mobile background state)
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        console.log('Page hidden - pausing scorecard refreshes');
+      } else {
+        console.log('Page visible - resuming scorecard refreshes');
+        // Refresh data when page becomes visible again
+        fetchTournamentData();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
+  }, [isOpen, fetchTournamentData]);
 
   // Helper function to safely parse golf scores
   const parseGolfScore = (displayValue: string): number | undefined => {
@@ -650,7 +734,9 @@ export default function TournamentScoresWidget({
               ) : isLoading ? (
                 <div className="flex items-center justify-center h-16">
                   <RefreshCw className="w-3 h-3 animate-spin text-primary-500" />
-                  <span className="ml-2 text-gray-600 text-xs">{t('loadingScores')}</span>
+                  <span className="ml-2 text-gray-600 text-xs">
+                    {isRetrying ? 'Retrying...' : t('loadingScores')}
+                  </span>
                 </div>
               ) : tournamentData?.players ? (
                 <div className="p-0.5 sm:p-1">
@@ -738,7 +824,9 @@ export default function TournamentScoresWidget({
               ) : isLoading ? (
                 <div className="flex items-center justify-center h-16">
                   <RefreshCw className="w-3 h-3 animate-spin text-primary-500" />
-                  <span className="ml-2 text-gray-600 text-xs">{t('loadingScores')}</span>
+                  <span className="ml-2 text-gray-600 text-xs">
+                    {isRetrying ? 'Retrying...' : t('loadingScores')}
+                  </span>
                 </div>
               ) : tournamentData?.players ? (
                 <div className="p-0.5 sm:p-1">
@@ -814,7 +902,9 @@ export default function TournamentScoresWidget({
               ) : isLoading ? (
                 <div className="flex items-center justify-center h-16">
                   <RefreshCw className="w-3 h-3 animate-spin text-primary-500" />
-                  <span className="ml-2 text-gray-600 text-xs">{t('loadingScores')}</span>
+                  <span className="ml-2 text-gray-600 text-xs">
+                    {isRetrying ? 'Retrying...' : t('loadingScores')}
+                  </span>
                 </div>
               ) : tournamentData?.players ? (
                 <div className="p-1 sm:p-1.5">
