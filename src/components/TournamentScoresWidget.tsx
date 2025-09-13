@@ -573,7 +573,7 @@ export default function TournamentScoresWidget({
     if (!tournamentData?.players) return [];
     
     if (!searchQuery.trim()) {
-      return tournamentData.players.slice(0, 10);
+      return tournamentData.players; // Show all players when no search query
     }
     
     const query = searchQuery.toLowerCase();
@@ -924,10 +924,10 @@ export default function TournamentScoresWidget({
                     <div className="text-center">{t('total')}</div>
                   </div>
                   
-                  {/* Player Rows - Show top 10 players */}
-                  <div className="space-y-0">
+                  {/* Player Rows - Scrollable container for all players */}
+                  <div className="space-y-0 overflow-y-auto max-h-[240px] sm:max-h-[300px]">
                     {getFilteredPlayers().length > 0 ? (
-                      getFilteredPlayers().slice(0, 10).map((player) => (
+                      getFilteredPlayers().map((player) => (
                         <div
                           key={player.id}
                           className="grid grid-cols-[1.8fr_0.7fr_0.7fr] sm:grid-cols-[1.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 items-center p-0.75 hover:bg-gray-50 rounded transition-colors min-h-[20px] sm:min-h-[22px] cursor-pointer"
