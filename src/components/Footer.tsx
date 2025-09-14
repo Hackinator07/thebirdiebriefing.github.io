@@ -9,6 +9,7 @@ interface FooterProps {
 
 export default function Footer({ onToggleScores }: FooterProps) {
   const currentLang = getCurrentLanguage();
+  const scorecardText = getTranslation(currentLang, 'scorecard') as string;
   
   const navigation = {
     main: [
@@ -19,7 +20,7 @@ export default function Footer({ onToggleScores }: FooterProps) {
       { name: 'Schedule', href: '/schedule' },
       { name: 'About Us', href: '/about' },
       { name: 'Contact Us', href: '/contact-us' },
-      { name: getTranslation(currentLang, 'scorecard'), href: undefined },
+      { name: scorecardText, href: undefined },
     ],
     social: [
       {
