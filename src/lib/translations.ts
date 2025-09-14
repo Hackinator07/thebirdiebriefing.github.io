@@ -70,6 +70,9 @@ export interface TranslationKeys {
   
   // Form fields
   emailPlaceholder: string;
+  firstNamePlaceholder: string;
+  lastNamePlaceholder: string;
+  messagePlaceholder: string;
   
   // Player names
   playerNames: Record<string, string>;
@@ -133,6 +136,9 @@ export const translations: Record<string, TranslationKeys> = {
     tvSchedule: 'TV Schedule',
     followAction: 'Follow the action and stay updated with tournament coverage',
     emailPlaceholder: 'Enter your email address',
+    firstNamePlaceholder: 'Enter your first name',
+    lastNamePlaceholder: 'Enter your last name',
+    messagePlaceholder: 'Enter your message here...',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
       'J. Bae': 'J. Bae',
@@ -208,6 +214,9 @@ export const translations: Record<string, TranslationKeys> = {
     tvSchedule: 'TVスケジュール',
     followAction: 'アクションをフォローし、トーナメントカバレッジで最新情報を入手',
     emailPlaceholder: 'メールアドレスを入力してください',
+    firstNamePlaceholder: '名を入力してください',
+    lastNamePlaceholder: '姓を入力してください',
+    messagePlaceholder: 'メッセージを入力してください...',
     playerNames: {
       'C. Wannasaen': 'C. ワンナサエン',
       'J. Bae': 'J. ベ',
@@ -283,6 +292,9 @@ export const translations: Record<string, TranslationKeys> = {
     tvSchedule: 'TV 일정',
     followAction: '액션을 따라하고 토너먼트 커버리지로 최신 정보를 얻으세요',
     emailPlaceholder: '이메일 주소를 입력하세요',
+    firstNamePlaceholder: '이름을 입력하세요',
+    lastNamePlaceholder: '성을 입력하세요',
+    messagePlaceholder: '메시지를 입력하세요...',
     playerNames: {
       'C. Wannasaen': 'C. 완나사엔',
       'J. Bae': 'J. 배',
@@ -358,6 +370,9 @@ export const translations: Record<string, TranslationKeys> = {
     tvSchedule: 'ตารางทีวี',
     followAction: 'ติดตามการแข่งขันและรับข้อมูลล่าสุดจากรายงานการแข่งขัน',
     emailPlaceholder: 'กรุณาใส่ที่อยู่อีเมลของคุณ',
+    firstNamePlaceholder: 'กรุณาใส่ชื่อของคุณ',
+    lastNamePlaceholder: 'กรุณาใส่นามสกุลของคุณ',
+    messagePlaceholder: 'กรุณาใส่ข้อความของคุณ...',
     ranking: 'อันดับ',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -434,6 +449,9 @@ export const translations: Record<string, TranslationKeys> = {
     tvSchedule: '电视转播',
     followAction: '关注比赛动态，通过赛事报道获取最新信息',
     emailPlaceholder: '请输入您的电子邮件地址',
+    firstNamePlaceholder: '请输入您的名字',
+    lastNamePlaceholder: '请输入您的姓氏',
+    messagePlaceholder: '请输入您的消息...',
     ranking: '排名',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -509,6 +527,9 @@ export const translations: Record<string, TranslationKeys> = {
     tvSchedule: 'Lịch phát sóng',
     followAction: 'Theo dõi hành động và cập nhật thông tin mới nhất từ báo cáo giải đấu',
     emailPlaceholder: 'Nhập địa chỉ email của bạn',
+    firstNamePlaceholder: 'Nhập tên của bạn',
+    lastNamePlaceholder: 'Nhập họ của bạn',
+    messagePlaceholder: 'Nhập tin nhắn của bạn...',
     ranking: 'Xếp hạng',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -585,6 +606,9 @@ export const translations: Record<string, TranslationKeys> = {
     tvSchedule: 'Iskedyul ng TV',
     followAction: 'Sundan ang aksyon at manatiling na-update sa tournament coverage',
     emailPlaceholder: 'Ilagay ang inyong email address',
+    firstNamePlaceholder: 'Ilagay ang inyong unang pangalan',
+    lastNamePlaceholder: 'Ilagay ang inyong apelyido',
+    messagePlaceholder: 'Ilagay ang inyong mensahe...',
     ranking: 'Ranggo',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -661,6 +685,9 @@ export const translations: Record<string, TranslationKeys> = {
     tvSchedule: 'TV-schema',
     followAction: 'Följ handlingen och håll dig uppdaterad med turneringsrapportering',
     emailPlaceholder: 'Ange din e-postadress',
+    firstNamePlaceholder: 'Ange ditt förnamn',
+    lastNamePlaceholder: 'Ange ditt efternamn',
+    messagePlaceholder: 'Ange ditt meddelande här...',
     ranking: 'Rankning',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -737,6 +764,9 @@ export const translations: Record<string, TranslationKeys> = {
     tvSchedule: 'TV-program',
     followAction: 'Følg handlingen og hold deg oppdatert med turneringsrapportering',
     emailPlaceholder: 'Skriv inn din e-postadresse',
+    firstNamePlaceholder: 'Skriv inn ditt fornavn',
+    lastNamePlaceholder: 'Skriv inn ditt etternavn',
+    messagePlaceholder: 'Skriv inn din melding her...',
     ranking: 'Rangering',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -813,6 +843,9 @@ export const translations: Record<string, TranslationKeys> = {
     tvSchedule: 'Programme TV',
     followAction: 'Suivez l\'action et restez informé avec la couverture du tournoi',
     emailPlaceholder: 'Entrez votre adresse e-mail',
+    firstNamePlaceholder: 'Entrez votre prénom',
+    lastNamePlaceholder: 'Entrez votre nom de famille',
+    messagePlaceholder: 'Entrez votre message ici...',
     ranking: 'Classement',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -889,6 +922,9 @@ export const translations: Record<string, TranslationKeys> = {
     tvSchedule: 'Programación de TV',
     followAction: 'Sigue la acción y mantente actualizado con la cobertura del torneo',
     emailPlaceholder: 'Ingresa tu dirección de correo electrónico',
+    firstNamePlaceholder: 'Ingresa tu nombre',
+    lastNamePlaceholder: 'Ingresa tu apellido',
+    messagePlaceholder: 'Ingresa tu mensaje aquí...',
     ranking: 'Clasificación',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -965,6 +1001,9 @@ export const translations: Record<string, TranslationKeys> = {
     tvSchedule: 'TV-Programm',
     followAction: 'Folgen Sie der Aktion und bleiben Sie mit der Turnierberichterstattung auf dem Laufenden',
     emailPlaceholder: 'Geben Sie Ihre E-Mail-Adresse ein',
+    firstNamePlaceholder: 'Geben Sie Ihren Vornamen ein',
+    lastNamePlaceholder: 'Geben Sie Ihren Nachnamen ein',
+    messagePlaceholder: 'Geben Sie hier Ihre Nachricht ein...',
     ranking: 'Rangliste',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',

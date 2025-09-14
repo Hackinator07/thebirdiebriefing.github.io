@@ -11,6 +11,7 @@ export default function AuthorCallout({
   className = ''
 }: AuthorCalloutProps) {
   // Use provided message (loaded server-side by AuthorCalloutServer)
+  // Fallback text will be translated by JigsawStack
   const calloutMessage = message || 'Contact us for more information.';
 
   return (

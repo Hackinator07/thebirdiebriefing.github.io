@@ -1,16 +1,12 @@
 import Link from 'next/link';
 import NewsletterSignup from './NewsletterSignup';
 import { FaInstagram, FaYoutube, FaEnvelope } from 'react-icons/fa';
-import { getTranslation, getCurrentLanguage } from '@/lib/translations';
 
 interface FooterProps {
   onToggleScores?: () => void;
 }
 
 export default function Footer({ onToggleScores }: FooterProps) {
-  const currentLang = getCurrentLanguage();
-  const scorecardText = getTranslation(currentLang, 'scorecard') as string;
-  
   const navigation = {
     main: [
       { name: 'Home', href: '/' },
@@ -20,7 +16,7 @@ export default function Footer({ onToggleScores }: FooterProps) {
       { name: 'Schedule', href: '/schedule' },
       { name: 'About Us', href: '/about' },
       { name: 'Contact Us', href: '/contact-us' },
-      { name: scorecardText, href: undefined },
+      { name: 'Scorecard', href: undefined },
     ],
     social: [
       {
