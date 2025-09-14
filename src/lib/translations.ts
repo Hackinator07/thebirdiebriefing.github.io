@@ -68,6 +68,9 @@ export interface TranslationKeys {
   tvSchedule: string;
   followAction: string;
   
+  // Form fields
+  emailPlaceholder: string;
+  
   // Player names
   playerNames: Record<string, string>;
 }
@@ -129,6 +132,7 @@ export const translations: Record<string, TranslationKeys> = {
     teeTimes: 'Tee Times',
     tvSchedule: 'TV Schedule',
     followAction: 'Follow the action and stay updated with tournament coverage',
+    emailPlaceholder: 'Enter your email address',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
       'J. Bae': 'J. Bae',
@@ -203,6 +207,7 @@ export const translations: Record<string, TranslationKeys> = {
     teeTimes: 'ティータイム',
     tvSchedule: 'TVスケジュール',
     followAction: 'アクションをフォローし、トーナメントカバレッジで最新情報を入手',
+    emailPlaceholder: 'メールアドレスを入力してください',
     playerNames: {
       'C. Wannasaen': 'C. ワンナサエン',
       'J. Bae': 'J. ベ',
@@ -277,6 +282,7 @@ export const translations: Record<string, TranslationKeys> = {
     teeTimes: '티 타임',
     tvSchedule: 'TV 일정',
     followAction: '액션을 따라하고 토너먼트 커버리지로 최신 정보를 얻으세요',
+    emailPlaceholder: '이메일 주소를 입력하세요',
     playerNames: {
       'C. Wannasaen': 'C. 완나사엔',
       'J. Bae': 'J. 배',
@@ -351,6 +357,7 @@ export const translations: Record<string, TranslationKeys> = {
     teeTimes: 'เวลาเริ่มเล่น',
     tvSchedule: 'ตารางทีวี',
     followAction: 'ติดตามการแข่งขันและรับข้อมูลล่าสุดจากรายงานการแข่งขัน',
+    emailPlaceholder: 'กรุณาใส่ที่อยู่อีเมลของคุณ',
     ranking: 'อันดับ',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -426,6 +433,7 @@ export const translations: Record<string, TranslationKeys> = {
     teeTimes: '开球时间',
     tvSchedule: '电视转播',
     followAction: '关注比赛动态，通过赛事报道获取最新信息',
+    emailPlaceholder: '请输入您的电子邮件地址',
     ranking: '排名',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -500,6 +508,7 @@ export const translations: Record<string, TranslationKeys> = {
     teeTimes: 'Giờ phát bóng',
     tvSchedule: 'Lịch phát sóng',
     followAction: 'Theo dõi hành động và cập nhật thông tin mới nhất từ báo cáo giải đấu',
+    emailPlaceholder: 'Nhập địa chỉ email của bạn',
     ranking: 'Xếp hạng',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -575,6 +584,7 @@ export const translations: Record<string, TranslationKeys> = {
     teeTimes: 'Oras ng tee',
     tvSchedule: 'Iskedyul ng TV',
     followAction: 'Sundan ang aksyon at manatiling na-update sa tournament coverage',
+    emailPlaceholder: 'Ilagay ang inyong email address',
     ranking: 'Ranggo',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -650,6 +660,7 @@ export const translations: Record<string, TranslationKeys> = {
     teeTimes: 'Tee-tider',
     tvSchedule: 'TV-schema',
     followAction: 'Följ handlingen och håll dig uppdaterad med turneringsrapportering',
+    emailPlaceholder: 'Ange din e-postadress',
     ranking: 'Rankning',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -725,6 +736,7 @@ export const translations: Record<string, TranslationKeys> = {
     teeTimes: 'Tee-tider',
     tvSchedule: 'TV-program',
     followAction: 'Følg handlingen og hold deg oppdatert med turneringsrapportering',
+    emailPlaceholder: 'Skriv inn din e-postadresse',
     ranking: 'Rangering',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -800,6 +812,7 @@ export const translations: Record<string, TranslationKeys> = {
     teeTimes: 'Heures de départ',
     tvSchedule: 'Programme TV',
     followAction: 'Suivez l\'action et restez informé avec la couverture du tournoi',
+    emailPlaceholder: 'Entrez votre adresse e-mail',
     ranking: 'Classement',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -875,6 +888,7 @@ export const translations: Record<string, TranslationKeys> = {
     teeTimes: 'Horarios de salida',
     tvSchedule: 'Programación de TV',
     followAction: 'Sigue la acción y mantente actualizado con la cobertura del torneo',
+    emailPlaceholder: 'Ingresa tu dirección de correo electrónico',
     ranking: 'Clasificación',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',
@@ -950,6 +964,7 @@ export const translations: Record<string, TranslationKeys> = {
     teeTimes: 'Abschlagzeiten',
     tvSchedule: 'TV-Programm',
     followAction: 'Folgen Sie der Aktion und bleiben Sie mit der Turnierberichterstattung auf dem Laufenden',
+    emailPlaceholder: 'Geben Sie Ihre E-Mail-Adresse ein',
     ranking: 'Rangliste',
     playerNames: {
       'C. Wannasaen': 'C. Wannasaen',

@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import { performSpamCheck } from '@/lib/spamProtection';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function NewsletterSignup() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -83,7 +85,7 @@ export default function NewsletterSignup() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200 text-sm border border-gray-300"
-          placeholder="Enter your email address"
+          placeholder={t('emailPlaceholder')}
         />
       </div>
 

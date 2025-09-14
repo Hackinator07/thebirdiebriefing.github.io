@@ -4,8 +4,10 @@ import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { performSpamCheck } from "@/lib/spamProtection";
 import VideoBackground from "@/components/VideoBackground";
+import { useTranslation } from "@/hooks/useTranslation";
 
 function ContactUsForm() {
+  const { t } = useTranslation();
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     firstName: "",
@@ -232,7 +234,7 @@ function ContactUsForm() {
                        onChange={handleInputChange}
                        required
                        className='w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200'
-                       placeholder='Enter your email address'
+                       placeholder={t('emailPlaceholder')}
                      />
                   </div>
 
