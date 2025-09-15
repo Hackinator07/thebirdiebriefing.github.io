@@ -31,7 +31,10 @@ export async function loadMarkdownArticle(slug: string): Promise<Article | null>
         data: section.data as ArticleSection['data'],
         headers: section.headers as string[],
         tableData: section.tableData as string[][],
-        backgroundColor: section.backgroundColor as string
+        backgroundColor: section.backgroundColor as string,
+        src: section.src as string,
+        alt: section.alt as string,
+        caption: section.caption as string
       }));
     }
 

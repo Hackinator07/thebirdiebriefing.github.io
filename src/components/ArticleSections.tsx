@@ -5,7 +5,7 @@ import FieldTable from './FieldTable';
 import { TimezoneProvider } from './TimezoneContext';
 
 interface Section {
-  type: 'links' | 'tv-schedule' | 'field-data' | 'field-table';
+  type: 'links' | 'tv-schedule' | 'field-data' | 'field-table' | 'image';
   title: string;
   links?: Array<{
     text: string;
@@ -20,6 +20,9 @@ interface Section {
   headers?: string[];
   tableData?: string[][];
   backgroundColor?: string;
+  src?: string;
+  alt?: string;
+  caption?: string;
 }
 
 interface ArticleSectionsProps {
@@ -80,6 +83,21 @@ export default function ArticleSections({ sections }: ArticleSectionsProps) {
                     data={section.tableData || []}
                   />
                 );
+              case 'image':
+                return (
+                  <div key={index} className="my-8">
+                    <img
+                      src={section.src}
+                      alt={section.alt || ''}
+                      className="w-full h-auto rounded-lg shadow-sm"
+                    />
+                    {section.caption && (
+                      <p className="text-sm text-gray-600 mt-2 text-left italic">
+                        {section.caption}
+                      </p>
+                    )}
+                  </div>
+                );
               default:
                 return null;
             }
@@ -119,6 +137,21 @@ export default function ArticleSections({ sections }: ArticleSectionsProps) {
                 headers={section.headers || []}
                 data={section.tableData || []}
               />
+            );
+          case 'image':
+            return (
+              <div key={index} className="my-8">
+                <img
+                  src={section.src}
+                  alt={section.alt || ''}
+                  className="w-full h-auto rounded-lg shadow-sm"
+                />
+                {section.caption && (
+                  <p className="text-sm text-gray-600 mt-2 text-left italic">
+                    {section.caption}
+                  </p>
+                )}
+              </div>
             );
           default:
             return null;

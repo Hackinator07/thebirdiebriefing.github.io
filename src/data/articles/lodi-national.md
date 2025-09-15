@@ -18,6 +18,22 @@ tags:
   - "Wisconsin"
   - "Lodi"
   - "Opinion"
+sections:
+  - type: "field-table"
+    title: "Tees: Lodi Golf Club"
+    headers: ["Hole", "1", "2", "3", "4", "5", "6", "7", "8", "9", "Out"]
+    tableData:
+      - ["Yards (Blue)", "294", "352", "204", "377", "434", "537", "390", "305", "155", "3048"]
+      - ["Yards (White)", "272", "342", "178", "367", "418", "528", "373", "293", "128", "2899"]
+      - ["Yards (Red)", "247", "290", "140", "288", "350", "408", "364", "272", "110", "2469"]
+      - ["Par", "4", "4", "3", "4", "4", "5", "4", "4", "3", "35"]
+      - ["Men's Hcp", "13", "9", "15", "7", "3", "1", "5", "11", "17", ""]
+      - ["Women's Hcp", "13", "7", "15", "11", "5", "1", "3", "9", "17", ""]
+  - type: "image"
+    title: "Scorecard"
+    src: "/optimized/lodi-scorecard.png"
+    alt: "Lodi Golf Club Scorecard"
+    caption: "Lodi Golf Club Scorecard"
 ---
 
 There are certain courses that make no sense on paper or even when you're standing on the first tee but feel just right when you're actually playing in them. [Lodi Golf Club, though colloquially we've taken to calling it Lodi National](http://www.lodigolf.com/), is exactly that kind of place. It's a nine-hole cut into a driftless hillside that asks little but gives plenty. From the tips it is a par 35 at 3,048 yards. No, it is not the kind of place a glossy brochure brags about, but the kind that matters. Where small wins last longer than your perfect drive that rolled down the slope again, and a $20 bill and a bit of time somehow deliver more than money ever should.

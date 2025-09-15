@@ -7,7 +7,7 @@ export interface SiteConfig {
 }
 
 export interface ArticleSection {
-  type: 'links' | 'tv-schedule' | 'field-data' | 'field-table';
+  type: 'links' | 'tv-schedule' | 'field-data' | 'field-table' | 'image';
   title: string;
   links?: Array<{
     text: string;
@@ -22,6 +22,9 @@ export interface ArticleSection {
   headers?: string[];
   tableData?: string[][];
   backgroundColor?: string;
+  src?: string;
+  alt?: string;
+  caption?: string;
 }
 
 export interface Article {
