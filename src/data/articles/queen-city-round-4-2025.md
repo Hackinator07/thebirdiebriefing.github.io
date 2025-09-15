@@ -138,7 +138,7 @@ sections:
         description: "Primary Sponsor"
 ---
 
-There was a silence on the 18th green at TPC River's Bend late Sunday. This wasn't the kind of Sunday for ice cream at [Charley's Mini Golf](https://www.instagram.com/p/DMlTbKKN7h2/?hl=en&img_index=1). Spectators weren't whispering; they were holding their breath. Charley Hull found herself with a short putt to win her third LPGA event, yet the story wasn't just about her ball. It was also about one that had just rolled and rolled far too many times off the putter of the world's best player. Jeeno Thitikul had just four-putted from a range that should've been routine, her last stroke a decelerated push. It was a tragedy that makes even casual fans wince and think to themselves, "She's one of us." 
+There was a silence on the 18th green at TPC River's Bend late Sunday. This wasn't the kind of Sunday for ice cream at [Charley's Mini Golf](https://www.instagram.com/p/DMlTbKKN7h2/?hl=en&img_index=1). Spectators weren't whispering; they were holding their breath. Charley Hull found herself with a short putt to win her third LPGA event, yet the story wasn't just about her ball. It was also about one that had just rolled and rolled far too many times off the putter of the world's best player. [Jeeno Thitikul had just four-putted](https://youtube.com/shorts/t3uoJslHLS4?si=mcb089QgETyd1Vjx) from a range that should've been routine, her last stroke a decelerated push. It was a tragedy that makes even casual fans wince and think to themselves, "She's one of us." 
 
 The crowd looked ill, and Hull incredulous.
 
@@ -148,13 +148,13 @@ She stepped away from her own putt twice, plumb bobbed her [TP Hydro Blast](http
 
 It had been 1,077 days since Hull's last LPGA win, at the Volunteers of America Classic in 2022. She made sure to end the drought in style—posting rounds of 68-65-67-68 to finish 20-under 268 and collect $300,000.
 
-The final round was a duel long before they walked up to 18. Hull started with the lead but slipped a shot behind on 14 when Thitikul rolled in a birdie. She answered on 16, sinking a long birdie putt after splashing it in the bunker off the tee. She then gave it right back with a bogey at 17. Thitikul's steady par there sent her to the last with a one-shot cushion. Hull admitted she thought she had to eagle the 18th just to have a chance.
+In reality, the final round was a duel long before they walked up to 18. Hull started with the lead but slipped a shot behind on 14 when Thitikul rolled in a birdie. [She answered on 16, sinking a long birdie putt](https://youtu.be/M1SAih6OXUQ?t=244) after splashing it in the bunker off the tee. She then gave it right back with a bogey at 17. Thitikul's steady par there sent her to the last with a one-shot cushion. Hull admitted she thought she had to eagle the 18th just to have a chance.
 
 "On 18, pushed my driver a little bit. Hit a nice cut 9-iron round the tree. Didn't quite cut. Thought I had to hole the putt and just two-putted," Hull said. "I don't really remember much from the last hole. It was a little bit of a shock. I was nervous over that putt. My hands were shaking. I think I was more shocked, and the adrenaline and everything."
 
 I called Hull the ["Queen of the Almost"](https://www.birdiebriefing.com/news/charley-hull-queen-almost/) earlier this summer, after she'd managed to collect her runner-up at the AIG Women's Open at Porthcawl. Her road to this moment hasn't been smooth. She battled injuries all season—torn ankle ligaments, a back injury from lifting a box, and even a virus that caused her to withdraw from Evian after she fainted. When asked if she plays better hurt, Hull didn't hesitate: "It slows my mind down. I always find when I'm poorly, ill, I usually play good golf. My mind is 100 miles an hour, but when I'm poorly, I find I'm more relaxed, and I probably expect less and do less. My days are usually full out, going to the gym, golf, practice. When I'm kind of poorly or injured I do a lot less and I put less pressure on myself. Then I kind of do better sometimes."
 
-It is all on brand for Charley Hull: she doesn't just play; she insists on being part of the story. She's aggressive off the tee, unafraid to fire at pins, and when she's on, you're captivated.
+This is all on brand for Charley Hull: she doesn't just play; she insists on being part of the story. She's aggressive off the tee, unafraid to fire at pins, and when she's on, you're captivated.
 
 Was this win gift-wrapped by Thitikul's collapse? Absolutely. But Hull had to be there to capitalize on it.
 
