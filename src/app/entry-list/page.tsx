@@ -119,7 +119,7 @@ export default function EntryListPage() {
             </a>
           </p>
           <p className="text-sm text-gray-500 text-center">
-            18th - 21st September 2025
+            19th-21st September 2025
           </p>
           <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center">
             Updated {new Date(entryList.lastUpdated).toLocaleDateString('en-US', {
