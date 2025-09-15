@@ -50,7 +50,7 @@ export default function Footer({ onToggleScores }: FooterProps) {
   };
 
   return (
-    <footer className="bg-blue-950 text-white">
+    <footer className="text-white" style={{ backgroundColor: '#00264C' }}>
       <div className="max-w-7xl mx-auto py-12 px-6">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
