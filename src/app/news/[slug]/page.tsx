@@ -14,6 +14,8 @@ import AuthorCalloutServer from '@/components/AuthorCalloutServer';
 import ArticleSections from '@/components/ArticleSections';
 import ArticleJsonLd from '@/components/ArticleJsonLd';
 import LatestArticle from '@/components/LatestArticle';
+import ReadingProgress from '@/components/ReadingProgress';
+import EngagementAnalytics from '@/components/EngagementAnalytics';
 
 interface ArticlePageProps {
   params: Promise<{
@@ -92,6 +94,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <>
       <ArticleJsonLd article={article} url={articleUrl} />
+      <ReadingProgress />
+      <EngagementAnalytics 
+        articleId={article.id}
+        articleTitle={article.title}
+        category={article.category}
+      />
       <div className="bg-white min-h-screen">
         {/* Main Content Container */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 article-container">
@@ -232,6 +240,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           {/* Sidebar */}
           <aside className="w-full lg:w-80 flex-shrink-0">
             <div className="lg:sticky lg:top-24">
+              {/* Latest Articles */}
               <LatestArticle />
             </div>
           </aside>
