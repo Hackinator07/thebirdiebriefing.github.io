@@ -163,7 +163,9 @@ EXEMPT
 139 	Sophia Popov (GER) 	Heidelberg, Germany 	L15 (28) 	Entered 	»»
 140 	Olivia Cowan (GER) 	Steinwenden, Germany 	L15 (29) 	Entered 	»»
 141 	Maria Jose Marin (COL) (a) 	Cali, Colombia 	L23 (1) 	Entered 	»»
-142 	Maria Fassi (MEX) 	Pachuca, Mexico 	L23 (2) 	Entered 	»»`;
+142 	Maria Fassi (MEX) 	Pachuca, Mexico 	L23 (2) 	Entered 	»»
+143 	Kendall Todd (USA) 	USA 	Qualifier 	Entered 	»»
+144 	Maude-Aimee Leblanc (CAN) 	Canada 	Qualifier 	Entered 	»»`;
 
   const lines = entryListText.split('\n');
   const players: EntryListPlayer[] = [];
@@ -198,6 +200,7 @@ EXEMPT
     'NED': 'NLD', // Netherlands
     'PAR': 'PRY', // Paraguay
     'ECU': 'ECU',
+    'COL': 'COL', // Colombia
     'SLO': 'SVN' // Slovenia
   };
 
