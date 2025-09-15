@@ -11,7 +11,7 @@ image:
   src: "/optimized/kroger-hull-rd4.webp"
   alt: "Charley Hull Poses With the Queen City Trophy."
   caption: "Charley Hull Poses With the Queen City Trophy."
-  courtesy: "Evan Whitaker"
+  courtesy: "LPGA Media"
 calloutType: "author"
 tags:
   - "Kroger Queen City Championship"
