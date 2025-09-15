@@ -3,10 +3,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { formatDate, calculateReadTime } from '@/lib/data';
 import MarkdownContent from '@/components/MarkdownContent';
+import { selectDiverseArticle } from '@/lib/articleSelection';
 
 export default async function LatestArticle() {
   const articles = await getArticles();
-  const latestArticle = articles[0]; // Most recent article (articles are sorted by date)
+  const latestArticle = selectDiverseArticle(articles); // Use diverse selection instead of just most recent
 
   if (!latestArticle) {
     return (
