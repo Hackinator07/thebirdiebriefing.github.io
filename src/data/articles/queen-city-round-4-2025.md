@@ -37,7 +37,6 @@ sections:
         - "Hole 18 - Hey-Jin Choi"
         - "Hole 18 - Perrine Delacour"
         - "Hole 18 - Chisato Iwai"
-        - "Hole 13 – Manon De Roey"
   - type: "field-table"
     title: "Final Results and Prize Money"
     headers: ["Position", "Player", "To Par", "Scores", "Total", "CME Points", "Prize Money"]
@@ -143,7 +142,7 @@ There was a silence on the 18th green at TPC River's Bend late Sunday. This wasn
 
 The crowd looked ill, and Hull incredulous.
 
-She stepped away from her own putt twice, plumb bobbed her [TP Hydro Blast](https://www.taylormadegolf.com/TP-Hydro-Blast-Soto-/DW-TA327.html?lang=en_US) like she was lining up a bet she couldn't afford to lose, then rolled it. Dead center. Pin still in as always. And with that, she won her first event of 2025 (the streak of different winners staying alive: 25 different winners in 24 events).
+She stepped away from her own putt twice, plumb bobbed her [TP Hydro Blast](https://www.taylormadegolf.com/TP-Hydro-Blast-Soto-/DW-TA327.html?lang=en_US) like she was lining up a bet she couldn't afford to lose, then rolled it. Dead center. Pin still in as always. And with that, she won her first event of 2025.
 
 "I didn't really process it," Hull said afterward. "Jeeno played great today. She was very solid. Unfortunate what happened to her on the last hole. At the end of the day, I just felt like I needed a little bit of luck on my side in the last few years because I don't feel like it's ever gone my way and it's finally got my way for once. Every dog has its day."
 
@@ -153,7 +152,7 @@ The final round was a duel long before they walked up to 18. Hull started with t
 
 "On 18, pushed my driver a little bit. Hit a nice cut 9-iron round the tree. Didn't quite cut. Thought I had to hole the putt and just two-putted," Hull said. "I don't really remember much from the last hole. It was a little bit of a shock. I was nervous over that putt. My hands were shaking. I think I was more shocked, and the adrenaline and everything."
 
-I called Hull the ["Queen of the Almost"](https://www.birdiebriefing.com/news/charley-hull-queen-almost/) earlier this summer, after she'd managed to collect her runner-up at the AIG Women's Open at Porthcawl. Not anymore. She's Queen of the City now—and deservedly so. Her road to this moment hasn't been smooth. She battled injuries all season—torn ankle ligaments, a back injury from lifting a box, and even a virus that caused her to withdraw from Evian after she fainted. When asked if she plays better hurt, Hull didn't hesitate: "It slows my mind down. I always find when I'm poorly, ill, I usually play good golf. My mind is 100 miles an hour, but when I'm poorly, I find I'm more relaxed, and I probably expect less and do less. My days are usually full out, going to the gym, golf, practice. When I'm kind of poorly or injured I do a lot less and I put less pressure on myself. Then I kind of do better sometimes."
+I called Hull the ["Queen of the Almost"](https://www.birdiebriefing.com/news/charley-hull-queen-almost/) earlier this summer, after she'd managed to collect her runner-up at the AIG Women's Open at Porthcawl. Her road to this moment hasn't been smooth. She battled injuries all season—torn ankle ligaments, a back injury from lifting a box, and even a virus that caused her to withdraw from Evian after she fainted. When asked if she plays better hurt, Hull didn't hesitate: "It slows my mind down. I always find when I'm poorly, ill, I usually play good golf. My mind is 100 miles an hour, but when I'm poorly, I find I'm more relaxed, and I probably expect less and do less. My days are usually full out, going to the gym, golf, practice. When I'm kind of poorly or injured I do a lot less and I put less pressure on myself. Then I kind of do better sometimes."
 
 It is all on brand for Charley Hull: she doesn't just play; she insists on being part of the story. She's aggressive off the tee, unafraid to fire at pins, and when she's on, you're captivated.
 
@@ -165,7 +164,7 @@ Queen of the Almost no more. Queen of Cincinnati is silly but has a ring to it.
 
 ## Round 4 Competition Highlights
 
-**See story above!**
+See story above!
 
 ## Shout Out
 
