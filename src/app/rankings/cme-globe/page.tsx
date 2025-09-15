@@ -58,7 +58,7 @@ export default function CmeGlobeRankingsPage() {
     });
   }, [rankings.players, sortField, sortDirection]);
 
-  const topPlayers = sortedPlayers.slice(0, 60); // Show top 60
+  const topPlayers = sortedPlayers; // Show all players
 
   const handleSort = (field: SortField) => {
     if (sortField === field) {
