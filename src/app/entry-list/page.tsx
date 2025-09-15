@@ -106,13 +106,20 @@ export default function EntryListPage() {
             </div>
           </div>
           <p className="text-base sm:text-lg text-gray-600 text-center">
-            Kroger Queen City Championship presented by P&G
+            Walmart NW Arkansas Championship presented by P&G
           </p>
           <p className="text-sm text-gray-500 text-center">
-            TPC River's Bend
+            <a
+              href="https://maps.app.goo.gl/2uYAkBN8j33apMhd6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-500 hover:text-primary-600 hover:underline transition-colors"
+            >
+              Pinnacle Country Club
+            </a>
           </p>
           <p className="text-sm text-gray-500 text-center">
-            11th - 14th September 2025
+            18th - 21st September 2025
           </p>
           <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center">
             Updated {new Date(entryList.lastUpdated).toLocaleDateString('en-US', {

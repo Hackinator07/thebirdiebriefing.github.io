@@ -18,7 +18,7 @@ export default function HomePageClient({ children }: HomePageClientProps) {
     <>
       {children}
       <TournamentScoresWidget
-        tournamentId="queen-city-2025"
+        tournamentId="401734779"
         tournamentName="Kroger Queen City Championship"
         isOpen={isScoresOpen}
         onToggle={handleToggleScores}

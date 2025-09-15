@@ -17,11 +17,11 @@ interface TournamentComponentProps {
 }
 
 export default function TournamentComponent({
-  tournamentName = "Kroger Queen City Championship",
-  location = "Maineville, Ohio",
-  date = "September 11-14, 2025",
-  buyTicketsUrl = "https://queencitylpga.com/tickets/",
-  officialSiteUrl = "https://queencitylpga.com/",
+  tournamentName = "Walmart NW Arkansas Championship",
+  location = "Rogers, Arkansas",
+  date = "September 18-21, 2025",
+  buyTicketsUrl = "https://nwachampionship.com/tickets",
+  officialSiteUrl = "https://nwachampionship.com/",
   teeTimesUrl = "/tee-times",
   broadcastUrl = "https://www.birdiebriefing.com/news/queen-city-2025/#tv-schedule",
   entryListUrl = "#",
@@ -39,8 +39,8 @@ export default function TournamentComponent({
           </h3>
           <div className="flex-shrink-0 -mt-2 -ml-2">
             <Image
-              src="https://media.lpga.com/images/librariesprovider3/default-album/kroger_queen_city_lockup9c9f957d-998c-419d-a539-0e52b475ffe4.png?sfvrsn=dccf91dc_1&v=2"
-              alt="Kroger Queen City Championship Logo"
+              src="/images/tournaments/walmart-nw-arkansas.png"
+              alt="Walmart NW Arkansas Championship Logo"
               width={140}
               height={70}
               className="h-16 w-auto object-contain"
@@ -53,7 +53,7 @@ export default function TournamentComponent({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
           <Link 
-            href="https://maps.app.goo.gl/2aHCt9jYw92cYPvNA"
+            href="https://maps.app.goo.gl/2uYAkBN8j33apMhd6"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
@@ -75,13 +75,13 @@ export default function TournamentComponent({
               <circle cx="12" cy="12" r="10" />
               <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" fill="white" />
             </svg>
-            <span>Par 72 • <svg className="w-3 h-3 inline mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>Yards 6,876</span>
+            <span>Par 71 • <svg className="w-3 h-3 inline mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>Yardage: 6,438</span>
           </div>
           <div className="flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
             </svg>
-            <span>Purse $2M • <svg className="w-3 h-3 inline mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138 3.42 3.42 0 001.946-.806z" /></svg>Previous Winner: Lydia Ko</span>
+            <span className="whitespace-nowrap">Purse $3M • <svg className="w-3 h-3 inline mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138 3.42 3.42 0 001.946-.806z" /></svg>2024 Winner: J. Suwannapura</span>
           </div>
         </div>
       </div>

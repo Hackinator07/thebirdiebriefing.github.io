@@ -45,7 +45,7 @@ interface TournamentScoresWidgetProps {
 }
 
 export default function TournamentScoresWidget({
-  tournamentId = '401734778',
+  tournamentId = '401734779',
   tournamentName = 'Kroger Queen City Championship',
   isOpen,
   onToggle,
