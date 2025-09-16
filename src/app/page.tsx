@@ -25,13 +25,13 @@ export default async function Home() {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
               {/* Left Column - Birdie Briefing Content */}
               <div className="flex-1">
-                <div className="bg-white rounded-lg p-6 lg:p-8 h-full">
+                <div className="bg-white rounded-lg p-6 lg:p-8 h-full flex flex-col justify-center">
                   {/* Main Headlines */}
-                  <div className="text-center mb-8">
+                  <div className="text-center mb-6">
                     <h1 className="text-4xl lg:text-6xl xl:text-7xl font-heading text-primary-500 leading-none mb-2">
                       The Birdie
                     </h1>
-                    <h2 className="text-4xl lg:text-6xl xl:text-7xl font-heading text-secondary-500 leading-none mb-8">
+                    <h2 className="text-4xl lg:text-6xl xl:text-7xl font-heading text-secondary-500 leading-none mb-6">
                       Briefing
                     </h2>
                   </div>
@@ -50,7 +50,7 @@ export default async function Home() {
                     </p>
 
                     {/* Author Attribution */}
-                    <div className="flex items-center justify-center space-x-4 mb-8">
+                    <div className="flex items-center justify-center space-x-4 mb-6">
                       <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center shadow-sm flex-shrink-0">
                         <svg width="24" height="24" viewBox="0 0 69.787 69.787" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g>

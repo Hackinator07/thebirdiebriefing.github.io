@@ -41,19 +41,21 @@ export default function TournamentComponent({
       <div className="tournament-content">
         {/* Tournament Header */}
         <div className="mb-4">
-        <div className="flex items-start justify-between gap-4 mb-2">
-          <h3 className="text-xl lg:text-2xl font-bold text-gray-900 flex-1 break-words translation-text">
-            {tournamentName}
+        {/* Tournament Logo */}
+        <div className="flex justify-center mb-3">
+          <Image
+            src="/images/tournaments/walmart-nw-arkansas.png"
+            alt="Walmart NW Arkansas Championship Logo"
+            width={140}
+            height={70}
+            className="h-16 w-auto object-contain"
+          />
+        </div>
+        {/* Tournament Title */}
+        <div className="mb-2">
+          <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line" style={{ hyphens: 'none' }}>
+            {tournamentName.replace(/ Championship/g, '\nChampionship')}
           </h3>
-          <div className="flex-shrink-0 -mt-2 -ml-2">
-            <Image
-              src="/images/tournaments/walmart-nw-arkansas.png"
-              alt="Walmart NW Arkansas Championship Logo"
-              width={140}
-              height={70}
-              className="h-16 w-auto object-contain"
-            />
-          </div>
         </div>
         <div className="space-y-1 text-sm text-gray-600">
           <div className="flex items-center gap-2 text-gray-500">
@@ -98,13 +100,13 @@ export default function TournamentComponent({
               <circle cx="12" cy="12" r="10" />
               <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" fill="white" />
             </svg>
-            <span>Par 71 <svg className="w-3 h-3 inline mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>Yardage: 6,438</span>
+            <span>Par: 71 <svg className="w-3 h-3 inline mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>Yardage: 6,438</span>
           </div>
           <div className="flex items-center gap-2">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/>
             </svg>
-            <span className="whitespace-nowrap">Purse $3M <svg className="w-3 h-3 inline mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138 3.42 3.42 0 001.946-.806z" /></svg>2024 Winner: J. Suwannapura</span>
+            <span className="whitespace-nowrap">Purse: $3M <svg className="w-3 h-3 inline mx-1" fill="currentColor" viewBox="0 0 24 24"><path d="M7 3V1h10v2h5v8c0 2.21-1.79 4-4 4h-2.2l-.8 4H17v2H7v-2h2.2l-.8-4H6c-2.21 0-4-1.79-4-4V3h5zm10 8c1.1 0 2-.9 2-2V5h-3v6h1zm-2 0V5H9v6h6zM7 5H5v4c0 1.1.9 2 2 2h1V5z"/></svg>2024 Winner: J. Suwannapura</span>
           </div>
         </div>
       </div>
