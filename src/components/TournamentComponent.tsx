@@ -60,11 +60,13 @@ export default function TournamentComponent({
     (() => {
       const start = new Date(tournamentData.date);
       const end = new Date(tournamentData.endDate);
-      const startMonth = start.toLocaleDateString('en-US', { month: 'short' });
-      const endMonth = end.toLocaleDateString('en-US', { month: 'short' });
-      const startDay = start.getDate();
-      const endDay = end.getDate();
-      const year = start.getFullYear();
+      
+      // Use UTC methods to avoid timezone shifts
+      const startMonth = start.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' });
+      const endMonth = end.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' });
+      const startDay = start.getUTCDate();
+      const endDay = end.getUTCDate();
+      const year = start.getUTCFullYear();
       
       if (startMonth === endMonth) {
         return `${startMonth} ${startDay}-${endDay}, ${year}`;
