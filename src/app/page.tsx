@@ -125,7 +125,7 @@ export default async function Home() {
 
               {/* Right Column - Tournament Component */}
               <div className="w-full lg:w-96 flex-shrink-0">
-                <div className="h-full">
+                <div className="space-y-4">
                   <TournamentComponent />
                 </div>
               </div>

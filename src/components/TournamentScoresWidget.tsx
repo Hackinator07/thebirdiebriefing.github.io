@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { X, ChevronLeft, ChevronRight, Trophy, Clock, Search, RefreshCw } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Trophy, BarChart3, Search, RefreshCw, Flag } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
+import CourseHolesWidget from './CourseHolesWidget';
 
 interface Player {
   id: string;
@@ -627,8 +628,9 @@ export default function TournamentScoresWidget({
 
   const tabs = [
     { id: 'leaderboard', label: t('leaderboard'), icon: Trophy },
-    { id: 'rounds', label: t('rounds'), icon: Clock },
+    { id: 'rounds', label: t('rounds'), icon: BarChart3 },
     { id: 'search', label: t('search'), icon: Search },
+    { id: 'course', label: 'Course', icon: Flag },
   ];
 
   // Clear search when switching tabs
@@ -681,7 +683,7 @@ export default function TournamentScoresWidget({
         <div className="bg-primary-500 text-white p-1.5 sm:p-2 flex-shrink-0">
           <div className="flex items-center justify-between mb-1">
             <p className="text-[10px] sm:text-[11px] font-bold opacity-90 break-words leading-tight flex-1 pr-2">
-              {tournamentData?.name || tournamentName}
+              {(tournamentData?.name || tournamentName).replace(/\s*(pres\.|presented)\s*by\s*P&G/i, '')}
             </p>
             <div className="flex items-center gap-0.5 sm:gap-1 flex-shrink-0">
               <button
@@ -982,7 +984,16 @@ export default function TournamentScoresWidget({
               )}
             </div>
           )}
+
+          {activeTab === 'course' && (
+            <div className="p-0.5 sm:p-1">
+              <div className="overflow-y-auto max-h-[240px] sm:max-h-[300px]">
+                <CourseHolesWidget />
+              </div>
+            </div>
+          )}
         </div>
+
       </div>
 
     </>
