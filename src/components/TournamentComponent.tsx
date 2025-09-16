@@ -282,55 +282,51 @@ export default function TournamentComponent({
         {/* Weather Info */}
         <div className="mt-4 pt-3 border-t border-gray-200">
           <div className="text-center">
-            {weather ? (
-              <div className="space-y-2">
-                <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
-                  <svg className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                  <span className="font-medium">{weather?.displayValue || 'Mostly sunny'}</span>
-                  {loading && showStaticContent && <span className="text-xs text-gray-400">(updating...)</span>}
+            <div className="space-y-2">
+              <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
+                <svg className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+                <span className="font-medium">{weather?.displayValue || 'Partly sunny'}</span>
+                {loading && showStaticContent && <span className="text-xs text-gray-400">(updating...)</span>}
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
+                  <div className="flex items-center gap-1">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 3v10.5a3.5 3.5 0 11-4 0V3a2 2 0 114 0z" />
+                      <circle cx="12" cy="17" r="1.5" fill="currentColor" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 6h1M14 8h1M14 10h1M14 12h1" />
+                    </svg>
+                    <span>{weather?.temperature || 72}°F</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
+                    </svg>
+                    <span>{weather?.lowTemperature || 65}°-{weather?.highTemperature || 78}°F</span>
+                  </div>
                 </div>
-                <div className="space-y-1">
-                  <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
-                    <div className="flex items-center gap-1">
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 3v10.5a3.5 3.5 0 11-4 0V3a2 2 0 114 0z" />
-                        <circle cx="12" cy="17" r="1.5" fill="currentColor" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 6h1M14 8h1M14 10h1M14 12h1" />
-                      </svg>
-                      <span>{weather?.temperature || 72}°F</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
-                      </svg>
-                      <span>{weather?.lowTemperature || 65}°-{weather?.highTemperature || 78}°F</span>
-                    </div>
+                <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
+                  <div className="flex items-center gap-1">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8h12a2 2 0 110 4H3M3 12h12a2 2 0 100-4H3M3 16h8a2 2 0 110 4H3" />
+                    </svg>
+                    <span>{weather?.windSpeed || 5} mph {weather?.windDirection || 'WSW'}</span>
                   </div>
-                  <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
-                    <div className="flex items-center gap-1">
+                  {(weather?.precipitation || 24) > 0 && (
+                    <div className="flex items-center gap-1 text-blue-600">
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8h12a2 2 0 110 4H3M3 12h12a2 2 0 100-4H3M3 16h8a2 2 0 110 4H3" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 19l4-4 4 4" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 15l4-4 4 4" />
                       </svg>
-                      <span>{weather?.windSpeed || 4} mph {weather?.windDirection || 'S'}</span>
+                      <span>{weather?.precipitation || 24}% chance</span>
                     </div>
-                    {(weather?.precipitation || 20) > 0 && (
-                      <div className="flex items-center gap-1 text-blue-600">
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 19l4-4 4 4" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 15l4-4 4 4" />
-                        </svg>
-                        <span>{weather?.precipitation || 20}% chance</span>
-                      </div>
-                    )}
-                  </div>
+                  )}
                 </div>
               </div>
-            ) : (
-              <p className="text-sm text-gray-500">Weather unavailable</p>
-            )}
+            </div>
           </div>
         </div>
       </div>

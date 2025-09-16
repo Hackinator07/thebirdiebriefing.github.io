@@ -36,10 +36,34 @@
             z-index: 0;
         }
 
+        .static-background {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+            opacity: 1;
+            z-index: 1;
+        }
+
         .video-background video {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            position: absolute;
+            inset: 0;
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+            z-index: 2;
+        }
+
+        .video-background video.ready {
+            opacity: 1;
+        }
+
+        .video-background .static-background.hidden {
+            opacity: 0;
         }
 
         .video-overlay {
@@ -171,8 +195,10 @@
     <section class="hero-section">
         <!-- Video Background -->
         <div class="video-background">
-            <video autoplay muted loop playsinline>
-                <source src="https://hackinator07.github.io/thebirdiebriefing.github.io/videos/golf-background.mp4" type="video/mp4">
+            <!-- Static background that appears before video loads -->
+            <img src="/optimized/golf-background-poster.webp" alt="Video poster" class="static-background">
+            <video autoplay muted loop playsinline preload="auto" poster="/optimized/golf-background-poster.webp">
+                <source src="/videos/golf-background.mp4" type="video/mp4">
             </video>
             <div class="video-overlay"></div>
         </div>
@@ -229,6 +255,34 @@
     </section>
 
     <script>
+        // Video loading optimization
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.video-background video');
+            const staticBackground = document.querySelector('.static-background');
+            
+            if (video && staticBackground) {
+                function showVideo() {
+                    console.log('Video is ready to play');
+                    video.classList.add('ready');
+                    staticBackground.classList.add('hidden');
+                    
+                    // Ensure video starts playing
+                    video.play().catch(console.error);
+                    console.log('Video should now be playing and visible');
+                }
+                
+                // Try multiple events to ensure we catch when video is ready
+                video.addEventListener('canplaythrough', showVideo);
+                video.addEventListener('loadeddata', showVideo);
+                video.addEventListener('canplay', showVideo);
+                
+                video.addEventListener('error', function() {
+                    // Video failed to load, keep static background visible
+                    console.warn('Video failed to load, using static background');
+                });
+            }
+        });
+
         // Auto-refresh every 30 seconds
         setTimeout(() => {
             window.location.reload();
