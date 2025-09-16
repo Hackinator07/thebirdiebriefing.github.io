@@ -25,7 +25,7 @@ export default function TournamentComponent({
   eventId = "401734779",
   tournamentName = "Walmart NW Arkansas Championship pres. by P&G",
   location = "Rogers, AR", 
-  date = "Sep 18-20, 2025",
+  date = "Sep 19-21, 2025",
   buyTicketsUrl = "https://nwachampionship.com/tickets",
   officialSiteUrl = "https://nwachampionship.com/",
   teeTimesUrl = "/tee-times",
