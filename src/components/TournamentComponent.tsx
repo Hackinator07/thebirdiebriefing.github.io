@@ -27,7 +27,7 @@ export default function TournamentComponent({
   teeTimesUrl = "/tee-times",
   broadcastUrl = "https://www.birdiebriefing.com/news/queen-city-2025/#tv-schedule",
   entryListUrl = "#",
-  podcastUrl = "https://open.spotify.com/episode/4MlMpATb0MHcQRZeuMqxey?si=8xzWaryDS3u09jAE-BtMIg"
+  podcastUrl = "https://open.spotify.com/episode/1O2VczRWTebqhMNxH64mdX?si=7685c58492cc45d4"
 }: TournamentComponentProps) {
   const { t } = useTranslation();
   const { weather, loading, error } = useWeather('401734779'); // Walmart NW Arkansas Championship event ID
