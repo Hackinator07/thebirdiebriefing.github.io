@@ -1,0 +1,283 @@
+{
+  "lastUpdated": "2025-09-16T17:49:54.643Z",
+  "eventId": "401734779",
+  "staticProps": {
+    "tournamentName": "Walmart NW Arkansas Championship pres. by P&G",
+    "location": ",",
+    "date": "Sep 18-20, 2025",
+    "courseName": "Pinnacle Country Club",
+    "par": 71,
+    "yardage": 6438
+  },
+  "rawApiData": {
+    "events": [
+      {
+        "id": "401734779",
+        "uid": "s:1100~l:1107~e:401734779",
+        "date": "2025-09-19T04:00Z",
+        "endDate": "2025-09-21T04:00Z",
+        "name": "Walmart NW Arkansas Championship pres. by P&G",
+        "shortName": "Walmart NW Arkansas Championship pres. by P&G",
+        "primary": true,
+        "hasPlayerStats": false,
+        "hasCourseStats": false,
+        "purse": 3000000,
+        "displayPurse": "$3,000,000",
+        "league": {
+          "id": "1107",
+          "name": "Ladies Pro Golf Association",
+          "abbreviation": "LPGA",
+          "shortName": "LPGA",
+          "slug": "lpga"
+        },
+        "season": {
+          "year": 2025
+        },
+        "links": [
+          {
+            "language": "en-US",
+            "rel": [
+              "summary",
+              "desktop",
+              "event"
+            ],
+            "href": "https://www.espn.com/golf/leaderboard?tournamentId=401734779",
+            "text": "Leaderboard",
+            "shortText": "Summary",
+            "isExternal": false,
+            "isPremium": false,
+            "isHidden": false
+          }
+        ],
+        "tournament": {
+          "id": "3357",
+          "displayName": "Walmart NW Arkansas Championship",
+          "major": false,
+          "scoringSystem": {
+            "id": "1",
+            "name": "Medal"
+          },
+          "numberOfRounds": 3,
+          "cutRound": 2,
+          "cutScore": 0,
+          "cutCount": 0
+        },
+        "status": {
+          "type": {
+            "id": "1",
+            "name": "STATUS_SCHEDULED",
+            "state": "pre",
+            "completed": false,
+            "description": "Scheduled"
+          }
+        },
+        "defendingChampion": {
+          "athlete": {
+            "id": "8634",
+            "displayName": "Jasmine Suwannapura",
+            "amateur": false
+          },
+          "displayName": ""
+        },
+        "playoffType": {
+          "id": -1,
+          "description": "None",
+          "minimumHoles": 0
+        },
+        "competitions": [
+          {
+            "id": "401734779",
+            "uid": "s:1100~l:1107~e:401734779~c:401734779",
+            "date": "2025-09-19T04:00Z",
+            "endDate": "2025-09-21T04:00Z",
+            "recent": false,
+            "onWatchESPN": false,
+            "dataFormat": "API",
+            "status": {
+              "period": 0,
+              "type": {
+                "id": "1",
+                "name": "STATUS_SCHEDULED",
+                "state": "pre",
+                "description": "Scheduled",
+                "detail": "September 19 - 21",
+                "shortDetail": "9/19 - 9/21"
+              }
+            },
+            "broadcasts": [
+              {
+                "media": {
+                  "id": "760",
+                  "slug": "golf-channel",
+                  "name": "Golf Channel",
+                  "shortName": "Golf Chnl",
+                  "callLetters": "Golf Chnl"
+                },
+                "lang": "en",
+                "region": "us"
+              },
+              {
+                "media": {
+                  "id": "984",
+                  "slug": "nbc-sports-app",
+                  "name": "NBC Sports App",
+                  "shortName": "NBC Sports App",
+                  "callLetters": "NBC Sports App"
+                },
+                "lang": "en",
+                "region": "us"
+              }
+            ],
+            "leaders": [],
+            "holeByHoleSource": {
+              "id": "0",
+              "state": "none",
+              "description": "none"
+            },
+            "scoringSystem": {
+              "id": "1",
+              "name": "Medal"
+            }
+          }
+        ],
+        "courses": [
+          {
+            "id": "10683",
+            "name": "Pinnacle Country Club",
+            "totalYards": 6438,
+            "shotsToPar": 71,
+            "parIn": 35,
+            "parOut": 36,
+            "host": true,
+            "holes": [
+              {
+                "number": 1,
+                "shotsToPar": 4,
+                "totalYards": 320
+              },
+              {
+                "number": 2,
+                "shotsToPar": 5,
+                "totalYards": 578
+              },
+              {
+                "number": 3,
+                "shotsToPar": 3,
+                "totalYards": 166
+              },
+              {
+                "number": 4,
+                "shotsToPar": 4,
+                "totalYards": 431
+              },
+              {
+                "number": 5,
+                "shotsToPar": 4,
+                "totalYards": 348
+              },
+              {
+                "number": 6,
+                "shotsToPar": 3,
+                "totalYards": 180
+              },
+              {
+                "number": 7,
+                "shotsToPar": 5,
+                "totalYards": 520
+              },
+              {
+                "number": 8,
+                "shotsToPar": 4,
+                "totalYards": 427
+              },
+              {
+                "number": 9,
+                "shotsToPar": 4,
+                "totalYards": 351
+              },
+              {
+                "number": 10,
+                "shotsToPar": 4,
+                "totalYards": 364
+              },
+              {
+                "number": 11,
+                "shotsToPar": 3,
+                "totalYards": 190
+              },
+              {
+                "number": 12,
+                "shotsToPar": 4,
+                "totalYards": 394
+              },
+              {
+                "number": 13,
+                "shotsToPar": 4,
+                "totalYards": 413
+              },
+              {
+                "number": 14,
+                "shotsToPar": 5,
+                "totalYards": 549
+              },
+              {
+                "number": 15,
+                "shotsToPar": 3,
+                "totalYards": 150
+              },
+              {
+                "number": 16,
+                "shotsToPar": 4,
+                "totalYards": 418
+              },
+              {
+                "number": 17,
+                "shotsToPar": 3,
+                "totalYards": 151
+              },
+              {
+                "number": 18,
+                "shotsToPar": 5,
+                "totalYards": 488
+              }
+            ],
+            "address": {
+              "city": "Rogers",
+              "state": "AR",
+              "country": "United States",
+              "zipCode": "72758"
+            },
+            "weather": {
+              "type": "Forecast",
+              "displayValue": "Partly sunny",
+              "conditionId": "3",
+              "zipCode": "72758",
+              "temperature": 72,
+              "lowTemperature": 72,
+              "highTemperature": 72,
+              "precipitation": 24,
+              "gust": 12,
+              "windSpeed": 5,
+              "windDirection": "WSW",
+              "lastUpdated": "2025-09-16T14:22Z",
+              "link": {
+                "isExternal": true,
+                "shortText": "Weather",
+                "rel": [
+                  "72758"
+                ],
+                "language": "en-US",
+                "attributes": {},
+                "href": "http://www.accuweather.com/en/us/pinnacle-country-club-ar/72756/hourly-weather-forecast/189283_poi?day=4&hbhhour=10&lang=en-us",
+                "text": "Weather",
+                "isPremium": false
+              }
+            }
+          }
+        ],
+        "airings": [],
+        "athleteAirings": []
+      }
+    ]
+  }
+}

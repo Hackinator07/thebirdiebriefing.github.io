@@ -2,10 +2,11 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
-import { useTournamentAndWeather } from '@/hooks/useTournamentAndWeather';
+import { useStaticTournamentData } from '@/hooks/useStaticTournamentData';
 import { formatPurse, formatLocation, getCourseName } from '@/lib/tournamentApi';
+import staticDataService from '@/lib/staticDataService';
 
 interface TournamentComponentProps {
   eventId?: string;
@@ -22,9 +23,9 @@ interface TournamentComponentProps {
 
 export default function TournamentComponent({
   eventId = "401734779",
-  tournamentName = "Walmart NW Arkansas Championship",
-  location = "Rogers, Arkansas",
-  date = "September 19-21, 2025",
+  tournamentName = "Walmart NW Arkansas Championship pres. by P&G",
+  location = "Rogers, AR", 
+  date = "Sep 18-20, 2025",
   buyTicketsUrl = "https://nwachampionship.com/tickets",
   officialSiteUrl = "https://nwachampionship.com/",
   teeTimesUrl = "/tee-times",
@@ -33,14 +34,23 @@ export default function TournamentComponent({
   podcastUrl = "https://open.spotify.com/episode/1O2VczRWTebqhMNxH64mdX?si=7685c58492cc45d4"
 }: TournamentComponentProps) {
   const { t } = useTranslation();
-  const { tournamentData, weather, loading, error } = useTournamentAndWeather(eventId);
+  const [isVisible, setIsVisible] = useState(false);
+  const [shouldLoadData, setShouldLoadData] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  
+  // Use automated static data system that matches current API response
+  const { tournamentData, weather, loading, error, refreshData } = useStaticTournamentData(
+    shouldLoadData ? eventId : ""
+  );
+  
   const [isClient, setIsClient] = useState(false);
+  const [showStaticContent, setShowStaticContent] = useState(true);
 
-  // Use API data if available, fallback to props
+  // Use API data if available, fallback to static data that matches current API response
   const displayName = (tournamentData?.name || tournamentName).replace(/\s*(pres\.|presented)\s*by\s*P&G/i, '');
   const displayLocation = tournamentData?.courses ? formatLocation(tournamentData.courses[0]) : location;
   const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Pinnacle Country Club";
-  const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$3M";
+  const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$3.0M";
   const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 71;
   const displayYardage = tournamentData?.courses?.[0]?.totalYards?.toLocaleString() || "6,438";
   const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName?.replace(/^Jasmine/, 'J.') || "J. Suwannapura";
@@ -64,34 +74,49 @@ export default function TournamentComponent({
     })() : date;
 
 
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVisible) {
+          setIsVisible(true);
+          setShouldLoadData(true);
+        }
+      },
+      {
+        rootMargin: '100px' // Start loading when component is 100px away from viewport
+      }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVisible]);
+
   useEffect(() => {
     setIsClient(true);
-  }, []);
-  // Show loading state while fetching data
-  if (loading) {
-    return (
-      <div className="bg-white rounded-lg p-4 lg:p-6 shadow-lg border border-gray-200 w-full max-w-md mx-auto translation-safe-container tournament-container-fixed">
-        <div className="tournament-content animate-pulse">
-          <div className="mb-4">
-            <div className="flex justify-center mb-3">
-              <div className="h-16 w-36 bg-gray-200 rounded"></div>
-            </div>
-            <div className="mb-2">
-              <div className="h-8 bg-gray-200 rounded mx-auto w-3/4"></div>
-            </div>
-            <div className="space-y-2">
-              <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-              <div className="h-4 bg-gray-200 rounded w-2/3"></div>
-              <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+    
+    // Initialize static data service for this event
+    if (eventId) {
+      staticDataService.updateConfig({
+        eventIds: [eventId]
+      });
+    }
+  }, [eventId]);
+
+  // Switch to live data when it's ready (progressive enhancement)
+  useEffect(() => {
+    if (!loading && tournamentData && weather) {
+      setShowStaticContent(false);
+    }
+  }, [loading, tournamentData, weather]);
+  // Show static content immediately, no loading state needed
+  // The component will seamlessly update when live data arrives
 
   return (
-    <div className="bg-white rounded-lg p-4 lg:p-6 shadow-lg border border-gray-200 w-full max-w-md mx-auto translation-safe-container tournament-container-fixed">
+    <div ref={ref} className="bg-white rounded-lg p-4 lg:p-6 shadow-lg border border-gray-200 w-full max-w-md mx-auto translation-safe-container tournament-container-fixed">
       <div className="tournament-content">
         {/* Tournament Header */}
         <div className="mb-4">
@@ -112,11 +137,11 @@ export default function TournamentComponent({
           </h3>
         </div>
         <div className="space-y-1 text-sm text-gray-600">
-          <div className="flex items-center gap-2 text-gray-500">
+          <div className="flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span className="text-sm">{displayDate}</span>
+            <span>{displayDate}</span>
           </div>
           <div className="flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +152,7 @@ export default function TournamentComponent({
               href="https://maps.app.goo.gl/2uYAkBN8j33apMhd6"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
+              className="font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
             >
               {displayLocation}
             </Link>
@@ -140,15 +165,17 @@ export default function TournamentComponent({
               href="/course-maps/nwa-course-map.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
+              className="font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
             >
               {displayCourseName}
             </a>
           </div>
-        </div>
-        
-        {/* Tournament Details */}
-        <div className="space-y-1 text-sm text-gray-600 mt-3">
+          <div className="flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v20m-6-6c0 1.5 2.5 3 6 3s6-1.5 6-3-2.5-3-6-3-6-1.5-6-3 2.5-3 6-3 6 1.5 6 3"/>
+            </svg>
+            <span>Purse: {displayPurse}</span>
+          </div>
           <div className="flex items-center gap-2">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10" />
@@ -158,11 +185,12 @@ export default function TournamentComponent({
           </div>
           <div className="flex items-center gap-2">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/>
+              <path d="M7 3V1h10v2h5v8c0 2.21-1.79 4-4 4h-2.2l-.8 4H17v2H7v-2h2.2l-.8-4H6c-2.21 0-4-1.79-4-4V3h5zm10 8c1.1 0 2-.9 2-2V5h-3v6h1zm-2 0V5H9v6h6zM7 5H5v4c0 1.1.9 2 2 2h1V5z"/>
             </svg>
-            <span className="whitespace-nowrap">Purse: {displayPurse} <svg className="w-3 h-3 inline mx-1" fill="currentColor" viewBox="0 0 24 24"><path d="M7 3V1h10v2h5v8c0 2.21-1.79 4-4 4h-2.2l-.8 4H17v2H7v-2h2.2l-.8-4H6c-2.21 0-4-1.79-4-4V3h5zm10 8c1.1 0 2-.9 2-2V5h-3v6h1zm-2 0V5H9v6h6zM7 5H5v4c0 1.1.9 2 2 2h1V5z"/></svg>2024 Winner: {displayWinner}</span>
+            <span>2024 Winner: {displayWinner}</span>
           </div>
         </div>
+        
       </div>
 
         {/* Action Tiles */}
@@ -259,7 +287,7 @@ export default function TournamentComponent({
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
                   <span className="font-medium">{weather?.displayValue || 'Mostly sunny'}</span>
-                  {isClient && loading && <span className="text-xs text-gray-400">(updating...)</span>}
+                  {loading && showStaticContent && <span className="text-xs text-gray-400">(updating...)</span>}
                 </div>
                 <div className="space-y-1">
                   <div className="flex items-center justify-center gap-4 text-xs text-gray-500">

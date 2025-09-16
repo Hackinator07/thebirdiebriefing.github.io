@@ -27,16 +27,16 @@ interface UseTournamentAndWeatherReturn {
 
 const defaultFallbackWeather: WeatherData = {
   type: 'Forecast',
-  displayValue: 'Mostly sunny',
-  conditionId: '2',
+  displayValue: 'Partly sunny',
+  conditionId: '3',
   zipCode: '72758',
   temperature: 72,
-  lowTemperature: 65,
-  highTemperature: 78,
-  precipitation: 20,
-  gust: 7,
-  windSpeed: 4,
-  windDirection: 'S',
+  lowTemperature: 72,
+  highTemperature: 72,
+  precipitation: 24,
+  gust: 12,
+  windSpeed: 5,
+  windDirection: 'WSW',
   lastUpdated: new Date().toISOString(),
 };
 
@@ -162,10 +162,16 @@ async function fetchTournamentAndWeatherData(eventId: string): Promise<{
 export function useTournamentAndWeather(eventId: string): UseTournamentAndWeatherReturn {
   const [tournamentData, setTournamentData] = useState<TournamentEvent | null>(null);
   const [weather, setWeather] = useState<WeatherData | null>(defaultFallbackWeather);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false); // Start with false for immediate display
   const [error, setError] = useState<string | null>(null);
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
+    // Don't fetch if no eventId provided (for lazy loading)
+    if (!eventId) {
+      return;
+    }
+
     let isMounted = true;
 
     async function loadData() {
@@ -178,6 +184,7 @@ export function useTournamentAndWeather(eventId: string): UseTournamentAndWeathe
         if (isMounted) {
           setTournamentData(tournament);
           setWeather(weatherData);
+          setHasLoaded(true);
         }
       } catch (err) {
         if (isMounted) {
@@ -186,6 +193,7 @@ export function useTournamentAndWeather(eventId: string): UseTournamentAndWeathe
           
           // Keep fallback weather data even on error
           setWeather(defaultFallbackWeather);
+          setHasLoaded(true);
         }
       } finally {
         if (isMounted) {
@@ -194,12 +202,15 @@ export function useTournamentAndWeather(eventId: string): UseTournamentAndWeathe
       }
     }
 
-    loadData();
+    // Only load data if we haven't loaded it yet
+    if (!hasLoaded) {
+      loadData();
+    }
 
     return () => {
       isMounted = false;
     };
-  }, [eventId]);
+  }, [eventId, hasLoaded]);
 
   return { tournamentData, weather, loading, error };
 }
