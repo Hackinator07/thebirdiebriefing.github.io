@@ -1,4 +1,5 @@
 import scheduleData from '@/data/schedule.json';
+import { fetchLPGAScheduleData, findMatchingEvent, normalizeEventName } from './lpgaApi';
 
 export interface Tournament {
   id: number;
@@ -12,6 +13,8 @@ export interface Tournament {
   website: string;
   winner?: string;
   logo?: string;
+  score?: string;
+  prize?: string;
 }
 
 export interface Schedule {
@@ -22,6 +25,61 @@ export interface Schedule {
 
 export function getSchedule(): Schedule {
   return scheduleData as Schedule;
+}
+
+export async function getEnhancedSchedule(): Promise<Schedule> {
+  try {
+    const apiEvents = await fetchLPGAScheduleData();
+    
+    // List of future tournaments that should not have winner/score data populated
+    const futureTournaments = [
+      'Walmart NW Arkansas Championship presented by P&G',
+      'LOTTE Championship presented by Hoakalei',
+      'Buick LPGA Shanghai', 
+      'BMW Ladies Championship',
+      'Maybank Championship',
+      'TOTO Japan Classic',
+      'The ANNIKA driven by Gainbridge at Pelican',
+      'CME Group Tour Championship'
+    ];
+    
+    const enhancedTournaments = scheduleData.tournaments.map(tournament => {
+      // Skip API data for future tournaments
+      if (futureTournaments.includes(tournament.title)) {
+        return {
+          ...tournament,
+          winner: '',
+          score: undefined,
+          prize: undefined
+        };
+      }
+      
+      // Find matching event from API for completed tournaments
+      const matchingEvent = apiEvents.find(event => 
+        findMatchingEvent(event.name, tournament.title)
+      );
+
+      if (matchingEvent) {
+        return {
+          ...tournament,
+          score: matchingEvent.score || undefined,
+          prize: matchingEvent.prize || undefined,
+          // Update winner if it exists in API and we don't have it locally
+          winner: tournament.winner || matchingEvent.athlete?.name || undefined
+        };
+      }
+
+      return tournament;
+    });
+
+    return {
+      ...scheduleData,
+      tournaments: enhancedTournaments
+    } as Schedule;
+  } catch (error) {
+    console.error('Error enhancing schedule with API data:', error);
+    return scheduleData as Schedule;
+  }
 }
 
 export function getTournaments(): Tournament[] {

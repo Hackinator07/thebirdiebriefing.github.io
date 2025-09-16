@@ -2,9 +2,9 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import Image from 'next/image';
-import { getSchedule } from '@/lib/schedule';
+import { getSchedule, getEnhancedSchedule } from '@/lib/schedule';
 
-type SortField = 'date' | 'title' | 'winner' | 'purse';
+type SortField = 'date' | 'title' | 'winner' | 'purse' | 'score' | 'prize';
 type SortDirection = 'asc' | 'desc';
 
 // Helper function to get tournament logo URL
@@ -61,10 +61,29 @@ const getTournamentLogo = (tournamentTitle: string): string | null => {
 };
 
 export default function SchedulePage() {
-  const schedule = getSchedule();
+  const fallbackSchedule = getSchedule();
+  const [schedule, setSchedule] = useState(fallbackSchedule);
+  const [isLoading, setIsLoading] = useState(true);
   const [sortField, setSortField] = useState<SortField>('date');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
   const [formattedDate, setFormattedDate] = useState<string>('');
+
+  // Fetch enhanced schedule data
+  useEffect(() => {
+    const fetchEnhancedData = async () => {
+      try {
+        const enhancedSchedule = await getEnhancedSchedule();
+        setSchedule(enhancedSchedule);
+      } catch (error) {
+        console.error('Error fetching enhanced schedule:', error);
+        // Keep fallback schedule if API fails
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchEnhancedData();
+  }, []);
 
   // Format date on client side to avoid hydration mismatch
   useEffect(() => {
@@ -124,6 +143,34 @@ export default function SchedulePage() {
           
           aValue = aNumber;
           bValue = bNumber;
+          break;
+        case 'score':
+          // Handle score sorting (lower scores are better)
+          if (!a.score || a.score === 'N/A') aValue = 999; // Sort to end
+          else {
+            const aScoreMatch = a.score.match(/(\d+)/);
+            aValue = aScoreMatch ? parseInt(aScoreMatch[1]) : 999;
+          }
+          
+          if (!b.score || b.score === 'N/A') bValue = 999; // Sort to end
+          else {
+            const bScoreMatch = b.score.match(/(\d+)/);
+            bValue = bScoreMatch ? parseInt(bScoreMatch[1]) : 999;
+          }
+          break;
+        case 'prize':
+          // Convert prize strings to numbers for sorting
+          if (!a.prize || a.prize === 'N/A') aValue = 0; // Sort to end
+          else {
+            const aPrizeStr = a.prize.replace(/[$,]/g, '');
+            aValue = parseFloat(aPrizeStr) || 0;
+          }
+          
+          if (!b.prize || b.prize === 'N/A') bValue = 0; // Sort to end
+          else {
+            const bPrizeStr = b.prize.replace(/[$,]/g, '');
+            bValue = parseFloat(bPrizeStr) || 0;
+          }
           break;
         default:
           aValue = a.date;
@@ -198,6 +245,11 @@ export default function SchedulePage() {
 
           <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center">
             Last updated {formattedDate || 'Loading...'}
+            {isLoading && (
+              <span className="ml-2 text-blue-600">
+                • Fetching live data...
+              </span>
+            )}
           </p>
         </div>
       </section>
@@ -209,18 +261,26 @@ export default function SchedulePage() {
           <div className="block lg:hidden space-y-4">
             {sortedTournaments.map((tournament) => (
               <div key={tournament.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-                <div className="flex justify-between items-start mb-3">
-                  <div className="text-sm font-medium text-gray-900">
-                    {tournament.date}
-                  </div>
-                  <div className="text-sm font-medium text-gray-900">
-                    {tournament.purse}
+                {/* Header row: Date and Purse/Prize */}
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-sm font-medium text-gray-900">{tournament.date}</span>
+                  <div className="text-right">
+                    <div className="text-xs">
+                      <span className="text-gray-500">Purse:</span>
+                      <span className="font-medium text-gray-900 ml-1">{tournament.purse}</span>
+                    </div>
+                    {tournament.prize && (
+                      <div className="text-xs text-gray-500">
+                        Prize: <span className="font-medium text-gray-900">${tournament.prize.replace(/^\$/, '').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
                 
+                {/* Tournament title and badges */}
                 <div className="mb-3">
                   <div className={`font-medium text-base ${tournament.isMajor ? 'text-primary-600 font-bold' : ''} ${tournament.isExhibition ? 'italic text-gray-600' : ''}`}>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 mb-1">
                       {getTournamentLogo(tournament.title) && (
                         <div className="flex-shrink-0">
                           <Image
@@ -230,7 +290,6 @@ export default function SchedulePage() {
                             height={32}
                             className="w-8 h-8 object-contain"
                             onError={(e) => {
-                              // Hide the image if it fails to load
                               e.currentTarget.style.display = 'none';
                             }}
                           />
@@ -246,39 +305,50 @@ export default function SchedulePage() {
                       </a>
                     </div>
                   </div>
-                  <div className="text-gray-500 text-sm mt-1">
-                    {tournament.location}
+                  
+                  {/* Location and badges on same line */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500 text-sm">{tournament.location}</span>
+                    <div className="flex gap-1">
+                      {tournament.isMajor && (
+                        <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                          Major
+                        </div>
+                      )}
+                      {tournament.isExhibition && (
+                        <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                          Exhibition
+                        </div>
+                      )}
+                      {tournament.isCancelled && (
+                        <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                          Cancelled
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {tournament.isMajor && (
-                    <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
-                      Major Championship
-                    </div>
-                  )}
-                  {tournament.isExhibition && (
-                    <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                      Exhibition
-                    </div>
-                  )}
-                  {tournament.isCancelled && (
-                    <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
-                      Cancelled
+                {/* Results row: Winner and Score */}
+                <div className="flex items-center justify-between text-xs">
+                  <div className="flex items-center gap-1 min-w-0 flex-1">
+                    <span className="text-gray-500">Winner:</span>
+                    {tournament.winner && tournament.winner !== "N/A" ? (
+                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-800 truncate">{tournament.winner}</span>
+                    ) : tournament.winner === "N/A" ? (
+                      <span className="text-gray-400">N/A</span>
+                    ) : (
+                      <span className="text-gray-400">TBD</span>
+                    )}
+                  </div>
+                  
+                  {tournament.score && (
+                    <div className="flex items-center text-xs flex-shrink-0 ml-3">
+                      <span className="text-gray-500">Score:</span>
+                      <span className="font-medium text-gray-900 ml-1">{tournament.score}</span>
                     </div>
                   )}
                 </div>
-
-                                 <div className="text-sm">
-                   <span className="text-gray-500">Winner: </span>
-                   {tournament.winner && tournament.winner !== "N/A" ? (
-                     <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-800">{tournament.winner}</span>
-                   ) : tournament.winner === "N/A" ? (
-                     <span className="text-gray-400">N/A</span>
-                   ) : (
-                     <span className="text-gray-400">TBD</span>
-                   )}
-                 </div>
               </div>
             ))}
           </div>
@@ -309,6 +379,15 @@ export default function SchedulePage() {
                     </th>
                     <th 
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('purse')}
+                    >
+                      <div className="flex items-center gap-1">
+                        Purse
+                        {getSortIcon('purse')}
+                      </div>
+                    </th>
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('winner')}
                     >
                       <div className="flex items-center gap-1">
@@ -318,11 +397,20 @@ export default function SchedulePage() {
                     </th>
                     <th 
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                      onClick={() => handleSort('purse')}
+                      onClick={() => handleSort('score')}
                     >
                       <div className="flex items-center gap-1">
-                        Purse
-                        {getSortIcon('purse')}
+                        Score
+                        {getSortIcon('score')}
+                      </div>
+                    </th>
+                    <th 
+                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('prize')}
+                    >
+                      <div className="flex items-center gap-1">
+                        Prize
+                        {getSortIcon('prize')}
                       </div>
                     </th>
                   </tr>
@@ -382,7 +470,10 @@ export default function SchedulePage() {
                           )}
                         </div>
                       </td>
-                                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        {tournament.purse}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                          {tournament.winner && tournament.winner !== "N/A" ? (
                            <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-800">{tournament.winner}</span>
                          ) : tournament.winner === "N/A" ? (
@@ -391,8 +482,21 @@ export default function SchedulePage() {
                            <span className="text-gray-400">TBD</span>
                          )}
                        </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        {tournament.purse}
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {tournament.score ? (
+                          <span className="font-medium">{tournament.score}</span>
+                        ) : (
+                          <span className="text-gray-400">N/A</span>
+                        )}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {tournament.prize ? (
+                          <span className="font-medium text-gray-900">
+                            ${tournament.prize.replace(/^\$/, '').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
+                          </span>
+                        ) : (
+                          <span className="text-gray-400">N/A</span>
+                        )}
                       </td>
                     </tr>
                   ))}
@@ -403,9 +507,12 @@ export default function SchedulePage() {
 
           {/* Footer */}
           <div className="mt-8 text-center text-xs sm:text-sm text-gray-500">
-                         <p className="mb-2">
-               <span className="font-medium text-secondary-500">Major Championships</span> appear in green
-             </p>
+            <p className="mb-2">
+              <span className="font-medium text-secondary-500">Major Championships</span> appear in green
+            </p>
+            <p className="mb-2">
+              Live scores and prize money updated automatically from tournament results
+            </p>
             <p>
               Schedule Information Provided by the{' '}
               <a
