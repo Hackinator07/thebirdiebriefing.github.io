@@ -11,7 +11,7 @@ image:
   src: "/optimized/cpkc-mississaugua.webp"
   alt: "A View of Mississaugua Golf & Country Club"
   caption: "A View of Mississaugua Golf & Country Club."
-  courtesy: "https://mississauguagolf.com/"
+  courtesy: "[Mississaugua Golf & Country Club](https://mississauguagolf.com/)"
 calloutType: "author"
 tags:
   - "CPKC Women's Open"
