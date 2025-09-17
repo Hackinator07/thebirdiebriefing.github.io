@@ -164,7 +164,7 @@ General admission is $10 per day or $25 for the week, with free admission for ki
 
 Fans can also enjoy free public viewing decks, affordable concessions at Tyson Cafes, and the lively "Gatorade Loudest Hole on Tour" at 17—where traditional golf etiquette gets put on hold. Double Waterhazards, anyone?
 
-General parking Tuesday through Thursday is at the Rogers Convention Center (3303 S Pinnacle Hills Pkwy), with shuttles running straight to the main admissions entrance at Pinnacle Country Club.
+General parking Tuesday through Thursday is at the Rogers Convention Center [(3303 S Pinnacle Hills Pkwy)](https://maps.app.goo.gl/ktFmZqnciiAc8oDD9), with shuttles running straight to the main admissions entrance at Pinnacle Country Club.
 
 Friday through Sunday, general parking moves to the lot behind the Walmart Neighborhood Market off Exit 83 [(4501 S Pinnacle Hills Pkwy)](https://maps.app.goo.gl/mqjdKuE469jzahFE7), where shuttles will also take fans directly to the main entrance.
 
