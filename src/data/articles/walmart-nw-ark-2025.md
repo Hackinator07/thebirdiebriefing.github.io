@@ -167,3 +167,5 @@ Fans can also enjoy free public viewing decks, affordable concessions at Tyson C
 General parking Tuesday through Thursday is at the Rogers Convention Center (3303 S Pinnacle Hills Pkwy), with shuttles running straight to the main admissions entrance at Pinnacle Country Club.
 
 Friday through Sunday, general parking moves to the lot behind the Walmart Neighborhood Market off Exit 83 [(4501 S Pinnacle Hills Pkwy)](https://maps.app.goo.gl/mqjdKuE469jzahFE7), where shuttles will also take fans directly to the main entrance.
+
+*Reddit user u/gorkatron had excellent feedback here, pointing out that while most fans focus on the race to the CME and the top 60, the battles for top 80 (priority status for next season) and top 100 (keeping your LPGA card without Q school) are just as crucial. Most players chasing those spots only have three more opportunities to earn points: this event, The Lotte Championship, and The ANNIKA, with the Asian events being limited-field.*
