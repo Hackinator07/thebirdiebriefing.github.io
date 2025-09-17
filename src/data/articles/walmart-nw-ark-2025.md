@@ -158,10 +158,6 @@ Past champions Haeran Ryu (2023), Nasa Hataoka (2021, 2018), and Stacy Lewis (20
 
 Sponsor invites in the field are Maria Marin and Maria Fassi.
 
-**Sustainable Approach**
-
-Golf Canada is raising the bar on sustainability at the Open, aiming to make the tournament zero-waste and carbon-neutral. Partnering with the Green Event Ninjas, the event has already diverted 75% of waste, recycled thousands of kilograms of material, and eliminated nearly 68,000 single-use water bottles. With fans encouraged to bike, carpool, and engage in eco-friendly practices, the Open is setting a new standard for environmental responsibility.
-
 **Tickets, Sushi, Viewing Decks, and Parking**
 
 General admission is $10 per day or $25 for the week, with free admission for kids 17 and under. The [BITE Experience ($50 daily) showcases local restaurants and culture. Looking over the menu it spans from steak, to sushi, to fried chicken, even a charcuterie & wine bar!](https://bitenwa.com/tickets?utm_source=chatgpt.com) The host nation has the Choctaw Club ($75 daily) which offers upgraded hospitality overlooking the island green at 15.
