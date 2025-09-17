@@ -136,7 +136,7 @@ sections:
           - "Golf Channel: 3:00 PM - 5:00 PM"
 ---
 
-Fall golf has arrived, and with it, the LPGA Tour its home stretch. Just eight regular-season events and a stint through Asia remain before the [CME Group Tour Championship](https://www.cmegrouptourchampionship.com/). That means playing opportunities and Race to the CME Globe points are becoming scarce. The great news is the 19th edition of the Walmart NW Arkansas Championship offers 144 players a chance at a $3 million purse and 500 CME points (for the winner) over just 54 holes!
+Fall golf has arrived, and with it, the LPGA Tour is in its home stretch for 2025. Just eight regular-season events and a stint through Asia remain before the [CME Group Tour Championship](https://www.cmegrouptourchampionship.com/). That means playing opportunities and CME points are becoming scarce. The great news is the 19th edition of the Walmart NW Arkansas Championship offers players a chance at a $3 million purse and 500 CME points (for the winner) over just 54 holes! 
 
 **The Venue**
 
