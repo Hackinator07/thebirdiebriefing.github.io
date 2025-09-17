@@ -676,7 +676,7 @@ export default function TournamentScoresWidget({
 
       {/* Scores Widget Panel */}
       <div
-        className={`fixed top-16 right-0 h-auto max-h-[70vh] sm:max-h-[60vh] w-80 max-w-[calc(100vw-2rem)] bg-white shadow-2xl z-20 transform transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`fixed top-16 right-0 h-auto ${activeTab === 'course' ? 'max-h-none' : 'max-h-[70vh] sm:max-h-[60vh]'} w-80 max-w-[calc(100vw-2rem)] bg-white shadow-2xl z-20 transform transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -731,7 +731,7 @@ export default function TournamentScoresWidget({
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto min-h-0">
+        <div className={`flex-1 min-h-0 ${activeTab === 'course' ? 'overflow-hidden' : 'overflow-y-auto'}`}>
           {activeTab === 'leaderboard' && (
             <div>
               {error ? (
@@ -987,7 +987,7 @@ export default function TournamentScoresWidget({
           )}
 
           {activeTab === 'course' && (
-            <div className="overflow-hidden">
+            <div>
               <div className="p-0.5 sm:p-1">
                 <CourseHolesWidget 
                   eventId={tournamentId}
