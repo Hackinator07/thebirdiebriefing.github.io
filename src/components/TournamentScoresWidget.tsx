@@ -987,8 +987,8 @@ export default function TournamentScoresWidget({
           )}
 
           {activeTab === 'course' && (
-            <div className="p-0.5 sm:p-1">
-              <div className="overflow-y-auto max-h-[240px] sm:max-h-[300px]">
+            <div className="overflow-hidden">
+              <div className="p-0.5 sm:p-1">
                 <CourseHolesWidget 
                   eventId={tournamentId}
                   aonRiskHole={currentTournamentData.staticProps.aonRiskHole}
