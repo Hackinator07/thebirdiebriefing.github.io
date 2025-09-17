@@ -29,7 +29,7 @@ export default function TournamentComponent({
   buyTicketsUrl = "https://nwachampionship.com/tickets",
   officialSiteUrl = "https://nwachampionship.com/",
   teeTimesUrl = "/tee-times",
-  broadcastUrl = "https://www.birdiebriefing.com/news/queen-city-2025/#tv-schedule",
+  broadcastUrl = "https://www.birdiebriefing.com/news/walmart-nw-ark-2025/#tv-schedule",
   entryListUrl = "#",
   podcastUrl = "https://open.spotify.com/episode/1O2VczRWTebqhMNxH64mdX?si=7685c58492cc45d4"
 }: TournamentComponentProps) {
@@ -134,9 +134,17 @@ export default function TournamentComponent({
         </div>
         {/* Tournament Title */}
         <div className="mb-2">
-          <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line" style={{ hyphens: 'none' }}>
-            {displayName.replace(/ Championship/g, '\nChampionship')}
-          </h3>
+          <Link 
+            href="https://www.birdiebriefing.com/news/walmart-nw-ark-2025/"
+            className="block group"
+          >
+            <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line hover:text-primary-600 transition-all duration-200 cursor-pointer" style={{ hyphens: 'none' }}>
+              {displayName.replace(/ Championship/g, '\nChampionship')}
+              <svg className="w-4 h-4 inline ml-1 opacity-60 group-hover:opacity-100 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" transform="rotate(180 12 12)" />
+              </svg>
+            </h3>
+          </Link>
         </div>
         <div className="space-y-1 text-sm text-gray-600">
           <div className="flex items-center gap-2">
