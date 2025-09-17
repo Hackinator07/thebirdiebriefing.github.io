@@ -5,6 +5,7 @@ import { TournamentHole } from '@/types/tournament';
 
 interface CourseHolesWidgetProps {
   eventId?: string;
+  aonRiskHole?: number;
 }
 
 interface CourseData {
@@ -132,7 +133,8 @@ async function fetchCourseData(eventId: string): Promise<CourseData | null> {
 }
 
 export default function CourseHolesWidget({
-  eventId = "401734779"
+  eventId = "401734779",
+  aonRiskHole = 14
 }: CourseHolesWidgetProps) {
   const [courseData, setCourseData] = useState<CourseData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -183,7 +185,10 @@ export default function CourseHolesWidget({
       return currentDifficulty > prevDifficulty ? current : prev;
     });
     
-    return { longest, shortest, hardest };
+    // AON Risk hole is tournament-specific
+    const aonRisk = holes.find(hole => hole.number === aonRiskHole);
+    
+    return { longest, shortest, hardest, aonRisk };
   };
 
   const getDifficultyScore = (hole: TournamentHole): number => {
@@ -203,9 +208,118 @@ export default function CourseHolesWidget({
   const displayPar = courseData?.shotsToPar || 71;
   const displayYardage = courseData?.totalYards?.toLocaleString() || "6,438";
 
-  // Don't render if no holes data or still loading
-  if (loading || !courseData || holes.length === 0) {
+  // Don't render if still loading
+  if (loading) {
     return null;
+  }
+
+  // If no course data, show a fallback with static course info
+  if (!courseData || holes.length === 0) {
+    return (
+      <div className="w-full h-full flex flex-col">
+        <div className="space-y-1 flex-1 flex flex-col min-h-0">
+          {/* Fallback course display */}
+          <div className="grid grid-cols-2 gap-1 sm:gap-1.5 flex-1 min-h-0">
+            {/* Front 9 */}
+            <div>
+              <h4 className="text-[8px] sm:text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">Front 9</h4>
+              <div className="overflow-x-auto">
+                <table className="w-full text-[8px] sm:text-[10px]">
+                  <thead>
+                    <tr className="border-b border-gray-200">
+                      <th className="text-left py-0.5 px-0.5 font-medium text-gray-500">Hole</th>
+                      <th className="text-center py-0.5 px-0.5 font-medium text-gray-500">Par</th>
+                      <th className="text-right py-0.5 px-0.5 font-medium text-gray-500">Yards</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Array.from({ length: 9 }, (_, i) => (
+                      <tr key={i + 1} className="border-b border-gray-100 hover:bg-gray-50">
+                        <td className="py-0.5 px-0.5 font-medium">{i + 1}</td>
+                        <td className="text-center py-0.5 px-0.5">-</td>
+                        <td className="text-right py-0.5 px-0.5">-</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-gray-300 font-semibold bg-gray-50">
+                      <td className="py-0.5 px-0.5">Out</td>
+                      <td className="text-center py-0.5 px-0.5">-</td>
+                      <td className="text-right py-0.5 px-0.5">-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Back 9 */}
+            <div>
+              <h4 className="text-[8px] sm:text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">Back 9</h4>
+              <div className="overflow-x-auto">
+                <table className="w-full text-[8px] sm:text-[10px]">
+                  <thead>
+                    <tr className="border-b border-gray-200">
+                      <th className="text-left py-0.5 px-0.5 font-medium text-gray-500">Hole</th>
+                      <th className="text-center py-0.5 px-0.5 font-medium text-gray-500">Par</th>
+                      <th className="text-right py-0.5 px-0.5 font-medium text-gray-500">Yards</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Array.from({ length: 9 }, (_, i) => {
+                      const holeNumber = i + 10;
+                      const isAonRisk = holeNumber === aonRiskHole;
+                      return (
+                        <tr 
+                          key={holeNumber} 
+                          className={`border-b border-gray-100 ${isAonRisk ? 'bg-purple-50' : 'hover:bg-gray-50'}`}
+                        >
+                          <td className="py-0.5 px-0.5 font-medium">
+                            <div className="flex items-center gap-0.5">
+                              {holeNumber}
+                              {isAonRisk && (
+                                <svg className="w-1.5 h-1.5 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2L12 17.6l-6 4.8 2.4-7.2-6-4.8h7.6L12 2z"/>
+                                </svg>
+                              )}
+                            </div>
+                          </td>
+                          <td className="text-center py-0.5 px-0.5">-</td>
+                          <td className="text-right py-0.5 px-0.5">-</td>
+                        </tr>
+                      );
+                    })}
+                    <tr className="border-t-2 border-gray-300 font-semibold bg-gray-50">
+                      <td className="py-0.5 px-0.5">In</td>
+                      <td className="text-center py-0.5 px-0.5">-</td>
+                      <td className="text-right py-0.5 px-0.5">-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          {/* Total and Legend */}
+          <div className="space-y-0.5 flex-shrink-0">
+            <div className="bg-primary-50 rounded p-0.5 sm:p-1">
+              <div className="flex justify-between items-center text-[7px] sm:text-[10px] font-semibold">
+                <span>Total</span>
+                <span>Par {displayPar} • {displayYardage}y</span>
+              </div>
+            </div>
+            
+            <div className="bg-gray-50 rounded p-0.5 sm:p-1 border border-gray-200">
+              <div className="flex justify-center items-center text-center">
+                <div className="flex items-center gap-0.5">
+                  <svg className="w-1.5 h-1.5 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2L12 17.6l-6 4.8 2.4-7.2-6-4.8h7.6L12 2z"/>
+                  </svg>
+                  <span className="text-[7px] sm:text-[8px] font-medium text-purple-700">AON Risk #{aonRiskHole}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -230,6 +344,7 @@ export default function CourseHolesWidget({
                     const isLongest = holeAnalysis?.longest?.number === hole.number;
                     const isShortest = holeAnalysis?.shortest?.number === hole.number;
                     const isHardest = holeAnalysis?.hardest?.number === hole.number;
+                    const isAonRisk = holeAnalysis?.aonRisk?.number === hole.number;
                     
                     return (
                       <tr 
@@ -238,6 +353,7 @@ export default function CourseHolesWidget({
                           isLongest ? 'bg-blue-50' : 
                           isShortest ? 'bg-green-50' : 
                           isHardest ? 'bg-red-50' : 
+                          isAonRisk ? 'bg-purple-50' :
                           'hover:bg-gray-50'
                         }`}
                       >
@@ -258,6 +374,11 @@ export default function CourseHolesWidget({
                             {isHardest && (
                               <svg className="w-1.5 h-1.5 text-red-600" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                              </svg>
+                            )}
+                            {isAonRisk && (
+                              <svg className="w-1.5 h-1.5 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2L12 17.6l-6 4.8 2.4-7.2-6-4.8h7.6L12 2z"/>
                               </svg>
                             )}
                           </div>
@@ -295,6 +416,7 @@ export default function CourseHolesWidget({
                       const isLongest = holeAnalysis?.longest?.number === hole.number;
                       const isShortest = holeAnalysis?.shortest?.number === hole.number;
                       const isHardest = holeAnalysis?.hardest?.number === hole.number;
+                      const isAonRisk = holeAnalysis?.aonRisk?.number === hole.number;
                       
                       return (
                         <tr 
@@ -303,6 +425,7 @@ export default function CourseHolesWidget({
                             isLongest ? 'bg-blue-50' : 
                             isShortest ? 'bg-green-50' : 
                             isHardest ? 'bg-red-50' : 
+                            isAonRisk ? 'bg-purple-50' :
                             'hover:bg-gray-50'
                           }`}
                         >
@@ -323,6 +446,11 @@ export default function CourseHolesWidget({
                               {isHardest && (
                                 <svg className="w-1.5 h-1.5 text-red-600" fill="currentColor" viewBox="0 0 24 24">
                                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                              )}
+                              {isAonRisk && (
+                                <svg className="w-1.5 h-1.5 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2L12 17.6l-6 4.8 2.4-7.2-6-4.8h7.6L12 2z"/>
                                 </svg>
                               )}
                             </div>
@@ -373,6 +501,12 @@ export default function CourseHolesWidget({
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
                 <span className="text-[7px] sm:text-[8px] font-medium text-red-700">Hardest #{holeAnalysis?.hardest?.number}</span>
+              </div>
+              <div className="flex items-center gap-0.5">
+                <svg className="w-1.5 h-1.5 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2L12 17.6l-6 4.8 2.4-7.2-6-4.8h7.6L12 2z"/>
+                </svg>
+                <span className="text-[7px] sm:text-[8px] font-medium text-purple-700">AON Risk #{holeAnalysis?.aonRisk?.number}</span>
               </div>
             </div>
           </div>

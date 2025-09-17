@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, Trophy, BarChart3, Search, RefreshCw, Flag } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 import CourseHolesWidget from './CourseHolesWidget';
+import currentTournamentData from '@/data/current-tournament-static.json';
 
 interface Player {
   id: string;
@@ -988,7 +989,10 @@ export default function TournamentScoresWidget({
           {activeTab === 'course' && (
             <div className="p-0.5 sm:p-1">
               <div className="overflow-y-auto max-h-[240px] sm:max-h-[300px]">
-                <CourseHolesWidget />
+                <CourseHolesWidget 
+                  eventId={tournamentId}
+                  aonRiskHole={currentTournamentData.staticProps.aonRiskHole}
+                />
               </div>
             </div>
           )}
