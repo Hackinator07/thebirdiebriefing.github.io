@@ -176,7 +176,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                         Photo courtesy: {article.image.courtesy && (
                           <MarkdownContent
                             content={article.image.courtesy}
-                            className="inline text-xs text-gray-500 italic [&_p]:text-xs [&_p]:text-gray-500 [&_p]:italic [&_p]:mb-0 [&_p]:leading-none [&_p]:inline"
+                            className="inline"
+                            isCourtesy={true}
                           />
                         )}
                       </div>

@@ -4,9 +4,10 @@ import remarkGfm from 'remark-gfm';
 interface MarkdownContentProps {
   content: string;
   className?: string;
+  isCourtesy?: boolean;
 }
 
-export default function MarkdownContent({ content, className = '' }: MarkdownContentProps) {
+export default function MarkdownContent({ content, className = '', isCourtesy = false }: MarkdownContentProps) {
   // Safety check for content
   if (!content || typeof content !== 'string') {
     return null;
@@ -28,7 +29,7 @@ export default function MarkdownContent({ content, className = '' }: MarkdownCon
           a: ({ ...props }) => (
             <a
               {...props}
-              className="text-primary-600 hover:text-primary-700 transition-colors duration-200"
+              className="text-primary-600 hover:text-primary-700 transition-colors duration-200 [font-size:inherit]"
               target="_blank"
               rel="noopener noreferrer"
             />
@@ -43,7 +44,7 @@ export default function MarkdownContent({ content, className = '' }: MarkdownCon
           ),
           // Customize paragraph styling
           p: ({ ...props }) => (
-            <p {...props} className="text-lg leading-relaxed text-gray-600 mb-6 last:mb-0 font-lock-lg break-words" />
+            <p {...props} className={isCourtesy ? "text-xs text-gray-500 italic mb-0 leading-none inline break-words" : "text-lg leading-relaxed text-gray-600 mb-6 last:mb-0 font-lock-lg break-words"} />
           ),
         }}
       >
