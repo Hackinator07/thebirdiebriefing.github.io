@@ -162,8 +162,8 @@ Sponsor invites in the field are Maria Marin and Maria Fassi.
 
 General admission is $10 per day or $25 for the week, with free admission for kids 17 and under. The [BITE Experience ($50 daily) showcases local restaurants and culture. Looking over the menu it spans from steak, to sushi, to fried chicken, even a charcuterie & wine bar!](https://bitenwa.com/tickets?utm_source=chatgpt.com) The host nation has the Choctaw Club ($75 daily) which offers upgraded hospitality overlooking the island green at 15.
 
-Fans can also enjoy free public viewing decks, affordable concessions at Tyson Cafes, and the lively "Gatorade Loudest Hole on Tour" at 17—where traditional golf etiquette gets put on hold.
+Fans can also enjoy free public viewing decks, affordable concessions at Tyson Cafes, and the lively "Gatorade Loudest Hole on Tour" at 17—where traditional golf etiquette gets put on hold. Double Waterhazards, anyone?
 
 General parking Tuesday through Thursday is at the Rogers Convention Center (3303 S Pinnacle Hills Pkwy), with shuttles running straight to the main admissions entrance at Pinnacle Country Club.
 
-Friday through Sunday, general parking moves to the lot behind the Walmart Neighborhood Market off Exit 83 (4501 S Pinnacle Hills Pkwy), where shuttles will also take fans directly to the main entrance.
+Friday through Sunday, general parking moves to the lot behind the Walmart Neighborhood Market off Exit 83 [(4501 S Pinnacle Hills Pkwy)](https://maps.app.goo.gl/mqjdKuE469jzahFE7), where shuttles will also take fans directly to the main entrance.
