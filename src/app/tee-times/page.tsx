@@ -6,7 +6,7 @@ import TimezoneSelect from 'react-timezone-select';
 import { TimezoneProvider, useTimezone } from '@/components/TimezoneContext';
 
 // Default timezone (Central Time - tournament timezone)
-const DEFAULT_TIMEZONE = 'America/Chicago';
+const DEFAULT_TIMEZONE = 'America/New_York';
 
 // Tournament information
 const TOURNAMENT_NAME = "Walmart NW Arkansas Championship";
