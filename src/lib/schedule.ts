@@ -33,7 +33,6 @@ export async function getEnhancedSchedule(): Promise<Schedule> {
     
     // List of future tournaments that should not have winner/score data populated
     const futureTournaments = [
-      'Walmart NW Arkansas Championship presented by P&G',
       'LOTTE Championship presented by Hoakalei',
       'Buick LPGA Shanghai', 
       'BMW Ladies Championship',
@@ -60,6 +59,17 @@ export async function getEnhancedSchedule(): Promise<Schedule> {
       );
 
       if (matchingEvent) {
+        // For Walmart NW Arkansas, prioritize our local data over API data
+        if (tournament.title === 'Walmart NW Arkansas Championship presented by P&G') {
+          return {
+            ...tournament,
+            // Keep our local data for this tournament
+            score: tournament.score || matchingEvent.score || undefined,
+            prize: tournament.prize || matchingEvent.prize || undefined,
+            winner: tournament.winner || matchingEvent.athlete?.name || undefined
+          };
+        }
+        
         return {
           ...tournament,
           score: matchingEvent.score || undefined,
