@@ -12,7 +12,7 @@ const path = require('path');
 
 const RAPIDAPI_KEY = '517cb09524mshf243e8dc1b88e58p19efabjsne4e46b59b3c8';
 const RAPIDAPI_HOST = 'live-golf-data1.p.rapidapi.com';
-const EVENT_ID = '401734779';
+const EVENT_ID = '401734780';
 
 // Helper function to format purse amount (matches the one in tournamentApi.ts)
 function formatPurse(purse) {

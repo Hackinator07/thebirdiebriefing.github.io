@@ -1,6 +1,6 @@
 {
   "lastUpdated": "2025-09-16T17:49:54.643Z",
-  "eventId": "401734779",
+  "eventId": "401734780",
   "staticProps": {
     "tournamentName": "Walmart NW Arkansas Championship pres. by P&G",
     "location": ",",
@@ -8,13 +8,14 @@
     "courseName": "Pinnacle Country Club",
     "par": 71,
     "yardage": 6438,
-    "aonRiskHole": 14
+    "aonRiskHole": 11,
+    "hardestHole": 8
   },
   "rawApiData": {
     "events": [
       {
-        "id": "401734779",
-        "uid": "s:1100~l:1107~e:401734779",
+        "id": "401734780",
+        "uid": "s:1100~l:1107~e:401734780",
         "date": "2025-09-19T04:00Z",
         "endDate": "2025-09-21T04:00Z",
         "name": "Walmart NW Arkansas Championship pres. by P&G",
@@ -42,7 +43,7 @@
               "desktop",
               "event"
             ],
-            "href": "https://www.espn.com/golf/leaderboard?tournamentId=401734779",
+            "href": "https://www.espn.com/golf/leaderboard?tournamentId=401734780",
             "text": "Leaderboard",
             "shortText": "Summary",
             "isExternal": false,
@@ -87,8 +88,8 @@
         },
         "competitions": [
           {
-            "id": "401734779",
-            "uid": "s:1100~l:1107~e:401734779~c:401734779",
+            "id": "401734780",
+            "uid": "s:1100~l:1107~e:401734780~c:401734780",
             "date": "2025-09-19T04:00Z",
             "endDate": "2025-09-21T04:00Z",
             "recent": false,

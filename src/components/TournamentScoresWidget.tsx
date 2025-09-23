@@ -47,7 +47,7 @@ interface TournamentScoresWidgetProps {
 }
 
 export default function TournamentScoresWidget({
-  tournamentId = '401734779',
+  tournamentId = '401734780',
   tournamentName = 'Kroger Queen City Championship',
   isOpen,
   onToggle,
@@ -992,6 +992,7 @@ export default function TournamentScoresWidget({
                 <CourseHolesWidget 
                   eventId={tournamentId}
                   aonRiskHole={currentTournamentData.staticProps.aonRiskHole}
+                  hardestHole={currentTournamentData.staticProps.hardestHole}
                 />
               </div>
             </div>

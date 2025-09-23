@@ -22,12 +22,12 @@ interface TournamentComponentProps {
 }
 
 export default function TournamentComponent({
-  eventId = "401734779",
-  tournamentName = "Walmart NW Arkansas Championship pres. by P&G",
+  eventId = "401734780",
+  tournamentName = "LOTTE Championship",
   location = "Rogers, AR", 
   date = "Sep 19-21, 2025",
-  buyTicketsUrl = "https://nwachampionship.com/tickets",
-  officialSiteUrl = "https://nwachampionship.com/",
+  buyTicketsUrl = "https://www.lottechampionship.com/tickets",
+  officialSiteUrl = "https://www.lottechampionship.com/",
   teeTimesUrl = "/tee-times",
   broadcastUrl = "https://www.birdiebriefing.com/news/walmart-nw-ark-2025/#tv-schedule",
   entryListUrl = "#",
@@ -47,7 +47,7 @@ export default function TournamentComponent({
   const [showStaticContent, setShowStaticContent] = useState(true);
 
   // Use API data if available, fallback to static data that matches current API response
-  const displayName = (tournamentData?.name || tournamentName).replace(/\s*(pres\.|presented)\s*by\s*P&G/i, '');
+  const displayName = (tournamentData?.name || tournamentName).replace(/\s*(pres\.|presented)\s*by\s*(P&G|Hoakalei)/i, '');
   const displayLocation = tournamentData?.courses ? formatLocation(tournamentData.courses[0]) : location;
   const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Pinnacle Country Club";
   const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$3.0M";
@@ -125,8 +125,8 @@ export default function TournamentComponent({
         {/* Tournament Logo */}
         <div className="flex justify-center mb-3">
           <Image
-            src="/images/tournaments/walmart-nw-arkansas.png"
-            alt="Walmart NW Arkansas Championship Logo"
+            src="/images/tournaments/lotte-championship.png"
+            alt="LOTTE Championship Logo"
             width={140}
             height={70}
             className="h-16 w-auto object-contain"
@@ -159,7 +159,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
             <Link 
-              href="https://maps.app.goo.gl/2uYAkBN8j33apMhd6"
+              href="https://maps.app.goo.gl/8BMDpdhhpT7xZi4J8"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
@@ -172,7 +172,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
             </svg>
             <a 
-              href="/course-maps/nwa-course-map.pdf"
+              href="/course-maps/lotte-course-map-2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"

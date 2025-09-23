@@ -6,6 +6,7 @@ import { TournamentHole } from '@/types/tournament';
 interface CourseHolesWidgetProps {
   eventId?: string;
   aonRiskHole?: number;
+  hardestHole?: number;
 }
 
 interface CourseData {
@@ -133,8 +134,9 @@ async function fetchCourseData(eventId: string): Promise<CourseData | null> {
 }
 
 export default function CourseHolesWidget({
-  eventId = "401734779",
-  aonRiskHole = 14
+  eventId = "401734780",
+  aonRiskHole = 11,
+  hardestHole
 }: CourseHolesWidgetProps) {
   const [courseData, setCourseData] = useState<CourseData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -178,12 +180,18 @@ export default function CourseHolesWidget({
       current.totalYards < prev.totalYards ? current : prev
     );
     
-    // Hardest hole calculation: Par 4s and 5s over 450 yards, or Par 3s over 180 yards
-    const hardest = holes.reduce((prev, current) => {
-      const currentDifficulty = getDifficultyScore(current);
-      const prevDifficulty = getDifficultyScore(prev);
-      return currentDifficulty > prevDifficulty ? current : prev;
-    });
+    // Hardest hole calculation: Use static override if provided, otherwise calculate dynamically
+    const hardest = hardestHole 
+      ? holes.find(hole => hole.number === hardestHole) || holes.reduce((prev, current) => {
+          const currentDifficulty = getDifficultyScore(current);
+          const prevDifficulty = getDifficultyScore(prev);
+          return currentDifficulty > prevDifficulty ? current : prev;
+        })
+      : holes.reduce((prev, current) => {
+          const currentDifficulty = getDifficultyScore(current);
+          const prevDifficulty = getDifficultyScore(prev);
+          return currentDifficulty > prevDifficulty ? current : prev;
+        });
     
     // AON Risk hole is tournament-specific
     const aonRisk = holes.find(hole => hole.number === aonRiskHole);

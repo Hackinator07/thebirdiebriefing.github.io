@@ -77,7 +77,7 @@ function updateSmartFallback(eventId: string, weatherData: WeatherData) {
   }
 }
 
-export function useWeather(eventId: string = '401734779') {
+export function useWeather(eventId: string = '401734780') {
   const [weather, setWeather] = useState<WeatherData | null>(defaultFallbackWeather);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -294,7 +294,7 @@ class WeatherFallbackService {
     return WeatherFallbackService.instance;
   }
 
-  start(eventId: string = '401734779') {
+  start(eventId: string = '401734780') {
     if (this.isRunning) return;
     
     this.isRunning = true;
@@ -407,7 +407,7 @@ if (typeof window !== 'undefined') {
 export { WeatherFallbackService };
 
 // Utility function to manually refresh fallback data
-export function refreshWeatherFallback(eventId: string = '401734779') {
+export function refreshWeatherFallback(eventId: string = '401734780') {
   const service = WeatherFallbackService.getInstance();
   service.stop();
   service.start(eventId);
