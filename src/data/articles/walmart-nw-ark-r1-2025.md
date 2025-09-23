@@ -10,7 +10,7 @@ excerpt: "If there's one silver lining, it's how Walmart and P&G handled the tou
 image:
   src: "/optimized/r1-minami-walmart.webp"
   alt: "Minami Katsu during the Walmart NW Arkansas Championship"
-  caption: "Minami Katsu during the Walmart NW Arkansas Championship"
+  caption: "Minami Katsu during the Walmart NW Arkansas Championship."
   courtesy: "Getty & LPGA"
 calloutType: "author"
 tags:
