@@ -210,7 +210,7 @@ sections:
         description: "Sponsors of the Waste Warriors, a waste diversion team"
 ---
 
-The Walmart NW Arkansas Championship was already abbreviated, being cut to 54 holes instead of the usual 72, but this year it became a single round. Overnight storms turned Pinnacle Country Club into a swamp (with more between Friday and Saturday), leaving the LPGA with no choice but to freeze the leaderboard. Japan’s Minami Katsu and American Sarah Schmelzel both carded 63s to finish at eight under.
+The Walmart NW Arkansas Championship was already abbreviated, at 54 holes instead of the usual 72, but this year it became a single round. Overnight storms turned Pinnacle Country Club into a swamp (with more between Friday and Saturday), leaving the LPGA with no choice but to freeze the leaderboard. Japan’s Minami Katsu and American Sarah Schmelzel both carded 63s to finish at eight under.
 
 Somi Lee, one of Korea's top players, had opened with a commendable 64—good enough to sit just one shot back of Sarah Schmelzel and Japan's Minami Katsu. She, like everyone else, would not get another swing that counted.
 
