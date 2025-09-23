@@ -136,7 +136,10 @@ EXEMPT
 112 	Sarah Kemp (AUS) 	Sydney, Australia 	L15 (39) 	Entered 	»»
 113 	Maude-Aimee Leblanc (CAN) 	Sherbrooke, Quebec 	L15 (40) 	Entered 	»»
 114 	Youmin Hwang (KOR) 	Uiwang, Republic of Korea 	L23 (1) 	Entered 	»»
-115 	Soyoung Lee (KOR) 	Gyeonggido, Republic of Korea 	L23 (2) 	Entered 	»»`;
+115 	Soyoung Lee (KOR) 	Gyeonggido, Republic of Korea 	L23 (2) 	Entered 	»»
+116 	Hae In Sung (KOR) (a) 	Gwangju, Republic of Korea 	L23 (3) 	Entered 	»»
+117 	Honorine Nobuta Ferry (USA) (a) 	Flower Mound, TX 	L23 (4) 	Entered 	»»
+118 	Alexa Takai (USA) (a) 	Honolulu, HI 	L23 (5) 	Entered 	»»`;
 
   const lines = entryListText.split('\n');
   const players: EntryListPlayer[] = [];
