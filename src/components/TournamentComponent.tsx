@@ -24,13 +24,13 @@ interface TournamentComponentProps {
 export default function TournamentComponent({
   eventId = "401734780",
   tournamentName = "LOTTE Championship",
-  location = "Rogers, AR", 
-  date = "Sep 19-21, 2025",
+  location = "Ewa Beach, HI", 
+  date = "Oct 1-4, 2025",
   buyTicketsUrl = "https://www.lottechampionship.com/tickets",
   officialSiteUrl = "https://www.lottechampionship.com/",
   teeTimesUrl = "/tee-times",
-  broadcastUrl = "https://www.birdiebriefing.com/news/walmart-nw-ark-2025/#tv-schedule",
-  entryListUrl = "#",
+  broadcastUrl = "https://www.birdiebriefing.com/news/lotte-championship-2025/#tv-schedule",
+  entryListUrl = "/entry-list",
   podcastUrl = "https://open.spotify.com/episode/1O2VczRWTebqhMNxH64mdX?si=7685c58492cc45d4"
 }: TournamentComponentProps) {
   const { t } = useTranslation();
@@ -49,11 +49,11 @@ export default function TournamentComponent({
   // Use API data if available, fallback to static data that matches current API response
   const displayName = (tournamentData?.name || tournamentName).replace(/\s*(pres\.|presented)\s*by\s*(P&G|Hoakalei)/i, '');
   const displayLocation = tournamentData?.courses ? formatLocation(tournamentData.courses[0]) : location;
-  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Pinnacle Country Club";
+  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Hoakalei Country Club";
   const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$3.0M";
-  const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 71;
-  const displayYardage = tournamentData?.courses?.[0]?.totalYards?.toLocaleString() || "6,438";
-  const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName?.replace(/^Jasmine/, 'J.') || "J. Suwannapura";
+  const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 72;
+  const displayYardage = tournamentData?.courses?.[0]?.totalYards?.toLocaleString() || "6,536";
+  const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName?.replace(/^Jasmine/, 'J.') || "A Lim Kim";
   
   // Format date from API data
   const displayDate = tournamentData ? 
@@ -135,7 +135,7 @@ export default function TournamentComponent({
         {/* Tournament Title */}
         <div className="mb-2">
           <Link 
-            href="https://www.birdiebriefing.com/news/walmart-nw-ark-2025/"
+            href="https://www.birdiebriefing.com/news/lotte-championship-2025/"
             className="block group"
           >
             <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line hover:text-primary-600 transition-all duration-200 cursor-pointer" style={{ hyphens: 'none' }}>
