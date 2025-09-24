@@ -76,6 +76,12 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code', // Replace with actual verification code if you have one
   },
+  other: {
+    'X-Content-Type-Options': 'nosniff',
+    'X-Frame-Options': 'DENY',
+    'X-XSS-Protection': '1; mode=block',
+    'Referrer-Policy': 'strict-origin-when-cross-origin',
+  },
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -94,6 +100,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfairDisplay.variable} ${poppins.variable}`}>
       <head>
+        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+        <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://www.google-analytics.com https://vercel.live; frame-src 'self' https://open.spotify.com; object-src 'none'; base-uri 'self'; form-action 'self';" />
         <StructuredData />
       </head>
       <body className="min-h-screen bg-white">

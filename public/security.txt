@@ -1,0 +1,13 @@
+Contact: mailto:security@birdiebriefing.com
+Contact: https://www.birdiebriefing.com/contact-us
+Expires: 2025-12-31T23:59:59.000Z
+Encryption: https://www.birdiebriefing.com/pgp-key.txt
+Acknowledgments: https://www.birdiebriefing.com/security-acknowledgments
+Preferred-Languages: en
+Canonical: https://www.birdiebriefing.com/.well-known/security.txt
+Policy: https://www.birdiebriefing.com/security-policy
+
+# Security Policy
+# We take security seriously and appreciate responsible disclosure.
+# Please report security vulnerabilities to the contact methods above.
+# We will respond within 48 hours and work with you to resolve issues.
