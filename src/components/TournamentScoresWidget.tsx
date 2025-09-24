@@ -676,7 +676,7 @@ export default function TournamentScoresWidget({
 
       {/* Scores Widget Panel */}
       <div
-        className={`fixed top-16 right-0 h-auto ${activeTab === 'course' ? 'max-h-none' : 'max-h-[70vh] sm:max-h-[60vh]'} w-80 max-w-[calc(100vw-2rem)] bg-white shadow-2xl z-20 transform transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`fixed top-16 right-0 h-[calc(100vh-4rem)] w-80 max-w-[calc(100vw-2rem)] bg-white shadow-2xl z-20 transform transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -733,7 +733,7 @@ export default function TournamentScoresWidget({
         {/* Content */}
         <div className={`flex-1 min-h-0 ${activeTab === 'course' ? 'overflow-hidden' : 'overflow-y-auto'}`}>
           {activeTab === 'leaderboard' && (
-            <div>
+            <div className="h-full w-full flex flex-col">
               {error ? (
                 <div className="flex flex-col items-center justify-center h-16 p-2">
                   <div className="text-red-500 text-center">
@@ -755,63 +755,67 @@ export default function TournamentScoresWidget({
                   </span>
                 </div>
               ) : tournamentData?.players ? (
-                <div className="p-0.5 sm:p-1">
-                  {/* Column Headers */}
-                  <div className="grid grid-cols-[0.6fr_1.6fr_0.6fr_0.6fr_0.6fr_0.6fr] sm:grid-cols-[0.7fr_1.7fr_0.7fr_0.7fr_0.7fr_0.7fr] gap-0.5 sm:gap-1 text-[8px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1 pb-1 border-b border-gray-200">
-                    <div>{t('pos')}</div>
-                    <div>{t('player')}</div>
-                    <div className="text-center">{t('score')}</div>
-                    <div className="text-center">{t('today')}</div>
-                    <div className="text-center">{t('thru')}</div>
-                    <div className="text-center">{t('total')}</div>
+                <div className="flex-1 flex flex-col min-h-0">
+                  {/* Column Headers - Fixed */}
+                  <div className="flex-shrink-0 p-0.5 sm:p-1 pb-0">
+                    <div className="grid grid-cols-[0.6fr_1.6fr_0.6fr_0.6fr_0.6fr_0.6fr] sm:grid-cols-[0.7fr_1.7fr_0.7fr_0.7fr_0.7fr_0.7fr] gap-0.5 sm:gap-1 text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2 pb-2 border-b border-gray-200">
+                      <div>{t('pos')}</div>
+                      <div>{t('player')}</div>
+                      <div className="text-center">{t('score')}</div>
+                      <div className="text-center">{t('today')}</div>
+                      <div className="text-center">{t('thru')}</div>
+                      <div className="text-center">{t('total')}</div>
+                    </div>
                   </div>
                   
-                  {/* Player Rows */}
-                  <div className="space-y-0">
+                  {/* Player Rows - Scrollable */}
+                  <div className="flex-1 overflow-y-auto p-0.5 sm:p-1 pt-0 min-h-0">
+                    <div className="space-y-0">
                     {tournamentData.players.slice(0, 10).map((player) => (
                       <div
                         key={player.id}
-                        className="grid grid-cols-[0.6fr_1.6fr_0.6fr_0.6fr_0.6fr_0.6fr] sm:grid-cols-[0.7fr_1.7fr_0.7fr_0.7fr_0.7fr_0.7fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px]"
+                        className="grid grid-cols-[0.6fr_1.6fr_0.6fr_0.6fr_0.6fr_0.6fr] sm:grid-cols-[0.7fr_1.7fr_0.7fr_0.7fr_0.7fr_0.7fr] gap-0.5 sm:gap-1 items-center p-1 hover:bg-gray-50 rounded transition-colors min-h-[24px] sm:min-h-[28px]"
                       >
-                        <div className="flex-shrink-0 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-[8px] sm:text-[10px] font-bold">
+                        <div className="flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-[10px] sm:text-xs font-bold">
                           {player.tiedPosition || player.position}
                         </div>
                         <div className="min-w-0">
-                          <p className="font-medium text-gray-900 text-[8px] sm:text-[10px] truncate">{getTranslatedPlayerName(player.name)}</p>
+                          <p className="font-medium text-gray-900 text-[10px] sm:text-xs truncate">{getTranslatedPlayerName(player.name)}</p>
                           {player.country && (
-                            <span className="text-[8px] sm:text-[10px] text-gray-500 truncate block">{player.country}</span>
+                            <span className="text-[9px] sm:text-[11px] text-gray-500 truncate block">{player.country}</span>
                           )}
                         </div>
                         <div className="text-center">
-                          <p className={`font-bold text-[8px] sm:text-[10px] ${getScoreColor(player.totalScore)}`}>
+                          <p className={`font-bold text-[10px] sm:text-xs ${getScoreColor(player.totalScore)}`}>
                             {formatScore(player.totalScore)}
                           </p>
                         </div>
                         <div className="text-center">
                           {player.today !== undefined ? (
-                            <p className={`font-medium text-[8px] sm:text-[10px] ${getScoreColor(player.today)}`}>
+                            <p className={`font-medium text-[10px] sm:text-xs ${getScoreColor(player.today)}`}>
                               {formatScore(player.today)}
                             </p>
                           ) : (
-                            <span className="text-gray-400 text-[8px] sm:text-[10px]">-</span>
+                            <span className="text-gray-400 text-[10px] sm:text-xs">-</span>
                           )}
                         </div>
                         <div className="text-center">
                           {player.thruDisplay ? (
-                            <p className="font-medium text-[8px] sm:text-[10px] text-gray-600">
+                            <p className="font-medium text-[10px] sm:text-xs text-gray-600">
                               {player.thruDisplay}
                             </p>
                           ) : (
-                            <span className="text-gray-400 text-[8px] sm:text-[10px]">-</span>
+                            <span className="text-gray-400 text-[10px] sm:text-xs">-</span>
                           )}
                         </div>
                         <div className="text-center">
-                          <p className="font-medium text-[8px] sm:text-[10px] text-gray-700">
+                          <p className="font-medium text-[10px] sm:text-xs text-gray-700">
                             {player.totalStrokes}
                           </p>
                         </div>
                       </div>
                     ))}
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -823,7 +827,7 @@ export default function TournamentScoresWidget({
           )}
 
           {activeTab === 'rounds' && (
-            <div>
+            <div className="h-full w-full flex flex-col">
               {error ? (
                 <div className="flex flex-col items-center justify-center h-16 p-2">
                   <div className="text-red-500 text-center">
@@ -845,51 +849,55 @@ export default function TournamentScoresWidget({
                   </span>
                 </div>
               ) : tournamentData?.players ? (
-                <div className="p-0.5 sm:p-1">
-                  {/* Column Headers */}
-                  <div className="grid grid-cols-[2fr_0.4fr_0.4fr_0.4fr_0.4fr] sm:grid-cols-[2fr_0.5fr_0.5fr_0.5fr_0.5fr] gap-0.5 sm:gap-1 text-[8px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1 pb-1 border-b border-gray-200">
-                    <div>{t('player')}</div>
-                    <div className="text-center">{t('r1')}</div>
-                    <div className="text-center">{t('r2')}</div>
-                    <div className="text-center">{t('r3')}</div>
-                    <div className="text-center">{t('r4')}</div>
+                <div className="flex-1 flex flex-col min-h-0">
+                  {/* Column Headers - Fixed */}
+                  <div className="flex-shrink-0 p-0.5 sm:p-1 pb-0">
+                    <div className="grid grid-cols-[2fr_0.4fr_0.4fr_0.4fr_0.4fr] sm:grid-cols-[2fr_0.5fr_0.5fr_0.5fr_0.5fr] gap-0.5 sm:gap-1 text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2 pb-2 border-b border-gray-200">
+                      <div>{t('player')}</div>
+                      <div className="text-center">{t('r1')}</div>
+                      <div className="text-center">{t('r2')}</div>
+                      <div className="text-center">{t('r3')}</div>
+                      <div className="text-center">{t('r4')}</div>
+                    </div>
                   </div>
                   
-                  {/* Player Rows */}
-                  <div className="space-y-0">
-                    {tournamentData.players.slice(0, 10).map((player) => (
+                  {/* Player Rows - Scrollable */}
+                  <div className="flex-1 overflow-y-auto p-0.5 sm:p-1 pt-0 min-h-0">
+                    <div className="space-y-0">
+                      {tournamentData.players.map((player) => (
                       <div
                         key={player.id}
-                        className="grid grid-cols-[2fr_0.4fr_0.4fr_0.4fr_0.4fr] sm:grid-cols-[2fr_0.5fr_0.5fr_0.5fr_0.5fr] gap-0.5 sm:gap-1 items-center p-0.5 hover:bg-gray-50 rounded transition-colors min-h-[18px] sm:min-h-[20px]"
+                        className="grid grid-cols-[2fr_0.4fr_0.4fr_0.4fr_0.4fr] sm:grid-cols-[2fr_0.5fr_0.5fr_0.5fr_0.5fr] gap-0.5 sm:gap-1 items-center p-1 hover:bg-gray-50 rounded transition-colors min-h-[24px] sm:min-h-[28px]"
                       >
                         <div className="min-w-0">
-                          <p className="font-medium text-gray-900 text-[8px] sm:text-[10px] truncate">{getTranslatedPlayerName(player.name)}</p>
+                          <p className="font-medium text-gray-900 text-[10px] sm:text-xs truncate">{getTranslatedPlayerName(player.name)}</p>
                           {player.country && (
-                            <span className="text-[8px] sm:text-[10px] text-gray-500 truncate block">{player.country}</span>
+                            <span className="text-[9px] sm:text-[11px] text-gray-500 truncate block">{player.country}</span>
                           )}
                         </div>
                         <div className="text-center">
-                          <p className={`font-medium text-[8px] sm:text-[10px] ${getScoreColor(player.round1 || 0)}`}>
+                          <p className={`font-medium text-[10px] sm:text-xs ${getScoreColor(player.round1 || 0)}`}>
                             {player.round1 !== undefined ? formatScore(player.round1) : '-'}
                           </p>
                         </div>
                         <div className="text-center">
-                          <p className={`font-medium text-[8px] sm:text-[10px] ${getScoreColor(player.round2 || 0)}`}>
+                          <p className={`font-medium text-[10px] sm:text-xs ${getScoreColor(player.round2 || 0)}`}>
                             {player.round2 !== undefined ? formatScore(player.round2) : '-'}
                           </p>
                         </div>
                         <div className="text-center">
-                          <p className={`font-medium text-[8px] sm:text-[10px] ${getScoreColor(player.round3 || 0)}`}>
+                          <p className={`font-medium text-[10px] sm:text-xs ${getScoreColor(player.round3 || 0)}`}>
                             {player.round3 !== undefined ? formatScore(player.round3) : '-'}
                           </p>
                         </div>
                         <div className="text-center">
-                          <p className={`font-medium text-[8px] sm:text-[10px] ${getScoreColor(player.round4 || 0)}`}>
+                          <p className={`font-medium text-[10px] sm:text-xs ${getScoreColor(player.round4 || 0)}`}>
                             {player.round4 !== undefined ? formatScore(player.round4) : '-'}
                           </p>
                         </div>
                       </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -901,7 +909,7 @@ export default function TournamentScoresWidget({
           )}
 
           {activeTab === 'search' && (
-            <div>
+            <div className="h-full w-full flex flex-col">
               {error ? (
                 <div className="flex flex-col items-center justify-center h-16 p-2">
                   <div className="text-red-500 text-center">
@@ -923,47 +931,50 @@ export default function TournamentScoresWidget({
                   </span>
                 </div>
               ) : tournamentData?.players ? (
-                <div className="p-1 sm:p-1.5">
+                <div className="flex-1 flex flex-col min-h-0">
                   {/* Search Input */}
-                  <div className="mb-1">
+                  <div className="flex-shrink-0 p-1 sm:p-1.5 pb-0">
                     <input
                       type="text"
                       placeholder={t('searchPlaceholder')}
                       value={searchQuery}
                       onChange={handleSearchChange}
                       onKeyPress={handleSearchKeyPress}
-                      className="w-full px-1 py-1 text-[8px] border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-transparent h-[32px]"
+                      className="w-full px-2 py-1.5 text-[10px] sm:text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-transparent h-[36px]"
                     />
                   </div>
                   
-                  {/* Column Headers */}
-                  <div className="grid grid-cols-[1.8fr_0.7fr_0.7fr] sm:grid-cols-[1.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 text-[8px] sm:text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1 pb-1 border-b border-gray-200">
-                    <div>{t('player')}</div>
-                    <div className="text-center">{t('score')}</div>
-                    <div className="text-center">{t('total')}</div>
+                  {/* Column Headers - Fixed */}
+                  <div className="flex-shrink-0 p-1 sm:p-1.5 pt-0 pb-0">
+                    <div className="grid grid-cols-[1.8fr_0.7fr_0.7fr] sm:grid-cols-[1.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 text-xs sm:text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2 pb-2 border-b border-gray-200">
+                      <div>{t('player')}</div>
+                      <div className="text-center">{t('score')}</div>
+                      <div className="text-center">{t('total')}</div>
+                    </div>
                   </div>
                   
                   {/* Player Rows - Scrollable container for all players */}
-                  <div className="space-y-0 overflow-y-auto max-h-[240px] sm:max-h-[300px]">
+                  <div className="flex-1 overflow-y-auto p-1 sm:p-1.5 pt-0 min-h-0">
+                    <div className="space-y-0">
                     {getFilteredPlayers().length > 0 ? (
                       getFilteredPlayers().map((player) => (
                         <div
                           key={player.id}
-                          className="grid grid-cols-[1.8fr_0.7fr_0.7fr] sm:grid-cols-[1.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 items-center p-0.75 hover:bg-gray-50 rounded transition-colors min-h-[20px] sm:min-h-[22px] cursor-pointer"
+                          className="grid grid-cols-[1.8fr_0.7fr_0.7fr] sm:grid-cols-[1.8fr_0.8fr_0.8fr] gap-0.5 sm:gap-1 items-center p-1 hover:bg-gray-50 rounded transition-colors min-h-[24px] sm:min-h-[28px] cursor-pointer"
                         >
                           <div className="min-w-0">
-                            <p className="font-medium text-gray-900 text-[8px] sm:text-[10px] truncate">{getTranslatedPlayerName(player.name)}</p>
+                            <p className="font-medium text-gray-900 text-[10px] sm:text-xs truncate">{getTranslatedPlayerName(player.name)}</p>
                             {player.country && (
-                              <span className="text-[8px] sm:text-[10px] text-gray-500 truncate block">{player.country}</span>
+                              <span className="text-[9px] sm:text-[11px] text-gray-500 truncate block">{player.country}</span>
                             )}
                           </div>
                           <div className="text-center">
-                            <p className={`font-bold text-[8px] sm:text-[10px] ${getScoreColor(player.totalScore)}`}>
+                            <p className={`font-bold text-[10px] sm:text-xs ${getScoreColor(player.totalScore)}`}>
                               {formatScore(player.totalScore)}
                             </p>
                           </div>
                           <div className="text-center">
-                            <p className="font-medium text-[8px] sm:text-[10px] text-gray-700">
+                            <p className="font-medium text-[10px] sm:text-xs text-gray-700">
                               {player.totalStrokes}
                             </p>
                           </div>
@@ -971,11 +982,12 @@ export default function TournamentScoresWidget({
                       ))
                     ) : (
                       <div className="flex items-center justify-center py-4">
-                        <p className="text-gray-500 text-[8px] sm:text-[10px]">
+                        <p className="text-gray-500 text-[10px] sm:text-xs">
                           {searchQuery.trim() ? t('noPlayersFound') : t('noTournamentData')}
                         </p>
                       </div>
                     )}
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -987,14 +999,12 @@ export default function TournamentScoresWidget({
           )}
 
           {activeTab === 'course' && (
-            <div>
-              <div className="p-0.5 sm:p-1">
-                <CourseHolesWidget 
-                  eventId={tournamentId}
-                  aonRiskHole={currentTournamentData.staticProps.aonRiskHole}
-                  hardestHole={currentTournamentData.staticProps.hardestHole}
-                />
-              </div>
+            <div className="h-full w-full flex flex-col">
+              <CourseHolesWidget 
+                eventId={tournamentId}
+                aonRiskHole={currentTournamentData.staticProps.aonRiskHole}
+                hardestHole={currentTournamentData.staticProps.hardestHole}
+              />
             </div>
           )}
         </div>
