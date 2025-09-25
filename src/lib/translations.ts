@@ -19,6 +19,7 @@ export interface TranslationKeys {
   rolexWorld: string;
   cmeGlobe: string;
   lpgaMoney: string;
+  aonRiskReward: string;
   
   // Schedule submenu
   allTournaments: string;
@@ -95,6 +96,7 @@ export const translations: Record<string, TranslationKeys> = {
     rolexWorld: 'Rolex World',
     cmeGlobe: 'CME Globe',
     lpgaMoney: 'LPGA Money',
+    aonRiskReward: 'AON Risk Reward',
     allTournaments: 'All Tournaments',
     menu: 'Menu',
     closeMenu: 'Close menu',
@@ -173,6 +175,7 @@ export const translations: Record<string, TranslationKeys> = {
     rolexWorld: 'ロレックス世界',
     cmeGlobe: 'CMEグローブ',
     lpgaMoney: 'LPGAマネー',
+    aonRiskReward: 'AONリスクリワード',
     allTournaments: 'すべてのトーナメント',
     menu: 'メニュー',
     closeMenu: 'メニューを閉じる',
@@ -251,6 +254,7 @@ export const translations: Record<string, TranslationKeys> = {
     rolexWorld: '롤렉스 월드',
     cmeGlobe: 'CME 글로브',
     lpgaMoney: 'LPGA 머니',
+    aonRiskReward: 'AON 리스크 리워드',
     allTournaments: '모든 토너먼트',
     menu: '메뉴',
     closeMenu: '메뉴 닫기',
@@ -329,6 +333,7 @@ export const translations: Record<string, TranslationKeys> = {
     rolexWorld: 'โรเล็กซ์เวิลด์',
     cmeGlobe: 'CME โกลบ',
     lpgaMoney: 'LPGA มันนี่',
+    aonRiskReward: 'AON ริสค์ รีวาร์ด',
     allTournaments: 'ทัวร์นาเมนต์ทั้งหมด',
     menu: 'เมนู',
     closeMenu: 'ปิดเมนู',
@@ -408,6 +413,7 @@ export const translations: Record<string, TranslationKeys> = {
     rolexWorld: '劳力士世界',
     cmeGlobe: 'CME全球',
     lpgaMoney: 'LPGA奖金',
+    aonRiskReward: 'AON风险奖励',
     allTournaments: '所有赛事',
     menu: '菜单',
     closeMenu: '关闭菜单',
@@ -487,6 +493,7 @@ export const translations: Record<string, TranslationKeys> = {
     rolexWorld: 'Rolex Thế giới',
     cmeGlobe: 'CME Toàn cầu',
     lpgaMoney: 'LPGA Tiền thưởng',
+    aonRiskReward: 'AON Thử thách Rủi ro',
     allTournaments: 'Tất cả giải đấu',
     menu: 'Menu',
     closeMenu: 'Đóng menu',
@@ -565,6 +572,7 @@ export const translations: Record<string, TranslationKeys> = {
     rolexWorld: 'Rolex World',
     cmeGlobe: 'CME Globe',
     lpgaMoney: 'LPGA Money',
+    aonRiskReward: 'AON Risk Reward',
     allTournaments: 'Lahat ng Tournament',
     menu: 'Menu',
     closeMenu: 'Isara ang menu',
@@ -644,6 +652,7 @@ export const translations: Record<string, TranslationKeys> = {
     rolexWorld: 'Rolex Värld',
     cmeGlobe: 'CME Globe',
     lpgaMoney: 'LPGA Pengar',
+    aonRiskReward: 'AON Risk Belöning',
     allTournaments: 'Alla turneringar',
     menu: 'Meny',
     closeMenu: 'Stäng meny',
@@ -723,6 +732,7 @@ export const translations: Record<string, TranslationKeys> = {
     rolexWorld: 'Rolex Verden',
     cmeGlobe: 'CME Globe',
     lpgaMoney: 'LPGA Penger',
+    aonRiskReward: 'AON Risiko Belønning',
     allTournaments: 'Alle turneringer',
     menu: 'Meny',
     closeMenu: 'Lukk meny',
@@ -802,6 +812,7 @@ export const translations: Record<string, TranslationKeys> = {
     rolexWorld: 'Rolex Monde',
     cmeGlobe: 'CME Globe',
     lpgaMoney: 'LPGA Argent',
+    aonRiskReward: 'AON Défi Risque-Récompense',
     allTournaments: 'Tous les tournois',
     menu: 'Menu',
     closeMenu: 'Fermer le menu',
@@ -881,6 +892,7 @@ export const translations: Record<string, TranslationKeys> = {
     rolexWorld: 'Rolex Mundo',
     cmeGlobe: 'CME Globe',
     lpgaMoney: 'LPGA Dinero',
+    aonRiskReward: 'AON Desafío Riesgo-Recompensa',
     allTournaments: 'Todos los torneos',
     menu: 'Menú',
     closeMenu: 'Cerrar menú',
@@ -960,6 +972,7 @@ export const translations: Record<string, TranslationKeys> = {
     rolexWorld: 'Rolex Welt',
     cmeGlobe: 'CME Globe',
     lpgaMoney: 'LPGA Geld',
+    aonRiskReward: 'AON Risiko-Belohnung',
     allTournaments: 'Alle Turniere',
     menu: 'Menü',
     closeMenu: 'Menü schließen',

@@ -157,21 +157,27 @@ export default function RankingsPage() {
             <div className="inline-flex rounded-lg border border-gray-200 bg-white p-1">
               <Link
                 href="/rankings"
-                className="px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 rounded-md"
+                className="px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 rounded-md text-center"
               >
                 Rolex World
               </Link>
               <Link
                 href="/rankings/cme-globe"
-                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md"
+                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md text-center"
               >
                 CME Globe
               </Link>
               <Link
                 href="/rankings/money-list"
-                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md"
+                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md text-center"
               >
                 LPGA Money
+              </Link>
+              <Link
+                href="/rankings/aon-risk-reward"
+                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md text-center"
+              >
+                AON Risk Reward
               </Link>
             </div>
           </div>
@@ -185,14 +191,14 @@ export default function RankingsPage() {
            <div className="block lg:hidden space-y-3">
                {topPlayers.map((player) => (
                  <div key={player.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-                   <div className="flex items-center justify-between mb-3">
-                     <div className="flex items-center gap-3">
+                   <div className="flex flex-col items-center mb-3">
+                     <div className="flex items-center gap-3 mb-2">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
                       <span className="text-sm font-bold text-primary-800">{player.rank}</span>
                     </div>
-                    <div>
+                    <div className="text-center">
                       <div className="font-medium text-gray-900">{player.fullName}</div>
-                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
                         <Image
                           src={getCountryFlagUrl(player.countryCode)}
                           alt={getCountryFlagAlt(player.countryCode)}
@@ -204,7 +210,7 @@ export default function RankingsPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-right">
+                  <div className="text-center">
                     {player.rankDelta > 0 ? (
                       <span className="text-green-600 text-sm font-medium">+{player.rankDelta}</span>
                     ) : player.rankDelta < 0 ? (
@@ -216,15 +222,15 @@ export default function RankingsPage() {
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4 text-sm">
-                  <div>
+                  <div className="text-center">
                     <div className="text-gray-500 text-xs uppercase tracking-wide">Avg Points</div>
                     <div className="font-medium text-gray-900">{player.pointsAverage.toFixed(2)}</div>
                   </div>
-                  <div>
+                  <div className="text-center">
                     <div className="text-gray-500 text-xs uppercase tracking-wide">Total Points</div>
                     <div className="font-medium text-gray-900">{player.pointsTotal.toFixed(2)}</div>
                   </div>
-                  <div>
+                  <div className="text-center">
                     <div className="text-gray-500 text-xs uppercase tracking-wide">Events</div>
                     <div className="font-medium text-gray-900">{player.tournamentCount}</div>
                   </div>
@@ -240,64 +246,64 @@ export default function RankingsPage() {
                 <thead className="bg-gray-50">
                   <tr>
                     <th 
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('rank')}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center gap-1">
                         Rank
                         {getSortIcon('rank')}
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('fullName')}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center gap-1">
                         Player
                         {getSortIcon('fullName')}
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('countryCode')}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center gap-1">
                         Country
                         {getSortIcon('countryCode')}
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('pointsAverage')}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center gap-1">
                         Avg Points
                         {getSortIcon('pointsAverage')}
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('pointsTotal')}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center gap-1">
                         Total Points
                         {getSortIcon('pointsTotal')}
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('tournamentCount')}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center gap-1">
                         Events
                         {getSortIcon('tournamentCount')}
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('rankDelta')}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center gap-1">
                         Change
                         {getSortIcon('rankDelta')}
                       </div>
@@ -307,14 +313,14 @@ export default function RankingsPage() {
                 <tbody className="bg-white divide-y divide-gray-200">
                   {topPlayers.map((player) => (
                     <tr key={player.id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-gray-900">
                         {player.rank}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
                         {player.fullName}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <div className="flex items-center gap-2">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">
+                        <div className="flex items-center justify-center gap-2">
                           <Image
                             src={getCountryFlagUrl(player.countryCode)}
                             alt={getCountryFlagAlt(player.countryCode)}
@@ -325,16 +331,16 @@ export default function RankingsPage() {
                           {player.countryCode}
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
                         {player.pointsAverage.toFixed(2)}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
                         {player.pointsTotal.toFixed(2)}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">
                         {player.tournamentCount}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
                         {player.rankDelta > 0 ? (
                           <span className="text-green-600">+{player.rankDelta}</span>
                         ) : player.rankDelta < 0 ? (

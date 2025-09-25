@@ -1,16 +1,16 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { getMoneyListRankings } from '@/lib/rankings';
+import { getAonRiskRewardRankings } from '@/lib/rankings';
 import { getCountryFlagUrl, getCountryFlagAlt } from '@/lib/countryFlags';
 import Link from 'next/link';
 import Image from 'next/image';
 
-type SortField = 'rank' | 'fullName' | 'countryCode' | 'earnings' | 'events';
+type SortField = 'rank' | 'fullName' | 'countryCode' | 'points' | 'arrcHolesPlayed' | 'roundsToGo' | 'events';
 type SortDirection = 'asc' | 'desc';
 
-export default function MoneyListRankingsPage() {
-  const rankings = getMoneyListRankings();
+export default function AonRiskRewardRankingsPage() {
+  const rankings = getAonRiskRewardRankings();
   const [sortField, setSortField] = useState<SortField>('rank');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
 
@@ -35,9 +35,17 @@ export default function MoneyListRankingsPage() {
           aValue = a.countryCode.toLowerCase();
           bValue = b.countryCode.toLowerCase();
           break;
-        case 'earnings':
-          aValue = a.earnings;
-          bValue = b.earnings;
+        case 'points':
+          aValue = a.points;
+          bValue = b.points;
+          break;
+        case 'arrcHolesPlayed':
+          aValue = a.arrcHolesPlayed;
+          bValue = b.arrcHolesPlayed;
+          break;
+        case 'roundsToGo':
+          aValue = a.roundsToGo;
+          bValue = b.roundsToGo;
           break;
         case 'events':
           aValue = a.events;
@@ -93,13 +101,11 @@ export default function MoneyListRankingsPage() {
     }
   };
 
-  const formatEarnings = (earnings: number) => {
+  const formatPoints = (points: number) => {
     return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(earnings);
+      minimumFractionDigits: 3,
+      maximumFractionDigits: 3,
+    }).format(points);
   };
 
   return (
@@ -108,23 +114,23 @@ export default function MoneyListRankingsPage() {
       <section className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
           <div className="text-center mb-4">
-            {/* LPGA Money List Logo */}
+            {/* AON Risk Reward Logo */}
             <div className="flex justify-center mb-6">
-                             <img
-                 src="/optimized/lpga-money-logo.webp"
-                 alt="LPGA Money List Logo"
-                 className="h-16 sm:h-20 md:h-24 object-contain"
-               />
+              <img
+                src="/optimized/aon.webp"
+                alt="AON Risk Reward Challenge Logo"
+                className="h-16 sm:h-20 md:h-24 object-contain"
+              />
             </div>
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="flex-1 h-px bg-gray-300 max-w-16 sm:max-w-32"></div>
               <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 leading-tight tracking-tight title-overlap">
-                LPGA Money List
+                AON Risk Reward Challenge
               </h1>
               <div className="flex-1 h-px bg-gray-300 max-w-16 sm:max-w-32"></div>
             </div>
           </div>
-                     <p className="text-base sm:text-lg text-gray-600 text-center">
+          <p className="text-base sm:text-lg text-gray-600 text-center">
             Updated {new Date(rankings.lastUpdated).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
@@ -152,15 +158,15 @@ export default function MoneyListRankingsPage() {
               >
                 CME Globe
               </Link>
-                             <Link
-                 href="/rankings/money-list"
-                 className="px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 rounded-md text-center"
-               >
-                 LPGA Money
-               </Link>
+              <Link
+                href="/rankings/money-list"
+                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md text-center"
+              >
+                LPGA Money
+              </Link>
               <Link
                 href="/rankings/aon-risk-reward"
-                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md text-center"
+                className="px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 rounded-md text-center"
               >
                 AON Risk Reward
               </Link>
@@ -178,9 +184,9 @@ export default function MoneyListRankingsPage() {
               <div key={player.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
                 <div className="flex flex-col items-center mb-3">
                   <div className="flex items-center gap-3">
-                                         <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
-                       <span className="text-sm font-bold text-primary-800">{player.rank}</span>
-                     </div>
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                      <span className="text-sm font-bold text-primary-800">{player.rank}</span>
+                    </div>
                     <div className="text-center">
                       <div className="font-medium text-gray-900">{player.fullName}</div>
                       <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
@@ -199,11 +205,19 @@ export default function MoneyListRankingsPage() {
                 
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div className="text-center">
-                    <div className="text-gray-500 text-xs uppercase tracking-wide">EARNINGS (USD)</div>
-                    <div className="font-medium text-gray-900">{formatEarnings(player.earnings)}</div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wide">Avg to Par</div>
+                    <div className="font-medium text-gray-900">{formatPoints(player.points)}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-gray-500 text-xs uppercase tracking-wide">Events</div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wide">ARRC HOLES PLAYED</div>
+                    <div className="font-medium text-gray-900">{player.arrcHolesPlayed}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-gray-500 text-xs uppercase tracking-wide">Rounds to Go</div>
+                    <div className="font-medium text-gray-900">{player.roundsToGo}</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-gray-500 text-xs uppercase tracking-wide">EVENTS PLAYED</div>
                     <div className="font-medium text-gray-900">{player.events}</div>
                   </div>
                 </div>
@@ -246,11 +260,29 @@ export default function MoneyListRankingsPage() {
                     </th>
                     <th 
                       className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
-                      onClick={() => handleSort('earnings')}
+                      onClick={() => handleSort('points')}
                     >
                       <div className="flex items-center justify-center gap-1">
-                        EARNINGS (USD)
-                        {getSortIcon('earnings')}
+                        Avg to Par
+                        {getSortIcon('points')}
+                      </div>
+                    </th>
+                    <th 
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('arrcHolesPlayed')}
+                    >
+                      <div className="flex items-center justify-center gap-1">
+                        ARRC HOLES PLAYED
+                        {getSortIcon('arrcHolesPlayed')}
+                      </div>
+                    </th>
+                    <th 
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      onClick={() => handleSort('roundsToGo')}
+                    >
+                      <div className="flex items-center justify-center gap-1">
+                        Rounds to Go
+                        {getSortIcon('roundsToGo')}
                       </div>
                     </th>
                     <th 
@@ -258,7 +290,7 @@ export default function MoneyListRankingsPage() {
                       onClick={() => handleSort('events')}
                     >
                       <div className="flex items-center justify-center gap-1">
-                        Events
+                        EVENTS PLAYED
                         {getSortIcon('events')}
                       </div>
                     </th>
@@ -267,13 +299,13 @@ export default function MoneyListRankingsPage() {
                 <tbody className="bg-white divide-y divide-gray-200">
                   {topPlayers.map((player) => (
                     <tr key={player.id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 text-center">
                         {player.rank}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">
                         {player.fullName}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
                         <div className="flex items-center justify-center gap-2">
                           <Image
                             src={getCountryFlagUrl(player.countryCode)}
@@ -285,10 +317,16 @@ export default function MoneyListRankingsPage() {
                           {player.countryCode}
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
-                        {formatEarnings(player.earnings)}
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">
+                        {formatPoints(player.points)}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
+                        {player.arrcHolesPlayed}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
+                        {player.roundsToGo}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
                         {player.events}
                       </td>
                     </tr>

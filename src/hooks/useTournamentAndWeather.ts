@@ -121,6 +121,13 @@ async function fetchTournamentAndWeatherData(eventId: string): Promise<{
 
     if (!response.ok) {
       console.error('Failed to fetch tournament data:', response.status, response.statusText);
+      
+      // Handle client errors (400-499) gracefully
+      if (response.status >= 400 && response.status < 500) {
+        console.warn(`⚠️ Client error ${response.status} for tournament data. Using fallback.`);
+        return { tournament: null, weather: null }; // Return fallback data instead of throwing
+      }
+      
       throw new Error(`API request failed: ${response.status}`);
     }
 

@@ -115,13 +115,13 @@ export async function captureStaticTournamentData(eventId: string): Promise<Stat
         eventId
       });
       
-      // Special handling for 400 errors (Bad Request)
-      if (response.status === 400) {
-        console.warn(`⚠️ Event ID ${eventId} may be invalid or tournament not active. Using fallback data.`);
-        // Don't throw error for 400, just use fallback
+      // Special handling for client errors (400-499) - don't throw, use fallback
+      if (response.status >= 400 && response.status < 500) {
+        console.warn(`⚠️ Client error ${response.status} for event ID ${eventId}. Using fallback data.`);
+        // Don't throw error for client errors, just use fallback
         const cached = staticDataCache.get(eventId);
         if (cached) {
-          console.log('Using cached static tournament data for 400 error');
+          console.log(`Using cached static tournament data for ${response.status} error`);
           return cached;
         }
         return DEFAULT_STATIC_DATA;

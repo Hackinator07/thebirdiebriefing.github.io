@@ -135,21 +135,27 @@ export default function CmeGlobeRankingsPage() {
             <div className="inline-flex rounded-lg border border-gray-200 bg-white p-1">
               <Link
                 href="/rankings"
-                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md"
+                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md text-center"
               >
                 Rolex World
               </Link>
                              <Link
                  href="/rankings/cme-globe"
-                 className="px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 rounded-md"
+                 className="px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 rounded-md text-center"
                >
                  CME Globe
                </Link>
               <Link
                 href="/rankings/money-list"
-                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md"
+                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md text-center"
               >
                 LPGA Money
+              </Link>
+              <Link
+                href="/rankings/aon-risk-reward"
+                className="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700 rounded-md text-center"
+              >
+                AON Risk Reward
               </Link>
             </div>
           </div>
@@ -163,14 +169,14 @@ export default function CmeGlobeRankingsPage() {
            <div className="block lg:hidden space-y-3">
                {topPlayers.map((player) => (
                  <div key={player.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-                   <div className="flex items-center justify-between mb-3">
+                   <div className="flex flex-col items-center mb-3">
                      <div className="flex items-center gap-3">
                                          <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
                        <span className="text-sm font-bold text-primary-800">{player.rank}</span>
                      </div>
-                    <div>
+                    <div className="text-center">
                       <div className="font-medium text-gray-900">{player.fullName}</div>
-                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
                         <Image
                           src={getCountryFlagUrl(player.countryCode)}
                           alt={getCountryFlagAlt(player.countryCode)}
@@ -185,11 +191,11 @@ export default function CmeGlobeRankingsPage() {
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
+                  <div className="text-center">
                     <div className="text-gray-500 text-xs uppercase tracking-wide">Points</div>
                     <div className="font-medium text-gray-900">{player.points.toFixed(3)}</div>
                   </div>
-                  <div>
+                  <div className="text-center">
                     <div className="text-gray-500 text-xs uppercase tracking-wide">Events</div>
                     <div className="font-medium text-gray-900">{player.events}</div>
                   </div>
@@ -205,46 +211,46 @@ export default function CmeGlobeRankingsPage() {
                 <thead className="bg-gray-50">
                   <tr>
                     <th 
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('rank')}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center gap-1">
                         Rank
                         {getSortIcon('rank')}
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('fullName')}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center gap-1">
                         Player
                         {getSortIcon('fullName')}
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('countryCode')}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center gap-1">
                         Country
                         {getSortIcon('countryCode')}
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('points')}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center gap-1">
                         Points
                         {getSortIcon('points')}
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('events')}
                     >
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center justify-center gap-1">
                         Events
                         {getSortIcon('events')}
                       </div>
@@ -254,14 +260,14 @@ export default function CmeGlobeRankingsPage() {
                 <tbody className="bg-white divide-y divide-gray-200">
                   {topPlayers.map((player) => (
                     <tr key={player.id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-gray-900">
                         {player.rank}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
                         {player.fullName}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <div className="flex items-center gap-2">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">
+                        <div className="flex items-center justify-center gap-2">
                           <Image
                             src={getCountryFlagUrl(player.countryCode)}
                             alt={getCountryFlagAlt(player.countryCode)}
@@ -272,10 +278,10 @@ export default function CmeGlobeRankingsPage() {
                           {player.countryCode}
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
                         {player.points.toFixed(3)}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">
                         {player.events}
                       </td>
                     </tr>

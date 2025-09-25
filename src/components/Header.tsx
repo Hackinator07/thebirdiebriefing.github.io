@@ -69,6 +69,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
     { name: t('rolexWorld'), href: '/rankings' },
     { name: t('cmeGlobe'), href: '/rankings/cme-globe' },
     { name: t('lpgaMoney'), href: '/rankings/money-list' },
+    { name: t('aonRiskReward'), href: '/rankings/aon-risk-reward' },
   ];
 
   const scheduleSubmenu = [

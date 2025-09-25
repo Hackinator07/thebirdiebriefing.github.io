@@ -258,6 +258,12 @@ export default function TournamentScoresWidget({
         });
 
         if (!response.ok) {
+          // Handle client errors (400-499) gracefully
+          if (response.status >= 400 && response.status < 500) {
+            console.warn(`⚠️ Client error ${response.status} for tournament scores. Using fallback.`);
+            throw new Error(`Tournament data not available (${response.status})`);
+          }
+          
           const errorData = await response.json().catch(() => ({}));
           const errorMessage = errorData.error || `Failed to fetch tournament data: ${response.status}`;
           throw new Error(errorMessage);

@@ -1,6 +1,7 @@
 import rankingsData from '@/data/rankings.json';
 import cmeGlobeData from '@/data/cme-globe-rankings.json';
 import moneyListData from '@/data/money-list-rankings.json';
+import aonRiskRewardData from '@/data/aon-risk-reward-rankings.json';
 import { Rankings } from './data';
 
 export interface CmeGlobePlayer {
@@ -18,6 +19,17 @@ export interface MoneyListPlayer {
   fullName: string;
   countryCode: string;
   earnings: number;
+  events: number;
+}
+
+export interface AonRiskRewardPlayer {
+  id: number;
+  rank: number;
+  fullName: string;
+  countryCode: string;
+  points: number;
+  arrcHolesPlayed: number;
+  roundsToGo: number;
   events: number;
 }
 
@@ -41,6 +53,16 @@ export interface MoneyListRankings {
   };
 }
 
+export interface AonRiskRewardRankings {
+  lastUpdated: string;
+  type: string;
+  players: AonRiskRewardPlayer[];
+  week: {
+    start_date: string;
+    end_date: string;
+  };
+}
+
 export function getRankings(): Rankings {
   return rankingsData;
 }
@@ -51,4 +73,8 @@ export function getCmeGlobeRankings(): CmeGlobeRankings {
 
 export function getMoneyListRankings(): MoneyListRankings {
   return moneyListData;
+}
+
+export function getAonRiskRewardRankings(): AonRiskRewardRankings {
+  return aonRiskRewardData;
 }

@@ -37,6 +37,11 @@ export async function fetchLPGAScheduleData(): Promise<LPGAEvent[]> {
     });
 
     if (!response.ok) {
+      // Handle client errors (400-499) gracefully
+      if (response.status >= 400 && response.status < 500) {
+        console.warn(`⚠️ Client error ${response.status} for LPGA schedule data. Using fallback.`);
+        return []; // Return empty array for client errors instead of throwing
+      }
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 

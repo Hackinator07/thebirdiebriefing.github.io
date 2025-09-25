@@ -106,6 +106,11 @@ async function fetchCourseData(eventId: string): Promise<CourseData | null> {
     clearTimeout(timeoutId);
 
     if (!response.ok) {
+      // Handle client errors (400-499) gracefully
+      if (response.status >= 400 && response.status < 500) {
+        console.warn(`⚠️ Client error ${response.status} for course holes data. Using fallback.`);
+        return null; // Return null for client errors instead of throwing
+      }
       throw new Error(`API request failed: ${response.status}`);
     }
 
