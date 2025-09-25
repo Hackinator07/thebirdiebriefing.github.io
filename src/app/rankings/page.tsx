@@ -191,14 +191,13 @@ export default function RankingsPage() {
            <div className="block lg:hidden space-y-3">
                {topPlayers.map((player) => (
                  <div key={player.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-                   <div className="flex flex-col items-center mb-3">
-                     <div className="flex items-center gap-3 mb-2">
+                   <div className="flex items-center gap-3 mb-3">
                     <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
                       <span className="text-sm font-bold text-primary-800">{player.rank}</span>
                     </div>
-                    <div className="text-center">
+                    <div className="flex-1">
                       <div className="font-medium text-gray-900">{player.fullName}</div>
-                      <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
+                      <div className="flex items-center gap-2 text-sm text-gray-500">
                         <Image
                           src={getCountryFlagUrl(player.countryCode)}
                           alt={getCountryFlagAlt(player.countryCode)}
@@ -209,29 +208,28 @@ export default function RankingsPage() {
                         {player.countryCode}
                       </div>
                     </div>
+                    <div className="text-right">
+                      {player.rankDelta > 0 ? (
+                        <span className="text-green-600 text-sm font-medium">+{player.rankDelta}</span>
+                      ) : player.rankDelta < 0 ? (
+                        <span className="text-red-600 text-sm font-medium">{player.rankDelta}</span>
+                      ) : (
+                        <span className="text-gray-500 text-sm">-</span>
+                      )}
+                    </div>
                   </div>
-                  <div className="text-center">
-                    {player.rankDelta > 0 ? (
-                      <span className="text-green-600 text-sm font-medium">+{player.rankDelta}</span>
-                    ) : player.rankDelta < 0 ? (
-                      <span className="text-red-600 text-sm font-medium">{player.rankDelta}</span>
-                    ) : (
-                      <span className="text-gray-500 text-sm">-</span>
-                    )}
-                  </div>
-                </div>
                 
                 <div className="grid grid-cols-3 gap-4 text-sm">
-                  <div className="text-center">
-                    <div className="text-gray-500 text-xs uppercase tracking-wide">Avg Points</div>
+                  <div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">Avg Points</div>
                     <div className="font-medium text-gray-900">{player.pointsAverage.toFixed(2)}</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-gray-500 text-xs uppercase tracking-wide">Total Points</div>
+                  <div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">Total Points</div>
                     <div className="font-medium text-gray-900">{player.pointsTotal.toFixed(2)}</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-gray-500 text-xs uppercase tracking-wide">Events</div>
+                  <div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">Events</div>
                     <div className="font-medium text-gray-900">{player.tournamentCount}</div>
                   </div>
                 </div>

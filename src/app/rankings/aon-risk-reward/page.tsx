@@ -182,42 +182,40 @@ export default function AonRiskRewardRankingsPage() {
           <div className="block lg:hidden space-y-3">
             {topPlayers.map((player) => (
               <div key={player.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-                <div className="flex flex-col items-center mb-3">
-                  <div className="flex items-center gap-3">
-                    <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
-                      <span className="text-sm font-bold text-primary-800">{player.rank}</span>
-                    </div>
-                    <div className="text-center">
-                      <div className="font-medium text-gray-900">{player.fullName}</div>
-                      <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
-                        <Image
-                          src={getCountryFlagUrl(player.countryCode)}
-                          alt={getCountryFlagAlt(player.countryCode)}
-                          width={16}
-                          height={12}
-                          className="w-4 h-3 object-cover rounded-sm"
-                        />
-                        {player.countryCode}
-                      </div>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
+                    <span className="text-sm font-bold text-primary-800">{player.rank}</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-medium text-gray-900">{player.fullName}</div>
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <Image
+                        src={getCountryFlagUrl(player.countryCode)}
+                        alt={getCountryFlagAlt(player.countryCode)}
+                        width={16}
+                        height={12}
+                        className="w-4 h-3 object-cover rounded-sm"
+                      />
+                      {player.countryCode}
                     </div>
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div className="text-center">
-                    <div className="text-gray-500 text-xs uppercase tracking-wide">Avg to Par</div>
+                  <div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">Avg to Par</div>
                     <div className="font-medium text-gray-900">{formatPoints(player.points)}</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-gray-500 text-xs uppercase tracking-wide">ARRC HOLES PLAYED</div>
+                  <div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">ARRC HOLES PLAYED</div>
                     <div className="font-medium text-gray-900">{player.arrcHolesPlayed}</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-gray-500 text-xs uppercase tracking-wide">Rounds to Go</div>
+                  <div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">Rounds to Go</div>
                     <div className="font-medium text-gray-900">{player.roundsToGo}</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-gray-500 text-xs uppercase tracking-wide">EVENTS PLAYED</div>
+                  <div>
+                    <div className="text-gray-500 text-xs uppercase tracking-wide mb-1">EVENTS PLAYED</div>
                     <div className="font-medium text-gray-900">{player.events}</div>
                   </div>
                 </div>

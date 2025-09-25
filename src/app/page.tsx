@@ -146,7 +146,7 @@ export default async function Home() {
                 </h2>
                 <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed whitespace-nowrap">
                 Birdie worthy stories, handpicked for you.
               </p>
             </div>
@@ -193,7 +193,7 @@ export default async function Home() {
 
                     {/* Meta */}
                     <div className="flex flex-col gap-2">
-                      <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <div className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-500">
                         <span>By {article.author}</span>
                         <span>•</span>
                         <span>{formatDate(article.date)}</span>
