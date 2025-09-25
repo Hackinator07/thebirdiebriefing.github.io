@@ -48,13 +48,13 @@ interface TournamentScoresWidgetProps {
 
 export default function TournamentScoresWidget({
   tournamentId = '401734780',
-  tournamentName = 'Kroger Queen City Championship',
+  tournamentName = 'LOTTE Championship pres. by Hoakalei',
   isOpen,
   onToggle,
   showToggleButton = true
 }: TournamentScoresWidgetProps) {
   const { t, getPlayerNames } = useTranslation();
-  const [activeTab, setActiveTab] = useState('leaderboard');
+  const [activeTab, setActiveTab] = useState('course'); // Default to course tab when no data
   const [tournamentData, setTournamentData] = useState<TournamentData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -64,6 +64,7 @@ export default function TournamentScoresWidget({
   const [dailyUsage, setDailyUsage] = useState({ count: 0, date: '' });
   const [retryCount, setRetryCount] = useState(0);
   const [isRetrying, setIsRetrying] = useState(false);
+  const [userManuallyChangedTab, setUserManuallyChangedTab] = useState(false);
 
   // RapidAPI rate limiting constants
   const RAPIDAPI_DAILY_LIMIT = 3000;
@@ -497,6 +498,23 @@ export default function TournamentScoresWidget({
     }
   }, [fetchTournamentData, isOpen]);
 
+  // Switch tabs based on data availability (only if user hasn't manually changed tabs)
+  useEffect(() => {
+    if (!userManuallyChangedTab) {
+      if (tournamentData?.players && tournamentData.players.length > 0) {
+        // Switch to leaderboard when data becomes available
+        if (activeTab === 'course') {
+          setActiveTab('leaderboard');
+        }
+      } else if (!tournamentData?.players || tournamentData.players.length === 0) {
+        // Switch to course tab when no data is available
+        if (activeTab === 'leaderboard' || activeTab === 'rounds' || activeTab === 'search') {
+          setActiveTab('course');
+        }
+      }
+    }
+  }, [tournamentData, activeTab, userManuallyChangedTab]);
+
   // Auto-refresh ESPN data every 30 seconds when widget is open (no rate limiting)
   useEffect(() => {
     if (!isOpen) return;
@@ -637,6 +655,7 @@ export default function TournamentScoresWidget({
   // Clear search when switching tabs
   const handleTabChange = (tabId: string) => {
     setActiveTab(tabId);
+    setUserManuallyChangedTab(true); // Mark that user manually changed tabs
     if (tabId !== 'search') {
       setSearchQuery('');
     }
@@ -754,7 +773,7 @@ export default function TournamentScoresWidget({
                     {isRetrying ? 'Retrying...' : t('loadingScores')}
                   </span>
                 </div>
-              ) : tournamentData?.players ? (
+              ) : tournamentData?.players && tournamentData.players.length > 0 ? (
                 <div className="flex-1 flex flex-col min-h-0">
                   {/* Column Headers - Fixed */}
                   <div className="flex-shrink-0 p-0.5 sm:p-1 pb-0">
@@ -848,7 +867,7 @@ export default function TournamentScoresWidget({
                     {isRetrying ? 'Retrying...' : t('loadingScores')}
                   </span>
                 </div>
-              ) : tournamentData?.players ? (
+              ) : tournamentData?.players && tournamentData.players.length > 0 ? (
                 <div className="flex-1 flex flex-col min-h-0">
                   {/* Column Headers - Fixed */}
                   <div className="flex-shrink-0 p-0.5 sm:p-1 pb-0">
@@ -930,7 +949,7 @@ export default function TournamentScoresWidget({
                     {isRetrying ? 'Retrying...' : t('loadingScores')}
                   </span>
                 </div>
-              ) : tournamentData?.players ? (
+              ) : tournamentData?.players && tournamentData.players.length > 0 ? (
                 <div className="flex-1 flex flex-col min-h-0">
                   {/* Search Input */}
                   <div className="flex-shrink-0 p-1 sm:p-1.5 pb-0">

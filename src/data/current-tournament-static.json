@@ -2,12 +2,12 @@
   "lastUpdated": "2025-09-16T17:49:54.643Z",
   "eventId": "401734780",
   "staticProps": {
-    "tournamentName": "Walmart NW Arkansas Championship pres. by P&G",
-    "location": ",",
-    "date": "Sep 19-21, 2025",
-    "courseName": "Pinnacle Country Club",
-    "par": 71,
-    "yardage": 6438,
+    "tournamentName": "LOTTE Championship pres. by Hoakalei",
+    "location": "Ewa Beach, HI",
+    "date": "Oct 1-4, 2025",
+    "courseName": "Lotte Golf & Country Club",
+    "par": 72,
+    "yardage": 6500,
     "aonRiskHole": 11,
     "hardestHole": 8
   },
@@ -16,10 +16,10 @@
       {
         "id": "401734780",
         "uid": "s:1100~l:1107~e:401734780",
-        "date": "2025-09-19T04:00Z",
-        "endDate": "2025-09-21T04:00Z",
-        "name": "Walmart NW Arkansas Championship pres. by P&G",
-        "shortName": "Walmart NW Arkansas Championship pres. by P&G",
+        "date": "2025-10-01T04:00Z",
+        "endDate": "2025-10-04T04:00Z",
+        "name": "LOTTE Championship pres. by Hoakalei",
+        "shortName": "LOTTE Championship pres. by Hoakalei",
         "primary": true,
         "hasPlayerStats": false,
         "hasCourseStats": false,
@@ -53,7 +53,7 @@
         ],
         "tournament": {
           "id": "3357",
-          "displayName": "Walmart NW Arkansas Championship",
+          "displayName": "LOTTE Championship pres. by Hoakalei",
           "major": false,
           "scoringSystem": {
             "id": "1",

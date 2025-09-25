@@ -19,7 +19,7 @@ export default function HomePageClient({ children }: HomePageClientProps) {
       {children}
       <TournamentScoresWidget
         tournamentId="401734780"
-        tournamentName="Kroger Queen City Championship"
+        tournamentName="LOTTE Championship pres. by Hoakalei"
         isOpen={isScoresOpen}
         onToggle={handleToggleScores}
       />

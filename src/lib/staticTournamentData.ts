@@ -61,6 +61,21 @@ export async function captureStaticTournamentData(eventId: string): Promise<Stat
   const RAPIDAPI_KEY = process.env.NEXT_PUBLIC_RAPIDAPI_KEY || '517cb09524mshf243e8dc1b88e58p19efabjsne4e46b59b3c8';
   const RAPIDAPI_HOST = 'live-golf-data1.p.rapidapi.com';
 
+  console.log(`🔄 Capturing static tournament data for event: ${eventId}`);
+  console.log(`📱 User Agent: ${typeof window !== 'undefined' ? window.navigator.userAgent : 'Server'}`);
+
+  // Check if we already have recent cached data to avoid unnecessary API calls
+  const cached = staticDataCache.get(eventId);
+  if (cached && cached.lastUpdated) {
+    const cacheAge = Date.now() - new Date(cached.lastUpdated).getTime();
+    const maxCacheAge = 24 * 60 * 60 * 1000; // 24 hours
+    
+    if (cacheAge < maxCacheAge) {
+      console.log(`✅ Using cached data (age: ${Math.round(cacheAge / 1000 / 60)} minutes)`);
+      return cached;
+    }
+  }
+
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 5000);
@@ -80,7 +95,39 @@ export async function captureStaticTournamentData(eventId: string): Promise<Stat
     clearTimeout(timeoutId);
 
     if (!response.ok) {
-      throw new Error(`API request failed: ${response.status}`);
+      let errorMessage = `API request failed: ${response.status}`;
+      
+      // Try to get more detailed error information
+      try {
+        const errorData = await response.json();
+        if (errorData.message) {
+          errorMessage += ` - ${errorData.message}`;
+        }
+      } catch {
+        // If we can't parse the error response, just use the status
+      }
+      
+      // Log the error for debugging
+      console.error('Tournament API Error:', {
+        status: response.status,
+        statusText: response.statusText,
+        url: `https://${RAPIDAPI_HOST}/leaderboard?league=lpga&eventId=${eventId}`,
+        eventId
+      });
+      
+      // Special handling for 400 errors (Bad Request)
+      if (response.status === 400) {
+        console.warn(`⚠️ Event ID ${eventId} may be invalid or tournament not active. Using fallback data.`);
+        // Don't throw error for 400, just use fallback
+        const cached = staticDataCache.get(eventId);
+        if (cached) {
+          console.log('Using cached static tournament data for 400 error');
+          return cached;
+        }
+        return DEFAULT_STATIC_DATA;
+      }
+      
+      throw new Error(errorMessage);
     }
 
     const apiData = await response.json();
