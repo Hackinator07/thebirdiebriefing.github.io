@@ -109,13 +109,20 @@ export default function CourseMap({ courseMapUrl, courseName, className = '' }: 
         ) : (
           <div className="relative">
             {isImage ? (
-              <img
-                src={courseMapUrl}
-                alt={`Course map for ${courseName || 'this course'}`}
-                className="w-full h-48 sm:h-56 object-cover"
-                onLoad={handleLoad}
-                onError={handleError}
-              />
+              <a
+                href={courseMapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block cursor-pointer hover:opacity-90 transition-opacity"
+              >
+                <img
+                  src={courseMapUrl}
+                  alt={`Course map for ${courseName || 'this course'}`}
+                  className="w-full h-48 sm:h-56 object-cover"
+                  onLoad={handleLoad}
+                  onError={handleError}
+                />
+              </a>
             ) : (
               // For PDFs, show different content on mobile vs desktop
               isMobile ? (
