@@ -104,7 +104,7 @@ export default function EuropeSolheimCupPage() {
               {t('europe')} {t('solheimCup')} {t('team')}
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Team Europe's Solheim Cup squad consists of 12 players selected through a process that includes automatic berths and captain's picks. The top two players on the Ladies European Tour (LET) points list automatically qualify, followed by the top six players in the Rolex Women's World Rankings not already qualified. The remaining four spots are filled by captain's picks.
+              Team Europe's Solheim Cup squad has 12 players: two from the LET points list, six from the Rolex Rankings, and four chosen as captain's picks.
             </p>
           </div>
           
@@ -120,7 +120,7 @@ export default function EuropeSolheimCupPage() {
             </div>
             <div className="bg-purple-50 rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-purple-600">{rankings.qualificationInfo.captainPicks}</div>
-              <div className="text-sm text-purple-700">Potential Captain's Picks</div>
+              <div className="text-sm text-purple-700">Captain's Picks</div>
             </div>
             <div className="bg-gray-50 rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-gray-600">{rankings.qualificationInfo.totalSpots}</div>

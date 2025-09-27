@@ -104,7 +104,7 @@ export default function UnitedStatesSolheimCupPage() {
               {t('unitedStates')} {t('solheimCup')} {t('team')}
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              The U.S. Solheim Cup Team will be comprised of 12 American players from the LPGA, selected through automatic qualification, Rolex Rankings, and captain's picks.
+              Team USA's Solheim Cup squad is 12 LPGA players: a mix of automatic qualifiers, Rolex Rankings spots, and captain's picks.
             </p>
           </div>
           
@@ -120,7 +120,7 @@ export default function UnitedStatesSolheimCupPage() {
             </div>
             <div className="bg-purple-50 rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-purple-600">{rankings.qualificationInfo.captainPicks}</div>
-              <div className="text-sm text-purple-700">Potential Captain's Picks</div>
+              <div className="text-sm text-purple-700">Captain's Picks</div>
             </div>
             <div className="bg-gray-50 rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-gray-600">{rankings.qualificationInfo.totalSpots}</div>
