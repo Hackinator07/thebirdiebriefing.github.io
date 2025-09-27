@@ -156,3 +156,51 @@ export function calculateReadTime(content: string[]): number {
 
 // Re-export bios functions from the bios module
 export { getBios, getTeamMember, getMission, getContact } from './bios';
+
+export interface UsSolheimCupPlayer {
+  id: number;
+  rank: number;
+  rankDelta: number;
+  fullName: string;
+  countryCode: string;
+  country?: string;
+  points: number;
+  qualificationStatus: 'automatic' | 'rolex' | 'captain' | 'alternate';
+}
+
+export interface UsSolheimCupRankings {
+  lastUpdated: string;
+  type: string;
+  description: string;
+  qualificationInfo: {
+    totalSpots: number;
+    automaticQualification: number;
+    rolexRankings: number;
+    captainPicks: number;
+  };
+  players: UsSolheimCupPlayer[];
+}
+
+export interface SolheimCupPlayer {
+  id: number;
+  rank: number;
+  rankDelta: number;
+  fullName: string;
+  countryCode: string;
+  country?: string;
+  points: number;
+  qualificationStatus: 'automatic' | 'rolex' | 'captain' | 'alternate' | 'let';
+}
+
+export interface SolheimCupRankings {
+  lastUpdated: string;
+  type: string;
+  description: string;
+  qualificationInfo: {
+    totalSpots: number;
+    letPointsList: number;
+    rolexRankings: number;
+    captainPicks: number;
+  };
+  players: SolheimCupPlayer[];
+}

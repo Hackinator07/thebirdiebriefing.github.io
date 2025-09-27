@@ -17,9 +17,11 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
   const [isRankingsDropdownOpen, setIsRankingsDropdownOpen] = useState(false);
   const [isNewsDropdownOpen, setIsNewsDropdownOpen] = useState(false);
   const [isScheduleDropdownOpen, setIsScheduleDropdownOpen] = useState(false);
+  const [isSolheimCupDropdownOpen, setIsSolheimCupDropdownOpen] = useState(false);
   const [isMobileRankingsOpen, setIsMobileRankingsOpen] = useState(false);
   const [isMobileNewsOpen, setIsMobileNewsOpen] = useState(false);
   const [isMobileScheduleOpen, setIsMobileScheduleOpen] = useState(false);
+  const [isMobileSolheimCupOpen, setIsMobileSolheimCupOpen] = useState(false);
   const pathname = usePathname();
   const { t } = useTranslation();
 
@@ -29,9 +31,11 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
     setIsRankingsDropdownOpen(false);
     setIsNewsDropdownOpen(false);
     setIsScheduleDropdownOpen(false);
+    setIsSolheimCupDropdownOpen(false);
     setIsMobileRankingsOpen(false);
     setIsMobileNewsOpen(false);
     setIsMobileScheduleOpen(false);
+    setIsMobileSolheimCupOpen(false);
   }, [pathname]);
 
   // Prevent body scroll when menu is open
@@ -53,6 +57,8 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
     { name: t('podcast'), href: '/podcast' },
     { name: t('rankings'), href: '/rankings' },
     { name: t('schedule'), href: '/schedule' },
+    { name: t('scorecard'), href: 'scorecard', isSpecial: true },
+    { name: t('solheimCup'), href: '/solheim-cup' },
     { name: t('about'), href: '/about' },
     { name: t('contact'), href: '/contact-us' },
   ];
@@ -76,6 +82,11 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
     { name: t('allTournaments'), href: '/schedule' },
   ];
 
+  const solheimCupSubmenu = [
+    { name: t('europe'), href: '/solheim-cup/europe' },
+    { name: t('unitedStates'), href: '/solheim-cup/united-states' },
+  ];
+
   // Helper function to check if a link is active
   const isLinkActive = (href: string) => {
     if (href === '/') {
@@ -92,6 +103,9 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
 
   // Check if schedule section is active
   const isScheduleActive = pathname.startsWith('/schedule');
+
+  // Check if Solheim Cup section is active
+  const isSolheimCupActive = pathname.startsWith('/solheim-cup');
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
@@ -128,7 +142,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
 
 
           {/* Desktop Navigation - Changed from lg: to xl: and made more responsive */}
-          <nav className="hidden xl:flex items-center space-x-2 sm:space-x-3 md:space-x-4 xl:space-x-6 translation-safe-nav">
+          <nav className="hidden xl:flex items-center space-x-1 sm:space-x-2 md:space-x-3 xl:space-x-4 translation-safe-nav">
             {navigation.map((item) => {
               const isActive = isLinkActive(item.href);
               return (
@@ -257,9 +271,89 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                       )}
                     </div>
                   )}
+
+                  {/* Solheim Cup dropdown */}
+                  {item.name === t('solheimCup') && (
+                    <div 
+                      className="relative inline-block"
+                      onMouseEnter={() => setIsSolheimCupDropdownOpen(true)}
+                      onMouseLeave={() => setIsSolheimCupDropdownOpen(false)}
+                    >
+                      <button
+                        onClick={() => setIsSolheimCupDropdownOpen(!isSolheimCupDropdownOpen)}
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap ${
+                          isSolheimCupActive
+                            ? 'text-primary-500'
+                            : 'text-gray-700 hover:text-primary-500'
+                        }`}
+                      >
+                        {t('solheimCup')}
+                        <svg
+                          className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 ${
+                            isSolheimCupDropdownOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                        {!isSolheimCupActive && (
+                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                        )}
+                      </button>
+                      
+                      {/* Dropdown Menu */}
+                      {isSolheimCupDropdownOpen && (
+                        <div 
+                          className="absolute top-full left-0 pt-1 w-48 sm:w-56 z-50"
+                          onMouseEnter={() => setIsSolheimCupDropdownOpen(true)}
+                          onMouseLeave={() => setIsSolheimCupDropdownOpen(false)}
+                        >
+                          <div className="bg-white rounded-md shadow-lg border border-gray-200 py-1">
+                          {solheimCupSubmenu.map((subItem) => {
+                            const isSubActive = pathname === subItem.href;
+                            return (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 whitespace-nowrap ${
+                                  isSubActive
+                                    ? 'text-primary-500 bg-primary-50 font-medium'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                                onClick={() => setIsSolheimCupDropdownOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            );
+                          })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  
+                  {/* Scorecard button */}
+                  {item.name === t('scorecard') && (
+                    <button
+                      onClick={() => onToggleScores?.()}
+                      className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap ${
+                        isScoresOpen
+                          ? 'text-primary-500'
+                          : 'text-gray-700 hover:text-primary-500'
+                      }`}
+                      aria-label={isScoresOpen ? 'Close scorecard' : 'Open scorecard'}
+                    >
+                      {t('scorecard')}
+                      {!isScoresOpen && (
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                      )}
+                    </button>
+                  )}
                   
                   {/* Regular navigation items */}
-                  {item.name !== t('news') && item.name !== t('schedule') && item.name !== t('rankings') && (
+                  {item.name !== t('news') && item.name !== t('schedule') && item.name !== t('rankings') && item.name !== t('scorecard') && item.name !== t('solheimCup') && (
                     <Link
                       href={item.href}
                       className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap ${
@@ -339,22 +433,6 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                 </div>
               );
             })}
-            
-            {/* Scorecard button - always visible and functional */}
-            <button
-              onClick={() => onToggleScores?.()}
-              className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap ${
-                isScoresOpen
-                  ? 'text-primary-500'
-                  : 'text-gray-700 hover:text-primary-500'
-              }`}
-              aria-label={isScoresOpen ? 'Close scorecard' : 'Open scorecard'}
-            >
-              {t('scorecard')}
-              {!isScoresOpen && (
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
-              )}
-            </button>
             
             {/* Vertical Divider */}
             <div className="h-5 w-px bg-black"></div>
@@ -548,7 +626,72 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                                 </div>
                               )}
                             </div>
-                                                     ) : (
+                          ) : item.name === t('solheimCup') ? (
+                            <div className="-mx-6">
+                              <button
+                                onClick={() => setIsMobileSolheimCupOpen(!isMobileSolheimCupOpen)}
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
+                                  isSolheimCupActive
+                                    ? 'text-primary-500 bg-primary-50 font-semibold'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                              >
+                                <span>{t('solheimCup')}</span>
+                                <svg
+                                  className={`h-4 w-4 transition-transform duration-200 ${
+                                    isMobileSolheimCupOpen ? 'rotate-180' : ''
+                                  }`}
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </button>
+                              
+                              {/* Mobile Solheim Cup Dropdown */}
+                              {isMobileSolheimCupOpen && (
+                                <div className="bg-gray-50 border-t border-gray-100">
+                                  {solheimCupSubmenu.map((subItem) => {
+                                    const isSubActive = pathname === subItem.href;
+                                    return (
+                                      <Link
+                                        key={subItem.name}
+                                        href={subItem.href}
+                                        className={`block py-3 pl-10 pr-6 text-sm transition-colors duration-200 ${
+                                          isSubActive
+                                            ? 'text-primary-500 bg-primary-100 font-medium'
+                                            : 'text-gray-600 hover:text-primary-500 hover:bg-gray-100'
+                                        }`}
+                                        onClick={() => {
+                                          setIsMenuOpen(false);
+                                          setIsMobileSolheimCupOpen(false);
+                                        }}
+                                      >
+                                        {subItem.name}
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          ) : item.name === t('scorecard') ? (
+                            <div className="-mx-6">
+                              <button
+                                onClick={() => {
+                                  onToggleScores?.();
+                                  setIsMenuOpen(false);
+                                }}
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
+                                  isScoresOpen
+                                    ? 'text-primary-500 bg-primary-50 font-semibold'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                              >
+                                <span>{t('scorecard')}</span>
+                              </button>
+                            </div>
+                          ) : (
                              <div className="-mx-6">
                                <Link
                                  href={item.href}
@@ -577,23 +720,6 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                         </div>
                       );
                     })}
-                    
-                    {/* Mobile Scorecard - always visible and functional */}
-                    <div className="-mx-6">
-                      <button
-                        onClick={() => {
-                          onToggleScores?.();
-                          setIsMenuOpen(false);
-                        }}
-                        className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
-                          isScoresOpen
-                            ? 'text-primary-500 bg-primary-50 font-semibold'
-                            : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
-                        }`}
-                      >
-                        <span>{t('scorecard')}</span>
-                      </button>
-                    </div>
                     
                     {/* Mobile Translation Section */}
                     <div className="pt-4 mt-4 border-t border-gray-200 notranslate">

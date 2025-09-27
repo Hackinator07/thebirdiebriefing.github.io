@@ -2,7 +2,12 @@ import rankingsData from '@/data/rankings.json';
 import cmeGlobeData from '@/data/cme-globe-rankings.json';
 import moneyListData from '@/data/money-list-rankings.json';
 import aonRiskRewardData from '@/data/aon-risk-reward-rankings.json';
-import { Rankings } from './data';
+import usSolheimCupData from '@/data/us-solheim-cup-rankings.json';
+import europeSolheimCupData from '@/data/europe-solheim-cup-rankings.json';
+import { Rankings, UsSolheimCupRankings, SolheimCupRankings, SolheimCupPlayer } from './data';
+
+// Re-export for convenience
+export type { SolheimCupPlayer };
 
 export interface CmeGlobePlayer {
   id: number;
@@ -63,6 +68,7 @@ export interface AonRiskRewardRankings {
   };
 }
 
+
 export function getRankings(): Rankings {
   return rankingsData;
 }
@@ -77,4 +83,12 @@ export function getMoneyListRankings(): MoneyListRankings {
 
 export function getAonRiskRewardRankings(): AonRiskRewardRankings {
   return aonRiskRewardData;
+}
+
+export function getUsSolheimCupRankings(): UsSolheimCupRankings {
+  return usSolheimCupData as UsSolheimCupRankings;
+}
+
+export function getEuropeSolheimCupRankings(): SolheimCupRankings {
+  return europeSolheimCupData as SolheimCupRankings;
 }

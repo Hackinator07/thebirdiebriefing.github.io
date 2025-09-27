@@ -1,0 +1,813 @@
+{
+  "lastUpdated": "2025-09-27T13:18:00.000Z",
+  "type": "Europe Solheim Cup Team Qualification and Selection",
+  "description": "Team Europe's Solheim Cup squad consists of 12 players selected through a process that includes automatic berths and captain's picks. The top two players on the Ladies European Tour (LET) points list automatically qualify, followed by the top six players in the Rolex Women's World Rankings not already qualified. The remaining four spots are filled by captain's picks made by the European captain.",
+  "qualificationInfo": {
+    "totalSpots": 12,
+    "letPointsList": 2,
+    "rolexRankings": 6,
+    "captainPicks": 4
+  },
+  "players": [
+    {
+      "id": 1,
+      "rank": 1,
+      "rankDelta": 0,
+      "fullName": "Chiara Tamburlini",
+      "countryCode": "SUI",
+      "country": "Switzerland",
+      "points": 119.35,
+      "qualificationStatus": "let"
+    },
+    {
+      "id": 2,
+      "rank": 2,
+      "rankDelta": 0,
+      "fullName": "Helen Briem",
+      "countryCode": "GER",
+      "country": "Germany",
+      "points": 92.00,
+      "qualificationStatus": "let"
+    },
+    {
+      "id": 3,
+      "rank": 3,
+      "rankDelta": 0,
+      "fullName": "Charley Hull",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 89.68,
+      "qualificationStatus": "rolex"
+    },
+    {
+      "id": 4,
+      "rank": 4,
+      "rankDelta": 0,
+      "fullName": "Manon De Roey",
+      "countryCode": "BEL",
+      "country": "Belgium",
+      "points": 70.63,
+      "qualificationStatus": "rolex"
+    },
+    {
+      "id": 5,
+      "rank": 5,
+      "rankDelta": 0,
+      "fullName": "Mimi Rhodes",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 68.19,
+      "qualificationStatus": "rolex"
+    },
+    {
+      "id": 6,
+      "rank": 6,
+      "rankDelta": 0,
+      "fullName": "Sara Kouskova",
+      "countryCode": "CZE",
+      "country": "Czech Republic",
+      "points": 64.90,
+      "qualificationStatus": "rolex"
+    },
+    {
+      "id": 7,
+      "rank": 7,
+      "rankDelta": 0,
+      "fullName": "Perrine Delacour",
+      "countryCode": "FRA",
+      "country": "France",
+      "points": 54.17,
+      "qualificationStatus": "rolex"
+    },
+    {
+      "id": 8,
+      "rank": 8,
+      "rankDelta": 0,
+      "fullName": "Nastasia Nadaud",
+      "countryCode": "FRA",
+      "country": "France",
+      "points": 50.50,
+      "qualificationStatus": "rolex"
+    },
+    {
+      "id": 9,
+      "rank": 9,
+      "rankDelta": 0,
+      "fullName": "Cara Gainer",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 50.13,
+      "qualificationStatus": "captain"
+    },
+    {
+      "id": 10,
+      "rank": 10,
+      "rankDelta": 0,
+      "fullName": "Maja Stark",
+      "countryCode": "SWE",
+      "country": "Sweden",
+      "points": 50.00,
+      "qualificationStatus": "captain"
+    },
+    {
+      "id": 11,
+      "rank": 11,
+      "rankDelta": 0,
+      "fullName": "Nuria Iturrioz",
+      "countryCode": "ESP",
+      "country": "Spain",
+      "points": 46.20,
+      "qualificationStatus": "captain"
+    },
+    {
+      "id": 12,
+      "rank": 12,
+      "rankDelta": 0,
+      "fullName": "Lottie Woad",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 45.00,
+      "qualificationStatus": "captain"
+    },
+    {
+      "id": 13,
+      "rank": 13,
+      "rankDelta": 0,
+      "fullName": "Carlota Ciganda",
+      "countryCode": "ESP",
+      "country": "Spain",
+      "points": 43.63,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 14,
+      "rank": 14,
+      "rankDelta": 0,
+      "fullName": "Lauren Walsh",
+      "countryCode": "IRL",
+      "country": "Ireland",
+      "points": 42.17,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 15,
+      "rank": 15,
+      "rankDelta": 0,
+      "fullName": "Alice Hewson",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 38.25,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 16,
+      "rank": 16,
+      "rankDelta": 0,
+      "fullName": "Pauline Roussin-Bouchard",
+      "countryCode": "FRA",
+      "country": "France",
+      "points": 36.43,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 17,
+      "rank": 17,
+      "rankDelta": 0,
+      "fullName": "Darcey Harry",
+      "countryCode": "WAL",
+      "country": "Wales",
+      "points": 32.75,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 18,
+      "rank": 18,
+      "rankDelta": 0,
+      "fullName": "Laura Fuenfstueck",
+      "countryCode": "GER",
+      "country": "Germany",
+      "points": 31.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 19,
+      "rank": 19,
+      "rankDelta": 0,
+      "fullName": "Emma Spitz",
+      "countryCode": "AUT",
+      "country": "Austria",
+      "points": 30.55,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 20,
+      "rank": 20,
+      "rankDelta": 0,
+      "fullName": "Celine Boutier",
+      "countryCode": "FRA",
+      "country": "France",
+      "points": 27.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 21,
+      "rank": 21,
+      "rankDelta": 0,
+      "fullName": "Anne Van Dam",
+      "countryCode": "NED",
+      "country": "Netherlands",
+      "points": 26.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 22,
+      "rank": 22,
+      "rankDelta": 0,
+      "fullName": "Luna Sobron Galmes",
+      "countryCode": "ESP",
+      "country": "Spain",
+      "points": 26.33,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 23,
+      "rank": 23,
+      "rankDelta": 0,
+      "fullName": "Kajsa Arwefjall",
+      "countryCode": "SWE",
+      "country": "Sweden",
+      "points": 25.80,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 24,
+      "rank": 24,
+      "rankDelta": 0,
+      "fullName": "Virginia Elena Carta",
+      "countryCode": "ITA",
+      "country": "Italy",
+      "points": 21.30,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 25,
+      "rank": 25,
+      "rankDelta": 0,
+      "fullName": "Leona Maguire",
+      "countryCode": "IRL",
+      "country": "Ireland",
+      "points": 20.07,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 26,
+      "rank": 26,
+      "rankDelta": 0,
+      "fullName": "Annabell Fuller",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 20.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 27,
+      "rank": 26,
+      "rankDelta": 0,
+      "fullName": "Liz Young",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 20.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 28,
+      "rank": 28,
+      "rankDelta": 0,
+      "fullName": "Pia Babnik",
+      "countryCode": "SLO",
+      "country": "Slovenia",
+      "points": 18.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 29,
+      "rank": 29,
+      "rankDelta": 0,
+      "fullName": "Nanna Koerstz Madsen",
+      "countryCode": "DEN",
+      "country": "Denmark",
+      "points": 17.75,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 30,
+      "rank": 30,
+      "rankDelta": 0,
+      "fullName": "Agathe Sauzon",
+      "countryCode": "FRA",
+      "country": "France",
+      "points": 17.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 31,
+      "rank": 31,
+      "rankDelta": 0,
+      "fullName": "Kim Metraux",
+      "countryCode": "SUI",
+      "country": "Switzerland",
+      "points": 16.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 32,
+      "rank": 32,
+      "rankDelta": 0,
+      "fullName": "Ana Pelaez Trivino",
+      "countryCode": "ESP",
+      "country": "Spain",
+      "points": 16.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 33,
+      "rank": 33,
+      "rankDelta": 0,
+      "fullName": "Patricia Isabel Schmidt",
+      "countryCode": "GER",
+      "country": "Germany",
+      "points": 15.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 34,
+      "rank": 33,
+      "rankDelta": 0,
+      "fullName": "Alessandra Fanali",
+      "countryCode": "ITA",
+      "country": "Italy",
+      "points": 15.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 35,
+      "rank": 33,
+      "rankDelta": 0,
+      "fullName": "Noora Komulainen",
+      "countryCode": "FIN",
+      "country": "Finland",
+      "points": 15.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 36,
+      "rank": 36,
+      "rankDelta": 0,
+      "fullName": "Linn Grant",
+      "countryCode": "SWE",
+      "country": "Sweden",
+      "points": 14.69,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 37,
+      "rank": 37,
+      "rankDelta": 0,
+      "fullName": "Madelene Sagstrom",
+      "countryCode": "SWE",
+      "country": "Sweden",
+      "points": 13.25,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 38,
+      "rank": 38,
+      "rankDelta": 0,
+      "fullName": "Alessia Nobilio",
+      "countryCode": "ITA",
+      "country": "Italy",
+      "points": 12.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 39,
+      "rank": 38,
+      "rankDelta": 0,
+      "fullName": "Fatima Fernandez Cano",
+      "countryCode": "ESP",
+      "country": "Spain",
+      "points": 12.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 40,
+      "rank": 40,
+      "rankDelta": 0,
+      "fullName": "Nicole Broch Estrup",
+      "countryCode": "DEN",
+      "country": "Denmark",
+      "points": 12.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 41,
+      "rank": 41,
+      "rankDelta": 0,
+      "fullName": "Esme Hamilton",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 11.90,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 42,
+      "rank": 42,
+      "rankDelta": 0,
+      "fullName": "Leonie Harm",
+      "countryCode": "GER",
+      "country": "Germany",
+      "points": 11.75,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 43,
+      "rank": 43,
+      "rankDelta": 0,
+      "fullName": "Lisa Pettersson",
+      "countryCode": "SWE",
+      "country": "Sweden",
+      "points": 11.63,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 44,
+      "rank": 44,
+      "rankDelta": 0,
+      "fullName": "Esther Henseleit",
+      "countryCode": "GER",
+      "country": "Germany",
+      "points": 11.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 45,
+      "rank": 45,
+      "rankDelta": 0,
+      "fullName": "Emily Kristine Pedersen",
+      "countryCode": "DEN",
+      "country": "Denmark",
+      "points": 11.25,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 46,
+      "rank": 46,
+      "rankDelta": 0,
+      "fullName": "Annabel Dimmock",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 11.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 47,
+      "rank": 47,
+      "rankDelta": 0,
+      "fullName": "Thalia Martin",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 10.80,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 48,
+      "rank": 48,
+      "rankDelta": 0,
+      "fullName": "Hannah Screen",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 10.75,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 49,
+      "rank": 49,
+      "rankDelta": 0,
+      "fullName": "Bronte Law",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 10.13,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 50,
+      "rank": 50,
+      "rankDelta": 0,
+      "fullName": "Anna Foster",
+      "countryCode": "IRL",
+      "country": "Ireland",
+      "points": 7.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 51,
+      "rank": 51,
+      "rankDelta": 0,
+      "fullName": "Ursula Wikstrom",
+      "countryCode": "FIN",
+      "country": "Finland",
+      "points": 7.40,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 52,
+      "rank": 52,
+      "rankDelta": 0,
+      "fullName": "Sofie Bringner",
+      "countryCode": "SWE",
+      "country": "Sweden",
+      "points": 7.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 53,
+      "rank": 53,
+      "rankDelta": 0,
+      "fullName": "Lydia Hall",
+      "countryCode": "WAL",
+      "country": "Wales",
+      "points": 6.90,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 54,
+      "rank": 54,
+      "rankDelta": 0,
+      "fullName": "Maria Hernandez",
+      "countryCode": "ESP",
+      "country": "Spain",
+      "points": 6.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 55,
+      "rank": 54,
+      "rankDelta": 0,
+      "fullName": "Amy Taylor",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 6.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 56,
+      "rank": 54,
+      "rankDelta": 0,
+      "fullName": "Dorthea Forbrigd",
+      "countryCode": "NOR",
+      "country": "Norway",
+      "points": 6.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 57,
+      "rank": 54,
+      "rankDelta": 0,
+      "fullName": "Sara Byrne",
+      "countryCode": "IRL",
+      "country": "Ireland",
+      "points": 6.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 58,
+      "rank": 58,
+      "rankDelta": 0,
+      "fullName": "Moa Folke",
+      "countryCode": "SWE",
+      "country": "Sweden",
+      "points": 5.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 59,
+      "rank": 58,
+      "rankDelta": 0,
+      "fullName": "Blanca Fernandez",
+      "countryCode": "ESP",
+      "country": "Spain",
+      "points": 5.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 60,
+      "rank": 58,
+      "rankDelta": 0,
+      "fullName": "Tereza Melecka",
+      "countryCode": "CZE",
+      "country": "Czech Republic",
+      "points": 5.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 61,
+      "rank": 61,
+      "rankDelta": 0,
+      "fullName": "Chloe Williams",
+      "countryCode": "WAL",
+      "country": "Wales",
+      "points": 5.30,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 62,
+      "rank": 62,
+      "rankDelta": 0,
+      "fullName": "Hannah Burke",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 5.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 63,
+      "rank": 62,
+      "rankDelta": 0,
+      "fullName": "Olivia Cowan",
+      "countryCode": "GER",
+      "country": "Germany",
+      "points": 5.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 64,
+      "rank": 62,
+      "rankDelta": 0,
+      "fullName": "Jana Melichova",
+      "countryCode": "CZE",
+      "country": "Czech Republic",
+      "points": 5.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 65,
+      "rank": 65,
+      "rankDelta": 0,
+      "fullName": "Carolin Kauffmann",
+      "countryCode": "GER",
+      "country": "Germany",
+      "points": 4.90,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 66,
+      "rank": 66,
+      "rankDelta": 0,
+      "fullName": "Smilla Tarning Soenderby",
+      "countryCode": "DEN",
+      "country": "Denmark",
+      "points": 3.47,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 67,
+      "rank": 67,
+      "rankDelta": 0,
+      "fullName": "Aline Krauter",
+      "countryCode": "GER",
+      "country": "Germany",
+      "points": 3.38,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 68,
+      "rank": 68,
+      "rankDelta": 0,
+      "fullName": "Celine Herbin",
+      "countryCode": "FRA",
+      "country": "France",
+      "points": 2.80,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 69,
+      "rank": 69,
+      "rankDelta": 0,
+      "fullName": "Marta Martin",
+      "countryCode": "ESP",
+      "country": "Spain",
+      "points": 2.25,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 70,
+      "rank": 69,
+      "rankDelta": 0,
+      "fullName": "Chiara Noja",
+      "countryCode": "GER",
+      "country": "Germany",
+      "points": 2.25,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 71,
+      "rank": 69,
+      "rankDelta": 0,
+      "fullName": "Polly Mack",
+      "countryCode": "GER",
+      "country": "Germany",
+      "points": 2.25,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 72,
+      "rank": 72,
+      "rankDelta": 0,
+      "fullName": "Ariane Klotz",
+      "countryCode": "FRA",
+      "country": "France",
+      "points": 1.90,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 73,
+      "rank": 73,
+      "rankDelta": 0,
+      "fullName": "Anne-Charlotte Mora",
+      "countryCode": "FRA",
+      "country": "France",
+      "points": 1.67,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 74,
+      "rank": 74,
+      "rankDelta": 0,
+      "fullName": "Lorna Mcclymont",
+      "countryCode": "SCO",
+      "country": "Scotland",
+      "points": 1.50,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 75,
+      "rank": 75,
+      "rankDelta": 0,
+      "fullName": "Harang Lee",
+      "countryCode": "ESP",
+      "country": "Spain",
+      "points": 1.40,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 76,
+      "rank": 75,
+      "rankDelta": 0,
+      "fullName": "Celina Sattelkau",
+      "countryCode": "GER",
+      "country": "Germany",
+      "points": 1.40,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 77,
+      "rank": 77,
+      "rankDelta": 0,
+      "fullName": "Teresa Toscano",
+      "countryCode": "ESP",
+      "country": "Spain",
+      "points": 1.13,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 78,
+      "rank": 78,
+      "rankDelta": 0,
+      "fullName": "Klara Davidson Spilkova",
+      "countryCode": "CZE",
+      "country": "Czech Republic",
+      "points": 1.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 79,
+      "rank": 78,
+      "rankDelta": 0,
+      "fullName": "Alexandra Forsterling",
+      "countryCode": "GER",
+      "country": "Germany",
+      "points": 1.00,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 80,
+      "rank": 80,
+      "rankDelta": 0,
+      "fullName": "Georgia Hall",
+      "countryCode": "ENG",
+      "country": "England",
+      "points": 0.94,
+      "qualificationStatus": "alternate"
+    }
+  ]
+}

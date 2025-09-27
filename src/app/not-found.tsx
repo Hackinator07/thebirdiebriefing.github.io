@@ -63,10 +63,16 @@ export default function NotFound() {
                   </h3>
                   <div className="flex flex-wrap justify-center gap-6">
                     <Link
-                      href="/about"
+                      href="/"
                       className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
                     >
-                      About Us
+                      Home
+                    </Link>
+                    <Link
+                      href="/news"
+                      className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+                    >
+                      News
                     </Link>
                     <Link
                       href="/podcast"
@@ -87,10 +93,28 @@ export default function NotFound() {
                       Schedule
                     </Link>
                     <Link
+                      href="/scorecard"
+                      className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+                    >
+                      Scorecard
+                    </Link>
+                    <Link
+                      href="/solheim-cup/about"
+                      className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+                    >
+                      Solheim Cup
+                    </Link>
+                    <Link
+                      href="/about"
+                      className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
+                    >
+                      About Us
+                    </Link>
+                    <Link
                       href="/contact-us"
                       className="text-primary-500 hover:text-primary-600 font-medium transition-colors"
                     >
-                      Contact
+                      Contact Us
                     </Link>
                   </div>
                 </div>

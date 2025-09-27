@@ -17,9 +17,10 @@ export default function Footer({ onToggleScores }: FooterProps) {
       { name: 'Podcast', href: '/podcast' },
       { name: 'Rankings', href: '/rankings' },
       { name: 'Schedule', href: '/schedule' },
+      { name: t('scorecard'), href: undefined },
+      { name: t('solheimCup'), href: '/solheim-cup/europe' },
       { name: 'About Us', href: '/about' },
       { name: 'Contact Us', href: '/contact-us' },
-      { name: t('scorecard'), href: undefined },
     ],
     social: [
       {

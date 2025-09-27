@@ -1,0 +1,453 @@
+{
+  "lastUpdated": "2025-09-27T13:18:00.000Z",
+  "type": "U.S. Solheim Cup Team Qualification and Selection",
+  "description": "The U.S. Solheim Cup Team will be comprised of 12 American players from the LPGA, who are selected in the following order:\n\nThe top seven players on the U.S. Solheim Cup points list at the end of the Qualifying Period, based on points accumulated from all Ranking Events during the Qualifying Period. In the event of a tie (equal points), the player with the higher ranking on the Rolex Women's World Golf Rankings at the end of the Qualifying Period will be selected;\n\nThe top two players on the Rolex Women's World Golf Rankings at the end of the Qualifying Period who are not already qualified under (1) above. In the event of a tie (equal points), the player with the higher ranking on the U.S. Solheim Cup points list at the end of the Qualifying Period will be selected;\n\nThree players as selected by the U.S. Solheim Cup Team Captain",
+  "qualificationInfo": {
+    "totalSpots": 12,
+    "automaticQualification": 7,
+    "rolexRankings": 2,
+    "captainPicks": 3
+  },
+  "players": [
+    {
+      "id": 1,
+      "rank": 1,
+      "rankDelta": 0,
+      "fullName": "Angel Yin",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 1100,
+      "qualificationStatus": "automatic"
+    },
+    {
+      "id": 2,
+      "rank": 2,
+      "rankDelta": 0,
+      "fullName": "Nelly Korda",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 1100,
+      "qualificationStatus": "automatic"
+    },
+    {
+      "id": 3,
+      "rank": 3,
+      "rankDelta": 0,
+      "fullName": "Yealimi Noh",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 909,
+      "qualificationStatus": "automatic"
+    },
+    {
+      "id": 4,
+      "rank": 4,
+      "rankDelta": 1,
+      "fullName": "Andrea Lee",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 654,
+      "qualificationStatus": "automatic"
+    },
+    {
+      "id": 5,
+      "rank": 5,
+      "rankDelta": 2,
+      "fullName": "Jennifer Kupcho",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 646,
+      "qualificationStatus": "automatic"
+    },
+    {
+      "id": 6,
+      "rank": 6,
+      "rankDelta": -2,
+      "fullName": "Lauren Coughlin",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 635,
+      "qualificationStatus": "automatic"
+    },
+    {
+      "id": 7,
+      "rank": 7,
+      "rankDelta": -1,
+      "fullName": "Megan Khang",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 605,
+      "qualificationStatus": "automatic"
+    },
+    {
+      "id": 8,
+      "rank": 8,
+      "rankDelta": 0,
+      "fullName": "Auston Kim",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 536,
+      "qualificationStatus": "rolex"
+    },
+    {
+      "id": 9,
+      "rank": 9,
+      "rankDelta": 1,
+      "fullName": "Lindy Duncan",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 530,
+      "qualificationStatus": "rolex"
+    },
+    {
+      "id": 10,
+      "rank": 10,
+      "rankDelta": -1,
+      "fullName": "Sarah Schmelzel",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 507,
+      "qualificationStatus": "captain"
+    },
+    {
+      "id": 11,
+      "rank": 11,
+      "rankDelta": 0,
+      "fullName": "Allisen Corpuz",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 485,
+      "qualificationStatus": "captain"
+    },
+    {
+      "id": 12,
+      "rank": 12,
+      "rankDelta": 0,
+      "fullName": "Lucy Li",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 451,
+      "qualificationStatus": "captain"
+    },
+    {
+      "id": 13,
+      "rank": 13,
+      "rankDelta": 0,
+      "fullName": "Lexi Thompson",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 396,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 14,
+      "rank": 14,
+      "rankDelta": 0,
+      "fullName": "Kristen Gillman",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 313,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 15,
+      "rank": 15,
+      "rankDelta": 0,
+      "fullName": "Rose Zhang",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 273,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 16,
+      "rank": 16,
+      "rankDelta": 0,
+      "fullName": "Jenny Bae",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 199,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 17,
+      "rank": 17,
+      "rankDelta": 2,
+      "fullName": "Bailey Tardy",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 190,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 18,
+      "rank": 18,
+      "rankDelta": -1,
+      "fullName": "Marina Alex",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 183,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 19,
+      "rank": 19,
+      "rankDelta": -1,
+      "fullName": "Ryann O'Toole",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 172,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 20,
+      "rank": 20,
+      "rankDelta": 2,
+      "fullName": "Brooke Matthews",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 170,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 21,
+      "rank": 21,
+      "rankDelta": -1,
+      "fullName": "Gurleen Kaur",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 164,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 22,
+      "rank": 22,
+      "rankDelta": -1,
+      "fullName": "Alexa Pano",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 134,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 23,
+      "rank": 23,
+      "rankDelta": 0,
+      "fullName": "Elizabeth Szokol",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 128,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 24,
+      "rank": 24,
+      "rankDelta": 0,
+      "fullName": "Brianna Do",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 104,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 25,
+      "rank": 25,
+      "rankDelta": 0,
+      "fullName": "Lilia Vu",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 100,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 26,
+      "rank": 26,
+      "rankDelta": 0,
+      "fullName": "Lauren Hartlage",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 69,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 27,
+      "rank": 27,
+      "rankDelta": 0,
+      "fullName": "Cheyenne Knight",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 65,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 28,
+      "rank": 27,
+      "rankDelta": 0,
+      "fullName": "Caroline Inglis",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 65,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 29,
+      "rank": 29,
+      "rankDelta": 0,
+      "fullName": "Amanda Doherty",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 58,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 30,
+      "rank": 30,
+      "rankDelta": 0,
+      "fullName": "Gigi Stoll",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 48,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 31,
+      "rank": 31,
+      "rankDelta": 0,
+      "fullName": "Ally Ewing",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 47,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 32,
+      "rank": 32,
+      "rankDelta": 0,
+      "fullName": "Kate Smith-Stroh",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 38,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 33,
+      "rank": 33,
+      "rankDelta": 0,
+      "fullName": "Mariel Galdiano",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 32,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 34,
+      "rank": 34,
+      "rankDelta": 0,
+      "fullName": "Sophia Schubert",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 29,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 35,
+      "rank": 35,
+      "rankDelta": 0,
+      "fullName": "Madison Young",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 27,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 36,
+      "rank": 36,
+      "rankDelta": 0,
+      "fullName": "Jennifer Chang",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 19,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 37,
+      "rank": 37,
+      "rankDelta": 0,
+      "fullName": "Angela Stanford",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 15,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 38,
+      "rank": 38,
+      "rankDelta": 0,
+      "fullName": "Brittany Lincicome",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 14,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 39,
+      "rank": 39,
+      "rankDelta": 0,
+      "fullName": "Gina Kim",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 6,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 40,
+      "rank": 40,
+      "rankDelta": 0,
+      "fullName": "Jessica Porvasnik",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 5,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 41,
+      "rank": 40,
+      "rankDelta": 0,
+      "fullName": "Kaitlyn Papp Budde",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 5,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 42,
+      "rank": 42,
+      "rankDelta": 0,
+      "fullName": "Mina Kreiter",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 4,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 43,
+      "rank": 42,
+      "rankDelta": 0,
+      "fullName": "Laura Wearn",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 4,
+      "qualificationStatus": "alternate"
+    },
+    {
+      "id": 44,
+      "rank": 44,
+      "rankDelta": 0,
+      "fullName": "Amelia Lewis",
+      "countryCode": "USA",
+      "country": "USA",
+      "points": 3,
+      "qualificationStatus": "alternate"
+    }
+  ]
+}
