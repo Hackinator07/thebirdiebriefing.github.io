@@ -31,7 +31,7 @@ export default function TournamentComponent({
   teeTimesUrl = "/tee-times",
   broadcastUrl = "https://www.birdiebriefing.com/news/lotte-championship-2025/#tv-schedule",
   entryListUrl = "/entry-list",
-  podcastUrl = "https://open.spotify.com/episode/3LjwE02kk4k4ApstWiWWzT?si=B2jrnW4ATAWleE2259141w"
+  podcastUrl = "https://open.spotify.com/episode/2iDn4mU5YWTiedRtaAavwn?si=0adbe57c7f5e44e6"
 }: TournamentComponentProps) {
   const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);

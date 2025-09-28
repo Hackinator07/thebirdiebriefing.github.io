@@ -1,0 +1,804 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import CustomTranslation from './CustomTranslation';
+import { useTranslation } from '@/hooks/useTranslation';
+import Image from 'next/image';
+
+interface HeaderProps {
+  isScoresOpen?: boolean;
+  onToggleScores?: () => void;
+}
+
+export default function Header({ isScoresOpen = false, onToggleScores }: HeaderProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isRankingsDropdownOpen, setIsRankingsDropdownOpen] = useState(false);
+  const [isNewsDropdownOpen, setIsNewsDropdownOpen] = useState(false);
+  const [isScheduleDropdownOpen, setIsScheduleDropdownOpen] = useState(false);
+  const [isSolheimCupDropdownOpen, setIsSolheimCupDropdownOpen] = useState(false);
+  const [isMobileRankingsOpen, setIsMobileRankingsOpen] = useState(false);
+  const [isMobileNewsOpen, setIsMobileNewsOpen] = useState(false);
+  const [isMobileScheduleOpen, setIsMobileScheduleOpen] = useState(false);
+  const [isMobileSolheimCupOpen, setIsMobileSolheimCupOpen] = useState(false);
+  const pathname = usePathname();
+  const { t } = useTranslation();
+
+  // Close menu when pathname changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setIsRankingsDropdownOpen(false);
+    setIsNewsDropdownOpen(false);
+    setIsScheduleDropdownOpen(false);
+    setIsSolheimCupDropdownOpen(false);
+    setIsMobileRankingsOpen(false);
+    setIsMobileNewsOpen(false);
+    setIsMobileScheduleOpen(false);
+    setIsMobileSolheimCupOpen(false);
+  }, [pathname]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
+  const navigation = [
+    { name: t('home'), href: '/' },
+    { name: t('news'), href: '/news' },
+    { name: t('podcast'), href: '/podcast' },
+    { name: t('rankings'), href: '/rankings' },
+    { name: t('schedule'), href: '/schedule' },
+    { name: t('scorecard'), href: 'scorecard', isSpecial: true },
+    { name: t('solheimCup'), href: '/solheim-cup' },
+    { name: t('about'), href: '/about' },
+    { name: t('contact'), href: '/contact-us' },
+  ];
+
+  const newsSubmenu = [
+    { name: t('exploreAll'), href: '/news' },
+    { name: t('tournamentPreviews'), href: '/news/tournament-preview' },
+    { name: t('tournamentGolf'), href: '/news/tournament-golf' },
+    { name: t('lpgaAnalysis'), href: '/news/lpga-analysis' },
+    { name: t('opinion'), href: '/news/opinion' },
+  ];
+
+  const rankingsSubmenu = [
+    { name: t('rolexWorld'), href: '/rankings' },
+    { name: t('cmeGlobe'), href: '/rankings/cme-globe' },
+    { name: t('lpgaMoney'), href: '/rankings/money-list' },
+    { name: t('aonRiskReward'), href: '/rankings/aon-risk-reward' },
+  ];
+
+  const scheduleSubmenu = [
+    { name: t('allTournaments'), href: '/schedule' },
+  ];
+
+  const solheimCupSubmenu = [
+    { name: t('solheimAbout'), href: '/solheim-cup/about' },
+    { name: t('theCourse'), href: '/solheim-cup/the-course' },
+    { name: t('europe'), href: '/solheim-cup/europe' },
+    { name: t('unitedStates'), href: '/solheim-cup/united-states' },
+  ];
+
+  // Helper function to check if a link is active
+  const isLinkActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/';
+    }
+    return pathname.startsWith(href);
+  };
+
+  // Check if rankings section is active
+  const isRankingsActive = pathname.startsWith('/rankings');
+  
+  // Check if news section is active
+  const isNewsActive = pathname.startsWith('/news');
+
+  // Check if schedule section is active
+  const isScheduleActive = pathname.startsWith('/schedule');
+
+  // Check if Solheim Cup section is active
+  const isSolheimCupActive = pathname.startsWith('/solheim-cup');
+
+  return (
+    <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex justify-between items-center h-16">
+          {/* Mobile menu button - Moved to left side */}
+          <div className="xl:hidden">
+            <button
+              type="button"
+              className="text-gray-700 hover:text-primary-500 focus:outline-none focus:text-primary-500"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? t('closeMenu') : t('openMenu')}
+            >
+              <span className="sr-only">{isMenuOpen ? t('closeMenu') : t('openMenu')}</span>
+              {isMenuOpen ? (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          </div>
+
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center">
+              <span className="text-lg sm:text-xl font-bold text-primary-500 font-heading">The Birdie</span>
+              <span className="text-lg sm:text-xl font-bold text-secondary-500 font-heading ml-1">Briefing</span>
+            </Link>
+          </div>
+
+
+          {/* Desktop Navigation - Changed from lg: to xl: and made more responsive */}
+          <nav className="hidden xl:flex items-center space-x-1 sm:space-x-2 md:space-x-3 xl:space-x-4 translation-safe-nav">
+            {navigation.map((item) => {
+              const isActive = isLinkActive(item.href);
+              return (
+                <div key={item.name}>
+                  {/* News dropdown */}
+                  {item.name === t('news') && (
+                    <div 
+                      className="relative inline-block"
+                      onMouseEnter={() => setIsNewsDropdownOpen(true)}
+                      onMouseLeave={() => setIsNewsDropdownOpen(false)}
+                    >
+                      <button
+                        onClick={() => setIsNewsDropdownOpen(!isNewsDropdownOpen)}
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap ${
+                          isNewsActive
+                            ? 'text-primary-500'
+                            : 'text-gray-700 hover:text-primary-500'
+                        }`}
+                      >
+                                                 {t('news')}
+                        <svg
+                          className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 ${
+                            isNewsDropdownOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                        {!isNewsActive && (
+                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                        )}
+                      </button>
+                      
+                      {/* Dropdown Menu */}
+                      {isNewsDropdownOpen && (
+                        <div 
+                          className="absolute top-full left-0 pt-1 w-48 sm:w-56 z-50"
+                          onMouseEnter={() => setIsNewsDropdownOpen(true)}
+                          onMouseLeave={() => setIsNewsDropdownOpen(false)}
+                        >
+                          <div className="bg-white rounded-md shadow-lg border border-gray-200 py-1">
+                          {newsSubmenu.map((subItem) => {
+                            const isSubActive = pathname === subItem.href;
+                            return (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 whitespace-nowrap ${
+                                  isSubActive
+                                    ? 'text-primary-500 bg-primary-50 font-medium'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                                onClick={() => setIsNewsDropdownOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            );
+                          })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+
+                  {/* Schedule dropdown */}
+                  {item.name === t('schedule') && (
+                    <div 
+                      className="relative inline-block"
+                      onMouseEnter={() => setIsScheduleDropdownOpen(true)}
+                      onMouseLeave={() => setIsScheduleDropdownOpen(false)}
+                    >
+                      <button
+                        onClick={() => setIsScheduleDropdownOpen(!isScheduleDropdownOpen)}
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap ${
+                          isScheduleActive
+                            ? 'text-primary-500'
+                            : 'text-gray-700 hover:text-primary-500'
+                        }`}
+                      >
+                                                 {t('schedule')}
+                        <svg
+                          className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 ${
+                            isScheduleDropdownOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                        {!isScheduleActive && (
+                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                        )}
+                      </button>
+                      
+                      {/* Dropdown Menu */}
+                      {isScheduleDropdownOpen && (
+                        <div 
+                          className="absolute top-full left-0 pt-1 w-48 sm:w-56 z-50"
+                          onMouseEnter={() => setIsScheduleDropdownOpen(true)}
+                          onMouseLeave={() => setIsScheduleDropdownOpen(false)}
+                        >
+                          <div className="bg-white rounded-md shadow-lg border border-gray-200 py-1">
+                          {scheduleSubmenu.map((subItem) => {
+                            const isSubActive = pathname === subItem.href;
+                            return (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 whitespace-nowrap ${
+                                  isSubActive
+                                    ? 'text-primary-500 bg-primary-50 font-medium'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                                onClick={() => setIsScheduleDropdownOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            );
+                          })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Solheim Cup dropdown */}
+                  {item.name === t('solheimCup') && (
+                    <div 
+                      className="relative inline-block"
+                      onMouseEnter={() => setIsSolheimCupDropdownOpen(true)}
+                      onMouseLeave={() => setIsSolheimCupDropdownOpen(false)}
+                    >
+                      <button
+                        onClick={() => setIsSolheimCupDropdownOpen(!isSolheimCupDropdownOpen)}
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap ${
+                          isSolheimCupActive
+                            ? 'text-primary-500'
+                            : 'text-gray-700 hover:text-primary-500'
+                        }`}
+                      >
+                        {t('solheimCup')}
+                        <svg
+                          className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 ${
+                            isSolheimCupDropdownOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                        {!isSolheimCupActive && (
+                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                        )}
+                      </button>
+                      
+                      {/* Dropdown Menu */}
+                      {isSolheimCupDropdownOpen && (
+                        <div 
+                          className="absolute top-full left-0 pt-1 w-48 sm:w-56 z-50"
+                          onMouseEnter={() => setIsSolheimCupDropdownOpen(true)}
+                          onMouseLeave={() => setIsSolheimCupDropdownOpen(false)}
+                        >
+                          <div className="bg-white rounded-md shadow-lg border border-gray-200 py-1">
+                          {solheimCupSubmenu.map((subItem) => {
+                            const isSubActive = pathname === subItem.href;
+                            return (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 whitespace-nowrap ${
+                                  isSubActive
+                                    ? 'text-primary-500 bg-primary-50 font-medium'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                                onClick={() => setIsSolheimCupDropdownOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            );
+                          })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  
+                  {/* Scorecard button */}
+                  {item.name === t('scorecard') && (
+                    <button
+                      onClick={() => onToggleScores?.()}
+                      className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap ${
+                        isScoresOpen
+                          ? 'text-primary-500'
+                          : 'text-gray-700 hover:text-primary-500'
+                      }`}
+                      aria-label={isScoresOpen ? 'Close scorecard' : 'Open scorecard'}
+                    >
+                      {t('scorecard')}
+                      {!isScoresOpen && (
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                      )}
+                    </button>
+                  )}
+                  
+                  {/* Regular navigation items */}
+                  {item.name !== t('news') && item.name !== t('schedule') && item.name !== t('rankings') && item.name !== t('scorecard') && item.name !== t('solheimCup') && (
+                    <Link
+                      href={item.href}
+                      className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap ${
+                        isActive
+                          ? 'text-primary-500'
+                          : 'text-gray-700 hover:text-primary-500'
+                        }`}
+                    >
+                      {item.name}
+                      {!isActive && (
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                      )}
+                    </Link>
+                  )}
+                  
+                  {/* Rankings dropdown */}
+                  {item.name === t('rankings') && (
+                    <div 
+                      className="relative inline-block"
+                      onMouseEnter={() => setIsRankingsDropdownOpen(true)}
+                      onMouseLeave={() => setIsRankingsDropdownOpen(false)}
+                    >
+                      <button
+                        onClick={() => setIsRankingsDropdownOpen(!isRankingsDropdownOpen)}
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap ${
+                          isRankingsActive
+                            ? 'text-primary-500'
+                            : 'text-gray-700 hover:text-primary-500'
+                        }`}
+                      >
+                        {t('rankings')}
+                        <svg
+                          className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 ${
+                            isRankingsDropdownOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                        {!isRankingsActive && (
+                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+                        )}
+                      </button>
+                      
+                      {/* Dropdown Menu */}
+                      {isRankingsDropdownOpen && (
+                        <div 
+                          className="absolute top-full left-0 pt-1 w-48 sm:w-56 z-50"
+                          onMouseEnter={() => setIsRankingsDropdownOpen(true)}
+                          onMouseLeave={() => setIsRankingsDropdownOpen(false)}
+                        >
+                          <div className="bg-white rounded-md shadow-lg border border-gray-200 py-1">
+                          {rankingsSubmenu.map((subItem) => {
+                            const isSubActive = pathname === subItem.href;
+                            return (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className={`block px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-200 whitespace-nowrap ${
+                                  isSubActive
+                                    ? 'text-primary-500 bg-primary-50 font-medium'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                                onClick={() => setIsRankingsDropdownOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            );
+                          })}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+            
+            {/* Vertical Divider */}
+            <div className="h-5 w-px bg-black"></div>
+            
+            {/* Custom Translation Icon */}
+            <CustomTranslation />
+          </nav>
+
+        </div>
+
+        {/* Mobile Navigation - Changed from lg:hidden to xl:hidden */}
+        {isMenuOpen && (
+          <div className="xl:hidden fixed inset-0 z-50">
+            {/* Backdrop */}
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300"
+              onClick={() => setIsMenuOpen(false)}
+            />
+
+            {/* Slide-out menu */}
+            <div className="fixed left-0 top-0 h-full w-80 landscape:w-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out translation-safe-container">
+              <div className="flex flex-col h-full">
+                {/* Header */}
+                <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
+                  <span className="text-xl font-bold text-primary-500">{t('menu')}</span>
+                  <button
+                    type="button"
+                    className="text-gray-700 hover:text-primary-500 focus:outline-none"
+                    onClick={() => setIsMenuOpen(false)}
+                    aria-label="Close menu"
+                  >
+                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+
+
+                {/* Navigation Links - Made scrollable only in landscape */}
+                <nav className="flex-1 px-6 py-4 overflow-y-auto translation-safe">
+                  <div className="space-y-2">
+                    {navigation.map((item) => {
+                      const isActive = isLinkActive(item.href);
+                      return (
+                        <div key={item.name}>
+                          {/* News dropdown in mobile */}
+                          {item.name === t('news') ? (
+                            <div className="-mx-6">
+                              <button
+                                onClick={() => setIsMobileNewsOpen(!isMobileNewsOpen)}
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
+                                  isNewsActive
+                                    ? 'text-primary-500 bg-primary-50 font-semibold'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                              >
+                                                                 <span>{t('news')}</span>
+                                <svg
+                                  className={`h-4 w-4 transition-transform duration-200 ${
+                                    isMobileNewsOpen ? 'rotate-180' : ''
+                                  }`}
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </button>
+                              
+                              {/* Mobile News Dropdown */}
+                              {isMobileNewsOpen && (
+                                <div className="bg-gray-50 border-t border-gray-100">
+                                  {newsSubmenu.map((subItem) => {
+                                    const isSubActive = pathname === subItem.href;
+                                    return (
+                                      <Link
+                                        key={subItem.name}
+                                        href={subItem.href}
+                                        className={`block py-3 pl-10 pr-6 text-sm transition-colors duration-200 ${
+                                          isSubActive
+                                            ? 'text-primary-500 bg-primary-100 font-medium'
+                                            : 'text-gray-600 hover:text-primary-500 hover:bg-gray-100'
+                                        }`}
+                                        onClick={() => {
+                                          setIsMenuOpen(false);
+                                          setIsMobileNewsOpen(false);
+                                        }}
+                                      >
+                                        {subItem.name}
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          ) : item.name === t('schedule') ? (
+                            <div className="-mx-6">
+                              <button
+                                onClick={() => setIsMobileScheduleOpen(!isMobileScheduleOpen)}
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
+                                  isScheduleActive
+                                    ? 'text-primary-500 bg-primary-50 font-semibold'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                              >
+                                <span>{t('schedule')}</span>
+                                <svg
+                                  className={`h-4 w-4 transition-transform duration-200 ${
+                                    isMobileScheduleOpen ? 'rotate-180' : ''
+                                  }`}
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </button>
+                              
+                              {/* Mobile Schedule Dropdown */}
+                              {isMobileScheduleOpen && (
+                                <div className="bg-gray-50 border-t border-gray-100">
+                                  {scheduleSubmenu.map((subItem) => {
+                                    const isSubActive = pathname === subItem.href;
+                                    return (
+                                      <Link
+                                        key={subItem.name}
+                                        href={subItem.href}
+                                        className={`block py-3 pl-10 pr-6 text-sm transition-colors duration-200 ${
+                                          isSubActive
+                                            ? 'text-primary-500 bg-primary-100 font-medium'
+                                            : 'text-gray-600 hover:text-primary-500 hover:bg-gray-100'
+                                        }`}
+                                        onClick={() => {
+                                          setIsMenuOpen(false);
+                                          setIsMobileScheduleOpen(false);
+                                        }}
+                                      >
+                                        {subItem.name}
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          ) : item.name === t('rankings') ? (
+                            <div className="-mx-6">
+                              <button
+                                onClick={() => setIsMobileRankingsOpen(!isMobileRankingsOpen)}
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
+                                  isRankingsActive
+                                    ? 'text-primary-500 bg-primary-50 font-semibold'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                              >
+                                <span>{t('rankings')}</span>
+                                <svg
+                                  className={`h-4 w-4 transition-transform duration-200 ${
+                                    isMobileRankingsOpen ? 'rotate-180' : ''
+                                  }`}
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </button>
+                              
+                              {/* Mobile Rankings Dropdown */}
+                              {isMobileRankingsOpen && (
+                                <div className="bg-gray-50 border-t border-gray-100">
+                                  {rankingsSubmenu.map((subItem) => {
+                                    const isSubActive = pathname === subItem.href;
+                                    return (
+                                      <Link
+                                        key={subItem.name}
+                                        href={subItem.href}
+                                        className={`block py-3 pl-10 pr-6 text-sm transition-colors duration-200 ${
+                                          isSubActive
+                                            ? 'text-primary-500 bg-primary-100 font-medium'
+                                            : 'text-gray-600 hover:text-primary-500 hover:bg-gray-100'
+                                        }`}
+                                        onClick={() => {
+                                          setIsMenuOpen(false);
+                                          setIsMobileRankingsOpen(false);
+                                        }}
+                                      >
+                                        {subItem.name}
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          ) : item.name === t('solheimCup') ? (
+                            <div className="-mx-6">
+                              <button
+                                onClick={() => setIsMobileSolheimCupOpen(!isMobileSolheimCupOpen)}
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
+                                  isSolheimCupActive
+                                    ? 'text-primary-500 bg-primary-50 font-semibold'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                              >
+                                <span>{t('solheimCup')}</span>
+                                <svg
+                                  className={`h-4 w-4 transition-transform duration-200 ${
+                                    isMobileSolheimCupOpen ? 'rotate-180' : ''
+                                  }`}
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                </svg>
+                              </button>
+                              
+                              {/* Mobile Solheim Cup Dropdown */}
+                              {isMobileSolheimCupOpen && (
+                                <div className="bg-gray-50 border-t border-gray-100">
+                                  {solheimCupSubmenu.map((subItem) => {
+                                    const isSubActive = pathname === subItem.href;
+                                    return (
+                                      <Link
+                                        key={subItem.name}
+                                        href={subItem.href}
+                                        className={`block py-3 px-6 text-sm transition-colors duration-200 text-center ${
+                                          isSubActive
+                                            ? 'text-primary-500 bg-primary-100 font-medium'
+                                            : 'text-gray-600 hover:text-primary-500 hover:bg-gray-100'
+                                        }`}
+                                        onClick={() => {
+                                          setIsMenuOpen(false);
+                                          setIsMobileSolheimCupOpen(false);
+                                        }}
+                                      >
+                                        {subItem.name}
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
+                          ) : item.name === t('scorecard') ? (
+                            <div className="-mx-6">
+                              <button
+                                onClick={() => {
+                                  onToggleScores?.();
+                                  setIsMenuOpen(false);
+                                }}
+                                className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
+                                  isScoresOpen
+                                    ? 'text-primary-500 bg-primary-50 font-semibold'
+                                    : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                }`}
+                              >
+                                <span>{t('scorecard')}</span>
+                              </button>
+                            </div>
+                          ) : (
+                             <div className="-mx-6">
+                               <Link
+                                 href={item.href}
+                                 className={`w-full flex items-center justify-between py-3 px-6 font-medium transition-colors duration-200 rounded-lg whitespace-nowrap ${
+                                   isActive
+                                     ? 'text-primary-500 bg-primary-50 font-semibold'
+                                     : 'text-gray-700 hover:text-primary-500 hover:bg-gray-50'
+                                 }`}
+                                 onClick={() => setIsMenuOpen(false)}
+                               >
+                                 <span>{item.name}</span>
+                                 {/* Logo positioned on the right, perfectly aligned with dropdown carets */}
+                                 {item.name === 'Home' && (
+                                   <div className="flex items-center justify-center w-6 h-6">
+                                     <img 
+                                       src="/images/logo.png" 
+                                       alt="Birdie Briefing Logo" 
+                                       className="w-6 h-6 rounded-full object-cover"
+                                     />
+                                   </div>
+                                 )}
+                               </Link>
+                             </div>
+                           )}
+
+                        </div>
+                      );
+                    })}
+                    
+                    {/* Mobile Translation Section */}
+                    <div className="pt-4 mt-4 border-t border-gray-200 notranslate">
+                      <div className="flex items-center justify-start py-3 -mx-6 px-6 notranslate">
+                        <CustomTranslation />
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+
+                {/* Footer */}
+                <div className="p-6 border-t border-gray-200 flex-shrink-0">
+                  {/* Social Media Icons */}
+                  <div className="flex justify-center gap-6 mb-4">
+                    <a
+                      href="https://www.instagram.com/birdiebriefing/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-primary-500 transition-colors duration-200"
+                      aria-label="Follow us on Instagram"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://open.spotify.com/show/3ZwjiD6IZeHqCNrCwBdrP2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-primary-500 transition-colors duration-200"
+                      aria-label="Listen on Spotify"
+                    >
+                      <Image
+                        src="https://assets.podcastpage.io/img/icons/spotify.svg"
+                        alt="Spotify"
+                        width={24}
+                        height={24}
+                        className="w-6 h-6"
+                      />
+                    </a>
+                    <a
+                      href="https://www.youtube.com/channel/UCW2vyHWE3bMfum9FPq-8xGw"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-primary-500 transition-colors duration-200"
+                      aria-label="Subscribe on YouTube"
+                    >
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                      </svg>
+                    </a>
+                  </div>
+                  
+                  <p className="text-sm text-center font-heading">
+                    <span className="text-primary-500">The Birdie</span>
+                    <span className="text-secondary-500 ml-1">Briefing</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+      
+
+    </header>
+  );
+}
