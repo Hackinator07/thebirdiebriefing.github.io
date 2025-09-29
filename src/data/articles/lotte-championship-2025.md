@@ -94,11 +94,11 @@ sections:
           - "Golf Channel: 6:00 PM – 9:00 PM"
 ---
 
-The LPGA Tour makes its annual stop in Hawaii this week for the 13th playing of the LOTTE Championship presented by Hoakalei, one of just seven official events left on the 2025 schedule. After the Walmart NW Arkansas Championship was shortened to 18 holes and declared unofficial, this week's event in Ewa Beach has added importance. For players chasing season-long awards or fighting for one of the last few spots in the year's final events, the stakes are high.
+The LPGA Tour makes its annual stop in Hawaii this week for the 13th playing of the LOTTE Championship presented by Hoakalei, one of just seven official events left on the 2025 schedule. After the Walmart NW Arkansas Championship was shortened to 18 holes and declared unofficial, this week's event in Ewa Beach has added importance. For players chasing season-long awards or fighting for one of the last few spots in the year's final events, the tournament holds importance.
 
 **The Course**
 
-Hoakalei Country Club will once again provide the stage for the LOTTE Championship. Designed by Ernie Els, for the tournament the course stretches to 6,536 yards.
+Hoakalei Country Club will once again provide the stage for the LOTTE Championship. Designed by Ernie Els, the course stretches 6,536 yards for this week's event.
 
 Nine water features shape the routing, with water coming into play on 13 of 18 holes, turning even straightforward shots into a test of precision. 112 bunkers are positioned with purpose, which can make or break a round.
 
