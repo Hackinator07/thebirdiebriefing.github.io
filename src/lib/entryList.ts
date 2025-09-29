@@ -135,11 +135,13 @@ EXEMPT
 111 	Dani Holmqvist (SWE) 	Stockholm, Sweden 	L15 (38) 	Entered 	»»
 112 	Sarah Kemp (AUS) 	Sydney, Australia 	L15 (39) 	Entered 	»»
 113 	Maude-Aimee Leblanc (CAN) 	Sherbrooke, Quebec 	L15 (40) 	Entered 	»»
-114 	Youmin Hwang (KOR) 	Uiwang, Republic of Korea 	L23 (1) 	Entered 	»»
-115 	Soyoung Lee (KOR) 	Gyeonggido, Republic of Korea 	L23 (2) 	Entered 	»»
-116 	Hae In Sung (KOR) (a) 	Gwangju, Republic of Korea 	L23 (3) 	Entered 	»»
-117 	Honorine Nobuta Ferry (USA) (a) 	Flower Mound, TX 	L23 (4) 	Entered 	»»
-118 	Alexa Takai (USA) (a) 	Honolulu, HI 	L23 (5) 	Entered 	»»`;
+114 	Annie Kim (KOR) 	Seoul, Republic of Korea 	L22 (1) 	Qualifier 	»»
+115 	Tagiralani Luafalealo (SAM) 	  	L22 (2) 	Qualifier 	»»
+116 	Youmin Hwang (KOR) 	Uiwang, Republic of Korea 	L23 (1) 	Entered 	»»
+117 	Soyoung Lee (KOR) 	Gyeonggido, Republic of Korea 	L23 (2) 	Entered 	»»
+118 	Hae In Sung (KOR) (a) 	Gwangju, Republic of Korea 	L23 (3) 	Entered 	»»
+119 	Honorine Nobuta Ferry (USA) (a) 	Flower Mound, TX 	L23 (4) 	Entered 	»»
+120 	Alexa Takai (USA) (a) 	Honolulu, HI 	L23 (5) 	Entered 	»»`;
 
   const lines = entryListText.split('\n');
   const players: EntryListPlayer[] = [];

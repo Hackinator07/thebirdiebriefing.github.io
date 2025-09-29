@@ -52,19 +52,15 @@ function convertTime(timeString: string, fromTimezone: string, toTimezone: strin
     if (endPeriod === 'AM' && endHour24 === 12) endHour24 = 0;
     endTime.setHours(endHour24, parseInt(endMinute), 0, 0);
     
-    // Convert times to the target timezone
-    const startTimeInTarget = new Date(startTime.toLocaleString('en-US', { timeZone: toTimezone }));
-    const endTimeInTarget = new Date(endTime.toLocaleString('en-US', { timeZone: toTimezone }));
-    
-    // Format the converted times
-    const startFormatted = startTimeInTarget.toLocaleTimeString('en-US', {
+    // Format the converted times directly to the target timezone
+    const startFormatted = startTime.toLocaleTimeString('en-US', {
       hour: 'numeric',
       minute: '2-digit',
       hour12: true,
       timeZone: toTimezone
     });
     
-    const endFormatted = endTimeInTarget.toLocaleTimeString('en-US', {
+    const endFormatted = endTime.toLocaleTimeString('en-US', {
       hour: 'numeric',
       minute: '2-digit',
       hour12: true,
