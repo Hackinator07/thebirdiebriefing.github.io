@@ -29,7 +29,7 @@ export default function TournamentComponent({
   buyTicketsUrl = "https://www.lottechampionship.com/tickets",
   officialSiteUrl = "https://www.lottechampionship.com/",
   teeTimesUrl = "/tee-times",
-  broadcastUrl = "https://www.birdiebriefing.com/news/lotte-championship-2025/#tv-schedule",
+  broadcastUrl = "https://www.birdiebriefing.com/news/lotte-champ-2025/#tv-schedule",
   entryListUrl = "/entry-list",
   podcastUrl = "https://open.spotify.com/episode/2iDn4mU5YWTiedRtaAavwn?si=0adbe57c7f5e44e6"
 }: TournamentComponentProps) {
