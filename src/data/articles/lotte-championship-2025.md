@@ -96,15 +96,15 @@ sections:
           - "Golf Channel: 6:00 PM – 9:00 PM"
 ---
 
-The LPGA Tour makes its annual stop in Hawaii this week for the 13th playing of the LOTTE Championship presented by Hoakalei, one of just seven official events left on the 2025 schedule. After the Walmart NW Arkansas Championship was shortened to 18 holes and declared unofficial, this week's event in Ewa Beach has added importance. For players chasing season-long awards or fighting for one of the last few spots in the year's final events, the tournament holds importance.
+The LPGA Tour makes its annual stop in Hawaii this week for the 13th playing of the LOTTE Championship, one of just seven official events left on the 2025 schedule. After the Walmart NW Arkansas Championship was shortened to 18 holes and declared unofficial, this week's event in Ewa Beach has added importance. Players chasing season-long awards or fighting for one of the last few spots in the year's final events will be practiced and ready to take on the challenges ahead. After being held at [Ko Olina Golf Course](https://www.koolinagolf.com/) from 2012 to 2021, the tournament returns for its fourth year at Hoakalei.
 
 **The Course**
 
-Hoakalei Country Club will once again provide the stage for the LOTTE Championship. Designed by Ernie Els, the course stretches 6,536 yards for this week's event.
+Hoakalei Country Club will once again provide the stage for the LOTTE Championship. Designed by Ernie Els and opened in 2019, the course stretches 6,536 yards for this week's event.
 
 Nine water features shape the routing, with water coming into play on 13 of 18 holes, turning even straightforward shots into a test of precision. 112 bunkers are positioned with purpose, which can make or break a round.
 
-There is also the unpredictability of trade winds. Depending on the breeze, the course can play entirely differently from one day to the next, something the players will be keeping in mind this week at Hoakalei.
+There is also the unpredictability of trade winds. Depending on the breeze, the course can play entirely differently from one day to the next, something the players will be keeping in mind this week on the course.
 
 **The Players**
 
