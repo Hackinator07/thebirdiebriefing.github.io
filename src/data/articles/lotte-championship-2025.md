@@ -100,7 +100,7 @@ The LPGA Tour makes its annual stop in Hawaii this week for the 13th playing of 
 
 After the Walmart NW Arkansas Championship was shortened to 18 holes and declared unofficial, this week's event in Ewa Beach has added importance. Players chasing season-long awards or fighting for one of the last few spots in the year's final events will be practiced and ready to take on the challenges ahead. After being held at [Ko Olina Golf Course](https://www.koolinagolf.com/) from 2012 to 2021, the tournament returns for its fourth year at Hoakalei.
 
-*Note: With new feature being added almost weekly, keep up with the tournament using our [Scorecard widget](javascript:openScorecard()), where you’ll find live scores and round updates. [Round 1 and Round 2 tee times](https://www.birdiebriefing.com/tee-times/) are also easy to pull up—whether you’re on your mobile or at your computer—right here on our site.*
+*Note: With new feature being added almost weekly, keep up with the tournament using our Scorecard widget, where you’ll find live scores and round updates. [Round 1 and Round 2 tee times](https://www.birdiebriefing.com/tee-times/) are also easy to pull up—whether you’re on your mobile or at your computer—right here on our site.*
 
 **The Course**
 
