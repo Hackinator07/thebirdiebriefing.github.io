@@ -18,7 +18,7 @@ tags:
   - "LPGA Analysis"
 ---
 
-If Nelly Korda is going to finally put it all together in 2025, the LOTTE Championship feels like the place. Her ball-striking has been sharp, her scoring average steady at 69.78, and if her putter will cooperate the putter her luck could be about to change.
+If Nelly Korda is going to finally put it all together in 2025, the LOTTE Championship feels like the place. Her ball-striking has been sharp, her scoring average steady at 69.78, and if the putter will cooperate her luck could be about to change.
 
 Part of what makes this week feel different is the field itself. Jeeno Thitikul, Lydia Ko, Minjee Lee, Angel Yin—they’re not here. That leaves the leaderboard a little more breathable, though Charley Hull and Miyu Yamashita remain capable of sneaky low rounds. The key for Korda will be keeping the bogeys under control, posting a low round early, and letting the other players chase her.
 
