@@ -1,54 +1,26 @@
 {
-  "lastUpdated": "2025-09-16T17:54:05.244Z",
+  "lastUpdated": "2025-09-30T21:21:16.874Z",
   "eventId": "401734780",
   "data": {
-    "tournamentName": "Walmart NW Arkansas Championship pres. by P&G",
-    "location": "Rogers, AR",
-    "date": "Sep 19-21, 2025",
-    "courseName": "Pinnacle Country Club",
-    "par": 71,
-    "yardage": 6438,
+    "tournamentName": "LOTTE Championship pres. by Hoakalei",
+    "location": "Ewa Beach, HI",
+    "date": "Oct 1-4, 2025",
+    "courseName": "Hoakalei Country Club",
+    "par": 72,
+    "yardage": 6566,
     "weather": {
       "type": "Forecast",
       "displayValue": "Mostly cloudy w/ showers",
       "conditionId": "13",
       "zipCode": "96706",
-      "temperature": 80,
       "lowTemperature": 72,
       "highTemperature": 89,
       "precipitation": 55,
-      "gust": 12,
       "windSpeed": 10,
       "windDirection": "ENE",
-      "lastUpdated": "2025-09-30T02:38Z",
-      "link": {
-        "isExternal": true,
-        "shortText": "Weather",
-        "rel": [
-          "72758"
-        ],
-        "language": "en-US",
-        "attributes": {},
-        "href": "http://www.accuweather.com/en/us/pinnacle-country-club-ar/72756/hourly-weather-forecast/189283_poi?day=4&hbhhour=10&lang=en-us",
-        "text": "Weather",
-        "isPremium": false
-      }
+      "lastUpdated": "2025-09-30T02:38Z"
     },
     "purse": "$3.0M",
-    "defendingChampion": "Jasmine Suwannapura"
-  },
-  "weather": {
-    "type": "Forecast",
-    "displayValue": "Mostly cloudy w/ showers",
-    "conditionId": "13",
-    "zipCode": "96706",
-    "temperature": 80,
-    "lowTemperature": 72,
-    "highTemperature": 89,
-    "precipitation": 55,
-    "gust": 12,
-    "windSpeed": 10,
-    "windDirection": "ENE",
-    "lastUpdated": "2025-09-30T02:38Z"
+    "defendingChampion": "A Lim Kim"
   }
 }

@@ -23,7 +23,7 @@ interface TournamentComponentProps {
 
 export default function TournamentComponent({
   eventId = "401734780",
-  tournamentName = "LOTTE Championship",
+  tournamentName = "LOTTE Championship pres. by Hoakalei",
   location = "Ewa Beach, HI", 
   date = "Oct 1-4, 2025",
   buyTicketsUrl = "https://www.lottechampionship.com/tickets",
@@ -52,7 +52,7 @@ export default function TournamentComponent({
   const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Hoakalei Country Club";
   const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$3.0M";
   const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 72;
-  const displayYardage = tournamentData?.courses?.[0]?.totalYards?.toLocaleString() || "6,536";
+  const displayYardage = tournamentData?.courses?.[0]?.totalYards?.toLocaleString() || "6,566";
   const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName?.replace(/^Jasmine/, 'J.') || "A Lim Kim";
   
   // Format date from API data

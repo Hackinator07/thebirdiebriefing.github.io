@@ -73,18 +73,18 @@ async function updateStaticData() {
     const location = data.course ? `${data.course.city || ''}, ${data.course.state || ''}`.trim() : 'Location';
     const courseName = data.course?.name || 'Course';
     const par = data.course?.shotsToPar || 71;
-    const yardage = data.course?.totalYards || 6438;
+    const yardage = data.course?.totalYards || 6566;
     
-    // Format date
+    // Format date using UTC to avoid timezone issues
     let formattedDate = 'Date TBD';
     if (data.event.date && data.event.endDate) {
       const start = new Date(data.event.date);
       const end = new Date(data.event.endDate);
-      const startMonth = start.toLocaleDateString('en-US', { month: 'short' });
-      const endMonth = end.toLocaleDateString('en-US', { month: 'short' });
-      const startDay = start.getDate();
-      const endDay = end.getDate();
-      const year = start.getFullYear();
+      const startMonth = start.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' });
+      const endMonth = end.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' });
+      const startDay = start.getUTCDate();
+      const endDay = end.getUTCDate();
+      const year = start.getUTCFullYear();
       
       if (startMonth === endMonth) {
         formattedDate = `${startMonth} ${startDay}-${endDay}, ${year}`;

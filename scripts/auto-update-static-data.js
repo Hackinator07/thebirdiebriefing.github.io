@@ -58,16 +58,16 @@ async function fetchLatestTournamentData() {
     const location = course?.address ? `${course.address.city}, ${course.address.state}` : 'Location';
     const courseName = course?.name || 'Course';
     
-    // Format date
+    // Format date using UTC to avoid timezone issues
     let formattedDate = 'Date TBD';
     if (event.date && event.endDate) {
       const start = new Date(event.date);
       const end = new Date(event.endDate);
-      const startMonth = start.toLocaleDateString('en-US', { month: 'short' });
-      const endMonth = end.toLocaleDateString('en-US', { month: 'short' });
-      const startDay = start.getDate();
-      const endDay = end.getDate();
-      const year = start.getFullYear();
+      const startMonth = start.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' });
+      const endMonth = end.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' });
+      const startDay = start.getUTCDate();
+      const endDay = end.getUTCDate();
+      const year = start.getUTCFullYear();
       
       if (startMonth === endMonth) {
         formattedDate = `${startMonth} ${startDay}-${endDay}, ${year}`;
@@ -82,7 +82,7 @@ async function fetchLatestTournamentData() {
       date: formattedDate,
       courseName,
       par: course?.shotsToPar || 71,
-      yardage: course?.totalYards || 6438,
+      yardage: course?.totalYards || 6566,
       weather: weather || {},
       purse: formatPurse(event.purse) || '$3.0M',
       defendingChampion: event.defendingChampion?.athlete?.displayName || 'N/A'

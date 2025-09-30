@@ -248,7 +248,7 @@ export default function CourseHolesWidget({
   const holes = courseData?.holes || [];
   const holeAnalysis = analyzeHoles(holes);
   const displayPar = courseData?.shotsToPar || 71;
-  const displayYardage = courseData?.totalYards?.toLocaleString() || "6,438";
+  const displayYardage = courseData?.totalYards?.toLocaleString() || "6,566";
 
   // Don't render if still loading
   if (loading) {
