@@ -796,7 +796,7 @@ export default function TournamentScoresWidget({
                   {/* Player Rows - Scrollable */}
                   <div className="flex-1 overflow-y-auto p-0.5 sm:p-1 pt-0 min-h-0">
                     <div className="space-y-0">
-                    {tournamentData.players.slice(0, 10).map((player) => (
+                    {tournamentData.players.map((player) => (
                       <div
                         key={player.id}
                         className="grid grid-cols-[0.6fr_1.6fr_0.6fr_0.6fr_0.6fr_0.6fr] sm:grid-cols-[0.7fr_1.7fr_0.7fr_0.7fr_0.7fr_0.7fr] gap-0.5 sm:gap-1 items-center p-1 hover:bg-gray-50 rounded transition-colors min-h-[24px] sm:min-h-[28px]"
