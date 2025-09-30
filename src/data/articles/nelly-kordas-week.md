@@ -1,7 +1,7 @@
 ---
 id: "nelly-kordas-week"
 slug: "nelly-kordas-week"
-title: "Nelly Korda’s Week: Why Hawaii Could Be Her Breakthrough"
+title: "Why Hawaii Could Be Nelly Korda's Breakthrough"
 author: "George Hack"
 authorId: "george-hack"
 date: "2025-09-30"
