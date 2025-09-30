@@ -170,7 +170,7 @@ async function fetchCourseData(eventId: string): Promise<CourseData | null> {
 export default function CourseHolesWidget({
   eventId = "401734780",
   aonRiskHole = 11,
-  hardestHole
+  hardestHole = 8
 }: CourseHolesWidgetProps) {
   const [courseData, setCourseData] = useState<CourseData | null>(null);
   const [loading, setLoading] = useState(true);
