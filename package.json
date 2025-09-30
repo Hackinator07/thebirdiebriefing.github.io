@@ -12,7 +12,8 @@
     "optimize-images": "node scripts/optimize-images.js",
     "build:no-optimize": "next build",
     "fetch-rankings": "node scripts/fetch-rankings.js",
-    "update-static-data": "node scripts/auto-update-static-data.js"
+    "update-static-data": "node scripts/auto-update-static-data.js",
+    "update-weather": "node scripts/update-weather-files.js"
   },
   "dependencies": {
     "@analytics/google-analytics": "^1.1.0",

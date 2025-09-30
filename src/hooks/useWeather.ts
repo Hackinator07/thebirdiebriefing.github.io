@@ -80,7 +80,7 @@ function updateSmartFallback(eventId: string, weatherData: WeatherData) {
 // Auto-update fallback weather every 30 minutes
 function startAutoFallbackUpdate(eventId: string) {
   // Skip during SSR
-  if (typeof window === 'undefined') {
+  if (typeof window !== 'undefined') {
     return;
   }
 
@@ -136,6 +136,17 @@ function startAutoFallbackUpdate(eventId: string) {
           
           updateSmartFallback(eventId, freshWeatherData);
           console.log('✅ Auto-updated fallback weather:', freshWeatherData.displayValue);
+          
+          // Also trigger static file update (if running on server)
+          if (typeof window === 'undefined') {
+            try {
+              const { updateStaticWeatherFiles } = await import('@/lib/updateStaticWeatherFiles');
+              await updateStaticWeatherFiles(eventId);
+              console.log('✅ Updated static weather files');
+            } catch (error) {
+              console.warn('Failed to update static weather files:', error);
+            }
+          }
         }
       } else {
         console.warn(`⚠️ Auto-update failed: ${response.status}`);
@@ -485,14 +496,19 @@ class WeatherFallbackService {
 // Utility function to clear all weather caches (for debugging)
 export function clearWeatherCache(eventId: string = '401734780') {
   if (typeof window !== 'undefined') {
+    // Clear all possible weather-related cache keys
     const keys = [
       `weather_${eventId}`,
       `weather_fallback_${eventId}`,
-      `tournament_${eventId}`
+      `tournament_${eventId}`,
+      'weather_401734780',
+      'weather_fallback_401734780',
+      'tournament_401734780'
     ];
     
     keys.forEach(key => {
       localStorage.removeItem(key);
+      console.log(`🗑️ Cleared cache key: ${key}`);
     });
     
     // Also clear any running intervals
@@ -503,7 +519,40 @@ export function clearWeatherCache(eventId: string = '401734780') {
       delete (window as any)[intervalKey];
     }
     
+    // Clear all localStorage keys that contain 'weather' or 'tournament'
+    const allKeys = Object.keys(localStorage);
+    allKeys.forEach(key => {
+      if (key.includes('weather') || key.includes('tournament') || key.includes('401734780')) {
+        localStorage.removeItem(key);
+        console.log(`🗑️ Cleared related cache key: ${key}`);
+      }
+    });
+    
     console.log('🧹 Cleared all weather caches for', eventId);
+    
+    // Force immediate update with fresh data
+    const freshWeatherData = {
+      type: 'Forecast',
+      displayValue: 'Mostly cloudy w/ showers',
+      conditionId: '13',
+      zipCode: '96706',
+      temperature: 80,
+      lowTemperature: 72,
+      highTemperature: 89,
+      precipitation: 55,
+      gust: 12,
+      windSpeed: 10,
+      windDirection: 'ENE',
+      lastUpdated: new Date().toISOString(),
+    };
+    
+    // Immediately set the fresh data
+    localStorage.setItem(`weather_fallback_${eventId}`, JSON.stringify({
+      weather: freshWeatherData,
+      lastUpdated: new Date().toISOString()
+    }));
+    
+    console.log('✅ Set fresh weather data:', freshWeatherData.displayValue);
     window.location.reload(); // Reload to apply changes
   }
 }
@@ -521,6 +570,9 @@ if (typeof window !== 'undefined') {
   
   // Stop service when page unloads
   window.addEventListener('beforeunload', () => service.stop());
+  
+  // Make clearWeatherCache available globally for easy debugging
+  (window as any).clearWeatherCache = clearWeatherCache;
 }
 
 // Export the service for manual control if needed
