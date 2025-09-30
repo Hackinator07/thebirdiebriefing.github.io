@@ -16,7 +16,7 @@ const TOURNAMENT_PAR = 72;
 const TOURNAMENT_YARDS = 6536;
 const TOURNAMENT_FIELD = "120 Players";
 const TOURNAMENT_PURSE = "$3,000,000";
-const TOURNAMENT_LOGO = "/optimized/lotte-championship.webp";
+const TOURNAMENT_LOGO = "/optimized/lotte-championship-new.webp";
 
 // Round 1 Tee Times
 const round1TeeTimes = [
