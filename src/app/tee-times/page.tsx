@@ -369,21 +369,21 @@ function TeeTimesContent() {
                 <p className="text-secondary-100">October 1-4, 2025 • {TOURNAMENT_COURSE}</p>
                 <p className="text-secondary-100">{TOURNAMENT_LOCATION}</p>
                 <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                  <div>
-                    <span className="text-secondary-200">Par:</span>
-                    <span className="text-white font-medium ml-1">{TOURNAMENT_PAR}</span>
+                  <div className="flex flex-col">
+                    <span className="text-secondary-200 text-xs uppercase tracking-wide">Par</span>
+                    <span className="text-white font-semibold text-lg">{TOURNAMENT_PAR}</span>
                   </div>
-                  <div>
-                    <span className="text-secondary-200">Yards:</span>
-                    <span className="text-white font-medium ml-1">{TOURNAMENT_YARDS.toLocaleString()}</span>
+                  <div className="flex flex-col">
+                    <span className="text-secondary-200 text-xs uppercase tracking-wide">Yards</span>
+                    <span className="text-white font-semibold text-lg">{TOURNAMENT_YARDS.toLocaleString()}</span>
                   </div>
-                  <div>
-                    <span className="text-secondary-200">Field:</span>
-                    <span className="text-white font-medium ml-1">{TOURNAMENT_FIELD}</span>
+                  <div className="flex flex-col">
+                    <span className="text-secondary-200 text-xs uppercase tracking-wide">Field</span>
+                    <span className="text-white font-semibold text-lg">{TOURNAMENT_FIELD}</span>
                   </div>
-                  <div>
-                    <span className="text-secondary-200">Purse:</span>
-                    <span className="text-white font-medium ml-1">{TOURNAMENT_PURSE}</span>
+                  <div className="flex flex-col">
+                    <span className="text-secondary-200 text-xs uppercase tracking-wide">Purse</span>
+                    <span className="text-white font-semibold text-lg">{TOURNAMENT_PURSE}</span>
                   </div>
                 </div>
               </div>
