@@ -27,16 +27,16 @@ interface UseTournamentAndWeatherReturn {
 
 const defaultFallbackWeather: WeatherData = {
   type: 'Forecast',
-  displayValue: 'Partly sunny',
-  conditionId: '3',
-  zipCode: '72758',
-  temperature: 72,
+  displayValue: 'Mostly cloudy w/ showers',
+  conditionId: '13',
+  zipCode: '96706',
+  temperature: 80,
   lowTemperature: 72,
-  highTemperature: 72,
-  precipitation: 24,
+  highTemperature: 89,
+  precipitation: 55,
   gust: 12,
-  windSpeed: 5,
-  windDirection: 'WSW',
+  windSpeed: 10,
+  windDirection: 'ENE',
   lastUpdated: new Date().toISOString(),
 };
 

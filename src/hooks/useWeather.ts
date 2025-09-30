@@ -17,16 +17,16 @@ interface WeatherData {
 
 const defaultFallbackWeather: WeatherData = {
   type: 'Forecast',
-  displayValue: 'Mostly sunny',
-  conditionId: '2',
-  zipCode: '72758',
-  temperature: 72,
-  lowTemperature: 65,
-  highTemperature: 78,
-  precipitation: 20,
-  gust: 7,
-  windSpeed: 4,
-  windDirection: 'S',
+  displayValue: 'Mostly cloudy w/ showers',
+  conditionId: '13',
+  zipCode: '96706',
+  temperature: 80,
+  lowTemperature: 72,
+  highTemperature: 89,
+  precipitation: 55,
+  gust: 12,
+  windSpeed: 10,
+  windDirection: 'ENE',
   lastUpdated: new Date().toISOString(),
 };
 
@@ -45,8 +45,8 @@ function getSmartFallbackWeather(eventId: string): WeatherData {
       const fallbackData = JSON.parse(stored);
       const fallbackAge = Date.now() - new Date(fallbackData.lastUpdated).getTime();
       
-      // If fallback data is less than 1 hour old, use it
-      if (fallbackAge < 60 * 60 * 1000) {
+      // If fallback data is less than 30 minutes old, use it
+      if (fallbackAge < 30 * 60 * 1000) {
         return fallbackData.weather;
       }
     }
@@ -77,6 +77,84 @@ function updateSmartFallback(eventId: string, weatherData: WeatherData) {
   }
 }
 
+// Auto-update fallback weather every 30 minutes
+function startAutoFallbackUpdate(eventId: string) {
+  // Skip during SSR
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  // Check if we already have an interval running for this event
+  const intervalKey = `weather_interval_${eventId}`;
+  if ((window as any)[intervalKey]) {
+    return; // Already running
+  }
+
+  const RAPIDAPI_KEY = process.env.NEXT_PUBLIC_RAPIDAPI_KEY || '517cb09524mshf243e8dc1b88e58p19efabjsne4e46b59b3c8';
+  const RAPIDAPI_HOST = 'live-golf-data1.p.rapidapi.com';
+
+  const updateFallback = async () => {
+    try {
+      console.log(`🔄 Auto-updating fallback weather for ${eventId}`);
+      
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
+      const response = await fetch(
+        `https://${RAPIDAPI_HOST}/leaderboard?league=lpga&eventId=${eventId}`,
+        {
+          method: 'GET',
+          headers: {
+            'x-rapidapi-host': RAPIDAPI_HOST,
+            'x-rapidapi-key': RAPIDAPI_KEY,
+          },
+          signal: controller.signal
+        }
+      );
+      
+      clearTimeout(timeoutId);
+      
+      if (response.ok) {
+        const apiData = await response.json();
+        const weatherInfo = apiData.events?.[0]?.courses?.[0]?.weather;
+        
+        if (weatherInfo) {
+          const freshWeatherData: WeatherData = {
+            type: weatherInfo.type || 'Forecast',
+            displayValue: weatherInfo.displayValue || 'Mostly cloudy w/ showers',
+            conditionId: weatherInfo.conditionId?.toString() || '13',
+            zipCode: weatherInfo.zipCode || '96706',
+            temperature: Math.round(weatherInfo.temperature || 80),
+            lowTemperature: Math.round(weatherInfo.lowTemperature || 72),
+            highTemperature: Math.round(weatherInfo.highTemperature || 89),
+            precipitation: Math.round(weatherInfo.precipitation || 55),
+            gust: Math.round(weatherInfo.gust || 12),
+            windSpeed: Math.round(weatherInfo.windSpeed || 10),
+            windDirection: weatherInfo.windDirection || 'ENE',
+            lastUpdated: weatherInfo.lastUpdated || new Date().toISOString(),
+          };
+          
+          updateSmartFallback(eventId, freshWeatherData);
+          console.log('✅ Auto-updated fallback weather:', freshWeatherData.displayValue);
+        }
+      } else {
+        console.warn(`⚠️ Auto-update failed: ${response.status}`);
+      }
+    } catch (error) {
+      console.warn('Auto-update fallback weather failed:', error);
+    }
+  };
+
+  // Update immediately, then every 30 minutes
+  updateFallback();
+  const interval = setInterval(updateFallback, 30 * 60 * 1000); // 30 minutes
+  
+  // Store interval reference to prevent duplicates
+  (window as any)[intervalKey] = interval;
+  
+  console.log(`🕐 Started 30-minute auto-update for weather fallback (${eventId})`);
+}
+
 export function useWeather(eventId: string = '401734780') {
   const [weather, setWeather] = useState<WeatherData | null>(defaultFallbackWeather);
   const [loading, setLoading] = useState(true);
@@ -91,7 +169,23 @@ export function useWeather(eventId: string = '401734780') {
     if (typeof window !== 'undefined') {
       const smartFallback = getSmartFallbackWeather(eventId);
       setWeather(smartFallback);
+      
+      // Start auto-updating fallback weather every 30 minutes
+      startAutoFallbackUpdate(eventId);
     }
+    
+    // Cleanup function to stop auto-update interval
+    return () => {
+      if (typeof window !== 'undefined') {
+        const intervalKey = `weather_interval_${eventId}`;
+        const interval = (window as any)[intervalKey];
+        if (interval) {
+          clearInterval(interval);
+          delete (window as any)[intervalKey];
+          console.log(`🛑 Stopped auto-update for weather fallback (${eventId})`);
+        }
+      }
+    };
   }, [eventId]);
 
   useEffect(() => {
@@ -385,6 +479,32 @@ class WeatherFallbackService {
     } catch (error) {
       console.warn('Background weather fallback update failed:', error);
     }
+  }
+}
+
+// Utility function to clear all weather caches (for debugging)
+export function clearWeatherCache(eventId: string = '401734780') {
+  if (typeof window !== 'undefined') {
+    const keys = [
+      `weather_${eventId}`,
+      `weather_fallback_${eventId}`,
+      `tournament_${eventId}`
+    ];
+    
+    keys.forEach(key => {
+      localStorage.removeItem(key);
+    });
+    
+    // Also clear any running intervals
+    const intervalKey = `weather_interval_${eventId}`;
+    const interval = (window as any)[intervalKey];
+    if (interval) {
+      clearInterval(interval);
+      delete (window as any)[intervalKey];
+    }
+    
+    console.log('🧹 Cleared all weather caches for', eventId);
+    window.location.reload(); // Reload to apply changes
   }
 }
 
