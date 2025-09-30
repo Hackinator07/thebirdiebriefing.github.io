@@ -1027,8 +1027,6 @@ export default function TournamentScoresWidget({
             <div className="h-full w-full flex flex-col">
               <CourseHolesWidget 
                 eventId={tournamentId}
-                aonRiskHole={currentTournamentData.staticProps.aonRiskHole}
-                hardestHole={currentTournamentData.staticProps.hardestHole}
               />
             </div>
           )}
