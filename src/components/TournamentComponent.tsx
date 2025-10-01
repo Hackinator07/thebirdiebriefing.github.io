@@ -339,11 +339,6 @@ export default function TournamentComponent({
                     </div>
                   )}
                 </div>
-                {lastUpdated && (
-                  <div className="text-xs text-gray-400 mt-2">
-                    Last updated: {new Date(lastUpdated).toLocaleTimeString()}
-                  </div>
-                )}
               </div>
             </div>
           </div>
