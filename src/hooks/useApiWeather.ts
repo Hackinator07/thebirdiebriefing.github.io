@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { updateStaticWeatherFiles } from '@/lib/updateStaticWeatherFiles';
 
 interface WeatherData {
   type: string;
@@ -144,7 +143,6 @@ async function fetchWeatherFromAPI(eventId: string): Promise<WeatherData> {
 
 /**
  * Hook that provides API weather data as primary source with 60-minute refresh
- * and automatically updates static fallback files when weather changes
  */
 export function useApiWeather(eventId: string = '401734780'): UseApiWeatherReturn {
   const [weather, setWeather] = useState<WeatherData | null>(defaultFallbackWeather);
@@ -154,10 +152,9 @@ export function useApiWeather(eventId: string = '401734780'): UseApiWeatherRetur
   
   // Refs to track intervals and prevent duplicates
   const refreshIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  const isUpdatingStaticFilesRef = useRef(false);
 
   /**
-   * Refreshes weather data from API and updates static fallback files
+   * Refreshes weather data from API
    */
   const refreshWeather = useCallback(async () => {
     try {
@@ -172,21 +169,6 @@ export function useApiWeather(eventId: string = '401734780'): UseApiWeatherRetur
       // Update state
       setWeather(freshWeather);
       setLastUpdated(freshWeather.lastUpdated);
-      
-      // Update static fallback files (only if running on server side)
-      if (typeof window === 'undefined' && !isUpdatingStaticFilesRef.current) {
-        isUpdatingStaticFilesRef.current = true;
-        
-        try {
-          console.log('📝 Updating static weather fallback files...');
-          await updateStaticWeatherFiles(eventId);
-          console.log('✅ Static weather fallback files updated');
-        } catch (staticUpdateError) {
-          console.warn('⚠️ Failed to update static weather files:', staticUpdateError);
-        } finally {
-          isUpdatingStaticFilesRef.current = false;
-        }
-      }
       
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to refresh weather data';
