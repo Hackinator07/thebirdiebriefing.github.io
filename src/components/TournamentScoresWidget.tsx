@@ -689,7 +689,7 @@ export default function TournamentScoresWidget({
           className={`fixed z-30 bg-primary-500 hover:bg-primary-600 text-white scorecard-tab h-[calc(100vh-4rem)] top-16 ${
             isOpen 
               ? 'right-80 sm:right-80' 
-              : `right-0 ${!hasAnimated ? 'animate-pulse' : ''} ${!isOpen && !isAnimating ? 'breathing' : ''}`
+              : `right-0 ${!hasAnimated ? 'animate-pulse' : ''}`
           }`}
           style={!hasAnimated && !isOpen ? {
             animation: 'subtle-bounce 2s ease-in-out 1',
