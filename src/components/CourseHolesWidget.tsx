@@ -578,6 +578,80 @@ export default function CourseHolesWidget({
           courseName={courseData?.courseName || 'Lotte Championship'}
           className="mt-2"
         />
+
+        {/* Grass Types and Mowing Schedules */}
+        <div className="mt-4 space-y-3">
+          {/* Grass Types */}
+          <div className="bg-green-50 rounded-lg p-2 border border-green-200">
+            <h4 className="text-xs sm:text-sm font-semibold text-green-800 mb-1 uppercase tracking-wide">Grass Types</h4>
+            <div className="space-y-0.5 text-[10px] sm:text-xs text-green-700">
+              <div className="flex justify-between">
+                <span className="font-medium">Greens</span>
+                <span>Sea Dwarf Paspalum</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-medium">Tees, Approaches, Collars</span>
+                <span>Sea Dwarf Paspalum</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-medium">Fairways, Rough</span>
+                <span>Sea Dwarf Paspalum</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Mowing Schedules */}
+          <div className="bg-blue-50 rounded-lg p-3 border border-blue-200">
+            <h4 className="text-xs sm:text-sm font-semibold text-blue-800 mb-2 uppercase tracking-wide">Mowing Schedules</h4>
+            <div className="space-y-2 text-[10px] sm:text-xs text-blue-700">
+              <div className="grid grid-cols-1 gap-1">
+                <div className="flex justify-between items-center">
+                  <span className="font-medium">Tees</span>
+                  <span>PM - Mow</span>
+                </div>
+                <div className="text-right text-gray-600">Height of Cut - 0.420"</div>
+                
+                <div className="flex justify-between items-center mt-1">
+                  <span className="font-medium">Fairways</span>
+                  <span>PM - Mow</span>
+                </div>
+                <div className="text-right text-gray-600">Height of Cut - 0.490"</div>
+                
+                <div className="flex justify-between items-center mt-1">
+                  <span className="font-medium">Collars</span>
+                  <span>PM - Mow</span>
+                </div>
+                <div className="text-right text-gray-600">Height of Cut - 0.420"</div>
+                
+                <div className="flex justify-between items-center mt-1">
+                  <span className="font-medium">Greens</span>
+                  <span>AM - Single Cut w/single roll</span>
+                </div>
+                <div className="text-right text-gray-600">PM - Roll if needed</div>
+                <div className="text-right text-gray-600">Height of Cut - 0.95"</div>
+                <div className="text-right text-gray-600">Speed 10.0' - 10.5'</div>
+                
+                <div className="flex justify-between items-center mt-1">
+                  <span className="font-medium">Intermediate Rough</span>
+                  <span>PM - Mow</span>
+                </div>
+                <div className="text-right text-gray-600">Height of Cut - 1.25"</div>
+                
+                <div className="flex justify-between items-center mt-1">
+                  <span className="font-medium">Primary Rough</span>
+                  <span>Mowed as needed</span>
+                </div>
+                <div className="text-right text-gray-600">Height of Cut - 2.0"</div>
+                
+                <div className="flex justify-between items-center mt-1">
+                  <span className="font-medium">Green Surrounds</span>
+                  <span>Mowed as needed</span>
+                </div>
+                <div className="text-right text-gray-600">Height of Cut - 2.0"</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
