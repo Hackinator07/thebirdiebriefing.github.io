@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useStaticTournamentData } from '@/hooks/useStaticTournamentData';
+import { useApiWeather } from '@/hooks/useApiWeather';
 import { formatPurse, formatLocation, getCourseName } from '@/lib/tournamentApi';
 import staticDataService from '@/lib/staticDataService';
 
@@ -39,7 +40,12 @@ export default function TournamentComponent({
   const ref = useRef<HTMLDivElement>(null);
   
   // Use automated static data system that matches current API response
-  const { tournamentData, weather, loading, error, refreshData } = useStaticTournamentData(
+  const { tournamentData, loading, error, refreshData } = useStaticTournamentData(
+    shouldLoadData ? eventId : ""
+  );
+  
+  // Use API weather data as primary source with 60-minute refresh
+  const { weather, loading: weatherLoading, error: weatherError, lastUpdated } = useApiWeather(
     shouldLoadData ? eventId : ""
   );
   
@@ -110,10 +116,10 @@ export default function TournamentComponent({
 
   // Switch to live data when it's ready (progressive enhancement)
   useEffect(() => {
-    if (!loading && tournamentData && weather) {
+    if (!loading && !weatherLoading && tournamentData && weather) {
       setShowStaticContent(false);
     }
-  }, [loading, tournamentData, weather]);
+  }, [loading, weatherLoading, tournamentData, weather]);
   // Show static content immediately, no loading state needed
   // The component will seamlessly update when live data arrives
 
@@ -292,11 +298,11 @@ export default function TournamentComponent({
           <div className="text-center">
             <div className="space-y-2">
               <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
-                <svg className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={`w-4 h-4 ${weatherLoading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
                 <span className="font-medium">{weather?.displayValue || 'Partly sunny'}</span>
-                {loading && showStaticContent && <span className="text-xs text-gray-400">(updating...)</span>}
+                {weatherLoading && <span className="text-xs text-gray-400">(updating...)</span>}
               </div>
               <div className="space-y-1">
                 <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
@@ -333,6 +339,11 @@ export default function TournamentComponent({
                     </div>
                   )}
                 </div>
+                {lastUpdated && (
+                  <div className="text-xs text-gray-400 mt-2">
+                    Last updated: {new Date(lastUpdated).toLocaleTimeString()}
+                  </div>
+                )}
               </div>
             </div>
           </div>
