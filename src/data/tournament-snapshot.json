@@ -9,16 +9,18 @@
     "par": 72,
     "yardage": 6566,
     "weather": {
-      "type": "Forecast",
-      "displayValue": "Mostly cloudy w/ showers",
-      "conditionId": "13",
+      "type": "Current Conditions",
+      "displayValue": "2",
+      "conditionId": "Mostly sunny",
       "zipCode": "96706",
+      "temperature": 76,
       "lowTemperature": 72,
       "highTemperature": 89,
-      "precipitation": 55,
-      "windSpeed": 10,
-      "windDirection": "ENE",
-      "lastUpdated": "2025-09-30T02:38Z"
+      "precipitation": 60,
+      "gust": 15,
+      "windSpeed": 6,
+      "windDirection": "N",
+      "lastUpdated": "2025-10-01T16:27Z"
     },
     "purse": "$3.0M",
     "defendingChampion": "A Lim Kim"
