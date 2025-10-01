@@ -65,6 +65,7 @@ export default function TournamentScoresWidget({
   const [retryCount, setRetryCount] = useState(0);
   const [isRetrying, setIsRetrying] = useState(false);
   const [userManuallyChangedTab, setUserManuallyChangedTab] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   // RapidAPI rate limiting constants
   const RAPIDAPI_DAILY_LIMIT = 3000;
@@ -667,16 +668,28 @@ export default function TournamentScoresWidget({
     }
   };
 
+  // Handle toggle with animation
+  const handleToggle = () => {
+    setIsAnimating(true);
+    
+    // Trigger text and icon rotation animations
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 400); // Match animation duration
+    
+    onToggle();
+  };
+
   return (
     <>
       {/* Toggle Button - only show when showToggleButton is true */}
       {showToggleButton && (
         <button
-          onClick={onToggle}
-          className={`fixed z-30 bg-primary-500 hover:bg-primary-600 text-white shadow-lg transition-all duration-300 ${
+          onClick={handleToggle}
+          className={`fixed z-30 bg-primary-500 hover:bg-primary-600 text-white scorecard-tab h-[calc(100vh-4rem)] top-16 ${
             isOpen 
-              ? 'top-[65px] right-80 sm:right-80 p-1 sm:p-2' 
-              : `top-[65px] right-0 p-1 sm:p-2 ${!hasAnimated ? 'animate-pulse' : ''}`
+              ? 'right-80 sm:right-80' 
+              : `right-0 ${!hasAnimated ? 'animate-pulse' : ''} ${!isOpen && !isAnimating ? 'breathing' : ''}`
           }`}
           style={!hasAnimated && !isOpen ? {
             animation: 'subtle-bounce 2s ease-in-out 1',
@@ -684,16 +697,16 @@ export default function TournamentScoresWidget({
           } : {}}
           aria-label={isOpen ? t('closeScores') : t('openScores')}
         >
-          <div className="flex flex-col items-center gap-0.5 sm:gap-1">
+          <div className="flex flex-col items-center scorecard-content">
             <div className="px-1 sm:px-2 py-0.5 sm:py-1">
-              <div className="text-[10px] sm:text-[12px] font-medium leading-tight" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
+              <div className="font-medium scorecard-text" style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}>
                 {t('scorecard')}
               </div>
             </div>
             {isOpen ? (
-              <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 font-bold" />
+              <ChevronRight className={`font-bold scorecard-icon ${isAnimating ? 'rotating' : ''}`} />
             ) : (
-              <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4 font-bold" />
+              <ChevronLeft className={`font-bold scorecard-icon ${isAnimating ? 'rotating' : ''}`} />
             )}
           </div>
         </button>
