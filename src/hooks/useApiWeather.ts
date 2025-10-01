@@ -28,8 +28,8 @@ interface UseApiWeatherReturn {
 // Default fallback weather data
 const defaultFallbackWeather: WeatherData = {
   type: 'Current Conditions',
-  displayValue: '2',
-  conditionId: 'Mostly sunny',
+  displayValue: 'Mostly sunny',
+  conditionId: '2',
   zipCode: '96706',
   temperature: 76,
   lowTemperature: 72,
