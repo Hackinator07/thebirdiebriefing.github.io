@@ -135,6 +135,35 @@ const round3TeeTimes = [
   { time: "10:49AM", tee: "10", players: ["Frida Kinhult", "Cassie Porter"] }
 ];
 
+// Round 4 Tee Times - LOTTE Championship
+const round4TeeTimes = [
+  { time: "8:43AM", tee: "1", players: ["Sofia Garcia", "Miyu Yamashita", "Ilhee Lee"] },
+  { time: "8:54AM", tee: "1", players: ["Jin Hee Im", "Kumkang Park", "Jennifer Kupcho"] },
+  { time: "9:05AM", tee: "1", players: ["Azahara Munoz", "Elizabeth Szokol", "Paula Reto"] },
+  { time: "9:16AM", tee: "1", players: ["Ina Yoon", "Gabriela Ruffels", "Kate Smith-Stroh"] },
+  { time: "9:27AM", tee: "1", players: ["Jeongeun Lee5", "Charley Hull", "Allisen Corpuz"] },
+  { time: "9:38AM", tee: "1", players: ["Ruixin Liu", "Brooke M. Henderson", "Celine Borge"] },
+  { time: "9:49AM", tee: "1", players: ["Somi Lee", "Dewi Weber", "Mariel Galdiano"] },
+  { time: "10:00AM", tee: "1", players: ["Chisato Iwai", "Rio Takeda", "Nataliya Guseva"] },
+  { time: "10:11AM", tee: "1", players: ["Andrea Lee", "Pajaree Anannarukarn", "Patty Tavatanakit"] },
+  { time: "10:22AM", tee: "1", players: ["Nelly Korda", "Nasa Hataoka", "A Lim Kim"] },
+  { time: "10:33AM", tee: "1", players: ["Pornanong Phatlum", "Jessica Porvasnik", "Youmin Hwang"] },
+  { time: "10:44AM", tee: "1", players: ["Megan Khang", "Peiyun Chien", "Brooke Matthews"] },
+  { time: "10:55AM", tee: "1", players: ["Akie Iwai", "Minami Katsu", "Hyo Joo Kim"] },
+  { time: "8:43AM", tee: "10", players: ["In Gee Chun", "Linnea Strom", "Lucy Li"] },
+  { time: "8:54AM", tee: "10", players: ["Robyn Choi", "Lauren Hartlage", "Cassie Porter"] },
+  { time: "9:05AM", tee: "10", players: ["Yuna Nishimura", "Emily Kristine Pedersen", "Stacy Lewis"] },
+  { time: "9:16AM", tee: "10", players: ["Ana Belac", "Narin An", "Hyo Joon Jang"] },
+  { time: "9:27AM", tee: "10", players: ["Ryann O'Toole", "Amy Yang", "Sarah Schmelzel"] },
+  { time: "9:38AM", tee: "10", players: ["Jasmine Suwannapura", "Brianna Do", "Hira Naveed"] },
+  { time: "9:49AM", tee: "10", players: ["Jaravee Boonchant", "Kristen Gillman", "Stephanie Meadow"] },
+  { time: "10:00AM", tee: "10", players: ["Alena Sharp", "Sophia Popov", "Sung Hyun Park"] },
+  { time: "10:11AM", tee: "10", players: ["Madelene Sagstrom", "Frida Kinhult", "Caroline Masson"] },
+  { time: "10:22AM", tee: "10", players: ["Ingrid Lindblad", "Jodi Ewart Shadoff", "Adela Cernousek"] },
+  { time: "10:33AM", tee: "10", players: ["Hye-Jin Choi", "Yahui Zhang"] },
+  { time: "10:44AM", tee: "10", players: ["Jiwon Jeon", "Polly Mack"] }
+];
+
 // Function to convert tee time from Hawaii time to selected timezone
 function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: string): string {
   try {
@@ -185,7 +214,7 @@ function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: st
 
 function TeeTimesContent() {
   // Function to determine which round should be active based on tournament status
-  const getCurrentRound = useCallback((): 'round1' | 'round2' | 'round3' => {
+  const getCurrentRound = useCallback((): 'round1' | 'round2' | 'round3' | 'round4' => {
     // Tournament dates: October 1-4, 2025 (Wednesday-Saturday)
     const tournamentStartDate = new Date('2025-10-01'); // Wednesday
     const tournamentEndDate = new Date('2025-10-04'); // Saturday
@@ -229,13 +258,15 @@ function TeeTimesContent() {
             tournamentStatus.toLowerCase().includes('complete')) {
           if (currentRound === 1) return 'round2';
           if (currentRound === 2) return 'round3';
-          if (currentRound === 3) return 'round3'; // Final round
+          if (currentRound === 3) return 'round4';
+          if (currentRound === 4) return 'round4'; // Final round
         }
 
         // If tournament is still active, show current round
         if (currentRound === 1) return 'round1';
         if (currentRound === 2) return 'round2';
         if (currentRound === 3) return 'round3';
+        if (currentRound === 4) return 'round4';
       }
 
       // Safari iOS fallback: Try to get tournament data from sessionStorage or other sources
@@ -252,13 +283,15 @@ function TeeTimesContent() {
                 sessionTournamentStatus.toLowerCase().includes('complete')) {
               if (currentRound === 1) return 'round2';
               if (currentRound === 2) return 'round3';
-              if (currentRound === 3) return 'round3'; // Final round
+              if (currentRound === 3) return 'round4';
+              if (currentRound === 4) return 'round4'; // Final round
             }
 
             // If tournament is still active, show current round
             if (currentRound === 1) return 'round1';
             if (currentRound === 2) return 'round2';
             if (currentRound === 3) return 'round3';
+            if (currentRound === 4) return 'round4';
           }
         } catch (error) {
           console.warn('sessionStorage not available:', error);
@@ -299,14 +332,14 @@ function TeeTimesContent() {
           if (dayOfWeek === 5) {
             // If it's after 6 PM on Friday, Round 3 is likely complete
             if (currentHour >= 18) {
-              return 'round3'; // Final round
+              return 'round4';
             }
             return 'round3';
           }
 
           // Saturday (Final day)
           if (dayOfWeek === 6) {
-            return 'round3'; // Final round
+            return 'round4'; // Final round
           }
 
           // Monday-Thursday: Default to Round 1
@@ -332,12 +365,12 @@ function TeeTimesContent() {
       }
       if (dayOfWeek === 5) {
         // Round 3 (Friday) - check if round is complete (after 6 PM)
-        if (currentHour >= 18) return 'round3'; // After 6 PM, stay on Round 3 (final round)
+        if (currentHour >= 18) return 'round4'; // After 6 PM, advance to Round 4
         return 'round3';
       }
       if (dayOfWeek === 6) {
         // Saturday - final round
-        return 'round3';
+        return 'round4';
       }
 
       // Monday-Thursday: Default to Round 1
@@ -350,7 +383,7 @@ function TeeTimesContent() {
     return 'round1';
   }, []);
 
-  const [activeRound, setActiveRound] = useState<'round1' | 'round2' | 'round3'>(getCurrentRound());
+  const [activeRound, setActiveRound] = useState<'round1' | 'round2' | 'round3' | 'round4'>(getCurrentRound());
   const { selectedTimezone, updateTimezone } = useTimezone();
   const [isClient, setIsClient] = useState(false);
 
@@ -483,6 +516,16 @@ function TeeTimesContent() {
                   >
                     Round 3 - Friday
                   </button>
+                  <button
+                    onClick={() => setActiveRound('round4')}
+                    className={`w-full px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                      activeRound === 'round4'
+                        ? 'text-primary-600 bg-primary-50 border border-primary-200'
+                        : 'text-gray-500 hover:text-gray-700 border border-gray-200'
+                    }`}
+                  >
+                    Round 4 - Saturday
+                  </button>
                 </div>
 
                 {/* Desktop: Horizontal layout */}
@@ -517,6 +560,16 @@ function TeeTimesContent() {
                       }`}
                     >
                       Round 3 - Friday
+                    </button>
+                    <button
+                      onClick={() => setActiveRound('round4')}
+                      className={`px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
+                        activeRound === 'round4'
+                          ? 'text-primary-600 bg-primary-50'
+                          : 'text-gray-500 hover:text-gray-700'
+                      }`}
+                    >
+                      Round 4 - Saturday
                     </button>
                   </div>
                 </div>
@@ -567,6 +620,7 @@ function TeeTimesContent() {
                 {activeRound === 'round1' ? 'Round 1 - Wednesday, October 1' :
                  activeRound === 'round2' ? 'Round 2 - Thursday, October 2' :
                  activeRound === 'round3' ? 'Round 3 - Friday, October 3' :
+                 activeRound === 'round4' ? 'Round 4 - Saturday, October 4' :
                  'Round 1 - Wednesday, October 1'}
               </h3>
 
@@ -574,6 +628,7 @@ function TeeTimesContent() {
                 const teeTimes = activeRound === 'round1' ? round1TeeTimes :
                                  activeRound === 'round2' ? round2TeeTimes :
                                  activeRound === 'round3' ? round3TeeTimes :
+                                 activeRound === 'round4' ? round4TeeTimes :
                                  round1TeeTimes;
                 const groupedByTime = teeTimes.reduce((acc, group) => {
                   if (!acc[group.time]) {
