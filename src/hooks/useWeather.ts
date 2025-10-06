@@ -166,7 +166,7 @@ function startAutoFallbackUpdate(eventId: string) {
   console.log(`🕐 Started 30-minute auto-update for weather fallback (${eventId})`);
 }
 
-export function useWeather(eventId: string = '401734780') {
+export function useWeather(eventId: string = '401734781') {
   const [weather, setWeather] = useState<WeatherData | null>(defaultFallbackWeather);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -399,7 +399,7 @@ class WeatherFallbackService {
     return WeatherFallbackService.instance;
   }
 
-  start(eventId: string = '401734780') {
+  start(eventId: string = '401734781') {
     if (this.isRunning) return;
     
     this.isRunning = true;
@@ -494,16 +494,16 @@ class WeatherFallbackService {
 }
 
 // Utility function to clear all weather caches (for debugging)
-export function clearWeatherCache(eventId: string = '401734780') {
+export function clearWeatherCache(eventId: string = '401734781') {
   if (typeof window !== 'undefined') {
     // Clear all possible weather-related cache keys
     const keys = [
       `weather_${eventId}`,
       `weather_fallback_${eventId}`,
       `tournament_${eventId}`,
-      'weather_401734780',
-      'weather_fallback_401734780',
-      'tournament_401734780'
+      'weather_401734781',
+      'weather_fallback_401734781',
+      'tournament_401734781'
     ];
     
     keys.forEach(key => {
@@ -522,7 +522,7 @@ export function clearWeatherCache(eventId: string = '401734780') {
     // Clear all localStorage keys that contain 'weather' or 'tournament'
     const allKeys = Object.keys(localStorage);
     allKeys.forEach(key => {
-      if (key.includes('weather') || key.includes('tournament') || key.includes('401734780')) {
+      if (key.includes('weather') || key.includes('tournament') || key.includes('401734781')) {
         localStorage.removeItem(key);
         console.log(`🗑️ Cleared related cache key: ${key}`);
       }
@@ -579,7 +579,7 @@ if (typeof window !== 'undefined') {
 export { WeatherFallbackService };
 
 // Utility function to manually refresh fallback data
-export function refreshWeatherFallback(eventId: string = '401734780') {
+export function refreshWeatherFallback(eventId: string = '401734781') {
   const service = WeatherFallbackService.getInstance();
   service.stop();
   service.start(eventId);

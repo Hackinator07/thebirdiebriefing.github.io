@@ -1,6 +1,6 @@
 {
   "lastUpdated": "2025-09-30T21:35:12.800Z",
-  "eventId": "401734780",
+  "eventId": "401734781",
   "staticProps": {
     "tournamentName": "LOTTE Championship pres. by Hoakalei",
     "location": ",",
@@ -12,8 +12,8 @@
   "rawApiData": {
     "events": [
       {
-        "id": "401734780",
-        "uid": "s:1100~l:1107~e:401734780",
+        "id": "401734781",
+        "uid": "s:1100~l:1107~e:401734781",
         "date": "2025-10-01T04:00Z",
         "endDate": "2025-10-04T04:00Z",
         "name": "LOTTE Championship pres. by Hoakalei",
@@ -41,7 +41,7 @@
               "desktop",
               "event"
             ],
-            "href": "https://www.espn.com/golf/leaderboard?tournamentId=401734780",
+            "href": "https://www.espn.com/golf/leaderboard?tournamentId=401734781",
             "text": "Leaderboard",
             "shortText": "Summary",
             "isExternal": false,
@@ -86,8 +86,8 @@
         },
         "competitions": [
           {
-            "id": "401734780",
-            "uid": "s:1100~l:1107~e:401734780~c:401734780",
+            "id": "401734781",
+            "uid": "s:1100~l:1107~e:401734781~c:401734781",
             "date": "2025-10-01T04:00Z",
             "endDate": "2025-10-04T04:00Z",
             "recent": true,

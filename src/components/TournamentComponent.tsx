@@ -23,12 +23,12 @@ interface TournamentComponentProps {
 }
 
 export default function TournamentComponent({
-  eventId = "401734780",
+  eventId = "401734781",
   tournamentName = "LOTTE Championship pres. by Hoakalei",
   location = "Ewa Beach, HI", 
   date = "Oct 1-4, 2025",
-  buyTicketsUrl = "https://www.lottechampionship.com/tickets",
-  officialSiteUrl = "https://www.lottechampionship.com/",
+  buyTicketsUrl = "https://buick-lpgashanghai.com/about_22/",
+  officialSiteUrl = "https://buick-lpgashanghai.com/",
   teeTimesUrl = "/tee-times",
   broadcastUrl = "https://www.birdiebriefing.com/news/lotte-champ-2025/#tv-schedule",
   entryListUrl = "/entry-list",
@@ -131,8 +131,8 @@ export default function TournamentComponent({
         {/* Tournament Logo */}
         <div className="flex justify-center mb-3">
           <Image
-            src="/images/tournaments/lotte-championship.png"
-            alt="LOTTE Championship Logo"
+            src="https://buick-lpgashanghai.com/static/upload/image/20230826/1693039960887027.png"
+            alt="Buick LPGA Shanghai Logo"
             width={140}
             height={70}
             className="h-16 w-auto object-contain"
@@ -165,7 +165,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
             <Link 
-              href="https://maps.app.goo.gl/8BMDpdhhpT7xZi4J8"
+              href="https://maps.app.goo.gl/r2JihCN1pKSzPzEu8"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
@@ -178,7 +178,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
             </svg>
             <a 
-              href="/course-maps/lotte-course-map-2025.pdf"
+              href="/course-maps/buick-map.png"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"

@@ -47,7 +47,7 @@ interface TournamentScoresWidgetProps {
 }
 
 export default function TournamentScoresWidget({
-  tournamentId = '401734780',
+  tournamentId = '401734781',
   tournamentName = 'LOTTE Championship pres. by Hoakalei',
   isOpen,
   onToggle,

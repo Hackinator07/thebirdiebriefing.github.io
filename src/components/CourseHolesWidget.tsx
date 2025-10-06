@@ -37,6 +37,8 @@ function getCourseMapUrl(courseName?: string): string | undefined {
     'Pinnacle Country Club': '/course-maps/nwa-course-map.pdf',
     'Lotte Championship': 'https://lirp.cdn-website.com/9fed8a20/dms3rep/multi/opt/lotte-course-map-2025-1920w.jpg',
     'Lotte Golf & Country Club': 'https://lirp.cdn-website.com/9fed8a20/dms3rep/multi/opt/lotte-course-map-2025-1920w.jpg',
+    'Buick Championship': '/course-maps/buick-map.png',
+    'Hoakalei Country Club': '/course-maps/buick-map.png',
     // Add more mappings as needed
   };
   
@@ -168,8 +170,8 @@ async function fetchCourseData(eventId: string): Promise<CourseData | null> {
 }
 
 export default function CourseHolesWidget({
-  eventId = "401734780",
-  aonRiskHole = 11,
+  eventId = "401734781",
+  aonRiskHole = 17,
   hardestHole = 8
 }: CourseHolesWidgetProps) {
   const [courseData, setCourseData] = useState<CourseData | null>(null);
@@ -316,7 +318,7 @@ export default function CourseHolesWidget({
                           key={holeNumber} 
                           className={`border-b border-gray-100 ${isAonRisk ? 'bg-purple-50' : 'hover:bg-gray-50'}`}
                         >
-                          <td className="py-0.5 px-0.5 font-medium">
+                          <td className="py-1 px-1 sm:px-2 font-medium">
                             <div className="flex items-center gap-0.5">
                               {holeNumber}
                               {isAonRisk && (
@@ -326,15 +328,15 @@ export default function CourseHolesWidget({
                               )}
                             </div>
                           </td>
-                          <td className="text-center py-0.5 px-0.5">-</td>
-                          <td className="text-right py-0.5 px-0.5">-</td>
+                          <td className="text-center py-1 px-1 sm:px-2">-</td>
+                          <td className="text-right py-1 px-1 sm:px-2">-</td>
                         </tr>
                       );
                     })}
                     <tr className="border-t-2 border-gray-300 font-semibold bg-gray-50">
-                      <td className="py-0.5 px-0.5">In</td>
-                      <td className="text-center py-0.5 px-0.5">-</td>
-                      <td className="text-right py-0.5 px-0.5">-</td>
+                      <td className="py-1 px-1 sm:px-2">In</td>
+                      <td className="text-center py-1 px-1 sm:px-2">-</td>
+                      <td className="text-right py-1 px-1 sm:px-2">-</td>
                     </tr>
                   </tbody>
                 </table>
@@ -365,7 +367,7 @@ export default function CourseHolesWidget({
 
         {/* Course Map - Bottom - Fallback */}
         <CourseMap 
-          courseMapUrl={fallbackCourseMapUrl || '/course-maps/lotte-course-map-2025.pdf'}
+          courseMapUrl={fallbackCourseMapUrl || '/course-maps/buick-map.png'}
           courseName="Lotte Championship"
           className="mt-2"
         />
@@ -574,7 +576,7 @@ export default function CourseHolesWidget({
 
         {/* Course Map - Bottom */}
         <CourseMap 
-          courseMapUrl={courseMapUrl || 'https://lirp.cdn-website.com/9fed8a20/dms3rep/multi/opt/lotte-course-map-2025-1920w.jpg'}
+          courseMapUrl={courseMapUrl || '/course-maps/buick-map.png'}
           courseName={courseData?.courseName || 'Lotte Championship'}
           className="mt-2"
         />

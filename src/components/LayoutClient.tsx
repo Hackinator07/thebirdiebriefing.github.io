@@ -47,7 +47,7 @@ export default function LayoutClient({ children }: LayoutClientProps) {
       <main>{children}</main>
       <Footer onToggleScores={handleToggleScores} />
       <TournamentScoresWidget
-        tournamentId="401734780"
+        tournamentId="401734781"
         tournamentName="LOTTE Championship pres. by Hoakalei"
         isOpen={isScoresOpen}
         onToggle={handleToggleScores}
