@@ -5,18 +5,18 @@ import Image from 'next/image';
 import TimezoneSelect from 'react-timezone-select';
 import { TimezoneProvider, useTimezone } from '@/components/TimezoneContext';
 
-// Default timezone (Hawaii Time - original tee times)
-const DEFAULT_TIMEZONE = 'Pacific/Honolulu';
+// Default timezone (Shanghai Time - Buick LPGA Shanghai tee times)
+const DEFAULT_TIMEZONE = 'Asia/Shanghai';
 
 // Tournament information
-const TOURNAMENT_NAME = "LOTTE Championship";
-const TOURNAMENT_COURSE = "Hoakalei Country Club";
-const TOURNAMENT_LOCATION = "Ewa Beach, Hawaii";
+const TOURNAMENT_NAME = "Buick LPGA Shanghai";
+const TOURNAMENT_COURSE = "Shanghai Qizhong Garden Golf Club";
+const TOURNAMENT_LOCATION = "Shanghai, China";
 const TOURNAMENT_PAR = 72;
-const TOURNAMENT_YARDS = 6566;
-const TOURNAMENT_FIELD = "120 Players";
-const TOURNAMENT_PURSE = "$3,000,000";
-const TOURNAMENT_LOGO = "/optimized/lotte-championship-new.webp";
+const TOURNAMENT_YARDS = 6691;
+const TOURNAMENT_FIELD = "82 Players";
+const TOURNAMENT_PURSE = "$2,200,000";
+const TOURNAMENT_LOGO = "/optimized/buick-lpga-shanghai.webp";
 
 // Round 1 Tee Times
 const round1TeeTimes = [
@@ -62,7 +62,7 @@ const round1TeeTimes = [
   { time: "1:09PM", tee: "10", players: ["Adela Cernousek", "Daniela Darquea", "Perrine Delacour"] }
 ];
 
-// Round 2 Tee Times - LOTTE Championship
+// Round 2 Tee Times - Buick LPGA Shanghai
 const round2TeeTimes = [
   { time: "7:00AM", tee: "1", players: ["Jessica Porvasnik", "Morgane Metraux", "Azahara Munoz"] },
   { time: "7:11AM", tee: "1", players: ["Jeongeun Lee6", "Jiwon Jeon", "Savannah Grewal"] },
@@ -106,7 +106,7 @@ const round2TeeTimes = [
   { time: "1:09PM", tee: "10", players: ["Xiaowen Yin", "Pornanong Phatlum", "Tagiralani Luafalealo"] }
 ];
 
-// Round 3 Tee Times - LOTTE Championship
+// Round 3 Tee Times - Buick LPGA Shanghai
 const round3TeeTimes = [
   { time: "8:48AM", tee: "1", players: ["Kristen Gillman", "Stacy Lewis", "A Lim Kim"] },
   { time: "8:59AM", tee: "1", players: ["Ilhee Lee", "Brooke M. Henderson", "In Gee Chun"] },
@@ -135,7 +135,7 @@ const round3TeeTimes = [
   { time: "10:49AM", tee: "10", players: ["Frida Kinhult", "Cassie Porter"] }
 ];
 
-// Round 4 Tee Times - LOTTE Championship
+// Round 4 Tee Times - Buick LPGA Shanghai
 const round4TeeTimes = [
   { time: "8:43AM", tee: "1", players: ["Sofia Garcia", "Miyu Yamashita", "Ilhee Lee"] },
   { time: "8:54AM", tee: "1", players: ["Jin Hee Im", "Kumkang Park", "Jennifer Kupcho"] },
@@ -215,9 +215,9 @@ function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: st
 function TeeTimesContent() {
   // Function to determine which round should be active based on tournament status
   const getCurrentRound = useCallback((): 'round1' | 'round2' | 'round3' | 'round4' => {
-    // Tournament dates: October 1-4, 2025 (Wednesday-Saturday)
-    const tournamentStartDate = new Date('2025-10-01'); // Wednesday
-    const tournamentEndDate = new Date('2025-10-04'); // Saturday
+    // Tournament dates: October 9-12, 2025 (Thursday-Sunday)
+    const tournamentStartDate = new Date('2025-10-09'); // Thursday
+    const tournamentEndDate = new Date('2025-10-12'); // Sunday
 
     const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -446,7 +446,7 @@ function TeeTimesContent() {
                 <h2 className="text-2xl font-bold text-white mb-2">
                   {TOURNAMENT_NAME}
                 </h2>
-                <p className="text-secondary-100">October 1-4, 2025 • {TOURNAMENT_COURSE}</p>
+                <p className="text-secondary-100">October 9-12, 2025 • {TOURNAMENT_COURSE}</p>
                 <p className="text-secondary-100">{TOURNAMENT_LOCATION}</p>
                 <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div className="flex flex-col">
@@ -617,11 +617,11 @@ function TeeTimesContent() {
                 <svg className="w-6 h-6 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                {activeRound === 'round1' ? 'Round 1 - Wednesday, October 1' :
-                 activeRound === 'round2' ? 'Round 2 - Thursday, October 2' :
-                 activeRound === 'round3' ? 'Round 3 - Friday, October 3' :
-                 activeRound === 'round4' ? 'Round 4 - Saturday, October 4' :
-                 'Round 1 - Wednesday, October 1'}
+                {activeRound === 'round1' ? 'Round 1 - Thursday, October 9' :
+                 activeRound === 'round2' ? 'Round 2 - Friday, October 10' :
+                 activeRound === 'round3' ? 'Round 3 - Saturday, October 11' :
+                 activeRound === 'round4' ? 'Round 4 - Sunday, October 12' :
+                 'Round 1 - Thursday, October 9'}
               </h3>
 
               {(() => {

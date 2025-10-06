@@ -24,13 +24,13 @@ interface TournamentComponentProps {
 
 export default function TournamentComponent({
   eventId = "401734781",
-  tournamentName = "LOTTE Championship pres. by Hoakalei",
-  location = "Ewa Beach, HI", 
-  date = "Oct 1-4, 2025",
+  tournamentName = "Buick LPGA Shanghai",
+  location = "Shanghai, China", 
+  date = "Oct 9-12, 2025",
   buyTicketsUrl = "https://buick-lpgashanghai.com/about_22/",
   officialSiteUrl = "https://buick-lpgashanghai.com/",
   teeTimesUrl = "/tee-times",
-  broadcastUrl = "https://www.birdiebriefing.com/news/lotte-champ-2025/#tv-schedule",
+  broadcastUrl = "https://www.birdiebriefing.com/news/buick-lpga-shanghai-2025/#tv-schedule",
   entryListUrl = "/entry-list",
   podcastUrl = "https://open.spotify.com/episode/2iDn4mU5YWTiedRtaAavwn?si=0adbe57c7f5e44e6"
 }: TournamentComponentProps) {
@@ -55,7 +55,7 @@ export default function TournamentComponent({
   // Use API data if available, fallback to static data that matches current API response
   const displayName = (tournamentData?.name || tournamentName).replace(/\s*(pres\.|presented)\s*by\s*(P&G|Hoakalei)/i, '');
   const displayLocation = tournamentData?.courses ? formatLocation(tournamentData.courses[0]) : location;
-  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Hoakalei Country Club";
+  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Shanghai Qizhong Garden Golf Club";
   const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$3.0M";
   const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 72;
   const displayYardage = tournamentData?.courses?.[0]?.totalYards?.toLocaleString() || "6,566";
@@ -141,7 +141,7 @@ export default function TournamentComponent({
         {/* Tournament Title */}
         <div className="mb-2">
           <Link 
-            href="https://www.birdiebriefing.com/news/lotte-championship-2025/"
+            href="https://www.birdiebriefing.com/news/buick-lpga-shanghai-2025/"
             className="block group"
           >
             <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line hover:text-primary-600 transition-all duration-200 cursor-pointer" style={{ hyphens: 'none' }}>

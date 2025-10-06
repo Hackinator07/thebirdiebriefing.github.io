@@ -368,7 +368,7 @@ export default function CourseHolesWidget({
         {/* Course Map - Bottom - Fallback */}
         <CourseMap 
           courseMapUrl={fallbackCourseMapUrl || '/course-maps/buick-map.png'}
-          courseName="Lotte Championship"
+          courseName="Buick LPGA Shanghai"
           className="mt-2"
         />
       </div>
@@ -577,7 +577,7 @@ export default function CourseHolesWidget({
         {/* Course Map - Bottom */}
         <CourseMap 
           courseMapUrl={courseMapUrl || '/course-maps/buick-map.png'}
-          courseName={courseData?.courseName || 'Lotte Championship'}
+          courseName={courseData?.courseName || 'Buick LPGA Shanghai'}
           className="mt-2"
         />
 

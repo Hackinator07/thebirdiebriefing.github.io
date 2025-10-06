@@ -58,8 +58,9 @@ export async function getEnhancedSchedule(): Promise<Schedule> {
       );
 
       if (matchingEvent) {
-        // For Walmart NW Arkansas and Lotte Championship, prioritize our local data over API data
-        if (tournament.title === 'Walmart NW Arkansas Championship presented by P&G' || 
+        // For Walmart NW Arkansas, Buick LPGA Shanghai, and LOTTE Championship, prioritize our local data over API data
+        if (tournament.title === 'Walmart NW Arkansas Championship presented by P&G' ||
+            tournament.title === 'Buick LPGA Shanghai' ||
             tournament.title === 'LOTTE Championship presented by Hoakalei') {
           return {
             ...tournament,

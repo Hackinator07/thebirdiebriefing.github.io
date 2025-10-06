@@ -2,10 +2,10 @@
   "lastUpdated": "2025-09-30T21:35:12.800Z",
   "eventId": "401734781",
   "staticProps": {
-    "tournamentName": "LOTTE Championship pres. by Hoakalei",
-    "location": ",",
-    "date": "Oct 1-4, 2025",
-    "courseName": "Hoakalei Country Club",
+    "tournamentName": "Buick LPGA Shanghai",
+    "location": "Shanghai, China",
+    "date": "Oct 9-12, 2025",
+    "courseName": "Shanghai Qizhong Garden Golf Club",
     "par": 72,
     "yardage": 6566
   },
@@ -16,13 +16,13 @@
         "uid": "s:1100~l:1107~e:401734781",
         "date": "2025-10-01T04:00Z",
         "endDate": "2025-10-04T04:00Z",
-        "name": "LOTTE Championship pres. by Hoakalei",
-        "shortName": "LOTTE Championship pres. by Hoakalei",
+        "name": "Buick LPGA Shanghai",
+        "shortName": "Buick LPGA Shanghai",
         "primary": true,
         "hasPlayerStats": false,
         "hasCourseStats": false,
-        "purse": 3000000,
-        "displayPurse": "$3,000,000",
+        "purse": 2200000,
+        "displayPurse": "$2,200,000",
         "league": {
           "id": "1107",
           "name": "Ladies Pro Golf Association",
@@ -51,7 +51,7 @@
         ],
         "tournament": {
           "id": "3243",
-          "displayName": "LOTTE Championship",
+          "displayName": "Buick LPGA Shanghai",
           "major": false,
           "scoringSystem": {
             "id": "1",
@@ -11675,7 +11675,7 @@
         "courses": [
           {
             "id": "11161",
-            "name": "Hoakalei Country Club",
+            "name": "Shanghai Qizhong Garden Golf Club",
             "totalYards": 6566,
             "shotsToPar": 72,
             "parIn": 36,
@@ -11774,8 +11774,8 @@
               }
             ],
             "address": {
-              "city": "Ewa Beach",
-              "state": "HI",
+              "city": "Shanghai",
+              "state": "China",
               "country": "United States",
               "zipCode": "96706"
             },

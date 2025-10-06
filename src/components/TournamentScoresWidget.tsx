@@ -48,7 +48,7 @@ interface TournamentScoresWidgetProps {
 
 export default function TournamentScoresWidget({
   tournamentId = '401734781',
-  tournamentName = 'LOTTE Championship pres. by Hoakalei',
+  tournamentName = 'Buick LPGA Shanghai',
   isOpen,
   onToggle,
   showToggleButton = true
