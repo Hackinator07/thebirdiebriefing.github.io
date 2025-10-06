@@ -4,7 +4,7 @@ slug: "lotte-round-4-2025"
 title: "22-Year-Old Youmin Hwang Claims Lotte Championship Victory"
 author: "George Hack"
 authorId: "george-hack"
-date: "2025-09-15"
+date: "2025-10-06"
 category: "Tournament Golf"
 excerpt: "Youmin Hwang shot a final-round 67 to finish 17-under and win the Lotte Championship by one stroke over Hyo Joo Kim."
 image:
