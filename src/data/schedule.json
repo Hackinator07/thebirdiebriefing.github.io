@@ -228,10 +228,12 @@
       "date": "Aug. 21-24",
       "title": "CPKC Women's Open",
       "location": "Mississaugua Golf & Country Club in Mississauga, Ontario, Canada",
-      "purse": "$2.6M",
+      "purse": "$2.75M",
       "isMajor": false,
       "website": "https://www.cpkcwomensopen.com",
-      "winner": "Brooke M. Henderson"
+      "winner": "Brooke M. Henderson",
+      "score": "269 (-15)",
+      "prize": "$412,500"
     },
     {
       "id": 24,
