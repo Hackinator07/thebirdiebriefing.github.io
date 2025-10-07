@@ -32,7 +32,7 @@ export default function TournamentComponent({
   teeTimesUrl = "/tee-times",
   broadcastUrl = "/news/buick-lpga-2025/#tv-schedule",
   entryListUrl = "/entry-list",
-  podcastUrl = "https://open.spotify.com/episode/2iDn4mU5YWTiedRtaAavwn?si=0adbe57c7f5e44e6"
+  podcastUrl = "https://open.spotify.com/episode/4kMMOJqjAlCXmJv3FWuXmr?si=50d306b643c1445a"
 }: TournamentComponentProps) {
   const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
