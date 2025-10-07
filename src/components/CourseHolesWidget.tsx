@@ -28,6 +28,39 @@ const courseDataCache = new Map<string, {
 const COURSE_CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
 const RAPIDAPI_KEY = process.env.NEXT_PUBLIC_RAPIDAPI_KEY || '517cb09524mshf243e8dc1b88e58p19efabjsne4e46b59b3c8';
 
+// Static course data
+const STATIC_HOLES = [
+  // Front 9
+  { number: 1, shotsToPar: 4, totalYards: 409 },
+  { number: 2, shotsToPar: 3, totalYards: 169 },
+  { number: 3, shotsToPar: 4, totalYards: 371 },
+  { number: 4, shotsToPar: 5, totalYards: 571 },
+  { number: 5, shotsToPar: 4, totalYards: 387 },
+  { number: 6, shotsToPar: 4, totalYards: 402 },
+  { number: 7, shotsToPar: 3, totalYards: 176 },
+  { number: 8, shotsToPar: 4, totalYards: 383 },
+  { number: 9, shotsToPar: 5, totalYards: 526 },
+  // Back 9
+  { number: 10, shotsToPar: 4, totalYards: 400 },
+  { number: 11, shotsToPar: 3, totalYards: 149 },
+  { number: 12, shotsToPar: 4, totalYards: 411 },
+  { number: 13, shotsToPar: 5, totalYards: 512 },
+  { number: 14, shotsToPar: 4, totalYards: 342 },
+  { number: 15, shotsToPar: 4, totalYards: 419 },
+  { number: 16, shotsToPar: 3, totalYards: 173 },
+  { number: 17, shotsToPar: 5, totalYards: 512 },
+  { number: 18, shotsToPar: 4, totalYards: 391 }
+];
+
+const STATIC_COURSE_DATA = {
+  holes: STATIC_HOLES,
+  courseName: 'Buick LPGA Shanghai',
+  totalYards: STATIC_HOLES.reduce((sum, hole) => sum + hole.totalYards, 0),
+  shotsToPar: 72,
+  parOut: 36,
+  parIn: 36
+};
+
 // Function to get course map URL based on tournament/course name
 function getCourseMapUrl(courseName?: string): string | undefined {
   if (!courseName) return undefined;
@@ -172,7 +205,7 @@ async function fetchCourseData(eventId: string): Promise<CourseData | null> {
 export default function CourseHolesWidget({
   eventId = "401734781",
   aonRiskHole = 17,
-  hardestHole = 8
+  hardestHole = 13
 }: CourseHolesWidgetProps) {
   const [courseData, setCourseData] = useState<CourseData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -247,10 +280,10 @@ export default function CourseHolesWidget({
     return hole.totalYards;
   };
 
-  const holes = courseData?.holes || [];
+  const holes = courseData?.holes || STATIC_HOLES;
   const holeAnalysis = analyzeHoles(holes);
-  const displayPar = courseData?.shotsToPar || 71;
-  const displayYardage = courseData?.totalYards?.toLocaleString() || "6,566";
+  const displayPar = courseData?.shotsToPar || STATIC_COURSE_DATA.shotsToPar;
+  const displayYardage = courseData?.totalYards?.toLocaleString() || STATIC_COURSE_DATA.totalYards.toLocaleString();
 
   // Don't render if still loading
   if (loading) {
@@ -259,9 +292,6 @@ export default function CourseHolesWidget({
 
   // If no course data, show a fallback with static course info
   if (!courseData || holes.length === 0) {
-    const fallbackCourseMapUrl = getCourseMapUrl(undefined);
-    
-    
     return (
       <div className="w-full h-full flex flex-col">
         <div className="flex-1 overflow-y-auto space-y-2 p-1 sm:p-2">
@@ -280,17 +310,58 @@ export default function CourseHolesWidget({
                     </tr>
                   </thead>
                   <tbody>
-                    {Array.from({ length: 9 }, (_, i) => (
-                      <tr key={i + 1} className="border-b border-gray-100 hover:bg-gray-50">
-                        <td className="py-1 px-1 sm:px-2 font-medium">{i + 1}</td>
-                        <td className="text-center py-1 px-1 sm:px-2">-</td>
-                        <td className="text-right py-1 px-1 sm:px-2">-</td>
-                      </tr>
-                    ))}
+                    {STATIC_HOLES.slice(0, 9).map((hole) => {
+                      const isLongest = hole.totalYards === Math.max(...STATIC_HOLES.map(h => h.totalYards));
+                      const isShortest = hole.totalYards === Math.min(...STATIC_HOLES.map(h => h.totalYards));
+                      const isHardest = hole.number === hardestHole;
+                      const isAonRisk = hole.number === aonRiskHole;
+                      
+                      return (
+                        <tr 
+                          key={hole.number} 
+                          className={`border-b border-gray-100 ${
+                            isLongest ? 'bg-blue-50' : 
+                            isShortest ? 'bg-green-50' : 
+                            isHardest ? 'bg-red-50' : 
+                            isAonRisk ? 'bg-purple-50' :
+                            'hover:bg-gray-50'
+                          }`}
+                        >
+                          <td className="py-1 px-1 sm:px-2 font-medium">
+                            <div className="flex items-center gap-0.5">
+                              {hole.number}
+                              {isLongest && (
+                                <svg className="w-2 h-2 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                              )}
+                              {isShortest && (
+                                <svg className="w-2 h-2 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                                  <circle cx="12" cy="12" r="10"/>
+                                  <circle cx="12" cy="12" r="4" fill="white"/>
+                                </svg>
+                              )}
+                              {isHardest && (
+                                <svg className="w-2 h-2 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                              )}
+                              {isAonRisk && (
+                                <svg className="w-2 h-2 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2L12 17.6l-6 4.8 2.4-7.2-6-4.8h7.6L12 2z"/>
+                                </svg>
+                              )}
+                            </div>
+                          </td>
+                          <td className="text-center py-1 px-1 sm:px-2">{hole.shotsToPar}</td>
+                          <td className="text-right py-1 px-1 sm:px-2">{hole.totalYards.toLocaleString()}</td>
+                        </tr>
+                      );
+                    })}
                     <tr className="border-t-2 border-gray-300 font-semibold bg-gray-50">
                       <td className="py-1 px-1 sm:px-2">Out</td>
-                      <td className="text-center py-1 px-1 sm:px-2">-</td>
-                      <td className="text-right py-1 px-1 sm:px-2">-</td>
+                      <td className="text-center py-1 px-1 sm:px-2">{STATIC_COURSE_DATA.parOut}</td>
+                      <td className="text-right py-1 px-1 sm:px-2">{STATIC_HOLES.slice(0, 9).reduce((sum, hole) => sum + hole.totalYards, 0).toLocaleString()}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -310,17 +381,42 @@ export default function CourseHolesWidget({
                     </tr>
                   </thead>
                   <tbody>
-                    {Array.from({ length: 9 }, (_, i) => {
-                      const holeNumber = i + 10;
-                      const isAonRisk = holeNumber === aonRiskHole;
+                    {STATIC_HOLES.slice(9, 18).map((hole) => {
+                      const isLongest = hole.totalYards === Math.max(...STATIC_HOLES.map(h => h.totalYards));
+                      const isShortest = hole.totalYards === Math.min(...STATIC_HOLES.map(h => h.totalYards));
+                      const isHardest = hole.number === hardestHole;
+                      const isAonRisk = hole.number === aonRiskHole;
+                      
                       return (
                         <tr 
-                          key={holeNumber} 
-                          className={`border-b border-gray-100 ${isAonRisk ? 'bg-purple-50' : 'hover:bg-gray-50'}`}
+                          key={hole.number} 
+                          className={`border-b border-gray-100 ${
+                            isLongest ? 'bg-blue-50' : 
+                            isShortest ? 'bg-green-50' : 
+                            isHardest ? 'bg-red-50' : 
+                            isAonRisk ? 'bg-purple-50' :
+                            'hover:bg-gray-50'
+                          }`}
                         >
                           <td className="py-1 px-1 sm:px-2 font-medium">
                             <div className="flex items-center gap-0.5">
-                              {holeNumber}
+                              {hole.number}
+                              {isLongest && (
+                                <svg className="w-2 h-2 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                              )}
+                              {isShortest && (
+                                <svg className="w-2 h-2 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                                  <circle cx="12" cy="12" r="10"/>
+                                  <circle cx="12" cy="12" r="4" fill="white"/>
+                                </svg>
+                              )}
+                              {isHardest && (
+                                <svg className="w-2 h-2 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                              )}
                               {isAonRisk && (
                                 <svg className="w-2 h-2 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
                                   <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2L12 17.6l-6 4.8 2.4-7.2-6-4.8h7.6L12 2z"/>
@@ -328,15 +424,15 @@ export default function CourseHolesWidget({
                               )}
                             </div>
                           </td>
-                          <td className="text-center py-1 px-1 sm:px-2">-</td>
-                          <td className="text-right py-1 px-1 sm:px-2">-</td>
+                          <td className="text-center py-1 px-1 sm:px-2">{hole.shotsToPar}</td>
+                          <td className="text-right py-1 px-1 sm:px-2">{hole.totalYards.toLocaleString()}</td>
                         </tr>
                       );
                     })}
                     <tr className="border-t-2 border-gray-300 font-semibold bg-gray-50">
                       <td className="py-1 px-1 sm:px-2">In</td>
-                      <td className="text-center py-1 px-1 sm:px-2">-</td>
-                      <td className="text-right py-1 px-1 sm:px-2">-</td>
+                      <td className="text-center py-1 px-1 sm:px-2">{STATIC_COURSE_DATA.parIn}</td>
+                      <td className="text-right py-1 px-1 sm:px-2">{STATIC_HOLES.slice(9, 18).reduce((sum, hole) => sum + hole.totalYards, 0).toLocaleString()}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -349,31 +445,129 @@ export default function CourseHolesWidget({
             <div className="bg-primary-50 rounded p-1 sm:p-2">
               <div className="flex justify-between items-center text-[10px] sm:text-xs font-semibold">
                 <span>Total</span>
-                <span>Par {displayPar} • {displayYardage}y</span>
+                <span>Par {STATIC_COURSE_DATA.shotsToPar} • {STATIC_COURSE_DATA.totalYards.toLocaleString()}y</span>
               </div>
             </div>
             
             <div className="bg-gray-50 rounded p-2 sm:p-3 border border-gray-200">
-              <div className="flex justify-center items-center text-center">
-                <div className="flex items-center gap-1 sm:gap-1.5">
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2L12 17.6l-6 4.8 2.4-7.2-6-4.8h7.6L12 2z"/>
-                  </svg>
-                  <span className="text-[10px] sm:text-xs font-medium text-purple-700 whitespace-nowrap">AON Risk #{aonRiskHole}</span>
+              <div className="space-y-1 sm:space-y-2">
+                {/* First line: Longest and Shortest */}
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-1 sm:gap-1.5">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <span className="text-[10px] sm:text-xs font-medium text-blue-700 whitespace-nowrap">Longest #{STATIC_HOLES.find(h => h.totalYards === Math.max(...STATIC_HOLES.map(h => h.totalYards)))?.number}</span>
+                  </div>
+                  <div className="flex items-center gap-1 sm:gap-1.5">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10"/>
+                      <circle cx="12" cy="12" r="4" fill="white"/>
+                    </svg>
+                    <span className="text-[10px] sm:text-xs font-medium text-green-700 whitespace-nowrap">Shortest #{STATIC_HOLES.find(h => h.totalYards === Math.min(...STATIC_HOLES.map(h => h.totalYards)))?.number}</span>
+                  </div>
                 </div>
+                {/* Second line: Hardest and AON Risk */}
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-1 sm:gap-1.5">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <span className="text-[10px] sm:text-xs font-medium text-red-700 whitespace-nowrap">Hardest #{hardestHole}</span>
+                  </div>
+                  <div className="flex items-center gap-1 sm:gap-1.5">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2L12 17.6l-6 4.8 2.4-7.2-6-4.8h7.6L12 2z"/>
+                    </svg>
+                    <span className="text-[10px] sm:text-xs font-medium text-purple-700 whitespace-nowrap">AON Risk #{aonRiskHole}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Course Map - Bottom - Fallback */}
+          <CourseMap 
+            courseMapUrl="/course-maps/buick-map.png"
+            courseName="Buick LPGA Shanghai"
+            className="mt-2"
+          />
+
+          {/* Grass Types and Mowing Schedules - Single Column */}
+          <div className="space-y-2 sm:space-y-3">
+            {/* Grass Types */}
+            <div className="bg-green-50 rounded-lg p-2 border border-green-200">
+              <h4 className="text-xs sm:text-sm font-semibold text-green-800 mb-1 uppercase tracking-wide">Grass Types</h4>
+              <div className="space-y-0.5 text-[10px] sm:text-xs text-green-700">
+                <div className="flex justify-between items-start">
+                  <span className="font-medium flex-1 mr-2">Tees, Fairways, Approaches & Collars</span>
+                  <span className="text-right flex-shrink-0">Bermudagrass</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="font-medium">Greens</span>
+                  <span>Bentgrass</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="font-medium">Rough</span>
+                  <span>Bermudagrass</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mowing Schedules */}
+            <div className="bg-blue-50 rounded-lg p-3 border border-blue-200">
+              <h4 className="text-xs sm:text-sm font-semibold text-blue-800 mb-2 uppercase tracking-wide">Mowing Schedules</h4>
+              <div className="space-y-2 text-[10px] sm:text-xs text-blue-700">
+                <div className="grid grid-cols-1 gap-1">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Tees</span>
+                    <span>AM mow</span>
+                  </div>
+                  <div className="text-right text-gray-600">Height of Cut: 12mm</div>
+                  
+                  <div className="flex justify-between items-center mt-1">
+                    <span className="font-medium">Fairways</span>
+                    <span>AM mow</span>
+                  </div>
+                  <div className="text-right text-gray-600">Height of Cut: 12mm</div>
+                  
+                  <div className="flex justify-between items-center mt-1">
+                    <span className="font-medium">Approaches</span>
+                    <span>AM mow</span>
+                  </div>
+                  <div className="text-right text-gray-600">Height of Cut: 12mm</div>
+                  
+                  <div className="flex justify-between items-center mt-1">
+                    <span className="font-medium">Collars</span>
+                    <span>PM mow</span>
+                  </div>
+                  <div className="text-right text-gray-600">Height of Cut: 10 mm</div>
+                  
+                  <div className="flex justify-between items-center mt-1">
+                    <span className="font-medium">Greens</span>
+                    <span>AM single cut and roll</span>
+                  </div>
+                  <div className="text-right text-gray-600">Height of Cut: 3.5 mm</div>
+                  <div className="text-right text-gray-600">Tournament Week Speeds at 10.5</div>
+                  
+                  <div className="flex justify-between items-center mt-1">
+                    <span className="font-medium">Intermediate Rough (Step Cut)</span>
+                    <span>PM Mow</span>
+                  </div>
+                  <div className="text-right text-gray-600">Height of Cut: 25 mm</div>
+                  
+                  <div className="flex justify-between items-center mt-1">
+                    <span className="font-medium">Primary Rough</span>
+                    <span>As needed</span>
+                  </div>
+                  <div className="text-right text-gray-600">Height of Cut: 55 mm</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Course Map - Bottom - Fallback */}
-        <CourseMap 
-          courseMapUrl={fallbackCourseMapUrl || '/course-maps/buick-map.png'}
-          courseName="Buick LPGA Shanghai"
-          className="mt-2"
-        />
       </div>
-    </div>
-  );
+    );
   }
 
   const courseMapUrl = getCourseMapUrl(courseData?.courseName);
