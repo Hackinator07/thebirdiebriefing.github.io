@@ -13,53 +13,44 @@ const TOURNAMENT_NAME = "Buick LPGA Shanghai";
 const TOURNAMENT_COURSE = "Shanghai Qizhong Garden Golf Club";
 const TOURNAMENT_LOCATION = "Shanghai, China";
 const TOURNAMENT_PAR = 72;
-const TOURNAMENT_YARDS = 6691;
+const TOURNAMENT_YARDS = 6703;
 const TOURNAMENT_FIELD = "82 Players";
 const TOURNAMENT_PURSE = "$2,200,000";
 const TOURNAMENT_LOGO = "/optimized/buick-lpga-shanghai.webp";
 
-// Round 1 Tee Times
+// Thursday, October 9, 2025 Tee Times (UTC+8)
 const round1TeeTimes = [
-  { time: "7:00AM", tee: "1", players: ["Soo Bin Joo", "In Gee Chun", "Hyo Joon Jang"] },
-  { time: "7:11AM", tee: "1", players: ["Alison Lee", "Frida Kinhult", "Caroline Masson"] },
-  { time: "7:22AM", tee: "1", players: ["Pauline Roussin-Bouchard", "Yuka Saso", "Pajaree Anannarukarn"] },
-  { time: "7:33AM", tee: "1", players: ["Anna Nordqvist", "Hye-Jin Choi", "Dewi Weber"] },
-  { time: "7:44AM", tee: "1", players: ["Minami Katsu", "Narin An", "Brooke Matthews"] },
-  { time: "7:55AM", tee: "1", players: ["Jasmine Suwannapura", "Amy Yang", "Robyn Choi"] },
-  { time: "8:06AM", tee: "1", players: ["Jin Hee Im", "Peiyun Chien", "Jennifer Kupcho"] },
-  { time: "8:17AM", tee: "1", players: ["Maude-Aimee Leblanc", "Lauren Hartlage", "Soyoung Lee"] },
-  { time: "8:28AM", tee: "1", players: ["Alexa Takai (a)", "Jaravee Boonchant", "Caroline Inglis"] },
-  { time: "8:39AM", tee: "1", players: ["Xiaowen Yin", "Pornanong Phatlum", "Tagiralani Luafalealo"] },
-  { time: "7:00AM", tee: "10", players: ["Lauren Morris", "Ana Belac", "Sophia Popov"] },
-  { time: "7:11AM", tee: "10", players: ["Brianna Do", "Alena Sharp", "Sarah Kemp"] },
-  { time: "7:22AM", tee: "10", players: ["Miyu Yamashita", "Rio Takeda", "Nasa Hataoka"] },
-  { time: "7:33AM", tee: "10", players: ["Patty Tavatanakit", "Lucy Li", "Gabriela Ruffels"] },
-  { time: "7:44AM", tee: "10", players: ["Bailey Tardy", "Auston Kim", "Emily Kristine Pedersen"] },
-  { time: "7:55AM", tee: "10", players: ["Jeongeun Lee5", "Ruixin Liu", "Kumkang Park"] },
-  { time: "8:06AM", tee: "10", players: ["Saki Baba", "Akie Iwai", "Chisato Iwai"] },
-  { time: "8:17AM", tee: "10", players: ["Brittany Altomare", "Heather Lin", "Caley McGinty"] },
-  { time: "8:28AM", tee: "10", players: ["Annie Kim", "Jodi Ewart Shadoff", "Hinako Shibuno"] },
-  { time: "8:39AM", tee: "10", players: ["Youmin Hwang", "Sung Hyun Park", "Gigi Stoll"] },
-  { time: "11:30AM", tee: "1", players: ["Kaitlyn Papp Budde", "Yuna Nishimura", "Yahui Zhang"] },
-  { time: "11:41AM", tee: "1", players: ["Madison Young", "Dani Holmqvist", "Pernilla Lindberg"] },
-  { time: "11:52AM", tee: "1", players: ["Leona Maguire", "Yuri Yoshida", "Arpichaya Yubol"] },
-  { time: "12:03PM", tee: "1", players: ["Andrea Lee", "Allisen Corpuz", "Jenny Shin"] },
-  { time: "12:14PM", tee: "1", players: ["A Lim Kim", "Hyo Joo Kim", "Brooke M. Henderson"] },
-  { time: "12:25PM", tee: "1", players: ["Nelly Korda", "Charley Hull", "Nataliya Guseva"] },
-  { time: "12:36PM", tee: "1", players: ["Stacy Lewis", "Megan Khang", "Sarah Schmelzel"] },
-  { time: "12:47PM", tee: "1", players: ["Hae In Sung (a)", "Yu Liu", "Danielle Kang"] },
-  { time: "12:58PM", tee: "1", players: ["Stephanie Meadow", "Hira Naveed", "Honorine Nobuta Ferry (a)"] },
-  { time: "1:09PM", tee: "1", players: ["Amanda Doherty", "Mariel Galdiano", "Sofia Garcia"] },
-  { time: "11:30AM", tee: "10", players: ["Jessica Porvasnik", "Morgane Metraux", "Azahara Munoz"] },
-  { time: "11:41AM", tee: "10", players: ["Jeongeun Lee6", "Jiwon Jeon", "Savannah Grewal"] },
-  { time: "11:52AM", tee: "10", players: ["Ingrid Lindblad", "Kristen Gillman", "Ilhee Lee"] },
-  { time: "12:03PM", tee: "10", players: ["Linnea Strom", "Celine Borge", "Ina Yoon"] },
-  { time: "12:14PM", tee: "10", players: ["Aline Krauter", "Madelene Sagstrom", "Jenny Bae"] },
-  { time: "12:25PM", tee: "10", players: ["Elizabeth Szokol", "Alexa Pano", "Paula Reto"] },
-  { time: "12:36PM", tee: "10", players: ["Lindy Duncan", "Cassie Porter", "Somi Lee"] },
-  { time: "12:47PM", tee: "10", players: ["Ryann O'Toole", "Bianca Pagdanganan", "Kate Smith-Stroh"] },
-  { time: "12:58PM", tee: "10", players: ["Mina Kreiter", "Polly Mack", "Olivia Cowan"] },
-  { time: "1:09PM", tee: "10", players: ["Adela Cernousek", "Daniela Darquea", "Perrine Delacour"] }
+  // Tee 1
+  { time: "8:00AM", tee: "1", players: ["Nasa Hataoka", "Arpichaya Yubol"] },
+  { time: "8:11AM", tee: "1", players: ["Ariya Jutanugarn", "Gaby Lopez", "Esther Henseleit"] },
+  { time: "8:22AM", tee: "1", players: ["Kristen Gillman", "Minami Katsu", "Gurleen Kaur"] },
+  { time: "8:33AM", tee: "1", players: ["Lindy Duncan", "Lucy Li", "Runzhi Pang"] },
+  { time: "8:44AM", tee: "1", players: ["Nanna Koerstz Madsen", "Menghan Li", "Robyn Choi"] },
+  { time: "8:55AM", tee: "1", players: ["Hira Naveed", "Yu Yuan Jiang", "Aditi Ashok"] },
+  { time: "9:06AM", tee: "1", players: ["Gabriela Ruffels", "Nataliya Guseva", "Muni He"] },
+  { time: "9:17AM", tee: "1", players: ["Shiyuan Zhou", "Ilhee Lee", "Jenny Bae"] },
+  { time: "9:28AM", tee: "1", players: ["Haeji Kang", "Yijia Ren", "Paula Reto"] },
+  { time: "9:39AM", tee: "1", players: ["Sherman Santiwiwatthanaphong", "Jenny Shin", "Yan Liu"] },
+  { time: "9:50AM", tee: "1", players: ["Jennifer Kupcho", "Rio Takeda", "Weiwei Zhang"] },
+  { time: "10:01AM", tee: "1", players: ["Lilia Vu", "Miyu Yamashita", "Yu Liu"] },
+  { time: "10:12AM", tee: "1", players: ["Angel Yin", "Miranda Wang", "Danielle Kang"] },
+  { time: "10:23AM", tee: "1", players: ["Jeeno Thitikul", "Minjee Lee", "Ruoning Yin"] },
+  
+  // Tee 10
+  { time: "8:00AM", tee: "10", players: ["Yuri Yoshida", "Patty Tavatanakit"] },
+  { time: "8:11AM", tee: "10", players: ["Leona Maguire", "Sei Young Kim", "Brooke Matthews"] },
+  { time: "8:22AM", tee: "10", players: ["Somi Lee", "Gemma Dryburgh", "Yuai Ji"] },
+  { time: "8:33AM", tee: "10", players: ["Manon De Roey", "Hye-Jin Choi", "Ruixin Liu"] },
+  { time: "8:44AM", tee: "10", players: ["Pauline Roussin-Bouchard", "Chih Yen Chang", "Auston Kim"] },
+  { time: "8:55AM", tee: "10", players: ["Emily Kristine Pedersen", "Yujie Liu", "Jin Hee Im"] },
+  { time: "9:06AM", tee: "10", players: ["Ashleigh Buhai", "Stephanie Kyriacou", "Yahui Zhang"] },
+  { time: "9:17AM", tee: "10", players: ["Mary Liu", "Ying Xu", "Celine Borge"] },
+  { time: "9:28AM", tee: "10", players: ["Narin An", "Shuying Li", "Cassie Porter"] },
+  { time: "9:39AM", tee: "10", players: ["Xiaowen Yin", "Allisen Corpuz", "Saki Baba"] },
+  { time: "9:50AM", tee: "10", players: ["Benedetta Moresco", "Zixuan Wang", "Albane Valenzuela"] },
+  { time: "10:01AM", tee: "10", players: ["Wei-Ling Hsu", "Zining An", "Karis Anne Davidson"] },
+  { time: "10:12AM", tee: "10", players: ["Ina Yoon", "Carlota Ciganda", "Pajaree Anannarukarn"] },
+  { time: "10:23AM", tee: "10", players: ["A Lim Kim", "Julia Lopez Ramirez", "Sarah Schmelzel"] }
 ];
 
 // Round 2 Tee Times - Buick LPGA Shanghai
@@ -164,7 +155,7 @@ const round4TeeTimes = [
   { time: "10:44AM", tee: "10", players: ["Jiwon Jeon", "Polly Mack"] }
 ];
 
-// Function to convert tee time from Hawaii time to selected timezone
+// Function to convert tee time from Shanghai time (GMT+8) to selected timezone
 function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: string): string {
   try {
     // If the timezones are the same, return the original time
@@ -183,7 +174,7 @@ function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: st
     if (period === 'PM' && hour24 !== 12) hour24 += 12;
     if (period === 'AM' && hour24 === 12) hour24 = 0;
 
-    // Create a date object representing the time in Hawaii timezone
+    // Create a date object representing the time in Shanghai timezone (GMT+8)
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0');
@@ -191,15 +182,14 @@ function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: st
     const hourStr = String(hour24).padStart(2, '0');
     const minuteStr = String(minute).padStart(2, '0');
 
-    // Create the date string in Hawaii timezone format
+    // Create the date string in Shanghai timezone format
     const dateString = `${year}-${month}-${day}T${hourStr}:${minuteStr}:00`;
     
-    // Create a date object that represents this time in Hawaii timezone
-    // We need to create it as if it's in Hawaii timezone, then convert to target
-    const hawaiiDate = new Date(dateString + '-10:00'); // Explicitly set Hawaii timezone offset
+    // Create a date object that represents this time in Shanghai timezone (GMT+8)
+    const shanghaiDate = new Date(dateString + '+08:00'); // Explicitly set Shanghai timezone offset (GMT+8)
     
     // Format to target timezone
-    const formatted = hawaiiDate.toLocaleTimeString('en-US', {
+    const formatted = shanghaiDate.toLocaleTimeString('en-US', {
       timeZone: toTimezone,
       hour: 'numeric',
       minute: '2-digit',
@@ -213,6 +203,39 @@ function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: st
 }
 
 function TeeTimesContent() {
+  // Function to determine if we should show Wednesday or Thursday based on GMT time
+  const getRound1DateInfo = useCallback(() => {
+    const now = new Date();
+    
+    // Get current GMT time
+    const gmtHour = now.getUTCHours();
+    const gmtMinute = now.getUTCMinutes();
+    const gmtTime = gmtHour * 60 + gmtMinute; // Convert to minutes for easier comparison
+    
+    // Tournament starts on Thursday, October 9 at GMT 0:00
+    // Before GMT 0:00, we show Wednesday (the day before tournament starts)
+    // At or after GMT 0:00, we show Thursday (tournament day)
+    const showWednesday = gmtTime < 0; // This will never be true since time can't be negative
+    
+    // Let me fix this logic properly
+    // We want to show Wednesday if we're before midnight GMT (0:00)
+    // and Thursday if we're at or after midnight GMT
+    const isBeforeMidnightGMT = gmtTime < 0; // This is impossible, so let's think differently
+    
+    // Actually, let's check the current GMT date vs the tournament start date
+    const currentGMTDate = new Date(now.getTime());
+    const tournamentStartGMT = new Date('2025-10-09T00:00:00Z'); // Thursday 0:00 GMT
+    
+    // If current GMT time is before the tournament start, show Wednesday
+    const showWednesdayCorrected = currentGMTDate < tournamentStartGMT;
+    
+    return {
+      isWednesday: showWednesdayCorrected,
+      dayLabel: showWednesdayCorrected ? "Wednesday" : "Thursday",
+      dateLabel: showWednesdayCorrected ? "Wednesday, October 8" : "Thursday, October 9"
+    };
+  }, []);
+
   // Function to determine which round should be active based on tournament status
   const getCurrentRound = useCallback((): 'round1' | 'round2' | 'round3' | 'round4' => {
     // Tournament dates: October 9-12, 2025 (Thursday-Sunday)
@@ -386,6 +409,9 @@ function TeeTimesContent() {
   const [activeRound, setActiveRound] = useState<'round1' | 'round2' | 'round3' | 'round4'>(getCurrentRound());
   const { selectedTimezone, updateTimezone } = useTimezone();
   const [isClient, setIsClient] = useState(false);
+  
+  // Get dynamic date info for Round 1
+  const round1DateInfo = getRound1DateInfo();
 
   // Ensure component only renders on client to avoid hydration issues
   useEffect(() => {
@@ -494,37 +520,25 @@ function TeeTimesContent() {
                         : 'text-gray-500 hover:text-gray-700 border border-gray-200'
                     }`}
                   >
-                    Round 1 - Wednesday
+                    Round 1 - {round1DateInfo.dayLabel}
                   </button>
                   <button
-                    onClick={() => setActiveRound('round2')}
-                    className={`w-full px-4 py-3 text-sm font-medium rounded-md transition-colors ${
-                      activeRound === 'round2'
-                        ? 'text-primary-600 bg-primary-50 border border-primary-200'
-                        : 'text-gray-500 hover:text-gray-700 border border-gray-200'
-                    }`}
+                    disabled
+                    className="w-full px-4 py-3 text-sm font-medium rounded-md transition-colors text-gray-300 bg-gray-100 border border-gray-200 cursor-not-allowed"
                   >
-                    Round 2 - Thursday
+                    Round 2 - Friday (Coming Soon)
                   </button>
                   <button
-                    onClick={() => setActiveRound('round3')}
-                    className={`w-full px-4 py-3 text-sm font-medium rounded-md transition-colors ${
-                      activeRound === 'round3'
-                        ? 'text-primary-600 bg-primary-50 border border-primary-200'
-                        : 'text-gray-500 hover:text-gray-700 border border-gray-200'
-                    }`}
+                    disabled
+                    className="w-full px-4 py-3 text-sm font-medium rounded-md transition-colors text-gray-300 bg-gray-100 border border-gray-200 cursor-not-allowed"
                   >
-                    Round 3 - Friday
+                    Round 3 - Saturday (Coming Soon)
                   </button>
                   <button
-                    onClick={() => setActiveRound('round4')}
-                    className={`w-full px-4 py-3 text-sm font-medium rounded-md transition-colors ${
-                      activeRound === 'round4'
-                        ? 'text-primary-600 bg-primary-50 border border-primary-200'
-                        : 'text-gray-500 hover:text-gray-700 border border-gray-200'
-                    }`}
+                    disabled
+                    className="w-full px-4 py-3 text-sm font-medium rounded-md transition-colors text-gray-300 bg-gray-100 border border-gray-200 cursor-not-allowed"
                   >
-                    Round 4 - Saturday
+                    Round 4 - Sunday (Coming Soon)
                   </button>
                 </div>
 
@@ -539,37 +553,25 @@ function TeeTimesContent() {
                           : 'text-gray-500 hover:text-gray-700'
                       }`}
                     >
-                      Round 1 - Wednesday
+                      Round 1 - {round1DateInfo.dayLabel}
                     </button>
                     <button
-                      onClick={() => setActiveRound('round2')}
-                      className={`px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
-                        activeRound === 'round2'
-                          ? 'text-primary-600 bg-primary-50'
-                          : 'text-gray-500 hover:text-gray-700'
-                      }`}
+                      disabled
+                      className="px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap text-gray-300 cursor-not-allowed"
                     >
-                      Round 2 - Thursday
+                      Round 2 - Friday (Coming Soon)
                     </button>
                     <button
-                      onClick={() => setActiveRound('round3')}
-                      className={`px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
-                        activeRound === 'round3'
-                          ? 'text-primary-600 bg-primary-50'
-                          : 'text-gray-500 hover:text-gray-700'
-                      }`}
+                      disabled
+                      className="px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap text-gray-300 cursor-not-allowed"
                     >
-                      Round 3 - Friday
+                      Round 3 - Saturday (Coming Soon)
                     </button>
                     <button
-                      onClick={() => setActiveRound('round4')}
-                      className={`px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
-                        activeRound === 'round4'
-                          ? 'text-primary-600 bg-primary-50'
-                          : 'text-gray-500 hover:text-gray-700'
-                      }`}
+                      disabled
+                      className="px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap text-gray-300 cursor-not-allowed"
                     >
-                      Round 4 - Saturday
+                      Round 4 - Sunday (Coming Soon)
                     </button>
                   </div>
                 </div>
@@ -617,19 +619,11 @@ function TeeTimesContent() {
                 <svg className="w-6 h-6 text-primary-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                {activeRound === 'round1' ? 'Round 1 - Thursday, October 9' :
-                 activeRound === 'round2' ? 'Round 2 - Friday, October 10' :
-                 activeRound === 'round3' ? 'Round 3 - Saturday, October 11' :
-                 activeRound === 'round4' ? 'Round 4 - Sunday, October 12' :
-                 'Round 1 - Thursday, October 9'}
+                Round 1 - {round1DateInfo.dateLabel}
               </h3>
 
               {(() => {
-                const teeTimes = activeRound === 'round1' ? round1TeeTimes :
-                                 activeRound === 'round2' ? round2TeeTimes :
-                                 activeRound === 'round3' ? round3TeeTimes :
-                                 activeRound === 'round4' ? round4TeeTimes :
-                                 round1TeeTimes;
+                const teeTimes = round1TeeTimes;
                 const groupedByTime = teeTimes.reduce((acc, group) => {
                   if (!acc[group.time]) {
                     acc[group.time] = { tee1: null, tee10: null };

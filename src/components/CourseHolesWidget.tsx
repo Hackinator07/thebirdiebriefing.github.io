@@ -190,7 +190,12 @@ async function fetchCourseData(eventId: string): Promise<CourseData | null> {
     return courseData;
 
   } catch (error) {
-    console.error('Error fetching course data:', error);
+    // Handle different types of errors
+    if (error instanceof Error && error.name === 'AbortError') {
+      console.warn('Course data fetch was aborted due to timeout');
+    } else {
+      console.error('Error fetching course data:', error);
+    }
     
     // Return expired cache if available
     if (cached) {
