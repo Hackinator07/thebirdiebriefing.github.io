@@ -30,7 +30,7 @@ export default function TournamentComponent({
   buyTicketsUrl = "https://buick-lpgashanghai.com/about_22/",
   officialSiteUrl = "https://buick-lpgashanghai.com/",
   teeTimesUrl = "/tee-times",
-  broadcastUrl = "https://www.birdiebriefing.com/news/buick-lpga-shanghai-2025/#tv-schedule",
+  broadcastUrl = "/news/buick-lpga-2025/#tv-schedule",
   entryListUrl = "/entry-list",
   podcastUrl = "https://open.spotify.com/episode/2iDn4mU5YWTiedRtaAavwn?si=0adbe57c7f5e44e6"
 }: TournamentComponentProps) {
@@ -141,7 +141,7 @@ export default function TournamentComponent({
         {/* Tournament Title */}
         <div className="mb-2">
           <Link 
-            href="https://www.birdiebriefing.com/news/buick-lpga-shanghai-2025/"
+            href="/news/buick-lpga-2025/"
             className="block group"
           >
             <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line hover:text-primary-600 transition-all duration-200 cursor-pointer" style={{ hyphens: 'none' }}>
