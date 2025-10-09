@@ -58,7 +58,7 @@ export default function TournamentComponent({
   const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Shanghai Qizhong Garden Golf Club";
   const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$3.0M";
   const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 72;
-  const displayYardage = tournamentData?.courses?.[0]?.totalYards?.toLocaleString() || "6,703";
+  const displayYardage = "6,703"; // Hardcoded - API shows incorrect yardage
   const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName?.replace(/^Jasmine/, 'J.') || "A Lim Kim";
   
   // Format date from API data
