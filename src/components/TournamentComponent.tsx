@@ -298,11 +298,10 @@ export default function TournamentComponent({
           <div className="text-center">
             <div className="space-y-2">
               <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
-                <svg className={`w-4 h-4 ${weatherLoading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
-                <span className="font-medium">{weather?.displayValue || 'Partly sunny'}</span>
-                {weatherLoading && <span className="text-xs text-gray-400">(updating...)</span>}
+                <span className="font-medium">Sunny</span>
               </div>
               <div className="space-y-1">
                 <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
@@ -312,13 +311,13 @@ export default function TournamentComponent({
                       <circle cx="12" cy="17" r="1.5" fill="currentColor" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 6h1M14 8h1M14 10h1M14 12h1" />
                     </svg>
-                    <span>{weather?.temperature || 72}°F</span>
+                    <span>89°F</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
                     </svg>
-                    <span>{weather?.lowTemperature || 65}°-{weather?.highTemperature || 78}°F</span>
+                    <span>75°-89°F</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
@@ -326,18 +325,16 @@ export default function TournamentComponent({
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8h12a2 2 0 110 4H3M3 12h12a2 2 0 100-4H3M3 16h8a2 2 0 110 4H3" />
                     </svg>
-                    <span>{weather?.windSpeed || 5} mph {weather?.windDirection || 'WSW'}</span>
+                    <span>9 mph E</span>
                   </div>
-                  {(weather?.precipitation || 24) > 0 && (
-                    <div className="flex items-center gap-1 text-blue-600">
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 19l4-4 4 4" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 15l4-4 4 4" />
-                      </svg>
-                      <span>{weather?.precipitation || 24}% chance</span>
-                    </div>
-                  )}
+                  <div className="flex items-center gap-1 text-blue-600">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 19l4-4 4 4" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 15l4-4 4 4" />
+                    </svg>
+                    <span>2% chance</span>
+                  </div>
                 </div>
               </div>
             </div>
