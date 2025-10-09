@@ -116,6 +116,8 @@ The LPGA's Asia swing begins in Shanghai, the first of five stops across the con
 
 **The Course**
 
+*Note that [Golfweek](https://golfweek.usatoday.com/story/sports/golf/lpga/2025/10/08/extreme-heat-wreaks-havoc-greens-buick-lpga-shanghai-golf/86586756007/), players, and caddies have stated that the greens are in rough shape after an extended stretch of extreme heat. The conditions may continue to affect the putting surfaces, meaning scores this week might not fully reflect a player’s true performance.
+
 Qizhong Garden Golf Club was [designed by Dana Fry and Jason Straka's Global Golf Course Design](https://www.frystraka.com/course-gallery/qizhong) in collaboration with Jun Lu, one of China's top golf course architects. Spread across 1,000 acres, the course follows the land's natural lakes and mounds, creating rare elevation changes for Shanghai. Its fairways roll and dip, offering a mix of beauty and strategy that suits modern championship play. Beneath it all runs 60,000 meters of drainage pipe, allowing the course to recover within minutes after heavy rain. The result is a layout that feels both distinctly Chinese and built for the global stage.
 
 **The Tournament Players**
