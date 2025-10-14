@@ -152,8 +152,8 @@ if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
   
   console.log('🛠️ Static data utilities available at window.staticDataUtils');
   console.log('Available commands:');
-  console.log('  - staticDataUtils.captureAndPreview("401734781")');
-  console.log('  - staticDataUtils.compare("401734781")');
+  console.log('  - staticDataUtils.captureAndPreview("401734782")');
+  console.log('  - staticDataUtils.compare("401734782")');
   console.log('  - staticDataUtils.refreshAll()');
   console.log('  - staticDataUtils.getStatus()');
   console.log('  - staticDataUtils.reset()');

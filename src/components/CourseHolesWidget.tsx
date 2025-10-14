@@ -31,30 +31,30 @@ const RAPIDAPI_KEY = process.env.NEXT_PUBLIC_RAPIDAPI_KEY || '517cb09524mshf243e
 // Static course data
 const STATIC_HOLES = [
   // Front 9
-  { number: 1, shotsToPar: 4, totalYards: 409 },
-  { number: 2, shotsToPar: 3, totalYards: 169 },
-  { number: 3, shotsToPar: 4, totalYards: 371 },
-  { number: 4, shotsToPar: 5, totalYards: 571 },
-  { number: 5, shotsToPar: 4, totalYards: 387 },
-  { number: 6, shotsToPar: 4, totalYards: 402 },
-  { number: 7, shotsToPar: 3, totalYards: 176 },
-  { number: 8, shotsToPar: 4, totalYards: 383 },
-  { number: 9, shotsToPar: 5, totalYards: 526 },
+  { number: 1, shotsToPar: 4, totalYards: 373 },
+  { number: 2, shotsToPar: 5, totalYards: 557 },
+  { number: 3, shotsToPar: 3, totalYards: 198 },
+  { number: 4, shotsToPar: 4, totalYards: 408 },
+  { number: 5, shotsToPar: 4, totalYards: 393 },
+  { number: 6, shotsToPar: 5, totalYards: 513 },
+  { number: 7, shotsToPar: 4, totalYards: 374 },
+  { number: 8, shotsToPar: 3, totalYards: 138 },
+  { number: 9, shotsToPar: 4, totalYards: 386 },
   // Back 9
-  { number: 10, shotsToPar: 4, totalYards: 400 },
-  { number: 11, shotsToPar: 3, totalYards: 149 },
-  { number: 12, shotsToPar: 4, totalYards: 411 },
-  { number: 13, shotsToPar: 5, totalYards: 512 },
-  { number: 14, shotsToPar: 4, totalYards: 342 },
-  { number: 15, shotsToPar: 4, totalYards: 419 },
-  { number: 16, shotsToPar: 3, totalYards: 173 },
-  { number: 17, shotsToPar: 5, totalYards: 512 },
-  { number: 18, shotsToPar: 4, totalYards: 391 }
+  { number: 10, shotsToPar: 4, totalYards: 385 },
+  { number: 11, shotsToPar: 4, totalYards: 403 },
+  { number: 12, shotsToPar: 5, totalYards: 554 },
+  { number: 13, shotsToPar: 3, totalYards: 173 },
+  { number: 14, shotsToPar: 4, totalYards: 408 },
+  { number: 15, shotsToPar: 3, totalYards: 182 },
+  { number: 16, shotsToPar: 4, totalYards: 408 },
+  { number: 17, shotsToPar: 5, totalYards: 536 },
+  { number: 18, shotsToPar: 4, totalYards: 396 }
 ];
 
 const STATIC_COURSE_DATA = {
   holes: STATIC_HOLES,
-  courseName: 'Buick LPGA Shanghai',
+  courseName: 'Pine Beach Golf Links',
   totalYards: STATIC_HOLES.reduce((sum, hole) => sum + hole.totalYards, 0),
   shotsToPar: 72,
   parOut: 36,
@@ -70,6 +70,8 @@ function getCourseMapUrl(courseName?: string): string | undefined {
     'Pinnacle Country Club': '/course-maps/nwa-course-map.pdf',
     'Lotte Championship': 'https://lirp.cdn-website.com/9fed8a20/dms3rep/multi/opt/lotte-course-map-2025-1920w.jpg',
     'Lotte Golf & Country Club': 'https://lirp.cdn-website.com/9fed8a20/dms3rep/multi/opt/lotte-course-map-2025-1920w.jpg',
+    'Pine Beach Golf Links': '/course-maps/bmw-map.png',
+    'BMW Ladies Championship': '/course-maps/bmw-map.png',
     'Buick Championship': '/course-maps/buick-map.png',
     'Hoakalei Country Club': '/course-maps/buick-map.png',
     // Add more mappings as needed
@@ -208,9 +210,9 @@ async function fetchCourseData(eventId: string): Promise<CourseData | null> {
 }
 
 export default function CourseHolesWidget({
-  eventId = "401734781",
+  eventId = "401734782",
   aonRiskHole = 17,
-  hardestHole = 13
+  hardestHole = 17
 }: CourseHolesWidgetProps) {
   const [courseData, setCourseData] = useState<CourseData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -493,8 +495,8 @@ export default function CourseHolesWidget({
 
           {/* Course Map - Bottom - Fallback */}
           <CourseMap 
-            courseMapUrl="/course-maps/buick-map.png"
-            courseName="Buick LPGA Shanghai"
+            courseMapUrl="/course-maps/bmw-map.png"
+            courseName="Pine Beach Golf Links"
             className="mt-2"
           />
 
@@ -526,46 +528,47 @@ export default function CourseHolesWidget({
                 <div className="grid grid-cols-1 gap-1">
                   <div className="flex justify-between items-center">
                     <span className="font-medium">Tees</span>
-                    <span>AM mow</span>
+                    <span>PM - Mow</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 12mm</div>
+                  <div className="text-right text-gray-600">Height of Cut – 12 mm</div>
                   
                   <div className="flex justify-between items-center mt-1">
                     <span className="font-medium">Fairways</span>
-                    <span>AM mow</span>
+                    <span>PM - Mow</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 12mm</div>
+                  <div className="text-right text-gray-600">Height of Cut – 12 mm</div>
                   
                   <div className="flex justify-between items-center mt-1">
                     <span className="font-medium">Approaches</span>
-                    <span>AM mow</span>
+                    <span>PM - Mow</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 12mm</div>
+                  <div className="text-right text-gray-600">Height of Cut – 12 mm</div>
                   
                   <div className="flex justify-between items-center mt-1">
                     <span className="font-medium">Collars</span>
-                    <span>PM mow</span>
+                    <span>AM - Mow</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 10 mm</div>
+                  <div className="text-right text-gray-600">Height of Cut – 12 mm</div>
                   
                   <div className="flex justify-between items-center mt-1">
                     <span className="font-medium">Greens</span>
-                    <span>AM single cut and roll</span>
+                    <span>AM - Single cut w/single roll</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 3.5 mm</div>
-                  <div className="text-right text-gray-600">Tournament Week Speeds at 10.5</div>
+                  <div className="text-right text-gray-600">PM – Mow and/or roll as needed</div>
+                  <div className="text-right text-gray-600">Height of Cut - 2.8 mm</div>
+                  <div className="text-right text-gray-600">Speed 11.5' – 12' (3.5 – 3.65 M)</div>
                   
                   <div className="flex justify-between items-center mt-1">
-                    <span className="font-medium">Intermediate Rough (Step Cut)</span>
-                    <span>PM Mow</span>
+                    <span className="font-medium">Intermediate Rough + Step Cut</span>
+                    <span>PM - Mow</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 25 mm</div>
+                  <div className="text-right text-gray-600">Height of Cut – 25 mm</div>
                   
                   <div className="flex justify-between items-center mt-1">
                     <span className="font-medium">Primary Rough</span>
-                    <span>As needed</span>
+                    <span>Mown as needed</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 55 mm</div>
+                  <div className="text-right text-gray-600">Height of Cut – 65 mm</div>
                 </div>
               </div>
             </div>
@@ -775,8 +778,8 @@ export default function CourseHolesWidget({
 
         {/* Course Map - Bottom */}
         <CourseMap 
-          courseMapUrl={courseMapUrl || '/course-maps/buick-map.png'}
-          courseName={courseData?.courseName || 'Buick LPGA Shanghai'}
+          courseMapUrl={courseMapUrl || '/course-maps/bmw-map.png'}
+          courseName={courseData?.courseName || 'Pine Beach Golf Links'}
           className="mt-2"
         />
 
@@ -786,17 +789,17 @@ export default function CourseHolesWidget({
           <div className="bg-green-50 rounded-lg p-2 border border-green-200">
             <h4 className="text-xs sm:text-sm font-semibold text-green-800 mb-1 uppercase tracking-wide">Grass Types</h4>
             <div className="space-y-0.5 text-[10px] sm:text-xs text-green-700">
+              <div className="flex justify-between items-start">
+                <span className="font-medium flex-1 mr-2">Tees, Fairways, Approaches & Collars</span>
+                <span className="text-right flex-shrink-0">Bermudagrass</span>
+              </div>
               <div className="flex justify-between">
                 <span className="font-medium">Greens</span>
-                <span>Sea Dwarf Paspalum</span>
+                <span>Bentgrass</span>
               </div>
               <div className="flex justify-between">
-                <span className="font-medium">Tees, Approaches, Collars</span>
-                <span>Sea Dwarf Paspalum</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="font-medium">Fairways, Rough</span>
-                <span>Sea Dwarf Paspalum</span>
+                <span className="font-medium">Rough</span>
+                <span>Bermudagrass</span>
               </div>
             </div>
           </div>
@@ -810,45 +813,45 @@ export default function CourseHolesWidget({
                   <span className="font-medium">Tees</span>
                   <span>PM - Mow</span>
                 </div>
-                <div className="text-right text-gray-600">Height of Cut - 0.420"</div>
+                <div className="text-right text-gray-600">Height of Cut – 12 mm</div>
                 
                 <div className="flex justify-between items-center mt-1">
                   <span className="font-medium">Fairways</span>
                   <span>PM - Mow</span>
                 </div>
-                <div className="text-right text-gray-600">Height of Cut - 0.490"</div>
+                <div className="text-right text-gray-600">Height of Cut – 12 mm</div>
+                
+                <div className="flex justify-between items-center mt-1">
+                  <span className="font-medium">Approaches</span>
+                  <span>PM - Mow</span>
+                </div>
+                <div className="text-right text-gray-600">Height of Cut – 12 mm</div>
                 
                 <div className="flex justify-between items-center mt-1">
                   <span className="font-medium">Collars</span>
-                  <span>PM - Mow</span>
+                  <span>AM - Mow</span>
                 </div>
-                <div className="text-right text-gray-600">Height of Cut - 0.420"</div>
+                <div className="text-right text-gray-600">Height of Cut – 12 mm</div>
                 
                 <div className="flex justify-between items-center mt-1">
                   <span className="font-medium">Greens</span>
-                  <span>AM - Single Cut w/single roll</span>
+                  <span>AM - Single cut w/single roll</span>
                 </div>
-                <div className="text-right text-gray-600">PM - Roll if needed</div>
-                <div className="text-right text-gray-600">Height of Cut - 0.95"</div>
-                <div className="text-right text-gray-600">Speed 10.0' - 10.5'</div>
+                <div className="text-right text-gray-600">PM – Mow and/or roll as needed</div>
+                <div className="text-right text-gray-600">Height of Cut - 2.8 mm</div>
+                <div className="text-right text-gray-600">Speed 11.5' – 12' (3.5 – 3.65 M)</div>
                 
                 <div className="flex justify-between items-center mt-1">
-                  <span className="font-medium">Intermediate Rough</span>
+                  <span className="font-medium">Intermediate Rough + Step Cut</span>
                   <span>PM - Mow</span>
                 </div>
-                <div className="text-right text-gray-600">Height of Cut - 1.25"</div>
+                <div className="text-right text-gray-600">Height of Cut – 25 mm</div>
                 
                 <div className="flex justify-between items-center mt-1">
                   <span className="font-medium">Primary Rough</span>
-                  <span>Mowed as needed</span>
+                  <span>Mown as needed</span>
                 </div>
-                <div className="text-right text-gray-600">Height of Cut - 2.0"</div>
-                
-                <div className="flex justify-between items-center mt-1">
-                  <span className="font-medium">Green Surrounds</span>
-                  <span>Mowed as needed</span>
-                </div>
-                <div className="text-right text-gray-600">Height of Cut - 2.0"</div>
+                <div className="text-right text-gray-600">Height of Cut – 65 mm</div>
               </div>
             </div>
           </div>

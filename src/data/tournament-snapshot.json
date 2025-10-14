@@ -1,28 +1,28 @@
 {
-  "lastUpdated": "2025-09-30T21:21:16.874Z",
-  "eventId": "401734781",
+  "lastUpdated": "2025-10-14T16:49:02.553Z",
+  "eventId": "401734782",
   "data": {
-    "tournamentName": "Buick LPGA Shanghai",
-    "location": "Shanghai, China",
-    "date": "Oct 9-12, 2025",
-    "courseName": "Shanghai Qizhong Garden Golf Club",
-    "par": 72,
+    "tournamentName": "BMW Ladies Championship",
+    "location": "Haenam-gun, Korea",
+    "date": "Oct 16-19, 2025",
+    "courseName": "Pine Beach Golf Links",
+    "par": 71,
     "yardage": 6566,
     "weather": {
       "type": "Forecast",
-      "displayValue": "Partly sunny w/ showers",
-      "conditionId": "14",
-      "zipCode": "96706",
-      "temperature": 76,
-      "lowTemperature": 70,
-      "highTemperature": 89,
-      "precipitation": 65,
-      "gust": 15,
-      "windSpeed": 9,
-      "windDirection": "E",
-      "lastUpdated": "2025-10-01T16:27Z"
+      "displayValue": "Mostly sunny",
+      "conditionId": "2",
+      "zipCode": "72758",
+      "temperature": 72,
+      "lowTemperature": 65,
+      "highTemperature": 78,
+      "precipitation": 20,
+      "gust": 7,
+      "windSpeed": 4,
+      "windDirection": "S",
+      "lastUpdated": "2025-10-14T16:49:12.781Z"
     },
-    "purse": "$3.0M",
-    "defendingChampion": "A Lim Kim"
+    "purse": "$2.3M",
+    "defendingChampion": "Hannah Green"
   }
 }

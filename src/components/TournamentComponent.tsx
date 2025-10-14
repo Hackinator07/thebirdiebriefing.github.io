@@ -23,12 +23,12 @@ interface TournamentComponentProps {
 }
 
 export default function TournamentComponent({
-  eventId = "401734781",
-  tournamentName = "Buick LPGA Shanghai",
-  location = "Shanghai, China", 
-  date = "Oct 9-12, 2025",
-  buyTicketsUrl = "https://buick-lpgashanghai.com/about_22/",
-  officialSiteUrl = "https://buick-lpgashanghai.com/",
+  eventId = "401734782",
+  tournamentName = "BMW Ladies Championship",
+  location = "Haenam-gun, Korea", 
+  date = "Oct 16-19, 2025",
+  buyTicketsUrl = "https://www.lpga.com/tournaments/bmw-ladies-championship",
+  officialSiteUrl = "https://www.lpga.com/tournaments/bmw-ladies-championship",
   teeTimesUrl = "/tee-times",
   broadcastUrl = "/news/buick-lpga-2025/#tv-schedule",
   entryListUrl = "/entry-list",
@@ -55,11 +55,11 @@ export default function TournamentComponent({
   // Use API data if available, fallback to static data that matches current API response
   const displayName = (tournamentData?.name || tournamentName).replace(/\s*(pres\.|presented)\s*by\s*(P&G|Hoakalei)/i, '');
   const displayLocation = tournamentData?.courses ? formatLocation(tournamentData.courses[0]) : location;
-  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Shanghai Qizhong Garden Golf Club";
-  const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$3.0M";
-  const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 72;
-  const displayYardage = "6,703"; // Hardcoded - API shows incorrect yardage
-  const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName?.replace(/^Jasmine/, 'J.') || "A Lim Kim";
+  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Pine Beach Golf Links";
+  const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$2.3M";
+  const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 71;
+  const displayYardage = "6,566"; // Hardcoded - API shows incorrect yardage
+  const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName?.replace(/^Jasmine/, 'J.') || "Hannah Green";
   
   // Format date from API data
   const displayDate = tournamentData ? 
@@ -131,8 +131,8 @@ export default function TournamentComponent({
         {/* Tournament Logo */}
         <div className="flex justify-center mb-3">
           <Image
-            src="https://buick-lpgashanghai.com/static/upload/image/20230826/1693039960887027.png"
-            alt="Buick LPGA Shanghai Logo"
+            src="https://media.lpga.com/images/librariesprovider3/default-album/2022_blc-new-logo-(grey-2-copy).png?sfvrsn=e781988b_1"
+            alt="BMW Ladies Championship Logo"
             width={140}
             height={70}
             className="h-16 w-auto object-contain"
@@ -141,7 +141,7 @@ export default function TournamentComponent({
         {/* Tournament Title */}
         <div className="mb-2">
           <Link 
-            href="/news/buick-lpga-2025/"
+            href="https://www.lpga.com/tournaments/bmw-ladies-championship"
             className="block group"
           >
             <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line hover:text-primary-600 transition-all duration-200 cursor-pointer" style={{ hyphens: 'none' }}>
@@ -165,7 +165,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
             <Link 
-              href="https://maps.app.goo.gl/r2JihCN1pKSzPzEu8"
+              href="https://www.google.com/maps/search/Pine+Beach+Golf+Links+Haenam-gun+Korea"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
@@ -177,14 +177,9 @@ export default function TournamentComponent({
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
             </svg>
-            <a 
-              href="/course-maps/buick-map.png"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
-            >
+            <span className="text-gray-600">
               {displayCourseName}
-            </a>
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>

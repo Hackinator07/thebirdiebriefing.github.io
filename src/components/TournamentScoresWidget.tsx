@@ -47,7 +47,7 @@ interface TournamentScoresWidgetProps {
 }
 
 export default function TournamentScoresWidget({
-  tournamentId = '401734781',
+  tournamentId = '401734782',
   tournamentName = 'Buick LPGA Shanghai',
   isOpen,
   onToggle,
