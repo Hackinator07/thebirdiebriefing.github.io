@@ -51,7 +51,20 @@ export function formatPurse(purse: number): string {
 // Helper function to format location
 export function formatLocation(course: any): string {
   if (course?.address) {
-    return `${course.address.city}, ${course.address.state}`;
+    const city = course.address.city;
+    const state = course.address.state;
+    const country = course.address.country;
+    
+    // If state exists, use it (for US locations)
+    if (state) {
+      return `${city}, ${state}`;
+    }
+    // If no state but has country, use country (for international locations)
+    if (country) {
+      return `${city}, ${country}`;
+    }
+    // Fallback to just city
+    return city || 'Location TBD';
   }
   return 'Location TBD';
 }
