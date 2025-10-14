@@ -33,7 +33,6 @@ export async function getEnhancedSchedule(): Promise<Schedule> {
     
     // List of future tournaments that should not have winner/score data populated
     const futureTournaments = [
-      'Buick LPGA Shanghai', 
       'BMW Ladies Championship',
       'Maybank Championship',
       'TOTO Japan Classic',

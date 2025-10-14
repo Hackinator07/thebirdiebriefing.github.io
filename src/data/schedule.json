@@ -1,6 +1,6 @@
 {
   "year": 2025,
-  "lastUpdated": "2025-01-15",
+  "lastUpdated": "2025-10-14",
   "tournaments": [
     {
       "id": 1,
@@ -287,7 +287,9 @@
       "purse": "$2.2M",
       "isMajor": false,
       "website": "https://buick-lpgashanghai.com",
-      "winner": ""
+      "winner": "Jeeno Thitikul",
+      "score": "264 (-24)",
+      "prize": "$330,000"
     },
     {
       "id": 29,
