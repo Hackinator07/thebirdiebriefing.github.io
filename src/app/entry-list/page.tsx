@@ -106,20 +106,20 @@ export default function EntryListPage() {
             </div>
           </div>
           <p className="text-base sm:text-lg text-gray-600 text-center">
-            Buick LPGA Shanghai
+            BMW Ladies Championship
           </p>
           <p className="text-sm text-gray-500 text-center">
             <a
-              href="https://maps.app.goo.gl/r2JihCN1pKSzPzEu8"
+              href="https://maps.app.goo.gl/r4ZGGX7rMz3F7Pu18"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-500 hover:text-primary-600 hover:underline transition-colors"
             >
-              Shanghai Qizhong Garden Golf Club
+              Pine Beach Golf Links
             </a>
           </p>
           <p className="text-sm text-gray-500 text-center">
-            October 9-12, 2025
+            October 16-19, 2025
           </p>
           <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center">
             Updated {new Date(entryList.lastUpdated).toLocaleDateString('en-US', {
