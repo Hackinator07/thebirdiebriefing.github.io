@@ -5,55 +5,53 @@ import Image from 'next/image';
 import TimezoneSelect from 'react-timezone-select';
 import { TimezoneProvider, useTimezone } from '@/components/TimezoneContext';
 
-// Default timezone (Shanghai Time - Buick LPGA Shanghai tee times)
-const DEFAULT_TIMEZONE = 'Asia/Shanghai';
+// Default timezone (Korea Time - BMW Ladies Championship tee times)
+const DEFAULT_TIMEZONE = 'Asia/Seoul';
 
 // Tournament information
-const TOURNAMENT_NAME = "Buick LPGA Shanghai";
-const TOURNAMENT_COURSE = "Shanghai Qizhong Garden Golf Club";
-const TOURNAMENT_LOCATION = "Shanghai, China";
+const TOURNAMENT_NAME = "BMW Ladies Championship";
+const TOURNAMENT_COURSE = "Pine Beach Golf Links";
+const TOURNAMENT_LOCATION = "Haenam-gun, Korea";
 const TOURNAMENT_PAR = 72;
-const TOURNAMENT_YARDS = 6703;
-const TOURNAMENT_FIELD = "82 Players";
-const TOURNAMENT_PURSE = "$2,200,000";
-const TOURNAMENT_LOGO = "/optimized/buick-lpga-shanghai.webp";
+const TOURNAMENT_YARDS = 6785;
+const TOURNAMENT_FIELD = "78 Players";
+const TOURNAMENT_PURSE = "$2,300,000";
+const TOURNAMENT_LOGO = "https://media.lpga.com/images/librariesprovider3/default-album/2022_blc-new-logo-(grey-2-copy).png?sfvrsn=e781988b_1";
 
-// Thursday, October 9, 2025 Tee Times (UTC+8)
+// Thursday, October 16, 2025 Tee Times (Korea Time - GMT+9)
 const round1TeeTimes = [
   // Tee 1
-  { time: "8:00AM", tee: "1", players: ["Nasa Hataoka", "Arpichaya Yubol"] },
-  { time: "8:11AM", tee: "1", players: ["Ariya Jutanugarn", "Gaby Lopez", "Esther Henseleit"] },
-  { time: "8:22AM", tee: "1", players: ["Kristen Gillman", "Minami Katsu", "Gurleen Kaur"] },
-  { time: "8:33AM", tee: "1", players: ["Lindy Duncan", "Lucy Li", "Runzhi Pang"] },
-  { time: "8:44AM", tee: "1", players: ["Nanna Koerstz Madsen", "Menghan Li", "Robyn Choi"] },
-  { time: "8:55AM", tee: "1", players: ["Hira Naveed", "Yu Yuan Jiang", "Aditi Ashok"] },
-  { time: "9:06AM", tee: "1", players: ["Gabriela Ruffels", "Nataliya Guseva", "Muni He"] },
-  { time: "9:17AM", tee: "1", players: ["Shiyuan Zhou", "Ilhee Lee", "Jenny Bae"] },
-  { time: "9:28AM", tee: "1", players: ["Haeji Kang", "Yijia Ren", "Paula Reto"] },
-  { time: "9:39AM", tee: "1", players: ["Sherman Santiwiwatthanaphong", "Jenny Shin", "Yan Liu"] },
-  { time: "9:50AM", tee: "1", players: ["Jennifer Kupcho", "Rio Takeda", "Weiwei Zhang"] },
-  { time: "10:01AM", tee: "1", players: ["Lilia Vu", "Miyu Yamashita", "Yu Liu"] },
-  { time: "10:12AM", tee: "1", players: ["Angel Yin", "Miranda Wang", "Danielle Kang"] },
-  { time: "10:23AM", tee: "1", players: ["Jeeno Thitikul", "Minjee Lee", "Ruoning Yin"] },
+  { time: "8:00AM", tee: "1", players: ["Nasa Hataoka (Ibaraki, Japan)", "Esther Henseleit (Hamburg, Germany)", "Gaby Lopez (Mexico City, Mexico)"] },
+  { time: "8:11AM", tee: "1", players: ["Cassie Porter (Peregian Springs, Australia)", "Maja Stark (Abbekas, Sweden)", "Lilia Vu (Fountain Valley, CA)"] },
+  { time: "8:22AM", tee: "1", players: ["Eun-Hee Ji * (Gapyung, Republic of Korea)", "Ilhee Lee (Seoul, Republic of Korea)", "Madelene Sagstrom (Enkoping, Sweden)"] },
+  { time: "8:33AM", tee: "1", players: ["Jenny Shin (Seoul, Republic of Korea)", "Minami Katsu (Kagoshima, Japan)", "Leona Maguire (Cavan, Ireland)"] },
+  { time: "8:44AM", tee: "1", players: ["Yan Liu (Fujian, People's Republic of China)", "Nanna Koerstz Madsen (Smoerum, Denmark)", "Miyu Yamashita (Osaka, Japan)"] },
+  { time: "8:55AM", tee: "1", players: ["Sung Hyun Park * (Seoul, Republic of Korea)", "Yealimi Noh (San Francisco, CA)", "Gabriela Ruffels (Melbourne, Australia)"] },
+  { time: "9:06AM", tee: "1", players: ["Mary Liu (Xi'an, People's Republic of China)", "Jennifer Kupcho (Westminster, CO)", "In Gee Chun * (Seoul, Republic of Korea)"] },
+  { time: "9:17AM", tee: "1", players: ["Somi Lee (Yongin-si, Republic of Korea)", "Miranda Wang (Tianjin, People's Republic of China)", "Akie Iwai (Saitama, Japan)"] },
+  { time: "9:28AM", tee: "1", players: ["Sei Young Kim (Seoul, Republic of Korea)", "Linn Grant (Viken, Sweden)", "Chisato Iwai (Saitama, Japan)"] },
+  { time: "9:39AM", tee: "1", players: ["Grace Kim (Sydney, Australia)", "Hye-Jin Choi (Gyeonggi-do, Republic of Korea)", "Celine Boutier (Montrouge, France)"] },
+  { time: "9:50AM", tee: "1", players: ["Ina Yoon (Seoul, Republic of Korea)", "Lottie Woad (Farnham, England)", "Nataliya Guseva (Miami, FL)"] },
+  { time: "10:01AM", tee: "1", players: ["Hannah Green (Perth, Australia)", "Jin Young Ko (Seoul, Republic of Korea)", "Minjee Lee (Perth, Australia)"] },
+  { time: "10:12AM", tee: "1", players: ["Hyo Joo Kim (Wonju, Republic of Korea)", "Haeran Ryu (Suwon, Republic of Korea)", "Brooke M. Henderson (Smiths Falls, Ontario)"] },
   
   // Tee 10
-  { time: "8:00AM", tee: "10", players: ["Yuri Yoshida", "Patty Tavatanakit"] },
-  { time: "8:11AM", tee: "10", players: ["Leona Maguire", "Sei Young Kim", "Brooke Matthews"] },
-  { time: "8:22AM", tee: "10", players: ["Somi Lee", "Gemma Dryburgh", "Yuai Ji"] },
-  { time: "8:33AM", tee: "10", players: ["Manon De Roey", "Hye-Jin Choi", "Ruixin Liu"] },
-  { time: "8:44AM", tee: "10", players: ["Pauline Roussin-Bouchard", "Chih Yen Chang", "Auston Kim"] },
-  { time: "8:55AM", tee: "10", players: ["Emily Kristine Pedersen", "Yujie Liu", "Jin Hee Im"] },
-  { time: "9:06AM", tee: "10", players: ["Ashleigh Buhai", "Stephanie Kyriacou", "Yahui Zhang"] },
-  { time: "9:17AM", tee: "10", players: ["Mary Liu", "Ying Xu", "Celine Borge"] },
-  { time: "9:28AM", tee: "10", players: ["Narin An", "Shuying Li", "Cassie Porter"] },
-  { time: "9:39AM", tee: "10", players: ["Xiaowen Yin", "Allisen Corpuz", "Saki Baba"] },
-  { time: "9:50AM", tee: "10", players: ["Benedetta Moresco", "Zixuan Wang", "Albane Valenzuela"] },
-  { time: "10:01AM", tee: "10", players: ["Wei-Ling Hsu", "Zining An", "Karis Anne Davidson"] },
-  { time: "10:12AM", tee: "10", players: ["Ina Yoon", "Carlota Ciganda", "Pajaree Anannarukarn"] },
-  { time: "10:23AM", tee: "10", players: ["A Lim Kim", "Julia Lopez Ramirez", "Sarah Schmelzel"] }
+  { time: "8:00AM", tee: "10", players: ["Lindy Duncan (Plantation, FL)", "Yuri Yoshida (Chiba, Japan)", "Rio Takeda (Kumamoto, Japan)"] },
+  { time: "8:11AM", tee: "10", players: ["Mi Hyang Lee (Seoul, Republic of Korea)", "Jeongeun Lee5 * (Seoul, Republic of Korea)", "Benedetta Moresco (Caldogno, Italy)"] },
+  { time: "8:22AM", tee: "10", players: ["Pauline Roussin-Bouchard (Orcieres 1850, France)", "Gemma Dryburgh (Aberdeen, Scotland)", "Andrea Lee (Hermosa Beach, CA)"] },
+  { time: "8:33AM", tee: "10", players: ["Haeji Kang (Seoul, Republic of Korea)", "Manon De Roey (Lint, Belgium)", "Stephanie Kyriacou (Sydney, Australia)"] },
+  { time: "8:44AM", tee: "10", players: ["Lauren Coughlin (Charlottesville, VA)", "Jeongeun Lee6 * (Gyeonggi-Do, Republic of Korea)", "Kumkang Park * (Seoul, Republic of Korea)"] },
+  { time: "8:55AM", tee: "10", players: ["Gurleen Kaur (Houston, TX)", "Esther Kwon (a) * (Calabasas, CA)", "Ashleigh Buhai (Johannesburg, South Africa)"] },
+  { time: "9:06AM", tee: "10", players: ["Soomin Oh (a) * (Ansan, Republic of Korea)", "Robyn Choi (Gold Coast, Australia)", "Lucy Li (Redwood Shores, CA)"] },
+  { time: "9:17AM", tee: "10", players: ["Chella Choi * (Seoul, Republic of Korea)", "Kristen Gillman (Austin, TX)", "Chanettee Wannasaen (Chiang mai, Thailand)"] },
+  { time: "9:28AM", tee: "10", players: ["Brooke Matthews (Rogers, AR)", "Allisen Corpuz (Kapolei, HI)", "Ingrid Lindblad (Halmstad, Sweden)"] },
+  { time: "9:39AM", tee: "10", players: ["Paula Reto (Bloemfontein, South Africa)", "Jenny Bae (Suwanee, GA)", "Auston Kim (St. Augustine, FL)"] },
+  { time: "9:50AM", tee: "10", players: ["Narin An * (Seoul, Republic of Korea)", "Saki Baba (Tokyo, Japan)", "Carlota Ciganda (Pamplona, Spain)"] },
+  { time: "10:01AM", tee: "10", players: ["Weiwei Zhang (Hainan, People's Republic of China)", "Karis Anne Davidson (Gold Coast, Australia)", "Jin Hee Im (Jeju, Republic of Korea)"] },
+  { time: "10:12AM", tee: "10", players: ["A Lim Kim (Seongnam-si, Republic of Korea)", "Sarah Schmelzel (Phoenix, AZ)", "Julia Lopez Ramirez (Benahavis, Spain)"] }
 ];
 
-// Round 2 Tee Times - Buick LPGA Shanghai
+// Round 2 Tee Times - BMW Ladies Championship
 const round2TeeTimes = [
   // Tee 1
   { time: "8:30AM", tee: "1", players: ["Narin An", "Cassie Porter", "Sherman Santiwiwatthanaphong"] },
@@ -194,44 +192,20 @@ function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: st
 }
 
 function TeeTimesContent() {
-  // Function to determine if we should show Wednesday or Thursday based on GMT time
+  // Round 1 date info - always Thursday for BMW Ladies Championship
   const getRound1DateInfo = useCallback(() => {
-    const now = new Date();
-    
-    // Get current GMT time
-    const gmtHour = now.getUTCHours();
-    const gmtMinute = now.getUTCMinutes();
-    const gmtTime = gmtHour * 60 + gmtMinute; // Convert to minutes for easier comparison
-    
-    // Tournament starts on Thursday, October 9 at GMT 0:00
-    // Before GMT 0:00, we show Wednesday (the day before tournament starts)
-    // At or after GMT 0:00, we show Thursday (tournament day)
-    const showWednesday = gmtTime < 0; // This will never be true since time can't be negative
-    
-    // Let me fix this logic properly
-    // We want to show Wednesday if we're before midnight GMT (0:00)
-    // and Thursday if we're at or after midnight GMT
-    const isBeforeMidnightGMT = gmtTime < 0; // This is impossible, so let's think differently
-    
-    // Actually, let's check the current GMT date vs the tournament start date
-    const currentGMTDate = new Date(now.getTime());
-    const tournamentStartGMT = new Date('2025-10-09T00:00:00Z'); // Thursday 0:00 GMT
-    
-    // If current GMT time is before the tournament start, show Wednesday
-    const showWednesdayCorrected = currentGMTDate < tournamentStartGMT;
-    
     return {
-      isWednesday: showWednesdayCorrected,
-      dayLabel: showWednesdayCorrected ? "Wednesday" : "Thursday",
-      dateLabel: showWednesdayCorrected ? "Wednesday, October 8" : "Thursday, October 9"
+      isWednesday: false,
+      dayLabel: "Thursday",
+      dateLabel: "Thursday, October 16"
     };
   }, []);
 
   // Function to determine which round should be active based on tournament status
   const getCurrentRound = useCallback((): 'round1' | 'round2' | 'round3' | 'round4' => {
-    // Tournament dates: October 9-12, 2025 (Thursday-Sunday)
-    const tournamentStartDate = new Date('2025-10-09'); // Thursday
-    const tournamentEndDate = new Date('2025-10-12'); // Sunday
+    // Tournament dates: October 16-19, 2025 (Thursday-Sunday)
+    const tournamentStartDate = new Date('2025-10-16'); // Thursday
+    const tournamentEndDate = new Date('2025-10-19'); // Sunday
 
     const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -463,7 +437,7 @@ function TeeTimesContent() {
                 <h2 className="text-2xl font-bold text-white mb-2">
                   {TOURNAMENT_NAME}
                 </h2>
-                <p className="text-secondary-100">October 9-12, 2025 • {TOURNAMENT_COURSE}</p>
+                <p className="text-secondary-100">October 16-19, 2025 • {TOURNAMENT_COURSE}</p>
                 <p className="text-secondary-100">{TOURNAMENT_LOCATION}</p>
                 <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div className="flex flex-col">
@@ -624,16 +598,16 @@ function TeeTimesContent() {
                 {isClient ? (
                   <>
                     {activeRound === 'round1' && `Round 1 - ${round1DateInfo.dateLabel}`}
-                    {activeRound === 'round2' && 'Round 2 - Friday, October 10'}
-                    {activeRound === 'round3' && 'Round 3 - Saturday, October 11'}
-                    {activeRound === 'round4' && 'Round 4 - Sunday, October 12'}
+                    {activeRound === 'round2' && 'Round 2 - Friday, October 17'}
+                    {activeRound === 'round3' && 'Round 3 - Saturday, October 18'}
+                    {activeRound === 'round4' && 'Round 4 - Sunday, October 19'}
                   </>
                 ) : (
                   <>
-                    {activeRound === 'round1' && 'Round 1 - Thursday, October 9'}
-                    {activeRound === 'round2' && 'Round 2 - Friday, October 10'}
-                    {activeRound === 'round3' && 'Round 3 - Saturday, October 11'}
-                    {activeRound === 'round4' && 'Round 4 - Sunday, October 12'}
+                    {activeRound === 'round1' && 'Round 1 - Thursday, October 16'}
+                    {activeRound === 'round2' && 'Round 2 - Friday, October 17'}
+                    {activeRound === 'round3' && 'Round 3 - Saturday, October 18'}
+                    {activeRound === 'round4' && 'Round 4 - Sunday, October 19'}
                   </>
                 )}
               </h3>
