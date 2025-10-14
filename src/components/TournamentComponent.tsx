@@ -57,8 +57,8 @@ export default function TournamentComponent({
   const displayLocation = tournamentData?.courses ? formatLocation(tournamentData.courses[0]) : location;
   const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Pine Beach Golf Links";
   const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$2.3M";
-  const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 71;
-  const displayYardage = "6,566"; // Hardcoded - API shows incorrect yardage
+  const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 72;
+  const displayYardage = "6,785"; // Hardcoded - API shows incorrect yardage
   const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName?.replace(/^Jasmine/, 'J.') || "Hannah Green";
   
   // Format date from API data
