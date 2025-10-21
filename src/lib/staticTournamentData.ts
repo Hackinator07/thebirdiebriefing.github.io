@@ -51,7 +51,7 @@ const DEFAULT_STATIC_DATA: StaticTournamentData = {
     lastUpdated: new Date().toISOString(),
   },
   lastUpdated: new Date().toISOString(),
-  eventId: '401734782'
+  eventId: '401745905'
 };
 
 /**

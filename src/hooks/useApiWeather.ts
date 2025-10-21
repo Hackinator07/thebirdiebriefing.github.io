@@ -144,7 +144,7 @@ async function fetchWeatherFromAPI(eventId: string): Promise<WeatherData> {
 /**
  * Hook that provides API weather data as primary source with 60-minute refresh
  */
-export function useApiWeather(eventId: string = '401734782'): UseApiWeatherReturn {
+export function useApiWeather(eventId: string = '401745905'): UseApiWeatherReturn {
   const [weather, setWeather] = useState<WeatherData | null>(defaultFallbackWeather);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2025-10-14T00:00:00.000Z",
+  "lastUpdated": "2025-10-21T00:00:00.000Z",
   "type": "AON Risk Reward Challenge",
   "week": {
-    "start_date": "2025-10-14",
-    "end_date": "2025-10-20"
+    "start_date": "2025-10-21",
+    "end_date": "2025-10-27"
   },
   "players": [
     {
@@ -19,52 +19,52 @@
     {
       "id": 2,
       "rank": 2,
+      "fullName": "A Lim Kim",
+      "countryCode": "KOR",
+      "points": -0.925,
+      "arrcHolesPlayed": 40,
+      "roundsToGo": 0,
+      "events": 20
+    },
+    {
+      "id": 3,
+      "rank": 3,
       "fullName": "Jennifer Kupcho",
       "countryCode": "USA",
+      "points": -0.895,
+      "arrcHolesPlayed": 38,
+      "roundsToGo": 0,
+      "events": 19
+    },
+    {
+      "id": 4,
+      "rank": 4,
+      "fullName": "Minjee Lee",
+      "countryCode": "AUS",
       "points": -0.889,
       "arrcHolesPlayed": 36,
       "roundsToGo": 0,
       "events": 18
     },
     {
-      "id": 3,
-      "rank": 3,
-      "fullName": "Minjee Lee",
-      "countryCode": "AUS",
-      "points": -0.882,
-      "arrcHolesPlayed": 34,
-      "roundsToGo": 0,
-      "events": 17
-    },
-    {
-      "id": 4,
-      "rank": 4,
-      "fullName": "A Lim Kim",
-      "countryCode": "KOR",
+      "id": 5,
+      "rank": 5,
+      "fullName": "Celine Boutier",
+      "countryCode": "FRA",
       "points": -0.868,
       "arrcHolesPlayed": 38,
       "roundsToGo": 0,
       "events": 19
     },
     {
-      "id": 5,
-      "rank": 5,
-      "fullName": "Celine Boutier",
-      "countryCode": "FRA",
-      "points": -0.861,
-      "arrcHolesPlayed": 36,
-      "roundsToGo": 0,
-      "events": 18
-    },
-    {
       "id": 6,
       "rank": 6,
       "fullName": "Nasa Hataoka",
       "countryCode": "JPN",
-      "points": -0.853,
-      "arrcHolesPlayed": 34,
+      "points": -0.861,
+      "arrcHolesPlayed": 36,
       "roundsToGo": 0,
-      "events": 17
+      "events": 18
     },
     {
       "id": 7,
@@ -79,7 +79,27 @@
     {
       "id": 8,
       "rank": 8,
+      "fullName": "Jin Hee Im",
+      "countryCode": "KOR",
+      "points": -0.841,
+      "arrcHolesPlayed": 44,
+      "roundsToGo": 0,
+      "events": 22
+    },
+    {
+      "id": 9,
+      "rank": 9,
       "fullName": "Hye-Jin Choi",
+      "countryCode": "KOR",
+      "points": -0.825,
+      "arrcHolesPlayed": 40,
+      "roundsToGo": 0,
+      "events": 20
+    },
+    {
+      "id": 10,
+      "rank": 10,
+      "fullName": "Mi Hyang Lee",
       "countryCode": "KOR",
       "points": -0.816,
       "arrcHolesPlayed": 38,
@@ -87,28 +107,28 @@
       "events": 19
     },
     {
-      "id": 9,
-      "rank": 9,
-      "fullName": "Jin Hee Im",
-      "countryCode": "KOR",
-      "points": -0.81,
-      "arrcHolesPlayed": 42,
-      "roundsToGo": 0,
-      "events": 21
-    },
-    {
-      "id": 10,
-      "rank": 10,
-      "fullName": "Mi Hyang Lee",
-      "countryCode": "KOR",
-      "points": -0.806,
-      "arrcHolesPlayed": 36,
-      "roundsToGo": 0,
-      "events": 18
-    },
-    {
       "id": 11,
-      "rank": 11,
+      "rank": 10,
+      "fullName": "Stephanie Kyriacou",
+      "countryCode": "AUS",
+      "points": -0.816,
+      "arrcHolesPlayed": 38,
+      "roundsToGo": 0,
+      "events": 19
+    },
+    {
+      "id": 12,
+      "rank": 12,
+      "fullName": "Sarah Schmelzel",
+      "countryCode": "USA",
+      "points": -0.800,
+      "arrcHolesPlayed": 40,
+      "roundsToGo": 0,
+      "events": 20
+    },
+    {
+      "id": 13,
+      "rank": 13,
       "fullName": "Lydia Ko",
       "countryCode": "NZL",
       "points": -0.792,
@@ -117,8 +137,8 @@
       "events": 12
     },
     {
-      "id": 12,
-      "rank": 11,
+      "id": 14,
+      "rank": 13,
       "fullName": "Ruoning Yin",
       "countryCode": "CHN",
       "points": -0.792,
@@ -127,18 +147,8 @@
       "events": 12
     },
     {
-      "id": 13,
-      "rank": 13,
-      "fullName": "Sarah Schmelzel",
-      "countryCode": "USA",
-      "points": -0.789,
-      "arrcHolesPlayed": 38,
-      "roundsToGo": 0,
-      "events": 19
-    },
-    {
-      "id": 14,
-      "rank": 14,
+      "id": 15,
+      "rank": 15,
       "fullName": "Ariya Jutanugarn",
       "countryCode": "THA",
       "points": -0.786,
@@ -147,18 +157,28 @@
       "events": 14
     },
     {
-      "id": 15,
-      "rank": 15,
-      "fullName": "Stephanie Kyriacou",
-      "countryCode": "AUS",
-      "points": -0.778,
-      "arrcHolesPlayed": 36,
-      "roundsToGo": 0,
-      "events": 18
-    },
-    {
       "id": 16,
       "rank": 16,
+      "fullName": "Rio Takeda",
+      "countryCode": "JPN",
+      "points": -0.780,
+      "arrcHolesPlayed": 50,
+      "roundsToGo": 0,
+      "events": 25
+    },
+    {
+      "id": 17,
+      "rank": 17,
+      "fullName": "Auston Kim",
+      "countryCode": "USA",
+      "points": -0.775,
+      "arrcHolesPlayed": 40,
+      "roundsToGo": 0,
+      "events": 20
+    },
+    {
+      "id": 18,
+      "rank": 18,
       "fullName": "Perrine Delacour",
       "countryCode": "FRA",
       "points": -0.773,
@@ -167,78 +187,78 @@
       "events": 11
     },
     {
-      "id": 17,
-      "rank": 17,
-      "fullName": "Rio Takeda",
-      "countryCode": "JPN",
-      "points": -0.771,
-      "arrcHolesPlayed": 48,
-      "roundsToGo": 0,
-      "events": 24
-    },
-    {
-      "id": 18,
-      "rank": 18,
-      "fullName": "Ina Yoon",
-      "countryCode": "KOR",
-      "points": -0.75,
-      "arrcHolesPlayed": 40,
-      "roundsToGo": 0,
-      "events": 20
-    },
-    {
       "id": 19,
       "rank": 19,
-      "fullName": "Auston Kim",
-      "countryCode": "USA",
-      "points": -0.737,
-      "arrcHolesPlayed": 38,
+      "fullName": "Jin Young Ko",
+      "countryCode": "KOR",
+      "points": -0.765,
+      "arrcHolesPlayed": 34,
       "roundsToGo": 0,
-      "events": 19
+      "events": 17
     },
     {
       "id": 20,
       "rank": 20,
-      "fullName": "Grace Kim",
-      "countryCode": "AUS",
-      "points": -0.735,
-      "arrcHolesPlayed": 34,
+      "fullName": "Ina Yoon",
+      "countryCode": "KOR",
+      "points": -0.762,
+      "arrcHolesPlayed": 42,
       "roundsToGo": 0,
-      "events": 17
+      "events": 21
     },
     {
       "id": 21,
-      "rank": 20,
-      "fullName": "Esther Henseleit",
-      "countryCode": "GER",
-      "points": -0.735,
-      "arrcHolesPlayed": 34,
+      "rank": 21,
+      "fullName": "Grace Kim",
+      "countryCode": "AUS",
+      "points": -0.750,
+      "arrcHolesPlayed": 36,
       "roundsToGo": 0,
-      "events": 17
+      "events": 18
     },
     {
       "id": 22,
       "rank": 22,
       "fullName": "Yuri Yoshida",
       "countryCode": "JPN",
-      "points": -0.725,
-      "arrcHolesPlayed": 40,
+      "points": -0.738,
+      "arrcHolesPlayed": 42,
       "roundsToGo": 0,
-      "events": 20
+      "events": 21
     },
     {
       "id": 23,
       "rank": 23,
-      "fullName": "Nanna Koerstz Madsen",
-      "countryCode": "DEN",
+      "fullName": "Sei Young Kim",
+      "countryCode": "KOR",
+      "points": -0.735,
+      "arrcHolesPlayed": 34,
+      "roundsToGo": 0,
+      "events": 17
+    },
+    {
+      "id": 24,
+      "rank": 24,
+      "fullName": "Andrea Lee",
+      "countryCode": "USA",
       "points": -0.722,
       "arrcHolesPlayed": 36,
       "roundsToGo": 0,
       "events": 18
     },
     {
-      "id": 24,
+      "id": 25,
       "rank": 24,
+      "fullName": "Esther Henseleit",
+      "countryCode": "GER",
+      "points": -0.722,
+      "arrcHolesPlayed": 36,
+      "roundsToGo": 0,
+      "events": 18
+    },
+    {
+      "id": 26,
+      "rank": 26,
       "fullName": "Megan Khang",
       "countryCode": "USA",
       "points": -0.719,
@@ -247,8 +267,28 @@
       "events": 16
     },
     {
-      "id": 25,
-      "rank": 25,
+      "id": 27,
+      "rank": 27,
+      "fullName": "Nanna Koerstz Madsen",
+      "countryCode": "DEN",
+      "points": -0.711,
+      "arrcHolesPlayed": 38,
+      "roundsToGo": 0,
+      "events": 19
+    },
+    {
+      "id": 28,
+      "rank": 27,
+      "fullName": "Mary Liu",
+      "countryCode": "CHN",
+      "points": -0.711,
+      "arrcHolesPlayed": 38,
+      "roundsToGo": 0,
+      "events": 19
+    },
+    {
+      "id": 29,
+      "rank": 27,
       "fullName": "Ayaka Furue",
       "countryCode": "JPN",
       "points": -0.711,
@@ -257,8 +297,18 @@
       "events": 19
     },
     {
-      "id": 26,
-      "rank": 26,
+      "id": 30,
+      "rank": 27,
+      "fullName": "Chanettee Wannasaen",
+      "countryCode": "THA",
+      "points": -0.711,
+      "arrcHolesPlayed": 38,
+      "roundsToGo": 0,
+      "events": 19
+    },
+    {
+      "id": 31,
+      "rank": 31,
       "fullName": "Amy Yang",
       "countryCode": "KOR",
       "points": -0.706,
@@ -267,48 +317,48 @@
       "events": 17
     },
     {
-      "id": 27,
-      "rank": 27,
-      "fullName": "In Gee Chun",
+      "id": 32,
+      "rank": 31,
+      "fullName": "Hannah Green",
+      "countryCode": "AUS",
+      "points": -0.706,
+      "arrcHolesPlayed": 34,
+      "roundsToGo": 0,
+      "events": 17
+    },
+    {
+      "id": 33,
+      "rank": 33,
+      "fullName": "Jeongeun Lee5",
       "countryCode": "KOR",
-      "points": -0.7,
+      "points": -0.700,
       "arrcHolesPlayed": 30,
       "roundsToGo": 0,
       "events": 15
     },
     {
-      "id": 28,
-      "rank": 27,
+      "id": 34,
+      "rank": 34,
+      "fullName": "Somi Lee",
+      "countryCode": "KOR",
+      "points": -0.690,
+      "arrcHolesPlayed": 42,
+      "roundsToGo": 0,
+      "events": 21
+    },
+    {
+      "id": 35,
+      "rank": 34,
       "fullName": "Akie Iwai",
       "countryCode": "JPN",
-      "points": -0.7,
-      "arrcHolesPlayed": 40,
+      "points": -0.690,
+      "arrcHolesPlayed": 42,
       "roundsToGo": 0,
-      "events": 20
+      "events": 21
     },
     {
-      "id": 29,
-      "rank": 29,
-      "fullName": "Mary Liu",
-      "countryCode": "CHN",
-      "points": -0.694,
-      "arrcHolesPlayed": 36,
-      "roundsToGo": 0,
-      "events": 18
-    },
-    {
-      "id": 30,
-      "rank": 29,
-      "fullName": "Chanettee Wannasaen",
-      "countryCode": "THA",
-      "points": -0.694,
-      "arrcHolesPlayed": 36,
-      "roundsToGo": 0,
-      "events": 18
-    },
-    {
-      "id": 31,
-      "rank": 31,
+      "id": 36,
+      "rank": 36,
       "fullName": "Angel Yin",
       "countryCode": "USA",
       "points": -0.688,
@@ -317,9 +367,9 @@
       "events": 16
     },
     {
-      "id": 32,
-      "rank": 31,
-      "fullName": "Sei Young Kim",
+      "id": 37,
+      "rank": 36,
+      "fullName": "In Gee Chun",
       "countryCode": "KOR",
       "points": -0.688,
       "arrcHolesPlayed": 32,
@@ -327,18 +377,8 @@
       "events": 16
     },
     {
-      "id": 33,
-      "rank": 31,
-      "fullName": "Jin Young Ko",
-      "countryCode": "KOR",
-      "points": -0.688,
-      "arrcHolesPlayed": 32,
-      "roundsToGo": 0,
-      "events": 16
-    },
-    {
-      "id": 34,
-      "rank": 31,
+      "id": 38,
+      "rank": 36,
       "fullName": "Patty Tavatanakit",
       "countryCode": "THA",
       "points": -0.688,
@@ -347,38 +387,68 @@
       "events": 16
     },
     {
-      "id": 35,
-      "rank": 35,
-      "fullName": "Jeongeun Lee5",
+      "id": 39,
+      "rank": 36,
+      "fullName": "Kumkang Park",
       "countryCode": "KOR",
+      "points": -0.688,
+      "arrcHolesPlayed": 32,
+      "roundsToGo": 0,
+      "events": 16
+    },
+    {
+      "id": 40,
+      "rank": 40,
+      "fullName": "Yan Liu",
+      "countryCode": "CHN",
+      "points": -0.684,
+      "arrcHolesPlayed": 38,
+      "roundsToGo": 0,
+      "events": 19
+    },
+    {
+      "id": 41,
+      "rank": 41,
+      "fullName": "Minami Katsu",
+      "countryCode": "JPN",
+      "points": -0.682,
+      "arrcHolesPlayed": 44,
+      "roundsToGo": 0,
+      "events": 22
+    },
+    {
+      "id": 42,
+      "rank": 42,
+      "fullName": "Robyn Choi",
+      "countryCode": "AUS",
       "points": -0.679,
       "arrcHolesPlayed": 28,
       "roundsToGo": 0,
       "events": 14
     },
     {
-      "id": 36,
-      "rank": 36,
-      "fullName": "Andrea Lee",
+      "id": 43,
+      "rank": 43,
+      "fullName": "Lucy Li",
       "countryCode": "USA",
-      "points": -0.676,
-      "arrcHolesPlayed": 34,
-      "roundsToGo": 0,
-      "events": 17
-    },
-    {
-      "id": 37,
-      "rank": 37,
-      "fullName": "Somi Lee",
-      "countryCode": "KOR",
       "points": -0.675,
       "arrcHolesPlayed": 40,
       "roundsToGo": 0,
       "events": 20
     },
     {
-      "id": 38,
-      "rank": 38,
+      "id": 44,
+      "rank": 43,
+      "fullName": "Julia Lopez Ramirez",
+      "countryCode": "ESP",
+      "points": -0.675,
+      "arrcHolesPlayed": 40,
+      "roundsToGo": 0,
+      "events": 20
+    },
+    {
+      "id": 45,
+      "rank": 45,
       "fullName": "Charley Hull",
       "countryCode": "ENG",
       "points": -0.667,
@@ -387,38 +457,18 @@
       "events": 12
     },
     {
-      "id": 39,
-      "rank": 38,
-      "fullName": "Yan Liu",
-      "countryCode": "CHN",
+      "id": 46,
+      "rank": 45,
+      "fullName": "Haeran Ryu",
+      "countryCode": "KOR",
       "points": -0.667,
       "arrcHolesPlayed": 36,
       "roundsToGo": 0,
       "events": 18
     },
     {
-      "id": 40,
-      "rank": 38,
-      "fullName": "Kumkang Park",
-      "countryCode": "KOR",
-      "points": -0.667,
-      "arrcHolesPlayed": 30,
-      "roundsToGo": 0,
-      "events": 15
-    },
-    {
-      "id": 41,
-      "rank": 38,
-      "fullName": "Gabriela Ruffels",
-      "countryCode": "AUS",
-      "points": -0.667,
-      "arrcHolesPlayed": 42,
-      "roundsToGo": 0,
-      "events": 21
-    },
-    {
-      "id": 42,
-      "rank": 38,
+      "id": 47,
+      "rank": 45,
       "fullName": "Ana Belac",
       "countryCode": "SLO",
       "points": -0.667,
@@ -427,19 +477,29 @@
       "events": 12
     },
     {
-      "id": 43,
-      "rank": 43,
-      "fullName": "Lucy Li",
-      "countryCode": "USA",
+      "id": 48,
+      "rank": 48,
+      "fullName": "Gabriela Ruffels",
+      "countryCode": "AUS",
+      "points": -0.659,
+      "arrcHolesPlayed": 44,
+      "roundsToGo": 0,
+      "events": 22
+    },
+    {
+      "id": 49,
+      "rank": 49,
+      "fullName": "Gaby Lopez",
+      "countryCode": "MEX",
       "points": -0.658,
       "arrcHolesPlayed": 38,
       "roundsToGo": 0,
       "events": 19
     },
     {
-      "id": 44,
-      "rank": 44,
-      "fullName": "Ruixin Liu",
+      "id": 50,
+      "rank": 50,
+      "fullName": "Ruoxin Liu",
       "countryCode": "CHN",
       "points": -0.656,
       "arrcHolesPlayed": 32,
@@ -447,18 +507,8 @@
       "events": 16
     },
     {
-      "id": 45,
-      "rank": 44,
-      "fullName": "Hannah Green",
-      "countryCode": "AUS",
-      "points": -0.656,
-      "arrcHolesPlayed": 32,
-      "roundsToGo": 0,
-      "events": 16
-    },
-    {
-      "id": 46,
-      "rank": 44,
+      "id": 51,
+      "rank": 50,
       "fullName": "Frida Kinhult",
       "countryCode": "SWE",
       "points": -0.656,
@@ -467,8 +517,8 @@
       "events": 16
     },
     {
-      "id": 47,
-      "rank": 44,
+      "id": 52,
+      "rank": 50,
       "fullName": "Mao Saigo",
       "countryCode": "JPN",
       "points": -0.656,
@@ -477,8 +527,8 @@
       "events": 16
     },
     {
-      "id": 48,
-      "rank": 44,
+      "id": 53,
+      "rank": 50,
       "fullName": "Yahui Zhang",
       "countryCode": "CHN",
       "points": -0.656,
@@ -487,8 +537,8 @@
       "events": 16
     },
     {
-      "id": 49,
-      "rank": 49,
+      "id": 54,
+      "rank": 54,
       "fullName": "Alena Sharp",
       "countryCode": "CAN",
       "points": -0.654,
@@ -497,38 +547,38 @@
       "events": 13
     },
     {
-      "id": 50,
-      "rank": 49,
-      "fullName": "Robyn Choi",
-      "countryCode": "AUS",
-      "points": -0.654,
-      "arrcHolesPlayed": 26,
+      "id": 55,
+      "rank": 55,
+      "fullName": "Brooke M. Henderson",
+      "countryCode": "CAN",
+      "points": -0.650,
+      "arrcHolesPlayed": 40,
       "roundsToGo": 0,
-      "events": 13
+      "events": 20
     },
     {
-      "id": 51,
-      "rank": 51,
-      "fullName": "Haeran Ryu",
-      "countryCode": "KOR",
-      "points": -0.647,
-      "arrcHolesPlayed": 34,
+      "id": 56,
+      "rank": 55,
+      "fullName": "Brooke Matthews",
+      "countryCode": "USA",
+      "points": -0.650,
+      "arrcHolesPlayed": 40,
       "roundsToGo": 0,
-      "events": 17
+      "events": 20
     },
     {
-      "id": 52,
-      "rank": 52,
-      "fullName": "Hyo Joo Kim",
-      "countryCode": "KOR",
-      "points": -0.643,
-      "arrcHolesPlayed": 28,
+      "id": 57,
+      "rank": 55,
+      "fullName": "Miyu Yamashita",
+      "countryCode": "JPN",
+      "points": -0.650,
+      "arrcHolesPlayed": 40,
       "roundsToGo": 0,
-      "events": 14
+      "events": 20
     },
     {
-      "id": 53,
-      "rank": 52,
+      "id": 58,
+      "rank": 58,
       "fullName": "Pajaree Anannarukarn",
       "countryCode": "THA",
       "points": -0.643,
@@ -537,9 +587,9 @@
       "events": 21
     },
     {
-      "id": 54,
-      "rank": 52,
-      "fullName": "Minami Katsu",
+      "id": 59,
+      "rank": 58,
+      "fullName": "Chisato Iwai",
       "countryCode": "JPN",
       "points": -0.643,
       "arrcHolesPlayed": 42,
@@ -547,8 +597,18 @@
       "events": 21
     },
     {
-      "id": 55,
-      "rank": 55,
+      "id": 60,
+      "rank": 60,
+      "fullName": "Yealimi Noh",
+      "countryCode": "USA",
+      "points": -0.639,
+      "arrcHolesPlayed": 36,
+      "roundsToGo": 0,
+      "events": 18
+    },
+    {
+      "id": 61,
+      "rank": 60,
       "fullName": "Soo Bin Joo",
       "countryCode": "KOR",
       "points": -0.639,
@@ -557,91 +617,31 @@
       "events": 18
     },
     {
-      "id": 56,
-      "rank": 56,
-      "fullName": "Brooke M. Henderson",
-      "countryCode": "CAN",
-      "points": -0.632,
-      "arrcHolesPlayed": 38,
-      "roundsToGo": 0,
-      "events": 19
-    },
-    {
-      "id": 57,
-      "rank": 56,
-      "fullName": "Miyu Yamashita",
-      "countryCode": "JPN",
-      "points": -0.632,
-      "arrcHolesPlayed": 38,
-      "roundsToGo": 0,
-      "events": 19
-    },
-    {
-      "id": 58,
-      "rank": 56,
-      "fullName": "Julia Lopez Ramirez",
-      "countryCode": "ESP",
-      "points": -0.632,
-      "arrcHolesPlayed": 38,
-      "roundsToGo": 0,
-      "events": 19
-    },
-    {
-      "id": 59,
-      "rank": 59,
-      "fullName": "Chisato Iwai",
-      "countryCode": "JPN",
-      "points": -0.625,
-      "arrcHolesPlayed": 40,
-      "roundsToGo": 0,
-      "events": 20
-    },
-    {
-      "id": 60,
-      "rank": 60,
-      "fullName": "Yealimi Noh",
-      "countryCode": "USA",
-      "points": -0.618,
-      "arrcHolesPlayed": 34,
-      "roundsToGo": 0,
-      "events": 17
-    },
-    {
-      "id": 61,
-      "rank": 61,
-      "fullName": "Gaby Lopez",
-      "countryCode": "MEX",
-      "points": -0.611,
-      "arrcHolesPlayed": 36,
-      "roundsToGo": 0,
-      "events": 18
-    },
-    {
       "id": 62,
-      "rank": 61,
-      "fullName": "Jenny Shin",
+      "rank": 62,
+      "fullName": "Hyo Joo Kim",
       "countryCode": "KOR",
-      "points": -0.611,
-      "arrcHolesPlayed": 36,
+      "points": -0.633,
+      "arrcHolesPlayed": 30,
       "roundsToGo": 0,
-      "events": 18
+      "events": 15
     },
     {
       "id": 63,
-      "rank": 61,
-      "fullName": "Gemma Dryburgh",
-      "countryCode": "SCO",
-      "points": -0.611,
-      "arrcHolesPlayed": 36,
+      "rank": 63,
+      "fullName": "Jenny Shin",
+      "countryCode": "KOR",
+      "points": -0.632,
+      "arrcHolesPlayed": 38,
       "roundsToGo": 0,
-      "events": 18
+      "events": 19
     },
     {
       "id": 64,
-      "rank": 64,
-      "fullName": "Brooke Matthews",
-      "countryCode": "USA",
-      "points": -0.605,
+      "rank": 63,
+      "fullName": "Gemma Dryburgh",
+      "countryCode": "SCO",
+      "points": -0.632,
       "arrcHolesPlayed": 38,
       "roundsToGo": 0,
       "events": 19
@@ -649,6 +649,96 @@
     {
       "id": 65,
       "rank": 65,
+      "fullName": "Linn Grant",
+      "countryCode": "SWE",
+      "points": -0.618,
+      "arrcHolesPlayed": 34,
+      "roundsToGo": 0,
+      "events": 17
+    },
+    {
+      "id": 66,
+      "rank": 66,
+      "fullName": "Jenny Bae",
+      "countryCode": "USA",
+      "points": -0.605,
+      "arrcHolesPlayed": 38,
+      "roundsToGo": 0,
+      "events": 19
+    },
+    {
+      "id": 67,
+      "rank": 67,
+      "fullName": "Lindy Duncan",
+      "countryCode": "USA",
+      "points": -0.600,
+      "arrcHolesPlayed": 40,
+      "roundsToGo": 0,
+      "events": 20
+    },
+    {
+      "id": 68,
+      "rank": 68,
+      "fullName": "Leona Maguire",
+      "countryCode": "IRL",
+      "points": -0.595,
+      "arrcHolesPlayed": 42,
+      "roundsToGo": 0,
+      "events": 21
+    },
+    {
+      "id": 69,
+      "rank": 68,
+      "fullName": "Allisen Corpuz",
+      "countryCode": "USA",
+      "points": -0.595,
+      "arrcHolesPlayed": 42,
+      "roundsToGo": 0,
+      "events": 21
+    },
+    {
+      "id": 70,
+      "rank": 70,
+      "fullName": "Carlota Ciganda",
+      "countryCode": "ESP",
+      "points": -0.594,
+      "arrcHolesPlayed": 32,
+      "roundsToGo": 0,
+      "events": 16
+    },
+    {
+      "id": 71,
+      "rank": 71,
+      "fullName": "Lauren Coughlin",
+      "countryCode": "USA",
+      "points": -0.583,
+      "arrcHolesPlayed": 36,
+      "roundsToGo": 0,
+      "events": 18
+    },
+    {
+      "id": 72,
+      "rank": 71,
+      "fullName": "Manon De Roey",
+      "countryCode": "BEL",
+      "points": -0.583,
+      "arrcHolesPlayed": 36,
+      "roundsToGo": 0,
+      "events": 18
+    },
+    {
+      "id": 73,
+      "rank": 71,
+      "fullName": "Miranda Wang",
+      "countryCode": "CHN",
+      "points": -0.583,
+      "arrcHolesPlayed": 36,
+      "roundsToGo": 0,
+      "events": 18
+    },
+    {
+      "id": 74,
+      "rank": 71,
       "fullName": "Aline Krauter",
       "countryCode": "GER",
       "points": -0.583,
@@ -657,48 +747,18 @@
       "events": 12
     },
     {
-      "id": 66,
-      "rank": 65,
-      "fullName": "Jenny Bae",
-      "countryCode": "USA",
-      "points": -0.583,
-      "arrcHolesPlayed": 36,
+      "id": 75,
+      "rank": 75,
+      "fullName": "Paula Reto",
+      "countryCode": "RSA",
+      "points": -0.571,
+      "arrcHolesPlayed": 42,
       "roundsToGo": 0,
-      "events": 18
+      "events": 21
     },
     {
-      "id": 67,
-      "rank": 67,
-      "fullName": "Lindy Duncan",
-      "countryCode": "USA",
-      "points": -0.579,
-      "arrcHolesPlayed": 38,
-      "roundsToGo": 0,
-      "events": 19
-    },
-    {
-      "id": 68,
-      "rank": 68,
-      "fullName": "Leona Maguire",
-      "countryCode": "IRL",
-      "points": -0.575,
-      "arrcHolesPlayed": 40,
-      "roundsToGo": 0,
-      "events": 20
-    },
-    {
-      "id": 69,
-      "rank": 68,
-      "fullName": "Allisen Corpuz",
-      "countryCode": "USA",
-      "points": -0.575,
-      "arrcHolesPlayed": 40,
-      "roundsToGo": 0,
-      "events": 20
-    },
-    {
-      "id": 70,
-      "rank": 70,
+      "id": 76,
+      "rank": 75,
       "fullName": "Elizabeth Szokol",
       "countryCode": "USA",
       "points": -0.571,
@@ -707,38 +767,8 @@
       "events": 14
     },
     {
-      "id": 71,
-      "rank": 71,
-      "fullName": "Carlota Ciganda",
-      "countryCode": "ESP",
-      "points": -0.567,
-      "arrcHolesPlayed": 30,
-      "roundsToGo": 0,
-      "events": 15
-    },
-    {
-      "id": 72,
-      "rank": 72,
-      "fullName": "Linn Grant",
-      "countryCode": "SWE",
-      "points": -0.563,
-      "arrcHolesPlayed": 32,
-      "roundsToGo": 0,
-      "events": 16
-    },
-    {
-      "id": 73,
-      "rank": 73,
-      "fullName": "Lauren Coughlin",
-      "countryCode": "USA",
-      "points": -0.559,
-      "arrcHolesPlayed": 34,
-      "roundsToGo": 0,
-      "events": 17
-    },
-    {
-      "id": 74,
-      "rank": 73,
+      "id": 77,
+      "rank": 77,
       "fullName": "Peiyun Chien",
       "countryCode": "TPE",
       "points": -0.559,
@@ -747,41 +777,11 @@
       "events": 17
     },
     {
-      "id": 75,
-      "rank": 73,
-      "fullName": "Manon De Roey",
-      "countryCode": "BEL",
-      "points": -0.559,
-      "arrcHolesPlayed": 34,
-      "roundsToGo": 0,
-      "events": 17
-    },
-    {
-      "id": 76,
-      "rank": 73,
-      "fullName": "Miranda Wang",
-      "countryCode": "CHN",
-      "points": -0.559,
-      "arrcHolesPlayed": 34,
-      "roundsToGo": 0,
-      "events": 17
-    },
-    {
-      "id": 77,
-      "rank": 77,
-      "fullName": "Paula Reto",
-      "countryCode": "RSA",
-      "points": -0.55,
-      "arrcHolesPlayed": 40,
-      "roundsToGo": 0,
-      "events": 20
-    },
-    {
       "id": 78,
-      "rank": 77,
+      "rank": 78,
       "fullName": "Lexi Thompson",
       "countryCode": "USA",
-      "points": -0.55,
+      "points": -0.550,
       "arrcHolesPlayed": 20,
       "roundsToGo": 6,
       "events": 10
@@ -809,6 +809,16 @@
     {
       "id": 81,
       "rank": 81,
+      "fullName": "Sung Hyun Park",
+      "countryCode": "KOR",
+      "points": -0.533,
+      "arrcHolesPlayed": 30,
+      "roundsToGo": 0,
+      "events": 15
+    },
+    {
+      "id": 82,
+      "rank": 82,
       "fullName": "Emily Kristine Pedersen",
       "countryCode": "DEN",
       "points": -0.529,
@@ -817,8 +827,38 @@
       "events": 17
     },
     {
-      "id": 82,
+      "id": 83,
       "rank": 82,
+      "fullName": "Madelene Sagstrom",
+      "countryCode": "SWE",
+      "points": -0.529,
+      "arrcHolesPlayed": 34,
+      "roundsToGo": 0,
+      "events": 17
+    },
+    {
+      "id": 84,
+      "rank": 82,
+      "fullName": "Maja Stark",
+      "countryCode": "SWE",
+      "points": -0.529,
+      "arrcHolesPlayed": 34,
+      "roundsToGo": 0,
+      "events": 17
+    },
+    {
+      "id": 85,
+      "rank": 85,
+      "fullName": "Ashleigh Buhai",
+      "countryCode": "RSA",
+      "points": -0.526,
+      "arrcHolesPlayed": 38,
+      "roundsToGo": 0,
+      "events": 19
+    },
+    {
+      "id": 86,
+      "rank": 86,
       "fullName": "Alexa Pano",
       "countryCode": "USA",
       "points": -0.525,
@@ -827,128 +867,108 @@
       "events": 20
     },
     {
-      "id": 83,
-      "rank": 83,
-      "fullName": "Ashleigh Buhai",
-      "countryCode": "RSA",
-      "points": -0.5,
-      "arrcHolesPlayed": 36,
-      "roundsToGo": 0,
-      "events": 18
-    },
-    {
-      "id": 84,
-      "rank": 83,
+      "id": 87,
+      "rank": 87,
       "fullName": "Stacy Lewis",
       "countryCode": "USA",
-      "points": -0.5,
+      "points": -0.500,
       "arrcHolesPlayed": 30,
       "roundsToGo": 0,
       "events": 15
     },
     {
-      "id": 85,
-      "rank": 83,
+      "id": 88,
+      "rank": 87,
       "fullName": "Wei-Ling Hsu",
       "countryCode": "TPE",
-      "points": -0.5,
-      "arrcHolesPlayed": 36,
-      "roundsToGo": 0,
-      "events": 18
-    },
-    {
-      "id": 86,
-      "rank": 83,
-      "fullName": "Madelene Sagstrom",
-      "countryCode": "SWE",
-      "points": -0.5,
-      "arrcHolesPlayed": 32,
-      "roundsToGo": 0,
-      "events": 16
-    },
-    {
-      "id": 87,
-      "rank": 83,
-      "fullName": "Sung Hyun Park",
-      "countryCode": "KOR",
-      "points": -0.5,
-      "arrcHolesPlayed": 28,
-      "roundsToGo": 3,
-      "events": 14
-    },
-    {
-      "id": 88,
-      "rank": 83,
-      "fullName": "Dewi Weber",
-      "countryCode": "NED",
-      "points": -0.5,
+      "points": -0.500,
       "arrcHolesPlayed": 36,
       "roundsToGo": 0,
       "events": 18
     },
     {
       "id": 89,
-      "rank": 83,
-      "fullName": "Xiaowen Yin",
+      "rank": 87,
+      "fullName": "Weiwei Zhang",
       "countryCode": "CHN",
-      "points": -0.5,
-      "arrcHolesPlayed": 24,
-      "roundsToGo": 4,
-      "events": 12
+      "points": -0.500,
+      "arrcHolesPlayed": 38,
+      "roundsToGo": 0,
+      "events": 19
     },
     {
       "id": 90,
-      "rank": 83,
-      "fullName": "Hinako Shibuno",
-      "countryCode": "JPN",
-      "points": -0.5,
-      "arrcHolesPlayed": 40,
-      "roundsToGo": 0,
-      "events": 20
-    },
-    {
-      "id": 91,
-      "rank": 83,
-      "fullName": "Caley McGinty",
-      "countryCode": "ENG",
-      "points": -0.5,
-      "arrcHolesPlayed": 24,
-      "roundsToGo": 9,
-      "events": 12
-    },
-    {
-      "id": 92,
-      "rank": 92,
-      "fullName": "Nataliya Guseva",
-      "countryCode": "UNA",
-      "points": -0.477,
-      "arrcHolesPlayed": 44,
-      "roundsToGo": 0,
-      "events": 22
-    },
-    {
-      "id": 93,
-      "rank": 93,
-      "fullName": "Weiwei Zhang",
-      "countryCode": "CHN",
-      "points": -0.472,
+      "rank": 87,
+      "fullName": "Dewi Weber",
+      "countryCode": "NED",
+      "points": -0.500,
       "arrcHolesPlayed": 36,
       "roundsToGo": 0,
       "events": 18
     },
     {
+      "id": 91,
+      "rank": 87,
+      "fullName": "Xiaowen Yin",
+      "countryCode": "CHN",
+      "points": -0.500,
+      "arrcHolesPlayed": 24,
+      "roundsToGo": 4,
+      "events": 12
+    },
+    {
+      "id": 92,
+      "rank": 87,
+      "fullName": "Ingrid Lindblad",
+      "countryCode": "SWE",
+      "points": -0.500,
+      "arrcHolesPlayed": 32,
+      "roundsToGo": 0,
+      "events": 16
+    },
+    {
+      "id": 93,
+      "rank": 87,
+      "fullName": "Hinako Shibuno",
+      "countryCode": "JPN",
+      "points": -0.500,
+      "arrcHolesPlayed": 40,
+      "roundsToGo": 0,
+      "events": 20
+    },
+    {
       "id": 94,
-      "rank": 94,
+      "rank": 87,
       "fullName": "Narin An",
       "countryCode": "KOR",
-      "points": -0.471,
-      "arrcHolesPlayed": 34,
+      "points": -0.500,
+      "arrcHolesPlayed": 36,
       "roundsToGo": 0,
-      "events": 17
+      "events": 18
     },
     {
       "id": 95,
-      "rank": 95,
+      "rank": 87,
+      "fullName": "Nataliya Guseva",
+      "countryCode": "UNA",
+      "points": -0.500,
+      "arrcHolesPlayed": 46,
+      "roundsToGo": 0,
+      "events": 23
+    },
+    {
+      "id": 96,
+      "rank": 87,
+      "fullName": "Caley McGinty",
+      "countryCode": "ENG",
+      "points": -0.500,
+      "arrcHolesPlayed": 24,
+      "roundsToGo": 9,
+      "events": 12
+    },
+    {
+      "id": 97,
+      "rank": 97,
       "fullName": "Aditi Ashok",
       "countryCode": "IND",
       "points": -0.469,
@@ -957,18 +977,28 @@
       "events": 16
     },
     {
-      "id": 96,
-      "rank": 95,
-      "fullName": "Maja Stark",
-      "countryCode": "SWE",
+      "id": 98,
+      "rank": 97,
+      "fullName": "Karis Davidson",
+      "countryCode": "AUS",
       "points": -0.469,
       "arrcHolesPlayed": 32,
       "roundsToGo": 0,
       "events": 16
     },
     {
-      "id": 97,
+      "id": 99,
       "rank": 97,
+      "fullName": "Gurleen Kaur",
+      "countryCode": "USA",
+      "points": -0.469,
+      "arrcHolesPlayed": 32,
+      "roundsToGo": 0,
+      "events": 16
+    },
+    {
+      "id": 100,
+      "rank": 100,
       "fullName": "Ryann O'Toole",
       "countryCode": "USA",
       "points": -0.467,
@@ -977,18 +1007,8 @@
       "events": 15
     },
     {
-      "id": 98,
-      "rank": 97,
-      "fullName": "Ingrid Lindblad",
-      "countryCode": "SWE",
-      "points": -0.467,
-      "arrcHolesPlayed": 30,
-      "roundsToGo": 0,
-      "events": 15
-    },
-    {
-      "id": 99,
-      "rank": 99,
+      "id": 101,
+      "rank": 101,
       "fullName": "Madison Young",
       "countryCode": "USA",
       "points": -0.464,
@@ -997,8 +1017,8 @@
       "events": 14
     },
     {
-      "id": 100,
-      "rank": 100,
+      "id": 102,
+      "rank": 102,
       "fullName": "Pornanong Phatlum",
       "countryCode": "THA",
       "points": -0.462,
@@ -1007,8 +1027,8 @@
       "events": 13
     },
     {
-      "id": 101,
-      "rank": 101,
+      "id": 103,
+      "rank": 103,
       "fullName": "Georgia Hall",
       "countryCode": "ENG",
       "points": -0.458,
@@ -1017,8 +1037,8 @@
       "events": 12
     },
     {
-      "id": 102,
-      "rank": 102,
+      "id": 104,
+      "rank": 104,
       "fullName": "Olivia Cowan",
       "countryCode": "GER",
       "points": -0.455,
@@ -1027,18 +1047,18 @@
       "events": 11
     },
     {
-      "id": 103,
-      "rank": 103,
+      "id": 105,
+      "rank": 105,
       "fullName": "Jing Yan",
       "countryCode": "CHN",
-      "points": -0.45,
+      "points": -0.450,
       "arrcHolesPlayed": 20,
       "roundsToGo": 9,
       "events": 10
     },
     {
-      "id": 104,
-      "rank": 104,
+      "id": 106,
+      "rank": 106,
       "fullName": "Jasmine Suwannapura",
       "countryCode": "THA",
       "points": -0.447,
@@ -1047,18 +1067,28 @@
       "events": 19
     },
     {
-      "id": 105,
-      "rank": 105,
-      "fullName": "Bronte Law",
-      "countryCode": "ENG",
-      "points": -0.444,
-      "arrcHolesPlayed": 18,
-      "roundsToGo": 16,
-      "events": 9
+      "id": 107,
+      "rank": 106,
+      "fullName": "Saki Baba",
+      "countryCode": "JPN",
+      "points": -0.447,
+      "arrcHolesPlayed": 38,
+      "roundsToGo": 0,
+      "events": 19
     },
     {
-      "id": 106,
-      "rank": 106,
+      "id": 108,
+      "rank": 108,
+      "fullName": "Benedetta Moresco",
+      "countryCode": "ITA",
+      "points": -0.444,
+      "arrcHolesPlayed": 36,
+      "roundsToGo": 0,
+      "events": 18
+    },
+    {
+      "id": 109,
+      "rank": 109,
       "fullName": "Yu Liu",
       "countryCode": "CHN",
       "points": -0.441,
@@ -1067,8 +1097,8 @@
       "events": 17
     },
     {
-      "id": 107,
-      "rank": 107,
+      "id": 110,
+      "rank": 110,
       "fullName": "Celine Borge",
       "countryCode": "NOR",
       "points": -0.438,
@@ -1077,8 +1107,8 @@
       "events": 16
     },
     {
-      "id": 108,
-      "rank": 108,
+      "id": 111,
+      "rank": 111,
       "fullName": "Azahara Munoz",
       "countryCode": "ESP",
       "points": -0.433,
@@ -1087,18 +1117,8 @@
       "events": 15
     },
     {
-      "id": 109,
-      "rank": 108,
-      "fullName": "Karis Davidson",
-      "countryCode": "AUS",
-      "points": -0.433,
-      "arrcHolesPlayed": 30,
-      "roundsToGo": 0,
-      "events": 15
-    },
-    {
-      "id": 110,
-      "rank": 108,
+      "id": 112,
+      "rank": 111,
       "fullName": "Lauren Hartlage",
       "countryCode": "USA",
       "points": -0.433,
@@ -1107,8 +1127,18 @@
       "events": 15
     },
     {
-      "id": 111,
-      "rank": 111,
+      "id": 113,
+      "rank": 113,
+      "fullName": "Cassie Porter",
+      "countryCode": "AUS",
+      "points": -0.425,
+      "arrcHolesPlayed": 40,
+      "roundsToGo": 0,
+      "events": 20
+    },
+    {
+      "id": 114,
+      "rank": 114,
       "fullName": "Linnea Strom",
       "countryCode": "SWE",
       "points": -0.421,
@@ -1117,8 +1147,8 @@
       "events": 19
     },
     {
-      "id": 112,
-      "rank": 111,
+      "id": 115,
+      "rank": 114,
       "fullName": "Hira Naveed",
       "countryCode": "AUS",
       "points": -0.421,
@@ -1127,8 +1157,8 @@
       "events": 19
     },
     {
-      "id": 113,
-      "rank": 113,
+      "id": 116,
+      "rank": 116,
       "fullName": "Muni He",
       "countryCode": "CHN",
       "points": -0.417,
@@ -1137,18 +1167,8 @@
       "events": 12
     },
     {
-      "id": 114,
-      "rank": 113,
-      "fullName": "Saki Baba",
-      "countryCode": "JPN",
-      "points": -0.417,
-      "arrcHolesPlayed": 36,
-      "roundsToGo": 0,
-      "events": 18
-    },
-    {
-      "id": 115,
-      "rank": 115,
+      "id": 117,
+      "rank": 117,
       "fullName": "Bailey Tardy",
       "countryCode": "USA",
       "points": -0.412,
@@ -1157,18 +1177,8 @@
       "events": 17
     },
     {
-      "id": 116,
-      "rank": 115,
-      "fullName": "Benedetta Moresco",
-      "countryCode": "ITA",
-      "points": -0.412,
-      "arrcHolesPlayed": 34,
-      "roundsToGo": 0,
-      "events": 17
-    },
-    {
-      "id": 117,
-      "rank": 117,
+      "id": 118,
+      "rank": 118,
       "fullName": "Rose Zhang",
       "countryCode": "USA",
       "points": -0.409,
@@ -1177,51 +1187,41 @@
       "events": 11
     },
     {
-      "id": 118,
-      "rank": 118,
+      "id": 119,
+      "rank": 119,
       "fullName": "Brianna Do",
       "countryCode": "USA",
-      "points": -0.4,
+      "points": -0.400,
       "arrcHolesPlayed": 20,
       "roundsToGo": 9,
       "events": 10
     },
     {
-      "id": 119,
-      "rank": 118,
+      "id": 120,
+      "rank": 119,
       "fullName": "Caroline Masson",
       "countryCode": "GER",
-      "points": -0.4,
-      "arrcHolesPlayed": 30,
-      "roundsToGo": 0,
-      "events": 15
-    },
-    {
-      "id": 120,
-      "rank": 118,
-      "fullName": "Bianca Pagdanganan",
-      "countryCode": "PHI",
-      "points": -0.4,
+      "points": -0.400,
       "arrcHolesPlayed": 30,
       "roundsToGo": 0,
       "events": 15
     },
     {
       "id": 121,
-      "rank": 118,
-      "fullName": "Gurleen Kaur",
-      "countryCode": "USA",
-      "points": -0.4,
+      "rank": 119,
+      "fullName": "Bianca Pagdanganan",
+      "countryCode": "PHI",
+      "points": -0.400,
       "arrcHolesPlayed": 30,
       "roundsToGo": 0,
       "events": 15
     },
     {
       "id": 122,
-      "rank": 118,
+      "rank": 119,
       "fullName": "Arpichaya Yubol",
       "countryCode": "THA",
-      "points": -0.4,
+      "points": -0.400,
       "arrcHolesPlayed": 40,
       "roundsToGo": 0,
       "events": 20
@@ -1238,17 +1238,7 @@
     },
     {
       "id": 124,
-      "rank": 123,
-      "fullName": "Cassie Porter",
-      "countryCode": "AUS",
-      "points": -0.395,
-      "arrcHolesPlayed": 38,
-      "roundsToGo": 0,
-      "events": 19
-    },
-    {
-      "id": 125,
-      "rank": 125,
+      "rank": 124,
       "fullName": "Hyo Joon Jang",
       "countryCode": "KOR",
       "points": -0.393,
@@ -1257,28 +1247,18 @@
       "events": 14
     },
     {
+      "id": 125,
+      "rank": 125,
+      "fullName": "Pauline Roussin-Bouchard",
+      "countryCode": "FRA",
+      "points": -0.389,
+      "arrcHolesPlayed": 36,
+      "roundsToGo": 0,
+      "events": 18
+    },
+    {
       "id": 126,
       "rank": 126,
-      "fullName": "Sofia Garcia",
-      "countryCode": "PAR",
-      "points": -0.389,
-      "arrcHolesPlayed": 18,
-      "roundsToGo": 16,
-      "events": 9
-    },
-    {
-      "id": 127,
-      "rank": 127,
-      "fullName": "Haeji Kang",
-      "countryCode": "KOR",
-      "points": -0.385,
-      "arrcHolesPlayed": 26,
-      "roundsToGo": 6,
-      "events": 13
-    },
-    {
-      "id": 128,
-      "rank": 128,
       "fullName": "Gigi Stoll",
       "countryCode": "USA",
       "points": -0.375,
@@ -1287,8 +1267,8 @@
       "events": 16
     },
     {
-      "id": 129,
-      "rank": 129,
+      "id": 127,
+      "rank": 127,
       "fullName": "Jiwon Jeon",
       "countryCode": "KOR",
       "points": -0.361,
@@ -1297,28 +1277,28 @@
       "events": 18
     },
     {
-      "id": 130,
-      "rank": 130,
-      "fullName": "Pauline Roussin-Bouchard",
-      "countryCode": "FRA",
-      "points": -0.353,
-      "arrcHolesPlayed": 34,
-      "roundsToGo": 0,
-      "events": 17
+      "id": 128,
+      "rank": 128,
+      "fullName": "Haeji Kang",
+      "countryCode": "KOR",
+      "points": -0.357,
+      "arrcHolesPlayed": 28,
+      "roundsToGo": 4,
+      "events": 14
     },
     {
-      "id": 131,
-      "rank": 131,
+      "id": 129,
+      "rank": 128,
       "fullName": "Kristen Gillman",
       "countryCode": "USA",
-      "points": -0.35,
-      "arrcHolesPlayed": 40,
+      "points": -0.357,
+      "arrcHolesPlayed": 42,
       "roundsToGo": 0,
-      "events": 20
+      "events": 21
     },
     {
-      "id": 132,
-      "rank": 132,
+      "id": 130,
+      "rank": 130,
       "fullName": "Albane Valenzuela",
       "countryCode": "SUI",
       "points": -0.344,
@@ -1327,8 +1307,28 @@
       "events": 16
     },
     {
+      "id": 131,
+      "rank": 131,
+      "fullName": "Jeongeun Lee6",
+      "countryCode": "KOR",
+      "points": -0.324,
+      "arrcHolesPlayed": 34,
+      "roundsToGo": 0,
+      "events": 17
+    },
+    {
+      "id": 132,
+      "rank": 132,
+      "fullName": "Eun-Hee Ji",
+      "countryCode": "KOR",
+      "points": -0.321,
+      "arrcHolesPlayed": 28,
+      "roundsToGo": 8,
+      "events": 14
+    },
+    {
       "id": 133,
-      "rank": 133,
+      "rank": 132,
       "fullName": "Wichanee Meechai",
       "countryCode": "THA",
       "points": -0.321,
@@ -1341,7 +1341,7 @@
       "rank": 134,
       "fullName": "Jodi Ewart Shadoff",
       "countryCode": "ENG",
-      "points": -0.3,
+      "points": -0.300,
       "arrcHolesPlayed": 30,
       "roundsToGo": 0,
       "events": 15
@@ -1351,7 +1351,7 @@
       "rank": 134,
       "fullName": "Moriya Jutanugarn",
       "countryCode": "THA",
-      "points": -0.3,
+      "points": -0.300,
       "arrcHolesPlayed": 30,
       "roundsToGo": 0,
       "events": 15
@@ -1361,7 +1361,7 @@
       "rank": 134,
       "fullName": "Kate Smith-Stroh",
       "countryCode": "USA",
-      "points": -0.3,
+      "points": -0.300,
       "arrcHolesPlayed": 30,
       "roundsToGo": 0,
       "events": 15
@@ -1389,46 +1389,26 @@
     {
       "id": 139,
       "rank": 139,
-      "fullName": "Eun-Hee Ji",
-      "countryCode": "KOR",
-      "points": -0.269,
-      "arrcHolesPlayed": 26,
-      "roundsToGo": 12,
-      "events": 13
+      "fullName": "Adela Cernousek",
+      "countryCode": "FRA",
+      "points": -0.250,
+      "arrcHolesPlayed": 24,
+      "roundsToGo": 8,
+      "events": 12
     },
     {
       "id": 140,
       "rank": 140,
       "fullName": "Lilia Vu",
       "countryCode": "USA",
-      "points": -0.25,
-      "arrcHolesPlayed": 32,
+      "points": -0.235,
+      "arrcHolesPlayed": 34,
       "roundsToGo": 0,
-      "events": 16
+      "events": 17
     },
     {
       "id": 141,
-      "rank": 140,
-      "fullName": "Jeongeun Lee6",
-      "countryCode": "KOR",
-      "points": -0.25,
-      "arrcHolesPlayed": 32,
-      "roundsToGo": 0,
-      "events": 16
-    },
-    {
-      "id": 142,
-      "rank": 140,
-      "fullName": "Adela Cernousek",
-      "countryCode": "FRA",
-      "points": -0.25,
-      "arrcHolesPlayed": 24,
-      "roundsToGo": 8,
-      "events": 12
-    },
-    {
-      "id": 143,
-      "rank": 143,
+      "rank": 141,
       "fullName": "Savannah Grewal",
       "countryCode": "CAN",
       "points": -0.233,
@@ -1437,8 +1417,8 @@
       "events": 15
     },
     {
-      "id": 144,
-      "rank": 144,
+      "id": 142,
+      "rank": 142,
       "fullName": "Brittany Altomare",
       "countryCode": "USA",
       "points": -0.231,
@@ -1447,8 +1427,8 @@
       "events": 13
     },
     {
-      "id": 145,
-      "rank": 145,
+      "id": 143,
+      "rank": 143,
       "fullName": "Mariel Galdiano",
       "countryCode": "USA",
       "points": -0.192,
@@ -1457,8 +1437,8 @@
       "events": 13
     },
     {
-      "id": 146,
-      "rank": 146,
+      "id": 144,
+      "rank": 144,
       "fullName": "Yuna Nishimura",
       "countryCode": "JPN",
       "points": -0.167,
@@ -1467,8 +1447,8 @@
       "events": 18
     },
     {
-      "id": 147,
-      "rank": 147,
+      "id": 145,
+      "rank": 145,
       "fullName": "Sophia Popov",
       "countryCode": "GER",
       "points": -0.154,
@@ -1477,18 +1457,8 @@
       "events": 13
     },
     {
-      "id": 148,
-      "rank": 148,
-      "fullName": "Cheyenne Knight",
-      "countryCode": "USA",
-      "points": -0.15,
-      "arrcHolesPlayed": 20,
-      "roundsToGo": 14,
-      "events": 10
-    },
-    {
-      "id": 149,
-      "rank": 149,
+      "id": 146,
+      "rank": 146,
       "fullName": "Lauren Morris",
       "countryCode": "USA",
       "points": -0.125,
@@ -1497,8 +1467,8 @@
       "events": 12
     },
     {
-      "id": 150,
-      "rank": 149,
+      "id": 147,
+      "rank": 146,
       "fullName": "Yuka Saso",
       "countryCode": "JPN",
       "points": -0.125,
@@ -1507,54 +1477,34 @@
       "events": 16
     },
     {
-      "id": 151,
-      "rank": 151,
-      "fullName": "Sarah Kemp",
-      "countryCode": "AUS",
-      "points": -0.111,
-      "arrcHolesPlayed": 18,
-      "roundsToGo": 15,
-      "events": 9
-    },
-    {
-      "id": 152,
-      "rank": 152,
+      "id": 148,
+      "rank": 148,
       "fullName": "Danielle Kang",
       "countryCode": "USA",
-      "points": -0.1,
+      "points": -0.100,
       "arrcHolesPlayed": 30,
       "roundsToGo": 1,
       "events": 15
     },
     {
-      "id": 153,
-      "rank": 152,
+      "id": 149,
+      "rank": 148,
       "fullName": "Caroline Inglis",
       "countryCode": "USA",
-      "points": -0.1,
+      "points": -0.100,
       "arrcHolesPlayed": 30,
       "roundsToGo": 0,
       "events": 15
     },
     {
-      "id": 154,
-      "rank": 154,
+      "id": 150,
+      "rank": 150,
       "fullName": "Ilhee Lee",
       "countryCode": "KOR",
-      "points": -0.05,
-      "arrcHolesPlayed": 20,
-      "roundsToGo": 13,
-      "events": 10
-    },
-    {
-      "id": 155,
-      "rank": 155,
-      "fullName": "Dani Holmqvist",
-      "countryCode": "SWE",
-      "points": 0.05,
-      "arrcHolesPlayed": 20,
-      "roundsToGo": 16,
-      "events": 10
+      "points": -0.091,
+      "arrcHolesPlayed": 22,
+      "roundsToGo": 9,
+      "events": 11
     }
   ]
 }

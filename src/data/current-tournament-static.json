@@ -1,28 +1,26 @@
 {
-  "lastUpdated": "2025-10-14T16:49:02.553Z",
-  "eventId": "401734782",
+  "lastUpdated": "2025-10-21T20:24:19.062Z",
+  "eventId": "401745905",
   "staticProps": {
-    "tournamentName": "BMW Ladies Championship",
+    "tournamentName": "Hanwha LIFEPLUS International Crown",
     "location": ",",
-    "date": "Oct 16-19, 2025",
-    "courseName": "Pine Beach Golf Links",
-    "par": 71,
-    "yardage": 6566
+    "date": "Oct 23-26, 2025",
+    "courseName": "New Korea Country Club",
+    "par": 72,
+    "yardage": 6542
   },
   "rawApiData": {
     "events": [
       {
-        "id": "401734782",
-        "uid": "s:1100~l:1107~e:401734782",
-        "date": "2025-10-16T04:00Z",
-        "endDate": "2025-10-19T04:00Z",
-        "name": "BMW Ladies Championship",
-        "shortName": "BMW Ladies Championship",
+        "id": "401745905",
+        "uid": "s:1100~l:1107~e:401745905",
+        "date": "2025-10-23T04:00Z",
+        "endDate": "2025-10-26T04:00Z",
+        "name": "Hanwha LIFEPLUS International Crown",
+        "shortName": "Hanwha LIFEPLUS International Crown",
         "primary": true,
-        "hasPlayerStats": false,
-        "hasCourseStats": false,
-        "purse": 2300000,
-        "displayPurse": "$2,300,000",
+        "purse": 2000000,
+        "displayPurse": "$2,000,000",
         "league": {
           "id": "1107",
           "name": "Ladies Pro Golf Association",
@@ -33,30 +31,11 @@
         "season": {
           "year": 2025
         },
-        "links": [
-          {
-            "language": "en-US",
-            "rel": [
-              "summary",
-              "desktop",
-              "event"
-            ],
-            "href": "https://www.espn.com/golf/leaderboard?tournamentId=401734782",
-            "text": "Leaderboard",
-            "shortText": "Summary",
-            "isExternal": false,
-            "isPremium": false,
-            "isHidden": false
-          }
-        ],
+        "links": [],
         "tournament": {
-          "id": "3686",
-          "displayName": "BMW Ladies Championship",
+          "id": "2936",
+          "displayName": "UL International Crown",
           "major": false,
-          "scoringSystem": {
-            "id": "1",
-            "name": "Medal"
-          },
           "numberOfRounds": 4,
           "cutRound": 0,
           "cutScore": 0,
@@ -71,76 +50,115 @@
             "description": "Scheduled"
           }
         },
-        "defendingChampion": {
-          "athlete": {
-            "id": "10429",
-            "displayName": "Hannah Green",
-            "amateur": false
-          },
-          "displayName": ""
-        },
         "playoffType": {
           "id": -1,
           "description": "None",
           "minimumHoles": 0
         },
-        "competitions": [
-          {
-            "id": "401734782",
-            "uid": "s:1100~l:1107~e:401734782~c:401734782",
-            "date": "2025-10-16T04:00Z",
-            "endDate": "2025-10-19T04:00Z",
-            "recent": false,
-            "onWatchESPN": false,
-            "dataFormat": "API",
-            "status": {
-              "period": 0,
-              "type": {
-                "id": "1",
-                "name": "STATUS_SCHEDULED",
-                "state": "pre",
-                "description": "Scheduled",
-                "detail": "October 16 - 19",
-                "shortDetail": "10/16 - 10/19"
-              }
-            },
-            "broadcasts": [
-              {
-                "media": {
-                  "id": "760",
-                  "slug": "golf-channel",
-                  "name": "Golf Channel",
-                  "shortName": "Golf Chnl",
-                  "callLetters": "Golf Chnl"
-                },
-                "lang": "en",
-                "region": "us"
-              }
-            ],
-            "leaders": [],
-            "holeByHoleSource": {
-              "id": "0",
-              "state": "none",
-              "description": "none"
-            },
-            "scoringSystem": {
-              "id": "1",
-              "name": "Medal"
-            }
-          }
-        ],
+        "competitions": [],
         "courses": [
           {
-            "id": "11335",
-            "name": "Pine Beach Golf Links",
-            "totalYards": 0,
-            "shotsToPar": 0,
-            "parIn": 0,
-            "parOut": 0,
+            "id": "11331",
+            "name": "New Korea Country Club",
+            "totalYards": 6542,
+            "shotsToPar": 72,
+            "parIn": 36,
+            "parOut": 36,
             "host": true,
-            "holes": [],
+            "holes": [
+              {
+                "number": 1,
+                "shotsToPar": 4,
+                "totalYards": 361
+              },
+              {
+                "number": 2,
+                "shotsToPar": 3,
+                "totalYards": 153
+              },
+              {
+                "number": 3,
+                "shotsToPar": 4,
+                "totalYards": 387
+              },
+              {
+                "number": 4,
+                "shotsToPar": 5,
+                "totalYards": 479
+              },
+              {
+                "number": 5,
+                "shotsToPar": 4,
+                "totalYards": 366
+              },
+              {
+                "number": 6,
+                "shotsToPar": 3,
+                "totalYards": 163
+              },
+              {
+                "number": 7,
+                "shotsToPar": 4,
+                "totalYards": 405
+              },
+              {
+                "number": 8,
+                "shotsToPar": 5,
+                "totalYards": 479
+              },
+              {
+                "number": 9,
+                "shotsToPar": 4,
+                "totalYards": 390
+              },
+              {
+                "number": 10,
+                "shotsToPar": 4,
+                "totalYards": 430
+              },
+              {
+                "number": 11,
+                "shotsToPar": 4,
+                "totalYards": 365
+              },
+              {
+                "number": 12,
+                "shotsToPar": 4,
+                "totalYards": 381
+              },
+              {
+                "number": 13,
+                "shotsToPar": 3,
+                "totalYards": 172
+              },
+              {
+                "number": 14,
+                "shotsToPar": 5,
+                "totalYards": 535
+              },
+              {
+                "number": 15,
+                "shotsToPar": 4,
+                "totalYards": 425
+              },
+              {
+                "number": 16,
+                "shotsToPar": 3,
+                "totalYards": 174
+              },
+              {
+                "number": 17,
+                "shotsToPar": 5,
+                "totalYards": 495
+              },
+              {
+                "number": 18,
+                "shotsToPar": 4,
+                "totalYards": 382
+              }
+            ],
             "address": {
-              "city": "Haenam-gun",
+              "city": "Gyeonggi-do",
               "country": "Korea"
             }
           }

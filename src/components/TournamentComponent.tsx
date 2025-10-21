@@ -23,15 +23,15 @@ interface TournamentComponentProps {
 }
 
 export default function TournamentComponent({
-  eventId = "401734782",
-  tournamentName = "BMW Ladies Championship",
-  location = "Haenam-gun, Korea", 
-  date = "Oct 16-19, 2025",
-  buyTicketsUrl = "https://www.bmw.co.kr/ko/discover/bmw-golfsport/bmw-ladies-championship-english.html#ticket",
-  officialSiteUrl = "https://www.bmw.co.kr/ko/discover/bmw-golfsport/bmw-ladies-championship-english.html",
+  eventId = "401745905",
+  tournamentName = "Hanwha LIFEPLUS International Crown",
+  location = "New Korea Country Club", 
+  date = "Oct 23-26, 2025",
+  buyTicketsUrl = "https://crown.lpga.com/tickets",
+  officialSiteUrl = "https://crown.lpga.com/",
   teeTimesUrl = "/tee-times",
-  broadcastUrl = "/news/buick-lpga-2025/#tv-schedule",
-  entryListUrl = "/entry-list",
+  broadcastUrl = "/news/hanwha-lifelus-international-crown-2025/#tv-schedule",
+  entryListUrl = "/entry-list/team",
   podcastUrl = "https://open.spotify.com/episode/4kMMOJqjAlCXmJv3FWuXmr?si=50d306b643c1445a"
 }: TournamentComponentProps) {
   const { t } = useTranslation();
@@ -55,11 +55,11 @@ export default function TournamentComponent({
   // Use API data if available, fallback to static data that matches current API response
   const displayName = (tournamentData?.name || tournamentName).replace(/\s*(pres\.|presented)\s*by\s*(P&G|Hoakalei)/i, '');
   const displayLocation = tournamentData?.courses ? formatLocation(tournamentData.courses[0]) : location;
-  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Pine Beach Golf Links";
+  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "New Korea Country Club";
   const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$2.3M";
   const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 72;
-  const displayYardage = "6,785"; // Hardcoded - API shows incorrect yardage
-  const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName?.replace(/^Jasmine/, 'J.') || "Hannah Green";
+  const displayYardage = "6,542"; // Hardcoded - API shows incorrect yardage
+  const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName?.replace(/^Jasmine/, 'J.') || "Thailand";
   
   // Format date from API data
   const displayDate = tournamentData ? 
@@ -131,8 +131,8 @@ export default function TournamentComponent({
         {/* Tournament Logo */}
         <div className="flex justify-center mb-3">
           <Image
-            src="https://media.lpga.com/images/librariesprovider3/default-album/2022_blc-new-logo-(grey-2-copy).png?sfvrsn=e781988b_1"
-            alt="BMW Ladies Championship Logo"
+            src="https://media.lpga.com/images/librariesprovider3/default-album/ic25-logo---full_rgb_horiz.png?sfvrsn=5121783f_1"
+            alt="Hanwha LIFEPLUS International Crown Logo"
             width={140}
             height={70}
             className="h-16 w-auto object-contain"
@@ -141,7 +141,7 @@ export default function TournamentComponent({
         {/* Tournament Title */}
         <div className="mb-2">
           <Link 
-            href="https://www.lpga.com/tournaments/bmw-ladies-championship"
+            href="https://www.lpga.com/tournaments/hanwha-lifelus-international-crown"
             className="block group"
           >
             <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line hover:text-primary-600 transition-all duration-200 cursor-pointer" style={{ hyphens: 'none' }}>
@@ -165,7 +165,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
             <Link 
-              href="https://www.google.com/maps/search/Pine+Beach+Golf+Links+Haenam-gun+Korea"
+              href="https://www.google.com/maps/search/New+Korea+Country+Club"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
@@ -178,7 +178,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
             </svg>
             <a
-              href="/course-maps/bmw-map.png"
+              href="https://media.lpga.com/docs/librariesprovider3/2025-international-crown/image_course_map_large-cydci5rq.webp.pdf?sfvrsn=f26ff6e6_3"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 hover:underline transition-colors"
@@ -242,7 +242,7 @@ export default function TournamentComponent({
 
         {/* Row 2: Entry List, Tee Times */}
         <Link
-          href="/entry-list"
+          href={entryListUrl}
           className="bg-teal-500 hover:bg-teal-800 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">

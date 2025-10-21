@@ -34,8 +34,8 @@ function TournamentComponent({ eventId }) {
 ### Development Utilities
 ```javascript
 // In browser console (development only)
-staticDataUtils.captureAndPreview("401734782");  // Capture fresh data
-staticDataUtils.compare("401734782");            // Compare static vs live
+staticDataUtils.captureAndPreview("401745905");  // Capture fresh data
+staticDataUtils.compare("401745905");            // Compare static vs live
 staticDataUtils.refreshAll();                    // Force refresh all
 staticDataUtils.getStatus();                     // Get cache status
 staticDataUtils.reset();                         // Reset system
@@ -50,7 +50,7 @@ import staticDataService from '@/lib/staticDataService';
 staticDataService.updateConfig({
   refreshInterval: 30 * 60 * 1000, // 30 minutes
   enabled: true,
-  eventIds: ['401734782', 'other-event-id']
+  eventIds: ['401745905', 'other-event-id']
 });
 ```
 
@@ -85,7 +85,7 @@ staticDataUtils.getStatus();
 
 ### Compare Data
 ```javascript
-staticDataUtils.compare("401734782");
+staticDataUtils.compare("401745905");
 ```
 
 ### Force Refresh
@@ -113,7 +113,7 @@ staticDataService.updateConfig({
 ### Multiple Events
 ```typescript
 staticDataService.updateConfig({
-  eventIds: ['401734782', '401734782', '401734783']
+  eventIds: ['401745905', '401745905', '401745906']
 });
 ```
 

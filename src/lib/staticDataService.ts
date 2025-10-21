@@ -16,7 +16,7 @@ interface StaticDataServiceConfig {
 const DEFAULT_CONFIG: StaticDataServiceConfig = {
   refreshInterval: 30 * 60 * 1000, // 30 minutes
   enabled: true,
-  eventIds: ['401734782'] // Default event IDs to refresh
+  eventIds: ['401745905'] // Default event IDs to refresh
 };
 
 class StaticDataService {

@@ -36,6 +36,8 @@ interface TournamentData {
   players: Player[];
   currentRound: number;
   lastUpdated: string;
+  isTeamTournament?: boolean;
+  tournamentType?: 'individual' | 'team';
 }
 
 interface TournamentScoresWidgetProps {
@@ -47,8 +49,8 @@ interface TournamentScoresWidgetProps {
 }
 
 export default function TournamentScoresWidget({
-  tournamentId = '401734782',
-  tournamentName = 'Buick LPGA Shanghai',
+  tournamentId = '401745905',
+  tournamentName = 'Hanwha LIFEPLUS International Crown',
   isOpen,
   onToggle,
   showToggleButton = true
@@ -73,6 +75,27 @@ export default function TournamentScoresWidget({
   const MAX_RETRIES = 3;
   const RETRY_DELAY_BASE = 1000; // 1 second base delay
   const FETCH_TIMEOUT = 10000; // 10 second timeout
+
+  // Detect if tournament is a team tournament
+  const isTeamTournament = useCallback((tournamentName: string, eventData: any): boolean => {
+    const teamTournamentKeywords = [
+      'international crown',
+      'solheim cup',
+      'presidents cup',
+      'ryder cup',
+      'team',
+      'match play',
+      'crown'
+    ];
+    
+    const name = tournamentName.toLowerCase();
+    const hasTeamKeyword = teamTournamentKeywords.some(keyword => name.includes(keyword));
+    
+    // Also check if competitions array is empty (common for team tournaments)
+    const hasNoCompetitions = !eventData?.events?.[0]?.competitions || eventData.events[0].competitions.length === 0;
+    
+    return hasTeamKeyword || hasNoCompetitions;
+  }, []);
 
   // Check RapidAPI daily usage
   const checkRapidAPIUsage = useCallback(() => {
@@ -280,11 +303,34 @@ export default function TournamentScoresWidget({
         });
         
         // Validate the response structure
-        if (!data || !data.events || !Array.isArray(data.events) || !data.events[0]?.competitions) {
+        if (!data || !data.events || !Array.isArray(data.events)) {
           throw new Error('Invalid API response structure');
         }
+
+        // Check if this is a team tournament
+        const eventData = data.events[0];
+        const isTeamEvent = isTeamTournament(eventData.name || tournamentName, data);
+        
+        if (isTeamEvent) {
+          // Handle team tournament - create a special tournament data structure
+          const teamTournamentData: TournamentData = {
+            id: eventData.id,
+            name: eventData.name,
+            shortName: eventData.shortName,
+            status: eventData.status?.type?.description || 'Scheduled',
+            players: [], // No individual players for team tournaments
+            currentRound: 0,
+            lastUpdated: new Date().toISOString(),
+            isTeamTournament: true,
+            tournamentType: 'team'
+          };
+          
+          setTournamentData(teamTournamentData);
+          setLastRefresh(new Date());
+          return;
+        }
       
-      // Parse the RapidAPI response
+      // Parse the RapidAPI response for individual tournaments
       const competition = data.events[0].competitions?.[0];
       if (!competition) {
         throw new Error('No competition data found');
@@ -429,7 +475,9 @@ export default function TournamentScoresWidget({
           status: competition.status?.type?.description || 'Unknown',
           players: playersWithTiedPositions,
           currentRound: competition.status?.period || 1,
-          lastUpdated: new Date().toISOString()
+          lastUpdated: new Date().toISOString(),
+          isTeamTournament: false,
+          tournamentType: 'individual'
         };
       
         // Debug: Log the processed tournament data
@@ -792,6 +840,25 @@ export default function TournamentScoresWidget({
                     {isRetrying ? 'Retrying...' : t('loadingScores')}
                   </span>
                 </div>
+              ) : tournamentData?.isTeamTournament ? (
+                <div className="flex-1 flex flex-col items-center justify-center p-4">
+                  <div className="text-center">
+                    <Flag className="w-8 h-8 text-primary-500 mx-auto mb-3" />
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Team Tournament</h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      {tournamentData.name} is a team-based tournament.
+                    </p>
+                    <div className="bg-blue-50 rounded-lg p-3 mb-4">
+                      <p className="text-xs text-blue-800 font-medium mb-1">Tournament Status:</p>
+                      <p className="text-sm text-blue-900">{tournamentData.status}</p>
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      <p>• Team standings will be available when the tournament begins</p>
+                      <p>• Individual player scores are not tracked in this format</p>
+                      <p>• Check the official tournament website for team match results</p>
+                    </div>
+                  </div>
+                </div>
               ) : tournamentData?.players && tournamentData.players.length > 0 ? (
                 <div className="flex-1 flex flex-col min-h-0">
                   {/* Column Headers - Fixed */}
@@ -886,6 +953,25 @@ export default function TournamentScoresWidget({
                     {isRetrying ? 'Retrying...' : t('loadingScores')}
                   </span>
                 </div>
+              ) : tournamentData?.isTeamTournament ? (
+                <div className="flex-1 flex flex-col items-center justify-center p-4">
+                  <div className="text-center">
+                    <Flag className="w-8 h-8 text-primary-500 mx-auto mb-3" />
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Team Tournament</h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      {tournamentData.name} is a team-based tournament.
+                    </p>
+                    <div className="bg-blue-50 rounded-lg p-3 mb-4">
+                      <p className="text-xs text-blue-800 font-medium mb-1">Tournament Status:</p>
+                      <p className="text-sm text-blue-900">{tournamentData.status}</p>
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      <p>• Team standings will be available when the tournament begins</p>
+                      <p>• Individual player scores are not tracked in this format</p>
+                      <p>• Check the official tournament website for team match results</p>
+                    </div>
+                  </div>
+                </div>
               ) : tournamentData?.players && tournamentData.players.length > 0 ? (
                 <div className="flex-1 flex flex-col min-h-0">
                   {/* Column Headers - Fixed */}
@@ -967,6 +1053,25 @@ export default function TournamentScoresWidget({
                   <span className="ml-2 text-gray-600 text-xs">
                     {isRetrying ? 'Retrying...' : t('loadingScores')}
                   </span>
+                </div>
+              ) : tournamentData?.isTeamTournament ? (
+                <div className="flex-1 flex flex-col items-center justify-center p-4">
+                  <div className="text-center">
+                    <Flag className="w-8 h-8 text-primary-500 mx-auto mb-3" />
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Team Tournament</h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      {tournamentData.name} is a team-based tournament.
+                    </p>
+                    <div className="bg-blue-50 rounded-lg p-3 mb-4">
+                      <p className="text-xs text-blue-800 font-medium mb-1">Tournament Status:</p>
+                      <p className="text-sm text-blue-900">{tournamentData.status}</p>
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      <p>• Team standings will be available when the tournament begins</p>
+                      <p>• Individual player scores are not tracked in this format</p>
+                      <p>• Check the official tournament website for team match results</p>
+                    </div>
+                  </div>
                 </div>
               ) : tournamentData?.players && tournamentData.players.length > 0 ? (
                 <div className="flex-1 flex flex-col min-h-0">
