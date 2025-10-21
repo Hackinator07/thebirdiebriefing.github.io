@@ -11,7 +11,7 @@ const path = require('path');
 // Configuration
 const RAPIDAPI_KEY = process.env.NEXT_PUBLIC_RAPIDAPI_KEY || '517cb09524mshf243e8dc1b88e58p19efabjsne4e46b59b3c8';
 const RAPIDAPI_HOST = 'live-golf-data1.p.rapidapi.com';
-const EVENT_ID = '401734782';
+const EVENT_ID = '401745905';
 
 async function fetchFreshWeatherData() {
   console.log(`🔄 Fetching fresh weather data for event: ${EVENT_ID}`);
