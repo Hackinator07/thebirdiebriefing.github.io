@@ -203,7 +203,7 @@ export default function TournamentComponent({
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M7 3V1h10v2h5v8c0 2.21-1.79 4-4 4h-2.2l-.8 4H17v2H7v-2h2.2l-.8-4H6c-2.21 0-4-1.79-4-4V3h5zm10 8c1.1 0 2-.9 2-2V5h-3v6h1zm-2 0V5H9v6h6zM7 5H5v4c0 1.1.9 2 2 2h1V5z"/>
             </svg>
-            <span>2024 Winner: {displayWinner}</span>
+            <span>2023 Winner: {displayWinner}</span>
           </div>
         </div>
         
