@@ -131,7 +131,7 @@ export default function TournamentComponent({
         {/* Tournament Logo */}
         <div className="flex justify-center mb-3">
           <Image
-            src="https://media.lpga.com/images/librariesprovider3/default-album/ic25-logo---full_rgb_horiz.png?sfvrsn=5121783f_1"
+            src="https://media.lpga.com/images/librariesprovider3/default-album/mb-championship-2023-logo---primarye077f6ff-83cc-4daa-a1ac-376523f09d9d.png?sfvrsn=f10791fd_1"
             alt="Hanwha LIFEPLUS International Crown Logo"
             width={140}
             height={70}

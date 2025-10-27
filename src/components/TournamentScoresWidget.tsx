@@ -36,6 +36,8 @@ interface TournamentData {
   players: Player[];
   currentRound: number;
   lastUpdated: string;
+  isTeamTournament?: boolean;
+  tournamentType?: string;
 }
 
 interface TournamentScoresWidgetProps {
