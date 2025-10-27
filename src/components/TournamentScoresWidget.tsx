@@ -36,8 +36,6 @@ interface TournamentData {
   players: Player[];
   currentRound: number;
   lastUpdated: string;
-  isTeamTournament?: boolean;
-  tournamentType?: 'individual' | 'team';
 }
 
 interface TournamentScoresWidgetProps {
@@ -49,7 +47,7 @@ interface TournamentScoresWidgetProps {
 }
 
 export default function TournamentScoresWidget({
-  tournamentId = '401745905',
+  tournamentId = '401734783',
   tournamentName = 'Hanwha LIFEPLUS International Crown',
   isOpen,
   onToggle,
@@ -79,22 +77,22 @@ export default function TournamentScoresWidget({
   // Detect if tournament is a team tournament
   const isTeamTournament = useCallback((tournamentName: string, eventData: any): boolean => {
     const teamTournamentKeywords = [
-      'international crown',
       'solheim cup',
       'presidents cup',
       'ryder cup',
       'team',
-      'match play',
-      'crown'
+      'match play'
     ];
     
     const name = tournamentName.toLowerCase();
     const hasTeamKeyword = teamTournamentKeywords.some(keyword => name.includes(keyword));
     
     // Also check if competitions array is empty (common for team tournaments)
+    // But exclude International Crown tournaments as they are individual tournaments
     const hasNoCompetitions = !eventData?.events?.[0]?.competitions || eventData.events[0].competitions.length === 0;
+    const isInternationalCrown = name.includes('international crown');
     
-    return hasTeamKeyword || hasNoCompetitions;
+    return hasTeamKeyword || (hasNoCompetitions && !isInternationalCrown);
   }, []);
 
   // Check RapidAPI daily usage
@@ -307,28 +305,7 @@ export default function TournamentScoresWidget({
           throw new Error('Invalid API response structure');
         }
 
-        // Check if this is a team tournament
         const eventData = data.events[0];
-        const isTeamEvent = isTeamTournament(eventData.name || tournamentName, data);
-        
-        if (isTeamEvent) {
-          // Handle team tournament - create a special tournament data structure
-          const teamTournamentData: TournamentData = {
-            id: eventData.id,
-            name: eventData.name,
-            shortName: eventData.shortName,
-            status: eventData.status?.type?.description || 'Scheduled',
-            players: [], // No individual players for team tournaments
-            currentRound: 0,
-            lastUpdated: new Date().toISOString(),
-            isTeamTournament: true,
-            tournamentType: 'team'
-          };
-          
-          setTournamentData(teamTournamentData);
-          setLastRefresh(new Date());
-          return;
-        }
       
       // Parse the RapidAPI response for individual tournaments
       const competition = data.events[0].competitions?.[0];

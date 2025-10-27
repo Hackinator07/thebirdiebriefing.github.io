@@ -212,7 +212,7 @@ async function fetchCourseData(eventId: string): Promise<CourseData | null> {
 }
 
 export default function CourseHolesWidget({
-  eventId = "401745905",
+  eventId = "401734783",
   aonRiskHole = 0, // 0 means NA/Not Applicable
   hardestHole = 4
 }: CourseHolesWidgetProps) {

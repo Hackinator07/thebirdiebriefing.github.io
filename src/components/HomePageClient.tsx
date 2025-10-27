@@ -18,7 +18,7 @@ export default function HomePageClient({ children }: HomePageClientProps) {
     <>
       {children}
       <TournamentScoresWidget
-        tournamentId="401745905"
+        tournamentId="401734783"
         tournamentName="Hanwha LIFEPLUS International Crown"
         isOpen={isScoresOpen}
         onToggle={handleToggleScores}

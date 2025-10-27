@@ -23,7 +23,7 @@ interface TournamentComponentProps {
 }
 
 export default function TournamentComponent({
-  eventId = "401745905",
+  eventId = "401734783",
   tournamentName = "Hanwha LIFEPLUS International Crown",
   location = "New Korea Country Club", 
   date = "Oct 23-26, 2025",
