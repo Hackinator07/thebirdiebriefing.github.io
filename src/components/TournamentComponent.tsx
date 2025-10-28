@@ -337,11 +337,6 @@ export default function TournamentComponent({
                   </div>
                 </div>
               </div>
-              {weather?.lastUpdated && (
-                <div className="text-xs text-gray-400 mt-1">
-                  Updated {new Date(weather.lastUpdated).toLocaleTimeString()}
-                </div>
-              )}
             </div>
           </div>
         </div>
