@@ -141,7 +141,7 @@ export default function TournamentComponent({
         {/* Tournament Title */}
         <div className="mb-2">
           <Link 
-            href="https://www.lpga.com/tournaments/hanwha-lifelus-international-crown"
+            href="/news/maybank-championship-2025"
             className="block group"
           >
             <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line hover:text-primary-600 transition-all duration-200 cursor-pointer" style={{ hyphens: 'none' }}>
