@@ -145,6 +145,17 @@ const round4TeeTimes = [
   { time: "10:44AM", tee: "10", players: ["Jiwon Jeon", "Polly Mack"] }
 ];
 
+// Function to format purse amount
+function formatPurse(purse: number): string {
+  if (purse >= 1000000) {
+    return `$${(purse / 1000000).toFixed(1).replace('.0', '')},000,000`;
+  } else if (purse >= 1000) {
+    return `$${(purse / 1000).toLocaleString()}K`;
+  } else {
+    return `$${purse.toLocaleString()}`;
+  }
+}
+
 // Function to convert tee time from Malaysia time (GMT+8) to selected timezone
 function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: string): string {
   try {
@@ -443,7 +454,7 @@ function TeeTimesContent() {
                   {tournamentData?.name || TOURNAMENT_NAME}
                 </h2>
                 <p className="text-secondary-100">October 30 - November 2, 2025 • {tournamentData?.courses?.[0]?.name || TOURNAMENT_COURSE}</p>
-                <p className="text-secondary-100">{tournamentData?.courses?.[0]?.address ? `${tournamentData.courses[0].address.city}, ${tournamentData.courses[0].address.state}` : TOURNAMENT_LOCATION}</p>
+                <p className="text-secondary-100">{tournamentData?.courses?.[0]?.address ? `${tournamentData.courses[0].address.city}, ${tournamentData.courses[0].address.state || tournamentData.courses[0].address.country || 'Malaysia'}` : TOURNAMENT_LOCATION}</p>
                 <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div className="flex flex-col">
                     <span className="text-secondary-200 text-xs uppercase tracking-wide">Par</span>
@@ -459,7 +470,7 @@ function TeeTimesContent() {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-secondary-200 text-xs uppercase tracking-wide">Purse</span>
-                    <span className="text-white font-semibold text-lg">{tournamentData?.purse || TOURNAMENT_PURSE}</span>
+                    <span className="text-white font-semibold text-lg">{tournamentData?.purse ? formatPurse(tournamentData.purse) : TOURNAMENT_PURSE}</span>
                   </div>
                 </div>
               </div>
