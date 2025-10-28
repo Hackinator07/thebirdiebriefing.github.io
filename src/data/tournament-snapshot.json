@@ -1,28 +1,28 @@
 {
-  "lastUpdated": "2025-10-14T16:49:02.553Z",
+  "lastUpdated": "2025-10-28T00:00:00.000Z",
   "eventId": "401734783",
   "data": {
-    "tournamentName": "BMW Ladies Championship",
-    "location": "Haenam-gun, Korea",
-    "date": "Oct 16-19, 2025",
-    "courseName": "Pine Beach Golf Links",
-    "par": 71,
-    "yardage": 6566,
+    "tournamentName": "Maybank Championship 2025",
+    "location": "Kuala Lumpur, Malaysia",
+    "date": "Oct 30-Nov 2, 2025",
+    "courseName": "Kuala Lumpur Golf & Country Club",
+    "par": 72,
+    "yardage": 6536,
     "weather": {
       "type": "Forecast",
-      "displayValue": "Rainy",
-      "conditionId": "12",
-      "zipCode": "72758",
-      "temperature": 74,
-      "lowTemperature": 66,
-      "highTemperature": 77,
-      "precipitation": 59,
-      "gust": 10,
-      "windSpeed": 10,
-      "windDirection": "NNW",
-      "lastUpdated": "2025-10-14T16:49:12.781Z"
+      "displayValue": "Cloudy",
+      "conditionId": "26",
+      "zipCode": "",
+      "temperature": 83,
+      "lowTemperature": 75,
+      "highTemperature": 97,
+      "precipitation": 85,
+      "gust": 12,
+      "windSpeed": 8,
+      "windDirection": "NE",
+      "lastUpdated": "2025-10-28T00:00:00.000Z"
     },
-    "purse": "$2.3M",
-    "defendingChampion": "Hannah Green"
+    "purse": "$3M",
+    "defendingChampion": "Ruoning Yin"
   }
 }

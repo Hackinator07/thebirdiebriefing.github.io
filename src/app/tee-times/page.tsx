@@ -52,7 +52,7 @@ const round1TeeTimes = [
   { time: "9:27AM", tee: "10", players: ["Ayaka Furue (Kobe, Japan)", "A Lim Kim (Seongnam-si, Republic of Korea)", "Liyana Durisic * (Selangor, Malaysia)"] }
 ];
 
-// Round 2 Tee Times - BMW Ladies Championship
+// Round 2 Tee Times - Maybank Championship (Coming Soon)
 const round2TeeTimes = [
   // Tee 1
   { time: "8:30AM", tee: "1", players: ["Narin An", "Cassie Porter", "Sherman Santiwiwatthanaphong"] },
