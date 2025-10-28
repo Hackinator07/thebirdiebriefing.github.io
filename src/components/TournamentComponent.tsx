@@ -301,7 +301,7 @@ export default function TournamentComponent({
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                 </svg>
-                <span className="font-medium">{weather?.condition || 'Cloudy'}</span>
+                <span className="font-medium">{weather?.displayValue || 'Cloudy'}</span>
               </div>
               <div className="space-y-1">
                 <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
@@ -311,13 +311,13 @@ export default function TournamentComponent({
                       <circle cx="12" cy="17" r="1.5" fill="currentColor" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 6h1M14 8h1M14 10h1M14 12h1" />
                     </svg>
-                    <span>{weather?.temperature || '83°F'}</span>
+                    <span>{weather?.temperature ? `${weather.temperature}°F` : '83°F'}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
                     </svg>
-                    <span>{weather?.high || '97°F'}-{weather?.low || '75°F'}</span>
+                    <span>{weather?.highTemperature && weather?.lowTemperature ? `${weather.highTemperature}°F-${weather.lowTemperature}°F` : '97°F-75°F'}</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
@@ -325,7 +325,7 @@ export default function TournamentComponent({
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8h12a2 2 0 110 4H3M3 12h12a2 2 0 100-4H3M3 16h8a2 2 0 110 4H3" />
                     </svg>
-                    <span>{weather?.windSpeed || '8 mph'} {weather?.windDirection || 'NE'}</span>
+                    <span>{weather?.windSpeed && weather?.windDirection ? `${weather.windSpeed} mph ${weather.windDirection}` : '8 mph NE'}</span>
                   </div>
                   <div className="flex items-center gap-1 text-blue-600">
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -333,7 +333,7 @@ export default function TournamentComponent({
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 19l4-4 4 4" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 15l4-4 4 4" />
                     </svg>
-                    <span>{weather?.humidity || '85%'}</span>
+                    <span>85%</span>
                   </div>
                 </div>
               </div>
