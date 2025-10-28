@@ -1,6 +1,6 @@
 {
   "year": 2025,
-  "lastUpdated": "2025-10-14",
+  "lastUpdated": "2025-10-28",
   "tournaments": [
     {
       "id": 1,
@@ -311,7 +311,9 @@
       "purse": "$2M",
       "isMajor": false,
       "website": "https://crown.lpga.com",
-      "winner": ""
+      "winner": "Australia",
+      "score": "2.5-0.5",
+      "prize": "$500,000"
     },
     {
       "id": 31,
