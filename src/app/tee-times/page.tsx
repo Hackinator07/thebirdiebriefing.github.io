@@ -465,7 +465,7 @@ function TeeTimesContent() {
               </div>
               <div className="flex-shrink-0">
                 <Image
-                  src={tournamentData?.logo || TOURNAMENT_LOGO}
+                  src={TOURNAMENT_LOGO}
                   alt={`${tournamentData?.name || TOURNAMENT_NAME} Logo`}
                   width={200}
                   height={100}
