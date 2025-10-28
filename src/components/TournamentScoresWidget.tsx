@@ -50,7 +50,7 @@ interface TournamentScoresWidgetProps {
 
 export default function TournamentScoresWidget({
   tournamentId = '401734783',
-  tournamentName = 'Hanwha LIFEPLUS International Crown',
+  tournamentName = 'Maybank Championship 2025',
   isOpen,
   onToggle,
   showToggleButton = true

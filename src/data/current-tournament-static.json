@@ -2,12 +2,12 @@
   "lastUpdated": "2025-10-21T20:24:19.062Z",
   "eventId": "401734783",
   "staticProps": {
-    "tournamentName": "Hanwha LIFEPLUS International Crown",
-    "location": ",",
-    "date": "Oct 23-26, 2025",
-    "courseName": "New Korea Country Club",
+    "tournamentName": "Maybank Championship 2025",
+    "location": "Kuala Lumpur, Malaysia",
+    "date": "Oct 30-Nov 2, 2025",
+    "courseName": "Kuala Lumpur Golf & Country Club",
     "par": 72,
-    "yardage": 6542
+    "yardage": 6536
   },
   "rawApiData": {
     "events": [
@@ -16,11 +16,11 @@
         "uid": "s:1100~l:1107~e:401734783",
         "date": "2025-10-23T04:00Z",
         "endDate": "2025-10-26T04:00Z",
-        "name": "Hanwha LIFEPLUS International Crown",
-        "shortName": "Hanwha LIFEPLUS International Crown",
+        "name": "Maybank Championship 2025",
+        "shortName": "Maybank Championship 2025",
         "primary": true,
-        "purse": 2000000,
-        "displayPurse": "$2,000,000",
+        "purse": 3000000,
+        "displayPurse": "$3,000,000",
         "league": {
           "id": "1107",
           "name": "Ladies Pro Golf Association",
@@ -34,7 +34,7 @@
         "links": [],
         "tournament": {
           "id": "2936",
-          "displayName": "UL International Crown",
+          "displayName": "Maybank Championship",
           "major": false,
           "numberOfRounds": 4,
           "cutRound": 0,

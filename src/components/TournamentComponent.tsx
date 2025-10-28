@@ -24,14 +24,14 @@ interface TournamentComponentProps {
 
 export default function TournamentComponent({
   eventId = "401734783",
-  tournamentName = "Hanwha LIFEPLUS International Crown",
-  location = "New Korea Country Club", 
-  date = "Oct 23-26, 2025",
-  buyTicketsUrl = "https://crown.lpga.com/tickets",
-  officialSiteUrl = "https://crown.lpga.com/",
+  tournamentName = "Maybank Championship 2025",
+  location = "Kuala Lumpur Golf & Country Club", 
+  date = "Oct 30-Nov 2, 2025",
+  buyTicketsUrl = "https://www.ticket2u.com.my/event/41820/maybank-championship-2025-sanctioned-by-lpga",
+  officialSiteUrl = "https://www.klgcc.com/annual-event/maybank-championship-2025",
   teeTimesUrl = "/tee-times",
-  broadcastUrl = "/news/hanwha-lifelus-international-crown-2025/#tv-schedule",
-  entryListUrl = "/entry-list/team",
+  broadcastUrl = "/news/maybank-championship-2025/#tv-schedule",
+  entryListUrl = "/entry-list",
   podcastUrl = "https://open.spotify.com/episode/4kMMOJqjAlCXmJv3FWuXmr?si=50d306b643c1445a"
 }: TournamentComponentProps) {
   const { t } = useTranslation();
@@ -55,7 +55,7 @@ export default function TournamentComponent({
   // Use API data if available, fallback to static data that matches current API response
   const displayName = (tournamentData?.name || tournamentName).replace(/\s*(pres\.|presented)\s*by\s*(P&G|Hoakalei)/i, '');
   const displayLocation = tournamentData?.courses ? formatLocation(tournamentData.courses[0]) : location;
-  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "New Korea Country Club";
+  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Kuala Lumpur Golf & Country Club";
   const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$2.3M";
   const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 72;
   const displayYardage = "6,536"; // Hardcoded - API shows incorrect yardage
@@ -165,7 +165,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
             <Link 
-              href="https://www.google.com/maps/search/New+Korea+Country+Club"
+              href="https://maps.app.goo.gl/aAJZJL81MdC1a5iR6"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
@@ -178,7 +178,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
             </svg>
             <a
-              href="https://media.lpga.com/docs/librariesprovider3/2025-international-crown/image_course_map_large-cydci5rq.webp.pdf?sfvrsn=f26ff6e6_3"
+              href="https://www.klgcc.com/golf/courses/west-course"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 hover:underline transition-colors"

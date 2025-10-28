@@ -19,7 +19,7 @@ export default function HomePageClient({ children }: HomePageClientProps) {
       {children}
       <TournamentScoresWidget
         tournamentId="401734783"
-        tournamentName="Hanwha LIFEPLUS International Crown"
+        tournamentName="Maybank Championship 2025"
         isOpen={isScoresOpen}
         onToggle={handleToggleScores}
       />

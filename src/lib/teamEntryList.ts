@@ -60,7 +60,7 @@ export function getTeamEntryList(): TeamEntryListData {
     'SLO': 'SVN' // Slovenia
   };
 
-  // Team data for Hanwha LIFEPLUS International Crown
+  // Team data for Maybank Championship 2025
   const teams: Team[] = [
     {
       id: 'team-1',
@@ -171,7 +171,7 @@ export function getTeamEntryList(): TeamEntryListData {
   return {
     teams,
     lastUpdated: new Date().toISOString(),
-    tournament: 'Hanwha LIFEPLUS International Crown',
+    tournament: 'Maybank Championship 2025',
     isTeamEvent: true
   };
 }

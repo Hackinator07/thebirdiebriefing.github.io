@@ -115,11 +115,11 @@ export default function TeamEntryListPage() {
               rel="noopener noreferrer"
               className="text-primary-500 hover:text-primary-600 hover:underline transition-colors"
             >
-              New Korea Country Club
+              Kuala Lumpur Golf & Country Club
             </a>
           </p>
           <p className="text-sm text-gray-500 text-center">
-            Goyang-si, Gyeonggi-do, Republic of Korea | October 23–26, 2025
+            Kuala Lumpur, Malaysia | October 30–November 2, 2025
           </p>
           <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center">
             Updated {new Date(entryList.lastUpdated).toLocaleDateString('en-US', {
