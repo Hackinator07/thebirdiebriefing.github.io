@@ -443,7 +443,7 @@ function TeeTimesContent() {
                   {tournamentData?.name || TOURNAMENT_NAME}
                 </h2>
                 <p className="text-secondary-100">October 30 - November 2, 2025 • {tournamentData?.courses?.[0]?.name || TOURNAMENT_COURSE}</p>
-                <p className="text-secondary-100">{tournamentData?.courses?.[0]?.location || TOURNAMENT_LOCATION}</p>
+                <p className="text-secondary-100">{tournamentData?.courses?.[0]?.address ? `${tournamentData.courses[0].address.city}, ${tournamentData.courses[0].address.state}` : TOURNAMENT_LOCATION}</p>
                 <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div className="flex flex-col">
                     <span className="text-secondary-200 text-xs uppercase tracking-wide">Par</span>
@@ -451,7 +451,7 @@ function TeeTimesContent() {
                   </div>
                   <div className="flex flex-col">
                     <span className="text-secondary-200 text-xs uppercase tracking-wide">Yards</span>
-                    <span className="text-white font-semibold text-lg">{tournamentData?.courses?.[0]?.yardage || TOURNAMENT_YARDS.toLocaleString()}</span>
+                    <span className="text-white font-semibold text-lg">{tournamentData?.courses?.[0]?.totalYards || TOURNAMENT_YARDS.toLocaleString()}</span>
                   </div>
                   <div className="flex flex-col">
                     <span className="text-secondary-200 text-xs uppercase tracking-wide">Field</span>
