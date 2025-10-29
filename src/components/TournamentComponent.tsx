@@ -124,7 +124,7 @@ export default function TournamentComponent({
   // The component will seamlessly update when live data arrives
 
   return (
-    <div ref={ref} className="bg-white rounded-lg p-4 lg:p-6 shadow-lg border border-gray-200 w-full max-w-md mx-auto translation-safe-container tournament-container-fixed">
+    <div ref={ref} className="bg-white rounded-lg p-4 lg:p-6 shadow-lg border border-gray-200 w-full max-w-[calc(100vw-2rem)] sm:max-w-md mx-auto translation-safe-container tournament-container-fixed">
       <div className="tournament-content">
         {/* Tournament Header */}
         <div className="mb-4">
@@ -216,10 +216,10 @@ export default function TournamentComponent({
           href={buyTicketsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-primary-500 hover:bg-primary-600 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-primary-500 hover:bg-primary-600 text-white p-3 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
             </svg>
             <span className="text-xs font-semibold">{t('buyTickets')}</span>
@@ -230,10 +230,10 @@ export default function TournamentComponent({
           href={officialSiteUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-secondary-500 hover:bg-secondary-600 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-secondary-500 hover:bg-secondary-600 text-white p-3 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
             <span className="text-xs font-semibold">{t('officialSite')}</span>
@@ -243,10 +243,10 @@ export default function TournamentComponent({
         {/* Row 2: Entry List, Tee Times */}
         <Link
           href={entryListUrl}
-          className="bg-teal-500 hover:bg-teal-800 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-teal-500 hover:bg-teal-800 text-white p-3 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
             </svg>
             <span className="text-xs font-semibold">{t('entryList')}</span>
@@ -255,10 +255,10 @@ export default function TournamentComponent({
 
         <Link
           href={teeTimesUrl}
-          className="bg-gray-500 hover:bg-gray-800 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-gray-500 hover:bg-gray-800 text-white p-3 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span className="text-xs font-semibold">{t('teeTimes')}</span>
@@ -270,10 +270,10 @@ export default function TournamentComponent({
           href={podcastUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-yellow-500 hover:bg-yellow-700 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-yellow-500 hover:bg-yellow-700 text-white p-3 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
             </svg>
             <span className="text-xs font-semibold">{t('podcast')}</span>
@@ -282,10 +282,10 @@ export default function TournamentComponent({
 
         <Link
           href={broadcastUrl}
-          className="bg-red-500 hover:bg-red-800 text-white p-2 rounded-lg text-center transition-colors duration-200 group"
+          className="bg-red-500 hover:bg-red-800 text-white p-3 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
             <span className="text-xs font-semibold">{t('tvSchedule')}</span>

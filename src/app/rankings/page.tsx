@@ -239,12 +239,14 @@ export default function RankingsPage() {
 
           {/* Desktop Table Layout */}
           <div className="hidden lg:block bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto -mx-4 sm:mx-0">
+              <div className="inline-block min-w-full align-middle">
+                <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
                   <tr>
                     <th 
-                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="sticky left-0 z-20 bg-gray-50 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('rank')}
                     >
                       <div className="flex items-center justify-center gap-1">
@@ -253,7 +255,7 @@ export default function RankingsPage() {
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
+                      className="sticky left-[72px] z-20 bg-gray-50 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 transition-colors"
                       onClick={() => handleSort('fullName')}
                     >
                       <div className="flex items-center justify-center gap-1">
@@ -311,10 +313,10 @@ export default function RankingsPage() {
                 <tbody className="bg-white divide-y divide-gray-200">
                   {topPlayers.map((player) => (
                     <tr key={player.id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-gray-900">
+                      <td className="sticky left-0 z-10 bg-white px-6 py-4 whitespace-nowrap text-sm text-center font-medium text-gray-900 group-hover:bg-gray-50">
                         {player.rank}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
+                      <td className="sticky left-[72px] z-10 bg-white px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900 group-hover:bg-gray-50">
                         {player.fullName}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">
@@ -351,6 +353,8 @@ export default function RankingsPage() {
                   ))}
                 </tbody>
               </table>
+                </div>
+              </div>
             </div>
           </div>
 

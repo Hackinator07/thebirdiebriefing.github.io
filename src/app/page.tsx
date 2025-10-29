@@ -28,10 +28,10 @@ export default async function Home() {
                 <div className="bg-white rounded-lg p-6 lg:p-8 h-full flex flex-col justify-center">
                   {/* Main Headlines */}
                   <div className="text-center mb-6">
-                    <h1 className="text-4xl lg:text-6xl xl:text-7xl font-heading text-primary-500 leading-none mb-2">
+                    <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-heading text-primary-500 leading-none mb-2">
                       The Birdie
                     </h1>
-                    <h2 className="text-4xl lg:text-6xl xl:text-7xl font-heading text-secondary-500 leading-none mb-6">
+                    <h2 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-heading text-secondary-500 leading-none mb-6">
                       Briefing
                     </h2>
                   </div>
@@ -152,9 +152,13 @@ export default async function Home() {
             </div>
 
             {/* Featured Articles - Horizontal scroll when hamburger menu is active, grid on xl screens and up */}
-            <div className="flex gap-6 overflow-x-auto pb-4 xl:grid xl:grid-cols-3 xl:gap-8 xl:overflow-visible xl:pb-0" style={{ scrollbarWidth: 'thin', scrollbarColor: '#d1d5db #f3f4f6' }}>
+            <div className="relative">
+              {/* Scroll indicator gradient - only visible on mobile/tablet */}
+              <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none xl:hidden z-10" />
+              
+              <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory xl:grid xl:grid-cols-3 xl:gap-8 xl:overflow-visible xl:pb-0" style={{ scrollbarWidth: 'thin', scrollbarColor: '#d1d5db #f3f4f6' }}>
               {featuredArticles.map((article, index) => (
-                <article key={article.id} className="flex-shrink-0 w-80 xl:w-auto bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300 group">
+                <article key={article.id} className="flex-shrink-0 w-80 xl:w-auto bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300 group snap-start">
                   {/* Image */}
                   <div className="aspect-[4/3] bg-gray-200">
                     <Link href={`/news/${article.slug}`}>
@@ -163,6 +167,7 @@ export default async function Home() {
                         alt={article.image.alt}
                         width={400}
                         height={300}
+                        sizes="(max-width: 768px) 320px, (max-width: 1280px) 50vw, 33vw"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         priority={index < 3}
                       />
@@ -221,6 +226,7 @@ export default async function Home() {
                   </div>
                 </article>
               ))}
+              </div>
             </div>
           </div>
         </section>

@@ -367,7 +367,7 @@
   }
 }
 
-/* Custom color palette */
+/* Custom color palette and mobile optimizations */
 :root {
   --primary-500: #ad345a;
   --primary-600: #8c2a48;
@@ -377,6 +377,25 @@
   --golden-500: #D1A137;
   --orange-500: #DD5726;
   --cream-500: #FFFBEC;
+  
+  /* Header height for sticky positioning */
+  --header-height: 4rem;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 5rem;
+  }
+}
+
+/* Touch target optimizations */
+* {
+  -webkit-tap-highlight-color: rgba(173, 52, 90, 0.2);
+  /* Primary color with opacity for iOS tap highlights */
+}
+
+button, a, input, textarea, select {
+  -webkit-tap-highlight-color: rgba(173, 52, 90, 0.3);
 }
 
 

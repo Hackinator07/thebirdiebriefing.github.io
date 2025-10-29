@@ -38,16 +38,27 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
     setIsMobileSolheimCupOpen(false);
   }, [pathname]);
 
-  // Prevent body scroll when menu is open
+  // Prevent body scroll when menu is open with better mobile handling
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      // Store current scroll position
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${scrollY}px`;
     } else {
-      document.body.style.overflow = 'unset';
+      // Restore scroll position
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
 
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
     };
   }, [isMenuOpen]);
 
@@ -141,7 +152,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
           </div>
 
 
-          {/* Desktop Navigation - Changed from lg: to xl: and made more responsive */}
+          {/* Desktop Navigation - Shows at xl breakpoint (1280px+) */}
           <nav className="hidden xl:flex items-center space-x-1 sm:space-x-2 md:space-x-3 xl:space-x-4 translation-safe-nav">
             {navigation.map((item) => {
               const isActive = isLinkActive(item.href);
@@ -156,7 +167,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                     >
                       <button
                         onClick={() => setIsNewsDropdownOpen(!isNewsDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap py-2 ${
                           isNewsActive
                             ? 'text-primary-500'
                             : 'text-gray-700 hover:text-primary-500'
@@ -164,7 +175,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                       >
                                                  {t('news')}
                         <svg
-                          className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 ${
+                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
                             isNewsDropdownOpen ? 'rotate-180' : ''
                           }`}
                           fill="none"
@@ -219,7 +230,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                     >
                       <button
                         onClick={() => setIsScheduleDropdownOpen(!isScheduleDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap py-2 ${
                           isScheduleActive
                             ? 'text-primary-500'
                             : 'text-gray-700 hover:text-primary-500'
@@ -227,7 +238,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                       >
                                                  {t('schedule')}
                         <svg
-                          className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 ${
+                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
                             isScheduleDropdownOpen ? 'rotate-180' : ''
                           }`}
                           fill="none"
@@ -281,7 +292,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                     >
                       <button
                         onClick={() => setIsSolheimCupDropdownOpen(!isSolheimCupDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap py-2 ${
                           isSolheimCupActive
                             ? 'text-primary-500'
                             : 'text-gray-700 hover:text-primary-500'
@@ -289,7 +300,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                       >
                         {t('solheimCup')}
                         <svg
-                          className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 ${
+                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
                             isSolheimCupDropdownOpen ? 'rotate-180' : ''
                           }`}
                           fill="none"
@@ -338,7 +349,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                   {item.name === t('scorecard') && (
                     <button
                       onClick={() => onToggleScores?.()}
-                      className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap ${
+                      className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap py-2 ${
                         isScoresOpen
                           ? 'text-primary-500'
                           : 'text-gray-700 hover:text-primary-500'
@@ -356,7 +367,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                   {item.name !== t('news') && item.name !== t('schedule') && item.name !== t('rankings') && item.name !== t('scorecard') && item.name !== t('solheimCup') && (
                     <Link
                       href={item.href}
-                      className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap ${
+                      className={`font-medium transition-colors duration-200 text-sm sm:text-base relative group whitespace-nowrap py-2 ${
                         isActive
                           ? 'text-primary-500'
                           : 'text-gray-700 hover:text-primary-500'
@@ -378,7 +389,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                     >
                       <button
                         onClick={() => setIsRankingsDropdownOpen(!isRankingsDropdownOpen)}
-                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap ${
+                        className={`font-medium transition-colors duration-200 flex items-center text-sm sm:text-base relative group whitespace-nowrap py-2 ${
                           isRankingsActive
                             ? 'text-primary-500'
                             : 'text-gray-700 hover:text-primary-500'
@@ -386,7 +397,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
                       >
                         {t('rankings')}
                         <svg
-                          className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-200 ${
+                          className={`ml-1 h-4 w-4 transition-transform duration-200 ${
                             isRankingsDropdownOpen ? 'rotate-180' : ''
                           }`}
                           fill="none"
@@ -443,7 +454,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
 
         </div>
 
-        {/* Mobile Navigation - Changed from lg:hidden to xl:hidden */}
+        {/* Mobile Navigation - Shown below xl breakpoint (under 1280px) */}
         {isMenuOpen && (
           <div className="xl:hidden fixed inset-0 z-50">
             {/* Backdrop */}
@@ -453,7 +464,7 @@ export default function Header({ isScoresOpen = false, onToggleScores }: HeaderP
             />
 
             {/* Slide-out menu */}
-            <div className="fixed left-0 top-0 h-full w-80 landscape:w-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out translation-safe-container">
+            <div className="fixed left-0 top-0 h-full max-h-screen w-80 landscape:w-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out translation-safe-container">
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">

@@ -36,7 +36,7 @@ export default async function NewsPage() {
 
             {/* Sidebar */}
             <aside className="w-full lg:w-80 flex-shrink-0">
-            <div className="lg:sticky lg:top-24">
+            <div className="lg:sticky" style={{ top: 'calc(var(--header-height) + 1rem)' }}>
               <LatestArticle />
 
                 {/* Newsletter Signup */}

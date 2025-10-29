@@ -159,6 +159,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                         alt={article.image.alt}
                         width={800}
                         height={500}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 75vw, 800px"
                         className="w-full h-full object-cover"
                         priority
                       />
@@ -187,7 +188,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               </header>
 
               {/* Article Content */}
-              <div className="prose prose-lg max-w-none article-content break-words overflow-hidden">
+              <div className="prose prose-lg max-w-none lg:max-w-3xl xl:max-w-4xl article-content break-words overflow-hidden">
                 {article.content.map((paragraph, index) => (
                   paragraph && (
                     <MarkdownContent
@@ -240,7 +241,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
           {/* Sidebar */}
           <aside className="w-full lg:w-80 flex-shrink-0">
-            <div className="lg:sticky lg:top-24">
+            <div className="lg:sticky" style={{ top: 'calc(var(--header-height) + 1rem)' }}>
               {/* Latest Articles */}
               <LatestArticle />
             </div>
