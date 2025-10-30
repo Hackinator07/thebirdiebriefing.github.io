@@ -76,13 +76,13 @@ The local crowd had reason to cheer with **Mirabel Ting**, who matched poise wit
 
 Both **Angel Yin** and **Ronni Yin** made mid-round charges. Angel found her rhythm on the back nine with four birdies, while Ronni delivered the kind of controlled iron play that recalled her standout form from 2024.
 
-But the day ultimately belonged to **Hye Jin Choi**, who capped a standout round with a long birdie putt on 18 to shoot 64, highlighted by an eagle at the par-5 third. Choi heads into Round Two holding the solo lead, with Gemma Dryburgh, Benedetta Moresco, Patty Tavatanakit, Hannah Green, and Lydia Ko all within striking distance.
+But the day ultimately belonged to **Hye Jin Choi**, who capped a standout round with a long birdie putt on 18 to shoot 64, highlighted by an eagle at the par-5 third. Choi heads into Friday holding the solo lead, with Gemma Dryburgh, Benedetta Moresco, Patty Tavatanakit, Hannah Green, and Lydia Ko all within striking distance.
 
 The leaderboard is tight, the pace is sharp, and Kuala Lumpur looks set for a compelling Round Two.
 
 ## Shout Out
 
-**Chisato Iwai** getting an eagle on the Aun Risk Reward 332 yard par 4 16th which is also considered the hardest hole on the course.
+**Chisato Iwai** getting an eagle on the Aon Risk Reward 332 yard par 4 16th which is also considered the hardest hole on the course.
 
 **Wei Ling Hsu**, a member of the World Team at the Hanwha LIFEPLUS International Crown, continued her strong form with a 5-under 67 today. Marie and I have really enjoyed watching her—her lively, genuine energy on the course is such a refreshing contrast to the more media trained players.
 
