@@ -16,6 +16,7 @@ calloutType: "author"
 tags:
   - "Maybank Championship"
   - "LPGA Tour"
+  - "Tournament Golf"
   - "Round 1 Recap"
   - "Kuala Lumpur"
   - "Malaysia"
