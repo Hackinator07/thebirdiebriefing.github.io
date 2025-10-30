@@ -19,26 +19,26 @@ export default async function Home() {
         <VideoBackground />
 
         {/* Content Overlay */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-8 lg:py-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-4 lg:py-6">
           <div className="max-w-6xl mx-auto">
             {/* Two Column Layout */}
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
               {/* Left Column - Birdie Briefing Content */}
               <div className="flex-1">
-                <div className="bg-white rounded-lg p-6 lg:p-8 h-full flex flex-col justify-center">
+                <div className="bg-white rounded-lg p-4 lg:p-6 h-full flex flex-col justify-center">
                   {/* Main Headlines */}
-                  <div className="text-center mb-6">
+                  <div className="text-center mb-4">
                     <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-heading text-primary-500 leading-none mb-2">
                       The Birdie
                     </h1>
-                    <h2 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-heading text-secondary-500 leading-none mb-6">
+                    <h2 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-heading text-secondary-500 leading-none mb-4">
                       Briefing
                     </h2>
                   </div>
 
                   {/* Introduction */}
                   <div className="max-w-4xl mx-auto text-center">
-                    <p className="text-lg lg:text-xl text-gray-700 leading-relaxed mb-6">
+                    <p className="text-base lg:text-lg text-gray-700 leading-relaxed mb-4">
                       At The Birdie Briefing, we amplify women in golf—sharing the stories of LPGA players, rising stars, and our community. With tournament coverage, insights, exclusive stories, and{' '}
                       <Link 
                         href="/contact-us?inquiry=user-submission" 
@@ -50,7 +50,7 @@ export default async function Home() {
                     </p>
 
                     {/* Author Attribution */}
-                    <div className="flex items-center justify-center space-x-4 mb-6">
+                    <div className="flex items-center justify-center space-x-4 mb-4">
                       <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center shadow-sm flex-shrink-0">
                         <svg width="24" height="24" viewBox="0 0 69.787 69.787" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <g>
@@ -105,18 +105,21 @@ export default async function Home() {
                     </div>
 
                     {/* Call to Actions */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                       <Link
                         href="/news"
-                        className="bg-primary-500 text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-primary-600 transition-all duration-300 shadow-lg"
+                        className="bg-primary-500 text-white px-8 py-3 rounded-lg font-semibold text-base hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                       >
                         Latest Coverage
                       </Link>
                       <Link
                         href="/about"
-                        className="text-lg font-medium text-primary-500 hover:text-primary-600 transition-colors"
+                        className="text-base font-semibold text-primary-500 hover:text-primary-600 transition-colors inline-flex items-center gap-1"
                       >
-                        Learn More →
+                        Learn More 
+                        <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
                       </Link>
                     </div>
                   </div>
@@ -136,10 +139,10 @@ export default async function Home() {
 
       {/* Featured Articles Section */}
       {featuredArticles.length > 0 && (
-        <section className="py-8 lg:py-12">
+        <section className="py-4 lg:py-6">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="max-w-2xl mx-auto text-center mb-12">
-              <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="max-w-2xl mx-auto text-center mb-8">
+              <div className="flex items-center justify-center gap-4 mb-4">
                 <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight tracking-tight title-overlap">
                   Featured Articles
@@ -175,14 +178,14 @@ export default async function Home() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
+                  <div className="p-5">
                     {/* Category */}
-                    <span className="inline-block text-primary-500 font-semibold text-sm uppercase tracking-wide mb-3">
+                    <span className="inline-block text-primary-500 font-semibold text-sm uppercase tracking-wide mb-2">
                       {article.category}
                     </span>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight line-clamp-2">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 leading-snug line-clamp-2">
                       <Link
                         href={`/news/${article.slug}`}
                         className="group-hover:text-primary-500 transition-colors"
@@ -192,12 +195,12 @@ export default async function Home() {
                     </h3>
 
                     {/* Excerpt */}
-                    <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+                    <p className="text-gray-600 text-base mb-4 leading-relaxed line-clamp-3">
                       {article.excerpt}
                     </p>
 
                     {/* Meta */}
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-1.5">
                       <div className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-500">
                         <span>By {article.author}</span>
                         <span>•</span>
@@ -233,9 +236,9 @@ export default async function Home() {
       )}
 
       {/* Spotify Embed Section */}
-      <section className="pt-8 pb-16 lg:pt-12 lg:pb-24">
+      <section className="pt-12 pb-16 lg:pt-16 lg:pb-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight tracking-tight title-overlap">
@@ -243,7 +246,7 @@ export default async function Home() {
               </h2>
               <div className="flex-1 h-px bg-gray-300 max-w-32"></div>
             </div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Your go-to podcast for LPGA news, with tournament recaps, player interviews, and behind-the-scenes stories.
             </p>
           </div>
@@ -253,25 +256,25 @@ export default async function Home() {
         </div>
       </section>
 
-                           {/* Follow Along Section */}
-                 <section className="bg-primary-500 text-white py-16 lg:py-24">
+      {/* Follow Along Section */}
+      <section className="bg-primary-500 text-white py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-6">
           <Socials />
         </div>
       </section>
 
-                           {/* Call to Action */}
-                                 <section className="bg-secondary-500 text-white py-16 lg:py-24">
+      {/* Call to Action */}
+      <section className="bg-secondary-500 text-white py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="flex items-center justify-center gap-4 mb-6">
               <div className="flex-1 h-px bg-gray-200 max-w-32"></div>
-                                                           <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight title-overlap">
-                  Become Part of the Birdie Briefing Community
-                </h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight title-overlap">
+                Become Part of the Birdie Briefing Community
+              </h2>
               <div className="flex-1 h-px bg-gray-200 max-w-32"></div>
             </div>
-                                                   <p className="text-xl text-gray-200 leading-relaxed mb-12 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-200 leading-relaxed mb-8 max-w-3xl mx-auto">
               Connect with golf fans, follow tournament action, and join a community celebrating women's golf.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -279,7 +282,7 @@ export default async function Home() {
                 href="https://discord.com/invite/rqB6T7uVtN"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-primary-500 px-8 py-4 rounded-md font-medium text-lg border border-primary-500 hover:bg-primary-500 hover:text-white transition-all duration-300 inline-flex items-center gap-2"
+                className="bg-white text-primary-500 px-8 py-3 rounded-lg font-semibold text-base border-2 border-white hover:bg-primary-500 hover:text-white hover:border-primary-500 transition-all duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl"
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.019 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1568 2.4189Z"/>
