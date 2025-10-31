@@ -85,33 +85,37 @@ const round2TeeTimes = [
   { time: "9:27AM", tee: "10", players: ["Gurleen Kaur (Houston, TX)", "Mi Hyang Lee (Seoul, Republic of Korea)", "Namo Luangnitikul (a) * (Phuket, Thailand)"] }
 ];
 
-// Round 3 Tee Times - Buick LPGA Shanghai
+// Round 3 Tee Times - Saturday, November 1, 2025 (Malaysia Time - GMT+8)
 const round3TeeTimes = [
-  { time: "8:48AM", tee: "1", players: ["Kristen Gillman", "Stacy Lewis", "A Lim Kim"] },
-  { time: "8:59AM", tee: "1", players: ["Ilhee Lee", "Brooke M. Henderson", "In Gee Chun"] },
-  { time: "9:10AM", tee: "1", players: ["Ruixin Liu", "Miyu Yamashita", "Dewi Weber"] },
-  { time: "9:21AM", tee: "1", players: ["Paula Reto", "Stephanie Meadow", "Polly Mack"] },
-  { time: "9:32AM", tee: "1", players: ["Ana Belac", "Andrea Lee", "Celine Borge"] },
-  { time: "9:43AM", tee: "1", players: ["Pajaree Anannarukarn", "Linnea Strom", "Elizabeth Szokol"] },
-  { time: "9:54AM", tee: "1", players: ["Hyo Joo Kim", "Patty Tavatanakit", "Adela Cernousek"] },
-  { time: "10:05AM", tee: "1", players: ["Minami Katsu", "Jeongeun Lee5", "Amy Yang"] },
-  { time: "10:16AM", tee: "1", players: ["Charley Hull", "Allisen Corpuz", "Lucy Li"] },
-  { time: "10:27AM", tee: "1", players: ["Nelly Korda", "Peiyun Chien", "Megan Khang"] },
-  { time: "10:38AM", tee: "1", players: ["Pornanong Phatlum", "Ina Yoon", "Chisato Iwai"] },
-  { time: "10:49AM", tee: "1", players: ["Nasa Hataoka", "Gabriela Ruffels", "Brooke Matthews"] },
-  { time: "11:00AM", tee: "1", players: ["Youmin Hwang", "Jessica Porvasnik", "Akie Iwai"] },
-  { time: "8:48AM", tee: "10", players: ["Sophia Popov", "Rio Takeda", "Kumkang Park"] },
-  { time: "8:59AM", tee: "10", players: ["Jennifer Kupcho", "Nataliya Guseva", "Ryann O'Toole"] },
-  { time: "9:10AM", tee: "10", players: ["Mariel Galdiano", "Sofia Garcia", "Emily Kristine Pedersen"] },
-  { time: "9:21AM", tee: "10", players: ["Azahara Munoz", "Somi Lee", "Sung Hyun Park"] },
-  { time: "9:32AM", tee: "10", players: ["Caroline Masson", "Yahui Zhang", "Hira Naveed"] },
-  { time: "9:43AM", tee: "10", players: ["Narin An", "Jaravee Boonchant", "Hyo Joon Jang"] },
-  { time: "9:54AM", tee: "10", players: ["Ingrid Lindblad", "Kate Smith-Stroh", "Jodi Ewart Shadoff"] },
-  { time: "10:05AM", tee: "10", players: ["Yuna Nishimura", "Alena Sharp", "Jin Hee Im"] },
-  { time: "10:16AM", tee: "10", players: ["Sarah Schmelzel", "Jasmine Suwannapura", "Hye-Jin Choi"] },
-  { time: "10:27AM", tee: "10", players: ["Robyn Choi", "Lauren Hartlage", "Brianna Do"] },
-  { time: "10:38AM", tee: "10", players: ["Jiwon Jeon", "Madelene Sagstrom"] },
-  { time: "10:49AM", tee: "10", players: ["Frida Kinhult", "Cassie Porter"] }
+  // Tee 1
+  { time: "7:15AM", tee: "1", players: ["Brooke M. Henderson (Smiths Falls, Ontario)", "Jenny Bae (Suwanee, GA)", "Karis Anne Davidson (Gold Coast, Australia)"] },
+  { time: "7:26AM", tee: "1", players: ["Leona Maguire (Cavan, Ireland)", "Chisato Iwai (Saitama, Japan)", "Aditi Ashok (Bangalore, India)"] },
+  { time: "7:37AM", tee: "1", players: ["Haeran Ryu (Suwon, Republic of Korea)", "Pajaree Anannarukarn (Bangkok, Thailand)", "Gemma Dryburgh (Aberdeen, Scotland)"] },
+  { time: "7:48AM", tee: "1", players: ["Nasa Hataoka (Ibaraki, Japan)", "Lilia Vu (Fountain Valley, CA)", "Ashleigh Buhai (Johannesburg, South Africa)"] },
+  { time: "7:59AM", tee: "1", players: ["A Lim Kim (Seongnam-si, Republic of Korea)", "Andrea Lee (Hermosa Beach, CA)", "Celine Boutier (Montrouge, France)"] },
+  { time: "8:10AM", tee: "1", players: ["Lindy Duncan (Plantation, FL)", "Somi Lee (Yongin-si, Republic of Korea)", "Manon De Roey (Lint, Belgium)"] },
+  { time: "8:21AM", tee: "1", players: ["Akie Iwai (Saitama, Japan)", "Nanna Koerstz Madsen (Smoerum, Denmark)", "Jeeno Thitikul (Bangkok, Thailand)"] },
+  { time: "8:32AM", tee: "1", players: ["Wei-Ling Hsu (New Taipei City, Chinese Taipei)", "Angel Yin (Arcadia, CA)", "Jin Hee Im (Jeju, Republic of Korea)"] },
+  { time: "8:43AM", tee: "1", players: ["Paula Reto (Bloemfontein, South Africa)", "Ina Yoon (Seoul, Republic of Korea)", "Emily Kristine Pedersen (Smoerum, Denmark)"] },
+  { time: "8:54AM", tee: "1", players: ["Lydia Ko (Auckland, New Zealand)", "Benedetta Moresco (Caldogno, Italy)", "Sei Young Kim (Seoul, Republic of Korea)"] },
+  { time: "9:05AM", tee: "1", players: ["Linn Grant (Viken, Sweden)", "Arpichaya Yubol (Saraburi, Thailand)", "Miyu Yamashita (Osaka, Japan)"] },
+  { time: "9:16AM", tee: "1", players: ["Miranda Wang (Tianjin, People's Republic of China)", "Ayaka Furue (Kobe, Japan)", "Yan Liu (Fujian, People's Republic of China)"] },
+  { time: "9:27AM", tee: "1", players: ["Hye-Jin Choi (Gyeonggi-do, Republic of Korea)", "Ruoning Yin (ShangHai, People's Republic of China)", "Hannah Green (Perth, Australia)"] },
+  
+  // Tee 10
+  { time: "7:15AM", tee: "10", players: ["Ingrid Lindblad (Halmstad, Sweden)", "Patty Tavatanakit (Bangkok, Thailand)", "Gaby Lopez (Mexico City, Mexico)"] },
+  { time: "7:26AM", tee: "10", players: ["Auston Kim (St. Augustine, FL)", "Celine Borge (Tonsberg, Norway)", "Genevieve I-Rynn Ling * (Selangor, Malaysia)"] },
+  { time: "7:37AM", tee: "10", players: ["Ashley Lau * (Bintulu, Malaysia)", "Chanettee Wannasaen (Chiang mai, Thailand)", "Saki Baba (Tokyo, Japan)"] },
+  { time: "7:48AM", tee: "10", players: ["Yealimi Noh (San Francisco, CA)", "Lottie Woad (Farnham, England)", "Yuri Yoshida (Chiba, Japan)"] },
+  { time: "7:59AM", tee: "10", players: ["Grace Kim (Sydney, Australia)", "Achiraya Sriwong (a) * (Loei, Thailand)", "Mirabel Ting * (Miri, Malaysia)"] },
+  { time: "8:10AM", tee: "10", players: ["Haeji Kang (Seoul, Republic of Korea)", "Robyn Choi (Gold Coast, Australia)", "Carlota Ciganda (Pamplona, Spain)"] },
+  { time: "8:21AM", tee: "10", players: ["Weiwei Zhang (Hainan, People's Republic of China)", "Julia Lopez Ramirez (Benahavis, Spain)", "Kelly Tan * (Batu Pahat, Malaysia)"] },
+  { time: "8:32AM", tee: "10", players: ["Mary Liu (Xi'an, People's Republic of China)", "Ilhee Lee (Seoul, Republic of Korea)", "Liyana Durisic * (Selangor, Malaysia)"] },
+  { time: "8:43AM", tee: "10", players: ["Kristen Gillman (Austin, TX)", "Albane Valenzuela (Geneva, Switzerland)", "Minami Katsu (Kagoshima, Japan)"] },
+  { time: "8:54AM", tee: "10", players: ["Nataliya Guseva (Miami, FL)", "Cassie Porter (Peregian Springs, Australia)", "Mi Hyang Lee (Seoul, Republic of Korea)"] },
+  { time: "9:05AM", tee: "10", players: ["Namo Luangnitikul (a) * (Phuket, Thailand)", "Cholcheva Wongras * (Chiangmai, Thailand)", "Elizabeth Szokol (Chicago, IL)"] },
+  { time: "9:16AM", tee: "10", players: ["Gurleen Kaur (Houston, TX)", "Rio Takeda (Kumamoto, Japan)", "Lucy Li (Redwood Shores, CA)"] },
+  { time: "9:27AM", tee: "10", players: ["Kritchanya Kaopattanaskul (a) * (Pattaya City, Thailand)", "Pauline Roussin-Bouchard (Orcieres 1850, France)", "Kan Bunnabodee * (Chonburi, Thailand)"] }
 ];
 
 // Round 4 Tee Times - Buick LPGA Shanghai
@@ -512,10 +516,14 @@ function TeeTimesContent() {
                     Round 2 - Friday
                   </button>
                   <button
-                    disabled
-                    className="w-full px-4 py-3 text-sm font-medium rounded-md transition-colors text-gray-300 bg-gray-100 border border-gray-200 cursor-not-allowed"
+                    onClick={() => setActiveRound('round3')}
+                    className={`w-full px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                      activeRound === 'round3'
+                        ? 'text-primary-600 bg-primary-50 border border-primary-200'
+                        : 'text-gray-500 hover:text-gray-700 border border-gray-200'
+                    }`}
                   >
-                    Round 3 - Saturday (Coming Soon)
+                    Round 3 - Saturday
                   </button>
                   <button
                     disabled
@@ -549,10 +557,14 @@ function TeeTimesContent() {
                       Round 2 - Friday
                     </button>
                     <button
-                      disabled
-                      className="px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap text-gray-300 cursor-not-allowed"
+                      onClick={() => setActiveRound('round3')}
+                      className={`px-3 sm:px-4 lg:px-6 py-3 text-xs sm:text-sm font-medium rounded-md transition-colors whitespace-nowrap ${
+                        activeRound === 'round3'
+                          ? 'text-primary-600 bg-primary-50'
+                          : 'text-gray-500 hover:text-gray-700'
+                      }`}
                     >
-                      Round 3 - Saturday (Coming Soon)
+                      Round 3 - Saturday
                     </button>
                     <button
                       disabled
