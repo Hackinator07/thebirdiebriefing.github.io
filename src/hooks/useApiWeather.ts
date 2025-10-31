@@ -78,6 +78,49 @@ function parseWeatherFromAPI(apiData: any): WeatherData {
 }
 
 /**
+ * Loads manual weather data from config file
+ */
+async function loadManualWeatherData(eventId: string): Promise<WeatherData | null> {
+  try {
+    // Only load manual weather in browser/client environment
+    if (typeof window === 'undefined') {
+      return null;
+    }
+
+    const response = await fetch('/data/manual-weather.json');
+    if (!response.ok) {
+      return null;
+    }
+
+    const manualData = await response.json();
+    
+    // Check if manual weather is enabled and matches eventId
+    if (manualData.enabled && manualData.eventId === eventId && manualData.weather) {
+      console.log('🌤️ Using manual weather data from config');
+      return {
+        type: manualData.weather.type || 'Forecast',
+        displayValue: manualData.weather.displayValue || 'Mostly sunny',
+        conditionId: manualData.weather.conditionId || '2',
+        zipCode: manualData.weather.zipCode || '96706',
+        temperature: Math.round(manualData.weather.temperature || 76),
+        lowTemperature: Math.round(manualData.weather.lowTemperature || 72),
+        highTemperature: Math.round(manualData.weather.highTemperature || 89),
+        precipitation: Math.round(manualData.weather.precipitation || 60),
+        gust: Math.round(manualData.weather.gust || 15),
+        windSpeed: Math.round(manualData.weather.windSpeed || 6),
+        windDirection: manualData.weather.windDirection || 'N',
+        lastUpdated: manualData.weather.lastUpdated || new Date().toISOString(),
+      };
+    }
+
+    return null;
+  } catch (error) {
+    console.warn('⚠️ Could not load manual weather data:', error);
+    return null;
+  }
+}
+
+/**
  * Fetches fresh weather data from API
  */
 async function fetchWeatherFromAPI(eventId: string): Promise<WeatherData> {
@@ -88,6 +131,18 @@ async function fetchWeatherFromAPI(eventId: string): Promise<WeatherData> {
   if (cached && (Date.now() - cached.timestamp) < CACHE_DURATION) {
     console.log('🌤️ Using cached weather data');
     return cached.data;
+  }
+
+  // Try to load manual weather data first (if API has no data)
+  const manualWeather = await loadManualWeatherData(eventId);
+  if (manualWeather) {
+    // Cache manual weather data
+    cache.set(cacheKey, {
+      data: manualWeather,
+      timestamp: Date.now()
+    });
+    console.log('✅ Using manual weather data:', manualWeather.displayValue);
+    return manualWeather;
   }
 
   try {
@@ -117,7 +172,9 @@ async function fetchWeatherFromAPI(eventId: string): Promise<WeatherData> {
       // Handle client errors (400-499) gracefully
       if (response.status >= 400 && response.status < 500) {
         console.warn(`⚠️ Client error ${response.status} for weather data. Using fallback.`);
-        return defaultFallbackWeather;
+        // Try manual weather as fallback
+        const manualFallback = await loadManualWeatherData(eventId);
+        return manualFallback || defaultFallbackWeather;
       }
       
       throw new Error(`API request failed: ${response.status}`);
@@ -125,6 +182,22 @@ async function fetchWeatherFromAPI(eventId: string): Promise<WeatherData> {
 
     const apiData = await response.json();
     const weatherData = parseWeatherFromAPI(apiData);
+
+    // Check if API actually returned weather data
+    const hasWeather = apiData.events?.[0]?.courses?.[0]?.weather;
+    
+    if (!hasWeather) {
+      console.warn('⚠️ API response has no weather data. Checking manual weather...');
+      // If no weather in API, use manual weather if available
+      const manualFallback = await loadManualWeatherData(eventId);
+      if (manualFallback) {
+        cache.set(cacheKey, {
+          data: manualFallback,
+          timestamp: Date.now()
+        });
+        return manualFallback;
+      }
+    }
 
     // Cache the result
     cache.set(cacheKey, {
@@ -137,7 +210,9 @@ async function fetchWeatherFromAPI(eventId: string): Promise<WeatherData> {
 
   } catch (error) {
     console.error('❌ Failed to fetch weather data:', error);
-    return defaultFallbackWeather;
+    // Try manual weather as fallback
+    const manualFallback = await loadManualWeatherData(eventId);
+    return manualFallback || defaultFallbackWeather;
   }
 }
 

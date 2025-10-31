@@ -1,0 +1,20 @@
+{
+  "eventId": "401734783",
+  "enabled": true,
+  "weather": {
+    "type": "Forecast",
+    "displayValue": "Mostly sunny",
+    "conditionId": "2",
+    "zipCode": "96706",
+    "temperature": 88,
+    "lowTemperature": 75,
+    "highTemperature": 92,
+    "precipitation": 30,
+    "gust": 8,
+    "windSpeed": 5,
+    "windDirection": "NE",
+    "lastUpdated": "2025-10-30T08:00:00.000Z"
+  },
+  "note": "Edit this file to manually update weather when API data is unavailable"
+}
+

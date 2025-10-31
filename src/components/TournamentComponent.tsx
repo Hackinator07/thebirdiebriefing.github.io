@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useStaticTournamentData } from '@/hooks/useStaticTournamentData';
-import { useApiWeather } from '@/hooks/useApiWeather';
+import { useApiWeather, clearWeatherCache } from '@/hooks/useApiWeather';
 import { formatPurse, formatLocation, getCourseName } from '@/lib/tournamentApi';
 import staticDataService from '@/lib/staticDataService';
 
@@ -45,7 +45,7 @@ export default function TournamentComponent({
   );
   
   // Use API weather data as primary source with 60-minute refresh
-  const { weather, loading: weatherLoading, error: weatherError, lastUpdated } = useApiWeather(
+  const { weather, loading: weatherLoading, error: weatherError, lastUpdated, refreshWeather } = useApiWeather(
     shouldLoadData ? eventId : ""
   );
   
@@ -120,6 +120,18 @@ export default function TournamentComponent({
       setShowStaticContent(false);
     }
   }, [loading, weatherLoading, tournamentData, weather]);
+
+  // Clear weather cache when component loads to ensure fresh data is fetched
+  useEffect(() => {
+    if (shouldLoadData) {
+      // Clear cache to force fresh fetch on next refresh
+      clearWeatherCache();
+      // Trigger immediate refresh to fetch latest weather
+      if (refreshWeather) {
+        refreshWeather();
+      }
+    }
+  }, [shouldLoadData, refreshWeather]);
   // Show static content immediately, no loading state needed
   // The component will seamlessly update when live data arrives
 
