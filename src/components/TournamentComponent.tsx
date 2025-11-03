@@ -23,16 +23,16 @@ interface TournamentComponentProps {
 }
 
 export default function TournamentComponent({
-  eventId = "401734783",
-  tournamentName = "Maybank Championship 2025",
-  location = "Kuala Lumpur Golf & Country Club", 
-  date = "Oct 30-Nov 2, 2025",
-  buyTicketsUrl = "https://www.ticket2u.com.my/event/41820/maybank-championship-2025-sanctioned-by-lpga",
-  officialSiteUrl = "https://www.klgcc.com/annual-event/maybank-championship-2025",
+  eventId = "401734784",
+  tournamentName = "TOTO Japan Classic 2025",
+  location = "Seta Golf Course", 
+  date = "Nov 6-9, 2025",
+  buyTicketsUrl = "https://toto-japan-classic.com/en/",
+  officialSiteUrl = "https://toto-japan-classic.com/en/",
   teeTimesUrl = "/tee-times",
-  broadcastUrl = "/news/maybank-championship-2025/#tv-schedule",
+  broadcastUrl = "/news/toto-japan-classic-2025/#tv-schedule",
   entryListUrl = "/entry-list",
-  podcastUrl = "https://open.spotify.com/episode/4kMMOJqjAlCXmJv3FWuXmr?si=50d306b643c1445a"
+  podcastUrl = "https://open.spotify.com/show/3oaQN8KhjwW8sLxDYJdxLs"
 }: TournamentComponentProps) {
   const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
@@ -55,11 +55,11 @@ export default function TournamentComponent({
   // Use API data if available, fallback to static data that matches current API response
   const displayName = (tournamentData?.name || tournamentName).replace(/\s*(pres\.|presented)\s*by\s*(P&G|Hoakalei)/i, '');
   const displayLocation = tournamentData?.courses ? formatLocation(tournamentData.courses[0]) : location;
-  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Kuala Lumpur Golf & Country Club";
-  const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$2.3M";
+  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Seta Golf Course";
+  const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$2.1M";
   const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 72;
-  const displayYardage = "6,536"; // Hardcoded - API shows incorrect yardage
-  const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName?.replace(/^Jasmine/, 'J.') || "Thailand";
+  const displayYardage = "6,616"; // Hardcoded - API shows incorrect yardage
+  const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName || "Rio Takeda";
   
   // Format date from API data
   const displayDate = tournamentData ? 
@@ -143,8 +143,8 @@ export default function TournamentComponent({
         {/* Tournament Logo */}
         <div className="flex justify-center mb-3">
           <Image
-            src="https://media.lpga.com/images/librariesprovider3/default-album/mb-championship-2023-logo---primarye077f6ff-83cc-4daa-a1ac-376523f09d9d.png?sfvrsn=f10791fd_1"
-            alt="Maybank Championship Logo"
+            src="https://media.lpga.com/images/librariesprovider3/default-album/toto-japan-classic-logo.png?sfvrsn=1630650a_1"
+            alt="TOTO Japan Classic Logo"
             width={140}
             height={70}
             className="h-16 w-auto object-contain"
@@ -153,7 +153,7 @@ export default function TournamentComponent({
         {/* Tournament Title */}
         <div className="mb-2">
           <Link 
-            href="/news/maybank-championship-2025"
+            href="/news/toto-japan-classic-2025"
             className="block group"
           >
             <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line hover:text-primary-600 transition-all duration-200 cursor-pointer" style={{ hyphens: 'none' }}>
@@ -177,7 +177,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
             <Link 
-              href="https://maps.app.goo.gl/aAJZJL81MdC1a5iR6"
+              href="https://maps.app.goo.gl/NHf4pqTbzPDfoQLS8"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
@@ -190,7 +190,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
             </svg>
             <a
-              href="https://www.klgcc.com/golf/courses/west-course"
+              href="https://toto-japan-classic.com/en/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 hover:underline transition-colors"

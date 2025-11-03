@@ -106,20 +106,20 @@ export default function EntryListPage() {
             </div>
           </div>
           <p className="text-base sm:text-lg text-gray-600 text-center">
-            Maybank Championship 2025
+            TOTO Japan Classic 2025
           </p>
           <p className="text-sm text-gray-500 text-center">
             <a
-              href="https://maps.app.goo.gl/r4ZGGX7rMz3F7Pu18"
+              href="https://maps.app.goo.gl/NHf4pqTbzPDfoQLS8"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-500 hover:text-primary-600 hover:underline transition-colors"
             >
-              Kuala Lumpur Golf & Country Club
+              Seta Golf Course
             </a>
           </p>
           <p className="text-sm text-gray-500 text-center">
-            October 30 - November 2, 2025
+            November 6-9, 2025
           </p>
           <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center">
             Updated {new Date(entryList.lastUpdated).toLocaleDateString('en-US', {

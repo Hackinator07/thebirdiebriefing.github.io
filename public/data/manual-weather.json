@@ -1,20 +1,22 @@
 {
-  "eventId": "401734783",
+  "eventId": "401734784",
   "enabled": true,
   "weather": {
     "type": "Forecast",
-    "displayValue": "Mostly sunny",
-    "conditionId": "2",
-    "zipCode": "96706",
-    "temperature": 88,
-    "lowTemperature": 75,
-    "highTemperature": 92,
-    "precipitation": 30,
-    "gust": 8,
-    "windSpeed": 5,
-    "windDirection": "NE",
-    "lastUpdated": "2025-10-30T08:00:00.000Z"
+    "displayValue": "Partly cloudy",
+    "conditionId": "3",
+    "zipCode": "520-2153",
+    "latitude": 34.95574770399307,
+    "longitude": 135.92418896691683,
+    "temperature": 61,
+    "lowTemperature": 52,
+    "highTemperature": 64,
+    "precipitation": 20,
+    "gust": 10,
+    "windSpeed": 6,
+    "windDirection": "NW",
+    "lastUpdated": "2025-11-06T08:00:00.000Z"
   },
-  "note": "Edit this file to manually update weather when API data is unavailable"
+  "note": "Edit this file to manually update weather when API data is unavailable. Location: Seta Golf Course, Otsu, Shiga, Japan"
 }
 

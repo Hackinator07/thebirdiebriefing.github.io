@@ -49,8 +49,8 @@ interface TournamentScoresWidgetProps {
 }
 
 export default function TournamentScoresWidget({
-  tournamentId = '401734783',
-  tournamentName = 'Maybank Championship 2025',
+  tournamentId = '401734784',
+  tournamentName = 'TOTO Japan Classic 2025',
   isOpen,
   onToggle,
   showToggleButton = true

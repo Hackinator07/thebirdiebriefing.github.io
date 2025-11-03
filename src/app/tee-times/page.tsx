@@ -6,20 +6,20 @@ import TimezoneSelect from 'react-timezone-select';
 import { TimezoneProvider, useTimezone } from '@/components/TimezoneContext';
 import { useStaticTournamentData } from '@/hooks/useStaticTournamentData';
 
-// Default timezone (Malaysia Time - Maybank Championship tee times)
-const DEFAULT_TIMEZONE = 'Asia/Kuala_Lumpur';
+// Default timezone (Japan Time - TOTO Japan Classic tee times)
+const DEFAULT_TIMEZONE = 'Asia/Tokyo';
 
 // Tournament information
-const TOURNAMENT_NAME = "Maybank Championship 2025";
-const TOURNAMENT_COURSE = "Kuala Lumpur Golf & Country Club";
-const TOURNAMENT_LOCATION = "Kuala Lumpur, Malaysia";
+const TOURNAMENT_NAME = "TOTO Japan Classic 2025";
+const TOURNAMENT_COURSE = "Seta Golf Course";
+const TOURNAMENT_LOCATION = "Otsu-shi, Shiga, Japan";
 const TOURNAMENT_PAR = 72;
-const TOURNAMENT_YARDS = 6536;
+const TOURNAMENT_YARDS = 6616;
 const TOURNAMENT_FIELD = "78 Players";
-const TOURNAMENT_PURSE = "$3,000,000";
-const TOURNAMENT_LOGO = "https://media.lpga.com/images/librariesprovider3/default-album/mb-championship-2023-logo---primarye077f6ff-83cc-4daa-a1ac-376523f09d9d.png?sfvrsn=f10791fd_1";
+const TOURNAMENT_PURSE = "$2,100,000";
+const TOURNAMENT_LOGO = "https://a.espncdn.com/combiner/i?img=/i/teamlogos/golf/500/401734784.png";
 
-// Thursday, October 30, 2025 Tee Times (Malaysia Time - GMT+8)
+// Thursday, November 6, 2025 Tee Times (Japan Time - GMT+9)
 const round1TeeTimes = [
   // Tee 1
   { time: "7:15AM", tee: "1", players: ["Lucy Li (Redwood Shores, CA)", "Weiwei Zhang (Hainan, People's Republic of China)", "Manon De Roey (Lint, Belgium)"] },
@@ -52,7 +52,7 @@ const round1TeeTimes = [
   { time: "9:27AM", tee: "10", players: ["Ayaka Furue (Kobe, Japan)", "A Lim Kim (Seongnam-si, Republic of Korea)", "Liyana Durisic * (Selangor, Malaysia)"] }
 ];
 
-// Round 2 Tee Times - Friday, October 31, 2025 (Malaysia Time - GMT+8)
+// Round 2 Tee Times - Friday, November 7, 2025 (Japan Time - GMT+9)
 const round2TeeTimes = [
   // Tee 1
   { time: "7:15AM", tee: "1", players: ["Auston Kim (St. Augustine, FL)", "Celine Borge (Tonsberg, Norway)", "Genevieve I-Rynn Ling * (Selangor, Malaysia)"] },
@@ -85,7 +85,7 @@ const round2TeeTimes = [
   { time: "9:27AM", tee: "10", players: ["Gurleen Kaur (Houston, TX)", "Mi Hyang Lee (Seoul, Republic of Korea)", "Namo Luangnitikul (a) * (Phuket, Thailand)"] }
 ];
 
-// Round 3 Tee Times - Saturday, November 1, 2025 (Malaysia Time - GMT+8)
+// Round 3 Tee Times - Saturday, November 8, 2025 (Japan Time - GMT+9)
 const round3TeeTimes = [
   // Tee 1
   { time: "7:15AM", tee: "1", players: ["Brooke M. Henderson (Smiths Falls, Ontario)", "Jenny Bae (Suwanee, GA)", "Karis Anne Davidson (Gold Coast, Australia)"] },
@@ -158,7 +158,7 @@ function formatPurse(purse: number): string {
   }
 }
 
-// Function to convert tee time from Malaysia time (GMT+8) to selected timezone
+// Function to convert tee time from Japan time (GMT+9) to selected timezone
 function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: string): string {
   try {
     // If the timezones are the same, return the original time
@@ -177,7 +177,7 @@ function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: st
     if (period === 'PM' && hour24 !== 12) hour24 += 12;
     if (period === 'AM' && hour24 === 12) hour24 = 0;
 
-    // Create a date object representing the time in Malaysia timezone (GMT+8)
+    // Create a date object representing the time in Japan timezone (GMT+9)
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0');
@@ -185,14 +185,14 @@ function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: st
     const hourStr = String(hour24).padStart(2, '0');
     const minuteStr = String(minute).padStart(2, '0');
 
-    // Create the date string in Malaysia timezone format
+    // Create the date string in Japan timezone format
     const dateString = `${year}-${month}-${day}T${hourStr}:${minuteStr}:00`;
     
-    // Create a date object that represents this time in Malaysia timezone (GMT+8)
-    const malaysiaDate = new Date(dateString + '+08:00'); // Explicitly set Malaysia timezone offset (GMT+8)
+    // Create a date object that represents this time in Japan timezone (GMT+9)
+    const japanDate = new Date(dateString + '+09:00'); // Explicitly set Japan timezone offset (GMT+9)
     
     // Format to target timezone
-    const formatted = malaysiaDate.toLocaleTimeString('en-US', {
+    const formatted = japanDate.toLocaleTimeString('en-US', {
       timeZone: toTimezone,
       hour: 'numeric',
       minute: '2-digit',
@@ -207,23 +207,23 @@ function convertTeeTime(timeString: string, fromTimezone: string, toTimezone: st
 
 function TeeTimesContent() {
   // Use tournament data from API (same event ID as TournamentComponent)
-  const eventId = "401734783"; // Maybank Championship event ID
+  const eventId = "401734784"; // TOTO Japan Classic event ID
   const { tournamentData, loading, error } = useStaticTournamentData(eventId);
   
-  // Round 1 date info - always Thursday for Maybank Championship
+  // Round 1 date info - always Thursday for TOTO Japan Classic
   const getRound1DateInfo = useCallback(() => {
     return {
       isWednesday: false,
       dayLabel: "Thursday",
-      dateLabel: "Thursday, October 30"
+      dateLabel: "Thursday, November 6"
     };
   }, []);
 
   // Function to determine which round should be active based on tournament status
   const getCurrentRound = useCallback((): 'round1' | 'round2' | 'round3' | 'round4' => {
-    // Tournament dates: October 30 - November 2, 2025 (Thursday-Sunday)
-    const tournamentStartDate = new Date('2025-10-30'); // Thursday
-    const tournamentEndDate = new Date('2025-11-02'); // Sunday
+    // Tournament dates: November 6 - November 9, 2025 (Thursday-Sunday)
+    const tournamentStartDate = new Date('2025-11-06'); // Thursday
+    const tournamentEndDate = new Date('2025-11-09'); // Sunday
 
     const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -455,7 +455,7 @@ function TeeTimesContent() {
                 <h2 className="text-2xl font-bold text-white mb-2">
                   {tournamentData?.name || TOURNAMENT_NAME}
                 </h2>
-                <p className="text-secondary-100">October 30 - November 2, 2025 • {tournamentData?.courses?.[0]?.name || TOURNAMENT_COURSE}</p>
+                <p className="text-secondary-100">November 6-9, 2025 • {tournamentData?.courses?.[0]?.name || TOURNAMENT_COURSE}</p>
                 <p className="text-secondary-100">{tournamentData?.courses?.[0]?.address ? `${tournamentData.courses[0].address.city}, ${tournamentData.courses[0].address.state || tournamentData.courses[0].address.country || 'Malaysia'}` : TOURNAMENT_LOCATION}</p>
                 <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                   <div className="flex flex-col">
@@ -624,16 +624,16 @@ function TeeTimesContent() {
                 {isClient ? (
                   <>
                     {activeRound === 'round1' && `Round 1 - ${round1DateInfo.dateLabel}`}
-                    {activeRound === 'round2' && 'Round 2 - Friday, October 31'}
-                    {activeRound === 'round3' && 'Round 3 - Saturday, November 1'}
-                    {activeRound === 'round4' && 'Round 4 - Sunday, November 2'}
+                    {activeRound === 'round2' && 'Round 2 - Friday, November 7'}
+                    {activeRound === 'round3' && 'Round 3 - Saturday, November 8'}
+                    {activeRound === 'round4' && 'Round 4 - Sunday, November 9'}
                   </>
                 ) : (
                   <>
-                    {activeRound === 'round1' && 'Round 1 - Thursday, October 30'}
-                    {activeRound === 'round2' && 'Round 2 - Friday, October 31'}
-                    {activeRound === 'round3' && 'Round 3 - Saturday, November 1'}
-                    {activeRound === 'round4' && 'Round 4 - Sunday, November 2'}
+                    {activeRound === 'round1' && 'Round 1 - Thursday, November 6'}
+                    {activeRound === 'round2' && 'Round 2 - Friday, November 7'}
+                    {activeRound === 'round3' && 'Round 3 - Saturday, November 8'}
+                    {activeRound === 'round4' && 'Round 4 - Sunday, November 9'}
                   </>
                 )}
               </h3>

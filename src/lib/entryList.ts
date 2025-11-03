@@ -22,85 +22,85 @@ export interface EntryListData {
 export function getEntryList(): EntryListData {
   const entryListText = `No. 	Name 	Represents 	Exemption 	Entry Status 	Rec.
 EXEMPT
-1 	Jeeno Thitikul (THA) 	Bangkok, Thailand 	K83 (1) 	Entered 	»»
+1 	Minjee Lee (AUS) 	Perth, Australia 	K83 (2) 	Entered 	»»
 2 	Miyu Yamashita (JPN) 	Osaka, Japan 	K83 (3) 	Entered 	»»
 3 	Rio Takeda (JPN) 	Kumamoto, Japan 	K83 (4) 	Entered 	»»
-4 	Angel Yin (USA) 	Arcadia, CA 	K83 (8) 	Entered 	»»
-5 	Somi Lee (KOR) 	Yongin-si, Republic of Korea 	K83 (10) 	Entered 	»»
-6 	Hye-Jin Choi (KOR) 	Gyeonggi-do, Republic of Korea 	K83 (11) 	Entered 	»»
-7 	Akie Iwai (JPN) 	Saitama, Japan 	K83 (12) 	Entered 	»»
-8 	Chisato Iwai (JPN) 	Saitama, Japan 	K83 (13) 	Entered 	»»
-9 	Jin Hee Im (KOR) 	Jeju, Republic of Korea 	K83 (14) 	Entered 	»»
-10 	A Lim Kim (KOR) 	Seongnam-si, Republic of Korea 	K83 (15) 	Entered 	»»
-11 	Lydia Ko (NZL) 	Auckland, New Zealand 	K83 (16) 	Entered 	»»
-12 	Andrea Lee (USA) 	Hermosa Beach, CA 	K83 (17) 	Entered 	»»
-13 	Haeran Ryu (KOR) 	Suwon, Republic of Korea 	K83 (18) 	Entered 	»»
-14 	Sei Young Kim (KOR) 	Seoul, Republic of Korea 	K83 (19) 	Entered 	»»
-15 	Celine Boutier (FRA) 	Montrouge, France 	K83 (20) 	Entered 	»»
-16 	Yealimi Noh (USA) 	San Francisco, CA 	K83 (21) 	Entered 	»»
-17 	Ayaka Furue (JPN) 	Kobe, Japan 	K83 (22) 	Entered 	»»
-18 	Carlota Ciganda (ESP) 	Pamplona, Spain 	K83 (25) 	Entered 	»»
-19 	Grace Kim (AUS) 	Sydney, Australia 	K83 (26) 	Entered 	»»
-20 	Brooke M. Henderson (CAN) 	Smiths Falls, Ontario 	K83 (28) 	Entered 	»»
-21 	Ruoning Yin (CHN) 	ShangHai, People's Republic of China 	K83 (29) 	Entered 	»»
-22 	Miranda Wang (CHN) 	Tianjin, People's Republic of China 	K83 (33) 	Entered 	»»
-23 	Lottie Woad (ENG) 	Farnham, England 	K83 (34) 	Entered 	»»
-24 	Lindy Duncan (USA) 	Plantation, FL 	K83 (35) 	Entered 	»»
-25 	Chanettee Wannasaen (THA) 	Chiang mai, Thailand 	K83 (37) 	Entered 	»»
-26 	Minami Katsu (JPN) 	Kagoshima, Japan 	K83 (38) 	Entered 	»»
-27 	Auston Kim (USA) 	St. Augustine, FL 	K83 (39) 	Entered 	»»
-28 	Linn Grant (SWE) 	Viken, Sweden 	K83 (40) 	Entered 	»»
-29 	Nasa Hataoka (JPN) 	Ibaraki, Japan 	K83 (41) 	Entered 	»»
-30 	Gaby Lopez (MEX) 	Mexico City, Mexico 	K83 (45) 	Entered 	»»
-31 	Nanna Koerstz Madsen (DEN) 	Smoerum, Denmark 	K83 (46) 	Entered 	»»
-32 	Mi Hyang Lee (KOR) 	Seoul, Republic of Korea 	K83 (47) 	Entered 	»»
-33 	Ingrid Lindblad (SWE) 	Halmstad, Sweden 	K83 (48) 	Entered 	»»
-34 	Jenny Bae (USA) 	Suwanee, GA 	K83 (51) 	Entered 	»»
-35 	Leona Maguire (IRL) 	Cavan, Ireland 	K83 (52) 	Entered 	»»
-36 	Hannah Green (AUS) 	Perth, Australia 	K83 (53) 	Entered 	»»
-37 	Manon De Roey (BEL) 	Lint, Belgium 	K83 (54) 	Entered 	»»
-38 	Patty Tavatanakit (THA) 	Bangkok, Thailand 	K83 (55) 	Entered 	»»
-39 	Pajaree Anannarukarn (THA) 	Bangkok, Thailand 	K83 (56) 	Entered 	»»
-40 	Wei-Ling Hsu (TPE) 	New Taipei City, Chinese Taipei 	K83 (57) 	Entered 	»»
-41 	Cassie Porter (AUS) 	Peregian Springs, Australia 	K83 (58) 	Entered 	»»
-42 	Yan Liu (CHN) 	Fujian, People's Republic of China 	K83 (59) 	Entered 	»»
-43 	Julia Lopez Ramirez (ESP) 	Benahavis, Spain 	K83 (61) 	Entered 	»»
-44 	Gurleen Kaur (USA) 	Houston, TX 	K83 (62) 	Entered 	»»
-45 	Kristen Gillman (USA) 	Austin, TX 	K83 (63) 	Entered 	»»
-46 	Lilia Vu (USA) 	Fountain Valley, CA 	K83 (64) 	Entered 	»»
-47 	Saki Baba (JPN) 	Tokyo, Japan 	K83 (65) 	Entered 	»»
-48 	Robyn Choi (AUS) 	Gold Coast, Australia 	K83 (67) 	Entered 	»»
-49 	Lucy Li (USA) 	Redwood Shores, CA 	K83 (68) 	Entered 	»»
-50 	Ilhee Lee (KOR) 	Seoul, Republic of Korea 	K83 (69) 	Entered 	»»
-51 	Yuri Yoshida (JPN) 	Chiba, Japan 	K83 (70) 	Entered 	»»
-52 	Aditi Ashok (IND) 	Bangalore, India 	K83 (72) 	Entered 	»»
-53 	Nataliya Guseva (UNA) 	Miami, FL 	K83 (73) 	Entered 	»»
-54 	Mary Liu (CHN) 	Xi'an, People's Republic of China 	K83 (74) 	Entered 	»»
-55 	Pauline Roussin-Bouchard (FRA) 	Orcieres 1850, France 	K83 (75) 	Entered 	»»
-56 	Benedetta Moresco (ITA) 	Caldogno, Italy 	K83 (76) 	Entered 	»»
-57 	Karis Davidson (AUS) 	Gold Coast, Australia 	K83 (78) 	Entered 	»»
-58 	Ashleigh Buhai (RSA) 	Johannesburg, South Africa 	K83 (79) 	Entered 	»»
-59 	Ina Yoon (KOR) 	Seoul, Republic of Korea 	K83 (80) 	Entered 	»»
-60 	Haeji Kang (KOR) 	Seoul, Republic of Korea 	K83 (81) 	Entered 	»»
-61 	Gemma Dryburgh (SCO) 	Aberdeen, Scotland 	K83 (82) 	Entered 	»»
-62 	Weiwei Zhang (CHN) 	Hainan, People's Republic of China 	K83 (83) 	Entered 	»»
-63 	Paula Reto (RSA) 	Bloemfontein, South Africa 	K83 (85) 	Entered 	»»
-64 	Elizabeth Szokol (USA) 	Chicago, IL 	K83 (86) 	Entered 	»»
-65 	Celine Borge (NOR) 	Tonsberg, Norway 	K83 (88) 	Entered 	»»
-66 	Albane Valenzuela (SUI) 	Geneva, Switzerland 	K83 (89) 	Entered 	»»
-67 	Emily Kristine Pedersen (DEN) 	Smoerum, Denmark 	K83 (90) 	Entered 	»»
-68 	Arpichaya Yubol (THA) 	Saraburi, Thailand 	K83 (91) 	Entered 	»»
-68 AUTOMATICALLY EXEMPT PLACES
-69 	Ashley Lau (MAS) 	Bintulu, Malaysia 	L23 (1) 	Entered 	»»
-70 	Mirabel Ting (MAS) 	Miri, Malaysia 	L23 (2) 	Entered 	»»
-71 	Liyana Durisic (MAS) 	Selangor, Malaysia 	L23 (3) 	Entered 	»»
-72 	Genevieve Ling (MAS) 	Selangor, Malaysia 	L23 (4) 	Entered 	»»
-73 	Kelly Tan (MAS) 	Batu Pahat, Malaysia 	L23 (5) 	Entered 	»»
-74 	Kritchanya Kaopattanaskul (THA) (a) 	Pattaya City, Thailand 	L23 (6) 	Entered 	»»
-75 	Achiraya Sriwong (THA) (a) 	Loei, Thailand 	L23 (7) 	Entered 	»»
-76 	Namo Luangnitikul (THA) (a) 	Phuket, Thailand 	L23 (8) 	Entered 	»»
-77 	Cholcheva Wongras (THA) 	Chiangmai, Thailand 	L23 (9) 	Entered 	»»
-78 	Kan Bunnabodee (THA) 	Chonburi, Thailand 	L23 (10) 	Entered 	»»`;
+4 	Somi Lee (KOR) 	Yongin-si, Republic of Korea 	K83 (10) 	Entered 	»»
+5 	Akie Iwai (JPN) 	Saitama, Japan 	K83 (12) 	Entered 	»»
+6 	Chisato Iwai (JPN) 	Saitama, Japan 	K83 (13) 	Entered 	»»
+7 	Ayaka Furue (JPN) 	Kobe, Japan 	K83 (22) 	Entered 	»»
+8 	Ariya Jutanugarn (THA) 	Bangkok, Thailand 	K83 (23) 	Entered 	»»
+9 	Miranda Wang (CHN) 	Tianjin, People's Republic of China 	K83 (33) 	Entered 	»»
+10 	Chanettee Wannasaen (THA) 	Chiang mai, Thailand 	K83 (37) 	Entered 	»»
+11 	Minami Katsu (JPN) 	Kagoshima, Japan 	K83 (38) 	Entered 	»»
+12 	Nasa Hataoka (JPN) 	Ibaraki, Japan 	K83 (41) 	Entered 	»»
+13 	Manon De Roey (BEL) 	Lint, Belgium 	K83 (54) 	Entered 	»»
+14 	Patty Tavatanakit (THA) 	Bangkok, Thailand 	K83 (55) 	Entered 	»»
+15 	Pajaree Anannarukarn (THA) 	Bangkok, Thailand 	K83 (56) 	Entered 	»»
+16 	Wei-Ling Hsu (TPE) 	New Taipei City, Chinese Taipei 	K83 (57) 	Entered 	»»
+17 	Yan Liu (CHN) 	Fujian, People's Republic of China 	K83 (59) 	Entered 	»»
+18 	Julia Lopez Ramirez (ESP) 	Benahavis, Spain 	K83 (61) 	Entered 	»»
+19 	Gurleen Kaur (USA) 	Houston, TX 	K83 (62) 	Entered 	»»
+20 	Kristen Gillman (USA) 	Austin, TX 	K83 (63) 	Entered 	»»
+21 	Saki Baba (JPN) 	Tokyo, Japan 	K83 (65) 	Entered 	»»
+22 	Robyn Choi (AUS) 	Gold Coast, Australia 	K83 (67) 	Entered 	»»
+23 	Lucy Li (USA) 	Redwood Shores, CA 	K83 (68) 	Entered 	»»
+24 	Ilhee Lee (KOR) 	Seoul, Republic of Korea 	K83 (69) 	Entered 	»»
+25 	Yuri Yoshida (JPN) 	Chiba, Japan 	K83 (70) 	Entered 	»»
+26 	Aditi Ashok (IND) 	Bangalore, India 	K83 (72) 	Entered 	»»
+27 	Nataliya Guseva (UNA) 	Miami, FL 	K83 (73) 	Entered 	»»
+28 	Mary Liu (CHN) 	Xi'an, People's Republic of China 	K83 (74) 	Entered 	»»
+29 	Pauline Roussin-Bouchard (FRA) 	Orcieres 1850, France 	K83 (75) 	Entered 	»»
+30 	Benedetta Moresco (ITA) 	Caldogno, Italy 	K83 (76) 	Entered 	»»
+31 	Karis Davidson (AUS) 	Gold Coast, Australia 	K83 (78) 	Entered 	»»
+32 	Ina Yoon (KOR) 	Seoul, Republic of Korea 	K83 (80) 	Entered 	»»
+33 	Haeji Kang (KOR) 	Seoul, Republic of Korea 	K83 (81) 	Entered 	»»
+34 	Gemma Dryburgh (SCO) 	Aberdeen, Scotland 	K83 (82) 	Entered 	»»
+35 	Weiwei Zhang (CHN) 	Hainan, People's Republic of China 	K83 (83) 	Entered 	»»
+36 	Paula Reto (RSA) 	Bloemfontein, South Africa 	K83 (85) 	Entered 	»»
+37 	Celine Borge (NOR) 	Tonsberg, Norway 	K83 (88) 	Entered 	»»
+38 	Emily Kristine Pedersen (DEN) 	Smoerum, Denmark 	K83 (90) 	Entered 	»»
+39 	Arpichaya Yubol (THA) 	Saraburi, Thailand 	K83 (91) 	Entered 	»»
+40 	Dewi Weber (NED) 	Groningen, Netherlands 	K83 (92) 	Entered 	»»
+41 	Jeongeun Lee5 (KOR) 	Seoul, Republic of Korea 	K83 (94) 	Entered 	»»
+42 	Kumkang Park (KOR) 	Seoul, Republic of Korea 	K83 (95) 	Entered 	»»
+43 	Aline Krauter (GER) 	Stuttgart, Germany 	K83 (96) 	Entered 	»»
+STEP UP TOUR
+44 	Shuri Sakuma (JPN) 	Kawagoe, Japan 	S70 (1) 	Entered 	»»
+45 	Sora Kamiya (JPN) 	Gifu, Japan 	S70 (2) 	Entered 	»»
+46 	Yui Kawamoto (JPN) 	Ehime, Japan 	S70 (3) 	Entered 	»»
+47 	Fuka Suga (JPN) 	Miyazaki, Japan 	S70 (4) 	Entered 	»»
+48 	Sayaka Takahashi (JPN) 	Niigata, Japan 	S70 (5) 	Entered 	»»
+49 	Shina Kanazawa (JPN) 	Ibaraki, Japan 	S70 (6) 	Entered 	»»
+50 	Shiho Kuwaki (JPN) 	Okayama, Japan 	S70 (7) 	Entered 	»»
+51 	Yuna Araki (JPN) 	Tamana, Japan 	S70 (8) 	Entered 	»»
+52 	Ai Suzuki (JPN) 	Tokushima, Japan 	S70 (9) 	Entered 	»»
+53 	Jiyai Shin (KOR) 	Gyeonggi-do, Republic of Korea 	S70 (10) 	Entered 	»»
+54 	Ayako Kimura (JPN) 	Osaka, Japan 	S70 (11) 	Entered 	»»
+55 	Saki Nagamine (JPN) 	Miyazaki, Japan 	S70 (12) 	Entered 	»»
+56 	Mitsuki Kobayashi (JPN) 	Tsuyama City, Japan 	S70 (13) 	Entered 	»»
+57 	Kotone Hori (JPN) 	Tokushima, Japan 	S70 (14) 	Entered 	»»
+58 	Saiki Fujita (JPN) 	Shizuoka, Japan 	S70 (15) 	Entered 	»»
+59 	MinYoung Lee (KOR) 	Gyeonggi, Republic of Korea 	S70 (16) 	Entered 	»»
+60 	Miyu Sato (JPN) 	Tokyo, Japan 	S70 (17) 	Entered 	»»
+61 	Hibiki Iriya (JPN) 	Aichi, Japan 	S70 (18) 	Entered 	»»
+62 	Lala Anai (JPN) 	Okazaki, Japan 	S70 (19) 	Entered 	»»
+63 	Chia Yen Wu (TPE) 	Hsinchu, Chinese Taipei 	S70 (20) 	Entered 	»»
+64 	Asuka Kashiwabara (JPN) 	Miyazaki, Japan 	S70 (21) 	Entered 	»»
+65 	Ayaka Watanabe (JPN) 	Atami, Japan 	S70 (22) 	Entered 	»»
+66 	Kano Nakamura (JPN) 	Kyoto, Japan 	S70 (23) 	Entered 	»»
+67 	Kotoko Uchida (JPN) 	Sapporo, Japan 	S70 (24) 	Entered 	»»
+68 	Yuka Yasuda (JPN) 	Kobe, Japan 	S70 (25) 	Entered 	»»
+69 	Nana Yamashiro (JPN) 	Okinawa, Japan 	S70 (26) 	Entered 	»»
+70 	Eri Okayama (JPN) 	Osaka, Japan 	S70 (27) 	Entered 	»»
+71 	Aihi Takano (JPN) 	Tokyo, Japan 	S70 (28) 	Entered 	»»
+72 	Kana Nagai (JPN) 	Tokyo, Japan 	S70 (29) 	Entered 	»»
+73 	Karen Tsuruoka (JPN) 	Yokohama City, Japan 	S70 (30) 	Entered 	»»
+74 	Nanako Inagaki (JPN) 	Saitama, Japan 	S70 (31) 	Entered 	»»
+75 	Mi Jeong Jeon (KOR) 	Daejeon, Republic of Korea 	S70 (32) 	Entered 	»»
+76 	Seonwoo Bae (KOR) 	Gyeonggi-do, Republic of Korea 	S70 (33) 	Entered 	»»
+77 	Nana Suganuma (JPN) 	Tokyo, Japan 	S70 (34) 	Entered 	»»
+78 	Serena Aoki (JPN) 	Gunma, Japan 	S70 (35) 	Entered 	»»`;
 
   const lines = entryListText.split('\n');
   const players: EntryListPlayer[] = [];
