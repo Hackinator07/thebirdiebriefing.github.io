@@ -33,7 +33,6 @@ export async function getEnhancedSchedule(): Promise<Schedule> {
     
     // List of future tournaments that should not have winner/score data populated
     const futureTournaments = [
-      'Maybank Championship',
       'TOTO Japan Classic',
       'The ANNIKA driven by Gainbridge at Pelican',
       'CME Group Tour Championship'
@@ -56,12 +55,13 @@ export async function getEnhancedSchedule(): Promise<Schedule> {
       );
 
       if (matchingEvent) {
-        // For Walmart NW Arkansas, Buick LPGA Shanghai, LOTTE Championship, BMW Ladies Championship, and Hanwha LIFEPLUS International Crown, prioritize our local data over API data
+        // For Walmart NW Arkansas, Buick LPGA Shanghai, LOTTE Championship, BMW Ladies Championship, Hanwha LIFEPLUS International Crown, and Maybank Championship, prioritize our local data over API data
         if (tournament.title === 'Walmart NW Arkansas Championship presented by P&G' ||
             tournament.title === 'Buick LPGA Shanghai' ||
             tournament.title === 'LOTTE Championship presented by Hoakalei' ||
             tournament.title === 'BMW Ladies Championship' ||
-            tournament.title === 'Hanwha LIFEPLUS International Crown') {
+            tournament.title === 'Hanwha LIFEPLUS International Crown' ||
+            tournament.title === 'Maybank Championship') {
           return {
             ...tournament,
             // Keep our local data for this tournament

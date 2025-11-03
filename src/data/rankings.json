@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2025-10-29T13:10:28.158Z",
+  "lastUpdated": "2025-11-03T09:59:00.000Z",
   "week": {
-    "id": 1244,
-    "start_date": "2025-10-20",
-    "end_date": "2025-10-26",
-    "publish_date": "2025-10-27",
-    "updated_datetime": "2025-10-27 14:08:00",
-    "prev_id": 1243,
+    "id": 1245,
+    "start_date": "2025-10-27",
+    "end_date": "2025-11-02",
+    "publish_date": "2025-11-03",
+    "updated_datetime": "2025-11-03 09:59:00",
+    "prev_id": 1244,
     "next_id": null,
-    "prev_date": "2025-10-20",
+    "prev_date": "2025-10-27",
     "next_date": null
   },
   "players": [

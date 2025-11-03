@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2025-10-21T00:00:00.000Z",
+  "lastUpdated": "2025-11-03T09:59:00.000Z",
   "week": {
-    "start_date": "2025-10-21",
-    "end_date": "2025-10-27"
+    "start_date": "2025-10-27",
+    "end_date": "2025-11-02"
   },
   "type": "money-list",
   "players": [
@@ -19,24 +19,24 @@
       "rank": 2,
       "fullName": "Jeeno Thitikul",
       "countryCode": "THA",
-      "earnings": 3470095,
-      "events": 18
+      "earnings": 3578330,
+      "events": 19
     },
     {
       "id": 3,
       "rank": 3,
       "fullName": "Miyu Yamashita",
       "countryCode": "JPN",
-      "earnings": 2884941,
-      "events": 21
+      "earnings": 3334941,
+      "events": 22
     },
     {
       "id": 4,
       "rank": 4,
       "fullName": "Rio Takeda",
       "countryCode": "JPN",
-      "earnings": 2729172,
-      "events": 25
+      "earnings": 2744268,
+      "events": 26
     },
     {
       "id": 5,
@@ -67,8 +67,8 @@
       "rank": 8,
       "fullName": "Hye-Jin Choi",
       "countryCode": "KOR",
-      "earnings": 1823281,
-      "events": 21
+      "earnings": 2061150,
+      "events": 22
     },
     {
       "id": 9,
@@ -83,8 +83,8 @@
       "rank": 10,
       "fullName": "Angel Yin",
       "countryCode": "USA",
-      "earnings": 1698788,
-      "events": 17
+      "earnings": 1723016,
+      "events": 18
     },
     {
       "id": 11,
@@ -99,16 +99,16 @@
       "rank": 12,
       "fullName": "Chisato Iwai",
       "countryCode": "JPN",
-      "earnings": 1613710,
-      "events": 20
+      "earnings": 1650069,
+      "events": 21
     },
     {
       "id": 13,
       "rank": 13,
       "fullName": "Minami Katsu",
       "countryCode": "JPN",
-      "earnings": 1599423,
-      "events": 22
+      "earnings": 1606745,
+      "events": 23
     },
     {
       "id": 14,
@@ -116,399 +116,399 @@
       "fullName": "Somi Lee",
       "countryCode": "KOR",
       "earnings": 1594192,
-      "events": 23
+      "events": 24
     },
     {
       "id": 15,
       "rank": 15,
       "fullName": "Andrea Lee",
       "countryCode": "USA",
-      "earnings": 1577091,
-      "events": 20
+      "earnings": 1589469,
+      "events": 21
     },
     {
       "id": 16,
       "rank": 16,
       "fullName": "Grace Kim",
       "countryCode": "AUS",
-      "earnings": 1547999,
-      "events": 19
+      "earnings": 1584358,
+      "events": 20
     },
     {
       "id": 17,
       "rank": 17,
+      "fullName": "A Lim Kim",
+      "countryCode": "KOR",
+      "earnings": 1557619,
+      "events": 22
+    },
+    {
+      "id": 18,
+      "rank": 18,
+      "fullName": "Ruoning Yin",
+      "countryCode": "CHN",
+      "earnings": 1491078,
+      "events": 15
+    },
+    {
+      "id": 19,
+      "rank": 19,
       "fullName": "Ariya Jutanugarn",
       "countryCode": "THA",
       "earnings": 1461209,
       "events": 15
     },
     {
-      "id": 18,
-      "rank": 18,
-      "fullName": "A Lim Kim",
-      "countryCode": "KOR",
-      "earnings": 1449384,
-      "events": 21
-    },
-    {
-      "id": 19,
-      "rank": 19,
-      "fullName": "Ruoning Yin",
-      "countryCode": "CHN",
-      "earnings": 1438245,
-      "events": 14
-    },
-    {
       "id": 20,
       "rank": 20,
-      "fullName": "Auston Kim",
-      "countryCode": "USA",
-      "earnings": 1374714,
-      "events": 22
+      "fullName": "Sei Young Kim",
+      "countryCode": "KOR",
+      "earnings": 1456769,
+      "events": 20
     },
     {
       "id": 21,
       "rank": 21,
-      "fullName": "Chanettee Wannasaen",
-      "countryCode": "THA",
-      "earnings": 1352373,
+      "fullName": "Akie Iwai",
+      "countryCode": "JPN",
+      "earnings": 1434028,
       "events": 21
     },
     {
       "id": 22,
       "rank": 22,
-      "fullName": "Sei Young Kim",
-      "countryCode": "KOR",
-      "earnings": 1348534,
-      "events": 19
+      "fullName": "Auston Kim",
+      "countryCode": "USA",
+      "earnings": 1394451,
+      "events": 23
     },
     {
       "id": 23,
       "rank": 23,
-      "fullName": "Akie Iwai",
-      "countryCode": "JPN",
-      "earnings": 1325793,
-      "events": 20
+      "fullName": "Chanettee Wannasaen",
+      "countryCode": "THA",
+      "earnings": 1363845,
+      "events": 22
     },
     {
       "id": 24,
       "rank": 24,
       "fullName": "Jin Hee Im",
       "countryCode": "KOR",
-      "earnings": 1272038,
-      "events": 24
+      "earnings": 1301437,
+      "events": 25
     },
     {
       "id": 25,
       "rank": 25,
       "fullName": "Haeran Ryu",
       "countryCode": "KOR",
-      "earnings": 1131185,
-      "events": 19
+      "earnings": 1177779,
+      "events": 20
     },
     {
       "id": 26,
       "rank": 26,
-      "fullName": "Lindy Duncan",
-      "countryCode": "USA",
-      "earnings": 1104423,
+      "fullName": "Celine Boutier",
+      "countryCode": "FRA",
+      "earnings": 1135056,
       "events": 21
     },
     {
       "id": 27,
       "rank": 27,
-      "fullName": "Celine Boutier",
-      "countryCode": "FRA",
-      "earnings": 1098697,
-      "events": 20
+      "fullName": "Lindy Duncan",
+      "countryCode": "USA",
+      "earnings": 1124160,
+      "events": 22
     },
     {
       "id": 28,
       "rank": 28,
+      "fullName": "Miranda Wang",
+      "countryCode": "CHN",
+      "earnings": 1111265,
+      "events": 19
+    },
+    {
+      "id": 29,
+      "rank": 29,
+      "fullName": "Lydia Ko",
+      "countryCode": "NZL",
+      "earnings": 1111037,
+      "events": 14
+    },
+    {
+      "id": 30,
+      "rank": 30,
       "fullName": "Megan Khang",
       "countryCode": "USA",
       "earnings": 1091245,
       "events": 18
     },
     {
-      "id": 29,
-      "rank": 29,
+      "id": 31,
+      "rank": 31,
       "fullName": "Esther Henseleit",
       "countryCode": "GER",
       "earnings": 1088218,
       "events": 19
     },
     {
-      "id": 30,
-      "rank": 30,
-      "fullName": "Miranda Wang",
-      "countryCode": "CHN",
-      "earnings": 1064671,
-      "events": 18
-    },
-    {
-      "id": 31,
-      "rank": 31,
-      "fullName": "Lydia Ko",
-      "countryCode": "NZL",
-      "earnings": 1046880,
-      "events": 13
-    },
-    {
       "id": 32,
       "rank": 32,
       "fullName": "Yealimi Noh",
       "countryCode": "USA",
-      "earnings": 1046174,
-      "events": 19
+      "earnings": 1058552,
+      "events": 20
     },
     {
       "id": 33,
       "rank": 33,
       "fullName": "Carlota Ciganda",
       "countryCode": "ESP",
-      "earnings": 1000982,
-      "events": 18
+      "earnings": 1037341,
+      "events": 19
     },
     {
       "id": 34,
       "rank": 34,
+      "fullName": "Nasa Hataoka",
+      "countryCode": "JPN",
+      "earnings": 1004999,
+      "events": 21
+    },
+    {
+      "id": 35,
+      "rank": 35,
       "fullName": "Jin Young Ko",
       "countryCode": "KOR",
       "earnings": 992038,
       "events": 19
     },
     {
-      "id": 35,
-      "rank": 35,
-      "fullName": "Nasa Hataoka",
-      "countryCode": "JPN",
-      "earnings": 985262,
-      "events": 20
-    },
-    {
       "id": 36,
       "rank": 36,
       "fullName": "Brooke M. Henderson",
       "countryCode": "CAN",
-      "earnings": 918720,
-      "events": 21
+      "earnings": 942948,
+      "events": 22
     },
     {
       "id": 37,
       "rank": 37,
+      "fullName": "Ayaka Furue",
+      "countryCode": "JPN",
+      "earnings": 920199,
+      "events": 22
+    },
+    {
+      "id": 38,
+      "rank": 38,
       "fullName": "Lauren Coughlin",
       "countryCode": "USA",
       "earnings": 917127,
       "events": 20
     },
     {
-      "id": 38,
-      "rank": 38,
+      "id": 39,
+      "rank": 39,
+      "fullName": "Hannah Green",
+      "countryCode": "AUS",
+      "earnings": 910737,
+      "events": 18
+    },
+    {
+      "id": 40,
+      "rank": 40,
       "fullName": "Stephanie Kyriacou",
       "countryCode": "AUS",
       "earnings": 880399,
       "events": 20
     },
     {
-      "id": 39,
-      "rank": 39,
+      "id": 41,
+      "rank": 41,
       "fullName": "Sarah Schmelzel",
       "countryCode": "USA",
       "earnings": 875572,
       "events": 22
     },
     {
-      "id": 40,
-      "rank": 40,
-      "fullName": "Ayaka Furue",
-      "countryCode": "JPN",
-      "earnings": 856042,
-      "events": 21
-    },
-    {
-      "id": 41,
-      "rank": 41,
-      "fullName": "Linn Grant",
-      "countryCode": "SWE",
-      "earnings": 830786,
-      "events": 17
-    },
-    {
       "id": 42,
       "rank": 42,
+      "fullName": "Linn Grant",
+      "countryCode": "SWE",
+      "earnings": 855014,
+      "events": 18
+    },
+    {
+      "id": 43,
+      "rank": 43,
       "fullName": "Jennifer Kupcho",
       "countryCode": "USA",
       "earnings": 808200,
       "events": 21
     },
     {
-      "id": 43,
-      "rank": 43,
-      "fullName": "Gaby Lopez",
-      "countryCode": "MEX",
-      "earnings": 766128,
-      "events": 21
-    },
-    {
       "id": 44,
       "rank": 44,
-      "fullName": "Ingrid Lindblad",
-      "countryCode": "SWE",
-      "earnings": 755545,
-      "events": 16
+      "fullName": "Gaby Lopez",
+      "countryCode": "MEX",
+      "earnings": 795527,
+      "events": 22
     },
     {
       "id": 45,
       "rank": 45,
-      "fullName": "Lottie Woad",
-      "countryCode": "ENG",
-      "earnings": 736654,
-      "events": 6
+      "fullName": "Ingrid Lindblad",
+      "countryCode": "SWE",
+      "earnings": 784944,
+      "events": 17
     },
     {
       "id": 46,
       "rank": 46,
-      "fullName": "Wei-Ling Hsu",
-      "countryCode": "TPE",
-      "earnings": 699636,
-      "events": 18
+      "fullName": "Lottie Woad",
+      "countryCode": "ENG",
+      "earnings": 753372,
+      "events": 7
     },
     {
       "id": 47,
       "rank": 47,
+      "fullName": "Wei-Ling Hsu",
+      "countryCode": "TPE",
+      "earnings": 729035,
+      "events": 19
+    },
+    {
+      "id": 48,
+      "rank": 48,
+      "fullName": "Yan Liu",
+      "countryCode": "CHN",
+      "earnings": 691609,
+      "events": 21
+    },
+    {
+      "id": 49,
+      "rank": 49,
       "fullName": "Lexi Thompson",
       "countryCode": "USA",
       "earnings": 681639,
       "events": 11
     },
     {
-      "id": 48,
-      "rank": 48,
-      "fullName": "Hannah Green",
-      "countryCode": "AUS",
-      "earnings": 672868,
-      "events": 17
-    },
-    {
-      "id": 49,
-      "rank": 49,
-      "fullName": "Leona Maguire",
-      "countryCode": "IRL",
-      "earnings": 669547,
-      "events": 23
-    },
-    {
       "id": 50,
       "rank": 50,
       "fullName": "Mi Hyang Lee",
       "countryCode": "KOR",
-      "earnings": 663635,
-      "events": 21
+      "earnings": 677523,
+      "events": 22
     },
     {
       "id": 51,
       "rank": 51,
+      "fullName": "Leona Maguire",
+      "countryCode": "IRL",
+      "earnings": 676869,
+      "events": 24
+    },
+    {
+      "id": 52,
+      "rank": 52,
       "fullName": "Madelene Sagstrom",
       "countryCode": "SWE",
       "earnings": 645957,
       "events": 18
     },
     {
-      "id": 52,
-      "rank": 52,
-      "fullName": "Jenny Bae",
-      "countryCode": "USA",
-      "earnings": 610966,
-      "events": 20
-    },
-    {
       "id": 53,
       "rank": 53,
+      "fullName": "Jenny Bae",
+      "countryCode": "USA",
+      "earnings": 619269,
+      "events": 21
+    },
+    {
+      "id": 54,
+      "rank": 54,
       "fullName": "Jenny Shin",
       "countryCode": "KOR",
       "earnings": 609565,
       "events": 20
     },
     {
-      "id": 54,
-      "rank": 54,
+      "id": 55,
+      "rank": 55,
       "fullName": "Allisen Corpuz",
       "countryCode": "USA",
       "earnings": 593564,
       "events": 23
     },
     {
-      "id": 55,
-      "rank": 55,
-      "fullName": "Yan Liu",
-      "countryCode": "CHN",
-      "earnings": 583374,
-      "events": 20
-    },
-    {
       "id": 56,
       "rank": 56,
       "fullName": "Nanna Koerstz Madsen",
       "countryCode": "DEN",
-      "earnings": 565192,
-      "events": 20
+      "earnings": 577570,
+      "events": 21
     },
     {
       "id": 57,
       "rank": 57,
       "fullName": "Manon De Roey",
       "countryCode": "BEL",
-      "earnings": 549343,
-      "events": 19
+      "earnings": 556665,
+      "events": 20
     },
     {
       "id": 58,
       "rank": 58,
-      "fullName": "Pauline Roussin-Bouchard",
-      "countryCode": "FRA",
-      "earnings": 517438,
-      "events": 19
+      "fullName": "Pajaree Anannarukarn",
+      "countryCode": "THA",
+      "earnings": 525103,
+      "events": 23
     },
     {
       "id": 59,
       "rank": 59,
-      "fullName": "Pajaree Anannarukarn",
-      "countryCode": "THA",
-      "earnings": 500875,
-      "events": 22
+      "fullName": "Pauline Roussin-Bouchard",
+      "countryCode": "FRA",
+      "earnings": 524760,
+      "events": 20
     },
     {
       "id": 60,
       "rank": 60,
+      "fullName": "Ina Yoon",
+      "countryCode": "KOR",
+      "earnings": 501114,
+      "events": 23
+    },
+    {
+      "id": 61,
+      "rank": 61,
       "fullName": "Gabriela Ruffels",
       "countryCode": "AUS",
       "earnings": 482074,
       "events": 23
     },
     {
-      "id": 61,
-      "rank": 61,
-      "fullName": "Julia Lopez Ramirez",
-      "countryCode": "ESP",
-      "earnings": 472184,
-      "events": 20
-    },
-    {
       "id": 62,
       "rank": 62,
-      "fullName": "Lucy Li",
-      "countryCode": "USA",
-      "earnings": 467505,
-      "events": 22
+      "fullName": "Julia Lopez Ramirez",
+      "countryCode": "ESP",
+      "earnings": 477995,
+      "events": 21
     },
     {
       "id": 63,
       "rank": 63,
-      "fullName": "Ina Yoon",
-      "countryCode": "KOR",
-      "earnings": 444507,
-      "events": 22
+      "fullName": "Lucy Li",
+      "countryCode": "USA",
+      "earnings": 473241,
+      "events": 23
     },
     {
       "id": 64,
@@ -531,120 +531,120 @@
       "rank": 66,
       "fullName": "Patty Tavatanakit",
       "countryCode": "THA",
-      "earnings": 416149,
-      "events": 18
+      "earnings": 435886,
+      "events": 19
     },
     {
       "id": 67,
       "rank": 67,
       "fullName": "Cassie Porter",
       "countryCode": "AUS",
-      "earnings": 392308,
-      "events": 21
+      "earnings": 402292,
+      "events": 22
     },
     {
       "id": 68,
       "rank": 68,
+      "fullName": "Yuri Yoshida",
+      "countryCode": "JPN",
+      "earnings": 390676,
+      "events": 23
+    },
+    {
+      "id": 69,
+      "rank": 69,
       "fullName": "Narin An",
       "countryCode": "KOR",
       "earnings": 385744,
       "events": 20
     },
     {
-      "id": 69,
-      "rank": 69,
-      "fullName": "Nataliya Guseva",
-      "countryCode": "UNA",
-      "earnings": 376969,
-      "events": 24
-    },
-    {
       "id": 70,
       "rank": 70,
-      "fullName": "Yuri Yoshida",
-      "countryCode": "JPN",
-      "earnings": 376788,
-      "events": 22
+      "fullName": "Nataliya Guseva",
+      "countryCode": "UNA",
+      "earnings": 385272,
+      "events": 25
     },
     {
       "id": 71,
       "rank": 71,
       "fullName": "Emily Kristine Pedersen",
       "countryCode": "DEN",
-      "earnings": 357341,
-      "events": 17
+      "earnings": 374059,
+      "events": 18
     },
     {
       "id": 72,
       "rank": 72,
-      "fullName": "Saki Baba",
-      "countryCode": "JPN",
-      "earnings": 353607,
-      "events": 20
+      "fullName": "Gemma Dryburgh",
+      "countryCode": "SCO",
+      "earnings": 361437,
+      "events": 21
     },
     {
       "id": 73,
       "rank": 73,
-      "fullName": "Kristen Gillman",
-      "countryCode": "USA",
-      "earnings": 343583,
-      "events": 22
+      "fullName": "Saki Baba",
+      "countryCode": "JPN",
+      "earnings": 360400,
+      "events": 21
     },
     {
       "id": 74,
       "rank": 74,
+      "fullName": "Kristen Gillman",
+      "countryCode": "USA",
+      "earnings": 353567,
+      "events": 23
+    },
+    {
+      "id": 75,
+      "rank": 75,
       "fullName": "Peiyun Chien",
       "countryCode": "TPE",
       "earnings": 334553,
       "events": 18
     },
     {
-      "id": 75,
-      "rank": 75,
+      "id": 76,
+      "rank": 76,
+      "fullName": "Mary Liu",
+      "countryCode": "CHN",
+      "earnings": 333294,
+      "events": 20
+    },
+    {
+      "id": 77,
+      "rank": 77,
       "fullName": "In Gee Chun",
       "countryCode": "KOR",
       "earnings": 331854,
       "events": 15
     },
     {
-      "id": 76,
-      "rank": 76,
-      "fullName": "Mary Liu",
-      "countryCode": "CHN",
-      "earnings": 323310,
-      "events": 19
-    },
-    {
-      "id": 77,
-      "rank": 77,
-      "fullName": "Gemma Dryburgh",
-      "countryCode": "SCO",
-      "earnings": 314843,
-      "events": 20
-    },
-    {
       "id": 78,
       "rank": 78,
-      "fullName": "Ruoxin Liu",
+      "fullName": "Aditi Ashok",
+      "countryCode": "IND",
+      "earnings": 327789,
+      "events": 17
+    },
+    {
+      "id": 79,
+      "rank": 79,
+      "fullName": "Ruixin Liu",
       "countryCode": "CHN",
       "earnings": 310638,
       "events": 18
     },
     {
-      "id": 79,
-      "rank": 79,
+      "id": 80,
+      "rank": 80,
       "fullName": "Rose Zhang",
       "countryCode": "USA",
       "earnings": 309219,
       "events": 12
-    },
-    {
-      "id": 80,
-      "rank": 80,
-      "fullName": "Aditi Ashok",
-      "countryCode": "IND",
-      "earnings": 303561,
-      "events": 16
     },
     {
       "id": 81,
@@ -657,138 +657,138 @@
     {
       "id": 82,
       "rank": 82,
-      "fullName": "Robyn Choi",
-      "countryCode": "AUS",
-      "earnings": 288201,
-      "events": 16
+      "fullName": "Weiwei Zhang",
+      "countryCode": "CHN",
+      "earnings": 303056,
+      "events": 20
     },
     {
       "id": 83,
       "rank": 83,
-      "fullName": "Weiwei Zhang",
-      "countryCode": "CHN",
-      "earnings": 286338,
-      "events": 19
+      "fullName": "Paula Reto",
+      "countryCode": "RSA",
+      "earnings": 301233,
+      "events": 23
     },
     {
       "id": 84,
       "rank": 84,
       "fullName": "Arpichaya Yubol",
       "countryCode": "THA",
-      "earnings": 281471,
-      "events": 21
+      "earnings": 298189,
+      "events": 22
     },
     {
       "id": 85,
       "rank": 85,
-      "fullName": "Paula Reto",
-      "countryCode": "RSA",
-      "earnings": 277005,
-      "events": 22
+      "fullName": "Robyn Choi",
+      "countryCode": "AUS",
+      "earnings": 294617,
+      "events": 17
     },
     {
       "id": 86,
       "rank": 86,
-      "fullName": "Gurleen Kaur",
-      "countryCode": "USA",
-      "earnings": 275575,
-      "events": 16
+      "fullName": "Karis Davidson",
+      "countryCode": "AUS",
+      "earnings": 290245,
+      "events": 19
     },
     {
       "id": 87,
       "rank": 87,
-      "fullName": "Lilia Vu",
-      "countryCode": "USA",
-      "earnings": 263445,
-      "events": 17
+      "fullName": "Ashleigh Buhai",
+      "countryCode": "RSA",
+      "earnings": 284557,
+      "events": 21
     },
     {
       "id": 88,
       "rank": 88,
+      "fullName": "Gurleen Kaur",
+      "countryCode": "USA",
+      "earnings": 281991,
+      "events": 17
+    },
+    {
+      "id": 89,
+      "rank": 89,
+      "fullName": "Lilia Vu",
+      "countryCode": "USA",
+      "earnings": 269408,
+      "events": 18
+    },
+    {
+      "id": 90,
+      "rank": 90,
+      "fullName": "Benedetta Moresco",
+      "countryCode": "ITA",
+      "earnings": 259409,
+      "events": 19
+    },
+    {
+      "id": 91,
+      "rank": 91,
       "fullName": "Kumkang Park",
       "countryCode": "KOR",
       "earnings": 257142,
       "events": 16
     },
     {
-      "id": 89,
-      "rank": 89,
-      "fullName": "Karis Davidson",
-      "countryCode": "AUS",
-      "earnings": 253886,
-      "events": 18
+      "id": 92,
+      "rank": 92,
+      "fullName": "Celine Borge",
+      "countryCode": "NOR",
+      "earnings": 255372,
+      "events": 17
     },
     {
-      "id": 90,
-      "rank": 90,
+      "id": 93,
+      "rank": 93,
       "fullName": "Amy Yang",
       "countryCode": "KOR",
       "earnings": 253502,
       "events": 18
     },
     {
-      "id": 91,
-      "rank": 91,
-      "fullName": "Ashleigh Buhai",
-      "countryCode": "RSA",
-      "earnings": 248198,
-      "events": 20
-    },
-    {
-      "id": 92,
-      "rank": 92,
+      "id": 94,
+      "rank": 94,
       "fullName": "Alexa Pano",
       "countryCode": "USA",
       "earnings": 247188,
       "events": 23
     },
     {
-      "id": 93,
-      "rank": 93,
-      "fullName": "Celine Borge",
-      "countryCode": "NOR",
-      "earnings": 241484,
-      "events": 16
+      "id": 95,
+      "rank": 95,
+      "fullName": "Ilhee Lee",
+      "countryCode": "KOR",
+      "earnings": 242235,
+      "events": 12
     },
     {
-      "id": 94,
-      "rank": 94,
+      "id": 96,
+      "rank": 96,
       "fullName": "Jeongeun Lee5",
       "countryCode": "KOR",
       "earnings": 241221,
       "events": 14
     },
     {
-      "id": 95,
-      "rank": 95,
+      "id": 97,
+      "rank": 97,
       "fullName": "Anna Nordqvist",
       "countryCode": "SWE",
       "earnings": 234610,
       "events": 17
     },
     {
-      "id": 96,
-      "rank": 96,
-      "fullName": "Ilhee Lee",
-      "countryCode": "KOR",
-      "earnings": 232251,
-      "events": 11
-    },
-    {
-      "id": 97,
-      "rank": 97,
-      "fullName": "Benedetta Moresco",
-      "countryCode": "ITA",
-      "earnings": 223050,
-      "events": 18
-    },
-    {
       "id": 98,
       "rank": 98,
       "fullName": "Elizabeth Szokol",
       "countryCode": "USA",
-      "earnings": 220353,
-      "events": 15
+      "earnings": 230337,
+      "events": 16
     },
     {
       "id": 99,
@@ -809,34 +809,34 @@
     {
       "id": 101,
       "rank": 101,
+      "fullName": "Albane Valenzuela",
+      "countryCode": "SUI",
+      "earnings": 212966,
+      "events": 19
+    },
+    {
+      "id": 102,
+      "rank": 102,
+      "fullName": "Haeji Kang",
+      "countryCode": "KOR",
+      "earnings": 212239,
+      "events": 15
+    },
+    {
+      "id": 103,
+      "rank": 103,
       "fullName": "Aline Krauter",
       "countryCode": "GER",
       "earnings": 211980,
       "events": 12
     },
     {
-      "id": 102,
-      "rank": 102,
+      "id": 104,
+      "rank": 104,
       "fullName": "Jasmine Suwannapura",
       "countryCode": "THA",
       "earnings": 209801,
       "events": 20
-    },
-    {
-      "id": 103,
-      "rank": 103,
-      "fullName": "Haeji Kang",
-      "countryCode": "KOR",
-      "earnings": 205446,
-      "events": 14
-    },
-    {
-      "id": 104,
-      "rank": 104,
-      "fullName": "Albane Valenzuela",
-      "countryCode": "SUI",
-      "earnings": 202982,
-      "events": 18
     },
     {
       "id": 105,

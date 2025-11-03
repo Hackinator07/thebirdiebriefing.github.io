@@ -27,7 +27,7 @@ export default function TournamentComponent({
   tournamentName = "TOTO Japan Classic 2025",
   location = "Seta Golf Course", 
   date = "Nov 6-9, 2025",
-  buyTicketsUrl = "https://toto-japan-classic.com/en/",
+  buyTicketsUrl = "https://toto-japan-classic.com/en/#ticket",
   officialSiteUrl = "https://toto-japan-classic.com/en/",
   teeTimesUrl = "/tee-times",
   broadcastUrl = "/news/toto-japan-classic-2025/#tv-schedule",
