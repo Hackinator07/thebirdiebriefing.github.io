@@ -55,17 +55,17 @@ const round1TeeTimes = [
 ];
 
 // Round 2 Tee Times - Friday, November 21, 2025 (Eastern Time - GMT-5)
-const round2TeeTimes = [
+const round2TeeTimes: { time: string; tee: string; players: string[] }[] = [
   // Tee times TBD
 ];
 
 // Round 3 Tee Times - Saturday, November 22, 2025 (Eastern Time - GMT-5)
-const round3TeeTimes = [
+const round3TeeTimes: { time: string; tee: string; players: string[] }[] = [
   // Tee times TBD
 ];
 
 // Round 4 Tee Times - Sunday, November 23, 2025 (Eastern Time - GMT-5)
-const round4TeeTimes = [
+const round4TeeTimes: { time: string; tee: string; players: string[] }[] = [
   // Tee times TBD
 ];
 
