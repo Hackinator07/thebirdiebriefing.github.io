@@ -11,7 +11,7 @@
 const https = require('https');
 
 // Default event ID for Walmart NW Arkansas Championship
-const DEFAULT_EVENT_ID = '401734783';
+const DEFAULT_EVENT_ID = '401734786';
 
 // API configuration
 const RAPIDAPI_HOST = 'live-golf-data1.p.rapidapi.com';

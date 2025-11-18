@@ -20,19 +20,27 @@ interface TournamentComponentProps {
   broadcastUrl?: string;
   entryListUrl?: string;
   podcastUrl?: string;
+  logoUrl?: string;
+  logoAlt?: string;
+  newsUrl?: string;
+  mapsUrl?: string;
 }
 
 export default function TournamentComponent({
-  eventId = "401734784",
-  tournamentName = "TOTO Japan Classic 2025",
-  location = "Seta Golf Course", 
-  date = "Nov 6-9, 2025",
-  buyTicketsUrl = "https://toto-japan-classic.com/en/#ticket",
-  officialSiteUrl = "https://toto-japan-classic.com/en/",
+  eventId = "401734786",
+  tournamentName,
+  location, 
+  date,
+  buyTicketsUrl,
+  officialSiteUrl,
   teeTimesUrl = "/tee-times",
-  broadcastUrl = "/news/toto-japan-classic-2025/#tv-schedule",
+  broadcastUrl,
   entryListUrl = "/entry-list",
-  podcastUrl = "https://open.spotify.com/show/3oaQN8KhjwW8sLxDYJdxLs"
+  podcastUrl = "https://open.spotify.com/show/3oaQN8KhjwW8sLxDYJdxLs",
+  logoUrl,
+  logoAlt,
+  newsUrl,
+  mapsUrl
 }: TournamentComponentProps) {
   const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
@@ -53,13 +61,13 @@ export default function TournamentComponent({
   const [showStaticContent, setShowStaticContent] = useState(true);
 
   // Use API data if available, fallback to static data that matches current API response
-  const displayName = (tournamentData?.name || tournamentName).replace(/\s*(pres\.|presented)\s*by\s*(P&G|Hoakalei)/i, '');
-  const displayLocation = tournamentData?.courses ? formatLocation(tournamentData.courses[0]) : location;
-  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Seta Golf Course";
-  const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "$2.1M";
+  const displayName = (tournamentData?.name || tournamentName || 'Tournament').replace(/\s*(pres\.|presented)\s*by\s*(P&G|Hoakalei)/i, '');
+  const displayLocation = tournamentData?.courses ? formatLocation(tournamentData.courses[0]) : (location || 'Location TBD');
+  const displayCourseName = tournamentData?.courses ? getCourseName(tournamentData.courses) : "Course TBD";
+  const displayPurse = tournamentData ? formatPurse(tournamentData.purse) : "TBD";
   const displayPar = tournamentData?.courses?.[0]?.shotsToPar || 72;
-  const displayYardage = "6,616"; // Hardcoded - API shows incorrect yardage
-  const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName || "Rio Takeda";
+  const displayYardage = "6,734";
+  const displayWinner = tournamentData?.defendingChampion?.athlete?.displayName || "TBD";
   
   // Format date from API data
   const displayDate = tournamentData ? 
@@ -141,28 +149,36 @@ export default function TournamentComponent({
         {/* Tournament Header */}
         <div className="mb-4">
         {/* Tournament Logo */}
-        <div className="flex justify-center mb-3">
-          <Image
-            src="https://media.lpga.com/images/librariesprovider3/default-album/toto-japan-classic-logo.png?sfvrsn=1630650a_1"
-            alt="TOTO Japan Classic Logo"
-            width={140}
-            height={70}
-            className="h-16 w-auto object-contain"
-          />
-        </div>
+        {logoUrl && (
+          <div className="flex justify-center mb-3">
+            <Image
+              src={logoUrl}
+              alt={logoAlt || 'Tournament Logo'}
+              width={140}
+              height={70}
+              className="h-16 w-auto object-contain"
+            />
+          </div>
+        )}
         {/* Tournament Title */}
         <div className="mb-2">
-          <Link 
-            href="/news/toto-japan-classic-2025"
-            className="block group"
-          >
-            <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line hover:text-primary-600 transition-all duration-200 cursor-pointer" style={{ hyphens: 'none' }}>
+          {newsUrl ? (
+            <Link 
+              href={newsUrl}
+              className="block group"
+            >
+              <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line hover:text-primary-600 transition-all duration-200 cursor-pointer" style={{ hyphens: 'none' }}>
+                {displayName.replace(/ Championship/g, '\nChampionship')}
+                <svg className="w-4 h-4 inline ml-1 opacity-60 group-hover:opacity-100 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" transform="rotate(180 12 12)" />
+                </svg>
+              </h3>
+            </Link>
+          ) : (
+            <h3 className="text-xl lg:text-2xl font-bold text-gray-900 text-center translation-text leading-tight whitespace-pre-line" style={{ hyphens: 'none' }}>
               {displayName.replace(/ Championship/g, '\nChampionship')}
-              <svg className="w-4 h-4 inline ml-1 opacity-60 group-hover:opacity-100 transition-opacity duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" transform="rotate(180 12 12)" />
-              </svg>
             </h3>
-          </Link>
+          )}
         </div>
         <div className="space-y-1 text-sm text-gray-600">
           <div className="flex items-center gap-2">
@@ -177,7 +193,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
             <Link 
-              href="https://maps.app.goo.gl/NHf4pqTbzPDfoQLS8"
+              href={mapsUrl || "https://maps.app.goo.gl/EPXUg26bHembkiZs8"}
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 transition-colors duration-200"
@@ -190,7 +206,7 @@ export default function TournamentComponent({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
             </svg>
             <a
-              href="https://toto-japan-classic.com/en/"
+              href="https://www.tiburonnaples.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-500 hover:text-primary-600 hover:underline transition-colors"
@@ -225,9 +241,9 @@ export default function TournamentComponent({
         <div className="grid grid-cols-2 gap-1.5 mt-4">
         {/* Row 1: Buy Tickets, Official Site */}
         <Link
-          href={buyTicketsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={buyTicketsUrl || '#'}
+          target={buyTicketsUrl ? "_blank" : undefined}
+          rel={buyTicketsUrl ? "noopener noreferrer" : undefined}
           className="bg-primary-500 hover:bg-primary-600 text-white p-3 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
@@ -239,9 +255,9 @@ export default function TournamentComponent({
         </Link>
 
         <Link
-          href={officialSiteUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={officialSiteUrl || '#'}
+          target={officialSiteUrl ? "_blank" : undefined}
+          rel={officialSiteUrl ? "noopener noreferrer" : undefined}
           className="bg-secondary-500 hover:bg-secondary-600 text-white p-3 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
@@ -279,9 +295,9 @@ export default function TournamentComponent({
 
         {/* Row 3: Podcast, TV Schedule */}
         <Link
-          href={podcastUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={podcastUrl || '#'}
+          target={podcastUrl ? "_blank" : undefined}
+          rel={podcastUrl ? "noopener noreferrer" : undefined}
           className="bg-yellow-500 hover:bg-yellow-700 text-white p-3 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">
@@ -293,7 +309,7 @@ export default function TournamentComponent({
         </Link>
 
         <Link
-          href={broadcastUrl}
+          href={broadcastUrl || '#'}
           className="bg-red-500 hover:bg-red-800 text-white p-3 rounded-lg text-center transition-colors duration-200 group"
         >
           <div className="flex flex-col items-center gap-1">

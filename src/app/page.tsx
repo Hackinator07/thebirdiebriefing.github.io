@@ -129,7 +129,12 @@ export default async function Home() {
               {/* Right Column - Tournament Component */}
               <div className="w-full lg:w-96 flex-shrink-0">
                 <div className="space-y-4">
-                  <TournamentComponent />
+                  <TournamentComponent 
+                    logoUrl="https://media.lpga.com/images/librariesprovider3/default-album/cme-group-tour-championship-full-color.png?sfvrsn=5ab715b9_1"
+                    logoAlt="CME Group Tour Championship"
+                    buyTicketsUrl="https://www.cmegrouptourchampionship.com/tickets"
+                    officialSiteUrl="https://www.cmegrouptourchampionship.com/"
+                  />
                 </div>
               </div>
             </div>

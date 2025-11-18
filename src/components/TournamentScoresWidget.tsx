@@ -49,8 +49,8 @@ interface TournamentScoresWidgetProps {
 }
 
 export default function TournamentScoresWidget({
-  tournamentId = '401734784',
-  tournamentName = 'TOTO Japan Classic 2025',
+  tournamentId = '401734786',
+  tournamentName,
   isOpen,
   onToggle,
   showToggleButton = true
@@ -749,7 +749,7 @@ export default function TournamentScoresWidget({
         <div className="bg-primary-500 text-white p-1.5 sm:p-2 flex-shrink-0">
           <div className="flex items-center justify-between mb-1">
             <p className="text-[10px] sm:text-[11px] font-bold opacity-90 break-words leading-tight flex-1 pr-2">
-              {(tournamentData?.name || tournamentName).replace(/\s*(pres\.|presented)\s*by\s*P&G/i, '')}
+              {(tournamentData?.name || tournamentName || 'Tournament').replace(/\s*(pres\.|presented)\s*by\s*P&G/i, '')}
             </p>
             <div className="flex items-center gap-0.5 sm:gap-1 flex-shrink-0">
               <button

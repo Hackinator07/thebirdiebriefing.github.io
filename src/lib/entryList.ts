@@ -22,85 +22,66 @@ export interface EntryListData {
 export function getEntryList(): EntryListData {
   const entryListText = `No. 	Name 	Represents 	Exemption 	Entry Status 	Rec.
 EXEMPT
-1 	Minjee Lee (AUS) 	Perth, Australia 	K83 (2) 	Entered 	»»
-2 	Miyu Yamashita (JPN) 	Osaka, Japan 	K83 (3) 	Entered 	»»
-3 	Rio Takeda (JPN) 	Kumamoto, Japan 	K83 (4) 	Entered 	»»
-4 	Somi Lee (KOR) 	Yongin-si, Republic of Korea 	K83 (10) 	Entered 	»»
-5 	Akie Iwai (JPN) 	Saitama, Japan 	K83 (12) 	Entered 	»»
-6 	Chisato Iwai (JPN) 	Saitama, Japan 	K83 (13) 	Entered 	»»
-7 	Ayaka Furue (JPN) 	Kobe, Japan 	K83 (22) 	Entered 	»»
-8 	Ariya Jutanugarn (THA) 	Bangkok, Thailand 	K83 (23) 	Entered 	»»
-9 	Miranda Wang (CHN) 	Tianjin, People's Republic of China 	K83 (33) 	Entered 	»»
-10 	Chanettee Wannasaen (THA) 	Chiang mai, Thailand 	K83 (37) 	Entered 	»»
-11 	Minami Katsu (JPN) 	Kagoshima, Japan 	K83 (38) 	Entered 	»»
-12 	Nasa Hataoka (JPN) 	Ibaraki, Japan 	K83 (41) 	Entered 	»»
-13 	Manon De Roey (BEL) 	Lint, Belgium 	K83 (54) 	Entered 	»»
-14 	Patty Tavatanakit (THA) 	Bangkok, Thailand 	K83 (55) 	Entered 	»»
-15 	Pajaree Anannarukarn (THA) 	Bangkok, Thailand 	K83 (56) 	Entered 	»»
-16 	Wei-Ling Hsu (TPE) 	New Taipei City, Chinese Taipei 	K83 (57) 	Entered 	»»
-17 	Yan Liu (CHN) 	Fujian, People's Republic of China 	K83 (59) 	Entered 	»»
-18 	Julia Lopez Ramirez (ESP) 	Benahavis, Spain 	K83 (61) 	Entered 	»»
-19 	Gurleen Kaur (USA) 	Houston, TX 	K83 (62) 	Entered 	»»
-20 	Kristen Gillman (USA) 	Austin, TX 	K83 (63) 	Entered 	»»
-21 	Saki Baba (JPN) 	Tokyo, Japan 	K83 (65) 	Entered 	»»
-22 	Robyn Choi (AUS) 	Gold Coast, Australia 	K83 (67) 	Entered 	»»
-23 	Lucy Li (USA) 	Redwood Shores, CA 	K83 (68) 	Entered 	»»
-24 	Ilhee Lee (KOR) 	Seoul, Republic of Korea 	K83 (69) 	Entered 	»»
-25 	Yuri Yoshida (JPN) 	Chiba, Japan 	K83 (70) 	Entered 	»»
-26 	Aditi Ashok (IND) 	Bangalore, India 	K83 (72) 	Entered 	»»
-27 	Nataliya Guseva (UNA) 	Miami, FL 	K83 (73) 	Entered 	»»
-28 	Mary Liu (CHN) 	Xi'an, People's Republic of China 	K83 (74) 	Entered 	»»
-29 	Pauline Roussin-Bouchard (FRA) 	Orcieres 1850, France 	K83 (75) 	Entered 	»»
-30 	Benedetta Moresco (ITA) 	Caldogno, Italy 	K83 (76) 	Entered 	»»
-31 	Karis Davidson (AUS) 	Gold Coast, Australia 	K83 (78) 	Entered 	»»
-32 	Ina Yoon (KOR) 	Seoul, Republic of Korea 	K83 (80) 	Entered 	»»
-33 	Haeji Kang (KOR) 	Seoul, Republic of Korea 	K83 (81) 	Entered 	»»
-34 	Gemma Dryburgh (SCO) 	Aberdeen, Scotland 	K83 (82) 	Entered 	»»
-35 	Weiwei Zhang (CHN) 	Hainan, People's Republic of China 	K83 (83) 	Entered 	»»
-36 	Paula Reto (RSA) 	Bloemfontein, South Africa 	K83 (85) 	Entered 	»»
-37 	Celine Borge (NOR) 	Tonsberg, Norway 	K83 (88) 	Entered 	»»
-38 	Emily Kristine Pedersen (DEN) 	Smoerum, Denmark 	K83 (90) 	Entered 	»»
-39 	Arpichaya Yubol (THA) 	Saraburi, Thailand 	K83 (91) 	Entered 	»»
-40 	Dewi Weber (NED) 	Groningen, Netherlands 	K83 (92) 	Entered 	»»
-41 	Jeongeun Lee5 (KOR) 	Seoul, Republic of Korea 	K83 (94) 	Entered 	»»
-42 	Kumkang Park (KOR) 	Seoul, Republic of Korea 	K83 (95) 	Entered 	»»
-43 	Aline Krauter (GER) 	Stuttgart, Germany 	K83 (96) 	Entered 	»»
-STEP UP TOUR
-44 	Shuri Sakuma (JPN) 	Kawagoe, Japan 	S70 (1) 	Entered 	»»
-45 	Sora Kamiya (JPN) 	Gifu, Japan 	S70 (2) 	Entered 	»»
-46 	Yui Kawamoto (JPN) 	Ehime, Japan 	S70 (3) 	Entered 	»»
-47 	Fuka Suga (JPN) 	Miyazaki, Japan 	S70 (4) 	Entered 	»»
-48 	Sayaka Takahashi (JPN) 	Niigata, Japan 	S70 (5) 	Entered 	»»
-49 	Shina Kanazawa (JPN) 	Ibaraki, Japan 	S70 (6) 	Entered 	»»
-50 	Shiho Kuwaki (JPN) 	Okayama, Japan 	S70 (7) 	Entered 	»»
-51 	Yuna Araki (JPN) 	Tamana, Japan 	S70 (8) 	Entered 	»»
-52 	Ai Suzuki (JPN) 	Tokushima, Japan 	S70 (9) 	Entered 	»»
-53 	Jiyai Shin (KOR) 	Gyeonggi-do, Republic of Korea 	S70 (10) 	Entered 	»»
-54 	Ayako Kimura (JPN) 	Osaka, Japan 	S70 (11) 	Entered 	»»
-55 	Saki Nagamine (JPN) 	Miyazaki, Japan 	S70 (12) 	Entered 	»»
-56 	Mitsuki Kobayashi (JPN) 	Tsuyama City, Japan 	S70 (13) 	Entered 	»»
-57 	Kotone Hori (JPN) 	Tokushima, Japan 	S70 (14) 	Entered 	»»
-58 	Saiki Fujita (JPN) 	Shizuoka, Japan 	S70 (15) 	Entered 	»»
-59 	MinYoung Lee (KOR) 	Gyeonggi, Republic of Korea 	S70 (16) 	Entered 	»»
-60 	Miyu Sato (JPN) 	Tokyo, Japan 	S70 (17) 	Entered 	»»
-61 	Hibiki Iriya (JPN) 	Aichi, Japan 	S70 (18) 	Entered 	»»
-62 	Lala Anai (JPN) 	Okazaki, Japan 	S70 (19) 	Entered 	»»
-63 	Chia Yen Wu (TPE) 	Hsinchu, Chinese Taipei 	S70 (20) 	Entered 	»»
-64 	Asuka Kashiwabara (JPN) 	Miyazaki, Japan 	S70 (21) 	Entered 	»»
-65 	Ayaka Watanabe (JPN) 	Atami, Japan 	S70 (22) 	Entered 	»»
-66 	Kano Nakamura (JPN) 	Kyoto, Japan 	S70 (23) 	Entered 	»»
-67 	Kotoko Uchida (JPN) 	Sapporo, Japan 	S70 (24) 	Entered 	»»
-68 	Yuka Yasuda (JPN) 	Kobe, Japan 	S70 (25) 	Entered 	»»
-69 	Nana Yamashiro (JPN) 	Okinawa, Japan 	S70 (26) 	Entered 	»»
-70 	Eri Okayama (JPN) 	Osaka, Japan 	S70 (27) 	Entered 	»»
-71 	Aihi Takano (JPN) 	Tokyo, Japan 	S70 (28) 	Entered 	»»
-72 	Kana Nagai (JPN) 	Tokyo, Japan 	S70 (29) 	Entered 	»»
-73 	Karen Tsuruoka (JPN) 	Yokohama City, Japan 	S70 (30) 	Entered 	»»
-74 	Nanako Inagaki (JPN) 	Saitama, Japan 	S70 (31) 	Entered 	»»
-75 	Mi Jeong Jeon (KOR) 	Daejeon, Republic of Korea 	S70 (32) 	Entered 	»»
-76 	Seonwoo Bae (KOR) 	Gyeonggi-do, Republic of Korea 	S70 (33) 	Entered 	»»
-77 	Nana Suganuma (JPN) 	Tokyo, Japan 	S70 (34) 	Entered 	»»
-78 	Serena Aoki (JPN) 	Gunma, Japan 	S70 (35) 	Entered 	»»`;
+1 	Jeeno Thitikul (THA) 	Bangkok, Thailand 	CME Globe Race (1) 	Entered 	»»
+2 	Miyu Yamashita (JPN) 	Osaka, Japan 	CME Globe Race (2) 	Entered 	»»
+3 	Minjee Lee (AUS) 	Perth, Australia 	CME Globe Race (3) 	Entered 	»»
+4 	Rio Takeda (JPN) 	Kumamoto, Japan 	CME Globe Race (4) 	Entered 	»»
+5 	Hyo Joo Kim (KOR) 	Wonju-si, Republic of Korea 	CME Globe Race (5) 	Entered 	»»
+6 	Hye-Jin Choi (KOR) 	Seoul, Republic of Korea 	CME Globe Race (6) 	Entered 	»»
+7 	Sei Young Kim (KOR) 	Seoul, Republic of Korea 	CME Globe Race (7) 	Entered 	»»
+8 	A Lim Kim (KOR) 	Gyeonggi-do, Republic of Korea 	CME Globe Race (8) 	Entered 	»»
+9 	Nelly Korda (USA) 	Bradenton, FL 	CME Globe Race (9) 	Entered 	»»
+10 	Somi Lee (KOR) 	Yongin-si, Republic of Korea 	CME Globe Race (10) 	Entered 	»»
+11 	Mao Saigo (JPN) 	Hokkaido, Japan 	CME Globe Race (11) 	Entered 	»»
+12 	Nasa Hataoka (JPN) 	Ibaraki, Japan 	CME Globe Race (12) 	Entered 	»»
+13 	Akie Iwai (JPN) 	Saitama, Japan 	CME Globe Race (13) 	Entered 	»»
+14 	Charley Hull (ENG) 	Kettering, England 	CME Globe Race (14) 	Entered 	»»
+15 	Chisato Iwai (JPN) 	Saitama, Japan 	CME Globe Race (15) 	Entered 	»»
+16 	Jin Hee Im (KOR) 	Seoul, Republic of Korea 	CME Globe Race (16) 	Entered 	»»
+17 	Angel Yin (USA) 	Arcadia, CA 	CME Globe Race (17) 	Entered 	»»
+18 	Minami Katsu (JPN) 	Kagoshima, Japan 	CME Globe Race (18) 	Entered 	»»
+19 	Celine Boutier (FRA) 	Paris, France 	CME Globe Race (19) 	Entered 	»»
+20 	Jennifer Kupcho (USA) 	Westminster, CO 	CME Globe Race (20) 	Entered 	»»
+21 	Linn Grant (SWE) 	Helsingborg, Sweden 	CME Globe Race (21) 	Entered 	»»
+22 	Haeran Ryu (KOR) 	Seoul, Republic of Korea 	CME Globe Race (22) 	Entered 	»»
+23 	Andrea Lee (USA) 	Hermosa Beach, CA 	CME Globe Race (23) 	Entered 	»»
+24 	Yealimi Noh (USA) 	Concord, CA 	CME Globe Race (24) 	Entered 	»»
+25 	Ayaka Furue (JPN) 	Kobe, Japan 	CME Globe Race (25) 	Entered 	»»
+26 	Lydia Ko (NZL) 	Auckland, New Zealand 	CME Globe Race (26) 	Entered 	»»
+27 	Carlota Ciganda (ESP) 	Pamplona, Spain 	CME Globe Race (27) 	Entered 	»»
+28 	Lindy Duncan (USA) 	Plantation, FL 	CME Globe Race (28) 	Entered 	»»
+29 	Grace Kim (AUS) 	Sydney, Australia 	CME Globe Race (29) 	Entered 	»»
+30 	Brooke M. Henderson (CAN) 	Smiths Falls, Canada 	CME Globe Race (30) 	Entered 	»»
+31 	Lauren Coughlin (USA) 	Charlottesville, VA 	CME Globe Race (31) 	Entered 	»»
+32 	Ariya Jutanugarn (THA) 	Bangkok, Thailand 	CME Globe Race (32) 	Entered 	»»
+33 	Megan Khang (USA) 	Rockland, MA 	CME Globe Race (33) 	Entered 	»»
+34 	Ruoning Yin (CHN) 	Beijing, People's Republic of China 	CME Globe Race (34) 	Entered 	»»
+35 	Auston Kim (USA) 	Phoenix, AZ 	CME Globe Race (35) 	Entered 	»»
+36 	Miranda Wang (CHN) 	Tianjin, People's Republic of China 	CME Globe Race (36) 	Entered 	»»
+37 	Jin Young Ko (KOR) 	Seoul, Republic of Korea 	CME Globe Race (37) 	Entered 	»»
+38 	Gaby Lopez (MEX) 	Mexico City, Mexico 	CME Globe Race (38) 	Entered 	»»
+39 	Hannah Green (AUS) 	Perth, Australia 	CME Globe Race (39) 	Entered 	»»
+40 	Maja Stark (SWE) 	Abbekas, Sweden 	CME Globe Race (40) 	Entered 	»»
+41 	Esther Henseleit (GER) 	Hamburg, Germany 	CME Globe Race (41) 	Entered 	»»
+42 	Lottie Woad (ENG) 	Stoke-on-Trent, England 	CME Globe Race (42) 	Entered 	»»
+43 	Nanna Koerstz Madsen (DEN) 	Haderslev, Denmark 	CME Globe Race (43) 	Entered 	»»
+44 	Chanettee Wannasaen (THA) 	Chiang mai, Thailand 	CME Globe Race (44) 	Entered 	»»
+45 	Stephanie Kyriacou (AUS) 	Sydney, Australia 	CME Globe Race (45) 	Entered 	»»
+46 	Sarah Schmelzel (USA) 	Chandler, AZ 	CME Globe Race (46) 	Entered 	»»
+47 	Madelene Sagstrom (SWE) 	Gothenburg, Sweden 	CME Globe Race (47) 	Entered 	»»
+48 	Jenny Bae (USA) 	Vienna, VA 	CME Globe Race (48) 	Entered 	»»
+49 	Allisen Corpuz (USA) 	Honolulu, HI 	CME Globe Race (49) 	Entered 	»»
+50 	Ingrid Lindblad (SWE) 	Halmstad, Sweden 	CME Globe Race (50) 	Entered 	»»
+51 	Mi Hyang Lee (KOR) 	Seoul, Republic of Korea 	CME Globe Race (51) 	Entered 	»»
+52 	Lexi Thompson (USA) 	Coral Springs, FL 	CME Globe Race (52) 	Entered 	»»
+53 	Manon De Roey (BEL) 	Lint, Belgium 	CME Globe Race (53) 	Entered 	»»
+54 	Yan Liu (CHN) 	Fujian, People's Republic of China 	CME Globe Race (54) 	Entered 	»»
+55 	Patty Tavatanakit (THA) 	Bangkok, Thailand 	CME Globe Race (55) 	Entered 	»»
+56 	Leona Maguire (IRL) 	Cavan, Ireland 	CME Globe Race (56) 	Entered 	»»
+57 	Nataliya Guseva (UNA) 	Miami, FL 	CME Globe Race (57) 	Entered 	»»
+58 	Lucy Li (USA) 	Redwood Shores, CA 	CME Globe Race (58) 	Entered 	»»
+59 	Brooke Matthews (USA) 	Tomball, TX 	CME Globe Race (59) 	Entered 	»»
+60 	Pajaree Anannarukarn (THA) 	Bangkok, Thailand 	CME Globe Race (60) 	Entered 	»»`;
 
   const lines = entryListText.split('\n');
   const players: EntryListPlayer[] = [];
@@ -181,6 +162,6 @@ STEP UP TOUR
   return {
     players,
     lastUpdated: new Date().toISOString(),
-    tournament: 'Maybank Championship 2025'
+    tournament: 'CME Group Tour Championship 2025'
   };
 }

@@ -6,7 +6,7 @@ import CourseMap from './CourseMap';
 
 interface CourseHolesWidgetProps {
   eventId?: string;
-  aonRiskHole?: number;
+  aonRiskHole?: number | null;
   hardestHole?: number;
 }
 
@@ -28,37 +28,37 @@ const courseDataCache = new Map<string, {
 const COURSE_CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
 const RAPIDAPI_KEY = process.env.NEXT_PUBLIC_RAPIDAPI_KEY || '517cb09524mshf243e8dc1b88e58p19efabjsne4e46b59b3c8';
 
-// Static course data for TOTO Japan Classic - Seta Golf Course
+// Static course data for CME Group Tour Championship - Tiburón Golf Club
 const STATIC_HOLES = [
   // Front 9
-  { number: 1, shotsToPar: 5, totalYards: 495 },
-  { number: 2, shotsToPar: 4, totalYards: 393 },
-  { number: 3, shotsToPar: 3, totalYards: 185 },
-  { number: 4, shotsToPar: 4, totalYards: 400 },
-  { number: 5, shotsToPar: 4, totalYards: 389 },
-  { number: 6, shotsToPar: 4, totalYards: 350 },
-  { number: 7, shotsToPar: 4, totalYards: 399 },
-  { number: 8, shotsToPar: 3, totalYards: 177 },
-  { number: 9, shotsToPar: 4, totalYards: 392 },
+  { number: 1, shotsToPar: 5, totalYards: 533 },
+  { number: 2, shotsToPar: 4, totalYards: 380 },
+  { number: 3, shotsToPar: 4, totalYards: 420 },
+  { number: 4, shotsToPar: 4, totalYards: 393 },
+  { number: 5, shotsToPar: 3, totalYards: 190 },
+  { number: 6, shotsToPar: 5, totalYards: 526 },
+  { number: 7, shotsToPar: 4, totalYards: 395 },
+  { number: 8, shotsToPar: 3, totalYards: 140 },
+  { number: 9, shotsToPar: 4, totalYards: 418 },
   // Back 9
-  { number: 10, shotsToPar: 4, totalYards: 367 },
-  { number: 11, shotsToPar: 4, totalYards: 406 },
-  { number: 12, shotsToPar: 3, totalYards: 192 },
-  { number: 13, shotsToPar: 5, totalYards: 476 },
-  { number: 14, shotsToPar: 4, totalYards: 411 },
-  { number: 15, shotsToPar: 3, totalYards: 135 },
-  { number: 16, shotsToPar: 5, totalYards: 500 },
-  { number: 17, shotsToPar: 4, totalYards: 409 },
-  { number: 18, shotsToPar: 5, totalYards: 540 }
+  { number: 10, shotsToPar: 4, totalYards: 360 },
+  { number: 11, shotsToPar: 4, totalYards: 386 },
+  { number: 12, shotsToPar: 3, totalYards: 167 },
+  { number: 13, shotsToPar: 4, totalYards: 350 },
+  { number: 14, shotsToPar: 5, totalYards: 580 },
+  { number: 15, shotsToPar: 4, totalYards: 418 },
+  { number: 16, shotsToPar: 3, totalYards: 168 },
+  { number: 17, shotsToPar: 5, totalYards: 485 },
+  { number: 18, shotsToPar: 4, totalYards: 425 }
 ];
 
 const STATIC_COURSE_DATA = {
   holes: STATIC_HOLES,
-  courseName: 'Seta Golf Course',
+  courseName: 'Tiburón Golf Club',
   totalYards: STATIC_HOLES.reduce((sum, hole) => sum + hole.totalYards, 0),
   shotsToPar: 72,
-  parOut: 35,
-  parIn: 37
+  parOut: 36,
+  parIn: 36
 };
 
 // Function to get course map URL based on tournament/course name
@@ -78,6 +78,8 @@ function getCourseMapUrl(courseName?: string): string | undefined {
     'Maybank Championship 2025': '/course-maps/maybank-map.png',
     'Seta Golf Course': '/course-maps/toto-japan.webp',
     'TOTO Japan Classic': '/course-maps/toto-japan.webp',
+    'Tiburón Golf Club': '/course-maps/tiburon-golf-club-58251.jpg',
+    'CME Group Tour Championship': '/course-maps/tiburon-golf-club-58251.jpg',
     // Add more mappings as needed
   };
   
@@ -214,9 +216,9 @@ async function fetchCourseData(eventId: string): Promise<CourseData | null> {
 }
 
 export default function CourseHolesWidget({
-  eventId = "401734784",
-  aonRiskHole = 13, // Hole 13 - Par 5, uphill, reachable in two for long hitters
-  hardestHole = 5 // Hole 5 - Par 4, 389 yards with 8 yards uphill, green almost invisible
+  eventId = "401734786",
+  aonRiskHole = null, // No AON Risk hole for this event
+  hardestHole = 9 // Hole 9 - Par 4, 418 yards
 }: CourseHolesWidgetProps) {
   const [courseData, setCourseData] = useState<CourseData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -274,7 +276,7 @@ export default function CourseHolesWidget({
         });
     
     // AON Risk hole is tournament-specific
-    const aonRisk = holes.find(hole => hole.number === aonRiskHole);
+    const aonRisk = aonRiskHole ? holes.find(hole => hole.number === aonRiskHole) : undefined;
     
     return { longest, shortest, hardest, aonRisk };
   };
@@ -325,7 +327,7 @@ export default function CourseHolesWidget({
                       const isLongest = hole.totalYards === Math.max(...STATIC_HOLES.map(h => h.totalYards));
                       const isShortest = hole.totalYards === Math.min(...STATIC_HOLES.map(h => h.totalYards));
                       const isHardest = hole.number === hardestHole;
-                      const isAonRisk = hole.number === aonRiskHole;
+                      const isAonRisk = aonRiskHole !== null && hole.number === aonRiskHole;
                       
                       return (
                         <tr 
@@ -396,7 +398,7 @@ export default function CourseHolesWidget({
                       const isLongest = hole.totalYards === Math.max(...STATIC_HOLES.map(h => h.totalYards));
                       const isShortest = hole.totalYards === Math.min(...STATIC_HOLES.map(h => h.totalYards));
                       const isHardest = hole.number === hardestHole;
-                      const isAonRisk = hole.number === aonRiskHole;
+                      const isAonRisk = aonRiskHole !== null && hole.number === aonRiskHole;
                       
                       return (
                         <tr 
@@ -490,7 +492,7 @@ export default function CourseHolesWidget({
                     <svg className="w-3 h-3 sm:w-4 sm:h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2L12 17.6l-6 4.8 2.4-7.2-6-4.8h7.6L12 2z"/>
                     </svg>
-                    <span className="text-[10px] sm:text-xs font-medium text-purple-700 whitespace-nowrap">AON Risk {aonRiskHole === 0 ? 'NA' : `#${aonRiskHole}`}</span>
+                    <span className="text-[10px] sm:text-xs font-medium text-purple-700 whitespace-nowrap">AON Risk {aonRiskHole === null ? 'N/A' : `#${aonRiskHole}`}</span>
                   </div>
                 </div>
               </div>
@@ -499,8 +501,8 @@ export default function CourseHolesWidget({
 
           {/* Course Map - Bottom - Fallback */}
           <CourseMap 
-            courseMapUrl="/course-maps/toto-japan.webp"
-            courseName="Seta Golf Course"
+            courseMapUrl="/course-maps/tiburon-golf-club-58251.jpg"
+            courseName="Tiburón Golf Club"
             className="mt-2"
           />
 
@@ -512,23 +514,19 @@ export default function CourseHolesWidget({
               <div className="space-y-0.5 text-[10px] sm:text-xs text-green-700">
                 <div className="flex justify-between">
                   <span className="font-medium">Greens</span>
-                  <span>Bentgrass</span>
+                  <span>TifEagle Bermudagrass</span>
                 </div>
                 <div className="flex justify-between items-start">
                   <span className="font-medium flex-1 mr-2">Tees</span>
-                  <span className="text-right flex-shrink-0">Zoysia</span>
+                  <span className="text-right flex-shrink-0">Celebration Bermudagrass</span>
                 </div>
                 <div className="flex justify-between items-start">
                   <span className="font-medium flex-1 mr-2">Fairways, Approaches, Collars</span>
-                  <span className="text-right flex-shrink-0">Zoysia</span>
+                  <span className="text-right flex-shrink-0">Celebration Bermudagrass</span>
                 </div>
                 <div className="flex justify-between items-start">
-                  <span className="font-medium flex-1 mr-2">Intermediate Rough</span>
-                  <span className="text-right flex-shrink-0">Zoysia</span>
-                </div>
-                <div className="flex justify-between items-start">
-                  <span className="font-medium flex-1 mr-2">Primary Rough</span>
-                  <span className="text-right flex-shrink-0">Zoysia</span>
+                  <span className="font-medium flex-1 mr-2">Rough (All Rough Areas)</span>
+                  <span className="text-right flex-shrink-0">Celebration Bermudagrass / Natural Native Areas</span>
                 </div>
               </div>
             </div>
@@ -540,40 +538,40 @@ export default function CourseHolesWidget({
                 <div className="grid grid-cols-1 gap-1">
                   <div className="flex justify-between items-center">
                     <span className="font-medium">TEES</span>
-                    <span>AM- Mow or Dew Removal</span>
+                    <span>AM – Mow</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 8mm</div>
+                  <div className="text-right text-gray-600">Height of Cut: 0.275"–0.350" (≈ 7–9 mm)</div>
                   
                   <div className="flex justify-between items-center mt-1">
                     <span className="font-medium">FAIRWAYS</span>
-                    <span>PM- Mow</span>
+                    <span>PM – Mow</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 13mm</div>
+                  <div className="text-right text-gray-600">Height of Cut: 0.375"–0.400" (≈ 9.5–10 mm)</div>
                   
                   <div className="flex justify-between items-center mt-1">
-                    <span className="font-medium">COLLARS</span>
-                    <span>PM- Mow</span>
+                    <span className="font-medium">COLLARS / APPROACHES</span>
+                    <span>PM – Mow</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 6mm</div>
+                  <div className="text-right text-gray-600">Height of Cut: ~0.350" (≈ 9 mm)</div>
                   
                   <div className="flex justify-between items-center mt-1">
                     <span className="font-medium">GREENS</span>
-                    <span>AM- Single cut & roll</span>
+                    <span>AM – Single cut & roll</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 3.4mm</div>
-                  <div className="text-right text-gray-600">Speed: 11.0'-11.5'</div>
+                  <div className="text-right text-gray-600">Height of Cut: 0.110"–0.120" (≈ 2.8–3.0 mm)</div>
+                  <div className="text-right text-gray-600">Speed: 11'–12'</div>
                   
                   <div className="flex justify-between items-center mt-1">
                     <span className="font-medium">INTERMEDIATE ROUGH</span>
-                    <span>PM – Mow every other day</span>
+                    <span>Mow every other day (where applicable)</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 25mm</div>
+                  <div className="text-right text-gray-600">Height of Cut: ~1.0" (≈ 25 mm)</div>
                   
                   <div className="flex justify-between items-center mt-1">
                     <span className="font-medium">PRIMARY ROUGH</span>
                     <span>Mowed as needed</span>
                   </div>
-                  <div className="text-right text-gray-600">Height of Cut: 70mm</div>
+                  <div className="text-right text-gray-600">Height of Cut: ~1.75" (≈ 44 mm)</div>
                 </div>
               </div>
             </div>
@@ -774,7 +772,7 @@ export default function CourseHolesWidget({
                   <svg className="w-3 h-3 sm:w-4 sm:h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2L12 17.6l-6 4.8 2.4-7.2-6-4.8h7.6L12 2z"/>
                   </svg>
-                  <span className="text-[10px] sm:text-xs font-medium text-purple-700 whitespace-nowrap">AON Risk {aonRiskHole === 0 ? 'NA' : `#${holeAnalysis?.aonRisk?.number}`}</span>
+                  <span className="text-[10px] sm:text-xs font-medium text-purple-700 whitespace-nowrap">AON Risk {aonRiskHole === null ? 'N/A' : `#${holeAnalysis?.aonRisk?.number}`}</span>
                 </div>
               </div>
             </div>
@@ -783,8 +781,8 @@ export default function CourseHolesWidget({
 
         {/* Course Map - Bottom */}
         <CourseMap 
-          courseMapUrl={courseMapUrl || '/course-maps/toto-japan.webp'}
-          courseName={courseData?.courseName || 'Seta Golf Course'}
+          courseMapUrl={courseMapUrl || '/course-maps/tiburon-golf-club-58251.jpg'}
+          courseName={courseData?.courseName || 'Tiburón Golf Club'}
           className="mt-2"
         />
 
@@ -796,23 +794,19 @@ export default function CourseHolesWidget({
             <div className="space-y-0.5 text-[10px] sm:text-xs text-green-700">
               <div className="flex justify-between">
                 <span className="font-medium">Greens</span>
-                <span>Bentgrass</span>
+                <span>TifEagle Bermudagrass</span>
               </div>
               <div className="flex justify-between items-start">
                 <span className="font-medium flex-1 mr-2">Tees</span>
-                <span className="text-right flex-shrink-0">Zoysia</span>
+                <span className="text-right flex-shrink-0">Celebration Bermudagrass</span>
               </div>
               <div className="flex justify-between items-start">
                 <span className="font-medium flex-1 mr-2">Fairways, Approaches, Collars</span>
-                <span className="text-right flex-shrink-0">Zoysia</span>
+                <span className="text-right flex-shrink-0">Celebration Bermudagrass</span>
               </div>
               <div className="flex justify-between items-start">
-                <span className="font-medium flex-1 mr-2">Intermediate Rough</span>
-                <span className="text-right flex-shrink-0">Zoysia</span>
-              </div>
-              <div className="flex justify-between items-start">
-                <span className="font-medium flex-1 mr-2">Primary Rough</span>
-                <span className="text-right flex-shrink-0">Zoysia</span>
+                <span className="font-medium flex-1 mr-2">Rough (All Rough Areas)</span>
+                <span className="text-right flex-shrink-0">Celebration Bermudagrass / Natural Native Areas</span>
               </div>
             </div>
           </div>
@@ -824,40 +818,40 @@ export default function CourseHolesWidget({
               <div className="grid grid-cols-1 gap-1">
                 <div className="flex justify-between items-center">
                   <span className="font-medium">TEES</span>
-                  <span>AM- Mow or Dew Removal</span>
+                  <span>AM – Mow</span>
                 </div>
-                <div className="text-right text-gray-600">Height of Cut: 8mm</div>
+                <div className="text-right text-gray-600">Height of Cut: 0.275"–0.350" (≈ 7–9 mm)</div>
                 
                 <div className="flex justify-between items-center mt-1">
                   <span className="font-medium">FAIRWAYS</span>
-                  <span>PM- Mow</span>
+                  <span>PM – Mow</span>
                 </div>
-                <div className="text-right text-gray-600">Height of Cut: 13mm</div>
+                <div className="text-right text-gray-600">Height of Cut: 0.375"–0.400" (≈ 9.5–10 mm)</div>
                 
                 <div className="flex justify-between items-center mt-1">
-                  <span className="font-medium">COLLARS</span>
-                  <span>PM- Mow</span>
+                  <span className="font-medium">COLLARS / APPROACHES</span>
+                  <span>PM – Mow</span>
                 </div>
-                <div className="text-right text-gray-600">Height of Cut: 6mm</div>
+                <div className="text-right text-gray-600">Height of Cut: ~0.350" (≈ 9 mm)</div>
                 
                 <div className="flex justify-between items-center mt-1">
                   <span className="font-medium">GREENS</span>
-                  <span>AM- Single cut & roll</span>
+                  <span>AM – Single cut & roll</span>
                 </div>
-                <div className="text-right text-gray-600">Height of Cut: 3.4mm</div>
-                <div className="text-right text-gray-600">Speed: 11.0'-11.5'</div>
+                <div className="text-right text-gray-600">Height of Cut: 0.110"–0.120" (≈ 2.8–3.0 mm)</div>
+                <div className="text-right text-gray-600">Speed: 11'–12'</div>
                 
                 <div className="flex justify-between items-center mt-1">
                   <span className="font-medium">INTERMEDIATE ROUGH</span>
-                  <span>PM – Mow every other day</span>
+                  <span>Mow every other day (where applicable)</span>
                 </div>
-                <div className="text-right text-gray-600">Height of Cut: 25mm</div>
+                <div className="text-right text-gray-600">Height of Cut: ~1.0" (≈ 25 mm)</div>
                 
                 <div className="flex justify-between items-center mt-1">
                   <span className="font-medium">PRIMARY ROUGH</span>
                   <span>Mowed as needed</span>
                 </div>
-                <div className="text-right text-gray-600">Height of Cut: 70mm</div>
+                <div className="text-right text-gray-600">Height of Cut: ~1.75" (≈ 44 mm)</div>
               </div>
             </div>
           </div>

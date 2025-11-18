@@ -1,6 +1,6 @@
 {
   "lastUpdated": "2025-10-21T20:24:19.062Z",
-  "eventId": "401734783",
+  "eventId": "401734786",
   "staticProps": {
     "tournamentName": "Maybank Championship 2025",
     "location": "Kuala Lumpur, Malaysia",
@@ -12,8 +12,8 @@
   "rawApiData": {
     "events": [
       {
-        "id": "401734783",
-        "uid": "s:1100~l:1107~e:401734783",
+        "id": "401734786",
+        "uid": "s:1100~l:1107~e:401734786",
         "date": "2025-10-23T04:00Z",
         "endDate": "2025-10-26T04:00Z",
         "name": "Maybank Championship 2025",

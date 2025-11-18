@@ -18,8 +18,7 @@ export default function HomePageClient({ children }: HomePageClientProps) {
     <>
       {children}
       <TournamentScoresWidget
-        tournamentId="401734784"
-        tournamentName="TOTO Japan Classic 2025"
+        tournamentId="401734786"
         isOpen={isScoresOpen}
         onToggle={handleToggleScores}
       />

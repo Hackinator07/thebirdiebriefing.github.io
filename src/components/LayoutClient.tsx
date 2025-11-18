@@ -47,8 +47,7 @@ export default function LayoutClient({ children }: LayoutClientProps) {
       <main>{children}</main>
       <Footer onToggleScores={handleToggleScores} />
       <TournamentScoresWidget
-        tournamentId="401734784"
-        tournamentName="TOTO Japan Classic 2025"
+        tournamentId="401734786"
         isOpen={isScoresOpen}
         onToggle={handleToggleScores}
         showToggleButton={shouldShowToggleButton}
