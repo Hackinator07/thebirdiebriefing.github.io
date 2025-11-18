@@ -20,7 +20,7 @@ interface WeatherData {
  * Updates static JSON files with fresh weather data from API
  * This ensures the static files always have current weather information
  */
-export async function updateStaticWeatherFiles(eventId: string = '401734786'): Promise<void> {
+export async function updateStaticWeatherFiles(eventId: string = '401734783'): Promise<void> {
   const RAPIDAPI_KEY = process.env.NEXT_PUBLIC_RAPIDAPI_KEY || '517cb09524mshf243e8dc1b88e58p19efabjsne4e46b59b3c8';
   const RAPIDAPI_HOST = 'live-golf-data1.p.rapidapi.com';
 
@@ -135,7 +135,7 @@ async function updateTournamentSnapshotFile(weather: WeatherData): Promise<void>
 /**
  * Schedules automatic updates of static weather files every 30 minutes
  */
-export function startWeatherFileAutoUpdate(eventId: string = '401734786'): void {
+export function startWeatherFileAutoUpdate(eventId: string = '401734783'): void {
   // Only run on server side (Node.js environment)
   if (typeof window !== 'undefined') {
     console.warn('Weather file auto-update only runs on server side');

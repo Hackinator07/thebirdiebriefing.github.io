@@ -1,28 +1,28 @@
 {
-  "lastUpdated": "2025-11-18T00:00:00.000Z",
-  "eventId": "401734786",
+  "lastUpdated": "2025-10-28T00:00:00.000Z",
+  "eventId": "401734783",
   "data": {
-    "tournamentName": "CME Group Tour Championship 2025",
-    "location": "Naples, Florida",
-    "date": "Nov 20-23, 2025",
-    "courseName": "Tiburon Golf Club",
+    "tournamentName": "Maybank Championship 2025",
+    "location": "Kuala Lumpur, Malaysia",
+    "date": "Oct 30-Nov 2, 2025",
+    "courseName": "Kuala Lumpur Golf & Country Club",
     "par": 72,
-    "yardage": 6613,
+    "yardage": 6536,
     "weather": {
       "type": "Forecast",
-      "displayValue": "Partly cloudy",
-      "conditionId": "3",
-      "zipCode": "34108",
-      "temperature": 78,
-      "lowTemperature": 72,
-      "highTemperature": 84,
-      "precipitation": 10,
+      "displayValue": "Cloudy",
+      "conditionId": "26",
+      "zipCode": "",
+      "temperature": 83,
+      "lowTemperature": 75,
+      "highTemperature": 97,
+      "precipitation": 85,
       "gust": 12,
       "windSpeed": 8,
-      "windDirection": "E",
-      "lastUpdated": "2025-11-20T08:00:00.000Z"
+      "windDirection": "NE",
+      "lastUpdated": "2025-10-28T00:00:00.000Z"
     },
-    "purse": "$7.0M",
-    "defendingChampion": "Angel Yin"
+    "purse": "$3M",
+    "defendingChampion": "Ruoning Yin"
   }
 }
