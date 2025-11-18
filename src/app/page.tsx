@@ -134,6 +134,8 @@ export default async function Home() {
                     logoAlt="CME Group Tour Championship"
                     buyTicketsUrl="https://www.cmegrouptourchampionship.com/tickets"
                     officialSiteUrl="https://www.cmegrouptourchampionship.com/"
+                    podcastUrl="https://open.spotify.com/episode/4kMMOJqjAlCXmJv3FWuXmr?si=h1XqpcsQTbmvaY1-27pjhw"
+                    broadcastUrl="https://www.lpga.com/news/2025/how-to-watch-the-2025-cme-group-tour-championship"
                   />
                 </div>
               </div>
