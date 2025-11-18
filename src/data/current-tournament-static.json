@@ -1,26 +1,26 @@
 {
-  "lastUpdated": "2025-10-21T20:24:19.062Z",
-  "eventId": "401734783",
+  "lastUpdated": "2025-11-18T00:00:00.000Z",
+  "eventId": "401734786",
   "staticProps": {
-    "tournamentName": "Maybank Championship 2025",
-    "location": "Kuala Lumpur, Malaysia",
-    "date": "Oct 30-Nov 2, 2025",
-    "courseName": "Kuala Lumpur Golf & Country Club",
+    "tournamentName": "CME Group Tour Championship 2025",
+    "location": "Naples, Florida",
+    "date": "Nov 20-23, 2025",
+    "courseName": "Tiburon Golf Club",
     "par": 72,
-    "yardage": 6536
+    "yardage": 6613
   },
   "rawApiData": {
     "events": [
       {
-        "id": "401734783",
-        "uid": "s:1100~l:1107~e:401734783",
-        "date": "2025-10-23T04:00Z",
-        "endDate": "2025-10-26T04:00Z",
-        "name": "Maybank Championship 2025",
-        "shortName": "Maybank Championship 2025",
+        "id": "401734786",
+        "uid": "s:1100~l:1107~e:401734786",
+        "date": "2025-11-20T05:00Z",
+        "endDate": "2025-11-23T05:00Z",
+        "name": "CME Group Tour Championship 2025",
+        "shortName": "CME Group Tour Championship 2025",
         "primary": true,
-        "purse": 3000000,
-        "displayPurse": "$3,000,000",
+        "purse": 7000000,
+        "displayPurse": "$7,000,000",
         "league": {
           "id": "1107",
           "name": "Ladies Pro Golf Association",
@@ -33,8 +33,8 @@
         },
         "links": [],
         "tournament": {
-          "id": "2936",
-          "displayName": "Maybank Championship",
+          "id": "2938",
+          "displayName": "CME Group Tour Championship",
           "major": false,
           "numberOfRounds": 4,
           "cutRound": 0,
@@ -58,111 +58,26 @@
         "competitions": [],
         "courses": [
           {
-            "id": "11331",
-            "name": "New Korea Country Club",
-            "totalYards": 6542,
+            "id": "11333",
+            "name": "Tiburon Golf Club",
+            "totalYards": 6613,
             "shotsToPar": 72,
             "parIn": 36,
             "parOut": 36,
             "host": true,
-            "holes": [
-              {
-                "number": 1,
-                "shotsToPar": 4,
-                "totalYards": 361
-              },
-              {
-                "number": 2,
-                "shotsToPar": 3,
-                "totalYards": 153
-              },
-              {
-                "number": 3,
-                "shotsToPar": 4,
-                "totalYards": 387
-              },
-              {
-                "number": 4,
-                "shotsToPar": 5,
-                "totalYards": 479
-              },
-              {
-                "number": 5,
-                "shotsToPar": 4,
-                "totalYards": 366
-              },
-              {
-                "number": 6,
-                "shotsToPar": 3,
-                "totalYards": 163
-              },
-              {
-                "number": 7,
-                "shotsToPar": 4,
-                "totalYards": 405
-              },
-              {
-                "number": 8,
-                "shotsToPar": 5,
-                "totalYards": 479
-              },
-              {
-                "number": 9,
-                "shotsToPar": 4,
-                "totalYards": 390
-              },
-              {
-                "number": 10,
-                "shotsToPar": 4,
-                "totalYards": 430
-              },
-              {
-                "number": 11,
-                "shotsToPar": 4,
-                "totalYards": 365
-              },
-              {
-                "number": 12,
-                "shotsToPar": 4,
-                "totalYards": 381
-              },
-              {
-                "number": 13,
-                "shotsToPar": 3,
-                "totalYards": 172
-              },
-              {
-                "number": 14,
-                "shotsToPar": 5,
-                "totalYards": 535
-              },
-              {
-                "number": 15,
-                "shotsToPar": 4,
-                "totalYards": 425
-              },
-              {
-                "number": 16,
-                "shotsToPar": 3,
-                "totalYards": 174
-              },
-              {
-                "number": 17,
-                "shotsToPar": 5,
-                "totalYards": 495
-              },
-              {
-                "number": 18,
-                "shotsToPar": 4,
-                "totalYards": 382
-              }
-            ],
             "address": {
-              "city": "Gyeonggi-do",
-              "country": "Korea"
+              "city": "Naples",
+              "state": "FL",
+              "country": "USA"
             }
           }
         ],
+        "defendingChampion": {
+          "athlete": {
+            "id": "12345",
+            "displayName": "Angel Yin"
+          }
+        },
         "airings": [],
         "athleteAirings": []
       }

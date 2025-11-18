@@ -38,20 +38,20 @@ const DEFAULT_STATIC_DATA: StaticTournamentData = {
   tournamentData: null,
   weatherData: {
     type: 'Forecast',
-    displayValue: 'Mostly cloudy w/ showers',
-    conditionId: '13',
-    zipCode: '96706',
-    temperature: 80,
+    displayValue: 'Partly cloudy',
+    conditionId: '3',
+    zipCode: '34108',
+    temperature: 78,
     lowTemperature: 72,
-    highTemperature: 89,
-    precipitation: 55,
+    highTemperature: 84,
+    precipitation: 10,
     gust: 12,
-    windSpeed: 10,
-    windDirection: 'ENE',
+    windSpeed: 8,
+    windDirection: 'E',
     lastUpdated: new Date().toISOString(),
   },
   lastUpdated: new Date().toISOString(),
-  eventId: '401734783'
+  eventId: '401734786'
 };
 
 /**

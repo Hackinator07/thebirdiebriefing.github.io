@@ -1,22 +1,22 @@
 {
-  "eventId": "401734784",
+  "eventId": "401734786",
   "enabled": true,
   "weather": {
     "type": "Forecast",
     "displayValue": "Partly cloudy",
     "conditionId": "3",
-    "zipCode": "520-2153",
-    "latitude": 34.95574770399307,
-    "longitude": 135.92418896691683,
-    "temperature": 61,
-    "lowTemperature": 52,
-    "highTemperature": 64,
-    "precipitation": 20,
-    "gust": 10,
-    "windSpeed": 6,
-    "windDirection": "NW",
-    "lastUpdated": "2025-11-06T08:00:00.000Z"
+    "zipCode": "34108",
+    "latitude": 26.2540,
+    "longitude": -81.7603,
+    "temperature": 78,
+    "lowTemperature": 72,
+    "highTemperature": 84,
+    "precipitation": 10,
+    "gust": 12,
+    "windSpeed": 8,
+    "windDirection": "E",
+    "lastUpdated": "2025-11-20T08:00:00.000Z"
   },
-  "note": "Edit this file to manually update weather when API data is unavailable. Location: Seta Golf Course, Otsu, Shiga, Japan"
+  "note": "Edit this file to manually update weather when API data is unavailable. Location: Tiburon Golf Club, Naples, Florida"
 }
 
